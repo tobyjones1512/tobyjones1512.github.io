@@ -63,12 +63,14 @@
             border-radius: 7.5px;
             background-color: grey;
             grid-auto-columns: auto;
-            grid-template-columns: repeat(auto-fill, minmax(223.5px, 1fr));
-            /* grid-auto-rows: minmax(130px, auto); */
+            grid-template-columns: repeat(auto-fill, minmax(238.5px, 1fr));
+            /* grid-template-columns: repeat(auto-fill, minmax(223.5px, 1fr));
+            grid-auto-rows: minmax(130px, auto); */
         }
 
         video {
             box-shadow: 0 0 10px 0 rgba(167, 167, 167, 0.25), 0 0 20px 0 rgba(167, 167, 167, 0.25), 0 0 30px 0 rgba(167, 167, 167, 0.25);
+            background-color: whitesmoke;
         }
 
         button {
@@ -98,10 +100,12 @@
             background-color: rgba(224, 224, 224, 0.25);
             backdrop-filter: blur(10px);
             min-width: 160px;
+            max-height: 110px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             padding: 5px;
             border-radius: 15px;
             z-index: 101;
+            overflow-y: scroll;
         }
 
         .dropdown:hover .dropdown-content {
@@ -140,6 +144,18 @@
         .buttonOn:hover {
             background-color: rgb(201, 255, 215);
             font-weight: bolder;
+        }
+
+        .middleBtn {
+            background-color: rgba(0, 0, 0, 0);
+            width: 5px;
+            height: 120px;
+            border-radius: 5px;
+            margin: 2.5px;
+        }
+
+        .middleBtn:hover {
+            background-color: darkgrey;
         }
 
         #fpsInput {
@@ -204,20 +220,21 @@
                 </p>
             </div>
 
-            <div id="optionsRow" style="margin-left: 50px; margin-right: 10px; overflow-x: scroll; display: none;">
-                <p style="margin-bottom: 10px;"><strong>FPS:</strong></p>
-                <input type="number" id="fpsInput" value="24" style="margin-right: 50px; -webkit-app-region: no-drag;">
+            <div id="optionsRow" style="margin-left: 50px; margin-right: 10px; overflow-x: visible; display: none; margin-top: 5px;">
+                <p style="margin-bottom: 20px;"><strong>FPS:</strong></p>
+                <input type="number" id="fpsInput" value="24" style="margin-right: 50px; -webkit-app-region: no-drag; margin-bottom: -2px;">
 
-                <button onclick="previewAnimation();">Preview</button>
+                <button onclick="if (!isPlaying) previewAnimation();">Preview</button>
                 <button id="loopBtn" class="buttonOff" onclick="toggleLoopPreview();">Loop</button>
+                <button id="useInOutToggle" class="buttonOff" onclick="toggleUseInOut();">Use In/Out</button>
 
                 <button id="onionBtn" class="buttonOff" onclick="toggleOnionSkinning();"
                     style="margin-left: 50px;">Onion Skinning</button>
                 <button id="trailsBtn" class="buttonOff" onclick="toggleTrailOnionSkins();">Trail Skins</button>
 
                 <button onclick="exportFrames();" style="margin-left: 50px;">Export Frames</button>
-                <button onclick="downloadProject();">Export</button>
-                <button onclick="importProject();">Import</button>
+                <button onclick="downloadProject();">Save Project</button>
+                <button onclick="importProject();">Open Project</button>
             </div>
         </div>
     </header>
@@ -229,7 +246,7 @@
             </div>
             <section id="previewSection" style="z-index: 105;">
                 <video id="myVidPlayer" muted autoplay
-                    style="z-index: 201; width: 100%; height: 100%; border-radius: 7.5px; background-color: darkgrey; object-fit: cover; transform: scaleX(-1); position: absolute; top: 0px; left: 0px;"></video>
+                    style="z-index: 201; width: 100%; height: 100%; border-radius: 7.5px; background-color: darkgrey; object-fit: cover; transform: scaleX(1); position: absolute; top: 0px; left: 0px;"></video>
                 <div id="onionSkins" style="display: none; position: absolute; top: 0px; left: 0px;">
                     <img id="onionSkinImg1"
                         style="width: 1280px; height: 720px; border-radius: 7.5px; opacity: 50%; object-fit: cover; transform: scaleX(-1); position: absolute; top: 0px; left: 0px; z-index: 203;"></img>
@@ -246,15 +263,20 @@
 
                 <div id="frameToolsBar" style="position: absolute; top: 725px; width: 100%;">
                     <div class="dropdown" id="showFeedBtn">
-                        <button>Load feed</button>
-                        <div class="dropdown-content" id="showFeedDropdownContent"> </div>
+                        <button>Load Feed</button>
+                        <div class="dropdown-content" id="showFeedDropdownContent"></div>
                     </div>
 
                     <div id="previewToolBar"
                         style="display: none; justify-content: center; justify-items: center; align-content: center; width: 100%; z-index: 100;">
-                        <button id="clearBtn" onclick="clearStage();">Clear Stage</button>
-                        <button id="captureFrameBtn" onclick="captureFrame()">Capture frame</button>
-                        <button id="mirrorBtn" class="buttonOn" onclick="togglePreviewMirror();">Mirror Preview</button>
+                        <button id="clearBtn" style="margin-right: 50px;" onclick="clearStage();">Clear Stage</button>
+                        <button onclick="appendFrames()">Append Frames</button>
+                        <button id="captureFrameBtn" onclick="captureFrame()">Capture Frame</button>
+                        <button id="mirrorBtn" class="buttonOff" onclick="togglePreviewMirror();">Mirror Preview</button>
+                        <div class="dropdown" style="margin-left: 50px;">
+                            <button>Switch Feed</button>
+                            <div class="dropdown-content" id="showFeedDropdownContent2"></div>
+                        </div>
                     </div>
                 </div>
             </section>

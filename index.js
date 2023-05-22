@@ -28,9 +28,14 @@ app.whenReady().then(() => {
 var totalFrames = 0;
 var frames = [];
 var isTrailingOnionSkins = false;
-var mirrorPreview = true;
+var mirrorPreview = false;
 var loopPreview = false;
 var canDeleteStage = false;
+var b64toBlob = null;
+var useInOut = false;
+var inIndex = 0;
+var outIndex = 0;
+var isPlaying = false;
 
 function clamp(num, min, max) {
   return num <= min ? min : num >= max ? max : num;
@@ -43,6 +48,11 @@ function start() {
   mirrorPreview = true;
   loopPreview = false;
   canDeleteStage = false;
+  inIndex = 0;
+  outIndex = 0;
+  isPlaying = false;
+  b64toBlob = (base64, type = "application/octet-stream") =>
+  fetch(base64).then((res) => res.blob());
 
   getCameras();
 
@@ -79,9 +89,11 @@ function start() {
   };
 }
 
-function loadFeed(_deviceId) {
+function loadFeed(_deviceId = 'NO FEED') {
   const video = document.querySelector("#myVidPlayer");
+  video.srcObject = null;
 
+  if (_deviceId != 'NO FEED') {
   navigator.mediaDevices
     .getUserMedia({ video: { deviceId: { exact: _deviceId } } })
     .then(function (device) {
@@ -89,10 +101,14 @@ function loadFeed(_deviceId) {
       video.onloadedmetadata = (e) => {
         video.play();
       };
+      document.getElementById("captureFrameBtn").style.display = "block";
     })
     .catch(function (err) {
       console.log("An error occurred: " + err);
     });
+  } else { 
+    document.getElementById("captureFrameBtn").style.display = "none";
+  }
 
   document.getElementById("showFeedBtn").style.display = "none";
   document.getElementById("previewToolBar").style.display = "flex";
@@ -127,6 +143,10 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
   frameBox.style.padding = "0px";
   frameBox.style.width = `${w}px`;
   frameBox.style.height = `${h}px`;
+  frameBox.style.borderRadius = "7.5px";
+  frameBox.style.borderWidth = "3px";
+  frameBox.style.borderColor = "darkgrey";
+  frameBox.style.borderType = "none";
 
   if (source == "none") image.src = canvas.toDataURL();
   else image.src = source;
@@ -220,6 +240,18 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
   reduceBtn.style.borderRadius = "12.5px";
   optionsMenu.appendChild(reduceBtn);
 
+  const exportFrameBtn = document.createElement("button");
+  exportFrameBtn.innerText = "Export";
+  exportFrameBtn.style.height = "25px";
+  exportFrameBtn.style.borderRadius = "12.5px";
+  optionsMenu.appendChild(exportFrameBtn);
+
+  const replaceFrameBtn = document.createElement("button");
+  replaceFrameBtn.innerText = "Replace";
+  replaceFrameBtn.style.height = "25px";
+  replaceFrameBtn.style.borderRadius = "12.5px";
+  optionsMenu.appendChild(replaceFrameBtn);
+
   frameBox.appendChild(image);
   frameBox.appendChild(buttonsRow);
   framesRow.appendChild(frameBox);
@@ -242,17 +274,12 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
 
   if (!visible) frameBox.style.opacity = "50%";
 
-  document.getElementById(
-    "framesTitle"
-  ).innerText = `Frames (${framesRow.childElementCount}):`;
-  document.getElementById("framesSection").style.display = "block";
-
   frameBox.onmouseenter = function () {
     image.style.filter = "blur(1px)";
 
     let index = 0;
     for (const _ of frames) {
-      if (_.frame == image.src) break;
+      if (_.id == image.id) break;
 
       index += 1;
     }
@@ -284,9 +311,7 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
     frames[index] = frames[index - 1];
     frames[index - 1] = tempFrame;
 
-    framesRow.innerHTML = "";
-
-    for (const frame of frames) framesRow.appendChild(frame.box);
+    updateFramesRow();
 
     updateOnionSkinning();
   };
@@ -303,9 +328,7 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
     frames[index] = frames[index + 1];
     frames[index + 1] = tempFrame;
 
-    framesRow.innerHTML = "";
-
-    for (const frame of frames) framesRow.appendChild(frame.box);
+    updateFramesRow();
 
     updateOnionSkinning();
   };
@@ -320,19 +343,16 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
 
     frames[index].visible = !frames[index].visible;
 
-    document.getElementById(frames[index].id).style.opacity = frames[index]
+    frames[index].img.style.opacity = frames[index]
       .visible
       ? "100%"
       : "25%";
     hideBtn.innerText = frames[index].visible ? "Hide" : "Unhide";
 
-    framesRow.innerHTML = "";
-
-    for (const frame of frames) framesRow.appendChild(frame.box);
+    updateFramesRow();
   };
 
   deleteBtn.onclick = function () {
-    let index = 0;
     const newFramesArr = [];
     for (let i = 0; i < frames.length; i++) {
       if (frames[i].frame == image.src) continue;
@@ -343,21 +363,13 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
     frames = newFramesArr;
     totalFrames = frames.length;
 
-    framesRow.innerHTML = "";
-
-    for (const frame of frames) framesRow.appendChild(frame.box);
-
-    document.getElementById(
-      "framesTitle"
-    ).innerText = `Frames (${framesRow.childElementCount}):`;
-    document.getElementById("framesSection").style.display =
-      framesRow.childElementCount > 0 ? "block" : "none";
+    updateFramesRow();
   };
 
   duplicateBtn.onclick = function () {
     let index = 0;
     for (const _ of frames) {
-      if (_.frame == image.src) break;
+      if (_.id == image.id) break;
 
       index += 1;
     }
@@ -366,12 +378,14 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
 
     framesForLbl.innerText = `${frames[index].framesFor}`;
     framesForLbl.style.display = "block";
+
+    updateFramesRow();
   };
 
   reduceBtn.onclick = function () {
     let index = 0;
     for (const _ of frames) {
-      if (_.frame == image.src) break;
+      if (_.id == image.id) break;
 
       index += 1;
     }
@@ -380,17 +394,258 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
 
     framesForLbl.innerText = `${frames[index].framesFor}`;
     framesForLbl.style.display = frames[index].framesFor > 1 ? "block" : "none";
+
+    updateFramesRow();
   };
+
+  exportFrameBtn.onclick = function () {
+    let index = 0;
+    for (const _ of frames) {
+      if (_.id == image.id) break;
+
+      index += 1;
+    }
+
+    downloadFrame(frames[index].frame, index);
+  }
+
+  replaceFrameBtn.onclick = function () {
+    let index = 0;
+    for (const _ of frames) {
+      if (_.id == image.id) break;
+
+      index += 1;
+    }
+
+    replaceFrame(index);
+  }
 
   frames.push({
     frame: image.src,
     box: frameBox,
     visible: visible,
     framesFor: framesFor,
-    id: image.id,
+    img: image,
+    id: image.id
   });
 
+  updateFramesRow();
+
   updateOnionSkinning();
+}
+
+function updateFramesRow() {
+  const framesRow = document.getElementById("framesBox");
+
+  if (useInOut && outIndex == 0)  {
+    inIndex = 0;
+    outIndex = frames.length;
+  }
+
+  framesRow.innerHTML = "";
+
+  const beforeBtn = document.createElement('button');
+  beforeBtn.className = 'middleBtn';
+  //framesRow.appendChild(beforeBtn);
+
+  for (let index = 0; index < frames.length; index++) {
+    const frame = frames[index];
+
+    frame.box.style.borderStyle = useInOut && index >= inIndex && index < outIndex ? "dashed" : "none";
+
+    const section = document.createElement('div');
+    section.style.display = 'flex';
+    //section.className = 'dropdown';
+
+    const dropdownContent = document.createElement('div');
+    dropdownContent.className = 'dropdown-content';
+    section.appendChild(dropdownContent);
+
+    const middleBtn = document.createElement('button');
+    middleBtn.className = 'middleBtn';
+    if (useInOut && index == inIndex) middleBtn.style.backgroundColor = "yellow";
+    else if (useInOut && index == outIndex) middleBtn.style.backgroundColor = "orange";
+
+    const markInBtn = document.createElement('button');
+    markInBtn.innerText = 'Mark In';
+    markInBtn.onclick = function () {
+      inIndex = index;
+
+      if (!useInOut) toggleUseInOut();
+      else updateFramesRow();
+    };
+    dropdownContent.appendChild(markInBtn);
+
+    const markOutBtn = document.createElement('button');
+    markOutBtn.innerText = 'Mark Out';
+    markOutBtn.onclick = function () {
+      outIndex = index;
+
+      if (!useInOut) toggleUseInOut();
+      else updateFramesRow();
+    };
+    dropdownContent.appendChild(markOutBtn);
+
+    const playFromHereBtn = document.createElement('button');
+    playFromHereBtn.innerText = 'Play From';
+    playFromHereBtn.onclick = function () {
+      previewAnimation(true, index);
+    };
+    dropdownContent.appendChild(playFromHereBtn);
+
+    const playToOutBtn = document.createElement('button');
+    playToOutBtn.innerText = 'Play to Out';
+    playToOutBtn.onclick = function () {
+      previewAnimation(false, index);
+    };
+    dropdownContent.appendChild(playToOutBtn);
+
+    const insertFramesBtn = document.createElement('button');
+    insertFramesBtn.innerText = 'Insert Frames';
+    insertFramesBtn.onclick = function () {
+      insertFrames(index);
+    };
+    dropdownContent.appendChild(insertFramesBtn);
+
+    middleBtn.onclick = function () {
+      markInBtn.style.display = useInOut && index < frames.length - 1 && index < outIndex && index != inIndex ? 'block' : 'none';
+      markOutBtn.style.display = useInOut && index > 0 && index > inIndex && index != outIndex ? 'block' : 'none';
+
+      dropdownContent.style.display = dropdownContent.style.display == 'block' ? 'none' : 'block';
+    }
+
+    middleBtn.onmouseenter = function () {
+      const video = document.getElementById("myVidPlayer");
+      const onionSkinsDiv = document.getElementById("onionSkins");
+      const onionSkinsDivMode = onionSkinsDiv.style.display;
+      const topSkin = document.getElementById("onionSkinImg1");
+      const topSkinMode = topSkin.style.display;
+      const middleSkin = document.getElementById("onionSkinImg2");
+      const middleSkinMode = middleSkin.style.display;
+
+      middleBtn.id = `${onionSkinsDivMode}:${topSkinMode}:${middleSkinMode}`;
+
+      topSkin.style.transform = 'scaleX(1)';
+      middleSkin.style.transform = 'scaleX(1)';
+
+      video.style.display = 'none';
+      onionSkinsDiv.style.display = 'block';
+      topSkin.style.display = 'block';
+      middleSkin.style.display = 'block';
+
+      topSkin.src = frame.frame;
+      try {
+        middleSkin.src = frames[index - 1].frame;
+      } catch (err) {}
+    }
+    middleBtn.onmouseleave = function () {
+      const video = document.getElementById("myVidPlayer");
+      const onionSkinsDiv = document.getElementById("onionSkins");
+      const onionSkinsDivMode = middleBtn.id.split(':')[0];
+      const topSkin = document.getElementById("onionSkinImg1");
+      const topSkinMode = middleBtn.id.split(':')[1];
+      const middleSkin = document.getElementById("onionSkinImg2");
+      const middleSkinMode = middleBtn.id.split(':')[2];
+
+      topSkin.style.transform = mirrorPreview ? 'scaleX(-1)' : 'scaleX(1)';
+      middleSkin.style.transform = mirrorPreview ? 'scaleX(-1)' : 'scaleX(1)';
+
+      video.style.display = 'block';
+      onionSkinsDiv.style.display = onionSkinsDivMode;
+      topSkin.style.display = topSkinMode;
+      middleSkin.style.display = middleSkinMode;
+
+      topSkin.src = '';
+      middleSkin.src = '';
+
+      updateOnionSkinning();
+    }
+    section.appendChild(middleBtn);
+    section.appendChild(frame.box);
+
+    if (index == frames.length - 1) {
+      const afterBtn = document.createElement('button');
+      afterBtn.className = 'middleBtn';
+      if (useInOut && index + 1 == inIndex) afterBtn.style.backgroundColor = "yellow";
+      else if (useInOut && index + 1 == outIndex) afterBtn.style.backgroundColor = "orange";
+
+      afterBtn.onclick = function() {
+        outIndex = index + 1;
+
+        if (!useInOut) toggleUseInOut();
+        else updateFramesRow();
+      }
+
+      afterBtn.onmouseenter = function () {
+        const video = document.getElementById("myVidPlayer");
+        const onionSkinsDiv = document.getElementById("onionSkins");
+        const onionSkinsDivMode = onionSkinsDiv.style.display;
+        const topSkin = document.getElementById("onionSkinImg1");
+        const topSkinMode = topSkin.style.display;
+        const middleSkin = document.getElementById("onionSkinImg2");
+        const middleSkinMode = middleSkin.style.display;
+    
+        afterBtn.id = `${onionSkinsDivMode}:${topSkinMode}:${middleSkinMode}:${video.srcObject}`;
+        
+        topSkin.style.transform = 'scaleX(1)';
+        middleSkin.style.transform = 'scaleX(1)';
+    
+        video.style.display = 'none';
+        onionSkinsDiv.style.display = 'block';
+        topSkin.style.display = 'block';
+        middleSkin.style.display = 'block';
+    
+        topSkin.src = frames[frames.length - 1].frame;
+      }
+      afterBtn.onmouseleave = function () {
+        const video = document.getElementById("myVidPlayer");
+        const onionSkinsDiv = document.getElementById("onionSkins");
+        const onionSkinsDivMode = afterBtn.id.split(':')[0];
+        const topSkin = document.getElementById("onionSkinImg1");
+        const topSkinMode = afterBtn.id.split(':')[1];
+        const middleSkin = document.getElementById("onionSkinImg2");
+        const middleSkinMode = afterBtn.id.split(':')[2];
+    
+        topSkin.style.transform = mirrorPreview ? 'scaleX(-1)' : 'scaleX(1)';
+        middleSkin.style.transform = mirrorPreview ? 'scaleX(-1)' : 'scaleX(1)';
+    
+        video.style.display = 'block';
+        onionSkinsDiv.style.display = onionSkinsDivMode;
+        topSkin.style.display = topSkinMode;
+        middleSkin.style.display = middleSkinMode;
+        topSkin.src = '';
+        middleSkin.src = '';
+    
+        updateOnionSkinning();
+      }
+      section.appendChild(afterBtn);
+
+    }
+
+    framesRow.appendChild(section);
+  }
+
+  let seconds = 0;
+  const part = 1 / parseInt(`${document.getElementById('fpsInput').value}`);
+  for (const fr of frames) {
+    seconds += part * fr.framesFor;
+  }
+  const date = new Date(seconds * 1000);
+  const timeString = date.toISOString().substr(11, 8);
+
+  document.getElementById(
+    "framesTitle"
+  ).innerText = `Frames (${frames.length}, ${timeString}):`;
+
+  document.getElementById("framesSection").style.display =
+      frames.length > 0 ? "block" : "none";
+}
+
+function toggleUseInOut() {
+  useInOut = !useInOut;
+  document.getElementById('useInOutToggle').className = useInOut ? 'buttonOn' : 'buttonOff';
+
+  updateFramesRow();
 }
 
 function toggleOnionSkinning() {
@@ -461,23 +716,51 @@ function getCameras() {
             loadFeed(device.deviceId);
           };
 
+          const cameraBtn2 = document.createElement("button");
+          cameraBtn2.innerText = device.label;
+          cameraBtn2.onclick = function () {
+            loadFeed(device.deviceId);
+          };
+
           document
             .getElementById("showFeedDropdownContent")
             .appendChild(cameraBtn);
+
+          document
+            .getElementById("showFeedDropdownContent2")
+            .appendChild(cameraBtn2);
         }
       });
     })
     .catch(function (err) {
       console.log(err.name + ": " + err.message);
     });
+
+    const noFeedBtn = document.createElement("button");
+    noFeedBtn.innerText = 'No Feed';
+    noFeedBtn.onclick = function () {
+      loadFeed();
+    };
+
+    const noFeedBtn2 = document.createElement("button");
+    noFeedBtn2.innerText = 'No Feed';
+    noFeedBtn2.onclick = function () {
+      loadFeed();
+    };
+
+    document.getElementById("showFeedDropdownContent").appendChild(noFeedBtn);
+    document.getElementById("showFeedDropdownContent2").appendChild(noFeedBtn2);
 }
 
-async function previewAnimation() {
+async function previewAnimation(ignoreUntil = false, currentFrame = -1) {
+  isPlaying = true;
+
   const canvas = document.getElementById("previewCanvas");
   //const ctx = canvas.getContext("2d");
 
   const fps = document.getElementById("fpsInput").value;
-  let currentFrame = 0;
+  if (currentFrame == -1) currentFrame = useInOut ? inIndex : 0;
+  let until = useInOut ? outIndex - 1 : frames.length;
   let framesFor = 0;
 
   let showFrame = setInterval(() => {
@@ -487,28 +770,129 @@ async function previewAnimation() {
         currentFrame += 1;
       }
 
-      if (framesFor == 0) framesFor = frames[currentFrame].framesFor;
+      if (!ignoreUntil && currentFrame > until) {
+        for (const fr of frames)
+          fr.img.style.filter = "sepia(0%)";
 
-      canvas.src = frames[currentFrame].frame;
-      canvas.style.display = "block";
+        if (loopPreview) {
+          currentFrame = useInOut ? inIndex : 0;
+        } else {
+          canvas.style.display = "none";
+          isPlaying = false;
+          clearInterval(showFrame);
+        }
+      } else {
+        if (framesFor == 0) framesFor = frames[currentFrame].framesFor;
 
-      framesFor -= 1;
-      if (framesFor == 0) currentFrame += 1;
+        canvas.src = frames[currentFrame].frame;
+        canvas.style.display = "block";
+        frames[currentFrame].img.style.filter = "sepia(100%)";
+        if (currentFrame > 0)
+          frames[currentFrame - 1].img.style.filter = "sepia(0%)";
+
+        framesFor -= 1;
+        if (framesFor == 0) currentFrame += 1;
+      }
     } catch (err) {
+      for (const fr of frames)
+        fr.img.style.filter = "sepia(0%)";
+
       if (loopPreview) {
-        currentFrame = 0;
+        currentFrame = useInOut ? inIndex : 0;
       } else {
         canvas.style.display = "none";
+        isPlaying = false;
         clearInterval(showFrame);
       }
     }
   }, 1000 / fps);
 }
 
+async function downloadFrame(src, num) {
+  const zip = new JSZip();
+  zip.file(`frame ${num + 1}.png`, b64toBlob(src, "image/png"));
+  zip.generateAsync({ type: "blob" }).then((content) => {
+    saveAs(content, `frame ${num + 1}.zip`);
+  });
+}
+
+async function insertFrames(index) {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/png';
+  input.multiple = true;
+  input.onchange = async function(event) {
+    const oldFrames = frames;
+    clearStage(true);
+
+    let i = 0;
+    for (const fr of oldFrames) {
+      if (i == index) {
+        const files = event.target.files;
+        for (let j = 0; j < files.length; j++) {
+          let finished = false;
+          const reader = new FileReader();
+          reader.readAsDataURL(files[j]);
+          reader.onloadend = function() {
+            captureFrame(reader.result);
+            finished = true;
+          };
+
+          while (!finished) { await new Promise(resolve => setTimeout(resolve, 125)); }
+        }
+      }
+
+      captureFrame(fr.frame, fr.visible, fr.framesFor);
+
+      i += 1;
+    }
+  };
+  input.click();  
+}
+
+function appendFrames() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/png';
+  input.multiple = true;
+  input.onchange = function(event) {
+    for (const file of event.target.files) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = function() {
+        captureFrame(reader.result);
+      };
+    }
+  };
+  input.click();  
+}
+
+function replaceFrame(index) {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/png';
+  input.onchange = function(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function() {
+      const img = frames[index].img;
+      img.src = reader.result;
+      frames[index].frame = img.src;
+    };
+  };
+  input.click();  
+}
+
 function exportFrames() {
+  let startIndex = useInOut ? inIndex : 0;
+  let until = useInOut ? outIndex - 1 : frames.length;
   var imageBlobs = [];
   for (const frame of frames) {
     if (!frame.visible) continue;
+
+    startIndex += frame.framesFor - 1;
+    until += frame.framesFor - 1;
 
     for (let i = 0; i < frame.framesFor; i++) {
       imageBlobs.push(frame.frame);
@@ -521,17 +905,13 @@ function exportFrames() {
   const zip = new JSZip();
   let i = 1;
   for (const blob of imageBlobs) {
-    console.log(i);
-    zip.file(`${name} - frame ${i}.png`, b64toBlob(blob, "image/png"));
+    if (i - 1 >= startIndex && i - 1 <= until) zip.file(`${name} - frame ${i}.png`, b64toBlob(blob, "image/png"));
     i++;
   }
   zip.generateAsync({ type: "blob" }).then((content) => {
     saveAs(content, `${name} frames.zip`);
   });
 }
-
-const b64toBlob = (base64, type = "application/octet-stream") =>
-  fetch(base64).then((res) => res.blob());
 
 async function exportToWebM() {
   const video = document.querySelector("#myVidPlayer");
@@ -695,8 +1075,8 @@ function importProject() {
   input.click();
 }
 
-function clearStage() {
-  if (canDeleteStage) {
+function clearStage(skipCheck = false) {
+  if (canDeleteStage || skipCheck) {
     canDeleteStage = false;
     document.getElementById("clearBtn").innerText = "Clear Stage";
 
@@ -707,9 +1087,11 @@ function clearStage() {
     document.getElementById("framesSection").style.display = "none";
     document.getElementById("framesBox").innerHTML = "";
 
-    alert("Stage cleared");
+    if(!skipCheck) alert("Stage cleared");
 
     updateOnionSkinning();
+
+    updateFramesRow();
   } else {
     canDeleteStage = true;
     document.getElementById("clearBtn").innerText =
