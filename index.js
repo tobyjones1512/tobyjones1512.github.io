@@ -36,6 +36,8 @@ var useInOut = false;
 var inIndex = 0;
 var outIndex = 0;
 var isPlaying = false;
+var isSelecting = false;
+var hasSelections = false;
 
 function clamp(num, min, max) {
   return num <= min ? min : num >= max ? max : num;
@@ -51,6 +53,8 @@ function start() {
   inIndex = 0;
   outIndex = 0;
   isPlaying = false;
+  isSelecting = false;
+  hasSelections = false;
   b64toBlob = (base64, type = "application/octet-stream") =>
   fetch(base64).then((res) => res.blob());
 
@@ -144,9 +148,16 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
   frameBox.style.width = `${w}px`;
   frameBox.style.height = `${h}px`;
   frameBox.style.borderRadius = "7.5px";
-  frameBox.style.borderWidth = "3px";
-  frameBox.style.borderColor = "darkgrey";
-  frameBox.style.borderType = "none";
+  frameBox.addEventListener('click', (event) => {
+    let index = 0;
+    for (const _ of frames) {
+      if (_.id == image.id) break;
+
+      index += 1;
+    }
+
+    if (event.shiftKey) selectFrame(index, false); else selectFrame(index);
+  });
 
   if (source == "none") image.src = canvas.toDataURL();
   else image.src = source;
@@ -159,6 +170,9 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
   image.style.padding = "0px";
   image.style.zIndex = "3";
   image.style.objectFit = "cover";
+  image.style.borderWidth = "3px";
+  image.style.borderColor = "darkgrey";
+  image.style.borderType = "none";
   image.id = uuidv4();
 
   let didFlash = false;
@@ -426,7 +440,8 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
     visible: visible,
     framesFor: framesFor,
     img: image,
-    id: image.id
+    id: image.id,
+    selected: false
   });
 
   updateFramesRow();
@@ -451,7 +466,8 @@ function updateFramesRow() {
   for (let index = 0; index < frames.length; index++) {
     const frame = frames[index];
 
-    frame.box.style.borderStyle = useInOut && index >= inIndex && index < outIndex ? "dashed" : "none";
+    frame.img.style.borderColor = frame.selected ? 'darkblue' : 'darkgrey';
+    frame.img.style.borderStyle = frame.selected || ( useInOut && index >= inIndex && index < outIndex ) ? "solid" : "none";
 
     const section = document.createElement('div');
     section.style.display = 'flex';
@@ -627,7 +643,12 @@ function updateFramesRow() {
 
   let seconds = 0;
   const part = 1 / parseInt(`${document.getElementById('fpsInput').value}`);
+  let numFrames = 0;
   for (const fr of frames) {
+    if (!fr.visible) continue;
+
+    numFrames += 1 * fr.framesFor;
+
     seconds += part * fr.framesFor;
   }
   const date = new Date(seconds * 1000);
@@ -635,7 +656,7 @@ function updateFramesRow() {
 
   document.getElementById(
     "framesTitle"
-  ).innerText = `Frames (${frames.length}, ${timeString}):`;
+  ).innerText = `Frames (${numFrames}, ${timeString}):`;
 
   document.getElementById("framesSection").style.display =
       frames.length > 0 ? "block" : "none";
@@ -644,6 +665,42 @@ function updateFramesRow() {
 function toggleUseInOut() {
   useInOut = !useInOut;
   document.getElementById('useInOutToggle').className = useInOut ? 'buttonOn' : 'buttonOff';
+
+  updateFramesRow();
+}
+
+function selectFrame(index, override = true) {
+  const toBe = !frames[index].selected;
+
+  if (override)
+    for (const fr of frames)
+      fr.selected = false;
+
+  frames[index].selected = toBe;
+
+  hasSelections = false;
+  for (const fr of frames) {
+    if (fr.selected) {
+      hasSelections = true;
+      break;
+    }
+  }
+
+  updateFramesRow();
+}
+
+function selectInOut() {
+  for (const fr of frames)
+    fr.selected = false;
+
+  hasSelections = false;
+
+  for (let i = 0; i < frames.length; i++) {
+    if (i < inIndex || i >= outIndex) continue;
+
+    frames[i].selected = true;
+    hasSelections = true;
+  }
 
   updateFramesRow();
 }
@@ -765,9 +822,19 @@ async function previewAnimation(ignoreUntil = false, currentFrame = -1) {
 
   let showFrame = setInterval(() => {
     try {
+      for (const fr of frames)
+        fr.img.style.filter = "sepia(0%)";
+        
       while (true) {
-        if (frames[currentFrame].visible) break;
-        currentFrame += 1;
+        if (!hasSelections) {
+          if (frames[currentFrame].visible) break;
+
+          currentFrame += 1;
+        } else {
+          if (frames[currentFrame].selected && frames[currentFrame].visible) break;
+
+          currentFrame += 1;
+        }
       }
 
       if (!ignoreUntil && currentFrame > until) {
@@ -888,14 +955,17 @@ function exportFrames() {
   let startIndex = useInOut ? inIndex : 0;
   let until = useInOut ? outIndex - 1 : frames.length;
   var imageBlobs = [];
+  let i = -1;
   for (const frame of frames) {
-    if (!frame.visible) continue;
+    i += 1;
+    if (!frame.visible) {
+      continue;
+    }
 
-    startIndex += frame.framesFor - 1;
-    until += frame.framesFor - 1;
-
-    for (let i = 0; i < frame.framesFor; i++) {
-      imageBlobs.push(frame.frame);
+    if (i >= startIndex && i <= until) {
+      for (let _ = 0; _ < frame.framesFor; _++) {
+        imageBlobs.push(frame.frame);
+      }
     }
   }
 
@@ -903,9 +973,9 @@ function exportFrames() {
   //const fps = parseInt(`${document.getElementById('fpsInput').value}`);
 
   const zip = new JSZip();
-  let i = 1;
+  i = 0;
   for (const blob of imageBlobs) {
-    if (i - 1 >= startIndex && i - 1 <= until) zip.file(`${name} - frame ${i}.png`, b64toBlob(blob, "image/png"));
+    zip.file(`${name} - frame ${i}.png`, b64toBlob(blob, "image/png"));
     i++;
   }
   zip.generateAsync({ type: "blob" }).then((content) => {

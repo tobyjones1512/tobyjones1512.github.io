@@ -222,7 +222,7 @@
 
             <div id="optionsRow" style="margin-left: 50px; margin-right: 10px; overflow-x: visible; display: none; margin-top: 5px;">
                 <p style="margin-bottom: 20px;"><strong>FPS:</strong></p>
-                <input type="number" id="fpsInput" value="24" style="margin-right: 50px; -webkit-app-region: no-drag; margin-bottom: -2px;">
+                <input type="number" id="fpsInput" value="24" style="margin-right: 50px; -webkit-app-region: no-drag; margin-bottom: -2px;" onchange="updateFramesRow();">
 
                 <button onclick="if (!isPlaying) previewAnimation();">Preview</button>
                 <button id="loopBtn" class="buttonOff" onclick="toggleLoopPreview();">Loop</button>
@@ -231,6 +231,9 @@
                 <button id="onionBtn" class="buttonOff" onclick="toggleOnionSkinning();"
                     style="margin-left: 50px;">Onion Skinning</button>
                 <button id="trailsBtn" class="buttonOff" onclick="toggleTrailOnionSkins();">Trail Skins</button>
+
+                <button id="selectInOutBtn" style="margin-left: 50px;" onclick="if (useInOut) selectInOut();">Select In/Out</button>
+                <!-- <button onclick="" class="buttonOff">Select Frames</button> -->
 
                 <button onclick="exportFrames();" style="margin-left: 50px;">Export Frames</button>
                 <button onclick="downloadProject();">Save Project</button>
