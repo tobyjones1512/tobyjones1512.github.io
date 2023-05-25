@@ -1,5 +1,8 @@
 const { app, BrowserWindow } = require("electron");
 const fs = require("fs");
+const internal = require("stream");
+let createFFmpeg = null;
+let fetchFile = null;
 
 app.setName("Stop Motion Tool");
 
@@ -23,6 +26,9 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
   createWindow();
+
+  createFFmpeg = require('@ffmpeg/ffmpeg').createFFmpeg;
+  fetchFile = require('@ffmpeg/ffmpeg').fetchFile;
 });
 
 var totalFrames = 0;
@@ -39,10 +45,6 @@ var isPlaying = false;
 var isSelecting = false;
 var hasSelections = false;
 
-function clamp(num, min, max) {
-  return num <= min ? min : num >= max ? max : num;
-}
-
 function start() {
   totalFrames = 0;
   frames = [];
@@ -58,11 +60,15 @@ function start() {
   b64toBlob = (base64, type = "application/octet-stream") =>
   fetch(base64).then((res) => res.blob());
 
+  //console.log(getEaseInOutCubicFrames(14, 18));
+
   getCameras();
+
+  const blurBar = document.getElementById("previewBlurBar");
+  blurBar.style.height = `${720 + 55 + 30}px`;
 
   window.onscroll = function () {
     const previewArea = document.getElementById("previewSection");
-    const blurBar = document.getElementById("previewBlurBar");
     const frameToolsBar = document.getElementById("frameToolsBar");
 
     const amountScrolled = window.scrollY;
@@ -74,6 +80,10 @@ function start() {
 
     previewArea.style.height = amountScrolled == 0 ? "720px" : `${720 / 2}px`;
     previewArea.style.width = amountScrolled == 0 ? "1280px" : `${1280 / 2}px`;
+
+    const guideImg = document.getElementById("compositonGuideImg");
+    guideImg.style.height = amountScrolled == 0 ? "720px" : `${720 / 2}px`;
+    guideImg.style.width = amountScrolled == 0 ? "1280px" : `${1280 / 2}px`;
 
     const topSkin = document.getElementById("onionSkinImg1");
     topSkin.style.height = amountScrolled == 0 ? "720px" : `${720 / 2}px`;
@@ -87,7 +97,7 @@ function start() {
     bottomSkin.style.height = amountScrolled == 0 ? "720px" : `${720 / 2}px`;
     bottomSkin.style.width = amountScrolled == 0 ? "1280px" : `${1280 / 2}px`;
 
-    blurBar.style.height = amountScrolled == 0 ? "720px" : `${720 / 2 + 50}px`;
+    blurBar.style.height = amountScrolled == 0 ? `${720 + 55 + 30}px` : `${720 / 2 + 85}px`;
     frameToolsBar.style.top =
       amountScrolled == 0 ? "725px" : `${720 / 2 + 5}px`;
   };
@@ -119,7 +129,7 @@ function loadFeed(_deviceId = 'NO FEED') {
   document.getElementById("optionsRow").style.display = "flex";
 }
 
-function captureFrame(source = "none", visible = true, framesFor = 1) {
+function captureFrame(source = "none", visible = true, framesFor = 1, filters = '', isNest = false, nest = null) {
   const w = 213.5;
   const h = 120;
 
@@ -173,7 +183,7 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
   image.style.borderWidth = "3px";
   image.style.borderColor = "darkgrey";
   image.style.borderType = "none";
-  image.id = uuidv4();
+  image.id = `${uuidv4()} - ${new Date().getMilliseconds()}`;
 
   let didFlash = false;
   let interval = 0;
@@ -222,6 +232,7 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
 
   const optionsMenu = document.createElement("div");
   optionsMenu.className = "dropdown-content";
+  optionsMenu.id = uuidv4();
   optionsDiv.appendChild(optionsMenu);
 
   const moveRightBtn = document.createElement("button");
@@ -284,6 +295,7 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
   framesForLbl.style.zIndex = "20";
   framesForLbl.style.cursor = "default";
   framesForLbl.style.display = framesFor == 1 ? "none" : "block";
+  framesForLbl.id = `${uuidv4()} - ${new Date().getMilliseconds()}`;
   frameBox.appendChild(framesForLbl);
 
   if (!visible) frameBox.style.opacity = "50%";
@@ -316,7 +328,7 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
   moveLeftBtn.onclick = function () {
     let index = 0;
     for (let i = 0; i < frames.length; i++) {
-      if (frames[i].frame != image.src) continue;
+      if (frames[i].id != image.id) continue;
 
       index = i;
     }
@@ -333,7 +345,7 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
   moveRightBtn.onclick = function () {
     let index = 0;
     for (let i = 0; i < frames.length; i++) {
-      if (frames[i].frame != image.src) continue;
+      if (frames[i].id != image.id) continue;
 
       index = i;
     }
@@ -441,8 +453,15 @@ function captureFrame(source = "none", visible = true, framesFor = 1) {
     framesFor: framesFor,
     img: image,
     id: image.id,
-    selected: false
+    framesForLbl: framesForLbl,
+    optionsMenuId: optionsMenu.id,
+    selected: false,
+    filters: filters,
+    isNest: isNest,
+    nest: nest
   });
+
+  totalFrames += 1;
 
   updateFramesRow();
 
@@ -466,8 +485,13 @@ function updateFramesRow() {
   for (let index = 0; index < frames.length; index++) {
     const frame = frames[index];
 
-    frame.img.style.borderColor = frame.selected ? 'darkblue' : 'darkgrey';
-    frame.img.style.borderStyle = frame.selected || ( useInOut && index >= inIndex && index < outIndex ) ? "solid" : "none";
+    frame.img.style.borderColor = frame.selected ? 'darkblue' : frame.isNest ? 'lime' : 'darkgrey';
+    frame.img.style.borderStyle = frame.isNest ? 'dotted' : useInOut && index >= inIndex && index < outIndex ? "dashed" : frame.selected ? "solid" : "none";
+
+    if (frame.isNest) frame.framesForLbl.innerHTML = `${frame.nest.title}`;
+    else frame.framesForLbl.innerHTML = `${frame.framesFor}`;
+
+    frame.framesForLbl.style.display = frame.framesForLbl.innerText == '1' ? "none" : "block";
 
     const section = document.createElement('div');
     section.style.display = 'flex';
@@ -523,11 +547,20 @@ function updateFramesRow() {
     };
     dropdownContent.appendChild(insertFramesBtn);
 
+    const crossfadeBtn = document.createElement('button');
+    crossfadeBtn.innerText = 'Crossfade';
+    crossfadeBtn.onclick = function () {
+      showCrossfadeDialog(frames, index);
+    };
+    //dropdownContent.appendChild(crossfadeBtn);
+
     middleBtn.onclick = function () {
       markInBtn.style.display = useInOut && index < frames.length - 1 && index < outIndex && index != inIndex ? 'block' : 'none';
       markOutBtn.style.display = useInOut && index > 0 && index > inIndex && index != outIndex ? 'block' : 'none';
 
       dropdownContent.style.display = dropdownContent.style.display == 'block' ? 'none' : 'block';
+    
+      crossfadeBtn.style.display = index == 0 ? 'none' : 'block';
     }
 
     middleBtn.onmouseenter = function () {
@@ -813,67 +846,175 @@ async function previewAnimation(ignoreUntil = false, currentFrame = -1) {
   isPlaying = true;
 
   const canvas = document.getElementById("previewCanvas");
+  const frs = [];
+  const ids = [];
   //const ctx = canvas.getContext("2d");
 
   const fps = document.getElementById("fpsInput").value;
   if (currentFrame == -1) currentFrame = useInOut ? inIndex : 0;
   let until = useInOut ? outIndex - 1 : frames.length;
-  let framesFor = 0;
+  const guideImg = document.getElementById("compositonGuideImg");
+  guideImg.style.opacity = '0%';
 
-  let showFrame = setInterval(() => {
+  for (let i = currentFrame; i < frames.length; i++) {
+    if (!frames[i].visible) continue;
+
+    if (!ignoreUntil && i > until) break;
+
+    const id = uuidv4();
+
+    if (frames[i].isNest) {
+      const img = frames[i].img;
+      for (const _ of frames[i].nest.frames) {
+        const tempFrame = _;
+        tempFrame.img = img;
+        for (let __ = 0; __ < tempFrame.framesFor; __++) {
+          frs.push(tempFrame);
+          ids.push(id);
+        }
+      }
+    }
+    else {
+      for (let __ = 0; __ < frames[i].framesFor; __++) {
+        frs.push(frames[i]);
+        ids.push(id);
+      }
+    }
+  }
+
+  currentFrame = 0;
+
+  let exit = false;
+  let lastId = '';
+  while (true) {
     try {
-      for (const fr of frames)
-        fr.img.style.filter = "sepia(0%)";
-        
-      while (true) {
-        if (!hasSelections) {
-          if (frames[currentFrame].visible) break;
+      canvas.src = frs[currentFrame].frame;
+      canvas.style.display = "block";
+      if (currentFrame > 0 && ids[currentFrame] != lastId)
+        for (const _ of frs) _.img.style.filter = "sepia(0%)";
 
-          currentFrame += 1;
-        } else {
-          if (frames[currentFrame].selected && frames[currentFrame].visible) break;
-
-          currentFrame += 1;
-        }
-      }
-
-      if (!ignoreUntil && currentFrame > until) {
-        for (const fr of frames)
-          fr.img.style.filter = "sepia(0%)";
-
-        if (loopPreview) {
-          currentFrame = useInOut ? inIndex : 0;
-        } else {
-          canvas.style.display = "none";
-          isPlaying = false;
-          clearInterval(showFrame);
-        }
-      } else {
-        if (framesFor == 0) framesFor = frames[currentFrame].framesFor;
-
-        canvas.src = frames[currentFrame].frame;
-        canvas.style.display = "block";
-        frames[currentFrame].img.style.filter = "sepia(100%)";
-        if (currentFrame > 0)
-          frames[currentFrame - 1].img.style.filter = "sepia(0%)";
-
-        framesFor -= 1;
-        if (framesFor == 0) currentFrame += 1;
-      }
+      frs[currentFrame].img.style.filter = "sepia(100%)";
+      
+      lastId = ids[currentFrame];
+      currentFrame += 1;
     } catch (err) {
       for (const fr of frames)
         fr.img.style.filter = "sepia(0%)";
 
       if (loopPreview) {
-        currentFrame = useInOut ? inIndex : 0;
+        currentFrame = 0;
       } else {
         canvas.style.display = "none";
         isPlaying = false;
-        clearInterval(showFrame);
+        guideImg.style.opacity = '90%';
+        exit = true;
       }
     }
-  }, 1000 / fps);
+
+    if (exit) break;
+
+    await new Promise(resolve => setTimeout(resolve, 1000 / fps));
+  };
 }
+
+// async function previewAnimation(ignoreUntil = false, currentFrame = -1) {
+//   isPlaying = true;
+
+//   const canvas = document.getElementById("previewCanvas");
+//   //const ctx = canvas.getContext("2d");
+
+//   const fps = document.getElementById("fpsInput").value;
+//   if (currentFrame == -1) currentFrame = useInOut ? inIndex : 0;
+//   let until = useInOut ? outIndex - 1 : frames.length;
+//   let framesFor = 0;
+//   const guideImg = document.getElementById("compositonGuideImg");
+//   guideImg.style.opacity = '0%';
+
+//   let exit = false;
+//   while (true) {
+//     try {
+//       for (const fr of frames)
+//         fr.img.style.filter = "sepia(0%)";
+        
+//       while (true) {
+//         // if (!hasSelections) {
+//           if (frames[currentFrame].visible) break;
+
+//           currentFrame += 1;
+//         // } else {
+//           // if (frames[currentFrame].selected && frames[currentFrame].visible) break;
+//           // currentFrame += 1;
+//         // }
+//       }
+
+//       if (!ignoreUntil && currentFrame > until) {
+//         for (const fr of frames)
+//           fr.img.style.filter = "sepia(0%)";
+
+//         if (loopPreview) {
+//           currentFrame = useInOut ? inIndex : 0;
+//         } else {
+//           canvas.style.display = "none";
+//           isPlaying = false;
+//           guideImg.style.opacity = '90%';
+//           exit = true;
+//         }
+//       } else {
+//         if (framesFor == 0) framesFor = frames[currentFrame].framesFor;
+
+//         // if (!frames[currentFrame].isNest) {
+//           canvas.src = frames[currentFrame].frame;
+//           canvas.style.display = "block";
+//           frames[currentFrame].img.style.filter = "sepia(100%)";
+//           if (currentFrame > 0)
+//             frames[currentFrame - 1].img.style.filter = "sepia(0%)";
+
+//           framesFor -= 1;
+//           if (framesFor == 0) currentFrame += 1;
+//         // } else {
+//         //   canvas.style.display = "block";
+
+//         //   frames[currentFrame].img.style.filter = "sepia(100%)";
+//         //   frames[currentFrame].nest.isComplete = false;
+//         //   previewNest(frames[currentFrame], canvas, fps);
+
+//         //   while (!frames[currentFrame].nest.isComplete) { await new Promise(resolve => setTimeout(resolve, 0.01)); }
+
+//         //   currentFrame += 1;
+//         // }
+//       }
+//     } catch (err) {
+//       for (const fr of frames)
+//         fr.img.style.filter = "sepia(0%)";
+
+//       if (loopPreview) {
+//         currentFrame = useInOut ? inIndex : 0;
+//       } else {
+//         canvas.style.display = "none";
+//         isPlaying = false;
+//         guideImg.style.opacity = '90%';
+//         exit = true;
+
+//         console.log(err);
+//       }
+//     }
+
+//     if (exit) break;
+
+//     await new Promise(resolve => setTimeout(resolve, 1000 / fps));
+//   };
+// }
+
+// async function previewNest(object, canvas, fps) {
+//   for (let i = 0; i < object.nest.frames.length; i++) {
+//     const fr = object.nest.frames[i];
+//     canvas.src = fr.frame;
+
+//     await new Promise(resolve => setTimeout(resolve, 1000 / fps - (i == object.nest.frames.length - 1 ? 0.1 : 0)));
+//   }
+
+//   object.nest.isComplete = true;
+// }
 
 async function downloadFrame(src, num) {
   const zip = new JSZip();
@@ -983,83 +1124,184 @@ function exportFrames() {
   });
 }
 
-async function exportToWebM() {
-  const video = document.querySelector("#myVidPlayer");
-  const name = document.getElementById("filmTitle").innerText;
-  const images = [];
-  const fps = parseInt(`${document.getElementById("fpsInput").value}`);
+// async function exportToWebM() {
+//   const video = document.querySelector("#myVidPlayer");
+//   const name = document.getElementById("filmTitle").innerText;
+//   const images = [];
+//   const fps = parseInt(`${document.getElementById("fpsInput").value}`);
 
-  const canvas = document.createElement("canvas");
-  const previewCanvas = document.getElementById("previewCanvas");
-  const stream = canvas.captureStream();
-  const recorder = new MediaRecorder(stream, {
-    mimeType: "video/webm",
-  });
-  const chunks = [];
+//   const canvas = document.createElement("canvas");
+//   const previewCanvas = document.getElementById("previewCanvas");
+//   const stream = canvas.captureStream();
+//   const recorder = new MediaRecorder(stream, {
+//     mimeType: "video/webm",
+//   });
+//   const chunks = [];
 
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+//   canvas.width = video.videoWidth;
+//   canvas.height = video.videoHeight;
 
-  recorder.ondataavailable = (event) => {
-    chunks.push(event.data);
-  };
+//   recorder.ondataavailable = (event) => {
+//     chunks.push(event.data);
+//   };
 
-  for (const frame of frames) {
-    if (!frame.visible) continue;
-    images.push({
-      src: frame.frame,
-      framesFor: frame.framesFor,
-    });
-  }
+//   for (const frame of frames) {
+//     if (!frame.visible) continue;
+//     images.push({
+//       src: frame.frame,
+//       framesFor: frame.framesFor,
+//     });
+//   }
 
-  previewCanvas.style.display = "block";
+//   previewCanvas.style.display = "block";
 
-  recorder.start();
+//   recorder.start();
 
-  const context = canvas.getContext("2d");
-  let framesFor = 1;
-  for (let i = 0; i < frames.length; i++) {
-    framesFor = frames[i].framesFor;
+//   const context = canvas.getContext("2d");
+//   let framesFor = 1;
+//   for (let i = 0; i < frames.length; i++) {
+//     framesFor = frames[i].framesFor;
 
-    canvas.width = frames[i].frame.width;
-    canvas.height = frames[i].frame.height;
+//     canvas.width = frames[i].frame.width;
+//     canvas.height = frames[i].frame.height;
 
-    const image = new Image();
-    image.style.objectFit = "cover";
-    image.src = frames[i].frame;
-    previewCanvas.src = frames[i].frame;
+//     const image = new Image();
+//     image.style.objectFit = "cover";
+//     image.src = frames[i].frame;
+//     previewCanvas.src = frames[i].frame;
+    
+//     context.drawImage(image, 0, 0, video.videoWidth, video.videoHeight);
 
-    context.drawImage(image, 0, 0, video.videoWidth, video.videoHeight);
+//     canvas.toBlob(
+//       (blob) => {
+//         recorder.ondataavailable({ data: blob });
+//       },
+//       "image/webp",
+//       1
+//     );
 
-    canvas.toBlob(
-      (blob) => {
-        recorder.ondataavailable({ data: blob });
-      },
-      "image/webp",
-      1
-    );
+//     await new Promise((r) => setTimeout(r, framesFor * (1000 / fps)));
+//   }
 
-    await new Promise((r) => setTimeout(r, framesFor * (1000 / fps)));
-  }
+//   recorder.stop();
 
-  recorder.stop();
+//   const blob = new Blob(chunks, { type: "video/webm" });
 
-  const blob = new Blob(chunks, { type: "video/webm" });
+//   const url = URL.createObjectURL(blob);
 
-  const url = URL.createObjectURL(blob);
+//   const a = document.createElement("a");
 
-  const a = document.createElement("a");
+//   a.download = `${name}.webm`;
 
-  a.download = `${name}.webm`;
+//   a.href = url;
 
-  a.href = url;
+//   document.body.appendChild(a);
 
-  document.body.appendChild(a);
+//   a.click();
 
-  a.click();
+//   document.body.removeChild(a);
+// }
 
-  document.body.removeChild(a);
-}
+// async function exportToMP4() {
+//   const fps = parseInt(`${document.getElementById("fpsInput").value}`);
+//   const frs = [];
+
+//   const video = document.querySelector("#myVidPlayer");
+//   const canvas = document.createElement("canvas");
+//   const stream = canvas.captureStream();
+//   const recorder = new MediaRecorder(stream, {
+//     mimeType: "video/webm",
+//   });
+//   const chunks = [];
+//   const context = canvas.getContext("2d");
+
+//   canvas.width = video.videoWidth;
+//   canvas.height = video.videoHeight;
+
+//   recorder.ondataavailable = (event) => {
+//     chunks.push(event.data);
+//   };
+
+//   recorder.onstop = (event) => {
+//     const blob = new Blob(chunks, { type: "video/webm" });
+
+//     const url = URL.createObjectURL(blob);
+  
+//     const a = document.createElement("a");
+  
+//     a.download = `${document.getElementById('filmTitle').innerText}.webm`;
+  
+//     a.href = url;
+  
+//     document.body.appendChild(a);
+  
+//     a.click();
+  
+//     document.body.removeChild(a);
+//   }
+
+//   let currentFrame = useInOut ? inIndex : 0;
+//   let until = useInOut ? outIndex - 1 : frames.length;
+
+//   for (let i = currentFrame; i < frames.length; i++) {
+//     if (!frames[i].visible) continue;
+
+//     if (useInOut && i > until) break;
+
+//     if (frames[i].isNest) {
+//       for (const _ of frames[i].nest.frames) {
+//         for (let __ = 0; __ < tempFrame.framesFor; __++) {
+//           frs.push(tempFrame);
+//         }
+//       }
+//     }
+//     else {
+//       for (let __ = 0; __ < frames[i].framesFor; __++) {
+//         frs.push(frames[i]);
+//       }
+//     }
+//   }
+
+//   recorder.start();
+
+//   // const ffmpeg = createFFmpeg({ log: true });
+//   // await ffmpeg.load();
+//   let index = 0;
+//   for (const img of frs) {
+//     // ffmpeg.FS('writeFile', `image${index}.png`, await fetchFile(img.frame));
+//     index ++;
+
+//     const image = new Image();
+//     image.style.objectFit = "cover";
+//     image.src = img.frame;
+//     context.drawImage(image, 0, 0, video.videoWidth, video.videoHeight);
+
+//     canvas.toBlob(
+//       (blob) => {
+//         recorder.ondataavailable({ data: blob });
+//       },
+//       "image/webp",
+//       1
+//     );
+
+//     console.log(index);
+
+//     await new Promise((r) => setTimeout(r, 1000 / fps));
+//   }
+
+//   recorder.stop();
+
+//   // const filename = `${document.getElementById('filmTitle').innerText}.mp4`;
+//   // await ffmpeg.run('-framerate', `1/${fps}`, '-i', 'image%d.png', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', filename);
+//   // const data = ffmpeg.FS('readFile', filename);
+//   // const url = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
+
+//   // const link = document.createElement('a');
+//   // link.href = url;
+//   // link.download = filename;
+//   // link.click();
+//   // document.removeChild(link);
+// }
 
 function togglePreviewMirror() {
   const btn = document.getElementById("mirrorBtn");
@@ -1071,6 +1313,9 @@ function togglePreviewMirror() {
 
   const preview = document.getElementById("myVidPlayer");
   preview.style.transform = `scaleX(${mirrorPreview ? -1 : 1})`;
+
+  const compGuide = document.getElementById("myVidPlayer");
+  compGuide.style.transform = `scaleX(${mirrorPreview ? -1 : 1})`;
 
   const topSkin = document.getElementById("onionSkinImg1");
   topSkin.style.transform = `scaleX(${mirrorPreview ? -1 : 1})`;
@@ -1123,13 +1368,13 @@ async function downloadProject() {
   downloadAnchorNode.remove();
 }
 
-function importProject() {
+async function importProject() {
   var input = document.createElement("input");
   input.type = "file";
   input.addEventListener("change", function () {
     var file = this.files[0];
     var reader = new FileReader();
-    reader.onload = function (event) {
+    reader.onload = async function (event) {
       var contents = event.target.result;
       var json = JSON.parse(contents);
 
@@ -1137,7 +1382,16 @@ function importProject() {
       document.getElementById("fpsInput").value = json.fps;
 
       for (const frame of json.frames) {
-        captureFrame(frame.frame, frame.visible, frame.framesFor);
+        captureFrame(
+          frame.frame,
+          frame.visible == null ? true : frame.visible,
+          frame.framesFor == null ? 1 : frame.framesFor,
+          frame.filters == null ? '' : frame.filters,
+          frame.isNest == null ? false : frame.isNest,
+          frame.nest
+          );
+
+        await new Promise(resolve => setTimeout(resolve, 10));
       }
     };
     reader.readAsText(file);
@@ -1175,4 +1429,93 @@ function uuidv4() {
       v = c == "x" ? r : (r & 0x3) | 0x8;
     return v.toString(16);
   });
+}
+
+function holdForSecond() {
+  const fps = parseInt(`${document.getElementById('fpsInput').value}`);
+
+  for (let index = 0; index < frames.length; index++) {
+    const frame = frames[index];
+    if (!frame.selected) continue;
+
+    if (frame.framesFor % fps > 0) {
+      frame.framesFor = fps;
+    } else {
+      frame.framesFor += fps;
+    }
+
+    frame.framesForLbl.innerHTML = `${frame.framesFor}`;
+    frame.framesForLbl.style.display = frame.framesFor == 1 ? "none" : "block";
+  }
+
+  updateFramesRow();
+}
+
+function nestInOut() {
+  const nest = {
+    frames: [],
+    title: 'Nest',
+    isComplete: false
+  }
+
+  for (let i = 0; i < frames.length; i++) {
+    if (i < inIndex || i >= outIndex) continue;
+
+    if (frames[i].isNest) {
+      alert("You can't nest a nested sequence");
+      return;
+    }
+
+    nest.frames.push(frames[i]);
+  }
+
+  const newFrames = [];
+  let transformedFirst = false;
+  for (let i = 0; i < frames.length; i++) {
+    if (!(i < inIndex || i >= outIndex)) {
+      if (!transformedFirst) {
+        transformedFirst = true;
+        
+        frames[i].isNest = true;
+        frames[i].nest = nest;
+        frames[i].visible = true;
+        document.getElementById(frames[i].optionsMenuId).innerHTML = '';
+        newFrames.push(frames[i]);
+      }
+
+      continue;
+    }
+
+    newFrames.push(frames[i]);
+  }
+
+  inIndex = 0;
+  outIndex = 0;
+
+  frames = newFrames;
+
+  const nestsSection = document.getElementById('nestsSection');
+
+  let seconds = 0;
+  const part = 1 / parseInt(`${document.getElementById('fpsInput').value}`);
+  let numFrames = 0;
+  for (const fr of nest.frames) {
+    if (!fr.visible) continue;
+
+    numFrames += 1 * fr.framesFor;
+
+    seconds += part * fr.framesFor;
+  }
+  const date = new Date(seconds * 1000);
+  const timeString = date.toISOString().substr(11, 8);
+
+  const nestTitle = document.createElement('h3');
+  nestTitle.innerHTML = `${nest.title} (${numFrames}, ${timeString}):`;
+  nestsSection.appendChild(nestTitle);
+
+  const nestBox = document.createElement('div');
+  
+  nestsSection.appendChild(nestBox);
+
+  updateFramesRow();
 }

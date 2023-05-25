@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="index.js"></script>
+    <script src="transitions.js"></script>
+    <!-- <script src="whammy.js"></script> -->
     <script src="https://unpkg.com/jszip@3.7.1/dist/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
 
@@ -34,7 +36,7 @@
         header {
             position: fixed;
             left: 0px;
-            top: 0px;
+            top: 30px;
             right: 0px;
             width: 100%;
             height: 50px;
@@ -44,13 +46,30 @@
             -webkit-user-select: none;
             user-select: none;
             margin-top: 0px;
-            margin-bottom: 15px;
+            margin-bottom: 50px;
             display: flex;
             justify-items: left;
             align-content: center;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
+            /* border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px; */
             z-index: 1000;
+        }
+
+        #menuBar {
+            width: 100%;
+            background-color: black;
+            height: 30px;
+            display: flex;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            z-index: 1001;
+            -webkit-app-region: no-drag;
+        }
+
+        #menuBar button {
+            background-color: rgba(0, 0, 0, 0);
+            color: darkgrey;
         }
 
         [contenteditable] {
@@ -63,7 +82,10 @@
             border-radius: 7.5px;
             background-color: grey;
             grid-auto-columns: auto;
-            grid-template-columns: repeat(auto-fill, minmax(238.5px, 1fr));
+            grid-template-columns: repeat(1000000, minmax(238.5px, 1fr));
+            height: 130px;
+            overflow-x: scroll;
+            overflow-y: visible;
             /* grid-template-columns: repeat(auto-fill, minmax(223.5px, 1fr));
             grid-auto-rows: minmax(130px, auto); */
         }
@@ -100,16 +122,19 @@
             background-color: rgba(224, 224, 224, 0.25);
             backdrop-filter: blur(10px);
             min-width: 160px;
+            max-width: 320px;
             max-height: 110px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             padding: 5px;
             border-radius: 15px;
             z-index: 101;
             overflow-y: scroll;
+            grid-auto-columns: auto;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         }
 
         .dropdown:hover .dropdown-content {
-            display: block;
+            display: grid;
         }
 
         .buttonOff {
@@ -213,16 +238,22 @@
 </head>
 
 <body onload="start();">
+    <div id="menuBar">
+        <button style="margin-left: 10px">File</button>
+        <button>Edit</button>
+        <button>Media</button>
+    </div>
+
     <header>
         <div style="display: flex;">
             <div style="display: flex; margin-left: 100px; margin-top: -5px; -webkit-app-region: no-drag;">
-                <p style="margin-top: 20px;"><strong id="filmTitle" contenteditable="true">Untitled Stop Motion</strong>
+                <p style="margin-top: 20px;"><strong id="filmTitle" contenteditable="true" style="overflow-x: scroll;">Untitled Stop Motion</strong>
                 </p>
             </div>
 
             <div id="optionsRow" style="margin-left: 50px; margin-right: 10px; overflow-x: visible; display: none; margin-top: 5px;">
                 <p style="margin-bottom: 20px;"><strong>FPS:</strong></p>
-                <input type="number" id="fpsInput" value="24" style="margin-right: 50px; -webkit-app-region: no-drag; margin-bottom: -2px;" onchange="updateFramesRow();">
+                <input type="number" id="fpsInput" value="24" min="1" style="margin-right: 50px; -webkit-app-region: no-drag; margin-bottom: -2px;" onchange="updateFramesRow();">
 
                 <button onclick="if (!isPlaying) previewAnimation();">Preview</button>
                 <button id="loopBtn" class="buttonOff" onclick="toggleLoopPreview();">Loop</button>
@@ -234,29 +265,63 @@
 
                 <button id="selectInOutBtn" style="margin-left: 50px;" onclick="if (useInOut) selectInOut();">Select In/Out</button>
                 <!-- <button onclick="" class="buttonOff">Select Frames</button> -->
+                <div>
+                    <button onclick="const bx = document.getElementById('adjustmentsBx'); bx.style.display = bx.style.display == 'block' ? 'none' : 'block';" style="height: 80%;">Adjustments</button>
+                    <div class="dropdown-content" id="adjustmentsBx">
+                        <div style="display: flex;">
+                            <button onclick="holdForSecond();">Hold for Second</button>
+                            <button onclick="nestInOut();">Nest In/Out</button>
+                        </div>
 
-                <button onclick="exportFrames();" style="margin-left: 50px;">Export Frames</button>
+                        <hr>
+
+                        <h3 style='color: black; margin-bottom: 0px;'>Easings</h3>
+                        <div style="display: flex; overflow-x: scroll;">
+                            <div>
+                                <h4 style='color: black; margin-top: 0px; margin-bottom: 0px;'>Cubic</h4>
+                                <div style="display: flex;">
+                                    <button onclick="doEaseInCubic(frames);">Ease In</button>
+                                    <button onclick="doEaseOutCubic(frames);">Ease Out</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 style='color: black; margin-top: 0px; margin-bottom: 0px;'>Sine</h4>
+                                <div style="display: flex;">
+                                    <button onclick="doEaseInSine(frames);">Ease In</button>
+                                    <button onclick="doEaseOutSine(frames);">Ease Out</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="exportFrames(); alert('If you have FFMPEG installed (run \'ffmpeg\' in Terminal/Command Prompt to check) and want to compile the video, open the Terminal/Command Prompt to the, unzipped, output folder and run: ffmpeg -framerate ' + document.getElementById('fpsInput').value + ' -i \'' + document.getElementById('filmTitle').innerText + ' - frame %d.png\' -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p output.mp4');" style="margin-left: 50px;">Export Frames</button>
+                <!-- <button onclick="exportToMP4();">Export MP4</button> -->
                 <button onclick="downloadProject();">Save Project</button>
                 <button onclick="importProject();">Open Project</button>
             </div>
         </div>
     </header>
 
-    <section style="margin-top: 55px;">
-        <center style="position: fixed; top: 55px; left: 0px; width: 100%; z-index: 101;">
+    <section style="margin-top: 90px;">
+        <center style="position: fixed; top: 65px; left: 0px; width: 100%; z-index: 101;">
             <div id="previewBlurBar"
                 style="position: absolute; top: -5px; left: 0px; width: 100%; background-color: rgba(0, 0, 0, 0); backdrop-filter: blur(10px); border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
             </div>
-            <section id="previewSection" style="z-index: 105;">
+
+            <section id="previewSection" style="z-index: 105; margin-top: 35px;">
                 <video id="myVidPlayer" muted autoplay
                     style="z-index: 201; width: 100%; height: 100%; border-radius: 7.5px; background-color: darkgrey; object-fit: cover; transform: scaleX(1); position: absolute; top: 0px; left: 0px;"></video>
+                <img id="compositonGuideImg"
+                    style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 720px; border-radius: 7.5px; opacity: 90%; object-fit: fill; transform: scaleX(1);z-index: 207;"></img>
                 <div id="onionSkins" style="display: none; position: absolute; top: 0px; left: 0px;">
                     <img id="onionSkinImg1"
-                        style="width: 1280px; height: 720px; border-radius: 7.5px; opacity: 50%; object-fit: cover; transform: scaleX(-1); position: absolute; top: 0px; left: 0px; z-index: 203;"></img>
+                        style="width: 1280px; height: 720px; border-radius: 7.5px; opacity: 50%; object-fit: cover; transform: scaleX(1); position: absolute; top: 0px; left: 0px; z-index: 203;"></img>
                     <img id="onionSkinImg2"
-                        style="width: 1280px; height: 720px; border-radius: 7.5px; opacity: 40%; object-fit: cover; transform: scaleX(-1); position: absolute; top: 0px; left: 0px; z-index: 202;"></img>
+                        style="width: 1280px; height: 720px; border-radius: 7.5px; opacity: 40%; object-fit: cover; transform: scaleX(1); position: absolute; top: 0px; left: 0px; z-index: 202;"></img>
                     <img id="onionSkinImg3"
-                        style="width: 1280px; height: 720px; border-radius: 7.5px; opacity: 30%; object-fit: cover; transform: scaleX(-1); position: absolute; top: 0px; left: 0px; z-index: 201;"></img>
+                        style="width: 1280px; height: 720px; border-radius: 7.5px; opacity: 30%; object-fit: cover; transform: scaleX(1); position: absolute; top: 0px; left: 0px; z-index: 201;"></img>
                 </div>
                 <img id="previewCanvas"
                     style="display: none; object-fit: cover; border-radius: 7.5px; position: absolute; top: 0px; left: 0px; z-index: 204; width: 100%; height: 100%;"></img>
@@ -280,6 +345,15 @@
                             <button>Switch Feed</button>
                             <div class="dropdown-content" id="showFeedDropdownContent2"></div>
                         </div>
+                        <div class="dropdown">
+                            <button>Guides</button>
+                            <div class="dropdown-content">
+                                <button onclick="const img = document.getElementById('compositonGuideImg'); img.style.display = 'none';">None</button>
+                                <button onclick="const img = document.getElementById('compositonGuideImg'); img.style.display = 'block'; img.src = 'assets/rule_of_thirds.png';">Rule of Thirds</button>
+                                <button onclick="const img = document.getElementById('compositonGuideImg'); img.style.display = 'block'; img.src = 'assets/golden_ratio.png';">Golden Ratio</button>
+                                <button onclick="const img = document.getElementById('compositonGuideImg'); img.style.display = 'block'; img.src = 'assets/symmetry.png';">Symmetry</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -287,8 +361,11 @@
 
         <section id="framesSection" style="display: none; margin-top: 775px; z-index: 50;">
             <h3 id="framesTitle">Frames:</h3>
-            <div id="framesBox">
-            </div>
+            <div id="framesBox"></div>
+        </section>
+
+        <section id="nestsSection" style="display: block; margin-top: 50px; z-index: 50;">
+            
         </section>
     </section>
 </body>
