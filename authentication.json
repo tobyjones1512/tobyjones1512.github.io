@@ -3,21 +3,13 @@
     "startupAlert": "Thank you for choosing Stop Motion Tool!",
     "startupId": "0",
     "licenses": [
-                    {
-                        "name": "Toby Jones",
-                        "key": "23452345i3209458239568395",
-                        "id": "83a2f560-6072-448a-adf7-004aafdcb2bc",
-                        "active": true,
-                        "subscription": true,
-                        "version": ""
-                    },
-                    {
-                        "name": "Raymond Jones",
-                        "key": "O10z8mF0IHlX4E",
-                        "id": "83a2f560-6072-448a-adf7-004aafdcb2bc",
-                        "active": true,
-                        "subscription": true,
-                        "version": ""
-                    }
-                ]
+        {
+            "name": "Toby Jones",
+            "key": "O10z8mF0IHlX4E",
+            "id": "2b193c7d-48da-482d-affd-8b948da2a9f9",
+            "active": true,
+            "subscription": true,
+            "version": ""
+        }
+    ]
 }
