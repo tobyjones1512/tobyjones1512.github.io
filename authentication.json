@@ -1,8 +1,12 @@
-[
-    {
-        "name": "Toby Jones",
-        "key": "23452345i3209458239568395",
-        "id": "83a2f560-6072-448a-adf7-004aafdcb2bc",
-        "active": true
-    }
-]
+{
+    "startupAlert": "An update is now available.",
+    "startupId": "0",
+    "licenses": [
+                    {
+                        "name": "Toby Jones",
+                        "key": "23452345i3209458239568395",
+                        "id": "83a2f560-6072-448a-adf7-004aafdcb2bc",
+                        "active": true
+                    }
+                ]
+}
