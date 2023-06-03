@@ -7,13 +7,17 @@
                         "name": "Toby Jones",
                         "key": "23452345i3209458239568395",
                         "id": "83a2f560-6072-448a-adf7-004aafdcb2bc",
-                        "active": true
+                        "active": true,
+                        "subscription": true,
+                        "version": ""
                     },
                     {
                         "name": "Raymond Jones",
                         "key": "O10z8mF0IHlX4E",
                         "id": "83a2f560-6072-448a-adf7-004aafdcb2bc",
-                        "active": true
+                        "active": true,
+                        "subscription": true,
+                        "version": ""
                     }
                 ]
 }
