@@ -16,8 +16,8 @@
                         "key": "O10z8mF0IHlX4E",
                         "id": "83a2f560-6072-448a-adf7-004aafdcb2bc",
                         "active": true,
-                        "subscription": true,
-                        "version": ""
+                        "subscription": false,
+                        "version": "0.0.8"
                     }
                 ]
 }
