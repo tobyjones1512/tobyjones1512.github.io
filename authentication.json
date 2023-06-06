@@ -1,20 +1,12 @@
 {
-    "latestVersion": "1.0.1",
+    "latestVersion": "1.0.2",
     "startupAlert": "Thank you for choosing Stop Motion Tool!",
     "startupId": "0",
     "licenses": [
         {
             "name": "Toby Jones",
-            "key": "O10z8mF0IHlX4E",
-            "id": "2b193c7d-48da-482d-affd-8b948da2a9f9",
-            "active": true,
-            "subscription": true,
-            "version": ""
-        },
-        {
-            "name": "Toby Jones",
             "key": "cheese",
-            "id": "d1667ac3-7822-4955-a4da-dd7b1beed8a1",
+            "id": "5173a0e3-89a7-4350-9660-9a04d07dc968",
             "active": true,
             "subscription": true,
             "version": ""
