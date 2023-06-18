@@ -10,8 +10,8 @@
             "key": "cheese",
             "id": "5173a0e3-89a7-4350-9660-9a04d07dc968",
             "active": true,
-            "subscription": true,
-            "version": ""
+            "subscription": false,
+            "version": "1.0.4"
         }
     ]
 }
