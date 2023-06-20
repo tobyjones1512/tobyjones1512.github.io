@@ -1,17 +1,7 @@
 {
-    "latestVersion": "1.0.4",
+    "latestVersion": "2.0.0",
     "startupAlert": "Thank you for choosing Stop Motion Tool!",
     "startupId": "0",
     "webUrl": "tobyjones1512.github.io",
-    "supportEmail": "contact.tjsoftware@gmail.com",
-    "licenses": [
-        {
-            "name": "Toby Jones",
-            "key": "cheese",
-            "id": "5173a0e3-89a7-4350-9660-9a04d07dc968",
-            "active": true,
-            "subscription": true,
-            "version": ""
-        }
-    ]
+    "supportEmail": "contact.tjsoftware@gmail.com"
 }
