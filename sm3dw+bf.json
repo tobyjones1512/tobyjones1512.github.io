@@ -1,0 +1,67 @@
+{
+    "id": "sm3dw+bf",
+    "title": "Super Mario 3D World + Bowser's Fury",
+    "release_year": "2021",
+    "poster_url": "https://www.mobygames.com/images/covers/l/716893-super-mario-3d-world-bowser-s-fury-nintendo-switch-front-cover.jpg",
+    "categories": [
+        {
+            "title": "3D World",
+            "sub_categories": [
+                {
+                    "title": "World 1",
+                    "sub_categories": [
+                        {
+                            "title": "Green Stars",
+                            "sub_categories": []
+                        },
+                        {
+                            "title": "Stamp",
+                            "sub_categories": []
+                        }
+                    ],
+                    "title": "World 2",
+                    "sub_categories": [
+                        {
+                            "title": "Green Stars",
+                            "sub_categories": []
+                        },
+                        {
+                            "title": "Stamp",
+                            "sub_categories": []
+                        }
+                    ],
+                    "title": "World 3",
+                    "sub_categories": [
+                        {
+                            "title": "Green Stars",
+                            "sub_categories": []
+                        },
+                        {
+                            "title": "Stamp",
+                            "sub_categories": []
+                        }
+                    ],
+                    "title": "World 4",
+                    "sub_categories": [
+                        {
+                            "title": "Green Stars",
+                            "sub_categories": []
+                        },
+                        {
+                            "title": "Stamp",
+                            "sub_categories": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Bowser's Fury",
+            "sub_categories": [
+                {
+                    
+                }
+            ]
+        }
+    ]
+}
