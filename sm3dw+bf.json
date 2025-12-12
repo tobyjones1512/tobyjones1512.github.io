@@ -18,7 +18,9 @@
                             "title": "Stamp",
                             "sub_categories": []
                         }
-                    ],
+                    ]
+                },
+                {
                     "title": "World 2",
                     "sub_categories": [
                         {
@@ -29,7 +31,9 @@
                             "title": "Stamp",
                             "sub_categories": []
                         }
-                    ],
+                    ]
+                },
+                {
                     "title": "World 3",
                     "sub_categories": [
                         {
@@ -40,7 +44,9 @@
                             "title": "Stamp",
                             "sub_categories": []
                         }
-                    ],
+                    ]
+                },
+                {
                     "title": "World 4",
                     "sub_categories": [
                         {
