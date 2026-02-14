@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 
-Sitemap: https://tobyjones.ca/wp-sitemap.xml
+Sitemap: /wp-sitemap.xml
