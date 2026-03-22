@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QCV7XEQ8QT');
+    gtag('event', 'generate_lead', {
+      event_category: 'Contact',
+      event_label: 'Email Contact'
+    });
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opening Email — Toby Jones</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
+      padding: 56px 48px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    .icon-wrap {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(0,113,227,.1);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .icon-wrap svg { color: #0071e3; }
+    .title { font-size: 22px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 10px; }
+    .body  { font-size: 15px; color: #6e6e73; line-height: 1.6; margin-bottom: 28px; }
+    .mailto-link {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 500;
+      color: #0071e3;
+      text-decoration: none;
+    }
+    .mailto-link:hover { text-decoration: underline; }
+    @media(max-width:480px){ .card { padding: 40px 24px; } }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="icon-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+  </div>
+  <div class="title">Opening your email&hellip;</div>
+  <p class="body">Your email client should open automatically.<br>If it doesn't, tap below.</p>
+  <a class="mailto-link" href="mailto:contact@tobyjones.ca">contact@tobyjones.ca</a>
+</div>
+
+<script>
+  window.location.href = 'mailto:contact@tobyjones.ca';
+</script>
+</body>
+</html>
