@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QCV7XEQ8QT');
+    /* Fire a lead conversion event — use this URL in GA4 as a conversion trigger,
+       or use the event name "generate_lead" directly. */
+    gtag('event', 'generate_lead', {
+      event_category: 'Booking',
+      event_label: 'Callback Requested'
+    });
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Callback Requested — Toby Jones</title>
+  <meta name="description" content="Your callback request has been received. Toby Jones will be in touch to confirm." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://tobyjones.ca/callback/thank-you/" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:   #1d1d1f;
+      --mid:    #424245;
+      --subtle: #6e6e73;
+      --light:  #f5f5f7;
+      --white:  #ffffff;
+      --blue:   #0071e3;
+      --green:  #34c759;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 52px;
+      background: rgba(245,245,247,.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+    }
+    .logo { font-size: 17px; font-weight: 600; color: var(--dark); text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav ul a { font-size: 13px; color: var(--mid); text-decoration: none; transition: color .15s; }
+    nav ul a:hover { color: var(--dark); }
+    .nav-cta { font-size: 13px; color: var(--blue); text-decoration: none; transition: opacity .2s; }
+    .nav-cta:hover { opacity: .7; }
+    @media(max-width:768px){ nav ul { display: none; } .nav-cta { display: none; } }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
+      padding: 56px 48px;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .icon-wrap {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(52,199,89,.12);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .icon-wrap svg { color: var(--green); }
+
+    .card-title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -.5px;
+      margin-bottom: 10px;
+    }
+
+    .card-body {
+      font-size: 15px;
+      color: var(--subtle);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    /* Booking summary */
+    .summary {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 20px 24px;
+      text-align: left;
+      margin-bottom: 32px;
+    }
+    .summary-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .summary-row:last-child { border-bottom: none; }
+    .summary-row svg { flex-shrink: 0; margin-top: 2px; color: var(--subtle); }
+    .summary-row-text { font-size: 14px; color: var(--dark); line-height: 1.4; }
+    .summary-row-label { font-size: 11px; color: var(--subtle); margin-bottom: 2px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
+
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      border-radius: 980px;
+      border: 1.5px solid rgba(0,0,0,.12);
+      background: none;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: inherit;
+      color: var(--mid);
+      text-decoration: none;
+      transition: border-color .15s, color .15s;
+    }
+    .btn-home:hover { border-color: var(--dark); color: var(--dark); }
+
+    @media(max-width:560px){
+      .card { padding: 40px 24px; }
+      .card-title { font-size: 22px; }
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 24px;
+      border-top: 1px solid rgba(0,0,0,.08);
+      background: var(--white);
+    }
+    .footer-inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-copy { font-size: 12px; color: var(--subtle); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--subtle); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--dark); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Toby Jones</a>
+  <ul>
+    <li><a href="/web-development">Websites</a></li>
+    <li><a href="/digital-marketing">Digital Marketing</a></li>
+    <li><a href="/out-of-house">Out-of-House</a></li>
+    <li><a href="/tv-radio">TV &amp; Radio</a></li>
+    <li><a href="/postal-marketing">Postal</a></li>
+    <li><a href="/public-relations">PR</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+  </ul>
+  <a href="/callback" class="nav-cta">Get in touch ↗</a>
+</nav>
+
+<main>
+  <div class="card">
+    <div class="icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round" width="30" height="30">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+    </div>
+
+    <div class="card-title">You're booked!</div>
+    <p class="card-body">
+      Your callback request has been received.<br>
+      Keep an eye on your inbox for a confirmation.
+    </p>
+
+    <div class="summary" id="summary" style="display:none">
+      <div class="summary-row" id="rowDateTime">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" width="16" height="16">
+          <rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1.5v3M11 1.5v3M2 7h12"/>
+        </svg>
+        <div class="summary-row-text">
+          <div class="summary-row-label">Date &amp; Time</div>
+          <span id="valDateTime"></span>
+        </div>
+      </div>
+      <div class="summary-row" id="rowService">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" width="16" height="16">
+          <rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 8h6M5 10.5h4"/>
+        </svg>
+        <div class="summary-row-text">
+          <div class="summary-row-label">Service</div>
+          <span id="valService"></span>
+        </div>
+      </div>
+      <div class="summary-row" id="rowName">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" width="16" height="16">
+          <circle cx="8" cy="5" r="2.5"/><path d="M2.5 13c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5"/>
+        </svg>
+        <div class="summary-row-text">
+          <div class="summary-row-label">Name</div>
+          <span id="valName"></span>
+        </div>
+      </div>
+    </div>
+
+    <a href="/" class="btn-home">Back to homepage</a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/portfolio">Portfolio</a>
+      <a href="/webcare">WebCare+</a>
+      <a href="/email/">Email</a>
+      <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var name    = params.get('name');
+  var date    = params.get('date');
+  var time    = params.get('time');
+  var service = params.get('service');
+
+  function esc(s) {
+    var d = document.createElement('div'); d.textContent = s; return d.innerHTML;
+  }
+
+  if (date || name || service) {
+    document.getElementById('summary').style.display = '';
+
+    if (date || time) {
+      var dt = [date, time].filter(Boolean).join(' · ');
+      document.getElementById('valDateTime').innerHTML = esc(dt);
+    } else {
+      document.getElementById('rowDateTime').style.display = 'none';
+    }
+
+    if (service) {
+      document.getElementById('valService').innerHTML = esc(service);
+    } else {
+      document.getElementById('rowService').style.display = 'none';
+    }
+
+    if (name) {
+      document.getElementById('valName').innerHTML = esc(name);
+    } else {
+      document.getElementById('rowName').style.display = 'none';
+    }
+  }
+})();
+</script>
+
+</body>
+</html>

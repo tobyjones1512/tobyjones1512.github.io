@@ -467,7 +467,7 @@
     <div class="footer-links">
       <a href="/portfolio">Portfolio</a>
       <a href="/webcare">WebCare+</a>
-      <a href="mailto:contact@tobyjones.ca">Email</a>
+      <a href="/email/">Email</a>
       <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
@@ -688,9 +688,10 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     document.getElementById('emailjsForm'),
     { publicKey: EMAILJS_PUBLIC_KEY }
   ).then(function() {
-    renderConfirmation(name, email, dateStr, timeStr, service);
-    goToStep(4);
-    window.scrollTo({top:0,behavior:'smooth'});
+    var params = new URLSearchParams({
+      name: name, date: dateStr, time: timeStr, service: service
+    });
+    window.location.href = '/callback/thank-you/?' + params.toString();
   }, function(err) {
     submitBtn.disabled = false;
     document.getElementById('sendingNotice').classList.remove('visible');
