@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <!-- Google tag (gtag.js) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QCV7XEQ8QT');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1079,7 +1081,11 @@
                     <!-- Profile photo + socials -->
                     <div class="about-photo-wrap">
                         <div class="photo-glow"></div>
-                        <img src="assets/Me.JPG" alt="Toby Jones" class="about-photo" />
+                        <picture>
+                          <source srcset="assets/Me.webp" type="image/webp" />
+                          <img src="assets/Me_opt.jpg" alt="Toby Jones" class="about-photo"
+                               width="800" height="602" loading="lazy" decoding="async" />
+                        </picture>
                         <div class="about-name">Toby Jones</div>
                         <div class="about-role">Marketing · Video · Screenwriting</div>
 
