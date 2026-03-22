@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QCV7XEQ8QT');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Public Relations Services Toronto - Toby Jones</title>
   <meta name="description" content="PR services in Toronto including press releases, media relations, and broadcast PR. Build your brand&#39;s reputation with strategic public relations."/>
@@ -132,6 +135,8 @@
     @media(max-width:768px){ .nav-cta { display: none; } }
     .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; text-decoration: none; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
     .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
+    .mobile-close { position: absolute; top: 20px; right: 20px; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.06); border: none; cursor: pointer; font-size: 18px; color: #1d1d1f; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .mobile-close:hover { background: rgba(0,0,0,0.1); }
 </style>
 
 <script type="application/ld+json">
@@ -158,7 +163,7 @@
       <li><a href="/public-relations">PR</a></li>
       <li><a href="/portfolio">Portfolio</a></li>
     </ul>
-    <a href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener" class="nav-cta">Book a call &#x2197;</a>
+    <a href="/callback" class="nav-cta">Book a callback ↗</a>
       <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobileMenu"></div>
@@ -319,12 +324,13 @@
     {href:'/public-relations', text:'PR'},
     {href:'/portfolio', text:'Portfolio'},
   ];
-  var html = '';
+  var html = '<button class="mobile-close" aria-label="Close menu">&#x2715;</button>';
   links.forEach(function(l){
     html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
   });
-  html += '<a class="mobile-cta" href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener">Book a call ↗</a>';
+  html += '<a class="mobile-cta" href="/callback">Book a callback ↗</a>';
   menu.innerHTML = html;
+  menu.querySelector('.mobile-close').addEventListener('click', function(){ toggleMenu(false); });
   function toggleMenu(open){
     btn.classList.toggle('open', open);
     menu.style.opacity = open ? '1' : '0';
