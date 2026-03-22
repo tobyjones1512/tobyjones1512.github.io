@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV, Radio &amp; Cinema Advertising Toronto - Toby Jones</title>
+  <meta name="description" content="Broadcast advertising services in Toronto. TV commercials, radio spots, and cinema advertising that builds brand awareness and reaches mass audiences."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://tobyjones.ca/tv-radio"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://tobyjones.ca/tv-radio"/>
+  <meta property="og:title" content="TV, Radio &amp; Cinema Advertising Toronto - Toby Jones"/>
+  <meta property="og:description" content="Broadcast advertising services in Toronto. TV commercials, radio spots, and cinema advertising that builds brand awareness and reaches mass audiences."/>
+  <meta property="og:site_name" content="Toby Jones"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="TV, Radio &amp; Cinema Advertising Toronto - Toby Jones"/>
+  <meta name="twitter:description" content="Broadcast advertising services in Toronto. TV commercials, radio spots, and cinema advertising that builds brand awareness and reaches mass audiences."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #1d1d1f; --mid: #424245; --subtle: #6e6e73;
+      --light: #f5f5f7; --white: #ffffff; --blue: #0071e3;
+      --accent: #ef4444;
+      --radius: 24px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; background: var(--white); color: var(--dark); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s cubic-bezier(.22,1,.36,1), transform 0.75s cubic-bezier(.22,1,.36,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; } .d4 { transition-delay: .32s; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 160; height: 52px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.72); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0,0,0,.08); }
+    .logo { font-size: 17px; font-weight: 600; letter-spacing: -.3px; color: var(--dark); text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul a { font-size: 13px; color: var(--mid); text-decoration: none; transition: color .2s; }
+    nav ul a:hover { color: var(--dark); }
+    .nav-cta { font-size: 13px; color: var(--blue); text-decoration: none; transition: opacity .2s; }
+    .nav-cta:hover { opacity: .7; }
+    @media(max-width:768px){ nav ul { display: none; } }
+
+    /* Hero */
+    .hero { padding-top: 52px; min-height: 92vh; display: flex; align-items: center; background: linear-gradient(150deg, #fff1f2 0%, #ffe4e6 40%, #fef2f2 100%); position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 55% 60% at 80% 40%, rgba(239,68,68,.10) 0%, transparent 70%), radial-gradient(ellipse 40% 50% at 20% 70%, rgba(248,113,113,.07) 0%, transparent 70%); pointer-events: none; }
+    .hero-inner { position: relative; max-width: 1080px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    @media(max-width:720px){ .hero-inner { grid-template-columns: 1fr; gap: 48px; } }
+    .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .2s forwards; }
+    .hero-headline { font-size: clamp(44px,6vw,76px); font-weight: 700; letter-spacing: -.04em; line-height: 1.04; color: var(--dark); opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .35s forwards; }
+    .hero-sub { margin-top: 20px; font-size: 17px; font-weight: 300; line-height: 1.65; color: var(--subtle); opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .5s forwards; }
+    .hero-actions { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .65s forwards; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; background: var(--dark); color: #fff; font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-primary:hover { background: #000; transform: scale(1.02); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; background: rgba(255,255,255,.6); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,.12); color: var(--dark); font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-secondary:hover { background: rgba(255,255,255,.85); transform: scale(1.02); }
+    .hero-visual { display: flex; align-items: center; justify-content: center; opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .5s forwards; }
+    .hero-visual-card { background: rgba(255,255,255,.65); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.8); border-radius: 20px; padding: 32px; box-shadow: 0 20px 60px rgba(0,0,0,.1); width: 100%; max-width: 340px; }
+    .visual-bar { height: 10px; border-radius: 5px; margin-bottom: 12px; background: var(--accent); opacity: .15; }
+    .visual-bar:nth-child(1){ width: 80%; opacity: .3; }
+    .visual-bar:nth-child(2){ width: 60%; opacity: .2; }
+    .visual-bar:nth-child(3){ width: 90%; opacity: .12; }
+    .visual-bar:nth-child(4){ width: 50%; opacity: .08; }
+    .visual-metric { display: flex; gap: 12px; margin-top: 20px; }
+    .metric-box { flex: 1; background: rgba(239,68,68,.08); border-radius: 12px; padding: 16px 12px; text-align: center; }
+    .metric-num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -.03em; }
+    .metric-label { font-size: 11px; color: var(--subtle); margin-top: 3px; }
+
+    /* Sections */
+    section { padding: 100px 24px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--subtle); margin-bottom: 12px; }
+    .section-headline { font-size: clamp(28px,4vw,44px); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; color: var(--dark); }
+
+    /* Pitch */
+    .pitch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    @media(max-width:720px){ .pitch-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .pitch-body { font-size: 15px; line-height: 1.75; color: var(--subtle); font-weight: 300; }
+    .pitch-body + .pitch-body { margin-top: 14px; }
+
+    /* Features */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; margin-top: 56px; }
+    .feature-card { padding: 32px; border-radius: var(--radius); border: 1px solid rgba(0,0,0,.07); background: var(--white); transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s; position: relative; overflow: hidden; }
+    .feature-card::before { content: ""; position: absolute; top: -40px; right: -40px; width: 140px; height: 140px; border-radius: 50%; background: rgba(239,68,68,.07); filter: blur(28px); pointer-events: none; transition: transform .4s; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.08); }
+    .feature-card:hover::before { transform: scale(1.5); }
+    .feature-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(239,68,68,.08); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .feature-icon svg { width: 20px; height: 20px; fill: var(--accent); }
+    .feature-title { font-size: 17px; font-weight: 600; letter-spacing: -.015em; color: var(--dark); margin-bottom: 8px; }
+    .feature-desc { font-size: 14px; line-height: 1.65; color: var(--subtle); font-weight: 300; }
+
+    /* Process */
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1px; margin-top: 56px; background: rgba(0,0,0,.06); border-radius: var(--radius); overflow: hidden; }
+    .step { padding: 36px 28px; background: var(--white); transition: background .2s; }
+    .step:hover { background: var(--light); }
+    .step-num { font-size: 11px; font-weight: 700; letter-spacing: .2em; color: var(--accent); margin-bottom: 16px; }
+    .step-title { font-size: 18px; font-weight: 600; letter-spacing: -.02em; color: var(--dark); margin-bottom: 8px; }
+    .step-desc { font-size: 13px; line-height: 1.65; color: var(--subtle); font-weight: 300; }
+
+    /* CTA */
+    .cta { background: var(--light); }
+    .cta-card { background: var(--dark); border-radius: 40px; padding: 80px 60px; text-align: center; position: relative; overflow: hidden; }
+    .cta-card::before { content: ""; position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(239,68,68,.22) 0%, transparent 65%); pointer-events: none; }
+    .cta-card h2 { font-size: clamp(32px,5vw,60px); font-weight: 700; letter-spacing: -.04em; line-height: 1.06; color: #fff; position: relative; margin-bottom: 16px; }
+    .cta-card p { font-size: 17px; font-weight: 300; color: rgba(255,255,255,.55); max-width: 400px; margin: 0 auto 40px; position: relative; line-height: 1.6; }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-white { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; background: #fff; color: var(--dark); font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-white:hover { background: rgba(255,255,255,.88); transform: scale(1.02); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.85); font-size: 15px; font-weight: 500; text-decoration: none; transition: border-color .2s, background .2s, transform .15s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.06); transform: scale(1.02); }
+
+    /* Footer */
+    footer { background: var(--white); border-top: 1px solid rgba(0,0,0,.07); padding: 40px 24px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 12px; color: var(--subtle); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: var(--subtle); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--dark); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  /* ── Hamburger / Mobile menu ──────────────────────────────────────── */
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s, transform .35s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
+    .mobile-menu a:hover { background: rgba(0,0,0,.05); }
+
+    @media(max-width:768px) { .nav-hamburger { display: flex; } }
+
+    @media(max-width:768px){ .nav-cta { display: none; } }
+    .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; text-decoration: none; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
+    .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "TV, Radio & Cinema Advertising",
+  "provider": {"@type":"Person","name":"Toby Jones","url":"https://tobyjones.ca"},
+  "areaServed": "Toronto, ON, Canada",
+  "url": "https://tobyjones.ca/tv-radio"
+}
+</script>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">Toby Jones</a>
+    <ul>
+      <li><a href="/web-development">Websites</a></li>
+      <li><a href="/digital-marketing">Digital Marketing</a></li>
+      <li><a href="/out-of-house">Out-of-House</a></li>
+      <li><a href="/tv-radio">TV &amp; Radio</a></li>
+      <li><a href="/postal-marketing">Postal</a></li>
+      <li><a href="/public-relations">PR</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+    </ul>
+    <a href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener" class="nav-cta">Book a call &#x2197;</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Cinema, TV &amp; Radio</div>
+        <h1 class="hero-headline">Your Brand,<br>On Screen.</h1>
+        <p class="hero-sub">Broadcast advertising that puts your business in front of millions - cinematic TV spots, compelling radio ads, and pre-roll content that audiences actually remember.</p>
+        <div class="hero-actions">
+          <a href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener" class="btn-primary">Book a free call</a>
+          <a href="/portfolio" class="btn-secondary">See my work</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-card">
+          <div class="visual-bar"></div>
+          <div class="visual-bar"></div>
+          <div class="visual-bar"></div>
+          <div class="visual-bar"></div>
+          <div class="visual-metric">
+            <div class="metric-box"><div class="metric-num">TV</div><div class="metric-label">Broadcast reach</div></div>
+            <div class="metric-box"><div class="metric-num">Film</div><div class="metric-label">Cinema quality</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pitch -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <div class="pitch-grid">
+        <div>
+          <p class="section-label reveal">The approach</p>
+          <h2 class="section-headline reveal d1">Broadcast advertising<br>done properly.</h2>
+        </div>
+        <div class="reveal d2">
+          <p class="pitch-body">TV and radio advertising still commands the largest audiences of any media - but only if the creative is right. I bring a filmmaker's eye and a marketer's mind to every broadcast project, ensuring your ad doesn't just air, it lands.</p>
+          <p class="pitch-body">From scripting and production to media buying and placement, I manage the entire process. With experience in both the UK and Canadian markets - including working alongside Bell Media partners - I know how to navigate broadcast advertising end to end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section style="background: var(--light);">
+    <div class="section-inner">
+      <p class="section-label reveal">What I offer</p>
+      <h2 class="section-headline reveal d1">From script to<br>broadcast.</h2>
+      <div class="features-grid">
+        <div class="feature-card reveal d1">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg></div>
+          <div class="feature-title">TV Commercials</div>
+          <div class="feature-desc">30 and 60-second spots scripted, produced, and delivered broadcast-ready - built to convert viewers into customers.</div>
+        </div>
+        <div class="feature-card reveal d2">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M3.24 6.15C2.51 6.43 2 7.17 2 8v12c0 1.1.89 2 2 2h16c1.11 0 2-.9 2-2V8c0-1.11-.89-2-2-2H8.3l8.26-3.34L15.88 1 3.24 6.15zM7 20c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm13-8h-2v-2h-2v2H4V8h16v4z"/></svg></div>
+          <div class="feature-title">Radio Advertising</div>
+          <div class="feature-desc">Compelling audio ads with professional voiceover and sound design - crafted to create a clear, memorable message.</div>
+        </div>
+        <div class="feature-card reveal d3">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg></div>
+          <div class="feature-title">Cinema Pre-Roll</div>
+          <div class="feature-desc">Big-screen advertising for local and national cinema - capturing audiences in their most receptive state.</div>
+        </div>
+        <div class="feature-card reveal d1">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div>
+          <div class="feature-title">Scriptwriting</div>
+          <div class="feature-desc">Stories that sell - punchy, purposeful scripts written for the broadcast format, built around a single compelling idea.</div>
+        </div>
+        <div class="feature-card reveal d2">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg></div>
+          <div class="feature-title">Video Production</div>
+          <div class="feature-desc">End-to-end production for brand films, testimonial videos, and branded content - cinematic quality at every level.</div>
+        </div>
+        <div class="feature-card reveal d3">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div>
+          <div class="feature-title">Media Buying</div>
+          <div class="feature-desc">Strategic placement across TV, radio, and cinema networks to reach your target audience at maximum efficiency.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <p class="section-label reveal">How it works</p>
+      <h2 class="section-headline reveal d1">From brief to<br>broadcast.</h2>
+      <div class="process-steps reveal d2">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-title">Brief</div>
+          <div class="step-desc">We define your message, target audience, and broadcast goals. I translate your brief into a clear creative direction.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-title">Script and Concept</div>
+          <div class="step-desc">I write the script and develop the creative concept - presenting options for your approval before a single frame is filmed.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-title">Production</div>
+          <div class="step-desc">Filming, recording, and editing to broadcast-ready standard - with clear timelines and no surprises.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-title">Air</div>
+          <div class="step-desc">I handle delivery to the broadcaster and track performance - ensuring your ad reaches the audience you paid for.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="section-inner">
+      <div class="cta-card reveal">
+        <h2>Ready for your<br>close-up?</h2>
+        <p>Book a free call and let's talk about putting your brand on screen.</p>
+        <div class="cta-actions">
+          <a href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener" class="btn-white">Book a free call ↗</a>
+          <a href="mailto:contact@tobyjones.ca" class="btn-outline">contact@tobyjones.ca</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+          <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/webcare">WebCare+</a>
+        <a href="mailto:contact@tobyjones.ca">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+<script>
+(function(){
+  var btn = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('mobileMenu');
+  if(!btn || !menu) return;
+  var links = [
+    {href:'/web-development', text:'Websites'},
+    {href:'/digital-marketing', text:'Digital Marketing'},
+    {href:'/out-of-house', text:'Out-of-House'},
+    {href:'/tv-radio', text:'TV & Radio'},
+    {href:'/postal-marketing', text:'Postal'},
+    {href:'/public-relations', text:'PR'},
+    {href:'/portfolio', text:'Portfolio'},
+  ];
+  var html = '';
+  links.forEach(function(l){
+    html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
+  });
+  html += '<a class="mobile-cta" href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener">Book a call ↗</a>';
+  menu.innerHTML = html;
+  function toggleMenu(open){
+    btn.classList.toggle('open', open);
+    menu.style.opacity = open ? '1' : '0';
+    menu.style.pointerEvents = open ? 'auto' : 'none';
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  btn.addEventListener('click', function(){
+    toggleMenu(!btn.classList.contains('open'));
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') toggleMenu(false);
+  });
+})();
+</script>
+</body>
+</html>

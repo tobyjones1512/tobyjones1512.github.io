@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing &amp; Design Portfolio - Toby Jones, Toronto</title>
+  <meta name="description" content="Browse Toby Jones&#39;s portfolio of marketing campaigns, web design projects, screenwriting samples, and video production work from Toronto and beyond."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://tobyjones.ca/portfolio"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://tobyjones.ca/portfolio"/>
+  <meta property="og:title" content="Marketing &amp; Design Portfolio - Toby Jones, Toronto"/>
+  <meta property="og:description" content="Browse Toby Jones&#39;s portfolio of marketing campaigns, web design projects, screenwriting samples, and video production work from Toronto and beyond."/>
+  <meta property="og:site_name" content="Toby Jones"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Marketing &amp; Design Portfolio - Toby Jones, Toronto"/>
+  <meta name="twitter:description" content="Browse Toby Jones&#39;s portfolio of marketing campaigns, web design projects, screenwriting samples, and video production work from Toronto and beyond."/>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --apple-dark: #1d1d1f;
+      --apple-mid: #424245;
+      --apple-subtle: #6e6e73;
+      --apple-light: #f5f5f7;
+      --apple-white: #ffffff;
+      --apple-blue: #0071e3;
+      --radius-lg: 24px;
+      --radius-xl: 40px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: var(--apple-white);
+      color: var(--apple-dark);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Scroll reveal ───────────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.75s cubic-bezier(.22, 1, .36, 1),
+        transform 0.75s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.24s;
+    }
+
+    /* ── Nav ─────────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 24px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    nav .logo {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: var(--apple-dark);
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    nav ul a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--apple-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover {
+      color: var(--apple-dark);
+    }
+
+    nav ul a.active {
+      color: var(--apple-dark);
+      font-weight: 500;
+    }
+
+    nav .nav-cta {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--apple-blue);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    nav .nav-cta:hover {
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+    }
+
+    /* ── Hero ────────────────────────────────────────────────────────── */
+    .hero {
+      padding-top: 52px;
+      min-height: 380px;
+      display: flex;
+      align-items: flex-end;
+      background: linear-gradient(160deg, #f0f4ff 0%, #fdf0ff 50%, #f0fff8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 60%, rgba(167, 139, 250, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(125, 211, 252, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 80px 24px 64px;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(29, 29, 31, 0.5);
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.22, 1, .36, 1) 0.2s forwards;
+    }
+
+    .hero-headline {
+      font-size: clamp(44px, 7vw, 80px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+      color: var(--apple-dark);
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.22, 1, .36, 1) 0.35s forwards;
+    }
+
+    .hero-sub {
+      margin-top: 20px;
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--apple-subtle);
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.22, 1, .36, 1) 0.5s forwards;
+    }
+
+    /* ── Filter tabs ─────────────────────────────────────────────────── */
+    .filter-bar {
+      position: sticky;
+      top: 52px;
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+      padding: 0 24px;
+    }
+
+    .filter-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+    }
+
+    .filter-tab {
+      padding: 16px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--apple-subtle);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .filter-tab:hover {
+      color: var(--apple-dark);
+    }
+
+    .filter-tab.active {
+      color: var(--apple-dark);
+      border-bottom-color: var(--apple-dark);
+    }
+
+    /* ── Section shared ──────────────────────────────────────────────── */
+    section {
+      padding: 96px 24px;
+    }
+
+    section:nth-child(even) {
+      background: var(--apple-light);
+    }
+
+    .section-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--apple-subtle);
+      margin-bottom: 12px;
+    }
+
+    .section-headline {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--apple-dark);
+      margin-bottom: 56px;
+    }
+
+    /* ── Project cards ───────────────────────────────────────────────── */
+    .projects-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .project-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: var(--apple-white);
+      overflow: hidden;
+      transition: box-shadow 0.3s cubic-bezier(.22, 1, .36, 1),
+        transform 0.3s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .project-card:hover {
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.09);
+      transform: translateY(-2px);
+    }
+
+    .project-card-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    @media (max-width: 720px) {
+      .project-card-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-info {
+      padding: 44px 40px;
+      border-right: 1px solid rgba(0, 0, 0, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .project-info {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        padding: 32px 24px;
+      }
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .project-name {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--apple-dark);
+      line-height: 1.2;
+    }
+
+    .value-badge {
+      flex-shrink: 0;
+      padding: 4px 12px;
+      border-radius: 980px;
+      background: rgba(0, 0, 0, 0.05);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--apple-mid);
+      letter-spacing: 0.02em;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--apple-subtle);
+      font-weight: 300;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      padding: 5px 12px;
+      border-radius: 980px;
+      background: var(--apple-light);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--apple-mid);
+    }
+
+    .project-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 22px;
+      border-radius: 980px;
+      background: var(--apple-dark);
+      color: var(--apple-white);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      align-self: flex-start;
+      margin-top: auto;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .project-cta:hover {
+      background: #000;
+      transform: scale(1.02);
+    }
+
+    .project-cta svg {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      transition: transform 0.2s;
+    }
+
+    .project-cta:hover svg {
+      transform: translate(2px, -2px);
+    }
+
+    /* Pages panel */
+    .project-pages {
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (max-width: 720px) {
+      .project-pages {
+        padding: 24px;
+      }
+    }
+
+    .pages-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(110, 110, 115, 0.6);
+      margin-bottom: 4px;
+    }
+
+    .pages-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .page-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: var(--apple-light);
+      text-decoration: none;
+      color: var(--apple-dark);
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .page-link:hover {
+      background: var(--apple-white);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transform: translateX(3px);
+    }
+
+    .page-link-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .page-icon svg {
+      width: 13px;
+      height: 13px;
+      fill: var(--apple-mid);
+    }
+
+    .page-link-arrow {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: rgba(0, 0, 0, 0.3);
+      stroke-width: 1.8;
+      transition: stroke 0.2s;
+      flex-shrink: 0;
+    }
+
+    .page-link:hover .page-link-arrow {
+      stroke: var(--apple-dark);
+    }
+
+    .page-link.case-study {
+      background: var(--apple-dark);
+      border-color: transparent;
+      color: var(--apple-white);
+    }
+
+    .page-link.case-study:hover {
+      background: #000;
+      transform: translateX(3px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    }
+
+    .page-link.case-study .page-icon {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .page-link.case-study .page-icon svg {
+      fill: rgba(255, 255, 255, 0.8);
+    }
+
+    .page-link.case-study .page-link-arrow {
+      stroke: rgba(255, 255, 255, 0.6);
+    }
+
+    .page-link.case-study:hover .page-link-arrow {
+      stroke: var(--apple-white);
+    }
+
+    /* ── Screenplay card ─────────────────────────────────────────────── */
+    .screenplay-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: var(--apple-dark);
+      padding: 64px 56px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+      transition: box-shadow 0.3s, transform 0.3s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .screenplay-card:hover {
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .screenplay-card::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    @media (max-width: 640px) {
+      .screenplay-card {
+        grid-template-columns: 1fr;
+        padding: 40px 28px;
+        gap: 32px;
+      }
+
+      .screenplay-card::before {
+        display: none;
+      }
+    }
+
+    .screenplay-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 980px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 20px;
+    }
+
+    .screenplay-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--apple-white);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .screenplay-desc {
+      font-size: 15px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.55);
+      font-weight: 300;
+      max-width: 420px;
+      margin-bottom: 32px;
+    }
+
+    .btn-screenplay {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 980px;
+      background: var(--apple-white);
+      color: var(--apple-dark);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-screenplay:hover {
+      background: rgba(255, 255, 255, 0.88);
+      transform: scale(1.02);
+    }
+
+    .btn-screenplay svg {
+      width: 13px;
+      height: 13px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .screenplay-pages-count {
+      position: relative;
+      text-align: center;
+    }
+
+    .screenplay-icon-wrap {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .screenplay-icon-wrap svg {
+      width: 52px;
+      height: 52px;
+      fill: rgba(255, 255, 255, 0.7);
+    }
+
+    .screenplay-poster {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .screenplay-poster img {
+      width: 140px;
+      border-radius: 12px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      opacity: 0.9;
+      transition: opacity 0.3s, transform 0.4s cubic-bezier(.22,1,.36,1);
+    }
+    .screenplay-card:hover .screenplay-poster img { opacity: 1; transform: scale(1.04); }
+
+    .btn-screenplay-group { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .btn-screenplay-watch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 980px;
+      background: #ff0000;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-screenplay-watch:hover { background: #cc0000; transform: scale(1.02); }
+    .btn-screenplay-watch svg { width: 13px; height: 13px; fill: #fff; }
+
+    .screenplay-logline {
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.75);
+      font-weight: 400;
+      max-width: 440px;
+      margin-bottom: 14px;
+    }
+
+    .screenplay-summary {
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.45);
+      font-weight: 300;
+      max-width: 440px;
+      margin-bottom: 28px;
+    }
+
+    .screenplay-genre-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 28px;
+    }
+
+    .genre-tag {
+      padding: 4px 12px;
+      border-radius: 980px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ── Video cards ─────────────────────────────────────────────────── */
+    .video-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: var(--apple-white);
+      overflow: hidden;
+      transition: box-shadow 0.3s cubic-bezier(.22, 1, .36, 1), transform 0.3s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .video-card:hover {
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.09);
+      transform: translateY(-2px);
+    }
+
+    .video-card-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 720px) {
+      .video-card-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .video-info {
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (max-width: 720px) {
+      .video-info {
+        padding: 32px 24px;
+      }
+    }
+
+    .video-role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 980px;
+      background: var(--apple-light);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--apple-subtle);
+      align-self: flex-start;
+    }
+
+    .video-title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--apple-dark);
+      line-height: 1.15;
+    }
+
+    .video-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--apple-subtle);
+      font-weight: 300;
+    }
+
+    .video-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .video-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 980px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .video-link-btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-link-btn svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    .video-link-btn.yt {
+      background: #ff0000;
+      color: #fff;
+    }
+
+    .video-link-btn.yt svg {
+      fill: #fff;
+    }
+
+    .video-link-btn.secondary {
+      background: var(--apple-light);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: var(--apple-dark);
+    }
+
+    .video-link-btn.secondary svg {
+      fill: none;
+      stroke: var(--apple-dark);
+      stroke-width: 1.8;
+    }
+
+    .video-preview {
+      background: #0f0f0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-preview::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(255, 0, 0, 0.12) 0%, transparent 70%);
+    }
+
+    .video-preview-inner {
+      position: relative;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .video-play-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-play-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: rgba(255, 255, 255, 0.8);
+      margin-left: 3px;
+    }
+
+    .video-preview-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .video-season-tag {
+      padding: 4px 12px;
+      border-radius: 980px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── Marketing cards ─────────────────────────────────────────────── */
+    .marketing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .marketing-card {
+      padding: 36px 32px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      background: var(--apple-white);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s cubic-bezier(.22, 1, .36, 1), transform 0.3s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .marketing-card:hover {
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .marketing-card::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: var(--mcard-accent, rgba(99, 102, 241, 0.08));
+      filter: blur(32px);
+      pointer-events: none;
+      transition: transform 0.4s;
+    }
+
+    .marketing-card:hover::before {
+      transform: scale(1.4);
+    }
+
+    .marketing-card:nth-child(1) {
+      --mcard-accent: rgba(99, 102, 241, 0.1);
+    }
+
+    .marketing-card:nth-child(2) {
+      --mcard-accent: rgba(16, 185, 129, 0.1);
+    }
+
+    .marketing-card:nth-child(3) {
+      --mcard-accent: rgba(245, 158, 11, 0.1);
+    }
+
+    .marketing-role {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--apple-subtle);
+    }
+
+    .marketing-client {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--apple-dark);
+      line-height: 1.2;
+    }
+
+    .marketing-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--apple-subtle);
+      font-weight: 300;
+      flex: 1;
+    }
+
+    .marketing-meta {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(110, 110, 115, 0.6);
+    }
+
+    .marketing-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--apple-blue);
+      text-decoration: none;
+      transition: opacity 0.2s;
+      align-self: flex-start;
+    }
+
+    .marketing-link:hover {
+      opacity: 0.7;
+    }
+
+    .marketing-link svg {
+      width: 12px;
+      height: 12px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
+    footer {
+      background: var(--apple-white);
+      border-top: 1px solid rgba(0, 0, 0, 0.07);
+      padding: 40px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--apple-subtle);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--apple-subtle);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--apple-dark);
+    }
+
+    /* ── Keyframes ───────────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  /* ── Hamburger / Mobile menu ──────────────────────────────────────── */
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s, transform .35s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
+    .mobile-menu a:hover { background: rgba(0,0,0,.05); }
+
+    @media(max-width:768px) { .nav-hamburger { display: flex; } }
+
+    @media(max-width:768px){ .nav-cta { display: none; } }
+    .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; text-decoration: none; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
+    .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": "Toby Jones Portfolio",
+  "url": "https://tobyjones.ca/portfolio",
+  "about": {"@type":"Person","name":"Toby Jones","jobTitle":"Freelance Marketer & Web Designer","url":"https://tobyjones.ca"}
+}
+</script>
+</head>
+
+<body>
+
+  <!-- ── Nav ────────────────────────────────────────────────────────── -->
+  <nav>
+    <a href="/" class="logo">Toby Jones</a>
+    <ul>
+      <li><a href="/web-development">Websites</a></li>
+      <li><a href="/digital-marketing">Digital Marketing</a></li>
+      <li><a href="/out-of-house">Out-of-House</a></li>
+      <li><a href="/tv-radio">TV &amp; Radio</a></li>
+      <li><a href="/postal-marketing">Postal</a></li>
+      <li><a href="/public-relations">PR</a></li>
+      <li><a href="/portfolio" class="active">Portfolio</a></li>
+    </ul>
+    <a href="mailto:contact@tobyjones.ca" class="nav-cta">Get in touch ↗</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"></div>
+
+  <!-- ── Hero ───────────────────────────────────────────────────────── -->
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Selected work</p>
+      <h1 class="hero-headline">Portfolio.</h1>
+      <p class="hero-sub">A look at the websites I've built and screenplays I've written.</p>
+    </div>
+  </div>
+
+  <!-- ── Filter bar ─────────────────────────────────────────────────── -->
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <a href="#websites" class="filter-tab active">Websites</a>
+      <a href="#screenplays" class="filter-tab">Screenplays</a>
+      <a href="#video" class="filter-tab">Video</a>
+      <a href="#marketing" class="filter-tab">Marketing</a>
+    </div>
+  </div>
+
+  <!-- ── Websites ────────────────────────────────────────────────────── -->
+  <section id="websites">
+    <div class="section-inner">
+      <p class="section-label reveal">Web development</p>
+      <h2 class="section-headline reveal reveal-delay-1">Client websites.</h2>
+
+      <div class="projects-stack">
+
+        <!-- Blackpool Music School -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-card-inner">
+            <div class="project-info">
+              <div class="project-header">
+                <h3 class="project-name">Blackpool Music School</h3>
+
+              </div>
+              <p class="project-desc">
+                A comprehensive multi-page website for a music school in Blackpool, covering tuition offerings, term
+                dates, enrolment, and more - giving the school a polished digital home.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Education</span>
+                <span class="tag">6 pages</span>
+                <span class="tag">Web Design</span>
+              </div>
+              <a href="/assets/Websites/Blackpool%20Music%20School%20-%20(%241200)/Case%20Study.pdf" target="_blank"
+                class="project-cta">
+                View case study
+                <svg viewBox="0 0 14 14">
+                  <path d="M3 11L11 3M11 3H5M11 3v6" />
+                </svg>
+              </a>
+            </div>
+            <div class="project-pages">
+              <p class="pages-label">Pages</p>
+              <div class="pages-grid">
+                <a href="/assets/Websites/Blackpool%20Music%20School%20-%20(%241200)/Landing.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M2 3h12v10H2zM5 3v10M11 3v10M2 8h12" />
+                      </svg></span>
+                    Landing
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Blackpool%20Music%20School%20-%20(%241200)/About.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6a5 5 0 0 1 10 0" />
+                      </svg></span>
+                    About
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Blackpool%20Music%20School%20-%20(%241200)/Tuition.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M8 1l7 4-7 4-7-4 7-4zM1 9l7 4 7-4M1 13l7 4 7-4" />
+                      </svg></span>
+                    Tuition
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Blackpool%20Music%20School%20-%20(%241200)/Term%20Dates.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <rect x="1" y="3" width="14" height="12" rx="1" />
+                        <path d="M1 7h14M5 1v4M11 1v4" />
+                      </svg></span>
+                    Term Dates
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Blackpool%20Music%20School%20-%20(%241200)/Join%20BMS.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path
+                          d="M5.5 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM1 15a4.5 4.5 0 0 1 9 0H1zM12 9v2h-2v2h2v2h2v-2h2v-2h-2V9z" />
+                      </svg></span>
+                    Join BMS
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Blackpool%20Music%20School%20-%20(%241200)/Contact.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M2 3h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm0 0l6 5 6-5" />
+                      </svg></span>
+                    Contact
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Richards' Mortgages -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-card-inner">
+            <div class="project-info">
+              <div class="project-header">
+                <h3 class="project-name">Richards' Mortgages</h3>
+
+              </div>
+              <p class="project-desc">
+                A clean, conversion-focused website for an independent mortgage broker, with dedicated pages for
+                residential mortgages and refinancing products to guide clients through the process.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Finance</span>
+                <span class="tag">5 pages</span>
+                <span class="tag">Web Design</span>
+              </div>
+              <a href="/assets/Websites/Richards%27%20Mortgages%20-%20(%24546)/Case%20Study.pdf" target="_blank"
+                class="project-cta">
+                View case study
+                <svg viewBox="0 0 14 14">
+                  <path d="M3 11L11 3M11 3H5M11 3v6" />
+                </svg>
+              </a>
+            </div>
+            <div class="project-pages">
+              <p class="pages-label">Pages</p>
+              <div class="pages-grid">
+                <a href="/assets/Websites/Richards%27%20Mortgages%20-%20(%24546)/Landing.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M2 3h12v10H2zM5 3v10M11 3v10M2 8h12" />
+                      </svg></span>
+                    Landing
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Richards%27%20Mortgages%20-%20(%24546)/Mortgages.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M8 1l5 5H9v7H7V6H3L8 1z" />
+                      </svg></span>
+                    Mortgages
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Richards%27%20Mortgages%20-%20(%24546)/Refinance.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M14 2v5h-5M2 14V9h5M14 7A6 6 0 0 0 2.34 9M2 9a6 6 0 0 0 11.66-2" />
+                      </svg></span>
+                    Refinance
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Richards%27%20Mortgages%20-%20(%24546)/About.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6a5 5 0 0 1 10 0" />
+                      </svg></span>
+                    About
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Richards%27%20Mortgages%20-%20(%24546)/Contact.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M2 3h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm0 0l6 5 6-5" />
+                      </svg></span>
+                    Contact
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cutting Edge Carpentry -->
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-card-inner">
+            <div class="project-info">
+              <div class="project-header">
+                <h3 class="project-name">Cutting Edge Carpentry</h3>
+
+              </div>
+              <p class="project-desc">
+                A gallery-forward website for a bespoke carpentry business, showcasing craftsmanship through a curated
+                visual portfolio and a clear services overview that converts visitors into enquiries.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Trades</span>
+                <span class="tag">5 pages</span>
+                <span class="tag">Web Design</span>
+              </div>
+              <a href="/assets/Websites/Cutting%20Edge%20Carpentry%20-%20(%24500)/Case%20Study.pdf" target="_blank"
+                class="project-cta">
+                View case study
+                <svg viewBox="0 0 14 14">
+                  <path d="M3 11L11 3M11 3H5M11 3v6" />
+                </svg>
+              </a>
+            </div>
+            <div class="project-pages">
+              <p class="pages-label">Pages</p>
+              <div class="pages-grid">
+                <a href="/assets/Websites/Cutting%20Edge%20Carpentry%20-%20(%24500)/Landing.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M2 3h12v10H2zM5 3v10M11 3v10M2 8h12" />
+                      </svg></span>
+                    Landing
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Cutting%20Edge%20Carpentry%20-%20(%24500)/Gallery.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <rect x="1" y="1" width="6" height="6" rx="1" />
+                        <rect x="9" y="1" width="6" height="6" rx="1" />
+                        <rect x="1" y="9" width="6" height="6" rx="1" />
+                        <rect x="9" y="9" width="6" height="6" rx="1" />
+                      </svg></span>
+                    Gallery
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Cutting%20Edge%20Carpentry%20-%20(%24500)/Services.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M6.7 1L6 3.3a5 5 0 0 0-1.6.9L2 3.5 1 5.3l2 1.5A5 5 0 0 0 3 8a5 5 0 0 0 0 1.2l-2 1.5 1 1.8 2.4-.7a5 5 0 0 0 1.6.9L6.7 15h2.6l.7-2.3a5 5 0 0 0 1.6-.9l2.4.7 1-1.8-2-1.5A5 5 0 0 0 13 8a5 5 0 0 0 0-1.2l2-1.5-1-1.8-2.4.7a5 5 0 0 0-1.6-.9L9.3 1H6.7zM8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z" />
+                      </svg></span>
+                    Services
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Cutting%20Edge%20Carpentry%20-%20(%24500)/About.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6a5 5 0 0 1 10 0" />
+                      </svg></span>
+                    About
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+                <a href="/assets/Websites/Cutting%20Edge%20Carpentry%20-%20(%24500)/Contact.pdf" target="_blank"
+                  class="page-link">
+                  <span class="page-link-left">
+                    <span class="page-icon"><svg viewBox="0 0 16 16">
+                        <path d="M2 3h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm0 0l6 5 6-5" />
+                      </svg></span>
+                    Contact
+                  </span>
+                  <svg class="page-link-arrow" viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Screenplays ──────────────────────────────────────────────────── -->
+  <section id="screenplays" style="background: var(--apple-light);">
+    <div class="section-inner">
+      <p class="section-label reveal">Screenwriting</p>
+      <h2 class="section-headline reveal reveal-delay-1">Original screenplays.</h2>
+
+      <div class="reveal reveal-delay-2">
+        <div class="screenplay-card">
+          <div class="screenplay-info">
+            <div class="screenplay-badge">Original Screenplay</div>
+            <h3 class="screenplay-title">Vengeance</h3>
+            <p class="screenplay-logline">
+              After witnessing a gruesome crime, Cait plots to get vengeance on the criminals involved.
+            </p>
+            <p class="screenplay-summary">
+              Six months before the opening frames of their student slasher film roll, Mike and his crew commit a
+              violent crime to fund their passion project - and Cait sees everything. A quiet, overlooked member of the
+              group, she bides her time. When production begins, she is right there on set - boom mic in hand, mask
+              waiting. One by one, the people who were there that night will answer for what they did. Blending the
+              self-aware language of meta-horror with a slow-burn revenge thriller, Vengeance asks who the real monsters
+              are when the camera stops rolling.
+            </p>
+            <div class="screenplay-genre-tags">
+              <span class="genre-tag">Horror</span>
+              <span class="genre-tag">Slasher</span>
+              <span class="genre-tag">Meta-Horror</span>
+              <span class="genre-tag">Thriller</span>
+            </div>
+            <a href="/assets/Screenplays/Vengeance.pdf" target="_blank" class="btn-screenplay">
+              Read script
+              <svg viewBox="0 0 14 14">
+                <path d="M3 11L11 3M11 3H5M11 3v6" />
+              </svg>
+            </a>
+          </div>
+          <div class="screenplay-pages-count">
+            <div class="screenplay-icon-wrap">
+              <!-- Script / document icon -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6zm2-7h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h3v1.5H8V10z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dangerous Woman -->
+      <div class="reveal reveal-delay-2" style="margin-top: 28px;">
+        <div class="screenplay-card">
+          <div class="screenplay-info">
+            <div class="screenplay-badge">Writer · Director · Producer · Editor</div>
+            <h3 class="screenplay-title">Dangerous Woman</h3>
+            <p class="screenplay-logline">
+              One click. One mistake. Everything to lose.
+            </p>
+            <p class="screenplay-summary">
+              Based on true events from 2018, Peter is a young man newly dumped and looking for connection - who stumbles into a late-night catfishing trap on a video chat site. By morning, explicit images have been sent to his friends and family and he faces a $2,000 extortion demand. As shame and desperation spiral out of control, Peter finds himself standing on a bridge with nowhere left to turn. A raw, unflinching short film about the very real psychological devastation of online sextortion.
+            </p>
+            <div class="screenplay-genre-tags">
+              <span class="genre-tag">Drama</span>
+              <span class="genre-tag">Short Film</span>
+              <span class="genre-tag">True Story</span>
+              <span class="genre-tag">Thriller</span>
+            </div>
+            <div class="btn-screenplay-group">
+              <a href="https://www.youtube.com/watch?v=Puztt-hikww&t=1s" target="_blank" rel="noopener" class="btn-screenplay-watch">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Watch film
+              </a>
+              <a href="/assets/Screenplays/Dangerous%20Woman.pdf" target="_blank" class="btn-screenplay">
+                Read script
+                <svg viewBox="0 0 14 14"><path d="M3 11L11 3M11 3H5M11 3v6"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="screenplay-poster">
+            <img src="/assets/Screenplays/Dangerous Woman - Poster.jpg" alt="Dangerous Woman film poster" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Video ──────────────────────────────────────────────────────── -->
+  <section id="video">
+    <div class="section-inner">
+      <p class="section-label reveal">Video editing</p>
+      <h2 class="section-headline reveal reveal-delay-1">Video work.</h2>
+
+      <div class="projects-stack">
+        <div class="video-card reveal reveal-delay-2">
+          <div class="video-card-inner">
+            <div class="video-info">
+              <span class="video-role-badge">Video Editor · Season 2</span>
+              <h3 class="video-title">Kindly Unfiltered</h3>
+              <p class="video-desc">
+                A podcast series offering a safe space for honest, unfiltered conversations about life's authentic
+                experiences and unspoken truths. Hosted by Seyi Oluwatimilehin and Wilson Ifeanyi, episodes air weekly
+                on YouTube and major podcast platforms. I edited the full run of Season 2, cutting each episode for
+                YouTube delivery.
+              </p>
+              <div class="video-links">
+                <a href="https://www.youtube.com/playlist?list=PLiaE9WXhQZSFoknB4TIwzkSecvvGBvM8f" target="_blank"
+                  rel="noopener" class="video-link-btn yt">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z" />
+                  </svg>
+                  Watch Season 2
+                </a>
+                <a href="https://mintslatemedia.com/filmography/" target="_blank" rel="noopener"
+                  class="video-link-btn secondary">
+                  <svg viewBox="0 0 14 14">
+                    <path d="M3 11L11 3M11 3H5M11 3v6" />
+                  </svg>
+                  Mint Slate Media
+                </a>
+              </div>
+            </div>
+            <div class="video-preview">
+              <div class="video-preview-inner">
+                <div class="video-play-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+                <span class="video-season-tag">Season 2</span>
+                <span class="video-preview-label">Available on YouTube</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- We Can't Be Friends -->
+        <div class="video-card reveal reveal-delay-3">
+          <div class="video-card-inner">
+            <div class="video-info">
+              <span class="video-role-badge">Director · Story By · Camera Op · Editor</span>
+              <h3 class="video-title">We Can't Be Friends</h3>
+              <p class="video-desc">
+                A short film I developed from original story concept through to final cut - directing on set, operating camera, and editing the finished piece. Available to watch in full on YouTube.
+              </p>
+              <div class="video-links">
+                <a href="https://youtu.be/84qZe_4M2sc?si=ioBD7s9EqppWjuAZ" target="_blank" rel="noopener" class="video-link-btn yt">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
+                  Watch film
+                </a>
+              </div>
+            </div>
+            <div class="video-preview">
+              <div class="video-preview-inner">
+                <div class="video-play-icon">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <span class="video-preview-label">Available on YouTube</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Marketing ────────────────────────────────────────────────────── -->
+  <section id="marketing" style="background: var(--apple-light);">
+    <div class="section-inner">
+      <p class="section-label reveal">Marketing</p>
+      <h2 class="section-headline reveal reveal-delay-1">Marketing work.</h2>
+
+      <div class="marketing-grid">
+
+        <!-- Content Creators Blackpool (anonymous) -->
+        <div class="marketing-card reveal reveal-delay-1">
+          <div class="marketing-role">Freelance Digital Marketing</div>
+          <div class="marketing-client">Digital Creative Agency</div>
+          <p class="marketing-desc">
+            Contributed freelance marketing work to a creatively-led digital agency based in Blackpool, supporting
+            client campaigns across social media, content production, and digital strategy. The agency works across paid
+            advertising, SEO, web development, and visual storytelling for clients in multiple industries.
+          </p>
+          <a href="https://contentcreatorsblackpool.co.uk" target="_blank" rel="noopener" class="marketing-link">
+            Visit website
+            <svg viewBox="0 0 14 14">
+              <path d="M3 11L11 3M11 3H5M11 3v6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- OxyGym -->
+        <div class="marketing-card reveal reveal-delay-2">
+          <div class="marketing-role">Social Media Manager</div>
+          <div class="marketing-client">OxyGym Blackpool</div>
+          <p class="marketing-desc">
+            Managed the full social media presence for an independent gym in Blackpool - creating and scheduling
+            content, growing the online audience, and building a community around the brand across Instagram.
+          </p>
+          <div class="marketing-meta">2022 - 2024</div>
+          <a href="https://www.instagram.com/oxygymblackpool/" target="_blank" rel="noopener" class="marketing-link">
+            View Instagram
+            <svg viewBox="0 0 14 14">
+              <path d="M3 11L11 3M11 3H5M11 3v6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Viva! Blackpool -->
+        <div class="marketing-card reveal reveal-delay-3">
+          <div class="marketing-role">Google Ads</div>
+          <div class="marketing-client">Viva! Blackpool</div>
+          <p class="marketing-desc">
+            Ran Google Ads campaigns for a Blackpool entertainment venue, managing paid search to drive ticket sales, boost event awareness, and maximise return on ad spend.
+          </p>
+          <div class="marketing-meta">2023 - 2025</div>
+          <a href="https://www.vivablackpool.com/" target="_blank" rel="noopener" class="marketing-link">
+            Visit website
+            <svg viewBox="0 0 14 14"><path d="M3 11L11 3M11 3H5M11 3v6"/></svg>
+          </a>
+        </div>
+
+        <!-- OnCall Doctors -->
+        <div class="marketing-card reveal reveal-delay-3">
+          <div class="marketing-role">Social Media Manager</div>
+          <div class="marketing-client">OnCall Doctors</div>
+          <p class="marketing-desc">
+            Managed social media for an on-call medical service, crafting content that clearly communicated their
+            services, built brand trust, and reached patients across Instagram.
+          </p>
+          <div class="marketing-meta">2022 - 2024</div>
+          <a href="https://www.instagram.com/oncalldrs" target="_blank" rel="noopener" class="marketing-link">
+            View Instagram
+            <svg viewBox="0 0 14 14">
+              <path d="M3 11L11 3M11 3H5M11 3v6" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+          <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+      <div class="footer-links">
+<a href="/webcare">WebCare+</a>
+        <a href="mailto:contact@tobyjones.ca">Email</a>
+        <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Filter tab active state on scroll
+    const tabs = document.querySelectorAll('.filter-tab');
+    const sections = ['websites', 'screenplays', 'video', 'marketing'].map(id => document.getElementById(id));
+
+    window.addEventListener('scroll', () => {
+      let current = sections[0];
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 160) current = s; });
+      tabs.forEach(t => {
+        t.classList.toggle('active', t.getAttribute('href') === '#' + current.id);
+      });
+    });
+  </script>
+<script>
+(function(){
+  var btn = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('mobileMenu');
+  if(!btn || !menu) return;
+  var links = [
+    {href:'/web-development', text:'Websites'},
+    {href:'/digital-marketing', text:'Digital Marketing'},
+    {href:'/out-of-house', text:'Out-of-House'},
+    {href:'/tv-radio', text:'TV & Radio'},
+    {href:'/postal-marketing', text:'Postal'},
+    {href:'/public-relations', text:'PR'},
+    {href:'/portfolio', text:'Portfolio'},
+  ];
+  var html = '';
+  links.forEach(function(l){
+    html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
+  });
+  html += '<a class="mobile-cta" href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener">Book a call ↗</a>';
+  menu.innerHTML = html;
+  function toggleMenu(open){
+    btn.classList.toggle('open', open);
+    menu.style.opacity = open ? '1' : '0';
+    menu.style.pointerEvents = open ? 'auto' : 'none';
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  btn.addEventListener('click', function(){
+    toggleMenu(!btn.classList.contains('open'));
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') toggleMenu(false);
+  });
+})();
+</script>
+</body>
+
+</html>
