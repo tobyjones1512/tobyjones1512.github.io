@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebCare+ WordPress Maintenance Plans - Toby Jones</title>
+  <meta name="description" content="Keep your WordPress site running perfectly with WebCare+. Security updates, automated backups, uptime monitoring, and hands-on support. Plans from C$150/month."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://tobyjones.ca/webcare"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://tobyjones.ca/webcare"/>
+  <meta property="og:title" content="WebCare+ WordPress Maintenance Plans - Toby Jones"/>
+  <meta property="og:description" content="Keep your WordPress site running perfectly with WebCare+. Security updates, automated backups, uptime monitoring, and hands-on support. Plans from C$150/month."/>
+  <meta property="og:site_name" content="Toby Jones"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="WebCare+ WordPress Maintenance Plans - Toby Jones"/>
+  <meta name="twitter:description" content="Keep your WordPress site running perfectly with WebCare+. Security updates, automated backups, uptime monitoring, and hands-on support. Plans from C$150/month."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #1d1d1f; --mid: #424245; --subtle: #6e6e73;
+      --light: #f5f5f7; --white: #ffffff; --blue: #0071e3;
+      --accent: #0ea5e9;
+      --radius: 24px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; background: var(--white); color: var(--dark); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s cubic-bezier(.22,1,.36,1), transform 0.75s cubic-bezier(.22,1,.36,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; } .d4 { transition-delay: .32s; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 160; height: 52px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.72); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0,0,0,.08); }
+    .logo { font-size: 17px; font-weight: 600; letter-spacing: -.3px; color: var(--dark); text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul a { font-size: 13px; color: var(--mid); text-decoration: none; transition: color .2s; }
+    nav ul a:hover { color: var(--dark); }
+    .nav-cta { font-size: 13px; color: var(--blue); text-decoration: none; transition: opacity .2s; }
+    .nav-cta:hover { opacity: .7; }
+    @media(max-width:768px){ nav ul { display: none; } }
+
+    /* Hero */
+    .hero { padding-top: 52px; min-height: 88vh; display: flex; align-items: center; background: linear-gradient(150deg, #f0f9ff 0%, #e0f2fe 40%, #ecfdf5 100%); position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 55% 60% at 75% 40%, rgba(14,165,233,.10) 0%, transparent 70%), radial-gradient(ellipse 40% 50% at 20% 70%, rgba(16,185,129,.07) 0%, transparent 70%); pointer-events: none; }
+    .hero-inner { position: relative; max-width: 1080px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    @media(max-width:720px){ .hero-inner { grid-template-columns: 1fr; gap: 48px; } }
+    .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .2s forwards; }
+    .hero-headline { font-size: clamp(44px,6vw,76px); font-weight: 700; letter-spacing: -.04em; line-height: 1.04; color: var(--dark); opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .35s forwards; }
+    .hero-sub { margin-top: 20px; font-size: 17px; font-weight: 300; line-height: 1.65; color: var(--subtle); opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .5s forwards; }
+    .hero-actions { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .65s forwards; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; background: var(--dark); color: #fff; font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-primary:hover { background: #000; transform: scale(1.02); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; background: rgba(255,255,255,.6); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,.12); color: var(--dark); font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-secondary:hover { background: rgba(255,255,255,.85); transform: scale(1.02); }
+    .hero-visual { display: flex; align-items: center; justify-content: center; opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .5s forwards; }
+    .hero-visual-card { background: rgba(255,255,255,.65); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.8); border-radius: 20px; padding: 32px; box-shadow: 0 20px 60px rgba(0,0,0,.1); width: 100%; max-width: 340px; }
+    .uptime-ring { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .ring { width: 64px; height: 64px; border-radius: 50%; background: conic-gradient(var(--accent) 358deg, rgba(14,165,233,.12) 0deg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ring-inner { width: 46px; height: 46px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--accent); }
+    .uptime-text { font-size: 13px; color: var(--subtle); line-height: 1.5; }
+    .uptime-text strong { display: block; font-size: 15px; color: var(--dark); }
+    .status-list { display: flex; flex-direction: column; gap: 10px; }
+    .status-item { display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: var(--subtle); }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block; margin-right: 8px; box-shadow: 0 0 0 3px rgba(16,185,129,.15); }
+    .status-label { display: flex; align-items: center; }
+    .status-ok { font-size: 11px; font-weight: 600; color: #10b981; }
+
+    /* Sections */
+    section { padding: 100px 24px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--subtle); margin-bottom: 12px; }
+    .section-headline { font-size: clamp(28px,4vw,44px); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; color: var(--dark); }
+
+    /* Pitch */
+    .pitch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    @media(max-width:720px){ .pitch-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .pitch-body { font-size: 15px; line-height: 1.75; color: var(--subtle); font-weight: 300; }
+    .pitch-body + .pitch-body { margin-top: 14px; }
+
+    /* Promo banner */
+    .promo-banner { margin-top: 32px; padding: 20px 24px; background: linear-gradient(135deg, rgba(14,165,233,.08) 0%, rgba(16,185,129,.06) 100%); border: 1px solid rgba(14,165,233,.2); border-radius: 16px; display: flex; align-items: flex-start; gap: 14px; }
+    .promo-icon { font-size: 22px; flex-shrink: 0; line-height: 1; }
+    .promo-text { font-size: 14px; line-height: 1.6; color: var(--mid); }
+    .promo-text strong { color: var(--dark); }
+
+    /* Plans */
+    .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 16px; margin-top: 56px; }
+    .plan-card { border-radius: var(--radius); border: 1px solid rgba(0,0,0,.08); background: var(--white); padding: 36px 32px; position: relative; transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s; }
+    .plan-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,.08); }
+    .plan-card.featured { border-color: var(--accent); background: var(--dark); color: #fff; }
+    .plan-card.featured .plan-price-label,
+    .plan-card.featured .plan-features li { color: rgba(255,255,255,.65); }
+    .plan-card.featured .plan-name,
+    .plan-card.featured .plan-price { color: #fff; }
+    .plan-card.featured .plan-divider { background: rgba(255,255,255,.12); }
+    .plan-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; padding: 4px 10px; border-radius: 980px; background: var(--accent); color: #fff; margin-bottom: 16px; }
+    .plan-name { font-size: 22px; font-weight: 700; letter-spacing: -.02em; color: var(--dark); margin-bottom: 6px; }
+    .plan-desc { font-size: 14px; color: var(--subtle); font-weight: 300; line-height: 1.5; margin-bottom: 24px; }
+    .plan-card.featured .plan-desc { color: rgba(255,255,255,.55); }
+    .plan-price { font-size: 40px; font-weight: 700; letter-spacing: -.04em; color: var(--dark); line-height: 1; }
+    .plan-price span { font-size: 16px; font-weight: 400; letter-spacing: 0; }
+    .plan-price-label { font-size: 12px; color: var(--subtle); margin-top: 4px; margin-bottom: 24px; }
+    .plan-divider { height: 1px; background: rgba(0,0,0,.07); margin-bottom: 24px; }
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .plan-features li { font-size: 14px; color: var(--subtle); font-weight: 300; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+    .plan-features li::before { content: ""; width: 16px; height: 16px; border-radius: 50%; background: rgba(14,165,233,.12); flex-shrink: 0; margin-top: 1px; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%230ea5e9' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-size: contain; }
+    .plan-card.featured .plan-features li::before { background-color: rgba(255,255,255,.1); background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+    .plan-btn { display: block; width: 100%; text-align: center; padding: 14px; border-radius: 980px; font-size: 14px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+    .plan-btn-outline { border: 1px solid rgba(0,0,0,.15); color: var(--dark); background: transparent; }
+    .plan-btn-outline:hover { background: var(--light); transform: scale(1.02); }
+    .plan-btn-fill { background: var(--accent); color: #fff; border: none; }
+    .plan-btn-fill:hover { background: #0284c7; transform: scale(1.02); }
+    .plan-btn-white { background: #fff; color: var(--dark); border: none; }
+    .plan-btn-white:hover { background: rgba(255,255,255,.88); transform: scale(1.02); }
+
+    /* Features */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; margin-top: 56px; }
+    .feature-card { padding: 32px; border-radius: var(--radius); border: 1px solid rgba(0,0,0,.07); background: var(--white); transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s; position: relative; overflow: hidden; }
+    .feature-card::before { content: ""; position: absolute; top: -40px; right: -40px; width: 140px; height: 140px; border-radius: 50%; background: rgba(14,165,233,.07); filter: blur(28px); pointer-events: none; transition: transform .4s; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.08); }
+    .feature-card:hover::before { transform: scale(1.5); }
+    .feature-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(14,165,233,.08); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .feature-icon svg { width: 20px; height: 20px; fill: var(--accent); }
+    .feature-title { font-size: 17px; font-weight: 600; letter-spacing: -.015em; color: var(--dark); margin-bottom: 8px; }
+    .feature-desc { font-size: 14px; line-height: 1.65; color: var(--subtle); font-weight: 300; }
+
+    /* CTA */
+    .cta { background: var(--light); }
+    .cta-card { background: var(--dark); border-radius: 40px; padding: 80px 60px; text-align: center; position: relative; overflow: hidden; }
+    .cta-card::before { content: ""; position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(14,165,233,.22) 0%, transparent 65%); pointer-events: none; }
+    .cta-card h2 { font-size: clamp(32px,5vw,60px); font-weight: 700; letter-spacing: -.04em; line-height: 1.06; color: #fff; position: relative; margin-bottom: 16px; }
+    .cta-card p { font-size: 17px; font-weight: 300; color: rgba(255,255,255,.55); max-width: 420px; margin: 0 auto 40px; position: relative; line-height: 1.6; }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-white { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; background: #fff; color: var(--dark); font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-white:hover { background: rgba(255,255,255,.88); transform: scale(1.02); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.85); font-size: 15px; font-weight: 500; text-decoration: none; transition: border-color .2s, background .2s, transform .15s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.06); transform: scale(1.02); }
+
+    /* Footer */
+    footer { background: var(--white); border-top: 1px solid rgba(0,0,0,.07); padding: 40px 24px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 12px; color: var(--subtle); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: var(--subtle); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--dark); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  /* ── Hamburger / Mobile menu ──────────────────────────────────────── */
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s, transform .35s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
+    .mobile-menu a:hover { background: rgba(0,0,0,.05); }
+
+    @media(max-width:768px) { .nav-hamburger { display: flex; } }
+
+    @media(max-width:768px){ .nav-cta { display: none; } }
+    .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; text-decoration: none; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
+    .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "WebCare+ WordPress Maintenance",
+  "description": "WordPress maintenance plans including security updates, backups, uptime monitoring, and content support.",
+  "provider": {"@type":"Person","name":"Toby Jones","url":"https://tobyjones.ca"},
+  "url": "https://tobyjones.ca/webcare"
+}
+</script>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">Toby Jones</a>
+    <ul>
+      <li><a href="/web-development">Websites</a></li>
+      <li><a href="/digital-marketing">Digital Marketing</a></li>
+      <li><a href="/out-of-house">Out-of-House</a></li>
+      <li><a href="/tv-radio">TV &amp; Radio</a></li>
+      <li><a href="/postal-marketing">Postal</a></li>
+      <li><a href="/public-relations">PR</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+    </ul>
+    <a href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener" class="nav-cta">Book a call &#x2197;</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">WebCare+</div>
+        <h1 class="hero-headline">Your site,<br>always on.</h1>
+        <p class="hero-sub">Affordable website care and maintenance plans that keep your site fast, secure, and up to date - so you never have to think about it.</p>
+        <div class="hero-actions">
+          <a href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener" class="btn-primary">Book a free call</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-card">
+          <div class="uptime-ring">
+            <div class="ring"><div class="ring-inner">99.9%</div></div>
+            <div class="uptime-text"><strong>Uptime monitored</strong>Round-the-clock checks so issues are caught before your customers notice.</div>
+          </div>
+          <div class="status-list">
+            <div class="status-item"><span class="status-label"><span class="status-dot"></span>Security updates</span><span class="status-ok">Active</span></div>
+            <div class="status-item"><span class="status-label"><span class="status-dot"></span>Automated backups</span><span class="status-ok">Active</span></div>
+            <div class="status-item"><span class="status-label"><span class="status-dot"></span>Performance checks</span><span class="status-ok">Active</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pitch -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <div class="pitch-grid">
+        <div>
+          <p class="section-label reveal">Why WebCare+</p>
+          <h2 class="section-headline reveal d1">Your website needs<br>attention every month.</h2>
+        </div>
+        <div class="reveal d2">
+          <p class="pitch-body">A website isn't a one-time job. Plugins go out of date, hosting needs managing, content needs refreshing, and security vulnerabilities emerge constantly. Without regular maintenance, even a great website starts to slip.</p>
+          <p class="pitch-body">WebCare+ handles all of that for you - security updates, backups, performance monitoring, and content tweaks - on a simple monthly plan. You focus on your business. I keep your site in perfect shape.</p>
+          <div class="promo-banner reveal d3">
+            <div class="promo-icon">🎁</div>
+            <div class="promo-text"><strong>Launch offer: 25% off</strong> Take out a WebCare+ plan within 30 days of paying your final website invoice and receive 25% off your chosen plan. You can upgrade at any time.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section style="background: var(--light);">
+    <div class="section-inner">
+      <p class="section-label reveal">Plans</p>
+      <h2 class="section-headline reveal d1">Choose the plan<br>that fits your business.</h2>
+      <div class="plans-grid">
+
+        <!-- Peace of Mind -->
+        <div class="plan-card reveal d1">
+          <div class="plan-name">Peace of Mind</div>
+          <div class="plan-desc">Core maintenance to keep your site healthy, secure, and online.</div>
+          <div class="plan-price"><span>C$</span>150<span>/month</span></div>
+          <div class="plan-price-label">Annual, billed monthly</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li>Weekly updates for WordPress, themes, and plugins.</li>
+            <li>Weekly off-site backups with 1-click restore.</li>
+            <li>24/7 monitoring (you get an alert if the site goes down).</li>
+          </ul>
+        </div>
+
+        <!-- Growth & Support (featured) -->
+        <div class="plan-card featured reveal d2">
+          <div class="plan-badge">Most popular</div>
+          <div class="plan-name">Growth &amp; Support</div>
+          <div class="plan-desc">Everything in Peace of Mind, plus hands-on support and performance care.</div>
+          <div class="plan-price"><span>C$</span>500<span>/month</span></div>
+          <div class="plan-price-label">Annual, billed monthly</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li>Everything in the Peace of Mind plan</li>
+            <li>2 hours of dedicated tasks per month (e.g., swapping a photo, posting a blog you provided, or changing a promo banner).</li>
+            <li>Monthly speed checks and image compression.</li>
+            <li>Guaranteed 1-2 business day response time.</li>
+            <li>Basic SEO: Monitoring for broken links and 404 errors.</li>
+          </ul>
+        </div>
+
+        <!-- Full Partner -->
+        <div class="plan-card reveal d3">
+          <div class="plan-name">Full Partner</div>
+          <div class="plan-desc">The complete package for businesses that need maximum support and security.</div>
+          <div class="plan-price"><span style="font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle;margin-right:2px;">from</span> <span>C$</span>1,300<span>/month</span></div>
+          <div class="plan-price-label">Annual, billed monthly</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li>Everything in the Growth &amp; Support plan</li>
+            <li>8 hours of dedicated tasks per month.</li>
+            <li>Testing checkout flows and managing product updates.</li>
+            <li>Web Application Firewall (WAF) and active malware removal.</li>
+            <li>Google Analytics Dashboard showing traffic and conversions.</li>
+            <li>Advanced SEO</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <p class="section-label reveal">What's included</p>
+      <h2 class="section-headline reveal d1">Peace of mind,<br>built in.</h2>
+      <div class="features-grid">
+        <div class="feature-card reveal d1">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div>
+          <div class="feature-title">Security Updates</div>
+          <div class="feature-desc">Plugins, themes, and core software kept up to date - closing vulnerabilities before they become problems.</div>
+        </div>
+        <div class="feature-card reveal d2">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></div>
+          <div class="feature-title">Automated Backups</div>
+          <div class="feature-desc">Regular off-site backups so your site can be fully restored if anything goes wrong - fast.</div>
+        </div>
+        <div class="feature-card reveal d3">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg></div>
+          <div class="feature-title">Performance Monitoring</div>
+          <div class="feature-desc">Speed checks and Core Web Vitals tracking to ensure your site stays fast and Google-friendly.</div>
+        </div>
+        <div class="feature-card reveal d1">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <div class="feature-title">Content Updates</div>
+          <div class="feature-desc">Need to swap an image, update your hours, or change some copy? On Standard and Premium plans, I handle it for you.</div>
+        </div>
+        <div class="feature-card reveal d2">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+          <div class="feature-title">Uptime Monitoring</div>
+          <div class="feature-desc">24/7 checks that alert me the moment your site goes down - so I can act before your customers notice.</div>
+        </div>
+        <div class="feature-card reveal d3">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>
+          <div class="feature-title">Monthly Reports</div>
+          <div class="feature-desc">A clear summary of everything done, how your site is performing, and any recommendations for the month ahead.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="section-inner">
+      <div class="cta-card reveal">
+        <h2>Keep your site<br>in safe hands.</h2>
+        <p>Book a free call and let's find the right WebCare+ plan for your business.</p>
+        <div class="cta-actions">
+          <a href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener" class="btn-white">Book a free call ↗</a>
+          <a href="mailto:contact@tobyjones.ca" class="btn-outline">contact@tobyjones.ca</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+          <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/webcare">WebCare+</a>
+        <a href="mailto:contact@tobyjones.ca">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+<script>
+(function(){
+  var btn = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('mobileMenu');
+  if(!btn || !menu) return;
+  var links = [
+    {href:'/web-development', text:'Websites'},
+    {href:'/digital-marketing', text:'Digital Marketing'},
+    {href:'/out-of-house', text:'Out-of-House'},
+    {href:'/tv-radio', text:'TV & Radio'},
+    {href:'/postal-marketing', text:'Postal'},
+    {href:'/public-relations', text:'PR'},
+    {href:'/portfolio', text:'Portfolio'},
+  ];
+  var html = '';
+  links.forEach(function(l){
+    html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
+  });
+  html += '<a class="mobile-cta" href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener">Book a call ↗</a>';
+  menu.innerHTML = html;
+  function toggleMenu(open){
+    btn.classList.toggle('open', open);
+    menu.style.opacity = open ? '1' : '0';
+    menu.style.pointerEvents = open ? 'auto' : 'none';
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  btn.addEventListener('click', function(){
+    toggleMenu(!btn.classList.contains('open'));
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') toggleMenu(false);
+  });
+})();
+</script>
+</body>
+</html>

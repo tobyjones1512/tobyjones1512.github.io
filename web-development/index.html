@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Design &amp; Development Toronto - Toby Jones</title>
+  <meta name="description" content="Professional website design and development in Toronto. WordPress, WooCommerce, and custom sites built for speed and SEO. WebCare+ maintenance plans available."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://tobyjones.ca/web-development"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://tobyjones.ca/web-development"/>
+  <meta property="og:title" content="Website Design &amp; Development Toronto - Toby Jones"/>
+  <meta property="og:description" content="Professional website design and development in Toronto. WordPress, WooCommerce, and custom sites built for speed and SEO. WebCare+ maintenance plans available."/>
+  <meta property="og:site_name" content="Toby Jones"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Website Design &amp; Development Toronto - Toby Jones"/>
+  <meta name="twitter:description" content="Professional website design and development in Toronto. WordPress, WooCommerce, and custom sites built for speed and SEO. WebCare+ maintenance plans available."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #1d1d1f; --mid: #424245; --subtle: #6e6e73;
+      --light: #f5f5f7; --white: #ffffff; --blue: #0071e3;
+      --accent: #6366f1;
+      --radius: 24px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; background: var(--white); color: var(--dark); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s cubic-bezier(.22,1,.36,1), transform 0.75s cubic-bezier(.22,1,.36,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; } .d4 { transition-delay: .32s; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 160; height: 52px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.72); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0,0,0,.08); }
+    .logo { font-size: 17px; font-weight: 600; letter-spacing: -.3px; color: var(--dark); text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul a { font-size: 13px; color: var(--mid); text-decoration: none; transition: color .2s; }
+    nav ul a:hover { color: var(--dark); }
+    .nav-cta { font-size: 13px; color: var(--blue); text-decoration: none; transition: opacity .2s; }
+    .nav-cta:hover { opacity: .7; }
+    @media(max-width:768px){ nav ul { display: none; } }
+
+    /* Hero */
+    .hero { padding-top: 52px; min-height: 92vh; display: flex; align-items: center; background: linear-gradient(150deg, #eef2ff 0%, #e0e7ff 40%, #f0fdf4 100%); position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 55% 60% at 80% 40%, rgba(99,102,241,.12) 0%, transparent 70%), radial-gradient(ellipse 40% 50% at 20% 70%, rgba(52,211,153,.08) 0%, transparent 70%); pointer-events: none; }
+    .hero-inner { position: relative; max-width: 1080px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    @media(max-width:720px){ .hero-inner { grid-template-columns: 1fr; gap: 48px; } }
+    .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .2s forwards; }
+    .hero-headline { font-size: clamp(44px,6vw,76px); font-weight: 700; letter-spacing: -.04em; line-height: 1.04; color: var(--dark); opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .35s forwards; }
+    .hero-sub { margin-top: 20px; font-size: 17px; font-weight: 300; line-height: 1.65; color: var(--subtle); opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .5s forwards; }
+    .hero-actions { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .65s forwards; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; background: var(--dark); color: #fff; font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-primary:hover { background: #000; transform: scale(1.02); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; background: rgba(255,255,255,.6); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,.12); color: var(--dark); font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-secondary:hover { background: rgba(255,255,255,.85); transform: scale(1.02); }
+    .hero-visual { display: flex; align-items: center; justify-content: center; opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .5s forwards; }
+    .hero-visual-card { background: rgba(255,255,255,.65); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.8); border-radius: 20px; padding: 32px; box-shadow: 0 20px 60px rgba(0,0,0,.1); width: 100%; max-width: 340px; }
+    .visual-bar { height: 10px; border-radius: 5px; margin-bottom: 12px; background: var(--accent); opacity: .15; }
+    .visual-bar:nth-child(1){ width: 80%; opacity: .3; }
+    .visual-bar:nth-child(2){ width: 60%; opacity: .2; }
+    .visual-bar:nth-child(3){ width: 90%; opacity: .12; }
+    .visual-bar:nth-child(4){ width: 50%; opacity: .08; }
+    .visual-metric { display: flex; gap: 12px; margin-top: 20px; }
+    .metric-box { flex: 1; background: rgba(99,102,241,.08); border-radius: 12px; padding: 16px 12px; text-align: center; }
+    .metric-num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -.03em; }
+    .metric-label { font-size: 11px; color: var(--subtle); margin-top: 3px; }
+
+    /* Sections */
+    section { padding: 100px 24px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--subtle); margin-bottom: 12px; }
+    .section-headline { font-size: clamp(28px,4vw,44px); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; color: var(--dark); }
+    .section-body { margin-top: 16px; font-size: 17px; font-weight: 300; line-height: 1.65; color: var(--subtle); max-width: 560px; }
+
+    /* Pitch */
+    .pitch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    @media(max-width:720px){ .pitch-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .pitch-body { font-size: 15px; line-height: 1.75; color: var(--subtle); font-weight: 300; }
+    .pitch-body + .pitch-body { margin-top: 14px; }
+
+    /* Features */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; margin-top: 56px; }
+    .feature-card { padding: 32px; border-radius: var(--radius); border: 1px solid rgba(0,0,0,.07); background: var(--white); transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s; position: relative; overflow: hidden; }
+    .feature-card::before { content: ""; position: absolute; top: -40px; right: -40px; width: 140px; height: 140px; border-radius: 50%; background: rgba(99,102,241,.07); filter: blur(28px); pointer-events: none; transition: transform .4s; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.08); }
+    .feature-card:hover::before { transform: scale(1.5); }
+    .feature-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(99,102,241,.08); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .feature-icon svg { width: 20px; height: 20px; fill: var(--accent); }
+    .feature-title { font-size: 17px; font-weight: 600; letter-spacing: -.015em; color: var(--dark); margin-bottom: 8px; }
+    .feature-desc { font-size: 14px; line-height: 1.65; color: var(--subtle); font-weight: 300; }
+
+    /* Process */
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1px; margin-top: 56px; background: rgba(0,0,0,.06); border-radius: var(--radius); overflow: hidden; }
+    .step { padding: 36px 28px; background: var(--white); transition: background .2s; }
+    .step:hover { background: var(--light); }
+    .step-num { font-size: 11px; font-weight: 700; letter-spacing: .2em; color: var(--accent); margin-bottom: 16px; }
+    .step-title { font-size: 18px; font-weight: 600; letter-spacing: -.02em; color: var(--dark); margin-bottom: 8px; }
+    .step-desc { font-size: 13px; line-height: 1.65; color: var(--subtle); font-weight: 300; }
+
+    /* CTA */
+    .cta { background: var(--light); }
+    .cta-card { background: var(--dark); border-radius: 40px; padding: 80px 60px; text-align: center; position: relative; overflow: hidden; }
+    .cta-card::before { content: ""; position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(99,102,241,.25) 0%, transparent 65%); pointer-events: none; }
+    .cta-card h2 { font-size: clamp(32px,5vw,60px); font-weight: 700; letter-spacing: -.04em; line-height: 1.06; color: #fff; position: relative; margin-bottom: 16px; }
+    .cta-card p { font-size: 17px; font-weight: 300; color: rgba(255,255,255,.55); max-width: 400px; margin: 0 auto 40px; position: relative; line-height: 1.6; }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-white { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; background: #fff; color: var(--dark); font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-white:hover { background: rgba(255,255,255,.88); transform: scale(1.02); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.85); font-size: 15px; font-weight: 500; text-decoration: none; transition: border-color .2s, background .2s, transform .15s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.06); transform: scale(1.02); }
+
+    /* Footer */
+    footer { background: var(--white); border-top: 1px solid rgba(0,0,0,.07); padding: 40px 24px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 12px; color: var(--subtle); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: var(--subtle); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--dark); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  /* ── Hamburger / Mobile menu ──────────────────────────────────────── */
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s, transform .35s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
+    .mobile-menu a:hover { background: rgba(0,0,0,.05); }
+
+    @media(max-width:768px) { .nav-hamburger { display: flex; } }
+
+    @media(max-width:768px){ .nav-cta { display: none; } }
+    .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; text-decoration: none; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
+    .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Website Design & Development",
+  "provider": {"@type":"Person","name":"Toby Jones","url":"https://tobyjones.ca"},
+  "areaServed": "Toronto, ON, Canada",
+  "url": "https://tobyjones.ca/web-development"
+}
+</script>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">Toby Jones</a>
+    <ul>
+      <li><a href="/web-development">Websites</a></li>
+      <li><a href="/digital-marketing">Digital Marketing</a></li>
+      <li><a href="/out-of-house">Out-of-House</a></li>
+      <li><a href="/tv-radio">TV &amp; Radio</a></li>
+      <li><a href="/postal-marketing">Postal</a></li>
+      <li><a href="/public-relations">PR</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+    </ul>
+    <a href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener" class="nav-cta">Book a call &#x2197;</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Web Development</div>
+        <h1 class="hero-headline">Your Website,<br>Your Way.</h1>
+        <p class="hero-sub">High-performance websites built to convert visitors into customers - tailored, modern, and designed to grow with your business.</p>
+        <div class="hero-actions">
+          <a href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener" class="btn-primary">Book a free call</a>
+          <a href="/portfolio" class="btn-secondary">See client work</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual-card">
+          <div class="visual-bar"></div>
+          <div class="visual-bar"></div>
+          <div class="visual-bar"></div>
+          <div class="visual-bar"></div>
+          <div class="visual-metric">
+            <div class="metric-box"><div class="metric-num">↑82%</div><div class="metric-label">Conversion lift</div></div>
+            <div class="metric-box"><div class="metric-num">#1</div><div class="metric-label">Google ranking</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pitch -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <div class="pitch-grid">
+        <div>
+          <p class="section-label reveal">The approach</p>
+          <h2 class="section-headline reveal d1">Not just a website.<br>Your hardest-working employee.</h2>
+        </div>
+        <div class="reveal d2">
+          <p class="pitch-body">Most websites are digital brochures. I build platforms that work. By combining intuitive user experience with strategic call-to-actions, I fix the leaky bucket in your conversion process - turning more of your visitors into paying customers.</p>
+          <p class="pitch-body">Whether you need a sleek landing page, a full multi-page site, or a scalable e-commerce solution, every build is mobile-responsive, SEO-optimised, and designed around your goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section style="background: var(--light);">
+    <div class="section-inner">
+      <p class="section-label reveal">What I build</p>
+      <h2 class="section-headline reveal d1">Everything your<br>business needs online.</h2>
+      <div class="features-grid">
+        <div class="feature-card reveal d1">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+          <div class="feature-title">Bespoke Websites</div>
+          <div class="feature-desc">Custom-built from scratch, designed entirely around your brand identity and business goals - no templates, no compromises.</div>
+        </div>
+        <div class="feature-card reveal d2">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"/></svg></div>
+          <div class="feature-title">WordPress Solutions</div>
+          <div class="feature-desc">Flexible, powerful CMS websites you can manage yourself - without needing to touch a line of code.</div>
+        </div>
+        <div class="feature-card reveal d3">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM5.17 5H3V3H1v2h2l3.6 7.59L5.25 15c-.16.28-.25.61-.25.95C5 17.1 5.9 18 7 18h14v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 14h9.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 22 5H5.17z"/></svg></div>
+          <div class="feature-title">Woo-Commerce</div>
+          <div class="feature-desc">Powerful WooCommerce stores built on WordPress - fully customisable, SEO-friendly, and ready to scale from day one.</div>
+        </div>
+        <div class="feature-card reveal d1">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+          <div class="feature-title">SEO Optimised</div>
+          <div class="feature-desc">Built to rank - every site I deliver is structured for Google from the ground up, attracting local and national customers.</div>
+        </div>
+        <div class="feature-card reveal d2">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></div>
+          <div class="feature-title">Mobile Responsive</div>
+          <div class="feature-desc">Flawlessly designed for every screen size - because over half your visitors are on mobile.</div>
+        </div>
+        <div class="feature-card reveal d3">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg></div>
+          <div class="feature-title">Conversion Focused</div>
+          <div class="feature-desc">Strategic call-to-actions and user flows designed to turn browsers into buyers - fixing the leaky bucket in your sales process.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <p class="section-label reveal">How it works</p>
+      <h2 class="section-headline reveal d1">From brief to launch,<br>completely stress-free.</h2>
+      <div class="process-steps reveal d2">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-title">Discovery</div>
+          <div class="step-desc">We talk through your goals, audience, and vision. No jargon, no pressure - just a clear picture of what you need.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-title">Design</div>
+          <div class="step-desc">I present a design concept tailored to your brand. We refine together until it's exactly right.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-title">Build</div>
+          <div class="step-desc">I bring the design to life - clean, fast, and tested across all devices and browsers.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-title">Launch</div>
+          <div class="step-desc">Your site goes live. I handle deployment, and I'm on hand for any questions after launch.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WebCare+ callout -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <div class="reveal" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 60%, #ecfdf5 100%); border: 1px solid rgba(14,165,233,.15); border-radius: 32px; padding: 56px 60px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 240px;">
+          <p style="font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #0ea5e9; margin-bottom: 12px;">WebCare+</p>
+          <h2 style="font-size: clamp(22px,3vw,32px); font-weight: 700; letter-spacing: -.03em; line-height: 1.15; color: var(--dark); margin-bottom: 12px;">Keep your site running perfectly after launch.</h2>
+          <p style="font-size: 15px; font-weight: 300; color: var(--subtle); line-height: 1.65; max-width: 440px;">Security updates, backups, performance monitoring, and content tweaks - all handled for you on a simple monthly plan. Plans from C$150/month.</p>
+        </div>
+        <a href="/webcare" style="display: inline-flex; align-items: center; gap: 6px; padding: 14px 28px; border-radius: 980px; background: #1d1d1f; color: #fff; font-size: 15px; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; flex-shrink: 0;" onmouseover="this.style.background='#000';this.style.transform='scale(1.02)'" onmouseout="this.style.background='#1d1d1f';this.style.transform='scale(1)'">View WebCare+ plans ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="section-inner">
+      <div class="cta-card reveal">
+        <h2>Ready to build<br>something great?</h2>
+        <p>Book a free call and let's talk about what your business needs.</p>
+        <div class="cta-actions">
+          <a href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener" class="btn-white">Book a free call ↗</a>
+          <a href="mailto:contact@tobyjones.ca" class="btn-outline">contact@tobyjones.ca</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+          <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/webcare">WebCare+</a>
+        <a href="mailto:contact@tobyjones.ca">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+<script>
+(function(){
+  var btn = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('mobileMenu');
+  if(!btn || !menu) return;
+  var links = [
+    {href:'/web-development', text:'Websites'},
+    {href:'/digital-marketing', text:'Digital Marketing'},
+    {href:'/out-of-house', text:'Out-of-House'},
+    {href:'/tv-radio', text:'TV & Radio'},
+    {href:'/postal-marketing', text:'Postal'},
+    {href:'/public-relations', text:'PR'},
+    {href:'/portfolio', text:'Portfolio'},
+  ];
+  var html = '';
+  links.forEach(function(l){
+    html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
+  });
+  html += '<a class="mobile-cta" href="https://calendly.com/contact-tobyjones/30min" target="_blank" rel="noopener">Book a call ↗</a>';
+  menu.innerHTML = html;
+  function toggleMenu(open){
+    btn.classList.toggle('open', open);
+    menu.style.opacity = open ? '1' : '0';
+    menu.style.pointerEvents = open ? 'auto' : 'none';
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  btn.addEventListener('click', function(){
+    toggleMenu(!btn.classList.contains('open'));
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') toggleMenu(false);
+  });
+})();
+</script>
+</body>
+</html>
