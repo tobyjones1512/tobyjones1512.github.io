@@ -8,21 +8,21 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QCV7XEQ8QT');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book a Callback — Toby Jones</title>
+  <title>Book a Callback - Toby Jones</title>
   <meta name="description" content="Book a free 30-minute callback with Toby Jones, Toronto-based freelance marketer and web designer." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://tobyjones.ca/callback/" />
 
   <!--
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  EMAILJS TEMPLATE — paste this into your EmailJS template body
+  EMAILJS TEMPLATE - paste this into your EmailJS template body
   (emailjs.com → Email Templates → edit template_qf3qfc8)
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   TEMPLATE SETTINGS (in the template editor):
     To email  → contact@tobyjones.ca
     Reply To  → {{reply_to}}       ← IMPORTANT: set this field
-    Subject   → New Callback — {{date}} at {{time}}
+    Subject   → New Callback - {{date}} at {{time}}
 
   TEMPLATE BODY (copy/paste exactly):
   ─────────────────────────────────────────────────────────────────
@@ -302,7 +302,7 @@
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1.5C5.51 1.5 3.5 3.51 3.5 6c0 3.75 4.5 8.5 4.5 8.5s4.5-4.75 4.5-8.5c0-2.49-2.01-4.5-4.5-4.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
         <div>
           <div class="host-detail-label">Location</div>
-          <div class="host-detail-text">Phone call — Toronto, Canada</div>
+          <div class="host-detail-text">Phone call - Toronto, Canada</div>
         </div>
       </div>
       <div class="host-detail">
@@ -365,7 +365,7 @@
           Back
         </button>
         <div class="step2-heading" id="step2Heading">Select a time</div>
-        <div class="step2-sub">Eastern Time — Toronto, Canada</div>
+        <div class="step2-sub">Eastern Time - Toronto, Canada</div>
         <div class="time-grid" id="timeGrid"></div>
       </div>
 
@@ -637,7 +637,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
   var dateStr = state.selectedDate ? formatDateLong(state.selectedDate) : '';
   var timeStr = state.selectedSlot ? formatSlot(state.selectedSlot)+' ET' : '';
 
-  /* Normalise phone — strip any leading +1 the user may have typed */
+  /* Normalise phone - strip any leading +1 the user may have typed */
   var phoneClean = phone.replace(/^\+?1[\s\-.]?/, '');
 
   /* Build the full message body */
@@ -670,7 +670,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     var dt = new DataTransfer();
     dt.items.add(icalFile);
     document.getElementById('ejs_ical').files = dt.files;
-  } catch(e) { /* DataTransfer not supported — attachment skipped */ }
+  } catch(e) { /* DataTransfer not supported - attachment skipped */ }
 
   /* Populate hidden EmailJS form */
   document.getElementById('ejs_from_name').value  = name;
@@ -683,7 +683,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
   submitBtn.disabled = true;
   document.getElementById('sendingNotice').classList.add('visible');
 
-  /* Send via sendForm — reads all inputs including the file input */
+  /* Send via sendForm - reads all inputs including the file input */
   emailjs.sendForm(
     EMAILJS_SERVICE_ID,
     EMAILJS_TEMPLATE_ID,
