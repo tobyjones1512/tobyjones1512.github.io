@@ -10,17 +10,17 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QCV7XEQ8QT');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Software - Toby Jones</title>
-  <meta name="description" content="Software developed by Toby Jones, including IPTV Manager — a macOS app for watching and recording IPTV channels."/>
+  <meta name="description" content="Software developed by Toby Jones, including IPTV Manager - a macOS app for watching and recording IPTV channels."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://tobyjones.ca/software/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://tobyjones.ca/software/"/>
   <meta property="og:title" content="Software - Toby Jones"/>
-  <meta property="og:description" content="Software developed by Toby Jones, including IPTV Manager — a macOS app for watching and recording IPTV channels."/>
+  <meta property="og:description" content="Software developed by Toby Jones, including IPTV Manager - a macOS app for watching and recording IPTV channels."/>
   <meta property="og:site_name" content="Toby Jones"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Software - Toby Jones"/>
-  <meta name="twitter:description" content="Software developed by Toby Jones, including IPTV Manager — a macOS app for watching and recording IPTV channels."/>
+  <meta name="twitter:description" content="Software developed by Toby Jones, including IPTV Manager - a macOS app for watching and recording IPTV channels."/>
   <style>
     *,
     *::before,
@@ -240,12 +240,13 @@
     .app-price-tag {
       font-size: 15px; font-weight: 600;
       color: rgba(255, 255, 255, 0.9);
-      text-align: right; letter-spacing: -0.02em;
+      letter-spacing: -0.02em;
+      margin-top: 16px;
     }
     .app-price-tag span {
       font-size: 11px; font-weight: 400;
       color: rgba(255, 255, 255, 0.45);
-      display: block; margin-top: 1px; letter-spacing: 0;
+      display: inline; margin-left: 5px; letter-spacing: 0;
     }
 
     .app-post-purchase-note {
@@ -264,8 +265,12 @@
       margin-top: 4px;
       display: flex;
       justify-content: flex-end;
+      transform: scale(0.7);
+      transform-origin: right center;
     }
-    @media (max-width: 640px) { .AuthorizeNetSeal { justify-content: flex-start; } }
+    @media (max-width: 640px) {
+      .AuthorizeNetSeal { justify-content: flex-start; transform-origin: left center; }
+    }
 
     /* ── App details ─────────────────────────────────────────────────── */
     .app-details {
@@ -404,7 +409,7 @@
     <div class="hero-inner">
       <p class="hero-eyebrow">Made by Toby Jones</p>
       <h1 class="hero-headline">Software.</h1>
-      <p class="hero-sub">macOS apps and tools I've built for myself — and anyone else who might find them useful.</p>
+      <p class="hero-sub">macOS apps and tools I've built for myself - and anyone else who might find them useful.</p>
     </div>
   </div>
 
@@ -424,10 +429,10 @@
             </div>
             <h2 class="app-title">IPTV Manager</h2>
             <p class="app-tagline">Watch and record your legally obtained IPTV channels, all in one clean macOS app.</p>
+            <div class="app-price-tag">CAD$19.99<span>excl. HST</span></div>
           </div>
           <div class="app-hero-actions">
-            <div class="app-price-tag">CAD$19.99<span>excl. HST</span></div>
-            <form name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+            <form name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx" target="_blank">
               <input type="hidden" name="LinkId" value="a4a9195c-112b-44f8-ae78-a95643de9386" />
               <button type="submit" class="app-btn app-btn-primary">
                 <svg viewBox="0 0 20 20" fill="currentColor"><path d="M4 4a2 2 0 0 0-2 2v1h16V6a2 2 0 0 0-2-2H4ZM18 9H2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9ZM7 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm2 0a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2H10a1 1 0 0 1-1-1Z"/></svg>
@@ -456,8 +461,8 @@
               <li class="feature-item"><span class="feature-dot"></span>Schedule and record programmes directly</li>
               <li class="feature-item"><span class="feature-dot"></span>Channel list management and favourites</li>
               <li class="feature-item"><span class="feature-dot"></span>EPG (electronic programme guide) support</li>
-              <li class="feature-item"><span class="feature-dot"></span>Supports M3U playlists from your IPTV provider</li>
-              <li class="feature-item"><span class="feature-dot"></span>Built in Python — lightweight and open to inspection</li>
+              <li class="feature-item"><span class="feature-dot"></span>Supports Xtream login details</li>
+              <li class="feature-item"><span class="feature-dot"></span>Built in Python - lightweight and open to inspection</li>
             </ul>
           </div>
         </div>
@@ -466,9 +471,9 @@
         <div class="app-screenshots">
           <p class="screenshots-label">Screenshots</p>
           <div class="screenshots-grid">
-            <img class="screenshot-img" src="/assets/img/software/IPTV%20Manager/Live%20TV.jpg" alt="IPTV Manager — Live TV channel grid" loading="lazy" />
-            <img class="screenshot-img" src="/assets/img/software/IPTV%20Manager/Recording%20Screen.jpg" alt="IPTV Manager — Recordings screen" loading="lazy" />
-            <img class="screenshot-img" src="/assets/img/software/IPTV%20Manager/Schedule%20Recording.jpg" alt="IPTV Manager — Schedule recording dialog" loading="lazy" />
+            <img class="screenshot-img" src="/assets/img/software/IPTV%20Manager/Live%20TV.jpg" alt="IPTV Manager - Live TV channel grid" loading="lazy" />
+            <img class="screenshot-img" src="/assets/img/software/IPTV%20Manager/Recording%20Screen.jpg" alt="IPTV Manager - Recordings screen" loading="lazy" />
+            <img class="screenshot-img" src="/assets/img/software/IPTV%20Manager/Schedule%20Recording.jpg" alt="IPTV Manager - Schedule recording dialog" loading="lazy" />
           </div>
         </div>
 
