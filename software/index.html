@@ -315,10 +315,11 @@
     }
     .screenshots-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
-    @media (max-width: 860px) { .screenshots-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 1000px) { .screenshots-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .screenshots-grid { grid-template-columns: 1fr; } }
 
     .screenshot-img {
       width: 100%; border-radius: 12px;
@@ -472,6 +473,7 @@
           <p class="screenshots-label">Screenshots</p>
           <div class="screenshots-grid">
             <img class="screenshot-img" src="/assets/img/software/IPTV%20Manager/Live%20TV.jpg" alt="IPTV Manager - Live TV channel grid" loading="lazy" />
+            <img class="screenshot-img" src="/assets/img/software/IPTV%20Manager/TV%20Guide.png" alt="IPTV Manager - TV Guide" loading="lazy" />
             <img class="screenshot-img" src="/assets/img/software/IPTV%20Manager/Recording%20Screen.jpg" alt="IPTV Manager - Recordings screen" loading="lazy" />
             <img class="screenshot-img" src="/assets/img/software/IPTV%20Manager/Schedule%20Recording.jpg" alt="IPTV Manager - Schedule recording dialog" loading="lazy" />
           </div>
