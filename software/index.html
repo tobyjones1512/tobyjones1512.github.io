@@ -326,7 +326,43 @@
       border: 1px solid rgba(0, 0, 0, 0.1);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       display: block; background: #1a1a2e;
+      cursor: zoom-in;
+      transition: transform 0.2s cubic-bezier(.22,1,.36,1), box-shadow 0.2s;
     }
+    .screenshot-img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    /* ── Lightbox ────────────────────────────────────────────────────── */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s cubic-bezier(.22,1,.36,1);
+    }
+    .lightbox.open { opacity: 1; pointer-events: all; }
+    .lightbox img {
+      max-width: 92vw; max-height: 88vh;
+      border-radius: 16px;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+      transform: scale(0.94);
+      transition: transform 0.3s cubic-bezier(.22,1,.36,1);
+      display: block;
+    }
+    .lightbox.open img { transform: scale(1); }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 20px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); border: none;
+      color: #fff; font-size: 20px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.22); }
 
     /* ── App meta strip ──────────────────────────────────────────────── */
     .app-meta {
@@ -497,6 +533,11 @@
           </div>
         </div>
 
+        <!-- Refund note -->
+        <div style="padding: 16px 56px 20px; border-top: 1px solid rgba(0,0,0,0.06);">
+          <p style="font-size: 12px; color: var(--apple-subtle); line-height: 1.6;">Refunds are available in accordance with the consumer protection laws of your local jurisdiction — typically within 14 days of purchase. To request a refund, please <a href="mailto:contact@tobyjones.ca" style="color: var(--apple-blue); text-decoration: none;">get in touch</a>.</p>
+        </div>
+
       </div>
 
     </div>
@@ -514,6 +555,12 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot enlarged">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&#x2715;</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
   <script>
     // Scroll reveal
     const observer = new IntersectionObserver(entries => {
@@ -522,6 +569,31 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Lightbox
+    (function () {
+      var lb = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lightboxImg');
+      var lbClose = document.getElementById('lightboxClose');
+
+      function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt;
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.screenshot-img').forEach(function (img) {
+        img.addEventListener('click', function () { openLightbox(img.src, img.alt); });
+      });
+      lbClose.addEventListener('click', closeLightbox);
+      lb.addEventListener('click', function (e) { if (e.target === lb) closeLightbox(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLightbox(); });
+    })();
 
     // Mobile menu
     (function () {
