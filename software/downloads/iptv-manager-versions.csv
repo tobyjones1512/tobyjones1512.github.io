@@ -1,5 +1,5 @@
 version,release_date,status,filename,min_macos,release_notes
-1.1.0,2026-04-12,latest,IPTV Manager - 1.1.1.zip,10.15,Added backups to make updating easier
+1.1.1,2026-04-12,latest,IPTV Manager - 1.1.1.zip,10.15,Added backups to make updating easier
 1.1.0,2026-04-12,regular,IPTV Manager - 1.1.0.zip,10.15,Fixed EPG and made recordings easier
 1.0.1,2026-04-11,minor,IPTV Manager - 1.0.1.zip,10.15,Fixed recordings
 1.0.0,2026-04-11,initial,IPTV Manager - 1.0.0.zip,10.15,Initial release
