@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QCV7XEQ8QT');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complaints Procedure - Toby Jones</title>
+  <meta name="description" content="Toby Jones complaints procedure — how to raise a formal grievance, what we can and cannot handle, and your rights under UK consumer law."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://tobyjones.ca/complaints/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://tobyjones.ca/complaints/"/>
+  <meta property="og:title" content="Complaints Procedure - Toby Jones"/>
+  <meta property="og:site_name" content="Toby Jones"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --apple-dark: #1d1d1f;
+      --apple-mid: #424245;
+      --apple-subtle: #6e6e73;
+      --apple-light: #f5f5f7;
+      --apple-white: #ffffff;
+      --apple-blue: #0071e3;
+      --apple-red: #ff3b30;
+      --apple-orange: #ff9500;
+      --radius-lg: 24px;
+      --radius-xl: 40px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: var(--apple-white);
+      color: var(--apple-dark);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Scroll reveal ───────────────────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.75s cubic-bezier(.22,1,.36,1), transform 0.75s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+
+    /* ── Nav ─────────────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 24px; height: 52px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: var(--apple-dark); text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul a { font-size: 13px; font-weight: 400; color: var(--apple-mid); text-decoration: none; transition: color 0.2s; }
+    nav ul a:hover { color: var(--apple-dark); }
+    nav ul a.active { color: var(--apple-dark); font-weight: 500; }
+    nav .nav-cta { font-size: 13px; font-weight: 400; color: var(--apple-blue); text-decoration: none; transition: opacity 0.2s; }
+    nav .nav-cta:hover { opacity: 0.7; }
+    @media (max-width: 768px) { nav ul { display: none; } }
+
+    /* ── Hero ────────────────────────────────────────────────────────── */
+    .hero {
+      padding-top: 52px; min-height: 300px;
+      display: flex; align-items: flex-end;
+      background: linear-gradient(160deg, #fff5f5 0%, #fff8f0 50%, #fffff0 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 60%, rgba(255,59,48,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(255,149,0,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative; max-width: 1080px; margin: 0 auto;
+      padding: 72px 24px 56px; width: 100%;
+    }
+    .hero-eyebrow {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: rgba(29,29,31,0.5); margin-bottom: 16px;
+      opacity: 0; animation: fadeUp 0.9s cubic-bezier(.22,1,.36,1) 0.2s forwards;
+    }
+    .hero-headline {
+      font-size: clamp(40px, 6vw, 72px); font-weight: 700;
+      letter-spacing: -0.04em; line-height: 1.04; color: var(--apple-dark);
+      opacity: 0; animation: fadeUp 0.9s cubic-bezier(.22,1,.36,1) 0.35s forwards;
+    }
+    .hero-sub {
+      margin-top: 20px; font-size: 17px; font-weight: 300;
+      line-height: 1.6; color: var(--apple-subtle); max-width: 520px;
+      opacity: 0; animation: fadeUp 0.9s cubic-bezier(.22,1,.36,1) 0.5s forwards;
+    }
+
+    /* ── Layout ──────────────────────────────────────────────────────── */
+    .page-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 24px 96px;
+    }
+
+    /* ── Sections ────────────────────────────────────────────────────── */
+    .complaints-section {
+      margin-bottom: 56px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--apple-subtle);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(22px, 3vw, 30px); font-weight: 700;
+      letter-spacing: -0.03em; color: var(--apple-dark);
+      margin-bottom: 20px; line-height: 1.15;
+    }
+
+    .body-text {
+      font-size: 15px; line-height: 1.75; color: var(--apple-mid);
+      margin-bottom: 16px;
+    }
+    .body-text:last-child { margin-bottom: 0; }
+
+    .body-text a {
+      color: var(--apple-blue); text-decoration: none;
+    }
+    .body-text a:hover { text-decoration: underline; }
+
+    /* ── Call-out boxes ──────────────────────────────────────────────── */
+    .callout {
+      border-radius: 18px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .callout-blue {
+      background: rgba(0, 113, 227, 0.06);
+      border: 1px solid rgba(0, 113, 227, 0.18);
+    }
+    .callout-red {
+      background: rgba(255, 59, 48, 0.05);
+      border: 1px solid rgba(255, 59, 48, 0.16);
+    }
+    .callout-orange {
+      background: rgba(255, 149, 0, 0.06);
+      border: 1px solid rgba(255, 149, 0, 0.18);
+    }
+    .callout-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .callout-blue .callout-label { color: var(--apple-blue); }
+    .callout-red .callout-label { color: var(--apple-red); }
+    .callout-orange .callout-label { color: var(--apple-orange); }
+    .callout p {
+      font-size: 14px; line-height: 1.7; color: var(--apple-mid);
+    }
+    .callout p a { color: var(--apple-blue); text-decoration: none; }
+    .callout p a:hover { text-decoration: underline; }
+
+    /* ── Step list ───────────────────────────────────────────────────── */
+    .step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .step-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--apple-dark); color: var(--apple-white);
+      font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .step-text {
+      font-size: 14px; line-height: 1.65; color: var(--apple-mid);
+      padding-top: 4px;
+    }
+    .step-text strong { color: var(--apple-dark); font-weight: 600; }
+
+    /* ── Out-of-scope list ───────────────────────────────────────────── */
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .check-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 14px; line-height: 1.6; color: var(--apple-mid);
+    }
+    .check-icon {
+      width: 18px; height: 18px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .check-icon-no { background: rgba(255,59,48,0.1); }
+    .check-icon-no svg { width: 10px; height: 10px; stroke: var(--apple-red); fill: none; stroke-width: 2.5; }
+
+    /* ── Divider ─────────────────────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(0,0,0,0.07);
+      margin: 56px 0;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
+    footer {
+      background: var(--apple-white);
+      border-top: 1px solid rgba(0,0,0,0.07);
+      padding: 40px 24px;
+    }
+    .footer-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-copy { font-size: 12px; color: var(--apple-subtle); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; color: var(--apple-subtle); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--apple-dark); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* ── Mobile menu ─────────────────────────────────────────────────── */
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
+    .mobile-menu a:hover { background: rgba(0,0,0,.05); }
+    @media(max-width:768px) { .nav-hamburger { display: flex; } }
+    @media(max-width:768px) { .nav-cta { display: none; } }
+    .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; text-decoration: none; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
+    .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
+    .mobile-close { position: absolute; top: 20px; right: 20px; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.06); border: none; cursor: pointer; font-size: 18px; color: #1d1d1f; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .mobile-close:hover { background: rgba(0,0,0,0.1); }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="/" class="logo">Toby Jones</a>
+    <ul>
+      <li><a href="/web-development">Websites</a></li>
+      <li><a href="/digital-marketing">Digital Marketing</a></li>
+      <li><a href="/out-of-house">Out-of-House</a></li>
+      <li><a href="/tv-radio">TV &amp; Radio</a></li>
+      <li><a href="/postal-marketing">Postal</a></li>
+      <li><a href="/public-relations">PR</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/software">Software</a></li>
+    </ul>
+    <a href="/callback" class="nav-cta">Get in touch ↗</a>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"></div>
+
+  <!-- ── Hero ───────────────────────────────────────────────────────── -->
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Toby Jones</p>
+      <h1 class="hero-headline">Complaints.</h1>
+      <p class="hero-sub">How to raise a formal grievance, what we can and cannot handle, and your rights as a consumer.</p>
+    </div>
+  </div>
+
+  <!-- ── Body ───────────────────────────────────────────────────────── -->
+  <div class="page-body">
+
+    <!-- 1. Applicable Law -->
+    <div class="complaints-section reveal">
+      <p class="section-eyebrow">Jurisdiction</p>
+      <h2 class="section-title">Which law applies?</h2>
+      <p class="body-text">
+        Toby Jones is a UK-based sole trader. Under UK law, where a Canadian individual purchases a service
+        from a UK company - including where the service is delivered in Canada by an employee or contractor
+        of that UK company, or where the business targets UK customers - UK law applies to that transaction.
+        This means that Canadian consumers purchasing from Toby Jones (and affiliates) are protected by
+        <strong>UK consumer protection legislation</strong>, regardless of the location in which the work is performed.
+      </p>
+      <div class="callout callout-blue">
+        <p class="callout-label">HMRC guidance</p>
+        <p>
+          For further reading on the application of UK law to cross-border service transactions, see
+          <a href="https://www.gov.uk/hmrc-internal-manuals/international-manual/intm262230" target="_blank" rel="noopener">
+            HMRC International Manual INTM262230
+          </a>.
+        </p>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- 2. How to file -->
+    <div class="complaints-section reveal">
+      <p class="section-eyebrow">Making a complaint</p>
+      <h2 class="section-title">How to file a Formal Grievance</h2>
+      <p class="body-text">
+        If you have a complaint that falls within our scope (see below), you should submit a
+        <strong>Formal Grievance</strong> by email. Please include a clear description of your complaint,
+        any relevant dates, and any supporting documentation.
+      </p>
+
+      <div class="callout callout-blue">
+        <p class="callout-label">Submit a Formal Grievance</p>
+        <p>
+          Send your complaint to
+          <a href="mailto:complaints@tobyjones.info">complaints@tobyjones.info</a>.
+          All Formal Grievances will be acknowledged and responded to within
+          <strong>14 working days</strong> of receipt.
+        </p>
+      </div>
+
+      <ol class="step-list">
+        <li class="step-item">
+          <span class="step-num">1</span>
+          <span class="step-text"><strong>Email your complaint</strong> to <a href="mailto:complaints@tobyjones.info" style="color:var(--apple-blue);text-decoration:none;">complaints@tobyjones.info</a> with the subject line "Formal Grievance".</span>
+        </li>
+        <li class="step-item">
+          <span class="step-num">2</span>
+          <span class="step-text"><strong>Include the details</strong> — your name, a description of the issue, relevant dates, and any supporting evidence (e.g. invoices, correspondence).</span>
+        </li>
+        <li class="step-item">
+          <span class="step-num">3</span>
+          <span class="step-text"><strong>Receive a response</strong> within 14 working days. If further investigation is required, you will be notified of the expected timeline.</span>
+        </li>
+      </ol>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- 3. Scope -->
+    <div class="complaints-section reveal">
+      <p class="section-eyebrow">Scope</p>
+      <h2 class="section-title">What we can and cannot handle</h2>
+
+      <p class="body-text">We are able to handle the following types of complaint:</p>
+      <ul class="check-list" style="margin-bottom:24px;">
+        <li class="check-item" style="color:var(--apple-dark);">
+          <span class="check-icon" style="background:rgba(52,199,89,0.12);"><svg viewBox="0 0 12 12" style="width:10px;height:10px;stroke:#34c759;fill:none;stroke-width:2.5;"><polyline points="2,6 5,9 10,3"/></svg></span>
+          Complaints regarding work completed <strong>within the last 14 days</strong>.
+        </li>
+        <li class="check-item" style="color:var(--apple-dark);">
+          <span class="check-icon" style="background:rgba(52,199,89,0.12);"><svg viewBox="0 0 12 12" style="width:10px;height:10px;stroke:#34c759;fill:none;stroke-width:2.5;"><polyline points="2,6 5,9 10,3"/></svg></span>
+          Complaints regarding <strong>payments</strong> — including billing errors, unauthorised charges, or refund disputes.
+        </li>
+      </ul>
+
+      <p class="body-text">We are <strong>not</strong> able to handle the following:</p>
+      <ul class="check-list">
+        <li class="check-item">
+          <span class="check-icon check-icon-no"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg></span>
+          Complaints expressing general dissatisfaction with work completed at any time. These must be submitted to Trading Standards (see below).
+        </li>
+        <li class="check-item">
+          <span class="check-icon check-icon-no"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg></span>
+          Complaints regarding work completed more than 14 days ago, unless they relate to a payment dispute.
+        </li>
+      </ul>
+
+      <div class="callout callout-orange" style="margin-top:28px;">
+        <p class="callout-label">Important — Ontario businesses</p>
+        <p>
+          Businesses registered in Ontario cannot file a Formal Complaint with the
+          <strong>Ministry of Public and Business Service Delivery and Procurement</strong>.
+          That Ministry does not have jurisdiction over UK companies, nor does it have the
+          power to handle business-to-business complaints.
+        </p>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- 4. Trading Standards -->
+    <div class="complaints-section reveal">
+      <p class="section-eyebrow">Escalation</p>
+      <h2 class="section-title">Complaints about the quality of work</h2>
+      <p class="body-text">
+        If you are dissatisfied with the quality of work completed at any time, this falls outside the scope of our internal complaints process. You have the right to report this to <strong>Trading Standards</strong>, the UK authority responsible for investigating businesses that may be trading unfairly.
+      </p>
+      <p class="body-text">
+        Trading Standards can investigate issues such as misleading descriptions of services, poor workmanship, and unfair trading practices. They may not directly inform you regarding the status of disputes, but reports contribute to investigations and can result in enforcement action.
+      </p>
+
+      <div class="callout callout-blue">
+        <p class="callout-label">How to report to Trading Standards</p>
+        <p>
+          The easiest way to report a trader to Trading Standards is through
+          <strong>Citizens Advice</strong>, which operates the consumer helpline
+          and passes complaints on to the relevant Trading Standards team.
+          You can report online, by phone, or in person.
+        </p>
+      </div>
+
+      <ol class="step-list">
+        <li class="step-item">
+          <span class="step-num">1</span>
+          <span class="step-text">
+            <strong>Contact Citizens Advice</strong> — visit
+            <a href="https://www.citizensadvice.org.uk/consumer/get-more-help/report-to-trading-standards/" target="_blank" rel="noopener" style="color:var(--apple-blue);text-decoration:none;">citizensadvice.org.uk</a>
+            or call <strong>+44 808 223 1133</strong> (free from UK landlines &amp; mobiles, Monday to Friday 9am - 5pm GMT/BST).
+          </span>
+        </li>
+        <li class="step-item">
+          <span class="step-num">2</span>
+          <span class="step-text">
+            <strong>Provide details</strong> of the trader (name, website, contact information) and a description of the problem, including dates and any evidence such as contracts or correspondence.
+          </span>
+        </li>
+        <li class="step-item">
+          <span class="step-num">3</span>
+          <span class="step-text">
+            <strong>Your report is passed on</strong> — Citizens Advice will share your information with the relevant Trading Standards team, who will decide whether to investigate. You may not receive a direct response from Trading Standards, but your report is recorded and acted upon.
+          </span>
+        </li>
+      </ol>
+
+      <div class="callout callout-red">
+        <p class="callout-label">Note</p>
+        <p>
+          Trading Standards deals with businesses, not individual disputes. If you are seeking financial
+          redress, you may also wish to consider applying to the
+          <a href="https://www.gov.uk/make-court-claim-for-money" target="_blank" rel="noopener">Small Claims Court</a>
+          or using an Alternative Dispute Resolution (ADR) service.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/webcare">WebCare+</a>
+        <a href="/email/">Email</a>
+        <a href="/complaints">Complaints</a>
+        <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    (function () {
+      var btn = document.querySelector('.nav-hamburger');
+      var menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+      var links = [
+        { href: '/web-development', text: 'Websites' },
+        { href: '/digital-marketing', text: 'Digital Marketing' },
+        { href: '/out-of-house', text: 'Out-of-House' },
+        { href: '/tv-radio', text: 'TV & Radio' },
+        { href: '/postal-marketing', text: 'Postal' },
+        { href: '/public-relations', text: 'PR' },
+        { href: '/portfolio', text: 'Portfolio' },
+        { href: '/software', text: 'Software' },
+      ];
+      var html = '<button class="mobile-close" aria-label="Close menu">&#x2715;</button>';
+      links.forEach(function (l) {
+        html += '<a class="mobile-link" href="' + l.href + '">' + l.text + '</a>';
+      });
+      html += '<a class="mobile-cta" href="/callback">Get in touch ↗</a>';
+      menu.innerHTML = html;
+      menu.querySelector('.mobile-close').addEventListener('click', function () { toggleMenu(false); });
+      function toggleMenu(open) {
+        btn.classList.toggle('open', open);
+        menu.style.opacity = open ? '1' : '0';
+        menu.style.pointerEvents = open ? 'auto' : 'none';
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      btn.addEventListener('click', function () { toggleMenu(!btn.classList.contains('open')); });
+      menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') toggleMenu(false); });
+    })();
+  </script>
+
+</body>
+</html>
