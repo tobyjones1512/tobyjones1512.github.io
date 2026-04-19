@@ -1072,6 +1072,151 @@
       color: var(--apple-dark);
     }
 
+    /* ── Education cards ─────────────────────────────────────────────── */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    .education-card {
+      padding: 40px 36px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      background: var(--apple-white);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: box-shadow 0.3s cubic-bezier(.22, 1, .36, 1), transform 0.3s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .education-card:hover {
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .education-dates {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--apple-subtle);
+    }
+
+    .education-school {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--apple-dark);
+      line-height: 1.2;
+    }
+
+    .education-field-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--apple-subtle);
+      margin-bottom: 6px;
+    }
+
+    .education-field-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--apple-dark);
+    }
+
+    .education-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    /* ── Skills ──────────────────────────────────────────────────────── */
+    .skills-block {
+      margin-bottom: 48px;
+    }
+
+    .skills-block-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--apple-subtle);
+      margin-bottom: 16px;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .skill-tag {
+      padding: 8px 16px;
+      border-radius: 980px;
+      background: var(--apple-white);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--apple-mid);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .skill-tag:hover {
+      background: var(--apple-dark);
+      color: var(--apple-white);
+      border-color: transparent;
+    }
+
+    /* ── Awards ──────────────────────────────────────────────────────── */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .award-item {
+      padding: 28px 28px;
+      border-radius: var(--radius-lg);
+      background: var(--apple-white);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: box-shadow 0.3s cubic-bezier(.22, 1, .36, 1), transform 0.3s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .award-item:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+      transform: translateY(-2px);
+    }
+
+    .award-status {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--apple-subtle);
+    }
+
+    .award-status.won {
+      color: #10b981;
+    }
+
+    .award-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--apple-dark);
+      line-height: 1.3;
+    }
+
+    .award-meta {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--apple-subtle);
+    }
+
     /* ── Keyframes ───────────────────────────────────────────────────── */
     @keyframes fadeUp {
       from {
@@ -1152,6 +1297,8 @@
       <a href="#marketing" class="filter-tab">Marketing</a>
       <a href="#video" class="filter-tab">Video</a>
       <a href="#screenplays" class="filter-tab">Screenplays</a>
+      <a href="#education" class="filter-tab">Education</a>
+      <a href="#skills" class="filter-tab">Skills</a>
     </div>
   </div>
 
@@ -1537,6 +1684,18 @@
           </a>
         </div>
 
+        <!-- Sky News -->
+        <div class="marketing-card reveal reveal-delay-3">
+          <div class="marketing-role">Data Stringer</div>
+          <div class="marketing-client">Sky News</div>
+          <p class="marketing-desc">
+            Contracted for a single-day assignment covering the UK local elections, reporting live data and results as
+            part of Sky News' national election night coverage. Worked accurately and efficiently under significant time
+            pressure, contributing to one of the UK's biggest news broadcasts.
+          </p>
+          <div class="marketing-meta">2024 · Remote, UK</div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1613,6 +1772,30 @@
                   <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
                 <span class="video-preview-label">Available on YouTube</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pretty When I Cry -->
+        <div class="video-card reveal reveal-delay-3">
+          <div class="video-card-inner">
+            <div class="video-info">
+              <span class="video-role-badge">Director of Photography</span>
+              <h3 class="video-title">Pretty When I Cry</h3>
+              <p class="video-desc">
+                Operated A camera on a music video shoot, managing lighting, lenses and filters to achieve the
+                director's intended visual aesthetic. Contributed to storyboarding and concept design, collaborating
+                closely with the director, cast and crew throughout production.
+              </p>
+              <p style="font-size: 12px; font-weight: 500; color: rgba(110,110,115,0.7); margin-top: 4px;">New York, NY · 2025</p>
+            </div>
+            <div class="video-preview" style="background: #0d0d1a;">
+              <div class="video-preview-inner">
+                <div class="video-play-icon">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <span class="video-preview-label">Music video</span>
               </div>
             </div>
           </div>
@@ -1707,6 +1890,137 @@
     </div>
   </section>
 
+  <!-- ── Education ─────────────────────────────────────────────────── -->
+  <section id="education">
+    <div class="section-inner">
+      <p class="section-label reveal">Education</p>
+      <h2 class="section-headline reveal reveal-delay-1">Academic background.</h2>
+
+      <div class="education-grid">
+
+        <div class="education-card reveal reveal-delay-1">
+          <div class="education-dates">2024 – 2025</div>
+          <div class="education-school">New York Film Academy</div>
+          <div>
+            <div class="education-field-label">Major</div>
+            <div class="education-field-value">Director's Craft</div>
+          </div>
+          <div>
+            <div class="education-field-label">Minors</div>
+            <div class="education-tags">
+              <span class="tag">Cinematography</span>
+              <span class="tag">Video Editing</span>
+              <span class="tag">Screenwriting</span>
+              <span class="tag">Intimacy Co-ordination</span>
+              <span class="tag">Set Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="education-card reveal reveal-delay-2">
+          <div class="education-dates">2022 – 2024</div>
+          <div class="education-school">Blackpool Sixth Form College</div>
+          <div>
+            <div class="education-field-label">Major</div>
+            <div class="education-field-value">Film &amp; TV Production</div>
+          </div>
+          <div>
+            <div class="education-field-label">Minor</div>
+            <div class="education-tags">
+              <span class="tag">Computer Science</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ─────────────────────────────────────────────────────── -->
+  <section id="skills" style="background: var(--apple-light);">
+    <div class="section-inner">
+      <p class="section-label reveal">Skills &amp; proficiencies</p>
+      <h2 class="section-headline reveal reveal-delay-1">What I bring.</h2>
+
+      <div class="skills-block reveal reveal-delay-2">
+        <div class="skills-block-label">Core skills</div>
+        <div class="skills-tags">
+          <span class="skill-tag">Graphic Design</span>
+          <span class="skill-tag">Motion Graphics</span>
+          <span class="skill-tag">Storyboarding</span>
+          <span class="skill-tag">Budget Management</span>
+          <span class="skill-tag">Lighting &amp; Lenses</span>
+          <span class="skill-tag">Short-Form Content</span>
+          <span class="skill-tag">Brand Video</span>
+          <span class="skill-tag">Creative Problem Solving</span>
+          <span class="skill-tag">Attention to Detail</span>
+          <span class="skill-tag">Collaboration</span>
+          <span class="skill-tag">Communication</span>
+          <span class="skill-tag">Adaptability</span>
+          <span class="skill-tag">Time Management</span>
+          <span class="skill-tag">Self-Motivated</span>
+          <span class="skill-tag">Works Well Under Pressure</span>
+        </div>
+      </div>
+
+      <div class="skills-block reveal reveal-delay-3">
+        <div class="skills-block-label">Software &amp; tools</div>
+        <div class="skills-tags">
+          <span class="skill-tag">Final Cut Pro</span>
+          <span class="skill-tag">Apple Motion</span>
+          <span class="skill-tag">Final Draft</span>
+          <span class="skill-tag">Adobe Premiere Pro</span>
+          <span class="skill-tag">Adobe Photoshop</span>
+          <span class="skill-tag">Adobe Illustrator</span>
+          <span class="skill-tag">Pixelmator Pro</span>
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Microsoft Office</span>
+          <span class="skill-tag">Google Workspace</span>
+          <span class="skill-tag">iWork</span>
+          <span class="skill-tag">Social Media Platforms</span>
+          <span class="skill-tag">DSLR &amp; Mirrorless Cameras</span>
+        </div>
+      </div>
+
+      <p class="section-label reveal" style="margin-bottom: 12px;">College-Level Awards</p>
+      <h3 class="reveal reveal-delay-1" style="font-size: clamp(22px, 3vw, 32px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--apple-dark); margin-bottom: 32px;">Recognition.</h3>
+
+      <div class="awards-grid">
+
+        <div class="award-item reveal reveal-delay-1">
+          <div class="award-status won">Won</div>
+          <div class="award-title">Best Editor</div>
+          <div class="award-meta">Blackpool Sixth Form College</div>
+        </div>
+
+        <div class="award-item reveal reveal-delay-2">
+          <div class="award-status won">Won</div>
+          <div class="award-title">Best Fiction Film Trailer</div>
+          <div class="award-meta">Blackpool Sixth Form College</div>
+        </div>
+
+        <div class="award-item reveal reveal-delay-3">
+          <div class="award-status won">Won</div>
+          <div class="award-title">Outstanding Student</div>
+          <div class="award-meta">Blackpool Sixth Form College</div>
+        </div>
+
+        <div class="award-item reveal reveal-delay-1">
+          <div class="award-status">Nominated</div>
+          <div class="award-title">Best Single Camera Production</div>
+          <div class="award-meta">Blackpool Sixth Form College</div>
+        </div>
+
+        <div class="award-item reveal reveal-delay-2">
+          <div class="award-status">Nominated</div>
+          <div class="award-title">Best Stop Motion Animation</div>
+          <div class="award-meta">Blackpool Sixth Form College</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ── Footer ─────────────────────────────────────────────────────── -->
   <footer>
     <div class="footer-inner">
@@ -1731,7 +2045,7 @@
 
     // Filter tab active state on scroll
     const tabs = document.querySelectorAll('.filter-tab');
-    const sections = ['websites', 'marketing', 'video', 'screenplays'].map(id => document.getElementById(id));
+    const sections = ['websites', 'marketing', 'video', 'screenplays', 'education', 'skills'].map(id => document.getElementById(id));
 
     window.addEventListener('scroll', () => {
       let current = sections[0];
