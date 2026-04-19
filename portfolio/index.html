@@ -57,9 +57,9 @@
     /* ── Scroll reveal ───────────────────────────────────────────────── */
     .reveal {
       opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.75s cubic-bezier(.22, 1, .36, 1),
-        transform 0.75s cubic-bezier(.22, 1, .36, 1);
+      transform: translateY(28px) scale(0.98);
+      transition: opacity 0.8s cubic-bezier(.22, 1, .36, 1),
+        transform 0.8s cubic-bezier(.22, 1, .36, 1);
     }
 
     .reveal.visible {
@@ -72,11 +72,11 @@
     }
 
     .reveal-delay-2 {
-      transition-delay: 0.16s;
+      transition-delay: 0.18s;
     }
 
     .reveal-delay-3 {
-      transition-delay: 0.24s;
+      transition-delay: 0.28s;
     }
 
     /* ── Nav ─────────────────────────────────────────────────────────── */
@@ -216,7 +216,13 @@
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-      padding: 0 24px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .filter-bar::-webkit-scrollbar {
+      display: none;
     }
 
     .filter-inner {
@@ -224,6 +230,8 @@
       margin: 0 auto;
       display: flex;
       gap: 0;
+      padding: 0 24px;
+      min-width: max-content;
     }
 
     .filter-tab {
@@ -352,6 +360,19 @@
       color: var(--apple-mid);
       letter-spacing: 0.02em;
     }
+
+    .project-website {
+      flex-shrink: 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--apple-subtle);
+      text-decoration: none;
+      transition: color .2s;
+      white-space: nowrap;
+      padding-top: 3px;
+    }
+
+    .project-website:hover { color: var(--apple-dark); }
 
     .project-desc {
       font-size: 14px;
@@ -849,16 +870,6 @@
       stroke-width: 1.8;
     }
 
-    .video-preview {
-      background: #0f0f0f;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 260px;
-      position: relative;
-      overflow: hidden;
-    }
-
     .video-preview::before {
       content: "";
       position: absolute;
@@ -884,6 +895,32 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: transform 0.35s cubic-bezier(.22, 1, .36, 1),
+        background 0.35s, box-shadow 0.35s;
+      animation: pulse-ring 2.8s cubic-bezier(.22, 1, .36, 1) infinite;
+    }
+
+    .video-card:hover .video-play-icon {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.12);
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.05);
+      animation: none;
+    }
+
+    .video-preview {
+      background: #0f0f0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+      transition: filter 0.5s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .video-card:hover .video-preview {
+      filter: brightness(1.2);
     }
 
     .video-play-icon svg {
@@ -1059,17 +1096,78 @@
       color: var(--apple-dark);
     }
 
+    /* ── Education cards ─────────────────────────────────────────────── */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    .education-card {
+      padding: 40px 36px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      background: var(--apple-white);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: box-shadow 0.3s cubic-bezier(.22, 1, .36, 1), transform 0.3s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .education-card:hover {
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .education-dates {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--apple-subtle);
+    }
+
+    .education-school {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--apple-dark);
+      line-height: 1.2;
+    }
+
+    .education-field-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--apple-subtle);
+      margin-bottom: 6px;
+    }
+
+    .education-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
     /* ── Keyframes ───────────────────────────────────────────────────── */
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(24px);
+        filter: blur(6px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
+        filter: blur(0px);
       }
+    }
+
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0   rgba(255, 255, 255, 0.22); }
+      60%  { box-shadow: 0 0 0 14px rgba(255, 255, 255, 0); }
+      100% { box-shadow: 0 0 0 0   rgba(255, 255, 255, 0); }
     }
   /* ── Hamburger / Mobile menu ──────────────────────────────────────── */
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
@@ -1108,12 +1206,13 @@
   <nav>
     <a href="/" class="logo">Toby Jones</a>
     <ul>
-      <li><a href="/web-development">Websites</a></li>
+      <li><a href="/web-development">Web Development</a></li>
       <li><a href="/digital-marketing">Digital Marketing</a></li>
       <li><a href="/out-of-house">Out-of-House</a></li>
-      <li><a href="/tv-radio">TV &amp; Radio</a></li>
-      <li><a href="/postal-marketing">Postal</a></li>
-      <li><a href="/public-relations">PR</a></li>
+      <li><a href="/tv-radio">Commercials</a></li>
+      <li><a href="/postal-marketing">Postal Advertising</a></li>
+      <li><a href="/public-relations">Public Relations</a></li>
+      <li><a href="/video">Video Editing</a></li>
       <li><a href="/portfolio" class="active">Portfolio</a></li>
       <li><a href="/software">Software</a></li>
     </ul>
@@ -1138,6 +1237,7 @@
       <a href="#marketing" class="filter-tab">Marketing</a>
       <a href="#video" class="filter-tab">Video</a>
       <a href="#screenplays" class="filter-tab">Screenplays</a>
+      <a href="#education" class="filter-tab">Education</a>
     </div>
   </div>
 
@@ -1155,7 +1255,7 @@
             <div class="project-info">
               <div class="project-header">
                 <h3 class="project-name">Blackpool Music School</h3>
-
+                <a href="https://blackpoolmusicschool.org" target="_blank" rel="noopener" class="project-website">Visit ↗</a>
               </div>
               <p class="project-desc">
                 A comprehensive multi-page website for a music school in Blackpool, covering tuition offerings, term
@@ -1262,7 +1362,7 @@
             <div class="project-info">
               <div class="project-header">
                 <h3 class="project-name">Richards' Mortgages</h3>
-
+                <a href="https://richardsmortgages.ca" target="_blank" rel="noopener" class="project-website">Visit ↗</a>
               </div>
               <p class="project-desc">
                 A clean, conversion-focused website for an independent mortgage broker, with dedicated pages for
@@ -1355,7 +1455,7 @@
             <div class="project-info">
               <div class="project-header">
                 <h3 class="project-name">Cutting Edge Carpentry</h3>
-
+                <a href="https://www.cuttingedgecarpentry.ca" target="_blank" rel="noopener" class="project-website">Visit ↗</a>
               </div>
               <p class="project-desc">
                 A gallery-forward website for a bespoke carpentry business, showcasing craftsmanship through a curated
@@ -1523,6 +1623,18 @@
           </a>
         </div>
 
+        <!-- Sky News -->
+        <div class="marketing-card reveal reveal-delay-3">
+          <div class="marketing-role">Data Stringer</div>
+          <div class="marketing-client">Sky News</div>
+          <p class="marketing-desc">
+            Contracted for a single-day assignment covering the UK local elections, reporting live data and results as
+            part of Sky News' national election night coverage. Worked accurately and efficiently under significant time
+            pressure, contributing to one of the UK's biggest news broadcasts.
+          </p>
+          <div class="marketing-meta">2024 · Remote, UK</div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1570,8 +1682,41 @@
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
-                <span class="video-season-tag">Season 2</span>
-                <span class="video-preview-label">Available on YouTube</span>
+                <span class="video-season-tag">Podcast Series</span>
+                <span class="video-preview-label">Season 2 · YouTube</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dangerous Woman -->
+        <div class="video-card reveal reveal-delay-2">
+          <div class="video-card-inner">
+            <div class="video-info">
+              <span class="video-role-badge">Writer · Director · Editor · Producer</span>
+              <h3 class="video-title">Dangerous Woman</h3>
+              <p class="video-desc">
+                Wrote, directed, and edited an original short film based on true events, managing a tight budget and
+                leading cast and crew on set. Handled all post-production including sound design and colour correction.
+              </p>
+              <div class="video-links">
+                <a href="https://www.youtube.com/watch?v=Puztt-hikww&t=1s" target="_blank" rel="noopener" class="video-link-btn yt">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
+                  Watch film
+                </a>
+                <a href="/assets/Screenplays/Dangerous%20Woman.pdf" target="_blank" class="video-link-btn secondary">
+                  <svg viewBox="0 0 14 14"><path d="M3 11L11 3M11 3H5M11 3v6"/></svg>
+                  Read script
+                </a>
+              </div>
+            </div>
+            <div class="video-preview">
+              <div class="video-preview-inner">
+                <div class="video-play-icon">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <span class="video-season-tag">Short Film</span>
+                <span class="video-preview-label">New York, NY · 2025</span>
               </div>
             </div>
           </div>
@@ -1598,7 +1743,38 @@
                 <div class="video-play-icon">
                   <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <span class="video-preview-label">Available on YouTube</span>
+                <span class="video-season-tag">Short Film</span>
+                <span class="video-preview-label">New York, NY · 2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pretty When I Cry -->
+        <div class="video-card reveal reveal-delay-3">
+          <div class="video-card-inner">
+            <div class="video-info">
+              <span class="video-role-badge">Director of Photography</span>
+              <h3 class="video-title">Pretty When I Cry</h3>
+              <p class="video-desc">
+                Operated A camera on a music video shoot, managing lighting, lenses and filters to achieve the
+                director's intended visual aesthetic. Contributed to storyboarding and concept design, collaborating
+                closely with the director, cast and crew throughout production.
+              </p>
+              <div class="video-links">
+                <a href="https://youtu.be/MtEOXsdTNmw?si=d_wMlM1PS2bxeHND" target="_blank" rel="noopener" class="video-link-btn yt">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
+                  Watch video
+                </a>
+              </div>
+            </div>
+            <div class="video-preview" style="background: #0d0d1a;">
+              <div class="video-preview-inner">
+                <div class="video-play-icon">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <span class="video-season-tag">Music Video</span>
+                <span class="video-preview-label">New York, NY · 2025</span>
               </div>
             </div>
           </div>
@@ -1693,6 +1869,56 @@
     </div>
   </section>
 
+  <!-- ── Education ─────────────────────────────────────────────────── -->
+  <section id="education">
+    <div class="section-inner">
+      <p class="section-label reveal">Education</p>
+      <h2 class="section-headline reveal reveal-delay-1">Academic background.</h2>
+
+      <div class="education-grid">
+
+        <div class="education-card reveal reveal-delay-1">
+          <div class="education-dates">2024 – 2025</div>
+          <div class="education-school">New York Film Academy</div>
+          <div>
+            <div class="education-field-label">Major</div>
+            <div class="education-tags">
+              <span class="tag">Director's Craft</span>
+            </div>
+          </div>
+          <div>
+            <div class="education-field-label">Minors</div>
+            <div class="education-tags">
+              <span class="tag">Cinematography</span>
+              <span class="tag">Video Editing</span>
+              <span class="tag">Screenwriting</span>
+              <span class="tag">Intimacy Co-ordination</span>
+              <span class="tag">Set Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="education-card reveal reveal-delay-2">
+          <div class="education-dates">2022 – 2024</div>
+          <div class="education-school">Blackpool Sixth Form College</div>
+          <div>
+            <div class="education-field-label">Major</div>
+            <div class="education-tags">
+              <span class="tag">Film &amp; TV Production</span>
+            </div>
+          </div>
+          <div>
+            <div class="education-field-label">Minor</div>
+            <div class="education-tags">
+              <span class="tag">Computer Science</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ── Footer ─────────────────────────────────────────────────────── -->
   <footer>
     <div class="footer-inner">
@@ -1717,7 +1943,7 @@
 
     // Filter tab active state on scroll
     const tabs = document.querySelectorAll('.filter-tab');
-    const sections = ['websites', 'marketing', 'video', 'screenplays'].map(id => document.getElementById(id));
+    const sections = ['websites', 'marketing', 'video', 'screenplays', 'education'].map(id => document.getElementById(id));
 
     window.addEventListener('scroll', () => {
       let current = sections[0];
@@ -1733,12 +1959,13 @@
   var menu = document.getElementById('mobileMenu');
   if(!btn || !menu) return;
   var links = [
-    {href:'/web-development', text:'Websites'},
+    {href:'/web-development', text:'Web Development'},
     {href:'/digital-marketing', text:'Digital Marketing'},
     {href:'/out-of-house', text:'Out-of-House'},
-    {href:'/tv-radio', text:'TV & Radio'},
-    {href:'/postal-marketing', text:'Postal'},
-    {href:'/public-relations', text:'PR'},
+    {href:'/tv-radio', text:'Commercials'},
+    {href:'/postal-marketing', text:'Postal Advertising'},
+    {href:'/public-relations', text:'Public Relations'},
+    {href:'/video', text:'Video Editing'},
     {href:'/portfolio', text:'Portfolio'},
     {href:'/software', text:'Software'},
   ];
