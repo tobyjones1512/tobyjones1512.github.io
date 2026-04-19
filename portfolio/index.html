@@ -57,9 +57,9 @@
     /* ── Scroll reveal ───────────────────────────────────────────────── */
     .reveal {
       opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.75s cubic-bezier(.22, 1, .36, 1),
-        transform 0.75s cubic-bezier(.22, 1, .36, 1);
+      transform: translateY(28px) scale(0.98);
+      transition: opacity 0.8s cubic-bezier(.22, 1, .36, 1),
+        transform 0.8s cubic-bezier(.22, 1, .36, 1);
     }
 
     .reveal.visible {
@@ -72,11 +72,11 @@
     }
 
     .reveal-delay-2 {
-      transition-delay: 0.16s;
+      transition-delay: 0.18s;
     }
 
     .reveal-delay-3 {
-      transition-delay: 0.24s;
+      transition-delay: 0.28s;
     }
 
     /* ── Nav ─────────────────────────────────────────────────────────── */
@@ -870,16 +870,6 @@
       stroke-width: 1.8;
     }
 
-    .video-preview {
-      background: #0f0f0f;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 260px;
-      position: relative;
-      overflow: hidden;
-    }
-
     .video-preview::before {
       content: "";
       position: absolute;
@@ -905,6 +895,32 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: transform 0.35s cubic-bezier(.22, 1, .36, 1),
+        background 0.35s, box-shadow 0.35s;
+      animation: pulse-ring 2.8s cubic-bezier(.22, 1, .36, 1) infinite;
+    }
+
+    .video-card:hover .video-play-icon {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.12);
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.05);
+      animation: none;
+    }
+
+    .video-preview {
+      background: #0f0f0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+      transition: filter 0.5s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .video-card:hover .video-preview {
+      filter: brightness(1.2);
     }
 
     .video-play-icon svg {
@@ -1138,13 +1154,20 @@
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(24px);
+        filter: blur(6px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
+        filter: blur(0px);
       }
+    }
+
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0   rgba(255, 255, 255, 0.22); }
+      60%  { box-shadow: 0 0 0 14px rgba(255, 255, 255, 0); }
+      100% { box-shadow: 0 0 0 0   rgba(255, 255, 255, 0); }
     }
   /* ── Hamburger / Mobile menu ──────────────────────────────────────── */
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
@@ -1659,8 +1682,8 @@
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
-                <span class="video-season-tag">Season 2</span>
-                <span class="video-preview-label">Available on YouTube</span>
+                <span class="video-season-tag">Podcast Series</span>
+                <span class="video-preview-label">Season 2 · YouTube</span>
               </div>
             </div>
           </div>
@@ -1692,7 +1715,8 @@
                 <div class="video-play-icon">
                   <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <span class="video-preview-label">Short film · New York, NY · 2025</span>
+                <span class="video-season-tag">Short Film</span>
+                <span class="video-preview-label">New York, NY · 2025</span>
               </div>
             </div>
           </div>
@@ -1719,7 +1743,8 @@
                 <div class="video-play-icon">
                   <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <span class="video-preview-label">Available on YouTube</span>
+                <span class="video-season-tag">Short Film</span>
+                <span class="video-preview-label">New York, NY · 2024</span>
               </div>
             </div>
           </div>
@@ -1748,7 +1773,8 @@
                 <div class="video-play-icon">
                   <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <span class="video-preview-label">Music video · New York, NY · 2025</span>
+                <span class="video-season-tag">Music Video</span>
+                <span class="video-preview-label">New York, NY · 2025</span>
               </div>
             </div>
           </div>
