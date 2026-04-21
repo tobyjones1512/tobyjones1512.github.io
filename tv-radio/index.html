@@ -139,6 +139,46 @@
     .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
     .mobile-close { position: absolute; top: 20px; right: 20px; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.06); border: none; cursor: pointer; font-size: 18px; color: #1d1d1f; display: flex; align-items: center; justify-content: center; transition: background .15s; }
     .mobile-close:hover { background: rgba(0,0,0,0.1); }
+/* ── Nav dropdowns ────────────────────────────────────────────────── */
+nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
+.nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
+.nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
+.nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
+.nav-dropdown-panel {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px) scale(0.96);
+  min-width: 210px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 18px;
+  padding: 8px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1);
+  z-index: 200;
+}
+.nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
+.nav-dropdown-panel a {
+  display: block;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #424245;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  height: auto;
+  letter-spacing: normal;
+}
+.nav-dropdown-panel a:hover { background: rgba(0,0,0,0.05); color: #1d1d1f; }
+.nav-dropdown-panel a.active { color: #1d1d1f; font-weight: 500; background: rgba(0,0,0,0.04); }
+.nav-has-dropdown.active > a { color: #1d1d1f; font-weight: 500; }
 </style>
 
 <script type="application/ld+json">
@@ -157,13 +197,18 @@
   <nav>
     <a href="/" class="logo">Toby Jones</a>
     <ul>
-      <li><a href="/web-development">Web Development</a></li>
-      <li><a href="/digital-marketing">Digital Marketing</a></li>
-      <li><a href="/out-of-house">Out-of-House</a></li>
-      <li><a href="/tv-radio">Commercials</a></li>
-      <li><a href="/postal-marketing">Postal Advertising</a></li>
-      <li><a href="/public-relations">Public Relations</a></li>
-      <li><a href="/video">Video Editing</a></li>
+      <li class="nav-has-dropdown active">
+        <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dropdown-panel">
+          <a href="/web-development">Web Development</a>
+          <a href="/digital-marketing">Digital Marketing</a>
+          <a href="/out-of-house">Out-of-House</a>
+          <a href="/tv-radio" class="active">TV &amp; Radio</a>
+          <a href="/postal-marketing">Postal Advertising</a>
+          <a href="/public-relations">Public Relations</a>
+        </div>
+      </li>
+      <li><a href="/video">Video</a></li>
       <li><a href="/portfolio">Portfolio</a></li>
       <li><a href="/software">Software</a></li>
     </ul>
@@ -325,10 +370,10 @@
     {href:'/web-development', text:'Web Development'},
     {href:'/digital-marketing', text:'Digital Marketing'},
     {href:'/out-of-house', text:'Out-of-House'},
-    {href:'/tv-radio', text:'Commercials'},
+    {href:'/tv-radio', text:'TV & Radio'},
     {href:'/postal-marketing', text:'Postal Advertising'},
     {href:'/public-relations', text:'Public Relations'},
-    {href:'/video', text:'Video Editing'},
+    {href:'/video', text:'Video'},
     {href:'/portfolio', text:'Portfolio'},
     {href:'/software', text:'Software'},
   ];
