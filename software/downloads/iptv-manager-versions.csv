@@ -1,5 +1,6 @@
 version,release_date,status,filename,min_macos,release_notes
-2.1.0,2026-04-9,latest,IPTV Manager - 2.1.0.zip,10.15,Changed transcoding + added MPV support + added VOD
+3.0.0,2026-04-12,major,IPTV Manager - 3.0.0.zip,10.15,Added visionOS UI theme and fixed transcoding
+2.1.0,2026-04-9,major,IPTV Manager - 2.1.0.zip,10.15,Changed transcoding + added MPV support + added VOD
 2.0.0,2026-04-12,major,IPTV Manager - 2.0.0.zip,10.15,Added support for Windows
 1.1.1,2026-04-12,regular,IPTV Manager - 1.1.1.zip,10.15,Added backups to make updating easier
 1.1.0,2026-04-12,regular,IPTV Manager - 1.1.0.zip,10.15,Fixed EPG and made recordings easier
