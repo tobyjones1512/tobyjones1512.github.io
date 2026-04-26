@@ -4,22 +4,22 @@
   <meta charset="UTF-8" />
   <!-- Google tag (gtag.js) -->
   <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QCV7XEQ8QT');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Editing Services Toronto - Toby Jones</title>
-  <meta name="description" content="Professional video editing services in Toronto. Narrative films, commercials, social media content, and live editing for YouTube broadcast - cut in Final Cut Pro."/>
+  <title>Video Production Toronto - Toby Jones</title>
+  <meta name="description" content="Professional video production in Toronto. Event coverage, brand films, music videos, and social content — shot on professional cameras and delivered ready to publish."/>
   <meta name="robots" content="index, follow"/>
-  <link rel="canonical" href="https://tobyjones.ca/video/"/>
+  <link rel="canonical" href="https://tobyjones.ca/video-production/"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://tobyjones.ca/video/"/>
-  <meta property="og:title" content="Video Editing Services Toronto - Toby Jones"/>
-  <meta property="og:description" content="Professional video editing services in Toronto. Narrative films, commercials, social media content, and live editing for YouTube broadcast - cut in Final Cut Pro."/>
+  <meta property="og:url" content="https://tobyjones.ca/video-production/"/>
+  <meta property="og:title" content="Video Production Toronto - Toby Jones"/>
+  <meta property="og:description" content="Professional video production in Toronto. Event coverage, brand films, music videos, and social content — shot and delivered ready to publish."/>
   <meta property="og:site_name" content="Toby Jones"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Video Editing Services Toronto - Toby Jones"/>
-  <meta name="twitter:description" content="Professional video editing services in Toronto. Narrative films, commercials, social media content, and live editing for YouTube broadcast - cut in Final Cut Pro."/>
+  <meta name="twitter:title" content="Video Production Toronto - Toby Jones"/>
+  <meta name="twitter:description" content="Professional video production in Toronto. Event coverage, brand films, music videos, and social content."/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -60,17 +60,20 @@
     .hero-visual { display: flex; align-items: center; justify-content: center; opacity: 0; animation: fadeUp .9s cubic-bezier(.22,1,.36,1) .5s forwards; }
     .hero-visual-card { background: rgba(255,255,255,.65); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.8); border-radius: 20px; padding: 32px; box-shadow: 0 20px 60px rgba(0,0,0,.1); width: 100%; max-width: 340px; }
 
-    /* Timeline visual */
-    .timeline-track { height: 6px; border-radius: 3px; background: rgba(245,158,11,.12); margin-bottom: 14px; position: relative; overflow: hidden; }
-    .timeline-fill { position: absolute; top: 0; left: 0; height: 100%; border-radius: 3px; background: var(--accent); }
-    .timeline-track:nth-child(1) .timeline-fill { width: 72%; }
-    .timeline-track:nth-child(2) .timeline-fill { width: 48%; opacity: .7; }
-    .timeline-track:nth-child(3) .timeline-fill { width: 88%; opacity: .5; }
-    .timeline-track:nth-child(4) .timeline-fill { width: 35%; opacity: .35; }
-    .visual-metric { display: flex; gap: 12px; margin-top: 20px; }
-    .metric-box { flex: 1; background: rgba(245,158,11,.08); border-radius: 12px; padding: 16px 12px; text-align: center; }
-    .metric-num { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: -.03em; }
-    .metric-label { font-size: 11px; color: var(--subtle); margin-top: 3px; }
+    /* Camera visual */
+    .camera-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .camera-stat { background: rgba(245,158,11,.07); border-radius: 12px; padding: 14px 12px; text-align: center; }
+    .camera-stat-val { font-size: 18px; font-weight: 700; color: var(--accent); letter-spacing: -.02em; }
+    .camera-stat-label { font-size: 11px; color: var(--subtle); margin-top: 3px; }
+    .shot-track { height: 5px; border-radius: 3px; background: rgba(245,158,11,.1); margin-bottom: 10px; position: relative; overflow: hidden; }
+    .shot-fill { position: absolute; top: 0; left: 0; height: 100%; border-radius: 3px; background: var(--accent); }
+    .shot-track:nth-child(1) .shot-fill { width: 80%; }
+    .shot-track:nth-child(2) .shot-fill { width: 55%; opacity: .7; }
+    .shot-track:nth-child(3) .shot-fill { width: 92%; opacity: .5; }
+    .rec-indicator { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+    .rec-dot { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; animation: recBlink 1.4s ease-in-out infinite; }
+    .rec-label { font-size: 11px; font-weight: 600; letter-spacing: .08em; color: var(--subtle); }
+    @keyframes recBlink { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
 
     /* Sections */
     section { padding: 100px 24px; }
@@ -84,12 +87,10 @@
     .pitch-body { font-size: 15px; line-height: 1.75; color: var(--subtle); font-weight: 300; }
     .pitch-body + .pitch-body { margin-top: 14px; }
 
-    /* FCP badge */
-    .fcp-badge { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 10px 16px; border-radius: 12px; background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.2); }
-    .fcp-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-    .fcp-badge-text { font-size: 13px; font-weight: 500; color: var(--dark); }
-    .inline-link { color: var(--accent); text-decoration: none; transition: opacity .2s; }
-    .inline-link:hover { opacity: .75; }
+    /* Badge */
+    .badge { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 10px 16px; border-radius: 12px; background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.2); }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .badge-text { font-size: 13px; font-weight: 500; color: var(--dark); }
 
     /* Features */
     .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; margin-top: 56px; }
@@ -131,7 +132,8 @@
     .footer-links a:hover { color: var(--dark); }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
-  /* ── Hamburger / Mobile menu ──────────────────────────────────────── */
+
+    /* Hamburger / Mobile menu */
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s, transform .35s; }
     .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -141,66 +143,36 @@
     .mobile-menu.open { opacity: 1; pointer-events: all; }
     .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
     .mobile-menu a:hover { background: rgba(0,0,0,.05); }
-
     @media(max-width:768px) { .nav-hamburger { display: flex; } }
-
     @media(max-width:768px){ .nav-cta { display: none; } }
     .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; text-decoration: none; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
     .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
     .mobile-close { position: absolute; top: 20px; right: 20px; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.06); border: none; cursor: pointer; font-size: 18px; color: #1d1d1f; display: flex; align-items: center; justify-content: center; transition: background .15s; }
     .mobile-close:hover { background: rgba(0,0,0,0.1); }
-/* ── Nav dropdowns ────────────────────────────────────────────────── */
-nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
-.nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
-.nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
-.nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
-.nav-dropdown-panel {
-  position: absolute;
-  top: 52px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px) scale(0.96);
-  min-width: 210px;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: saturate(180%) blur(24px);
-  -webkit-backdrop-filter: saturate(180%) blur(24px);
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 18px;
-  padding: 8px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1);
-  z-index: 200;
-}
-.nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
-.nav-dropdown-panel a {
-  display: block;
-  padding: 8px 14px;
-  font-size: 13px;
-  font-weight: 400;
-  color: #424245;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: background 0.15s, color 0.15s;
-  white-space: nowrap;
-  height: auto;
-  letter-spacing: normal;
-}
-.nav-dropdown-panel a:hover { background: rgba(0,0,0,0.05); color: #1d1d1f; }
-.nav-dropdown-panel a.active { color: #1d1d1f; font-weight: 500; background: rgba(0,0,0,0.04); }
-.nav-has-dropdown.active > a { color: #1d1d1f; font-weight: 500; }
-</style>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Video Editing Services",
-  "provider": {"@type":"Person","name":"Toby Jones","url":"https://tobyjones.ca"},
-  "areaServed": "Toronto, ON, Canada",
-  "url": "https://tobyjones.ca/video"
-}
-</script>
+    /* Nav dropdowns */
+    nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
+    .nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
+    .nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
+    .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
+    .nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,0.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,0.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); z-index: 200; }
+    .nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
+    .nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; border-radius: 10px; transition: background 0.15s, color 0.15s; white-space: nowrap; height: auto; letter-spacing: normal; }
+    .nav-dropdown-panel a:hover { background: rgba(0,0,0,0.05); color: #1d1d1f; }
+    .nav-dropdown-panel a.active { color: #1d1d1f; font-weight: 500; background: rgba(0,0,0,0.04); }
+    .nav-has-dropdown.active > a { color: #1d1d1f; font-weight: 500; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Video Production Services",
+    "provider": {"@type":"Person","name":"Toby Jones","url":"https://tobyjones.ca"},
+    "areaServed": "Toronto, ON, Canada",
+    "url": "https://tobyjones.ca/video-production"
+  }
+  </script>
 </head>
 <body>
 
@@ -220,8 +192,8 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
       <li class="nav-has-dropdown active">
         <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="nav-dropdown-panel">
-          <a href="/video" class="active">Video Editing</a>
-          <a href="/video-production">Video Production</a>
+          <a href="/video">Video Editing</a>
+          <a href="/video-production" class="active">Video Production</a>
         </div>
       </li>
       <li><a href="/web-development">Web Development</a></li>
@@ -229,7 +201,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
       <li><a href="/software">Software</a></li>
     </ul>
     <a href="/email/" class="nav-cta">Get in touch ↗</a>
-      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobileMenu"></div>
 
@@ -237,9 +209,9 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
   <section class="hero">
     <div class="hero-inner">
       <div>
-        <div class="hero-eyebrow">Video Editing</div>
-        <h1 class="hero-headline">Footage In.<br>Story Out.</h1>
-        <p class="hero-sub">Narrative films, commercials, social media content, and live YouTube broadcasts - cut in Final Cut Pro and OBS, and built to hold attention from first frame to last.</p>
+        <div class="hero-eyebrow">Video Production</div>
+        <h1 class="hero-headline">Camera Rolling.<br>Story Live.</h1>
+        <p class="hero-sub">Event coverage, brand films, music videos, and social content — shot on professional cameras and delivered broadcast-ready, from the first scout to the final export.</p>
         <div class="hero-actions">
           <a href="/email/" class="btn-primary">Get in touch</a>
           <a href="/portfolio" class="btn-secondary">See my work</a>
@@ -247,13 +219,18 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
       </div>
       <div class="hero-visual">
         <div class="hero-visual-card">
-          <div class="timeline-track"><div class="timeline-fill"></div></div>
-          <div class="timeline-track"><div class="timeline-fill"></div></div>
-          <div class="timeline-track"><div class="timeline-fill"></div></div>
-          <div class="timeline-track"><div class="timeline-fill"></div></div>
-          <div class="visual-metric">
-            <div class="metric-box"><div class="metric-num">FCP</div><div class="metric-label">Final Cut Pro</div></div>
-            <div class="metric-box"><div class="metric-num">4K</div><div class="metric-label">Delivery ready</div></div>
+          <div class="camera-grid">
+            <div class="camera-stat"><div class="camera-stat-val">4K</div><div class="camera-stat-label">Resolution</div></div>
+            <div class="camera-stat"><div class="camera-stat-val">60fps</div><div class="camera-stat-label">Frame rate</div></div>
+            <div class="camera-stat"><div class="camera-stat-val">RAW</div><div class="camera-stat-label">Colour grade</div></div>
+            <div class="camera-stat"><div class="camera-stat-val">∞</div><div class="camera-stat-label">Takes</div></div>
+          </div>
+          <div class="shot-track"><div class="shot-fill"></div></div>
+          <div class="shot-track"><div class="shot-fill"></div></div>
+          <div class="shot-track"><div class="shot-fill"></div></div>
+          <div class="rec-indicator">
+            <div class="rec-dot"></div>
+            <span class="rec-label">REC · IN PROGRESS</span>
           </div>
         </div>
       </div>
@@ -266,14 +243,14 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
       <div class="pitch-grid">
         <div>
           <p class="section-label reveal">The approach</p>
-          <h2 class="section-headline reveal d1">Editing that serves<br>the story.</h2>
+          <h2 class="section-headline reveal d1">Production that<br>starts with intent.</h2>
         </div>
         <div class="reveal d2">
-          <p class="pitch-body">Great editing is invisible. Whether I'm cutting a narrative feature, shaping a 30-second commercial, or assembling a week's worth of social content, the job is always the same - find the story in the footage and tell it as cleanly and compellingly as possible.</p>
-          <p class="pitch-body">I work in Final Cut Pro for narrative and commercial projects, and OBS for live YouTube broadcasts. From the offline assembly to the final colour-corrected export, every cut is intentional.</p>
-          <div class="fcp-badge">
-            <div class="fcp-badge-dot"></div>
-            <span class="fcp-badge-text">Edited in Final Cut Pro</span>
+          <p class="pitch-body">A great video doesn't start in the edit suite — it starts before the camera ever rolls. I work with you to understand what the footage needs to achieve, then plan every shot, angle, and moment to make sure it gets there.</p>
+          <p class="pitch-body">From corporate events and brand storytelling to music videos and short-form social content, I bring a filmmaker's eye and a marketer's understanding of audience to every production.</p>
+          <div class="badge">
+            <div class="badge-dot"></div>
+            <span class="badge-text">Shot, directed &amp; delivered by Toby</span>
           </div>
         </div>
       </div>
@@ -283,28 +260,36 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
   <!-- Features -->
   <section style="background: var(--light);">
     <div class="section-inner">
-      <p class="section-label reveal">What I edit</p>
-      <h2 class="section-headline reveal d1">Every format.<br>Every platform.</h2>
+      <p class="section-label reveal">What I shoot</p>
+      <h2 class="section-headline reveal d1">Every subject.<br>Every occasion.</h2>
       <div class="features-grid">
         <div class="feature-card reveal d1">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg></div>
-          <div class="feature-title">Narrative Films</div>
-          <div class="feature-desc">Short films and feature-length projects cut with a filmmaker's instinct - pacing, rhythm, and emotional arc treated as a craft, not a checkbox.</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          </div>
+          <div class="feature-title">Event Coverage</div>
+          <div class="feature-desc">Corporate conferences, launches, award nights, and live performances — captured in full so the energy of the room comes through on screen, long after the evening ends.</div>
         </div>
         <div class="feature-card reveal d2">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg></div>
-          <div class="feature-title">Commercials</div>
-          <div class="feature-desc">30 and 60-second spots cut for maximum impact - tight, purposeful edits that deliver the message and move the viewer to act.</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </div>
+          <div class="feature-title">Brand Films</div>
+          <div class="feature-desc">Cinematic short-form content that tells your brand's story — who you are, what you make, and why it matters. Built for websites, pitches, and campaigns.</div>
         </div>
         <div class="feature-card reveal d3">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg></div>
-          <div class="feature-title">Social Media Content</div>
-          <div class="feature-desc">Vertical and square cuts optimised for Instagram, TikTok, and YouTube Shorts - engaging hooks, snappy pacing, and platform-native feel.</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+          </div>
+          <div class="feature-title">Music Videos</div>
+          <div class="feature-desc">Narrative and performance-led music videos with a considered visual language — designed to give the track a world it deserves and an audience it can grow.</div>
         </div>
         <div class="feature-card reveal d1">
-          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></div>
-          <div class="feature-title">Live YouTube Broadcast</div>
-          <div class="feature-desc">Real-time switching and direction for live YouTube productions in OBS - cutting between cameras, graphics, and feeds to keep your broadcast polished on the fly.</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          </div>
+          <div class="feature-title">Social Content</div>
+          <div class="feature-desc">Short-form vertical and square videos designed for Instagram Reels, TikTok, and YouTube Shorts — shot and cut with platform-native pacing and hooks baked in from the brief.</div>
         </div>
       </div>
     </div>
@@ -314,27 +299,27 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
   <section style="background: var(--white);">
     <div class="section-inner">
       <p class="section-label reveal">How it works</p>
-      <h2 class="section-headline reveal d1">From raw footage<br>to final cut.</h2>
+      <h2 class="section-headline reveal d1">From brief to<br>broadcast-ready.</h2>
       <div class="process-steps reveal d2">
         <div class="step">
           <div class="step-num">01</div>
           <div class="step-title">Brief</div>
-          <div class="step-desc">We discuss the project - format, tone, intended platform, and deadline. I'll flag anything I need from you before the footage arrives.</div>
+          <div class="step-desc">We talk through the project — what you need, who it's for, and what a successful outcome looks like. I'll ask the right questions before anything gets scheduled.</div>
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <div class="step-title">Offline Edit</div>
-          <div class="step-desc">I cut the assembly in Final Cut Pro - building structure, pacing, and narrative from your raw material. You review and give notes.</div>
+          <div class="step-title">Pre-Production</div>
+          <div class="step-desc">Shot lists, location scouts, call sheets, and talent coordination — everything planned so shoot day runs smoothly and we get what we came for.</div>
         </div>
         <div class="step">
           <div class="step-num">03</div>
-          <div class="step-title">Refinement</div>
-          <div class="step-desc">I incorporate your feedback and lock the picture - adding graphics and colour correction to the agreed standard.</div>
+          <div class="step-title">Shoot</div>
+          <div class="step-desc">On the day I direct and operate camera, working efficiently without sacrificing quality. Every angle and take captured with the edit already in mind.</div>
         </div>
         <div class="step">
           <div class="step-num">04</div>
-          <div class="step-title">Delivery</div>
-          <div class="step-desc">You receive the finished file in your required format and specs - broadcast-ready or platform-optimised, exactly as agreed.</div>
+          <div class="step-title">Edit &amp; Delivery</div>
+          <div class="step-desc">I cut, colour grade, and mix the final piece, then deliver in whatever format and spec you need — ready to upload, broadcast, or screen.</div>
         </div>
       </div>
     </div>
@@ -344,8 +329,8 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
   <section class="cta">
     <div class="section-inner">
       <div class="cta-card reveal">
-        <h2>Great footage deserves<br>a great edit.</h2>
-        <p>Get in touch and let's talk through your project - whether it's a feature film, a commercial, or a content series.</p>
+        <h2>Ready to make<br>something great?</h2>
+        <p>Get in touch and let's talk through your project — whether it's a one-day shoot or a full production.</p>
         <div class="cta-actions">
           <a href="/email/" class="btn-white">Get in touch ↗</a>
           <a href="/email/" class="btn-outline">contact@tobyjones.ca</a>
@@ -356,7 +341,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
 
   <footer>
     <div class="footer-inner">
-          <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+      <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
       <div class="footer-links">
         <a href="/">Home</a>
         <a href="/portfolio">Portfolio</a>
@@ -371,43 +356,43 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
     const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   </script>
-<script>
-(function(){
-  var btn = document.querySelector('.nav-hamburger');
-  var menu = document.getElementById('mobileMenu');
-  if(!btn || !menu) return;
-  var links = [
-    {href:'/web-development', text:'Web Development'},
-    {href:'/digital-marketing', text:'Digital Marketing'},
-    {href:'/out-of-house', text:'Out-of-House'},
-    {href:'/tv-radio', text:'TV & Radio'},
-    {href:'/postal-marketing', text:'Postal Advertising'},
-    {href:'/public-relations', text:'Public Relations'},
-    {href:'/video', text:'Video Editing'},
-    {href:'/video-production', text:'Video Production'},
-    {href:'/portfolio', text:'Portfolio'},
-    {href:'/software', text:'Software'},
-  ];
-  var html = '<button class="mobile-close" aria-label="Close menu">&#x2715;</button>';
-  links.forEach(function(l){
-    html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
-  });
-  html += '<a class="mobile-cta" href="/email/">Get in touch ↗</a>';
-  menu.innerHTML = html;
-  menu.querySelector('.mobile-close').addEventListener('click', function(){ toggleMenu(false); });
-  function toggleMenu(open){
-    btn.classList.toggle('open', open);
-    menu.style.opacity = open ? '1' : '0';
-    menu.style.pointerEvents = open ? 'auto' : 'none';
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
-  btn.addEventListener('click', function(){
-    toggleMenu(!btn.classList.contains('open'));
-  });
-  menu.addEventListener('click', function(e){
-    if(e.target.tagName === 'A') toggleMenu(false);
-  });
-})();
-</script>
+  <script>
+  (function(){
+    var btn = document.querySelector('.nav-hamburger');
+    var menu = document.getElementById('mobileMenu');
+    if(!btn || !menu) return;
+    var links = [
+      {href:'/web-development', text:'Web Development'},
+      {href:'/digital-marketing', text:'Digital Marketing'},
+      {href:'/out-of-house', text:'Out-of-House'},
+      {href:'/tv-radio', text:'TV & Radio'},
+      {href:'/postal-marketing', text:'Postal Advertising'},
+      {href:'/public-relations', text:'Public Relations'},
+      {href:'/video', text:'Video Editing'},
+      {href:'/video-production', text:'Video Production'},
+      {href:'/portfolio', text:'Portfolio'},
+      {href:'/software', text:'Software'},
+    ];
+    var html = '<button class="mobile-close" aria-label="Close menu">&#x2715;</button>';
+    links.forEach(function(l){
+      html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
+    });
+    html += '<a class="mobile-cta" href="/email/">Get in touch ↗</a>';
+    menu.innerHTML = html;
+    menu.querySelector('.mobile-close').addEventListener('click', function(){ toggleMenu(false); });
+    function toggleMenu(open){
+      btn.classList.toggle('open', open);
+      menu.style.opacity = open ? '1' : '0';
+      menu.style.pointerEvents = open ? 'auto' : 'none';
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    btn.addEventListener('click', function(){
+      toggleMenu(!btn.classList.contains('open'));
+    });
+    menu.addEventListener('click', function(e){
+      if(e.target.tagName === 'A') toggleMenu(false);
+    });
+  })();
+  </script>
 </body>
 </html>
