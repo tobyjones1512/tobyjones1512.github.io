@@ -15,67 +15,212 @@
     });
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Opening Email - Toby Jones</title>
+  <title>Contact - Toby Jones</title>
+  <meta name="description" content="Get in touch with Toby Jones - filmmaker and marketer based in Toronto." />
   <meta name="robots" content="noindex, nofollow" />
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #1d1d1f; --mid: #424245; --subtle: #6e6e73;
+      --light: #f5f5f7; --white: #ffffff; --blue: #0071e3;
+    }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
-      background: #f5f5f7;
-      color: #1d1d1f;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--light);
+      color: var(--dark);
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 24px;
+      -webkit-font-smoothing: antialiased;
     }
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 4px 24px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
-      padding: 56px 48px;
-      max-width: 400px;
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 160;
+      height: 52px; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,.72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+    }
+    .logo { font-size: 17px; font-weight: 600; letter-spacing: -.3px; color: var(--dark); text-decoration: none; }
+
+    .page-wrap {
       width: 100%;
+      max-width: 480px;
+      animation: fadeUp .7s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--subtle); text-decoration: none;
+      margin-bottom: 28px;
+      transition: color .2s;
+    }
+    .back-link:hover { color: var(--dark); }
+    .back-link svg { flex-shrink: 0; }
+
+    .card {
+      background: var(--white);
+      border-radius: 28px;
+      box-shadow: 0 4px 32px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.04);
+      padding: 56px 48px;
       text-align: center;
     }
+
     .icon-wrap {
-      width: 64px; height: 64px;
+      width: 72px; height: 72px;
       border-radius: 50%;
-      background: rgba(0,113,227,.1);
+      background: rgba(0,113,227,.08);
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 24px;
+      margin: 0 auto 28px;
     }
-    .icon-wrap svg { color: #0071e3; }
-    .title { font-size: 22px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 10px; }
-    .body  { font-size: 15px; color: #6e6e73; line-height: 1.6; margin-bottom: 28px; }
-    .mailto-link {
-      display: inline-block;
-      font-size: 15px;
-      font-weight: 500;
-      color: #0071e3;
+    .icon-wrap svg { color: var(--blue); }
+
+    .eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 32px; font-weight: 700; letter-spacing: -.03em;
+      line-height: 1.1; color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .sub {
+      font-size: 15px; color: var(--subtle); line-height: 1.6;
+      font-weight: 300; margin-bottom: 40px;
+    }
+
+    .email-display {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px;
+    }
+    .email-address {
+      font-size: 16px; font-weight: 500; color: var(--dark);
+      letter-spacing: -.01em;
       text-decoration: none;
     }
-    .mailto-link:hover { text-decoration: underline; }
-    @media(max-width:480px){ .card { padding: 40px 24px; } }
+    .copy-btn {
+      flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 14px;
+      border-radius: 980px;
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,.1);
+      font-size: 12px; font-weight: 500; color: var(--mid);
+      cursor: pointer;
+      transition: background .15s, color .15s, transform .15s;
+      white-space: nowrap;
+    }
+    .copy-btn:hover { background: var(--dark); color: #fff; transform: scale(1.03); }
+    .copy-btn.copied { background: #34c759; border-color: #34c759; color: #fff; }
+
+    .mailto-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%;
+      padding: 15px 28px;
+      border-radius: 980px;
+      background: var(--dark);
+      color: #fff;
+      font-size: 15px; font-weight: 500;
+      text-decoration: none;
+      margin-top: 24px;
+      transition: background .2s, transform .15s;
+    }
+    .mailto-btn:hover { background: #000; transform: scale(1.02); }
+
+    .divider {
+      display: flex; align-items: center; gap: 12px;
+      margin: 20px 0;
+      color: var(--subtle); font-size: 12px;
+    }
+    .divider::before, .divider::after {
+      content: ""; flex: 1;
+      height: 1px; background: rgba(0,0,0,.08);
+    }
+
+    .alt-action {
+      font-size: 13px; color: var(--subtle); margin-top: 4px;
+    }
+    .alt-action a { color: var(--blue); text-decoration: none; transition: opacity .2s; }
+    .alt-action a:hover { opacity: .75; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @media(max-width:480px) {
+      .card { padding: 40px 24px; }
+      h1 { font-size: 26px; }
+      .email-display { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .email-address { font-size: 14px; }
+    }
   </style>
 </head>
 <body>
-<div class="card">
-  <div class="icon-wrap">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-         stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-      <polyline points="22,6 12,13 2,6"/>
-    </svg>
-  </div>
-  <div class="title">Opening your email&hellip;</div>
-  <p class="body">Your email client should open automatically.<br>If it doesn't, tap below.</p>
-  <a class="mailto-link" href="mailto:contact@tobyjones.ca">contact@tobyjones.ca</a>
-</div>
 
-<script>
-  window.location.href = 'mailto:contact@tobyjones.ca';
-</script>
+  <nav>
+    <a href="/" class="logo">Toby Jones</a>
+  </nav>
+
+  <div class="page-wrap" style="margin-top: 52px;">
+    <a href="javascript:history.back()" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Back
+    </a>
+
+    <div class="card">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <p class="eyebrow">Get in touch</p>
+      <h1>Let's talk.</h1>
+      <p class="sub">Drop me an email and I'll get back to you as soon as I can.</p>
+
+      <div class="email-display">
+        <span class="email-address">contact@tobyjones.ca</span>
+        <button class="copy-btn" id="copyBtn" onclick="copyEmail()">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+
+      <a href="mailto:contact@tobyjones.ca" class="mailto-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Open in Mail app
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function copyEmail() {
+      navigator.clipboard.writeText('contact@tobyjones.ca').then(function() {
+        var btn = document.getElementById('copyBtn');
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+        setTimeout(function() {
+          btn.classList.remove('copied');
+          btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+        }, 2200);
+      });
+    }
+  </script>
 </body>
 </html>
