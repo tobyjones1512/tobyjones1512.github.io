@@ -1083,7 +1083,6 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
       <li class="nav-has-dropdown">
         <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="nav-dropdown-panel">
-          <a href="/web-development">Web Development</a>
           <a href="/digital-marketing">Digital Marketing</a>
           <a href="/out-of-house">Out-of-House</a>
           <a href="/tv-radio">TV &amp; Radio</a>
@@ -1098,6 +1097,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
           <a href="/video-production">Video Production</a>
         </div>
       </li>
+      <li><a href="/web-development">Web Development</a></li>
       <li><a href="/portfolio">Portfolio</a></li>
       <li><a href="/software">Software</a></li>
     </ul>
@@ -1388,7 +1388,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
         <div class="section-inner">
             <div class="contact-card reveal">
                 <h2>Ready when<br>you are.</h2>
-                <p>If something isn't working, let's find out what. Book a free call or send a message - I'll come back to you fast.</p>
+                <p>If something isn't working, let's find out what. Drop me an email and I'll come back to you fast.</p>
                 <div class="contact-actions">
                     <a href="/email/" class="btn-white">
                         contact@tobyjones.ca
@@ -1396,9 +1396,6 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
                             stroke-width="1.8">
                             <path d="M3 11L11 3M11 3H5M11 3v6" />
                         </svg>
-                    </a>
-                    <a href="/callback" class="btn-outline-white">
-                        Book a Callback
                     </a>
                 </div>
             </div>
@@ -1457,7 +1454,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
   links.forEach(function(l){
     html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
   });
-  html += '<a class="mobile-cta" href="/callback">Book a callback ↗</a>';
+  html += '<a class="mobile-cta" href="/email/">Get in touch ↗</a>';
   menu.innerHTML = html;
   menu.querySelector('.mobile-close').addEventListener('click', function(){ toggleMenu(false); });
   function toggleMenu(open){

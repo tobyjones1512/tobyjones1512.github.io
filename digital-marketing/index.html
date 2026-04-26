@@ -201,7 +201,6 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
       <li class="nav-has-dropdown active">
         <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="nav-dropdown-panel">
-          <a href="/web-development">Web Development</a>
           <a href="/digital-marketing" class="active">Digital Marketing</a>
           <a href="/out-of-house">Out-of-House</a>
           <a href="/tv-radio">TV &amp; Radio</a>
@@ -216,10 +215,11 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
           <a href="/video-production">Video Production</a>
         </div>
       </li>
+      <li><a href="/web-development">Web Development</a></li>
       <li><a href="/portfolio">Portfolio</a></li>
       <li><a href="/software">Software</a></li>
     </ul>
-    <a href="/callback" class="nav-cta">Book a callback ↗</a>
+    <a href="/email/" class="nav-cta">Get in touch ↗</a>
       <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobileMenu"></div>
@@ -232,7 +232,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
         <h1 class="hero-headline">Marketing That<br>Actually Works.</h1>
         <p class="hero-sub">Brand strategy, social media, and content that builds audiences, drives engagement, and converts followers into customers.</p>
         <div class="hero-actions">
-          <a href="/callback/" class="btn-primary">Book a free call</a>
+          <a href="/email/" class="btn-primary">Get in touch</a>
           <a href="/portfolio" class="btn-secondary">See client work</a>
         </div>
       </div>
@@ -342,9 +342,9 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
     <div class="section-inner">
       <div class="cta-card reveal">
         <h2>Your competitors are getting<br>the clicks you should be.</h2>
-        <p>Book a free call. I'll audit your current presence, find where the growth is stalling, and show you exactly what to do next.</p>
+        <p>Get in touch I'll audit your current presence, find where the growth is stalling, and show you exactly what to do next.</p>
         <div class="cta-actions">
-          <a href="/callback/" class="btn-white">Book a free call ↗</a>
+          <a href="/email/" class="btn-white">Get in touch ↗</a>
           <a href="/email/" class="btn-outline">contact@tobyjones.ca</a>
         </div>
       </div>
@@ -389,7 +389,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
   links.forEach(function(l){
     html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
   });
-  html += '<a class="mobile-cta" href="/callback">Book a callback ↗</a>';
+  html += '<a class="mobile-cta" href="/email/">Get in touch ↗</a>';
   menu.innerHTML = html;
   menu.querySelector('.mobile-close').addEventListener('click', function(){ toggleMenu(false); });
   function toggleMenu(open){
