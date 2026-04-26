@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPTV Manager - Watch &amp; Record Your IPTV Channels</title>
+  <link rel="icon" type="image/png" href="Icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0d2145;
+      --navy-lt: #1a3666;
+      --gold:    #b8860b;
+      --gold-lt: #d4a017;
+      --red:     #b22222;
+      --white:   #ffffff;
+      --off:     #f4f6fb;
+      --off2:    #eef1f8;
+      --text:    #111827;
+      --muted:   #4b5563;
+      --border:  #d1d9e6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ─────────────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 64px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .nav-brand span {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    .btn-nav {
+      background: var(--navy) !important;
+      color: var(--white) !important;
+      padding: 0.5rem 1.2rem !important;
+      border-radius: 4px;
+      letter-spacing: 0.02em !important;
+      text-transform: none !important;
+      font-size: 0.9rem !important;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+
+    .btn-nav:hover { background: var(--navy-lt) !important; }
+
+    /* ── TRUST BAR ───────────────────────────────────────────────────── */
+    .trust-bar {
+      background: var(--navy);
+      color: rgba(255,255,255,0.85);
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 0.6rem 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .trust-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .trust-bar-item svg { color: var(--gold-lt); flex-shrink: 0; }
+
+    /* ── HERO ─────────────────────────────────────────────────────────── */
+    .hero {
+      background: var(--white);
+      padding: 4.5rem 2rem 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 55% at 50% 0%, rgba(13,33,69,0.05) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230d2145' fill-opacity='0.025'%3E%3Cpath d='M0 0h40v40H0zm40 40h40v40H40z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 6px 28px rgba(13,33,69,0.2);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--off2);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.18;
+      color: var(--navy);
+      margin-bottom: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 2.25rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 14px rgba(13,33,69,0.25);
+    }
+
+    .btn-primary:hover { background: var(--navy-lt); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--white);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      border: 1.5px solid var(--navy);
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover { background: var(--off); }
+
+    /* ── PRICE BANNER ─────────────────────────────────────────────────── */
+    .price-banner {
+      background: var(--gold);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .price-banner .price-big {
+      font-family: 'Merriweather', serif;
+      font-size: 1.4rem;
+    }
+
+    .price-banner a {
+      display: inline-block;
+      background: var(--white);
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 0.4rem 1.1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .price-banner a:hover { opacity: 0.9; }
+
+    /* ── SECTION SHARED ───────────────────────────────────────────────── */
+    section { padding: 4.5rem 2rem; }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.55rem;
+    }
+
+    .section-title {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.85rem;
+      line-height: 1.3;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      line-height: 1.65;
+    }
+
+    .container { max-width: 1120px; margin: 0 auto; }
+
+    /* ── SCREENSHOTS ──────────────────────────────────────────────────── */
+    .screenshots-section {
+      background: var(--off);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .screenshots-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .screenshots-header .section-sub { margin: 0 auto; }
+
+    .screenshots-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.83rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .tab-btn:hover { border-color: var(--navy); color: var(--navy); }
+
+    .tab-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+
+    .screenshot-display { text-align: center; }
+
+    .screenshot-display img {
+      max-width: 100%;
+      width: 920px;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(13,33,69,0.15);
+      border: 1px solid var(--border);
+    }
+
+    /* ── FEATURES ─────────────────────────────────────────────────────── */
+    .features-section { background: var(--white); }
+
+    .features-header { margin-bottom: 3rem; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .feature-card {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--navy);
+      border-radius: 4px;
+      padding: 1.75rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 4px 18px rgba(13,33,69,0.1);
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--gold-lt);
+    }
+
+    .feature-card h3 {
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.65;
+    }
+
+    /* ── PRICING ──────────────────────────────────────────────────────── */
+    .pricing-section {
+      background: var(--off);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .pricing-header .section-sub { margin: 0 auto; }
+
+    .pricing-card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--navy);
+      border-radius: 4px;
+      padding: 2.5rem;
+    }
+
+    .pricing-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.2rem;
+      margin: 1.25rem 0 0.4rem;
+    }
+
+    .pricing-currency {
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .pricing-amount {
+      font-family: 'Merriweather', serif;
+      font-size: 3.8rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .pricing-note {
+      text-align: center;
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .divider-line {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--off);
+      font-size: 0.97rem;
+      color: var(--text);
+    }
+
+    .pricing-features li:last-child { border-bottom: none; }
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--white);
+    }
+
+    .btn-buy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+      width: 100%;
+      box-shadow: 0 4px 14px rgba(13,33,69,0.2);
+    }
+
+    .btn-buy:hover { background: var(--navy-lt); }
+
+    .platform-badges {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 1.25rem;
+    }
+
+    .platform-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* ── GUARANTEE ────────────────────────────────────────────────────── */
+    .guarantee-strip {
+      background: var(--navy);
+      color: var(--white);
+      padding: 3rem 2rem;
+    }
+
+    .guarantee-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .guarantee-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .guarantee-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold-lt);
+    }
+
+    .guarantee-item h4 {
+      font-family: 'Merriweather', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+
+    .guarantee-item p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────────────────── */
+    footer {
+      background: #060f20;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 0.86rem;
+    }
+
+    footer a { color: var(--gold-lt); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-brand img { width: 28px; height: 28px; border-radius: 6px; }
+
+    .footer-brand span {
+      font-family: 'Merriweather', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    footer p { margin-bottom: 0.35rem; }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .trust-bar { gap: 1rem; font-size: 0.74rem; flex-wrap: wrap; }
+      .guarantee-inner { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-brand">
+      <img src="Icon.png" alt="IPTV Manager icon" />
+      <span>IPTV Manager</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#screenshots">Screenshots</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="https://form.jotform.com/261011060736040" class="btn-nav">Buy Now - CAD$19.99</a></li>
+    </ul>
+  </nav>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-item">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      macOS &amp; Windows
+    </div>
+    <div class="trust-bar-item">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      2-Day Money-Back Guarantee
+    </div>
+    <div class="trust-bar-item">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      One-Time Purchase - No Subscription
+    </div>
+    <div class="trust-bar-item">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      Built with Python - Open &amp; Inspectable
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <img src="Icon.png" alt="IPTV Manager" class="hero-icon" />
+      <div class="hero-badge">macOS &amp; Windows</div>
+      <h1>Watch &amp; Record Your<br /><em>IPTV Channels</em></h1>
+      <p>A clean, powerful app for Live TV, Movies, TV Shows, Sports, and recordings - all in one place. Works with any Xtream-compatible provider.</p>
+      <div class="hero-cta">
+        <a href="https://form.jotform.com/261011060736040" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Buy Now - CAD$19.99
+        </a>
+        <a href="#screenshots" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          See Screenshots
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRICE BANNER -->
+  <div class="price-banner">
+    <span>One-Time Purchase &mdash; No Subscription Ever</span>
+    <span class="price-big">CAD$19.99 <span style="font-size:0.85rem;font-weight:400;opacity:0.85">+ applicable HST</span></span>
+    <a href="https://form.jotform.com/261011060736040">Buy Now &rarr;</a>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <section class="screenshots-section" id="screenshots">
+    <div class="container">
+      <div class="screenshots-header">
+        <div class="section-label">App Screenshots</div>
+        <h2 class="section-title">See It In Action</h2>
+        <p class="section-sub">A polished interface that puts your content front and centre - no clutter, no noise.</p>
+      </div>
+      <div class="screenshots-tabs">
+        <button class="tab-btn active" data-src="screenshots/Home.png">Home</button>
+        <button class="tab-btn" data-src="screenshots/Live TV.png">Live TV</button>
+        <button class="tab-btn" data-src="screenshots/TV Guide.png">TV Guide</button>
+        <button class="tab-btn" data-src="screenshots/Recordings.png">Recordings</button>
+        <button class="tab-btn" data-src="screenshots/Sports.png">Sports</button>
+        <button class="tab-btn" data-src="screenshots/Movies.png">Movies</button>
+        <button class="tab-btn" data-src="screenshots/TV Shows.png">TV Shows</button>
+        <button class="tab-btn" data-src="screenshots/Movie Modal.png">Movie Detail</button>
+        <button class="tab-btn" data-src="screenshots/TV Show Modal.png">Show Detail</button>
+      </div>
+      <div class="screenshot-display">
+        <img id="screenshot-img" src="screenshots/Home.png" alt="IPTV Manager screenshot" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="features-header">
+        <div class="section-label">Everything You Need</div>
+        <h2 class="section-title">Packed With Features</h2>
+        <p class="section-sub">From live sports to on-demand movies, IPTV Manager handles it all with a clean, native-feeling interface.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
+          <h3>Live TV Playback</h3>
+          <p>Watch your live channels in full-screen with smooth, reliable playback. Organise channels into groups and mark your favourites for quick access.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Electronic Programme Guide</h3>
+          <p>A scrollable, at-a-glance TV Guide shows what's on now and what's coming next across all your channels - no browser needed.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Record &amp; Schedule</h3>
+          <p>Record any live programme and schedule future recordings straight from the TV Guide. Your recordings are saved locally and ready to watch any time.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2"/><path d="M18 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"/><path d="M4 22h16"/><path d="M10 22v-4"/><path d="M14 22v-4"/><path d="M6 3h12v9a6 6 0 0 1-12 0V3z"/></svg>
+          </div>
+          <h3>Sports Hub</h3>
+          <p>Dedicated sports section surfaces all your live and upcoming sports events in one place, so you never miss a match.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+          </div>
+          <h3>Movies &amp; TV Shows</h3>
+          <p>Browse your provider's full VOD library with rich metadata, poster art, and detailed modal views for movies and complete TV series.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Xtream Compatible</h3>
+          <p>Connects directly to any Xtream Codes-compatible IPTV provider using your existing login credentials - setup takes under a minute.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">One Price. Everything Included.</h2>
+        <p class="section-sub">No subscriptions, no tiers, no hidden fees. Pay once and get all features on both macOS and Windows.</p>
+      </div>
+      <div class="pricing-card">
+        <div class="section-label" style="text-align:center;">One-Time Purchase</div>
+        <div class="pricing-price-row">
+          <span class="pricing-currency">CAD$</span>
+          <span class="pricing-amount">19.99</span>
+        </div>
+        <p class="pricing-note">+ applicable HST &nbsp;&bull;&nbsp; macOS &amp; Windows licence</p>
+        <hr class="divider-line" />
+        <ul class="pricing-features">
+          <li>
+            <span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Live TV, TV Guide &amp; Sports
+          </li>
+          <li>
+            <span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Movies &amp; TV Shows (VOD)
+          </li>
+          <li>
+            <span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Recording &amp; scheduling
+          </li>
+          <li>
+            <span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Xtream login support
+          </li>
+          <li>
+            <span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Future updates included
+          </li>
+          <li>
+            <span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            No subscription - pay once
+          </li>
+        </ul>
+        <a href="https://form.jotform.com/261011060736040" class="btn-buy">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Purchase IPTV Manager
+        </a>
+        <div class="platform-badges">
+          <div class="platform-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            macOS
+          </div>
+          <div class="platform-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.557L10.004 4.5l.004 6.753-7.001.04L3 5.557zm7.001 6.709l.006 6.761-7.001-1.002-.003-5.796 6.998.037zm.802-6.862L21.003 3.5v6.995l-10.2.048V5.404zm10.198 7.049l-.004 6.955-10.2-1.43-.014-5.571 10.218.046z"/></svg>
+            Windows
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE STRIP -->
+  <div class="guarantee-strip">
+    <div class="guarantee-inner">
+      <div class="guarantee-item">
+        <div class="guarantee-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>2-Day Money-Back Guarantee</h4>
+          <p>Not satisfied within 48 hours of purchase? You're entitled to a full refund, no questions asked. Refunds after 2 days are subject to applicable legal requirements.</p>
+        </div>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div>
+          <h4>Open &amp; Inspectable</h4>
+          <p>Built with Python - you can see exactly what the app is doing. No black box, no hidden behaviour, no surprises.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <img src="Icon.png" alt="IPTV Manager" />
+      <span>IPTV Manager</span>
+    </div>
+    <p>Developed by <a href="https://tobyjones.ca">Toby Jones</a></p>
+    <p>CAD$19.99 + applicable HST &nbsp;&bull;&nbsp; macOS &amp; Windows</p>
+    <p style="margin-top:0.6rem;font-size:0.78rem;">IPTV Manager is designed for use with legally obtained IPTV subscriptions only.</p>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const img  = document.getElementById('screenshot-img');
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.18s';
+        setTimeout(() => {
+          img.src = btn.dataset.src;
+          img.alt = btn.textContent.trim() + ' screenshot';
+          img.style.opacity = '1';
+        }, 160);
+      });
+    });
+  </script>
+
+</body>
+</html>
