@@ -218,7 +218,13 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
           <a href="/public-relations">Public Relations</a>
         </div>
       </li>
-      <li><a href="/video" class="active">Video</a></li>
+      <li class="nav-has-dropdown active">
+        <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dropdown-panel">
+          <a href="/video" class="active">Video Editing</a>
+          <a href="/video-production">Video Production</a>
+        </div>
+      </li>
       <li><a href="/portfolio">Portfolio</a></li>
       <li><a href="/software">Software</a></li>
     </ul>
@@ -377,7 +383,8 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
     {href:'/tv-radio', text:'TV & Radio'},
     {href:'/postal-marketing', text:'Postal Advertising'},
     {href:'/public-relations', text:'Public Relations'},
-    {href:'/video', text:'Video'},
+    {href:'/video', text:'Video Editing'},
+    {href:'/video-production', text:'Video Production'},
     {href:'/portfolio', text:'Portfolio'},
     {href:'/software', text:'Software'},
   ];
