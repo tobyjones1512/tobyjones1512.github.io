@@ -209,11 +209,18 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
           <a href="/public-relations">Public Relations</a>
         </div>
       </li>
-      <li><a href="/video">Video</a></li>
+      <li class="nav-has-dropdown">
+        <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dropdown-panel">
+          <a href="/video">Video Editing</a>
+          <a href="/video-production">Video Production</a>
+        </div>
+      </li>
+      <li><a href="/web-development" class="active">Web Development</a></li>
       <li><a href="/portfolio">Portfolio</a></li>
       <li><a href="/software">Software</a></li>
     </ul>
-    <a href="/callback" class="nav-cta">Book a callback ↗</a>
+    <a href="/email/" class="nav-cta">Get in touch ↗</a>
       <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobileMenu"></div>
@@ -226,7 +233,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
         <h1 class="hero-headline">Your Website,<br>Your Way.</h1>
         <p class="hero-sub">High-performance websites built to convert visitors into customers - tailored, modern, and designed to grow with your business.</p>
         <div class="hero-actions">
-          <a href="/callback/" class="btn-primary">Book a free call</a>
+          <a href="/email/" class="btn-primary">Get in touch</a>
           <a href="/portfolio" class="btn-secondary">See client work</a>
         </div>
       </div>
@@ -350,9 +357,9 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
     <div class="section-inner">
       <div class="cta-card reveal">
         <h2>Your website is either<br>working or it isn't.</h2>
-        <p>Book a free call and I'll show you exactly where yours is losing leads - and what it would take to fix it.</p>
+        <p>Get in touch and I'll show you exactly where yours is losing leads - and what it would take to fix it.</p>
         <div class="cta-actions">
-          <a href="/callback/" class="btn-white">Book a free call ↗</a>
+          <a href="/email/" class="btn-white">Get in touch ↗</a>
           <a href="/email/" class="btn-outline">contact@tobyjones.ca</a>
         </div>
       </div>
@@ -388,7 +395,8 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
     {href:'/tv-radio', text:'TV & Radio'},
     {href:'/postal-marketing', text:'Postal Advertising'},
     {href:'/public-relations', text:'Public Relations'},
-    {href:'/video', text:'Video'},
+    {href:'/video', text:'Video Editing'},
+    {href:'/video-production', text:'Video Production'},
     {href:'/portfolio', text:'Portfolio'},
     {href:'/software', text:'Software'},
   ];
@@ -396,7 +404,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
   links.forEach(function(l){
     html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
   });
-  html += '<a class="mobile-cta" href="/callback">Book a callback ↗</a>';
+  html += '<a class="mobile-cta" href="/email/">Get in touch ↗</a>';
   menu.innerHTML = html;
   menu.querySelector('.mobile-close').addEventListener('click', function(){ toggleMenu(false); });
   function toggleMenu(open){
