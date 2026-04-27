@@ -34,74 +34,6 @@
       line-height: 1.6;
     }
 
-    /* ── NAV ─────────────────────────────────────────────────────────── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2.5rem;
-      height: 64px;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .nav-brand img {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-    }
-
-    .nav-brand span {
-      font-family: 'Merriweather', serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--navy);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--navy); }
-
-    .btn-nav {
-      background: var(--navy) !important;
-      color: var(--white) !important;
-      padding: 0.5rem 1.2rem !important;
-      border-radius: 4px;
-      letter-spacing: 0.02em !important;
-      text-transform: none !important;
-      font-size: 0.9rem !important;
-      font-weight: 700 !important;
-      transition: background 0.2s !important;
-    }
-
-    .btn-nav:hover { background: var(--navy-lt) !important; }
-
     /* ── TRUST BAR ───────────────────────────────────────────────────── */
     .trust-bar {
       background: var(--navy);
@@ -619,7 +551,6 @@
 
     /* ── RESPONSIVE ───────────────────────────────────────────────────── */
     @media (max-width: 700px) {
-      .nav-links { display: none; }
       .trust-bar { gap: 1rem; font-size: 0.74rem; flex-wrap: wrap; }
       .guarantee-inner { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
@@ -627,20 +558,6 @@
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-brand">
-      <img src="Icon.png" alt="IPTV Manager icon" />
-      <span>IPTV Manager</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#screenshots">Screenshots</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="https://form.jotform.com/261011060736040" class="btn-nav">Buy Now - CAD$19.99</a></li>
-    </ul>
-  </nav>
 
   <!-- HERO -->
   <header class="hero">
