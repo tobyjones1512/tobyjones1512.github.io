@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /OLD/
+Disallow: /callback/thank-you/
+Disallow: /complaints/
 
 Sitemap: https://tobyjones.ca/sitemap.xml
