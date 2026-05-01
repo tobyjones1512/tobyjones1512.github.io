@@ -412,6 +412,35 @@
       line-height: 1.65;
     }
 
+    .amex-offer-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1.25rem;
+      padding: 0.45rem 1rem;
+      border-radius: 4px;
+      background: rgba(26,127,75,0.12);
+      border: 1px solid rgba(26,127,75,0.3);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #1a7f4b;
+    }
+
+    .amex-offer-card {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f0faf5;
+      border: 1px solid #b7e2cc;
+      border-radius: 4px;
+      padding: 0.7rem 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: #1a7f4b;
+    }
+
+    .amex-offer-card strong { font-weight: 700; }
+
     /* ── PRICING ──────────────────────────────────────────────────────── */
     .pricing-section {
       background: var(--off);
@@ -672,6 +701,10 @@
       <div class="hero-badge">macOS &amp; Windows</div>
       <h1>Watch &amp; Record Your<br /><em>IPTV Channels</em></h1>
       <p>A clean, powerful app for Live TV, Movies, TV Shows, Sports, and recordings - all in one place. Works with any Xtream-compatible provider.</p>
+      <div class="amex-offer-banner">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        AMEX cardholders save 25% at checkout
+      </div>
       <div class="hero-cta">
         <a href="https://form.jotform.com/261011060736040" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -814,6 +847,10 @@
           <span class="pricing-amount">19.99</span>
         </div>
         <p class="pricing-note">+ applicable HST &nbsp;&bull;&nbsp; macOS &amp; Windows licence</p>
+        <div class="amex-offer-card">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          <span>Pay with <strong>AMEX</strong> and save <strong>25%</strong> &mdash; applied automatically at checkout.</span>
+        </div>
         <hr class="divider-line" />
         <ul class="pricing-features">
           <li>

@@ -180,6 +180,21 @@
       margin-top: 0.5rem;
     }
 
+    .amex-teaser {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f0faf5;
+      border: 1px solid #b7e2cc;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.84rem;
+      color: var(--green);
+    }
+
+    .amex-teaser strong { font-weight: 700; }
+
     .amex-promo {
       display: none;
       align-items: center;
@@ -450,6 +465,11 @@
 
     <!-- ORDER SUMMARY (left column) -->
     <aside class="order-summary">
+
+      <div class="amex-teaser">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        <span>Pay with <strong>AMEX</strong> and save <strong>25%</strong> &mdash; discount applied automatically at checkout.</span>
+      </div>
 
       <div class="amex-promo" id="amex-promo">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
