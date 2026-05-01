@@ -21,13 +21,23 @@ const ApiContracts   = AuthorizeNet.APIContracts;
 const ApiControllers = AuthorizeNet.APIControllers;
 const Constants      = AuthorizeNet.Constants;
 
+const ALLOWED_ORIGINS = [
+  'https://tobyjones.ca',
+  'https://www.tobyjones.ca',
+  'https://tobyjones1512.github.io'
+];
+
 module.exports = async (req, res) => {
-  const allowedOrigin = process.env.ALLOWED_ORIGIN || 'https://tobyjones.ca';
+  const requestOrigin = req.headers.origin || '';
+  const corsOrigin = ALLOWED_ORIGINS.includes(requestOrigin)
+    ? requestOrigin
+    : ALLOWED_ORIGINS[0];
 
   // CORS
-  res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+  res.setHeader('Access-Control-Allow-Origin', corsOrigin);
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Vary', 'Origin');
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
