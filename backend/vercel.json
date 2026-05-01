@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "functions": {
+    "api/charge.js": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 10
+    }
+  }
+}
