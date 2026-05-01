@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "authorizenet": "^2.0.2"
+    "authorizenet": "^1.0.10"
   }
 }

@@ -17,9 +17,9 @@
 
 const AuthorizeNet = require('authorizenet');
 
-const ApiContracts  = AuthorizeNet.APIContracts;
+const ApiContracts   = AuthorizeNet.APIContracts;
 const ApiControllers = AuthorizeNet.APIControllers;
-const SDKConstants  = AuthorizeNet.SDKConstants;
+const Constants      = AuthorizeNet.Constants;
 
 module.exports = async (req, res) => {
   const allowedOrigin = process.env.ALLOWED_ORIGIN || 'https://tobyjones.ca';
@@ -51,8 +51,8 @@ module.exports = async (req, res) => {
 
   // Configure Authorize.net environment
   const env = process.env.AUTHORIZENET_ENV === 'production'
-    ? SDKConstants.endpoint.production
-    : SDKConstants.endpoint.sandbox;
+    ? Constants.endpoint.production
+    : Constants.endpoint.sandbox;
 
   const merchantAuth = new ApiContracts.MerchantAuthenticationType();
   merchantAuth.setName(process.env.AUTHORIZENET_API_LOGIN_ID);
