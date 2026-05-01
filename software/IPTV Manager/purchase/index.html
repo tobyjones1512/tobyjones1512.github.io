@@ -834,12 +834,20 @@
       };
 
       try {
-        const res  = await fetch(CHARGE_URL, {
+        const res = await fetch(CHARGE_URL, {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
           body:    JSON.stringify(payload)
         });
-        const data = await res.json();
+
+        let data;
+        try {
+          data = await res.json();
+        } catch (_) {
+          showFormError('Server returned an unexpected response (status ' + res.status + '). Please try again or contact support.');
+          setLoading(false);
+          return;
+        }
 
         if (res.ok && data.success) {
           window.location.href = '../thank-you/?txn=' + encodeURIComponent(data.transactionId);
@@ -848,7 +856,8 @@
           setLoading(false);
         }
       } catch (err) {
-        showFormError('Network error. Please check your connection and try again.');
+        // CORS or network failure — show the actual error to help diagnose
+        showFormError('Network error: ' + (err.message || err) + '. If this persists, please contact support.');
         setLoading(false);
       }
     }
