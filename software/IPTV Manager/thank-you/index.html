@@ -267,15 +267,15 @@
 
       <br />
 
-      <a class="btn-download" href="../../downloads/IPTV%20Manager%20-%203.0.1.zip" download="IPTV Manager - 3.0.1.zip">
+      <a class="btn-download" id="btn-download" href="#" download>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
           <polyline points="7 10 12 15 17 10"/>
           <line x1="12" y1="15" x2="12" y2="3"/>
         </svg>
-        Download IPTV Manager 3.0.1
+        <span id="btn-download-label">Download IPTV Manager</span>
       </a>
-      <p class="download-note">macOS &amp; Windows &middot; ZIP archive &middot; version 3.0.1</p>
+      <p class="download-note" id="download-note">macOS &amp; Windows &middot; ZIP archive</p>
 
       <div class="whats-next">
         <h3>Getting Started</h3>
@@ -310,6 +310,26 @@
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Fetch the versions CSV and wire up the download button to the latest release
+    fetch('../../downloads/iptv-manager-versions.csv')
+      .then(r => r.text())
+      .then(csv => {
+        const rows = csv.trim().split('\n');
+        // rows[0] is the header; rows[1] is the latest version
+        const cols = rows[1].split(',');
+        const version = cols[0].trim();
+        const filename = cols[3].trim();
+        const btn = document.getElementById('btn-download');
+        btn.href = '../../downloads/' + encodeURIComponent(filename);
+        btn.download = filename;
+        document.getElementById('btn-download-label').textContent = 'Download IPTV Manager ' + version;
+        document.getElementById('download-note').innerHTML =
+          'macOS &amp; Windows &middot; ZIP archive &middot; version ' + version;
+      })
+      .catch(() => {
+        // Leave button in neutral state if CSV can't be fetched
+      });
 
     // Show transaction ID from URL param if present
     const txn = new URLSearchParams(window.location.search).get('txn');
