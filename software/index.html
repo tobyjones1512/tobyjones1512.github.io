@@ -260,6 +260,22 @@
       .app-post-purchase-note { text-align: left; }
     }
 
+    .amex-offer-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 5px 12px;
+      border-radius: 980px;
+      background: rgba(26, 127, 75, 0.25);
+      border: 1px solid rgba(26, 127, 75, 0.45);
+      font-size: 12px;
+      font-weight: 600;
+      color: #6ee7b7;
+      letter-spacing: 0.01em;
+    }
+    .amex-offer-pill svg { flex-shrink: 0; }
+
     /* ── Authorize.Net seal ──────────────────────────────────────────── */
     .AuthorizeNetSeal {
       margin-top: 4px;
@@ -486,9 +502,13 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
             <h2 class="app-title">IPTV Manager</h2>
             <p class="app-tagline">Watch and record your legally obtained IPTV channels, all in one clean app for macOS and Windows.</p>
             <div class="app-price-tag">CAD$19.99<span>excl. HST</span></div>
+            <div class="amex-offer-pill">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              AMEX cardholders save 25%
+            </div>
           </div>
           <div class="app-hero-actions">
-            <a href="https://form.jotform.com/261011060736040" target="_blank" rel="noopener" class="app-btn app-btn-primary">
+            <a href="/software/IPTV%20Manager/purchase" class="app-btn app-btn-primary">
               <svg viewBox="0 0 20 20" fill="currentColor"><path d="M4 4a2 2 0 0 0-2 2v1h16V6a2 2 0 0 0-2-2H4ZM18 9H2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9ZM7 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm2 0a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2H10a1 1 0 0 1-1-1Z"/></svg>
               Buy Now
             </a>
