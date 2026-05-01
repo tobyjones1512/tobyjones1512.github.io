@@ -642,6 +642,16 @@
     const CLIENT_KEY   = '__AUTHORIZENET_CLIENT_KEY__';
     const CHARGE_URL   = '__CHARGE_URL__';
 
+    // Detect un-replaced placeholders (GitHub Secrets not yet injected)
+    if (API_LOGIN_ID.startsWith('__') || CLIENT_KEY.startsWith('__') || CHARGE_URL.startsWith('__')) {
+      document.getElementById('submit-btn').disabled = true;
+      showFormError(
+        'Payment is not yet configured. If you are the site owner, please add the ' +
+        'AUTHORIZENET_API_LOGIN_ID, AUTHORIZENET_CLIENT_KEY, and CHARGE_URL GitHub Secrets ' +
+        'and re-run the GitHub Actions deployment workflow.'
+      );
+    }
+
     const BASE_PRICE      = 19.99;
     const TAX_RATE        = 0.13;
     const AMEX_DISCOUNT   = 0.25;
