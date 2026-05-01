@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You – IPTV Manager Purchase Confirmed</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="../Icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0d2145;
+      --navy-lt: #1a3666;
+      --gold:    #b8860b;
+      --gold-lt: #d4a017;
+      --green:   #1a7f4b;
+      --green-lt:#e6f4ed;
+      --white:   #ffffff;
+      --off:     #f4f6fb;
+      --off2:    #eef1f8;
+      --text:    #111827;
+      --muted:   #4b5563;
+      --border:  #d1d9e6;
+    }
+
+    body {
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--off);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ──────────────────────────────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 64px;
+      flex-shrink: 0;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-brand img { width: 36px; height: 36px; border-radius: 8px; }
+
+    .nav-brand span {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+
+    /* ── MAIN ─────────────────────────────────────────────────────────── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(13,33,69,0.07);
+    }
+
+    /* ── SUCCESS ICON ─────────────────────────────────────────────────── */
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--green-lt);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.75rem;
+      color: var(--green);
+    }
+
+    /* ── TEXT ─────────────────────────────────────────────────────────── */
+    .card h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .card .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+
+    .txn-ref {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-family: monospace;
+      background: var(--off2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.35rem 0.8rem;
+      border-radius: 5px;
+      margin-bottom: 2rem;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── DOWNLOAD BUTTON ─────────────────────────────────────────────── */
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: var(--navy);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 1rem 2.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+      box-shadow: 0 4px 14px rgba(13,33,69,0.25);
+      margin-bottom: 1rem;
+    }
+
+    .btn-download:hover { background: var(--navy-lt); }
+
+    .download-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 2.25rem;
+    }
+
+    /* ── WHAT'S NEXT ─────────────────────────────────────────────────── */
+    .whats-next {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.35rem 1.5rem;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .whats-next h3 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .next-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .next-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .step-num {
+      width: 20px;
+      height: 20px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.68rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── BACK LINK ───────────────────────────────────────────────────── */
+    .back-link {
+      font-size: 0.88rem;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover { color: var(--gold); }
+
+    /* ── FOOTER ──────────────────────────────────────────────────────── */
+    footer {
+      background: #060f20;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
+
+    footer a { color: var(--gold-lt); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 540px) {
+      .card { padding: 2rem 1.5rem; }
+      nav   { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../" class="nav-brand">
+      <img src="../Icon.png" alt="IPTV Manager" />
+      <span>IPTV Manager</span>
+    </a>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <div class="card">
+
+      <div class="success-icon">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+
+      <h1>Payment Confirmed!</h1>
+      <p class="subtitle">
+        Thank you for purchasing IPTV Manager. Your one-time licence is ready to download below.
+      </p>
+
+      <div class="txn-ref" id="txn-ref"><!-- populated by JS --></div>
+
+      <br />
+
+      <a class="btn-download" href="../../downloads/IPTV%20Manager%20-%203.0.1.zip" download="IPTV Manager - 3.0.1.zip">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download IPTV Manager 3.0.1
+      </a>
+      <p class="download-note">macOS &amp; Windows &middot; ZIP archive &middot; version 3.0.1</p>
+
+      <div class="whats-next">
+        <h3>Getting Started</h3>
+        <ul class="next-steps">
+          <li>
+            <span class="step-num">1</span>
+            <span>Download and extract the ZIP file to your Applications or Program Files folder.</span>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <span>Launch <strong>IPTV Manager</strong> and open <strong>Settings</strong> to enter your IPTV provider's Xtream URL, username, and password.</span>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <span>Your channels, movies, and TV shows will load automatically. Enjoy!</span>
+          </li>
+        </ul>
+      </div>
+
+      <a class="back-link" href="../">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to IPTV Manager page
+      </a>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="yr"></span> IPTV Manager &mdash; <a href="https://tobyjones.ca">tobyjones.ca</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Show transaction ID from URL param if present
+    const txn = new URLSearchParams(window.location.search).get('txn');
+    const ref = document.getElementById('txn-ref');
+    if (txn) {
+      ref.textContent = 'Transaction ID: ' + txn;
+    } else {
+      ref.style.display = 'none';
+    }
+
+    // Guard: redirect away if user lands here without a txn param
+    // (prevents bookmarking the page to download without paying)
+    if (!txn) {
+      // Soft redirect — keeps page visible for 3 s then sends to purchase page
+      setTimeout(() => {
+        window.location.replace('../purchase/');
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
