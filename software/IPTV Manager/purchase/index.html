@@ -987,7 +987,7 @@
     }
 
     async function chargeCard(opaqueData) {
-      const { subtotal, tipAmount, total } = calcPrices(isAmex);
+      const { discount, subtotal, tipAmount, tax, total } = calcPrices(isAmex);
 
       const payload = {
         opaqueData,
@@ -999,7 +999,10 @@
           email:     document.getElementById('email').value.trim(),
           zip:       document.getElementById('postal').value.trim()
         },
-        description: 'IPTV Manager Licence' + (tipAmount > 0 ? ' (includes tip: $' + tipAmount.toFixed(2) + ')' : '')
+        description: 'IPTV Manager Licence' + (tipAmount > 0 ? ' (includes tip: $' + tipAmount.toFixed(2) + ')' : ''),
+        taxAmount:      tax.toFixed(2),
+        discountAmount: discount > 0 ? discount.toFixed(2) : '0.00',
+        tipAmount:      tipAmount > 0 ? tipAmount.toFixed(2) : '0.00'
       };
 
       try {
