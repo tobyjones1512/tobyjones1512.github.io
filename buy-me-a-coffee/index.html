@@ -771,14 +771,18 @@
         </div>
       </div>
 
-      <!-- Price Summary (Tax-Exempt) -->
+      <!-- Price Summary -->
       <div class="price-summary" id="price-summary">
         <div class="price-line">
           <span>Donation</span>
           <span id="val-donation">$0.00</span>
         </div>
+        <div class="price-line">
+          <span>HST (13%)</span>
+          <span id="val-tax">$0.00</span>
+        </div>
         <div class="price-line total">
-          <span>Total (Tax-Exempt)</span>
+          <span>Total</span>
           <span id="val-total">$0.00</span>
         </div>
       </div>
@@ -943,11 +947,11 @@
     function fmtCAD(n) { return '$' + n.toFixed(2); }
 
     function updatePrice(amount) {
-      // Buy Me A Coffee is tax-exempt
-      const total = round2(amount);
+      const tax = round2(amount * TAX_RATE);
+      const total = round2(amount + tax);
 
       valDonation.textContent = fmtCAD(amount);
-      valTax.textContent = 'Tax-exempt';
+      valTax.textContent = fmtCAD(tax);
       valTotal.textContent = fmtCAD(total);
       btnAmount.textContent = fmtCAD(total);
 
@@ -1139,8 +1143,8 @@
     }
 
     async function chargeCard(opaqueData) {
-      // Buy Me A Coffee is entirely tax-exempt
-      const total = currentAmount;
+      const tax = round2(currentAmount * TAX_RATE);
+      const total = round2(currentAmount + tax);
 
       const payload = {
         opaqueData,
@@ -1152,9 +1156,7 @@
           email:     document.getElementById('email').value.trim(),
           zip:       document.getElementById('postal').value.trim()
         },
-        description: 'Buy Me A Coffee',
-        taxAmount: '0.00',  // Tax-exempt
-        tipAmount: '0.00'
+        description: 'Buy Me A Coffee'
       };
 
       try {
