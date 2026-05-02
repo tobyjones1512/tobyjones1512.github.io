@@ -667,6 +667,11 @@
         grid-template-columns: 1fr;
       }
 
+      .custom-amount-wrap {
+        grid-column: 1 / -1;
+        margin-top: 8px;
+      }
+
       .form-row.cols-2,
       .form-row.cols-3 {
         grid-template-columns: 1fr;
@@ -760,12 +765,10 @@
           <div class="coffee-option-amount">$15</div>
           <div class="coffee-option-label">5 Coffees</div>
         </div>
-      </div>
-
-      <!-- Custom Amount -->
-      <div class="custom-amount-wrap">
-        <div class="custom-amount-label">Or enter a custom amount</div>
-        <input type="tel" class="custom-amount-input" id="custom-amount" placeholder="$5.00" inputmode="decimal">
+        <!-- Custom Amount (inside grid for mobile) -->
+        <div class="custom-amount-wrap">
+          <input type="tel" class="custom-amount-input" id="custom-amount" placeholder="Custom amount, e.g. $5" inputmode="decimal">
+        </div>
       </div>
 
       <!-- Price Summary -->
@@ -1122,7 +1125,7 @@
           email:     document.getElementById('email').value.trim(),
           zip:       document.getElementById('postal').value.trim()
         },
-        description: 'Buy Me A Coffee Donation'
+        description: 'Buy Me A Coffee'
       };
 
       try {

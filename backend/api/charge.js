@@ -47,7 +47,7 @@ module.exports = async (req, res) => {
     return res.status(405).json({ success: false, message: 'Method not allowed.' });
   }
 
-  const { opaqueData, amount, currency, billing } = req.body || {};
+  const { opaqueData, amount, currency, billing, description } = req.body || {};
 
   // Basic input validation
   if (!opaqueData?.dataValue || !opaqueData?.dataDescriptor) {
@@ -96,9 +96,9 @@ module.exports = async (req, res) => {
     txnRequest.setCustomer(customerData);
   }
 
-  // Order description
+  // Order description (use custom description from request, or default)
   const orderDetails = new ApiContracts.OrderType();
-  orderDetails.setDescription('IPTV Manager Licence');
+  orderDetails.setDescription(description || 'Purchase');
   txnRequest.setOrder(orderDetails);
 
   const createRequest = new ApiContracts.CreateTransactionRequest();
