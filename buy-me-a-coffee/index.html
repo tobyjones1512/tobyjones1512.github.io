@@ -309,40 +309,25 @@
       font-weight: 400;
     }
 
-    .custom-amount-wrap {
-      max-width: 400px;
-      margin: 0 auto 48px;
-    }
+      .custom-amount-input {
+        width: 80%;
+        border: none;
+        background: transparent;
+        font-family: inherit;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: var(--apple-dark);
+        text-align: center;
+        outline: none;
+      }
 
-    .custom-amount-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--apple-subtle);
-      margin-bottom: 12px;
-      text-align: center;
-    }
-
-    .custom-amount-input {
-      width: 100%;
-      padding: 16px 20px;
-      border: 2px solid rgba(0, 0, 0, 0.08);
-      border-radius: 16px;
-      font-family: inherit;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--apple-dark);
-      background: var(--apple-white);
-      text-align: center;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
-    }
-
-    .custom-amount-input:focus {
-      border-color: var(--apple-blue);
-      box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
-    }
+      .custom-amount-input::placeholder {
+        color: var(--apple-subtle);
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: normal;
+      }
 
     /* ── Price Summary ─────────────────────────────────────────── */
     .price-summary {
@@ -766,26 +751,24 @@
           <div class="coffee-option-label">5 Coffees</div>
         </div>
         <!-- Custom Amount (inside grid for mobile) -->
-        <div class="custom-amount-wrap">
-          <input type="tel" class="custom-amount-input" id="custom-amount" placeholder="Custom amount, e.g. $5" inputmode="decimal">
+        <div class="coffee-option" id="custom-amount-option">
+          <div class="coffee-option-icon">✏️</div>
+          <input type="tel" class="custom-amount-input" id="custom-amount" placeholder="Custom amount" inputmode="decimal">
+          <div class="coffee-option-label">Your Amount</div>
         </div>
       </div>
 
-      <!-- Price Summary -->
-      <div class="price-summary" id="price-summary">
-        <div class="price-line">
-          <span>Donation</span>
-          <span id="val-donation">$0.00</span>
-        </div>
-        <div class="price-line">
-          <span>HST (13%)</span>
-          <span id="val-tax">$0.00</span>
-        </div>
-        <div class="price-line total">
-          <span>Total</span>
-          <span id="val-total">$0.00</span>
-        </div>
-      </div>
+       <!-- Price Summary -->
+       <div class="price-summary" id="price-summary">
+         <div class="price-line">
+           <span>Donation</span>
+           <span id="val-donation">$0.00</span>
+         </div>
+         <div class="price-line total">
+           <span>Total</span>
+           <span id="val-total">$0.00</span>
+         </div>
+       </div>
 
       <!-- Payment Form -->
       <div class="payment-card" id="payment-section">
@@ -929,86 +912,58 @@
       );
     }
 
-    const TAX_RATE = 0.13;
-    let currentAmount = 0;
-    let isAmex = false;
+     let currentAmount = 0;
 
-    // ── DOM Elements ──────────────────────────────────────────
-    const coffeeOptions = document.querySelectorAll('.coffee-option');
-    const customAmountInput = document.getElementById('custom-amount');
-    const valDonation = document.getElementById('val-donation');
-    const valTax = document.getElementById('val-tax');
-    const valTotal = document.getElementById('val-total');
-    const btnAmount = document.getElementById('btn-amount');
-    const submitBtn = document.getElementById('submit-btn');
+      // ── DOM Elements ──────────────────────────────────────────
+       const allOptions = document.querySelectorAll('.coffee-option');
+       const customAmountInput = document.getElementById('custom-amount');
+       const valDonation = document.getElementById('val-donation');
+       const valTotal = document.getElementById('val-total');
+       const btnAmount = document.getElementById('btn-amount');
+       const submitBtn = document.getElementById('submit-btn');
 
-    // ── Price Calculation ──────────────────────────────────────
-    function round2(n) { return Math.round(n * 100) / 100; }
-    function fmtCAD(n) { return '$' + n.toFixed(2); }
+     // ── Price Calculation ──────────────────────────────────────
+     function fmtCAD(n) { return '$' + n.toFixed(2); }
 
-    function updatePrice(amount) {
-      const tax = round2(amount * TAX_RATE);
-      const total = round2(amount + tax);
+     function updatePrice(amount) {
+       valDonation.textContent = fmtCAD(amount);
+       valTotal.textContent = fmtCAD(amount);
+       btnAmount.textContent = fmtCAD(amount);
 
-      valDonation.textContent = fmtCAD(amount);
-      valTax.textContent = fmtCAD(tax);
-      valTotal.textContent = fmtCAD(total);
-      btnAmount.textContent = fmtCAD(total);
+       currentAmount = amount;
+       submitBtn.disabled = amount === 0;
+     }
 
-      currentAmount = amount;
-      submitBtn.disabled = amount === 0;
-    }
+       // ── Coffee Option Selection ────────────────────────────────
+        allOptions.forEach(option => {
+          option.addEventListener('click', (e) => {
+            // Handle custom amount option
+            if (option.id === 'custom-amount-option') {
+              allOptions.forEach(o => o.classList.remove('selected'));
+              option.classList.add('selected');
+              customAmountInput.focus();
+              return;
+            }
 
-    // ── Coffee Option Selection ────────────────────────────────
-    coffeeOptions.forEach(option => {
-      option.addEventListener('click', () => {
-        coffeeOptions.forEach(o => o.classList.remove('selected'));
-        option.classList.add('selected');
-        const amount = parseFloat(option.dataset.amount);
-        customAmountInput.value = '';
-        updatePrice(amount);
-      });
-    });
+            // Handle preset amounts
+            allOptions.forEach(o => o.classList.remove('selected'));
+            option.classList.add('selected');
+            customAmountInput.value = '';
+            const amount = parseFloat(option.dataset.amount);
+            updatePrice(amount);
+          });
+        });
 
-<<<<<<< HEAD
-    // Custom amount wrap click (selects it)
-    customAmountWrap.addEventListener('click', () => {
-      coffeeOptions.forEach(o => o.classList.remove('selected'));
-      customAmountWrap.classList.add('selected');
-      customAmountInput.focus();
-    });
+        customAmountInput.addEventListener('input', () => {
+          allOptions.forEach(o => o.classList.remove('selected'));
+          document.getElementById('custom-amount-option').classList.add('selected');
+          let value = parseFloat(customAmountInput.value.replace(/[^0-9.]/g, ''));
+          if (isNaN(value) || value < 0) value = 0;
+          updatePrice(value);
+        });
 
-    customAmountInput.addEventListener('input', () => {
-<<<<<<< HEAD
-      coffeeOptions.forEach(o => o.classList.remove('selected'));
-      customAmountWrap.classList.add('selected');
-=======
-    // ── Custom Amount Input ────────────────────────────────────
-    customAmountInput.addEventListener('input', () => {
-      coffeeOptions.forEach(o => o.classList.remove('selected'));
->>>>>>> parent of 0055ece (Fix custom amount styling to match coffee option blocks)
-=======
->>>>>>> parent of b82ac11 (Fix: Buy Me A Coffee button not enabling on amount select)
-      let value = parseFloat(customAmountInput.value.replace(/[^0-9.]/g, ''));
-      if (isNaN(value) || value < 0) value = 0;
-      updatePrice(value);
-    });
-<<<<<<< HEAD
-    });
 
-<<<<<<< HEAD
-=======
->>>>>>> parent of 0055ece (Fix custom amount styling to match coffee option blocks)
-=======
-    // ── Custom Amount Input ────────────────────────────────────
-    customAmountInput.addEventListener('input', () => {
-      coffeeOptions.forEach(o => o.classList.remove('selected'));
-      let value = parseFloat(customAmountInput.value.replace(/[^0-9.]/g, ''));
-      if (isNaN(value) || value < 0) value = 0;
-      updatePrice(value);
-    });
->>>>>>> parent of ae5b070 (Fix: Remove duplicate event listener, add https:// origin to CORS)
-
+    
     // ── Card Type Detection ────────────────────────────────────
     function detectCard(num) {
       const n = num.replace(/\D/g, '');
@@ -1142,14 +1097,11 @@
       chargeCard(response.opaqueData);
     }
 
-    async function chargeCard(opaqueData) {
-      const tax = round2(currentAmount * TAX_RATE);
-      const total = round2(currentAmount + tax);
-
-      const payload = {
-        opaqueData,
-        amount:   total.toFixed(2),
-        currency: 'CAD',
+     async function chargeCard(opaqueData) {
+       const payload = {
+         opaqueData,
+         amount:   currentAmount.toFixed(2),
+         currency: 'CAD',
         billing: {
           firstName: document.getElementById('first-name').value.trim(),
           lastName:  document.getElementById('last-name').value.trim(),
