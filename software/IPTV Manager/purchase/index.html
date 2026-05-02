@@ -796,9 +796,8 @@
     function calcPrices(amex) {
       const discount   = amex ? round2(BASE_PRICE * AMEX_DISCOUNT) : 0;
       const subtotal   = round2(BASE_PRICE - discount);
-      const subtotalWithTip = round2(subtotal + tipAmount);
-      const tax        = round2(subtotalWithTip * TAX_RATE);
-      const total      = round2(subtotalWithTip + tax);
+      const tax        = round2(subtotal * TAX_RATE);  // Tax on subtotal only (tip is tax-exempt)
+      const total      = round2(subtotal + tax + tipAmount);  // Tip added after tax
       return { discount, subtotal, tipAmount, tax, total };
     }
 
