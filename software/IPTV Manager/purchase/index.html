@@ -580,8 +580,8 @@
       <div class="tip-section">
         <div class="tip-label">Add a Tip (Optional)</div>
         <div class="tip-options">
-          <button class="tip-btn" data-tip="0" class="active">No Tip</button>
           <button class="tip-btn" data-tip="1">$1</button>
+          <button class="tip-btn" data-tip="2">$2</button>
           <button class="tip-btn" data-tip="3">$3</button>
           <button class="tip-btn" data-tip="5">$5</button>
         </div>
@@ -609,18 +609,18 @@
         <span id="val-subtotal">CAD&nbsp;$19.99</span>
       </div>
 
-      <div class="summary-line tip-line" id="line-tip" style="display:none">
-        <span>
-          Tip (Optional)
-          <button class="tip-remove" id="tip-remove">Remove</button>
-        </span>
-        <span id="val-tip">+CAD&nbsp;$0.00</span>
-      </div>
+       <div class="summary-line">
+         <span>HST (13%)</span>
+         <span id="val-tax">CAD&nbsp;$2.60</span>
+       </div>
 
-      <div class="summary-line">
-        <span>HST (13%)</span>
-        <span id="val-tax">CAD&nbsp;$2.60</span>
-      </div>
+       <div class="summary-line tip-line" id="line-tip" style="display:none">
+         <span>
+           Tip (Optional)
+           <button class="tip-remove" id="tip-remove">Remove</button>
+         </span>
+         <span id="val-tip">+CAD&nbsp;$0.00</span>
+       </div>
 
       <hr class="summary-divider" />
 
@@ -793,14 +793,13 @@
     let tipAmount = 0;
 
     // ── Price calculation ────────────────────────────────────────────────────
-    function calcPrices(amex) {
-      const discount   = amex ? round2(BASE_PRICE * AMEX_DISCOUNT) : 0;
-      const subtotal   = round2(BASE_PRICE - discount);
-      const subtotalWithTip = round2(subtotal + tipAmount);
-      const tax        = round2(subtotalWithTip * TAX_RATE);
-      const total      = round2(subtotalWithTip + tax);
-      return { discount, subtotal, tipAmount, tax, total };
-    }
+     function calcPrices(amex) {
+       const discount   = amex ? round2(BASE_PRICE * AMEX_DISCOUNT) : 0;
+       const subtotal   = round2(BASE_PRICE - discount);
+       const tax        = round2(subtotal * TAX_RATE);
+       const total      = round2(subtotal + tipAmount + tax);
+       return { discount, subtotal, tipAmount, tax, total };
+     }
 
     function round2(n) { return Math.round(n * 100) / 100; }
     function fmtCAD(n) { return 'CAD $' + n.toFixed(2); }
@@ -829,6 +828,11 @@
     const tipCustomInput = document.getElementById('tip-custom');
     const tipRemoveBtn = document.getElementById('tip-remove');
 
+    // Set default tip to $2
+    tipAmount = 2;
+    document.getElementById('default-tip').classList.add('active');
+    updatePriceSummary(isAmex);
+
     tipButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         tipButtons.forEach(b => b.classList.remove('active'));
@@ -847,13 +851,12 @@
       updatePriceSummary(isAmex);
     });
 
-    tipRemoveBtn.addEventListener('click', () => {
-      tipAmount = 0;
-      tipCustomInput.value = '';
-      tipButtons.forEach(b => b.classList.remove('active'));
-      document.querySelector('.tip-btn[data-tip="0"]').classList.add('active');
-      updatePriceSummary(isAmex);
-    });
+     tipRemoveBtn.addEventListener('click', () => {
+       tipAmount = 0;  // Remove tip (set to $0)
+       tipCustomInput.value = '';
+       tipButtons.forEach(b => b.classList.remove('active'));
+       updatePriceSummary(isAmex);
+     });
 
     // ── Card type detection ──────────────────────────────────────────────────
     function detectCard(num) {
@@ -987,12 +990,15 @@
     }
 
     async function chargeCard(opaqueData) {
-      const { subtotal, tipAmount, total } = calcPrices(isAmex);
+      const { discount, subtotal, tipAmount, tax, total } = calcPrices(isAmex);
 
       const payload = {
         opaqueData,
         amount:   total.toFixed(2),
         currency: 'CAD',
+        taxAmount: tax.toFixed(2),
+        tipAmount: tipAmount.toFixed(2),
+        discount:  discount.toFixed(2),
         billing: {
           firstName: document.getElementById('first-name').value.trim(),
           lastName:  document.getElementById('last-name').value.trim(),
