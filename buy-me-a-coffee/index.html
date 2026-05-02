@@ -975,6 +975,7 @@
     });
 
     customAmountInput.addEventListener('input', () => {
+<<<<<<< HEAD
       coffeeOptions.forEach(o => o.classList.remove('selected'));
       customAmountWrap.classList.add('selected');
 =======
@@ -982,6 +983,8 @@
     customAmountInput.addEventListener('input', () => {
       coffeeOptions.forEach(o => o.classList.remove('selected'));
 >>>>>>> parent of 0055ece (Fix custom amount styling to match coffee option blocks)
+=======
+>>>>>>> parent of b82ac11 (Fix: Buy Me A Coffee button not enabling on amount select)
       let value = parseFloat(customAmountInput.value.replace(/[^0-9.]/g, ''));
       if (isNaN(value) || value < 0) value = 0;
       updatePrice(value);
@@ -1242,9 +1245,6 @@
       const isOpen = mobileMenu.classList.toggle('open');
       hamburger.classList.toggle('open', isOpen);
     });
-
-    // Initialize price display and button state
-    updatePrice(0);
   </script>
 </body>
 </html>
