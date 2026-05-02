@@ -1,18 +1,9 @@
 /**
- * Vercel Serverless Function — Authorize.net charge endpoint
+ * Vercel Serverless Function — Authorize.net charge endpoint (backend folder)
  *
- * Deploy this backend separately from GitHub Pages:
- *   1. Push the /backend folder to a new GitHub repo (or the same one)
- *   2. Import the project at vercel.com
- *   3. Set environment variables in the Vercel dashboard:
- *        AUTHORIZENET_API_LOGIN_ID  — your API Login ID
- *        AUTHORIZENET_TRANSACTION_KEY — your Transaction Key  (KEEP SECRET)
- *        AUTHORIZENET_ENV           — "sandbox" or "production"
- *        ALLOWED_ORIGIN             — https://tobyjones.ca (your site URL)
- *   4. Copy the deployed function URL into the GitHub Secret CHARGE_URL
- *      e.g. https://your-project.vercel.app/api/charge
- *
- * The Transaction Key must NEVER appear in client-side code.
+ * This file is the canonical location for the Vercel API route in the backend
+ * folder. The root api/charge.js route will be wired via vercel.json rewrite
+ * to point to this file to keep all backend code together.
  */
 
 const AuthorizeNet = require('authorizenet');
@@ -28,10 +19,20 @@ const ALLOWED_ORIGINS = [
 ];
 
 module.exports = async (req, res) => {
-  const requestOrigin = req.headers.origin || '';
-  const corsOrigin = ALLOWED_ORIGINS.includes(requestOrigin)
-    ? requestOrigin
-    : ALLOWED_ORIGINS[0];
+  // Compute CORS upfront so error paths still include headers
+  const requestOrigin = (req.headers.origin || '').toLowerCase();
+  // Robust origin check: tolerate trailing slashes and minor variations
+  let corsOrigin = ALLOWED_ORIGINS[0];
+  if (requestOrigin) {
+    const normOrigin = requestOrigin.endsWith('/') ? requestOrigin.slice(0, -1) : requestOrigin;
+    const match = ALLOWED_ORIGINS.find((o) => {
+      const normAllowed = o.endsWith('/') ? o.slice(0, -1) : o;
+      return normOrigin === normAllowed;
+    });
+    if (match) {
+      corsOrigin = normOrigin;
+    }
+  }
 
   // CORS
   res.setHeader('Access-Control-Allow-Origin', corsOrigin);
