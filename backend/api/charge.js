@@ -70,7 +70,7 @@ module.exports = async (req, res) => {
       .json({ success: false, message: "Method not allowed." });
   }
 
-  const { opaqueData, amount, taxAmount, currency, billing, description } =
+  const { opaqueData, amount, taxAmount, discount, currency, billing, description } =
     req.body || {};
 
   // Basic input validation
@@ -122,8 +122,16 @@ module.exports = async (req, res) => {
   if (taxAmount && parseFloat(taxAmount) > 0) {
     const taxType = new ApiContracts.ExtendedAmountType();
     taxType.setAmount(parseFloat(taxAmount).toFixed(2));
-    taxType.setName("Tax");
+    taxType.setName('Tax');
     txnRequest.setTax(taxType);
+  }
+
+  // Optional: attach discount if provided (e.g., AMEX discount)
+  if (discount && parseFloat(discount) > 0) {
+    const discountType = new ApiContracts.ExtendedAmountType();
+    discountType.setAmount(parseFloat(discount).toFixed(2));
+    discountType.setName('Discount');
+    txnRequest.setDiscount(discountType);
   }
 
   // Optional: attach customer email for receipt
