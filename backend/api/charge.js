@@ -47,7 +47,7 @@ module.exports = async (req, res) => {
     return res.status(405).json({ success: false, message: 'Method not allowed.' });
   }
 
-  const { opaqueData, amount, currency, billing, description } = req.body || {};
+  const { opaqueData, amount, taxAmount, tipAmount, discount, currency, billing, description } = req.body || {};
 
   // Basic input validation
   if (!opaqueData?.dataValue || !opaqueData?.dataDescriptor) {
@@ -88,7 +88,55 @@ module.exports = async (req, res) => {
   txnRequest.setPayment(paymentType);
   txnRequest.setAmount(parsedAmount.toFixed(2));
   txnRequest.setBillTo(billTo);
-  txnRequest.setTaxExempt(true);
+
+  // ── Line Items ──────────────────────────────────────
+  const lineItems = new ApiContracts.ArrayOfLineItem();
+
+  // Calculate license amount (total - tax - tip)
+  const licenseAmt = parseFloat(parsedAmount) - (parseFloat(taxAmount) || 0) - (parseFloat(tipAmount) || 0);
+
+  // Item 1: IPTV Manager License
+  const lineItem1 = new ApiContracts.LineItemType();
+  lineItem1.setItemId('1');
+  lineItem1.setName('IPTV Manager License');
+  lineItem1.setDescription('One-time licence - macOS & Windows');
+  lineItem1.setQuantity(1);
+  lineItem1.setUnitPrice(licenseAmt.toFixed(2));
+  lineItem1.setTaxable(false);
+  lineItems.getLineItem().push(lineItem1);
+
+  // Item 2: Tax (if applicable)
+  if (taxAmount && parseFloat(taxAmount) > 0) {
+    const taxType = new ApiContracts.ExtendedAmountType();
+    taxType.setAmount(parseFloat(taxAmount).toFixed(2));
+    taxType.setName('HST');
+    taxType.setDescription('Harmonized Sales Tax');
+    txnRequest.setTax(taxType);
+
+    const lineItem2 = new ApiContracts.LineItemType();
+    lineItem2.setItemId('2');
+    lineItem2.setName('HST (13%)');
+    lineItem2.setDescription('Harmonized Sales Tax');
+    lineItem2.setQuantity(1);
+    lineItem2.setUnitPrice(parseFloat(taxAmount).toFixed(2));
+    lineItem2.setTaxable(false);
+    lineItems.getLineItem().push(lineItem2);
+  }
+
+  // Item 3: Tip (if applicable, tax-exempt)
+  if (tipAmount && parseFloat(tipAmount) > 0) {
+    const lineItem3 = new ApiContracts.LineItemType();
+    lineItem3.setItemId('3');
+    lineItem3.setName('Tip');
+    lineItem3.setDescription('Optional tip (tax-exempt)');
+    lineItem3.setQuantity(1);
+    lineItem3.setUnitPrice(parseFloat(tipAmount).toFixed(2));
+    lineItem3.setTaxable(false);
+    lineItems.getLineItem().push(lineItem3);
+    txnRequest.setTaxExempt(true);
+  }
+
+  txnRequest.setLineItems(lineItems);
 
   // Optional: attach customer email for receipt
   if (billing?.email) {
@@ -99,7 +147,11 @@ module.exports = async (req, res) => {
 
   // Order description (use custom description from request, or default)
   const orderDetails = new ApiContracts.OrderType();
-  orderDetails.setDescription(description || 'Purchase');
+  let fullDescription = description || 'Purchase';
+  if (discount && parseFloat(discount) > 0) {
+    fullDescription += ` (Discount: $${parseFloat(discount).toFixed(2)})`;
+  }
+  orderDetails.setDescription(fullDescription);
   txnRequest.setOrder(orderDetails);
 
   const createRequest = new ApiContracts.CreateTransactionRequest();
