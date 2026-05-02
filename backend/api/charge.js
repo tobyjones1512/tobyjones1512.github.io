@@ -25,7 +25,7 @@ const ALLOWED_ORIGINS = [
   'https://tobyjones.ca',
   'https://www.tobyjones.ca',
   'https://tobyjones1512.github.io',
-  'https://tobyjones.ca'
+  'http://tobyjones.ca'
 ];
 
 module.exports = async (req, res) => {
