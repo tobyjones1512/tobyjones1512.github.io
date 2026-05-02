@@ -112,7 +112,7 @@ module.exports = async (req, res) => {
     tipLineItem.setDescription('Optional tip - tax exempt');
     tipLineItem.setQuantity(1);
     tipLineItem.setUnitPrice(parsedTipAmount.toFixed(2));
-    tipLineItem.setTaxable(false);
+    tipLineItem.setTaxable(false);  // Mark as tax-exempt in Authorize.net
     txnRequest.addLineItems(tipLineItem);
   }
 
