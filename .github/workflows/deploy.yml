@@ -37,9 +37,13 @@ jobs:
           CHARGE_URL:   ${{ secrets.CHARGE_URL }}
         run: |
           PURCHASE="software/IPTV Manager/purchase/index.html"
+          COFFEE="buy-me-a-coffee/index.html"
           sed -i "s|__AUTHORIZENET_API_LOGIN_ID__|${API_LOGIN_ID}|g" "$PURCHASE"
           sed -i "s|__AUTHORIZENET_CLIENT_KEY__|${CLIENT_KEY}|g"     "$PURCHASE"
           sed -i "s|__CHARGE_URL__|${CHARGE_URL}|g"                  "$PURCHASE"
+          sed -i "s|__AUTHORIZENET_API_LOGIN_ID__|${API_LOGIN_ID}|g" "$COFFEE"
+          sed -i "s|__AUTHORIZENET_CLIENT_KEY__|${CLIENT_KEY}|g"     "$COFFEE"
+          sed -i "s|__CHARGE_URL__|${CHARGE_URL}|g"                  "$COFFEE"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
