@@ -310,55 +310,33 @@
     }
 
     .custom-amount-wrap {
-      background: var(--apple-white);
-      border: 2px solid rgba(0, 0, 0, 0.08);
-      border-radius: 20px;
-      padding: 32px 24px;
-      cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-      text-align: center;
+      max-width: 400px;
+      margin: 0 auto 48px;
     }
 
-    .custom-amount-wrap:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-    }
-
-    .custom-amount-wrap.selected {
-      border-color: var(--apple-blue);
-      background: rgba(0, 113, 227, 0.04);
-    }
-
-    .custom-amount-icon {
-      font-size: 48px;
+    .custom-amount-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--apple-subtle);
       margin-bottom: 12px;
+      text-align: center;
     }
 
     .custom-amount-input {
       width: 100%;
-      padding: 4px 0;
-      border: none;
-      background: transparent;
+      padding: 16px 20px;
+      border: 2px solid rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
       font-family: inherit;
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
+      font-size: 20px;
+      font-weight: 600;
       color: var(--apple-dark);
+      background: var(--apple-white);
       text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
       outline: none;
-    }
-
-    .custom-amount-input::placeholder {
-      color: var(--apple-subtle);
-      font-weight: 400;
-      font-size: 16px;
-    }
-
-    .custom-amount-label {
-      font-size: 13px;
-      color: var(--apple-subtle);
-      font-weight: 400;
-      margin-top: 4px;
     }
 
     .custom-amount-input:focus {
@@ -788,10 +766,8 @@
           <div class="coffee-option-label">5 Coffees</div>
         </div>
         <!-- Custom Amount (inside grid for mobile) -->
-        <div class="custom-amount-wrap" data-amount="0">
-          <div class="custom-amount-icon">☕</div>
-          <input type="tel" class="custom-amount-input" id="custom-amount" placeholder="$0.00" inputmode="decimal">
-          <div class="custom-amount-label">Custom</div>
+        <div class="custom-amount-wrap">
+          <input type="tel" class="custom-amount-input" id="custom-amount" placeholder="Custom amount, e.g. $5" inputmode="decimal">
         </div>
       </div>
 
@@ -955,7 +931,6 @@
 
     // ── DOM Elements ──────────────────────────────────────────
     const coffeeOptions = document.querySelectorAll('.coffee-option');
-    const customAmountWrap = document.querySelector('.custom-amount-wrap');
     const customAmountInput = document.getElementById('custom-amount');
     const valDonation = document.getElementById('val-donation');
     const valTax = document.getElementById('val-tax');
@@ -984,14 +959,14 @@
     coffeeOptions.forEach(option => {
       option.addEventListener('click', () => {
         coffeeOptions.forEach(o => o.classList.remove('selected'));
-        customAmountWrap.classList.remove('selected');
-        customAmountInput.value = '';
-        const amount = parseFloat(option.dataset.amount);
         option.classList.add('selected');
+        const amount = parseFloat(option.dataset.amount);
+        customAmountInput.value = '';
         updatePrice(amount);
       });
     });
 
+<<<<<<< HEAD
     // Custom amount wrap click (selects it)
     customAmountWrap.addEventListener('click', () => {
       coffeeOptions.forEach(o => o.classList.remove('selected'));
@@ -1002,12 +977,20 @@
     customAmountInput.addEventListener('input', () => {
       coffeeOptions.forEach(o => o.classList.remove('selected'));
       customAmountWrap.classList.add('selected');
+=======
+    // ── Custom Amount Input ────────────────────────────────────
+    customAmountInput.addEventListener('input', () => {
+      coffeeOptions.forEach(o => o.classList.remove('selected'));
+>>>>>>> parent of 0055ece (Fix custom amount styling to match coffee option blocks)
       let value = parseFloat(customAmountInput.value.replace(/[^0-9.]/g, ''));
       if (isNaN(value) || value < 0) value = 0;
       updatePrice(value);
     });
+<<<<<<< HEAD
     });
 
+=======
+>>>>>>> parent of 0055ece (Fix custom amount styling to match coffee option blocks)
 
     // ── Card Type Detection ────────────────────────────────────
     function detectCard(num) {
