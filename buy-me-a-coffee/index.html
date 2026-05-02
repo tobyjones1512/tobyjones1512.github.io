@@ -989,8 +989,18 @@
 <<<<<<< HEAD
     });
 
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 0055ece (Fix custom amount styling to match coffee option blocks)
+=======
+    // ── Custom Amount Input ────────────────────────────────────
+    customAmountInput.addEventListener('input', () => {
+      coffeeOptions.forEach(o => o.classList.remove('selected'));
+      let value = parseFloat(customAmountInput.value.replace(/[^0-9.]/g, ''));
+      if (isNaN(value) || value < 0) value = 0;
+      updatePrice(value);
+    });
+>>>>>>> parent of ae5b070 (Fix: Remove duplicate event listener, add https:// origin to CORS)
 
     // ── Card Type Detection ────────────────────────────────────
     function detectCard(num) {
