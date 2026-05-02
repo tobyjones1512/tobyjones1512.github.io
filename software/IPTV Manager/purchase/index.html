@@ -140,6 +140,96 @@
       margin-bottom: 1rem;
     }
 
+    /* ── Tip Section ──────────────────────────────────────────── */
+    .tip-section {
+      margin-bottom: 1.25rem;
+    }
+
+    .tip-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+    }
+
+    .tip-options {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .tip-btn {
+      flex: 1;
+      padding: 0.5rem 0.75rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: var(--white);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .tip-btn:hover {
+      border-color: var(--navy);
+      background: var(--off);
+    }
+
+    .tip-btn.active {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .tip-custom-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tip-custom-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .tip-custom-input {
+      flex: 1;
+      padding: 0.45rem 0.65rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .tip-custom-input:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(13,33,69,0.08);
+    }
+
+    .summary-line.tip-line {
+      color: var(--gold);
+    }
+
+    .summary-line.tip-line .tip-remove {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.75rem;
+      margin-left: 0.3rem;
+      text-decoration: underline;
+    }
+
     .summary-line {
       display: flex;
       justify-content: space-between;
@@ -486,6 +576,21 @@
 
       <div class="summary-label">Order Summary</div>
 
+      <!-- Tip Section -->
+      <div class="tip-section">
+        <div class="tip-label">Add a Tip (Optional)</div>
+        <div class="tip-options">
+          <button class="tip-btn" data-tip="0" class="active">No Tip</button>
+          <button class="tip-btn" data-tip="1">$1</button>
+          <button class="tip-btn" data-tip="3">$3</button>
+          <button class="tip-btn" data-tip="5">$5</button>
+        </div>
+        <div class="tip-custom-wrap">
+          <span class="tip-custom-label">Custom:</span>
+          <input type="tel" class="tip-custom-input" id="tip-custom" placeholder="$0" inputmode="decimal" />
+        </div>
+      </div>
+
       <div class="summary-line" id="line-base">
         <span>IPTV Manager</span>
         <span id="val-base">CAD&nbsp;$19.99</span>
@@ -502,6 +607,14 @@
       <div class="summary-line" id="line-subtotal" style="display:none">
         <span>Subtotal</span>
         <span id="val-subtotal">CAD&nbsp;$19.99</span>
+      </div>
+
+      <div class="summary-line tip-line" id="line-tip" style="display:none">
+        <span>
+          Tip (Optional)
+          <button class="tip-remove" id="tip-remove">Remove</button>
+        </span>
+        <span id="val-tip">+CAD&nbsp;$0.00</span>
       </div>
 
       <div class="summary-line">
@@ -677,35 +790,70 @@
     const AMEX_DISCOUNT   = 0.25;
 
     let isAmex = false;
+    let tipAmount = 0;
 
     // ── Price calculation ────────────────────────────────────────────────────
     function calcPrices(amex) {
       const discount   = amex ? round2(BASE_PRICE * AMEX_DISCOUNT) : 0;
       const subtotal   = round2(BASE_PRICE - discount);
-      const tax        = round2(subtotal * TAX_RATE);
-      const total      = round2(subtotal + tax);
-      return { discount, subtotal, tax, total };
+      const subtotalWithTip = round2(subtotal + tipAmount);
+      const tax        = round2(subtotalWithTip * TAX_RATE);
+      const total      = round2(subtotalWithTip + tax);
+      return { discount, subtotal, tipAmount, tax, total };
     }
 
     function round2(n) { return Math.round(n * 100) / 100; }
     function fmtCAD(n) { return 'CAD $' + n.toFixed(2); }
 
     function updatePriceSummary(amex) {
-      const { discount, subtotal, tax, total } = calcPrices(amex);
+      const { discount, subtotal, tipAmount, tax, total } = calcPrices(amex);
 
       document.getElementById('val-base').textContent     = fmtCAD(BASE_PRICE);
       document.getElementById('val-discount').textContent = '−' + fmtCAD(discount);
       document.getElementById('val-subtotal').textContent = fmtCAD(subtotal);
+      document.getElementById('val-tip').textContent      = '+' + fmtCAD(tipAmount);
       document.getElementById('val-tax').textContent      = fmtCAD(tax);
       document.getElementById('val-total').textContent    = fmtCAD(total);
       document.getElementById('btn-amount').innerHTML     = fmtCAD(total);
 
       document.getElementById('line-discount').style.display = amex ? ''     : 'none';
       document.getElementById('line-subtotal').style.display = amex ? ''     : 'none';
+      document.getElementById('line-tip').style.display     = tipAmount > 0 ? '' : 'none';
       document.getElementById('amex-promo').classList.toggle('visible', amex);
     }
 
     updatePriceSummary(false);
+
+    // ── Tip Handling ──────────────────────────────────────────────────────
+    const tipButtons = document.querySelectorAll('.tip-btn');
+    const tipCustomInput = document.getElementById('tip-custom');
+    const tipRemoveBtn = document.getElementById('tip-remove');
+
+    tipButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tipButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        tipAmount = parseFloat(btn.dataset.tip);
+        tipCustomInput.value = '';
+        updatePriceSummary(isAmex);
+      });
+    });
+
+    tipCustomInput.addEventListener('input', () => {
+      tipButtons.forEach(b => b.classList.remove('active'));
+      let value = parseFloat(tipCustomInput.value.replace(/[^0-9.]/g, ''));
+      if (isNaN(value) || value < 0) value = 0;
+      tipAmount = round2(value);
+      updatePriceSummary(isAmex);
+    });
+
+    tipRemoveBtn.addEventListener('click', () => {
+      tipAmount = 0;
+      tipCustomInput.value = '';
+      tipButtons.forEach(b => b.classList.remove('active'));
+      document.querySelector('.tip-btn[data-tip="0"]').classList.add('active');
+      updatePriceSummary(isAmex);
+    });
 
     // ── Card type detection ──────────────────────────────────────────────────
     function detectCard(num) {
@@ -839,7 +987,7 @@
     }
 
     async function chargeCard(opaqueData) {
-      const { total } = calcPrices(isAmex);
+      const { subtotal, tipAmount, total } = calcPrices(isAmex);
 
       const payload = {
         opaqueData,
@@ -850,7 +998,8 @@
           lastName:  document.getElementById('last-name').value.trim(),
           email:     document.getElementById('email').value.trim(),
           zip:       document.getElementById('postal').value.trim()
-        }
+        },
+        description: 'IPTV Manager Purchase' + (tipAmount > 0 ? ' (includes tip: $' + tipAmount.toFixed(2) + ')' : '')
       };
 
       try {
