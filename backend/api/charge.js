@@ -47,7 +47,7 @@ module.exports = async (req, res) => {
     return res.status(405).json({ success: false, message: 'Method not allowed.' });
   }
 
-  const { opaqueData, amount, currency, billing, description, taxAmount, discountAmount, tipAmount } = req.body || {};
+  const { opaqueData, amount, currency, billing, description } = req.body || {};
 
   // Basic input validation
   if (!opaqueData?.dataValue || !opaqueData?.dataDescriptor) {
@@ -86,44 +86,8 @@ module.exports = async (req, res) => {
   const txnRequest = new ApiContracts.TransactionRequestType();
   txnRequest.setTransactionType(ApiContracts.TransactionTypeEnum.AUTHCAPTURETRANSACTION);
   txnRequest.setPayment(paymentType);
-
-  // Calculate amounts (tax-exempt items won't have tax)
-  const parsedTipAmount = parseFloat(tipAmount) || 0;
-  const parsedTaxAmount = parseFloat(taxAmount) || 0;
-  const parsedDiscountAmount = parseFloat(discountAmount) || 0;
-
   txnRequest.setAmount(parsedAmount.toFixed(2));
   txnRequest.setBillTo(billTo);
-
-  // Tax (VAT/Tax line item) - only if taxAmount > 0
-  if (parsedTaxAmount > 0) {
-    const taxType = new ApiContracts.ExtendedAmountType();
-    taxType.setName('HST Tax');
-    taxType.setAmount(parsedTaxAmount.toFixed(2));
-    taxType.setDescription('HST 13%');
-    txnRequest.setTax(taxType);
-  }
-
-  // Tip (Tax-Exempt - added as a separate line item)
-  if (parsedTipAmount > 0) {
-    const tipLineItem = new ApiContracts.LineItemType();
-    tipLineItem.setItemId('TIP');
-    tipLineItem.setName('Tip (Tax-Exempt)');
-    tipLineItem.setDescription('Optional tip - tax exempt');
-    tipLineItem.setQuantity(1);
-    tipLineItem.setUnitPrice(parsedTipAmount.toFixed(2));
-    tipLineItem.setTaxable(false);
-    txnRequest.addLineItems(tipLineItem);
-  }
-
-  // Discount amount
-  if (parsedDiscountAmount > 0) {
-    const discountType = new ApiContracts.ExtendedAmountType();
-    discountType.setName('AMEX Discount');
-    discountType.setAmount(parsedDiscountAmount.toFixed(2));
-    discountType.setDescription('AMEX 25% Discount');
-    txnRequest.setShipping(discountType); // Using shipping field for discount display
-  }
 
   // Optional: attach customer email for receipt
   if (billing?.email) {
