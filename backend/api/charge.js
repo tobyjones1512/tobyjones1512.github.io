@@ -19,6 +19,18 @@ const ALLOWED_ORIGINS = [
 ];
 
 module.exports = async (req, res) => {
+  // Normalize/prepare credential sources for GitHub Actions secrets compatibility
+  const AUTH_LOGIN_ID = process.env.AUTHORIZENET_API_LOGIN_ID;
+  const AUTH_TXN_KEY  = process.env.AUTHORIZENET_TRANSACTION_KEY || process.env.AUTHORIZENET_CLIENT_KEY;
+  // If credentials are missing, return a clear, actionable error to the frontend
+  // The frontend will surface this to the user as "Payment is not yet configured.."
+  if (!AUTH_LOGIN_ID || !AUTH_TXN_KEY) {
+    console.error('Authorize.Net credentials missing: AUTHORIZENET_API_LOGIN_ID or AUTHORIZENET_TRANSACTION_KEY/CLIENT_KEY not set');
+    return res.status(500).json({
+      success: false,
+      message: 'Payment is not yet configured. If you are the site owner, please add the AUTHORIZENET_API_LOGIN_ID, AUTHORIZENET_CLIENT_KEY, and CHARGE_URL GitHub Secrets and re-run the GitHub Actions deployment workflow.'
+    });
+  }
   // Compute CORS upfront so error paths still include headers
   const requestOrigin = (req.headers.origin || '').toLowerCase();
   // Robust origin check: tolerate trailing slashes and minor variations
@@ -66,8 +78,8 @@ module.exports = async (req, res) => {
     : Constants.endpoint.sandbox;
 
   const merchantAuth = new ApiContracts.MerchantAuthenticationType();
-  merchantAuth.setName(process.env.AUTHORIZENET_API_LOGIN_ID);
-  merchantAuth.setTransactionKey(process.env.AUTHORIZENET_TRANSACTION_KEY);
+  merchantAuth.setName(AUTH_LOGIN_ID);
+  merchantAuth.setTransactionKey(AUTH_TXN_KEY);
 
   // Opaque payment data (from Accept.js nonce)
   const opaqueDataType = new ApiContracts.OpaqueDataType();

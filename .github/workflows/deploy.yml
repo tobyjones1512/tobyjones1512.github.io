@@ -30,6 +30,18 @@ jobs:
       # public-facing client credentials (designed for browser use with
       # Accept.js).  The secret Transaction Key lives only in the backend's
       # environment variables and is NEVER written here.
+      - name: Verify required secrets
+        id: verify-secrets
+        env:
+          API_LOGIN_ID: ${{ secrets.AUTHORIZENET_API_LOGIN_ID }}
+          CLIENT_KEY:   ${{ secrets.AUTHORIZENET_CLIENT_KEY }}
+          CHARGE_URL:   ${{ secrets.CHARGE_URL }}
+        run: |
+          echo "Verifying required GitHub Secrets for Authorize.Net integration..."
+          if [ -z "$API_LOGIN_ID" ] || [ -z "$CLIENT_KEY" ] || [ -z "$CHARGE_URL" ]; then
+            echo "Payment is not yet configured. If you are the site owner, please add the AUTHORIZENET_API_LOGIN_ID, AUTHORIZENET_CLIENT_KEY, and CHARGE_URL GitHub Secrets and re-run the GitHub Actions deployment workflow.";
+            exit 1;
+          fi
       - name: Inject Authorize.net credentials
         env:
           API_LOGIN_ID: ${{ secrets.AUTHORIZENET_API_LOGIN_ID }}
