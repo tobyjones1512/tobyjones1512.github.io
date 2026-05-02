@@ -24,8 +24,7 @@ const Constants      = AuthorizeNet.Constants;
 const ALLOWED_ORIGINS = [
   'https://tobyjones.ca',
   'https://www.tobyjones.ca',
-  'https://tobyjones1512.github.io',
-  'https://tobyjones.ca'
+  'https://tobyjones1512.github.io'
 ];
 
 module.exports = async (req, res) => {
