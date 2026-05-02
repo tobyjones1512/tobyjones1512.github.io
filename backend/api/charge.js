@@ -88,6 +88,7 @@ module.exports = async (req, res) => {
   txnRequest.setPayment(paymentType);
   txnRequest.setAmount(parsedAmount.toFixed(2));
   txnRequest.setBillTo(billTo);
+  txnRequest.setTaxExempt(true);
 
   // Optional: attach customer email for receipt
   if (billing?.email) {
