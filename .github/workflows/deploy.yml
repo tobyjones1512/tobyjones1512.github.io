@@ -54,7 +54,7 @@ jobs:
             "software/redownload/index.html"
             "buy-me-a-coffee/index.html"
           )
-          
+
           for file in "${FILES[@]}"; do
             if [ -f "$file" ]; then
               echo "Injecting credentials into $file"
