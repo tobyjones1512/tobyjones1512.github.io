@@ -38,6 +38,24 @@
         
         .back-link { display: block; text-align: center; margin-top: 24px; color: #86868b; text-decoration: none; font-size: 14px; }
         .back-link:hover { color: #0071e3; }
+
+        /* ── Footer ─────────────────────────────────────── */
+        footer {
+          background: #ffffff;
+          border-top: 1px solid #d2d2d7;
+          padding: 40px 24px;
+        }
+        .footer-inner {
+          max-width: 1080px; margin: 0 auto;
+          display: flex; align-items: center; justify-content: space-between;
+        }
+        .footer-copy { font-size: 12px; color: #86868b; }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a {
+          font-size: 12px; color: #86868b;
+          text-decoration: none; transition: color 0.2s;
+        }
+        .footer-links a:hover { color: #1d1d1f; }
     </style>
 </head>
 <body>
@@ -208,5 +226,18 @@
             <input type="text" id="postal" placeholder="ZIP/Postal Code">
         `;
     </script>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Toby Jones. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/webcare">WebCare+</a>
+        <a href="/email/">Email</a>
+        <a href="/complaints">Complaints</a>
+        <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

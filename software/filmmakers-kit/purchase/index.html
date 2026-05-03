@@ -603,6 +603,24 @@
       .form-row.cols-2,
       .form-row.cols-3 { grid-template-columns: 1fr; }
     }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+    }
+    .footer-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-copy { font-size: 12px; color: var(--text-secondary); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 12px; color: var(--text-secondary);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
   </style>
 </head>
 <body>
@@ -865,274 +883,17 @@
     </div>
   </section>
 
-  <script>
-    const API_LOGIN_ID = "__AUTHORIZENET_API_LOGIN_ID__";
-    const CLIENT_KEY   = "__AUTHORIZENET_CLIENT_KEY__";
-    const CHARGE_URL   = "__CHARGE_URL__";
-
-    if (API_LOGIN_ID.startsWith("__") || CLIENT_KEY.startsWith("__") || CHARGE_URL.startsWith("__")) {
-      document.getElementById("submit-btn").disabled = true;
-      showFormError("Payment is not yet configured. If you are the site owner, please add the AUTHORIZENET_API_LOGIN_ID, AUTHORIZENET_CLIENT_KEY, and CHARGE_URL GitHub Secrets and re-run the deployment workflow.");
-    }
-
-    const BASE_PRICE      = 44.99;
-    const TAX_RATE        = 0.13;
-    const AMEX_DISCOUNT   = 0.25;
-
-    let isAmex = false;
-    let tipAmount = 0;
-
-    function calcPrices(amex) {
-      const discount   = amex ? round2(BASE_PRICE * AMEX_DISCOUNT) : 0;
-      const subtotal   = round2(BASE_PRICE - discount);
-      const tax        = round2(subtotal * TAX_RATE);
-      const total      = round2(subtotal + tipAmount + tax);
-      return { discount, subtotal, tipAmount, tax, total };
-    }
-
-    function round2(n) { return Math.round(n * 100) / 100; }
-    function fmtCAD(n) { return 'CAD $' + n.toFixed(2); }
-
-    function updatePriceSummary(amex) {
-      const { discount, subtotal, tipAmount, tax, total } = calcPrices(amex);
-
-      document.getElementById("val-base").textContent     = fmtCAD(BASE_PRICE);
-      document.getElementById("val-discount").textContent = "\u2212" + fmtCAD(discount);
-      document.getElementById("val-subtotal").textContent = fmtCAD(subtotal);
-      document.getElementById("val-tip").textContent      = "+" + fmtCAD(tipAmount);
-      document.getElementById("val-tax").textContent      = fmtCAD(tax);
-      document.getElementById("val-total").textContent    = fmtCAD(total);
-      document.getElementById("btn-amount").innerHTML     = fmtCAD(total);
-
-      document.getElementById("line-discount").style.display = amex ? ""     : "none";
-      document.getElementById("line-subtotal").style.display = amex ? ""     : "none";
-      document.getElementById("line-tip").style.display     = tipAmount > 0 ? "" : "none";
-      document.getElementById("amex-promo").classList.toggle("visible", amex);
-    }
-
-    updatePriceSummary(false);
-
-    const tipButtons = document.querySelectorAll(".tip-btn");
-    const tipCustomInput = document.getElementById("tip-custom");
-    const tipRemoveBtn = document.getElementById("tip-remove");
-
-    tipAmount = 2;
-    document.getElementById("default-tip").classList.add("active");
-    updatePriceSummary(isAmex);
-
-    tipButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        tipButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        tipAmount = parseFloat(btn.dataset.tip);
-        tipCustomInput.value = "";
-        updatePriceSummary(isAmex);
-      });
-    });
-
-    tipCustomInput.addEventListener("input", () => {
-      tipButtons.forEach(b => b.classList.remove("active"));
-      let value = parseFloat(tipCustomInput.value.replace(/[^0-9.]/g, ""));
-      if (isNaN(value) || value < 0) value = 0;
-      tipAmount = round2(value);
-      updatePriceSummary(isAmex);
-    });
-
-    tipRemoveBtn.addEventListener("click", () => {
-      tipAmount = 0;
-      tipCustomInput.value = "";
-      tipButtons.forEach(b => b.classList.remove("active"));
-      updatePriceSummary(isAmex);
-    });
-
-    function detectCard(num) {
-      const n = num.replace(/\D/g, "");
-      if (/^3[47]/.test(n))            return "amex";
-      if (/^4/.test(n))                return "visa";
-      if (/^5[1-5]|^2[2-7]/.test(n))  return "mc";
-      if (/^6(?:011|22|4|5)/.test(n)) return "disc";
-      return "unknown";
-    }
-
-    function showBrand(type) {
-      ["visa","mc","amex","disc","generic"].forEach(b => {
-        document.querySelector(".brand-" + b).style.display = (b === type || (b === "generic" && type === "unknown")) ? "" : "none";
-      });
-    }
-
-    const cardInput = document.getElementById("card-number");
-
-    cardInput.addEventListener("input", () => {
-      let raw  = cardInput.value.replace(/\D/g, "");
-      const type = detectCard(raw);
-      const prevAmex = isAmex;
-      isAmex = (type === "amex");
-
-      let formatted = "";
-      if (isAmex) {
-        raw = raw.slice(0, 15);
-        if (raw.length > 10)      formatted = raw.slice(0,4) + " " + raw.slice(4,10) + " " + raw.slice(10);
-        else if (raw.length > 4)  formatted = raw.slice(0,4) + " " + raw.slice(4);
-        else                       formatted = raw;
-      } else {
-        raw = raw.slice(0, 16);
-        formatted = raw.match(/.{1,4}/g)?.join(" ") || "";
-      }
-
-      cardInput.value = formatted;
-      showBrand(type);
-
-      if (isAmex !== prevAmex) updatePriceSummary(isAmex);
-    });
-
-    const expMonth = document.getElementById("exp-month");
-    const expYear  = document.getElementById("exp-year");
-    const cvvField = document.getElementById("cvv");
-
-    expMonth.addEventListener("input", () => {
-      expMonth.value = expMonth.value.replace(/\D/g, "");
-      if (expMonth.value.length === 2) expYear.focus();
-    });
-    expYear.addEventListener("input", () => {
-      expYear.value = expYear.value.replace(/\D/g, "");
-      if (expYear.value.length === 2) cvvField.focus();
-    });
-    cvvField.addEventListener("input", () => {
-      cvvField.value = cvvField.value.replace(/\D/g, "");
-    });
-
-    function setFieldError(id, errId, msg, show) {
-      const el  = document.getElementById(id);
-      const err = document.getElementById(errId);
-      el.classList.toggle("error", show);
-      err.textContent = msg || err.textContent;
-      err.classList.toggle("visible", show);
-      return !show;
-    }
-
-    function validateForm() {
-      let ok = true;
-
-      ok = setFieldError("first-name", "err-first-name", "Required", !document.getElementById("first-name").value.trim()) && ok;
-      ok = setFieldError("last-name",  "err-last-name",  "Required", !document.getElementById("last-name").value.trim()) && ok;
-
-      const email = document.getElementById("email").value.trim();
-      ok = setFieldError("email", "err-email", "Enter a valid email", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) && ok;
-
-      const rawCard = cardInput.value.replace(/\D/g, "");
-      const minLen  = isAmex ? 15 : 16;
-      ok = setFieldError("card-number", "err-card-number", "Enter a valid card number", rawCard.length < minLen) && ok;
-
-      const mo = parseInt(expMonth.value, 10);
-      ok = setFieldError("exp-month", "err-exp-month", "Invalid month (01–12)", !mo || mo < 1 || mo > 12) && ok;
-
-      const yr = parseInt(expYear.value, 10);
-      ok = setFieldError("exp-year", "err-exp-year", "Invalid year", !yr) && ok;
-
-      const cvvLen = isAmex ? 4 : 3;
-      ok = setFieldError("cvv", "err-cvv", "CVV must be " + cvvLen + " digits", cvvField.value.length < cvvLen) && ok;
-
-      ok = setFieldError("postal", "err-postal", "Required", !document.getElementById("postal").value.trim()) && ok;
-
-      return ok;
-    }
-
-    document.getElementById("payment-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      hideFormError();
-      if (!validateForm()) return;
-
-      setLoading(true);
-
-      const secureData = {
-        authData: { apiLoginID: API_LOGIN_ID, clientKey: CLIENT_KEY },
-        cardData: {
-          cardNumber: cardInput.value.replace(/\D/g, ""),
-          month:      expMonth.value.padStart(2, "0"),
-          year:       "20" + expYear.value,
-          cardCode:   cvvField.value,
-          zip:        document.getElementById("postal").value.trim(),
-          fullName:   document.getElementById("first-name").value.trim() + " " +
-                      document.getElementById("last-name").value.trim()
-        }
-      };
-
-      Accept.dispatchData(secureData, handleAcceptResponse);
-    });
-
-    function handleAcceptResponse(response) {
-      if (response.messages.resultCode === "Error") {
-        const msgs = response.messages.message.map(m => m.text).join(" ");
-        showFormError(msgs);
-        setLoading(false);
-        return;
-      }
-      chargeCard(response.opaqueData);
-    }
-
-    async function chargeCard(opaqueData) {
-      const { discount, subtotal, tipAmount, tax, total } = calcPrices(isAmex);
-
-      const payload = {
-        opaqueData,
-        amount:   total.toFixed(2),
-        currency: "CAD",
-        taxAmount: tax.toFixed(2),
-        tipAmount: tipAmount.toFixed(2),
-        discount:  discount.toFixed(2),
-        billing: {
-          firstName: document.getElementById("first-name").value.trim(),
-          lastName:  document.getElementById("last-name").value.trim(),
-          email:     document.getElementById("email").value.trim(),
-          zip:       document.getElementById("postal").value.trim()
-        },
-        description: "Filmmakers Kit - Software Bundle License" + (tipAmount > 0 ? " (includes tip: $" + tipAmount.toFixed(2) + ")" : "")
-      };
-
-      try {
-        const res = await fetch(CHARGE_URL, {
-          method:  "POST",
-          headers: { "Content-Type": "application/json" },
-          body:    JSON.stringify(payload)
-        });
-
-        let data;
-        try {
-          data = await res.json();
-        } catch (_) {
-          showFormError("Server returned an unexpected response (status " + res.status + "). Please try again or contact support.");
-          setLoading(false);
-          return;
-        }
-
-        if (res.ok && data.success) {
-          window.location.href = "../thank-you/?txn=" + encodeURIComponent(data.transactionId);
-        } else {
-          showFormError(data.message || "Payment declined. Please check your details and try again.");
-          setLoading(false);
-        }
-      } catch (err) {
-        showFormError("Network error: " + (err.message || err) + ". If this persists, please contact support.");
-        setLoading(false);
-      }
-    }
-
-    function setLoading(on) {
-      const btn = document.getElementById("submit-btn");
-      btn.disabled = on;
-      btn.classList.toggle("loading", on);
-    }
-
-    function showFormError(msg) {
-      document.getElementById("form-error-msg").textContent = msg;
-      document.getElementById("form-error").classList.add("visible");
-      document.getElementById("form-error").scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }
-
-    function hideFormError() {
-      document.getElementById("form-error").classList.remove("visible");
-    }
-  </script>
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Toby Jones. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/webcare">WebCare+</a>
+        <a href="/email/">Email</a>
+        <a href="/complaints">Complaints</a>
+        <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
