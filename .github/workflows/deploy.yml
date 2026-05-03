@@ -25,52 +25,47 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Replace placeholder tokens in the purchase page with real values from
-      # GitHub Secrets.  The API Login ID and Client Key are Authorize.net's
-      # public-facing client credentials (designed for browser use with
-      # Accept.js).  The secret Transaction Key lives only in the backend's
-      # environment variables and is NEVER written here.
       - name: Verify required secrets
-        id: verify-secrets
         env:
           API_LOGIN_ID: ${{ secrets.AUTHORIZENET_API_LOGIN_ID }}
-          CLIENT_KEY:   ${{ secrets.AUTHORIZENET_CLIENT_KEY }}
-          CHARGE_URL:   ${{ secrets.CHARGE_URL }}
+          CLIENT_KEY: ${{ secrets.AUTHORIZENET_CLIENT_KEY }}
+          CHARGE_URL: ${{ secrets.CHARGE_URL }}
+          CHECK_PURCHASES_URL: ${{ secrets.CHECK_PURCHASES_URL }}
         run: |
           echo "Verifying required GitHub Secrets for Authorize.Net integration..."
-          if [ -z "$API_LOGIN_ID" ] || [ -z "$CLIENT_KEY" ] || [ -z "$CHARGE_URL" ]; then
-            echo "Payment is not yet configured. If you are the site owner, please add the AUTHORIZENET_API_LOGIN_ID, AUTHORIZENET_CLIENT_KEY, and CHARGE_URL GitHub Secrets and re-run the GitHub Actions deployment workflow.";
+          if [ -z "$API_LOGIN_ID" ] || [ -z "$CLIENT_KEY" ] || [ -z "$CHARGE_URL" ] || [ -z "$CHECK_PURCHASES_URL" ]; then
+            echo "Payment is not yet configured. If you are the site owner, please add the AUTHORIZENET_API_LOGIN_ID, AUTHORIZENET_CLIENT_KEY, CHARGE_URL, and CHECK_PURCHASES_URL GitHub Secrets and re-run the GitHub Actions deployment workflow.";
             exit 1;
           fi
-       - name: Inject Authorize.net credentials
-         env:
-           API_LOGIN_ID: ${{ secrets.AUTHORIZENET_API_LOGIN_ID }}
-           CLIENT_KEY:   ${{ secrets.AUTHORIZENET_CLIENT_KEY }}
-           CHARGE_URL:   ${{ secrets.CHARGE_URL }}
-           CHECK_PURCHASES_URL: ${{ secrets.CHECK_PURCHASES_URL }}
-         run: |
-           # List all files that need credential injection
-           FILES=(
-             "software/IPTV Manager/purchase/index.html"
-             "software/scheduling/purchase/index.html"
-             "software/budgeting/purchase/index.html"
-             "software/call-sheets/purchase/index.html"
-             "software/filmmakers-kit/purchase/index.html"
-             "software/redownload/index.html"
-             "buy-me-a-coffee/index.html"
-           )
-           
-           for file in "${FILES[@]}"; do
-             if [ -f "$file" ]; then
-               echo "Injecting credentials into $file"
-               sed -i "s|__AUTHORIZENET_API_LOGIN_ID__|${API_LOGIN_ID}|g" "$file"
-               sed -i "s|__AUTHORIZENET_CLIENT_KEY__|${CLIENT_KEY}|g"     "$file"
-               sed -i "s|__CHARGE_URL__|${CHARGE_URL}|g"                  "$file"
-               sed -i "s|__CHECK_PURCHASES_URL__|${CHECK_PURCHASES_URL}|g" "$file"
-             else
-               echo "Warning: $file not found, skipping"
-             fi
-           done
+
+      - name: Inject Authorize.net credentials
+        env:
+          API_LOGIN_ID: ${{ secrets.AUTHORIZENET_API_LOGIN_ID }}
+          CLIENT_KEY: ${{ secrets.AUTHORIZENET_CLIENT_KEY }}
+          CHARGE_URL: ${{ secrets.CHARGE_URL }}
+          CHECK_PURCHASES_URL: ${{ secrets.CHECK_PURCHASES_URL }}
+        run: |
+          FILES=(
+            "software/IPTV Manager/purchase/index.html"
+            "software/scheduling/purchase/index.html"
+            "software/budgeting/purchase/index.html"
+            "software/call-sheets/purchase/index.html"
+            "software/filmmakers-kit/purchase/index.html"
+            "software/redownload/index.html"
+            "buy-me-a-coffee/index.html"
+          )
+          
+          for file in "${FILES[@]}"; do
+            if [ -f "$file" ]; then
+              echo "Injecting credentials into $file"
+              sed -i "s|__AUTHORIZENET_API_LOGIN_ID__|${API_LOGIN_ID}|g" "$file"
+              sed -i "s|__AUTHORIZENET_CLIENT_KEY__|${CLIENT_KEY}|g" "$file"
+              sed -i "s|__CHARGE_URL__|${CHARGE_URL}|g" "$file"
+              sed -i "s|__CHECK_PURCHASES_URL__|${CHECK_PURCHASES_URL}|g" "$file"
+            else
+              echo "Warning: $file not found, skipping"
+            fi
+          done
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
