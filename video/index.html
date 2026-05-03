@@ -190,6 +190,22 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
 .nav-dropdown-panel a.active { color: #1d1d1f; font-weight: 500; background: rgba(0,0,0,0.04); }
 .nav-has-dropdown.active > a { color: #1d1d1f; font-weight: 500; }
 </style>
+<style>
+/* Consistent header across sections for the video page */
+.site-header {
+  position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.95); border-bottom: 1px solid var(--border);
+}
+.site-header .header-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 20px; height: 64px; display: flex; align-items: center; justify-content: space-between;
+}
+.site-header .brand { display: flex; align-items: center; text-decoration: none; color: var(--text); font-weight: 600; font-size: 1.05rem; }
+.site-header .site-nav { display: flex; gap: 20px; align-items: center; }
+.site-header .site-nav .nav-link { text-decoration: none; color: var(--text-secondary); font-size: 14px; }
+.site-header .site-nav .nav-link:hover { color: var(--text); }
+.site-header .site-nav .nav-cta { color: var(--primary); }
+/* Hide legacy nav on this page if present */
+nav { display: none; }
+</style>
 
 <script type="application/ld+json">
 {
@@ -202,7 +218,22 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
 }
 </script>
 </head>
-<body>
+<body class="header-consistent video-header-legacy">
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <span class="logo">Toby Jones</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/digital-marketing" class="nav-link">Advertising</a>
+        <a href="/video" class="nav-link">Video</a>
+        <a href="/portfolio" class="nav-link">Portfolio</a>
+        <a href="/software" class="nav-link">Software</a>
+        <a href="/email/" class="nav-link nav-cta">Get in touch</a>
+      </nav>
+    </div>
+  </header>
 
   <nav>
     <a href="/" class="logo">Toby Jones</a>
