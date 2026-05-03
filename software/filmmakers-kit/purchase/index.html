@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Purchase Filmmakers Kit – Secure Checkout</title>
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="icon" type="image/png" href="../../filmmakers-kit/Icon.png" />
+  <link rel="icon" type="image/png" href="../Icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Authorize.net Accept.js (production) -->
   <script src="https://js.authorize.net/v1/Accept.js" charset="utf-8"></script>
 
   <style>
-      height: 18px;
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -42,7 +41,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAV ─────────────────────────────────────────────────── */
     nav {
       background: rgba(255,255,255,0.8);
       backdrop-filter: blur(20px);
@@ -87,7 +85,6 @@
       letter-spacing: 0.02em;
     }
 
-    /* ── HERO SECTION ─────────────────────────────────────────── */
     .hero {
       text-align: center;
       padding: 80px 20px 60px;
@@ -95,9 +92,9 @@
     }
 
     .hero img {
-      width: 120px;
-      height: 120px;
-      border-radius: 24px;
+      width: 160px;
+      height: 160px;
+      border-radius: 32px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.12);
       margin-bottom: 24px;
     }
@@ -128,6 +125,17 @@
       margin-bottom: 32px;
     }
 
+    .hero .savings {
+      display: inline-block;
+      background: #e8f9ed;
+      color: var(--success);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
     .hero-features {
       display: flex;
       justify-content: center;
@@ -146,7 +154,6 @@
 
     .hero-feature svg { color: var(--success); }
 
-    /* ── CHECKOUT LAYOUT ─────────────────────────────────────── */
     .checkout-wrap {
       max-width: 1100px;
       margin: 0 auto 80px;
@@ -157,7 +164,6 @@
       align-items: start;
     }
 
-    /* ── ORDER SUMMARY ───────────────────────────────────────── */
     .order-summary {
       background: var(--card);
       border: 1px solid var(--border);
@@ -205,7 +211,6 @@
       margin-bottom: 16px;
     }
 
-    /* ── Tip Section ─────────────────────────────────────────── */
     .tip-section { margin-bottom: 20px; }
 
     .tip-label {
@@ -382,7 +387,6 @@
 
     .trust-item svg { color: var(--primary); flex-shrink: 0; }
 
-    /* ── PAYMENT CARD ─────────────────────────────────────────── */
     .payment-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -404,7 +408,6 @@
       margin-bottom: 32px;
     }
 
-    /* ── FORM FIELDS ──────────────────────────────────────────── */
     .form-group { margin-bottom: 20px; }
 
     .form-row {
@@ -440,8 +443,97 @@
       outline: none;
       -webkit-appearance: none;
     }
-      border: 2.5px solid rgba(255,255,255,0.35);
-      border-top-color: #fff;
+
+    input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
+    }
+
+    input.error {
+      border-color: var(--danger);
+      box-shadow: 0 0 0 3px rgba(255,59,48,0.1);
+    }
+
+    .field-error {
+      display: none;
+      font-size: 0.8rem;
+      color: var(--danger);
+      margin-top: 6px;
+    }
+
+    .field-error.visible { display: block; }
+
+    .card-input-wrap { position: relative; }
+
+    .card-input-wrap input {
+      padding-right: 56px;
+      letter-spacing: 0.05em;
+      font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+    }
+
+    .card-brand-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .form-section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin: 28px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .form-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      font-family: inherit;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+      box-shadow: 0 4px 16px rgba(0,113,227,0.3);
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0,113,227,0.4);
+    }
+
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .btn-submit .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid rgba(255,255,255,0.3);
+      border-top-color: white;
       border-radius: 50%;
       animation: spin 0.7s linear infinite;
     }
@@ -455,29 +547,29 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.9rem;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 16px;
     }
 
     .alert {
       display: none;
-      padding: 0.85rem 1rem;
-      border-radius: 8px;
+      padding: 14px 18px;
+      border-radius: 10px;
       font-size: 0.9rem;
-      font-weight: 600;
-      margin-top: 1rem;
+      font-weight: 500;
+      margin-top: 16px;
       align-items: flex-start;
-      gap: 0.6rem;
+      gap: 10px;
     }
 
     .alert.visible { display: flex; }
 
     .alert-error {
-      background: var(--red-lt);
-      color: var(--red);
-      border: 1px solid #f5c6c6;
+      background: #fff0f0;
+      color: var(--danger);
+      border: 1px solid #ffd4d4;
     }
 
     .brand-visa   { display: none; }
@@ -486,13 +578,24 @@
     .brand-disc   { display: none; }
     .brand-generic { display: block; }
 
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       .checkout-wrap {
         grid-template-columns: 1fr;
-        margin: 1.25rem auto;
+        margin-bottom: 40px;
       }
-      .order-summary { position: static; }
+
+      .order-summary {
+        position: static;
+        padding: 24px;
+      }
+
       nav { padding: 0 1.25rem; }
+
+      .hero h1 { font-size: 40px; }
+      .hero p { font-size: 18px; }
+
+      .payment-card { padding: 24px; }
+
       .form-row.cols-3 { grid-template-columns: 1fr 1fr; }
     }
 
@@ -505,22 +608,46 @@
 <body>
 
   <nav>
-    <a href="../../filmmakers-kit/" class="nav-brand">
-      <img src="../../filmmakers-kit/Icon.png" alt="Filmmakers Kit" />
+    <a href="../" class="nav-brand">
+      <img src="../Icon.png" alt="Filmmakers Kit" />
       <span>Filmmakers Kit</span>
     </a>
     <div class="nav-secure">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       Secure Checkout
     </div>
   </nav>
 
+    <div class="hero">
+    <img src="../Icon.png" alt="Filmmakers Kit" />
+    <h1>Filmmakers Kit</h1>
+    <p>Everything you need to manage your film production. Three powerful apps for scheduling, budgeting, and call sheets — bundled together for maximum value.</p>
+    <div class="price">$44.99 <span style="font-size:16px;font-weight:400;color:var(--text-secondary);">(excl. tax)</span></div>
+    <div class="savings">Save $15.98 compared to buying separately</div>
+
+    <div class="hero-features">
+      <div class="hero-feature">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        One-time purchase
+      </div>
+      <div class="hero-feature">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        256-bit encryption
+      </div>
+      <div class="hero-feature">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        2-day guarantee
+      </div>
+    </div>
+  </div>
+
   <div class="checkout-wrap">
 
     <aside class="order-summary">
+
       <div class="amex-teaser">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-        <span>Pay with <strong>AMEX</strong> and save <strong>25%</strong> - discount applied automatically at checkout.</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        <span>Pay with <strong>AMEX</strong> and save <strong>25%</strong> — discount applied automatically.</span>
       </div>
 
       <div class="amex-promo" id="amex-promo">
@@ -529,10 +656,10 @@
       </div>
 
       <div class="summary-product">
-        <img src="../../filmmakers-kit/Icon.png" alt="Filmmakers Kit" />
+        <img src="../Icon.png" alt="Filmmakers Kit" />
         <div class="summary-product-info">
           <h3>Filmmakers Kit</h3>
-          <p>Bundle: Scheduling, Budgeting, Call Sheets</p>
+          <p>One-time licence — Includes Scheduling, Budgeting, Call Sheets</p>
         </div>
       </div>
 
@@ -562,12 +689,12 @@
           <span class="discount-badge">AMEX 25% OFF</span>
           &nbsp;Discount
         </span>
-        <span id="val-discount">&minus;CAD $0.00</span>
+        <span id="val-discount">−CAD $11.25</span>
       </div>
 
       <div class="summary-line" id="line-subtotal" style="display:none">
         <span>Subtotal</span>
-        <span id="val-subtotal">CAD $44.99</span>
+        <span id="val-subtotal">CAD $33.74</span>
       </div>
 
        <div class="summary-line">
@@ -587,35 +714,36 @@
 
       <div class="summary-total">
         <span>Total</span>
-        <span id="val-total">CAD $50.84</span>
+        <span id="val-total">CAD $48.44</span>
       </div>
 
       <div class="trust-items">
         <div class="trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           Payments processed by Authorize.net
         </div>
         <div class="trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           2-day money-back guarantee
         </div>
         <div class="trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           256-bit SSL encrypted
         </div>
         <div class="trust-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          No subscription &mdash; one-time charge only
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          No subscription — one-time charge only
         </div>
       </div>
     </aside>
 
     <div class="payment-card">
       <h2>Payment Details</h2>
-      <p class="subtitle">Your card is never stored on our servers. Tokenised by Authorize.net.</p>
+      <p class="subtitle">Your card is never stored on our servers. Tokenized securely by Authorize.net.</p>
 
       <form id="payment-form" novalidate>
-        <div class="form-section-label">Contact</div>
+
+        <div class="form-section-label">Contact Information</div>
 
         <div class="form-row cols-2">
           <div class="form-group">
@@ -636,7 +764,7 @@
           <div class="field-error" id="err-email">Enter a valid email</div>
         </div>
 
-        <div class="form-section-label">Card Details</div>
+        <div class="form-section-label">Card Information</div>
 
         <div class="form-group">
           <label for="card-number">Card Number</label>
@@ -644,22 +772,22 @@
             <input type="tel" id="card-number" autocomplete="cc-number" inputmode="numeric"
                    placeholder="1234 5678 9012 3456" maxlength="19" />
             <span class="card-brand-icon" id="card-brand-icon">
-              <svg class="brand-generic" width="28" height="18" viewBox="0 0 40 26" fill="none">
+              <svg class="brand-generic" width="32" height="20" viewBox="0 0 40 26" fill="none">
                 <rect width="40" height="26" rx="3" fill="#dde2ec"/>
                 <rect x="0" y="8" width="40" height="7" fill="#bcc3d4"/>
               </svg>
-              <svg class="brand-visa" width="36" height="12" viewBox="0 0 60 20">
+              <svg class="brand-visa" width="40" height="13" viewBox="0 0 60 20">
                 <text x="0" y="16" font-family="Arial" font-weight="700" font-size="18" fill="#1a1f71">VISA</text>
               </svg>
-              <svg class="brand-mc" width="32" height="20" viewBox="0 0 48 30">
+              <svg class="brand-mc" width="36" height="22" viewBox="0 0 48 30">
                 <circle cx="18" cy="15" r="13" fill="#eb001b"/>
                 <circle cx="30" cy="15" r="13" fill="#f79e1b"/>
                 <path d="M24 5.5a13 13 0 0 1 0 19 13 13 0 0 1 0-19z" fill="#ff5f00"/>
               </svg>
-              <svg class="brand-amex" width="36" height="14" viewBox="0 0 60 24">
+              <svg class="brand-amex" width="40" height="15" viewBox="0 0 60 24">
                 <text x="0" y="18" font-family="Arial" font-weight="700" font-size="15" fill="#007bc1">AMEX</text>
               </svg>
-              <svg class="brand-disc" width="36" height="14" viewBox="0 0 70 24">
+              <svg class="brand-disc" width="40" height="15" viewBox="0 0 70 24">
                 <text x="0" y="18" font-family="Arial" font-weight="700" font-size="13" fill="#f76f20">DISCOVER</text>
               </svg>
             </span>
@@ -695,34 +823,56 @@
         </div>
 
         <div class="alert alert-error" id="form-error" role="alert">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           <span id="form-error-msg">An error occurred. Please try again.</span>
         </div>
 
         <button type="submit" class="btn-submit" id="submit-btn">
           <span class="btn-text">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Pay <span id="btn-amount">CAD $50.84</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Pay <span id="btn-amount">CAD $48.44</span>
           </span>
           <span class="spinner"></span>
         </button>
 
         <p class="secure-note">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Secured by Authorize.net &middot; 256-bit TLS
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Secured by Authorize.net · 256-bit TLS encryption
         </p>
+
       </form>
     </div>
   </div>
 
-  <script>
-    const API_LOGIN_ID = '__AUTHORIZENET_API_LOGIN_ID__';
-    const CLIENT_KEY   = '__AUTHORIZENET_CLIENT_KEY__';
-    const CHARGE_URL   = '__CHARGE_URL__';
+  <section style="max-width:1100px; margin:60px auto; padding:0 20px;">
+    <h2 style="font-size:32px; font-weight:700; text-align:center; margin-bottom:32px; letter-spacing:-0.02em;">What's Included</h2>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; max-width:1000px; margin:0 auto;">
+      <div style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
+        <img src="../screenshots/Scheduling.png" alt="Scheduling" style="width:100px; height:100px; border-radius:20px; margin-bottom:16px;" />
+        <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Scheduling</h3>
+        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Manage film schedules with drag-and-drop interface and conflict detection.</p>
+      </div>
+      <div style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
+        <img src="../screenshots/Budgeting.png" alt="Budgeting" style="width:100px; height:100px; border-radius:20px; margin-bottom:16px;" />
+        <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Budgeting</h3>
+        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Track film production budgets in real-time with line item tracking.</p>
+      </div>
+      <div style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
+        <img src="../screenshots/Call Sheets.png" alt="Call Sheets" style="width:100px; height:100px; border-radius:20px; margin-bottom:16px;" />
+        <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Call Sheets</h3>
+        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Generate professional call sheets in seconds and send to crew.</p>
+      </div>
+    </div>
+  </section>
 
-    if (API_LOGIN_ID.startsWith('__') || CLIENT_KEY.startsWith('__') || CHARGE_URL.startsWith('__')) {
-      document.getElementById('submit-btn').disabled = true;
-      showFormError('Payment is not yet configured. If you are the site owner, please add the AUTHORIZENET_API_LOGIN_ID, AUTHORIZENET_CLIENT_KEY, and CHARGE_URL GitHub Secrets and re-run the GitHub Actions deployment workflow.');
+  <script>
+    const API_LOGIN_ID = "__AUTHORIZENET_API_LOGIN_ID__";
+    const CLIENT_KEY   = "__AUTHORIZENET_CLIENT_KEY__";
+    const CHARGE_URL   = "__CHARGE_URL__";
+
+    if (API_LOGIN_ID.startsWith("__") || CLIENT_KEY.startsWith("__") || CHARGE_URL.startsWith("__")) {
+      document.getElementById("submit-btn").disabled = true;
+      showFormError("Payment is not yet configured. If you are the site owner, please add the AUTHORIZENET_API_LOGIN_ID, AUTHORIZENET_CLIENT_KEY, and CHARGE_URL GitHub Secrets and re-run the deployment workflow.");
     }
 
     const BASE_PRICE      = 44.99;
@@ -746,87 +896,87 @@
     function updatePriceSummary(amex) {
       const { discount, subtotal, tipAmount, tax, total } = calcPrices(amex);
 
-      document.getElementById('val-base').textContent     = fmtCAD(BASE_PRICE);
-      document.getElementById('val-discount').textContent = '−' + fmtCAD(discount);
-      document.getElementById('val-subtotal').textContent = fmtCAD(subtotal);
-      document.getElementById('val-tip').textContent      = '+' + fmtCAD(tipAmount);
-      document.getElementById('val-tax').textContent      = fmtCAD(tax);
-      document.getElementById('val-total').textContent    = fmtCAD(total);
-      document.getElementById('btn-amount').innerHTML     = fmtCAD(total);
+      document.getElementById("val-base").textContent     = fmtCAD(BASE_PRICE);
+      document.getElementById("val-discount").textContent = "\u2212" + fmtCAD(discount);
+      document.getElementById("val-subtotal").textContent = fmtCAD(subtotal);
+      document.getElementById("val-tip").textContent      = "+" + fmtCAD(tipAmount);
+      document.getElementById("val-tax").textContent      = fmtCAD(tax);
+      document.getElementById("val-total").textContent    = fmtCAD(total);
+      document.getElementById("btn-amount").innerHTML     = fmtCAD(total);
 
-      document.getElementById('line-discount').style.display = amex ? ''     : 'none';
-      document.getElementById('line-subtotal').style.display = amex ? ''     : 'none';
-      document.getElementById('line-tip').style.display     = tipAmount > 0 ? '' : 'none';
-      document.getElementById('amex-promo').classList.toggle('visible', amex);
+      document.getElementById("line-discount").style.display = amex ? ""     : "none";
+      document.getElementById("line-subtotal").style.display = amex ? ""     : "none";
+      document.getElementById("line-tip").style.display     = tipAmount > 0 ? "" : "none";
+      document.getElementById("amex-promo").classList.toggle("visible", amex);
     }
 
     updatePriceSummary(false);
 
-    const tipButtons = document.querySelectorAll('.tip-btn');
-    const tipCustomInput = document.getElementById('tip-custom');
-    const tipRemoveBtn = document.getElementById('tip-remove');
+    const tipButtons = document.querySelectorAll(".tip-btn");
+    const tipCustomInput = document.getElementById("tip-custom");
+    const tipRemoveBtn = document.getElementById("tip-remove");
 
     tipAmount = 2;
-    document.getElementById('default-tip').classList.add('active');
+    document.getElementById("default-tip").classList.add("active");
     updatePriceSummary(isAmex);
 
     tipButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tipButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+      btn.addEventListener("click", () => {
+        tipButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
         tipAmount = parseFloat(btn.dataset.tip);
-        tipCustomInput.value = '';
+        tipCustomInput.value = "";
         updatePriceSummary(isAmex);
       });
     });
 
-    tipCustomInput.addEventListener('input', () => {
-      tipButtons.forEach(b => b.classList.remove('active'));
-      let value = parseFloat(tipCustomInput.value.replace(/[^0-9.]/g, ''));
+    tipCustomInput.addEventListener("input", () => {
+      tipButtons.forEach(b => b.classList.remove("active"));
+      let value = parseFloat(tipCustomInput.value.replace(/[^0-9.]/g, ""));
       if (isNaN(value) || value < 0) value = 0;
       tipAmount = round2(value);
       updatePriceSummary(isAmex);
     });
 
-     tipRemoveBtn.addEventListener('click', () => {
-        tipAmount = 0;
-        tipCustomInput.value = '';
-        tipButtons.forEach(b => b.classList.remove('active'));
-        updatePriceSummary(isAmex);
-      });
+    tipRemoveBtn.addEventListener("click", () => {
+      tipAmount = 0;
+      tipCustomInput.value = "";
+      tipButtons.forEach(b => b.classList.remove("active"));
+      updatePriceSummary(isAmex);
+    });
 
     function detectCard(num) {
-      const n = num.replace(/\D/g, '');
-      if (/^3[47]/.test(n))            return 'amex';
-      if (/^4/.test(n))                return 'visa';
-      if (/^5[1-5]|^2[2-7]/.test(n))  return 'mc';
-      if (/^6(?:011|22|4|5)/.test(n)) return 'disc';
-      return 'unknown';
+      const n = num.replace(/\D/g, "");
+      if (/^3[47]/.test(n))            return "amex";
+      if (/^4/.test(n))                return "visa";
+      if (/^5[1-5]|^2[2-7]/.test(n))  return "mc";
+      if (/^6(?:011|22|4|5)/.test(n)) return "disc";
+      return "unknown";
     }
 
     function showBrand(type) {
-      ['visa','mc','amex','disc','generic'].forEach(b => {
-        document.querySelector('.brand-' + b).style.display = (b === type || (b === 'generic' && type === 'unknown')) ? '' : 'none';
+      ["visa","mc","amex","disc","generic"].forEach(b => {
+        document.querySelector(".brand-" + b).style.display = (b === type || (b === "generic" && type === "unknown")) ? "" : "none";
       });
     }
 
-    const cardInput = document.getElementById('card-number');
+    const cardInput = document.getElementById("card-number");
 
-    cardInput.addEventListener('input', () => {
-      let raw  = cardInput.value.replace(/\D/g, '');
+    cardInput.addEventListener("input", () => {
+      let raw  = cardInput.value.replace(/\D/g, "");
       const type = detectCard(raw);
       const prevAmex = isAmex;
-      isAmex = (type === 'amex');
+      isAmex = (type === "amex");
 
-      let formatted = '';
+      let formatted = "";
       if (isAmex) {
         raw = raw.slice(0, 15);
-        if (raw.length > 10)      formatted = raw.slice(0,4) + ' ' + raw.slice(4,10) + ' ' + raw.slice(10);
-        else if (raw.length > 4)  formatted = raw.slice(0,4) + ' ' + raw.slice(4);
+        if (raw.length > 10)      formatted = raw.slice(0,4) + " " + raw.slice(4,10) + " " + raw.slice(10);
+        else if (raw.length > 4)  formatted = raw.slice(0,4) + " " + raw.slice(4);
         else                       formatted = raw;
       } else {
         raw = raw.slice(0, 16);
-        formatted = raw.match(/.{1,4}/g)?.join(' ') || '';
+        formatted = raw.match(/.{1,4}/g)?.join(" ") || "";
       }
 
       cardInput.value = formatted;
@@ -835,59 +985,59 @@
       if (isAmex !== prevAmex) updatePriceSummary(isAmex);
     });
 
-    const expMonth = document.getElementById('exp-month');
-    const expYear  = document.getElementById('exp-year');
-    const cvvField = document.getElementById('cvv');
+    const expMonth = document.getElementById("exp-month");
+    const expYear  = document.getElementById("exp-year");
+    const cvvField = document.getElementById("cvv");
 
-    expMonth.addEventListener('input', () => {
-      expMonth.value = expMonth.value.replace(/\D/g, '');
+    expMonth.addEventListener("input", () => {
+      expMonth.value = expMonth.value.replace(/\D/g, "");
       if (expMonth.value.length === 2) expYear.focus();
     });
-    expYear.addEventListener('input', () => {
-      expYear.value = expYear.value.replace(/\D/g, '');
+    expYear.addEventListener("input", () => {
+      expYear.value = expYear.value.replace(/\D/g, "");
       if (expYear.value.length === 2) cvvField.focus();
     });
-    cvvField.addEventListener('input', () => {
-      cvvField.value = cvvField.value.replace(/\D/g, '');
+    cvvField.addEventListener("input", () => {
+      cvvField.value = cvvField.value.replace(/\D/g, "");
     });
 
     function setFieldError(id, errId, msg, show) {
       const el  = document.getElementById(id);
       const err = document.getElementById(errId);
-      el.classList.toggle('error', show);
+      el.classList.toggle("error", show);
       err.textContent = msg || err.textContent;
-      err.classList.toggle('visible', show);
+      err.classList.toggle("visible", show);
       return !show;
     }
 
     function validateForm() {
       let ok = true;
 
-      ok = setFieldError('first-name', 'err-first-name', 'Required', !document.getElementById('first-name').value.trim()) && ok;
-      ok = setFieldError('last-name',  'err-last-name',  'Required', !document.getElementById('last-name').value.trim()) && ok;
+      ok = setFieldError("first-name", "err-first-name", "Required", !document.getElementById("first-name").value.trim()) && ok;
+      ok = setFieldError("last-name",  "err-last-name",  "Required", !document.getElementById("last-name").value.trim()) && ok;
 
-      const email = document.getElementById('email').value.trim();
-      ok = setFieldError('email', 'err-email', 'Enter a valid email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) && ok;
+      const email = document.getElementById("email").value.trim();
+      ok = setFieldError("email", "err-email", "Enter a valid email", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) && ok;
 
-      const rawCard = cardInput.value.replace(/\D/g, '');
+      const rawCard = cardInput.value.replace(/\D/g, "");
       const minLen  = isAmex ? 15 : 16;
-      ok = setFieldError('card-number', 'err-card-number', 'Enter a valid card number', rawCard.length < minLen) && ok;
+      ok = setFieldError("card-number", "err-card-number", "Enter a valid card number", rawCard.length < minLen) && ok;
 
       const mo = parseInt(expMonth.value, 10);
-      ok = setFieldError('exp-month', 'err-exp-month', 'Invalid month (01–12)', !mo || mo < 1 || mo > 12) && ok;
+      ok = setFieldError("exp-month", "err-exp-month", "Invalid month (01–12)", !mo || mo < 1 || mo > 12) && ok;
 
       const yr = parseInt(expYear.value, 10);
-      ok = setFieldError('exp-year', 'err-exp-year', 'Invalid year', !yr) && ok;
+      ok = setFieldError("exp-year", "err-exp-year", "Invalid year", !yr) && ok;
 
       const cvvLen = isAmex ? 4 : 3;
-      ok = setFieldError('cvv', 'err-cvv', `CVV must be ${cvvLen} digits`, cvvField.value.length < cvvLen) && ok;
+      ok = setFieldError("cvv", "err-cvv", "CVV must be " + cvvLen + " digits", cvvField.value.length < cvvLen) && ok;
 
-      ok = setFieldError('postal', 'err-postal', 'Required', !document.getElementById('postal').value.trim()) && ok;
+      ok = setFieldError("postal", "err-postal", "Required", !document.getElementById("postal").value.trim()) && ok;
 
       return ok;
     }
 
-    document.getElementById('payment-form').addEventListener('submit', async (e) => {
+    document.getElementById("payment-form").addEventListener("submit", async (e) => {
       e.preventDefault();
       hideFormError();
       if (!validateForm()) return;
@@ -897,13 +1047,13 @@
       const secureData = {
         authData: { apiLoginID: API_LOGIN_ID, clientKey: CLIENT_KEY },
         cardData: {
-          cardNumber: cardInput.value.replace(/\D/g, ''),
-          month:      expMonth.value.padStart(2, '0'),
-          year:       '20' + expYear.value,
+          cardNumber: cardInput.value.replace(/\D/g, ""),
+          month:      expMonth.value.padStart(2, "0"),
+          year:       "20" + expYear.value,
           cardCode:   cvvField.value,
-          zip:        document.getElementById('postal').value.trim(),
-          fullName:   document.getElementById('first-name').value.trim() + ' ' +
-                      document.getElementById('last-name').value.trim()
+          zip:        document.getElementById("postal").value.trim(),
+          fullName:   document.getElementById("first-name").value.trim() + " " +
+                      document.getElementById("last-name").value.trim()
         }
       };
 
@@ -911,8 +1061,8 @@
     });
 
     function handleAcceptResponse(response) {
-      if (response.messages.resultCode === 'Error') {
-        const msgs = response.messages.message.map(m => m.text).join(' ');
+      if (response.messages.resultCode === "Error") {
+        const msgs = response.messages.message.map(m => m.text).join(" ");
         showFormError(msgs);
         setLoading(false);
         return;
@@ -926,23 +1076,23 @@
       const payload = {
         opaqueData,
         amount:   total.toFixed(2),
-        currency: 'CAD',
+        currency: "CAD",
         taxAmount: tax.toFixed(2),
         tipAmount: tipAmount.toFixed(2),
         discount:  discount.toFixed(2),
         billing: {
-          firstName: document.getElementById('first-name').value.trim(),
-          lastName:  document.getElementById('last-name').value.trim(),
-          email:     document.getElementById('email').value.trim(),
-          zip:       document.getElementById('postal').value.trim()
+          firstName: document.getElementById("first-name").value.trim(),
+          lastName:  document.getElementById("last-name").value.trim(),
+          email:     document.getElementById("email").value.trim(),
+          zip:       document.getElementById("postal").value.trim()
         },
-        description: 'Filmmakers Kit Bundle' + (tipAmount > 0 ? ' (includes tip: $' + tipAmount.toFixed(2) + ')' : '')
+        description: "Filmmakers Kit" + (tipAmount > 0 ? " (includes tip: $" + tipAmount.toFixed(2) + ")" : "")
       };
 
       try {
         const res = await fetch(CHARGE_URL, {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/json' },
+          method:  "POST",
+          headers: { "Content-Type": "application/json" },
           body:    JSON.stringify(payload)
         });
 
@@ -950,37 +1100,37 @@
         try {
           data = await res.json();
         } catch (_) {
-          showFormError('Server returned an unexpected response (status ' + res.status + '). Please try again or contact support.');
+          showFormError("Server returned an unexpected response (status " + res.status + "). Please try again or contact support.");
           setLoading(false);
           return;
         }
 
         if (res.ok && data.success) {
-          window.location.href = '../../filmmakers-kit/thank-you/?txn=' + encodeURIComponent(data.transactionId);
+          window.location.href = "../thank-you/?txn=" + encodeURIComponent(data.transactionId);
         } else {
-          showFormError(data.message || 'Payment declined. Please check your details and try again.');
+          showFormError(data.message || "Payment declined. Please check your details and try again.");
           setLoading(false);
         }
       } catch (err) {
-        showFormError('Network error: ' + (err.message || err) + '. If this persists, please contact support.');
+        showFormError("Network error: " + (err.message || err) + ". If this persists, please contact support.");
         setLoading(false);
       }
     }
 
     function setLoading(on) {
-      const btn = document.getElementById('submit-btn');
+      const btn = document.getElementById("submit-btn");
       btn.disabled = on;
-      btn.classList.toggle('loading', on);
+      btn.classList.toggle("loading", on);
     }
 
     function showFormError(msg) {
-      document.getElementById('form-error-msg').textContent = msg;
-      document.getElementById('form-error').classList.add('visible');
-      document.getElementById('form-error').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      document.getElementById("form-error-msg").textContent = msg;
+      document.getElementById("form-error").classList.add("visible");
+      document.getElementById("form-error").scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
 
     function hideFormError() {
-      document.getElementById('form-error').classList.remove('visible');
+      document.getElementById("form-error").classList.remove("visible");
     }
   </script>
 
