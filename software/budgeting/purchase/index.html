@@ -3,321 +3,242 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Purchase IPTV Manager – Secure Checkout</title>
+  <title>Purchase Budgeting – Secure Checkout</title>
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="icon" type="image/png" href="../Icon.png" />
+  <link rel="icon" type="image/png" href="../../Icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Authorize.net Accept.js (production) -->
   <script src="https://js.authorize.net/v1/Accept.js" charset="utf-8"></script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary: #0071e3;
-      --primary-hover: #0077ed;
-      --success: #34c759;
-      --warning: #ff9500;
-      --danger: #ff3b30;
-      --bg: #f5f5f7;
-      --card: #ffffff;
-      --text: #1d1d1f;
-      --text-secondary: #86868b;
-      --border: #d2d2d7;
-      --shadow: 0 8px 24px rgba(0,0,0,0.08);
-      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --navy:    #0d2145;
+      --navy-lt: #1a3666;
+      --gold:    #b8860b;
+      --gold-lt: #d4a017;
+      --green:   #1a7f4b;
+      --green-lt:#e6f4ed;
+      --red:     #b22222;
+      --red-lt:  #fdf1f1;
+      --white:   #ffffff;
+      --off:     #f4f6fb;
+      --off2:    #eef1f8;
+      --text:    #111827;
+      --muted:   #4b5563;
+      --border:  #d1d9e6;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Source Sans 3', system-ui, sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background: var(--off);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAV ─────────────────────────────────────────────────── */
     nav {
-      background: rgba(255,255,255,0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: var(--white);
       border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2.5rem;
       height: 64px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
 
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
-      transition: opacity 0.2s;
     }
 
-    .nav-brand:hover { opacity: 0.7; }
-
-    .nav-brand img { width: 40px; height: 40px; border-radius: 10px; }
+    .nav-brand img { width: 36px; height: 36px; border-radius: 8px; }
 
     .nav-brand span {
+      font-family: 'Merriweather', serif;
       font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--text);
-      letter-spacing: -0.02em;
+      font-size: 1.05rem;
+      color: var(--navy);
     }
 
     .nav-secure {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
+      gap: 0.45rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      color: var(--success);
-      letter-spacing: 0.02em;
+      color: var(--green);
+      letter-spacing: 0.03em;
     }
 
-    /* ── HERO SECTION ─────────────────────────────────────────── */
-    .hero {
-      text-align: center;
-      padding: 80px 20px 60px;
-      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
-    }
-
-    .hero img {
-      width: 120px;
-      height: 120px;
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-size: 56px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, #1d1d1f 0%, #434343 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero p {
-      font-size: 20px;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto 24px;
-      line-height: 1.5;
-    }
-
-    .hero .price {
-      font-size: 24px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 32px;
-    }
-
-    .hero-features {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-
-    .hero-feature {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-
-    .hero-feature svg { color: var(--success); }
-
-    /* ── CHECKOUT LAYOUT ─────────────────────────────────────── */
     .checkout-wrap {
-      max-width: 1100px;
-      margin: 0 auto 80px;
-      padding: 0 20px;
+      max-width: 960px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem 4rem;
       display: grid;
-      grid-template-columns: 380px 1fr;
-      gap: 32px;
+      grid-template-columns: 1fr 1.55fr;
+      gap: 2rem;
       align-items: start;
     }
 
-    /* ── ORDER SUMMARY ───────────────────────────────────────── */
     .order-summary {
-      background: var(--card);
+      background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
+      border-radius: 12px;
+      padding: 2rem;
       position: sticky;
-      top: 96px;
-      box-shadow: var(--shadow);
+      top: 1.5rem;
     }
 
     .summary-product {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
-      padding-bottom: 24px;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
       border-bottom: 1px solid var(--border);
     }
 
     .summary-product img {
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(13,33,69,0.15);
     }
 
     .summary-product-info h3 {
-      font-size: 1.15rem;
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 4px;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
     }
 
     .summary-product-info p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
+      font-size: 0.82rem;
+      color: var(--muted);
     }
 
     .summary-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
+      color: var(--gold);
+      margin-bottom: 1rem;
     }
 
-    /* ── Tip Section ─────────────────────────────────────────── */
-    .tip-section { margin-bottom: 20px; }
+    .tip-section { margin-bottom: 1.25rem; }
 
     .tip-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 12px;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
     }
 
     .tip-options {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-bottom: 12px;
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
     }
 
     .tip-btn {
-      padding: 10px;
+      flex: 1;
+      padding: 0.5rem 0.75rem;
       border: 1.5px solid var(--border);
-      border-radius: 10px;
-      background: var(--card);
+      border-radius: 8px;
+      background: var(--white);
       font-family: inherit;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      color: var(--text);
+      color: var(--navy);
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.15s;
     }
 
-    .tip-btn:hover {
-      border-color: var(--primary);
-      background: #f0f6ff;
-    }
-
-    .tip-btn.active {
-      border-color: var(--primary);
-      background: var(--primary);
-      color: white;
-    }
+    .tip-btn:hover { border-color: var(--navy); background: var(--off); }
+    .tip-btn.active { border-color: var(--navy); background: var(--navy); color: var(--white); }
 
     .tip-custom-wrap {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
     }
 
     .tip-custom-label {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
       white-space: nowrap;
     }
 
     .tip-custom-input {
       flex: 1;
-      padding: 8px 12px;
+      padding: 0.45rem 0.65rem;
       border: 1.5px solid var(--border);
-      border-radius: 8px;
+      border-radius: 6px;
       font-family: inherit;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text);
-      background: var(--card);
+      background: var(--white);
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
 
     .tip-custom-input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(13,33,69,0.08);
+    }
+
+    .summary-line.tip-line { color: var(--gold); }
+    .summary-line.tip-line .tip-remove {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.75rem;
+      margin-left: 0.3rem;
+      text-decoration: underline;
     }
 
     .summary-line {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      margin-bottom: 12px;
-    }
-
-    .summary-line.tip-line { color: var(--warning); }
-
-    .summary-line.tip-line .tip-remove {
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      cursor: pointer;
-      font-size: 0.8rem;
-      margin-left: 4px;
-      text-decoration: underline;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
     }
 
     .summary-line.discount {
-      color: var(--success);
+      color: var(--green);
       font-weight: 600;
     }
 
     .summary-line.discount .discount-badge {
-      background: #e8f9ed;
-      color: var(--success);
-      font-size: 0.75rem;
+      background: var(--green-lt);
+      color: var(--green);
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
-      letter-spacing: 0.02em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
     }
 
     .summary-divider {
       border: none;
       border-top: 1px solid var(--border);
-      margin: 16px 0;
+      margin: 0.9rem 0;
     }
 
     .summary-total {
@@ -325,23 +246,22 @@
       justify-content: space-between;
       align-items: center;
       font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--text);
-      margin-top: 8px;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-top: 0.5rem;
     }
 
     .amex-teaser {
       display: flex;
       align-items: center;
-      gap: 8px;
-      background: #e8f9ed;
-      border: 1px solid #c3e6d0;
-      border-radius: 10px;
-      padding: 12px 16px;
-      margin-bottom: 16px;
-      font-size: 0.85rem;
-      color: var(--success);
-      line-height: 1.4;
+      gap: 0.5rem;
+      background: #f0faf5;
+      border: 1px solid #b7e2cc;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.84rem;
+      color: var(--green);
     }
 
     .amex-teaser strong { font-weight: 700; }
@@ -349,66 +269,64 @@
     .amex-promo {
       display: none;
       align-items: center;
-      gap: 8px;
-      background: #e8f9ed;
-      border: 1px solid #c3e6d0;
-      border-radius: 10px;
-      padding: 12px 16px;
-      margin-bottom: 20px;
-      font-size: 0.85rem;
+      gap: 0.5rem;
+      background: var(--green-lt);
+      border: 1px solid #b7e2cc;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.84rem;
       font-weight: 600;
-      color: var(--success);
+      color: var(--green);
     }
 
     .amex-promo.visible { display: flex; }
 
     .trust-items {
-      margin-top: 24px;
-      padding-top: 24px;
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
       border-top: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 0.65rem;
     }
 
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--muted);
     }
 
-    .trust-item svg { color: var(--primary); flex-shrink: 0; }
+    .trust-item svg { color: var(--gold); flex-shrink: 0; }
 
-    /* ── PAYMENT CARD ─────────────────────────────────────────── */
     .payment-card {
-      background: var(--card);
+      background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: var(--shadow);
+      border-radius: 12px;
+      padding: 2rem 2.25rem;
     }
 
     .payment-card h2 {
-      font-size: 1.5rem;
+      font-family: 'Merriweather', serif;
+      font-size: 1.25rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
     }
 
     .payment-card .subtitle {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
     }
 
-    /* ── FORM FIELDS ──────────────────────────────────────────── */
-    .form-group { margin-bottom: 20px; }
+    .form-group { margin-bottom: 1.15rem; }
 
     .form-row {
       display: grid;
-      gap: 16px;
+      gap: 1rem;
     }
 
     .form-row.cols-2 { grid-template-columns: 1fr 1fr; }
@@ -416,45 +334,45 @@
 
     label {
       display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--text);
-      margin-bottom: 8px;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
     }
 
     input[type="text"],
     input[type="email"],
     input[type="tel"] {
       width: 100%;
-      padding: 12px 16px;
+      padding: 0.7rem 0.9rem;
       border: 1.5px solid var(--border);
-      border-radius: 10px;
+      border-radius: 7px;
       font-family: inherit;
-      font-size: 1rem;
+      font-size: 0.97rem;
       color: var(--text);
-      background: var(--card);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      background: var(--white);
+      transition: border-color 0.15s, box-shadow 0.15s;
       outline: none;
       -webkit-appearance: none;
     }
 
     input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(13,33,69,0.08);
     }
 
     input.error {
-      border-color: var(--danger);
-      box-shadow: 0 0 0 3px rgba(255,59,48,0.1);
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(178,34,34,0.08);
     }
 
     .field-error {
       display: none;
-      font-size: 0.8rem;
-      color: var(--danger);
-      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--red);
+      margin-top: 0.3rem;
     }
 
     .field-error.visible { display: block; }
@@ -462,14 +380,13 @@
     .card-input-wrap { position: relative; }
 
     .card-input-wrap input {
-      padding-right: 56px;
-      letter-spacing: 0.05em;
-      font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+      padding-right: 3.5rem;
+      letter-spacing: 0.08em;
     }
 
     .card-brand-icon {
       position: absolute;
-      right: 12px;
+      right: 0.75rem;
       top: 50%;
       transform: translateY(-50%);
       display: flex;
@@ -477,17 +394,16 @@
       gap: 0;
     }
 
-    /* ── SECTION DIVIDER ─────────────────────────────────────── */
     .form-section-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-secondary);
-      margin: 28px 0 16px;
+      color: var(--gold);
+      margin: 1.5rem 0 1.1rem;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 0.6rem;
     }
 
     .form-section-label::after {
@@ -497,41 +413,35 @@
       background: var(--border);
     }
 
-    /* ── SUBMIT ───────────────────────────────────────────────── */
     .btn-submit {
       width: 100%;
-      background: var(--primary);
-      color: white;
+      background: var(--navy);
+      color: var(--white);
       font-family: inherit;
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 16px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 0.95rem;
       border: none;
-      border-radius: 12px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: background 0.2s, opacity 0.2s;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      margin-top: 24px;
-      box-shadow: 0 4px 16px rgba(0,113,227,0.3);
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 14px rgba(13,33,69,0.25);
     }
 
-    .btn-submit:hover:not(:disabled) {
-      background: var(--primary-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(0,113,227,0.4);
-    }
-
-    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-submit:hover:not(:disabled) { background: var(--navy-lt); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
     .btn-submit .spinner {
       display: none;
-      width: 20px;
-      height: 20px;
-      border: 2.5px solid rgba(255,255,255,0.3);
-      border-top-color: white;
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid rgba(255,255,255,0.35);
+      border-top-color: #fff;
       border-radius: 50%;
       animation: spin 0.7s linear infinite;
     }
@@ -545,58 +455,44 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      margin-top: 16px;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.9rem;
     }
 
-    /* ── ALERT ────────────────────────────────────────────────── */
     .alert {
       display: none;
-      padding: 14px 18px;
-      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
       font-size: 0.9rem;
-      font-weight: 500;
-      margin-top: 16px;
+      font-weight: 600;
+      margin-top: 1rem;
       align-items: flex-start;
-      gap: 10px;
+      gap: 0.6rem;
     }
 
     .alert.visible { display: flex; }
 
     .alert-error {
-      background: #fff0f0;
-      color: var(--danger);
-      border: 1px solid #ffd4d4;
+      background: var(--red-lt);
+      color: var(--red);
+      border: 1px solid #f5c6c6;
     }
 
-    /* ── CARD BRAND SVGs ─────────────────────────────────────── */
     .brand-visa   { display: none; }
     .brand-mc     { display: none; }
     .brand-amex   { display: none; }
     .brand-disc   { display: none; }
     .brand-generic { display: block; }
 
-    /* ── RESPONSIVE ───────────────────────────────────────────── */
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
       .checkout-wrap {
         grid-template-columns: 1fr;
-        margin-bottom: 40px;
+        margin: 1.25rem auto;
       }
-
-      .order-summary {
-        position: static;
-        padding: 24px;
-      }
-
+      .order-summary { position: static; }
       nav { padding: 0 1.25rem; }
-
-      .hero h1 { font-size: 40px; }
-      .hero p { font-size: 18px; }
-
-      .payment-card { padding: 24px; }
-
       .form-row.cols-3 { grid-template-columns: 1fr 1fr; }
     }
 
@@ -608,50 +504,24 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
-    <a href="../" class="nav-brand">
-      <img src="../Icon.png" alt="IPTV Manager" />
-      <span>IPTV Manager</span>
+    <a href="../../" class="nav-brand">
+      <img src="../../Icon.png" alt="Budgeting" />
+      <span>Budgeting</span>
     </a>
     <div class="nav-secure">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       Secure Checkout
     </div>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <img src="../Icon.png" alt="IPTV Manager" />
-    <h1>IPTV Manager</h1>
-    <p>The complete solution for managing IPTV services, playlists, and subscribers with a beautiful, native macOS and Windows interface.</p>
-    <div class="price">$19.99 before tax</div>
-
-    <div class="hero-features">
-      <div class="hero-feature">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        One-time purchase
-      </div>
-      <div class="hero-feature">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        256-bit encryption
-      </div>
-      <div class="hero-feature">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        2-day guarantee
-      </div>
-    </div>
-  </div>
-
-  <!-- CHECKOUT -->
   <div class="checkout-wrap">
 
-    <!-- ORDER SUMMARY (left column) -->
     <aside class="order-summary">
 
       <div class="amex-teaser">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-        <span>Pay with <strong>AMEX</strong> and save <strong>25%</strong> — discount applied automatically.</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        <span>Pay with <strong>AMEX</strong> and save <strong>25%</strong> - discount applied automatically at checkout.</span>
       </div>
 
       <div class="amex-promo" id="amex-promo">
@@ -660,16 +530,15 @@
       </div>
 
       <div class="summary-product">
-        <img src="../Icon.png" alt="IPTV Manager" />
+        <img src="../../Icon.png" alt="Budgeting" />
         <div class="summary-product-info">
-          <h3>IPTV Manager</h3>
-          <p>One-time licence — macOS &amp; Windows</p>
+          <h3>Budgeting</h3>
+          <p>One-time licence – macOS &amp; Windows</p>
         </div>
       </div>
 
       <div class="summary-label">Order Summary</div>
 
-      <!-- Tip Section -->
       <div class="tip-section">
         <div class="tip-label">Add a Tip (Optional)</div>
         <div class="tip-options">
@@ -685,7 +554,7 @@
       </div>
 
       <div class="summary-line" id="line-base">
-        <span>IPTV Manager</span>
+        <span>Budgeting</span>
         <span id="val-base">CAD $19.99</span>
       </div>
 
@@ -694,12 +563,12 @@
           <span class="discount-badge">AMEX 25% OFF</span>
           &nbsp;Discount
         </span>
-        <span id="val-discount">−CAD $5.00</span>
+        <span id="val-discount">&minus;CAD $0.00</span>
       </div>
 
       <div class="summary-line" id="line-subtotal" style="display:none">
         <span>Subtotal</span>
-        <span id="val-subtotal">CAD $14.99</span>
+        <span id="val-subtotal">CAD $19.99</span>
       </div>
 
        <div class="summary-line">
@@ -724,33 +593,31 @@
 
       <div class="trust-items">
         <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           Payments processed by Authorize.net
         </div>
         <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           2-day money-back guarantee
         </div>
         <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           256-bit SSL encrypted
         </div>
         <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          No subscription — one-time charge only
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          No subscription – one-time charge only
         </div>
       </div>
     </aside>
 
-    <!-- PAYMENT FORM (right column) -->
     <div class="payment-card">
       <h2>Payment Details</h2>
-      <p class="subtitle">Your card is never stored on our servers. Tokenized securely by Authorize.net.</p>
+      <p class="subtitle">Your card is never stored on our servers. Tokenised by Authorize.net.</p>
 
       <form id="payment-form" novalidate>
 
-        <!-- Contact -->
-        <div class="form-section-label">Contact Information</div>
+        <div class="form-section-label">Contact</div>
 
         <div class="form-row cols-2">
           <div class="form-group">
@@ -771,8 +638,7 @@
           <div class="field-error" id="err-email">Enter a valid email</div>
         </div>
 
-        <!-- Card details -->
-        <div class="form-section-label">Card Information</div>
+        <div class="form-section-label">Card Details</div>
 
         <div class="form-group">
           <label for="card-number">Card Number</label>
@@ -780,27 +646,22 @@
             <input type="tel" id="card-number" autocomplete="cc-number" inputmode="numeric"
                    placeholder="1234 5678 9012 3456" maxlength="19" />
             <span class="card-brand-icon" id="card-brand-icon">
-              <!-- Generic card -->
-              <svg class="brand-generic" width="32" height="20" viewBox="0 0 40 26" fill="none">
+              <svg class="brand-generic" width="28" height="18" viewBox="0 0 40 26" fill="none">
                 <rect width="40" height="26" rx="3" fill="#dde2ec"/>
                 <rect x="0" y="8" width="40" height="7" fill="#bcc3d4"/>
               </svg>
-              <!-- Visa -->
-              <svg class="brand-visa" width="40" height="13" viewBox="0 0 60 20">
+              <svg class="brand-visa" width="36" height="12" viewBox="0 0 60 20">
                 <text x="0" y="16" font-family="Arial" font-weight="700" font-size="18" fill="#1a1f71">VISA</text>
               </svg>
-              <!-- Mastercard -->
-              <svg class="brand-mc" width="36" height="22" viewBox="0 0 48 30">
+              <svg class="brand-mc" width="32" height="20" viewBox="0 0 48 30">
                 <circle cx="18" cy="15" r="13" fill="#eb001b"/>
                 <circle cx="30" cy="15" r="13" fill="#f79e1b"/>
                 <path d="M24 5.5a13 13 0 0 1 0 19 13 13 0 0 1 0-19z" fill="#ff5f00"/>
               </svg>
-              <!-- Amex -->
-              <svg class="brand-amex" width="40" height="15" viewBox="0 0 60 24">
+              <svg class="brand-amex" width="36" height="14" viewBox="0 0 60 24">
                 <text x="0" y="18" font-family="Arial" font-weight="700" font-size="15" fill="#007bc1">AMEX</text>
               </svg>
-              <!-- Discover -->
-              <svg class="brand-disc" width="40" height="15" viewBox="0 0 70 24">
+              <svg class="brand-disc" width="36" height="14" viewBox="0 0 70 24">
                 <text x="0" y="18" font-family="Arial" font-weight="700" font-size="13" fill="#f76f20">DISCOVER</text>
               </svg>
             </span>
@@ -836,21 +697,21 @@
         </div>
 
         <div class="alert alert-error" id="form-error" role="alert">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           <span id="form-error-msg">An error occurred. Please try again.</span>
         </div>
 
         <button type="submit" class="btn-submit" id="submit-btn">
           <span class="btn-text">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             Pay <span id="btn-amount">CAD $22.59</span>
           </span>
           <span class="spinner"></span>
         </button>
 
         <p class="secure-note">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Secured by Authorize.net · 256-bit TLS encryption
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Secured by Authorize.net · 256-bit TLS
         </p>
 
       </form>
@@ -858,20 +719,13 @@
   </div>
 
   <script>
-    // ────────────────────────────────────────────────────────────────────────
-    // CONFIGURATION — Replace these values before going live
-    // API_LOGIN_ID  : Your Authorize.net API Login ID
-    // CLIENT_KEY    : Your Public Client Key
-    // CHARGE_URL    : Full URL to your backend charge endpoint
-    // ────────────────────────────────────────────────────────────────────────
     const API_LOGIN_ID = '__AUTHORIZENET_API_LOGIN_ID__';
     const CLIENT_KEY   = '__AUTHORIZENET_CLIENT_KEY__';
     const CHARGE_URL   = '__CHARGE_URL__';
 
-    // Detect un-replaced placeholders
     if (API_LOGIN_ID.startsWith('__') || CLIENT_KEY.startsWith('__') || CHARGE_URL.startsWith('__')) {
       document.getElementById('submit-btn').disabled = true;
-      showFormError('Payment is not yet configured. If you are the site owner, please add the AUTHORIZENET_API_LOGIN_ID, AUTHORIZENET_CLIENT_KEY, and CHARGE_URL GitHub Secrets and re-run the deployment workflow.');
+      showFormError('Payment is not yet configured. If you are the site owner, please add the AUTHORIZENET_API_LOGIN_ID, AUTHORIZENET_CLIENT_KEY, and CHARGE_URL GitHub Secrets and re-run the GitHub Actions deployment workflow.');
     }
 
     const BASE_PRICE      = 19.99;
@@ -881,7 +735,6 @@
     let isAmex = false;
     let tipAmount = 0;
 
-    // ── Price calculation ────────────────────────────────────────────────────
     function calcPrices(amex) {
       const discount   = amex ? round2(BASE_PRICE * AMEX_DISCOUNT) : 0;
       const subtotal   = round2(BASE_PRICE - discount);
@@ -912,12 +765,10 @@
 
     updatePriceSummary(false);
 
-    // ── Tip Handling ──────────────────────────────────────────────────────
     const tipButtons = document.querySelectorAll('.tip-btn');
     const tipCustomInput = document.getElementById('tip-custom');
     const tipRemoveBtn = document.getElementById('tip-remove');
 
-    // Set default tip to $2
     tipAmount = 2;
     document.getElementById('default-tip').classList.add('active');
     updatePriceSummary(isAmex);
@@ -940,14 +791,13 @@
       updatePriceSummary(isAmex);
     });
 
-    tipRemoveBtn.addEventListener('click', () => {
-      tipAmount = 0;
-      tipCustomInput.value = '';
-      tipButtons.forEach(b => b.classList.remove('active'));
-      updatePriceSummary(isAmex);
-    });
+     tipRemoveBtn.addEventListener('click', () => {
+        tipAmount = 0;
+        tipCustomInput.value = '';
+        tipButtons.forEach(b => b.classList.remove('active'));
+        updatePriceSummary(isAmex);
+      });
 
-    // ── Card type detection ──────────────────────────────────────────────────
     function detectCard(num) {
       const n = num.replace(/\D/g, '');
       if (/^3[47]/.test(n))            return 'amex';
@@ -963,7 +813,6 @@
       });
     }
 
-    // ── Card number formatting ───────────────────────────────────────────────
     const cardInput = document.getElementById('card-number');
 
     cardInput.addEventListener('input', () => {
@@ -972,7 +821,6 @@
       const prevAmex = isAmex;
       isAmex = (type === 'amex');
 
-      // AMEX: 4-6-5 (15 digits); others: 4-4-4-4 (16 digits)
       let formatted = '';
       if (isAmex) {
         raw = raw.slice(0, 15);
@@ -990,7 +838,6 @@
       if (isAmex !== prevAmex) updatePriceSummary(isAmex);
     });
 
-    // ── Month/year/CVV auto-advance ──────────────────────────────────────────
     const expMonth = document.getElementById('exp-month');
     const expYear  = document.getElementById('exp-year');
     const cvvField = document.getElementById('cvv');
@@ -1007,7 +854,6 @@
       cvvField.value = cvvField.value.replace(/\D/g, '');
     });
 
-    // ── Validation helpers ───────────────────────────────────────────────────
     function setFieldError(id, errId, msg, show) {
       const el  = document.getElementById(id);
       const err = document.getElementById(errId);
@@ -1044,7 +890,6 @@
       return ok;
     }
 
-    // ── Form submit ──────────────────────────────────────────────────────────
     document.getElementById('payment-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       hideFormError();
@@ -1094,7 +939,7 @@
           email:     document.getElementById('email').value.trim(),
           zip:       document.getElementById('postal').value.trim()
         },
-        description: 'IPTV Manager Licence' + (tipAmount > 0 ? ' (includes tip: $' + tipAmount.toFixed(2) + ')' : '')
+        description: 'Budgeting' + (tipAmount > 0 ? ' (includes tip: $' + tipAmount.toFixed(2) + ')' : '')
       };
 
       try {
@@ -1114,7 +959,7 @@
         }
 
         if (res.ok && data.success) {
-          window.location.href = '../thank-you/?txn=' + encodeURIComponent(data.transactionId);
+          window.location.href = '../../thank-you/?txn=' + encodeURIComponent(data.transactionId);
         } else {
           showFormError(data.message || 'Payment declined. Please check your details and try again.');
           setLoading(false);
@@ -1125,7 +970,6 @@
       }
     }
 
-    // ── UI helpers ───────────────────────────────────────────────────────────
     function setLoading(on) {
       const btn = document.getElementById('submit-btn');
       btn.disabled = on;
