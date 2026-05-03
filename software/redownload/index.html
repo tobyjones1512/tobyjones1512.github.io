@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re-download Software | Toby Jones</title>
+    <script src="https://js.authorize.net/v1/Accept.js" charset="utf-8"></script>
+    <style>
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1d1d1f; background: #f5f5f7; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .container { max-width: 500px; width: 100%; padding: 20px; }
+        .card { background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        h1 { font-size: 32px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .subtitle { color: #86868b; margin-bottom: 32px; font-size: 17px; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 14px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px; }
+        input { width: 100%; padding: 12px 16px; border: 1px solid #d2d2d7; border-radius: 10px; font-size: 16px; font-family: inherit; transition: border-color 0.2s; }
+        input:focus { outline: none; border-color: #0071e3; box-shadow: 0 0 0 3px rgba(0,113,227,0.1); }
+        
+        #card-container { margin-bottom: 20px; }
+        
+        .btn-check { width: 100%; padding: 16px; background: #0071e3; color: #fff; font-size: 17px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; transition: all 0.2s; margin-top: 8px; }
+        .btn-check:hover:not(:disabled) { background: #0077ed; transform: translateY(-1px); }
+        .btn-check:disabled { opacity: 0.6; cursor: not-allowed; }
+        
+        .result { margin-top: 24px; padding: 20px; border-radius: 12px; background: #f5f5f7; display: none; }
+        .result h3 { font-size: 20px; margin-bottom: 16px; font-weight: 700; }
+        .download-link { display: block; padding: 14px; background: #fff; border-radius: 10px; text-decoration: none; color: #0071e3; font-weight: 600; margin-bottom: 10px; text-align: center; transition: background 0.2s; }
+        .download-link:hover { background: #e8f2ff; }
+        
+        .error { margin-top: 16px; padding: 12px 16px; border-radius: 10px; background: #fdf1f1; color: #b22222; font-size: 14px; display: none; }
+        .success { color: #1a7f4b; }
+        
+        .loading { display: none; text-align: center; margin-top: 16px; }
+        .spinner { width: 24px; height: 24px; border: 3px solid rgba(0,113,227,0.2); border-top-color: #0071e3; border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .back-link { display: block; text-align: center; margin-top: 24px; color: #86868b; text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: #0071e3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Re-download Software</h1>
+            <p class="subtitle">Enter your email and card details to access your purchased software.</p>
+            
+            <form id="redownload-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Card Details</label>
+                    <div id="card-container"></div>
+                </div>
+                
+                <button type="submit" class="btn-check" id="check-btn">Check Purchases</button>
+            </form>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p style="margin-top: 12px; color: #86868b;">Checking purchases...</p>
+            </div>
+            
+            <div class="error" id="error-msg"></div>
+            
+            <div class="result" id="result">
+                <h3>Your Purchased Apps</h3>
+                <div id="apps-list"></div>
+            </div>
+            
+            <a href="/software/" class="back-link">← Back to Software</a>
+        </div>
+    </div>
+
+    <script>
+        // Config - these should match your Authorize.net settings
+        const API_LOGIN_ID = '__AUTHORIZENET_API_LOGIN_ID__';
+        const CLIENT_KEY = '__AUTHORIZENET_CLIENT_KEY__';
+        const CHECK_PURCHASES_URL = 'https://project-ug5lh.vercel.app/api/check-purchases';
+        
+        const form = document.getElementById('redownload-form');
+        const checkBtn = document.getElementById('check-btn');
+        const loading = document.getElementById('loading');
+        const errorMsg = document.getElementById('error-msg');
+        const resultDiv = document.getElementById('result');
+        const appsList = document.getElementById('apps-list');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            hideError();
+            resultDiv.style.display = 'none';
+            
+            const email = document.getElementById('email').value.trim();
+            if (!email) {
+                showError('Please enter your email address.');
+                return;
+            }
+            
+            // Get card data from Accept.js
+            const cardNumber = document.getElementById('card-number')?.value?.replace(/\D/g, '');
+            const expMonth = document.getElementById('exp-month')?.value;
+            const expYear = document.getElementById('exp-year')?.value;
+            const cvv = document.getElementById('cvv')?.value;
+            const zip = document.getElementById('postal')?.value;
+            
+            if (!cardNumber || !expMonth || !expYear || !cvv) {
+                showError('Please enter complete card details.');
+                return;
+            }
+            
+            setLoading(true);
+            
+            const secureData = {
+                authData: { apiLoginID: API_LOGIN_ID, clientKey: CLIENT_KEY },
+                cardData: {
+                    cardNumber: cardNumber,
+                    month: expMonth.padStart(2, '0'),
+                    year: '20' + expYear,
+                    cardCode: cvv,
+                    zip: zip
+                }
+            };
+            
+            Accept.dispatchData(secureData, async (response) => {
+                if (response.messages.resultCode === 'Error') {
+                    const msgs = response.messages.message.map(m => m.text).join(' ');
+                    showError(msgs);
+                    setLoading(false);
+                    return;
+                }
+                
+                try {
+                    const res = await fetch(CHECK_PURCHASES_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            opaqueData: response.opaqueData,
+                            email: email
+                        })
+                    });
+                    
+                    const data = await res.json();
+                    
+                    if (data.success && data.apps.length > 0) {
+                        showApps(data.apps);
+                    } else if (data.success && data.apps.length === 0) {
+                        showError('No purchases found for this email and card combination.');
+                    } else {
+                        showError(data.message || 'Failed to check purchases. Please try again.');
+                    }
+                } catch (err) {
+                    showError('Network error: ' + (err.message || err));
+                }
+                
+                setLoading(false);
+            });
+        });
+        
+        function showApps(apps) {
+            let html = '';
+            const appMap = {
+                'iptv-manager': { name: 'IPTV Manager', url: '/downloads/iptv-manager.zip' },
+                'scheduling': { name: 'Scheduling', url: '/downloads/scheduling.zip' },
+                'budgeting': { name: 'Budgeting', url: '/downloads/budgeting.zip' },
+                'call-sheets': { name: 'Call Sheets', url: '/downloads/call-sheets.zip' },
+                'filmmakers-kit': { name: 'Filmmakers Kit', url: '/downloads/filmmakers-kit.zip' }
+            };
+            
+            apps.forEach(app => {
+                if (appMap[app]) {
+                    html += `<a href="${appMap[app].url}" class="download-link" download>${appMap[app].name} (Download)</a>`;
+                }
+            });
+            
+            appsList.innerHTML = html;
+            resultDiv.style.display = 'block';
+        }
+        
+        function showError(msg) {
+            errorMsg.textContent = msg;
+            errorMsg.style.display = 'block';
+        }
+        
+        function hideError() {
+            errorMsg.style.display = 'none';
+        }
+        
+        function setLoading(on) {
+            checkBtn.disabled = on;
+            loading.style.display = on ? 'block' : 'none';
+        }
+        
+        // Initialize Accept.js hosted fields (simplified for redownload)
+        // Note: In production, you'd want to use Accept.js hosted fields for better UX
+        // For simplicity, we'll use basic inputs here
+        const cardContainer = document.getElementById('card-container');
+        cardContainer.innerHTML = `
+            <input type="tel" id="card-number" placeholder="Card Number" maxlength="19" style="margin-bottom:8px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px;">
+                <input type="tel" id="exp-month" placeholder="MM" maxlength="2">
+                <input type="tel" id="exp-year" placeholder="YY" maxlength="2">
+                <input type="tel" id="cvv" placeholder="CVV" maxlength="4">
+            </div>
+            <input type="text" id="postal" placeholder="ZIP/Postal Code">
+        `;
+    </script>
+</body>
+</html>
