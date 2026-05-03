@@ -326,17 +326,19 @@
         
         .bundle-link a:hover { opacity: 0.7; }
         
-        /* Footer */
+        /* Footer (landing-style) */
         footer {
-            padding: 48px 0;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 14px;
-            border-top: 1px solid var(--border);
+            background: var(--apple-white);
+            border-top: 1px solid rgba(0,0,0,.07);
+            padding: 40px 24px;
         }
-        
-        footer a { color: var(--text-secondary); text-decoration: none; }
-        footer a:hover { color: var(--primary); }
+        .footer-inner {
+            max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+        }
+        .footer-copy { font-size: 12px; color: var(--apple-subtle); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 12px; color: var(--apple-subtle); text-decoration: none; }
+        .footer-links a:hover { color: var(--apple-dark); }
         
         @media (max-width: 768px) {
             .feature-grid,
@@ -353,21 +355,33 @@
     </style>
 </head>
 <body>
-    <header class="site-header" role="banner">
-      <div class="container header-inner">
-        <a href="/" class="brand">
-          <img src="Icon.png" alt="Call Sheets" class="site-logo">
-          Call Sheets
-        </a>
-        <nav aria-label="Main" class="site-nav">
-          <a href="/advertising/" class="nav-link">Advertising</a>
-          <a href="/video/" class="nav-link">Video</a>
-          <a href="/portfolio/" class="nav-link">Portfolio</a>
-          <a href="/software/" class="nav-link">Software</a>
-          <a href="/email/" class="nav-link nav-cta">Get in touch</a>
-        </nav>
-      </div>
-    </header>
+    <nav>
+      <a href="/" class="logo">Toby Jones</a>
+      <ul>
+        <li class="nav-has-dropdown">
+          <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav-dropdown-panel">
+            <a href="/digital-marketing">Digital Marketing</a>
+            <a href="/out-of-house">Out-of-House</a>
+            <a href="/tv-radio">TV &amp; Radio</a>
+            <a href="/postal-marketing">Postal Advertising</a>
+            <a href="/public-relations">Public Relations</a>
+          </div>
+        </li>
+        <li class="nav-has-dropdown">
+          <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav-dropdown-panel">
+            <a href="/video" class="active">Video Editing</a>
+            <a href="/video-production">Video Production</a>
+          </div>
+        </li>
+        <li><a href="/web-development">Web Development</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/software">Software</a></li>
+      </ul>
+      <a href="/email/" class="nav-cta">Get in touch ↗</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
     
     <div class="container">
         <!-- Hero -->
@@ -474,9 +488,16 @@
     </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Toby Jones. All rights reserved. | <a href="/software/">Back to Software</a></p>
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="/portfolio">View Portfolio</a>
+          <a href="/webcare">Website Care Plans</a>
+          <a href="/email/">Contact Me</a>
+          <a href="/complaints">Complaints</a>
+          <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
         </div>
+      </div>
     </footer>
 </body>
 </html>

@@ -189,7 +189,36 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
 .nav-dropdown-panel a:hover { background: rgba(0,0,0,0.05); color: #1d1d1f; }
 .nav-dropdown-panel a.active { color: #1d1d1f; font-weight: 500; background: rgba(0,0,0,0.04); }
 .nav-has-dropdown.active > a { color: #1d1d1f; font-weight: 500; }
-</style>
+  </style>
+  <style>
+  footer {
+    background: var(--apple-white);
+    border-top: 1px solid rgba(0,0,0,.07);
+    padding: 40px 24px;
+  }
+  .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer-copy { font-size: 12px; color: var(--apple-subtle); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 12px; color: var(--apple-subtle); text-decoration: none; }
+  .footer-links a:hover { color: var(--apple-dark); }
+  </style>
+    <style>
+    /* Landing-style header/dropdown styling (shared) */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.72); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0,0,0,.08); }
+    nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: var(--apple-dark); text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul a { font-size: 13px; color: var(--apple-mid); text-decoration: none; transition: color .2s; }
+    nav ul a:hover { color: var(--apple-dark); }
+    nav .nav-cta { font-size: 13px; font-weight: 400; color: var(--apple-blue); text-decoration: none; transition: opacity .2s; }
+    nav .nav-cta:hover { opacity: .7; }
+    @media (max-width: 768px) { nav ul { display: none; } }
+    .nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,0.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,0.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); }
+    .nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
+    .nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; border-radius: 8px; transition: background 0.15s, color 0.15s; white-space: nowrap; height: auto; }
+    .nav-dropdown-panel a:hover { background: rgba(0,0,0,0.05); color: #1d1d1f; }
+    .nav-dropdown-panel a.active { color: #1d1d1f; font-weight: 500; background: rgba(0,0,0,0.04); }
+    .nav-has-dropdown.active > a { color: #1d1d1f; font-weight: 500; }
+    </style>
 <style>
 /* Consistent header across sections for the video page */
 .site-header {
@@ -220,21 +249,6 @@ nav { display: none; }
 </head>
 <body class="header-consistent video-header-legacy">
 
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a href="/" class="brand">
-        <span class="logo">Toby Jones</span>
-      </a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="/digital-marketing" class="nav-link">Advertising</a>
-        <a href="/video" class="nav-link">Video</a>
-        <a href="/portfolio" class="nav-link">Portfolio</a>
-        <a href="/software" class="nav-link">Software</a>
-        <a href="/email/" class="nav-link nav-cta">Get in touch</a>
-      </nav>
-    </div>
-  </header>
-
   <nav>
     <a href="/" class="logo">Toby Jones</a>
     <ul>
@@ -260,7 +274,7 @@ nav { display: none; }
       <li><a href="/software">Software</a></li>
     </ul>
     <a href="/email/" class="nav-cta">Get in touch ↗</a>
-      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobileMenu"></div>
 
@@ -387,13 +401,13 @@ nav { display: none; }
 
   <footer>
     <div class="footer-inner">
-          <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+      <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
       <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/portfolio">Portfolio</a>
-        <a href="/webcare">WebCare+</a>
-        <a href="/email/">Email</a>
+        <a href="/portfolio">View Portfolio</a>
+        <a href="/webcare">Website Care Plans</a>
+        <a href="/email/">Contact Me</a>
         <a href="/complaints">Complaints</a>
+        <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </footer>
