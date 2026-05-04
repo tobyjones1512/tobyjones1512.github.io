@@ -25,6 +25,11 @@
         .btn-check:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
         .loading { display: none; text-align: center; margin-top: 20px; }
+        .downloads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 8px; }
+        .download-card { background: #fff; border: 1px solid #d2d2d7; border-radius: 12px; padding: 16px; }
+        .download-card h3 { margin: 0 0 6px; font-size: 16px; font-weight: 700; }
+        .download-card .dl-desc { font-size: 13px; color: #666; margin-bottom: 8px; }
+        .download-btn { display: inline-block; padding: 8px 12px; background: #0071e3; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; }
         .spinner { width: 24px; height: 24px; border: 3px solid rgba(0,113,227,0.2); border-top-color: #0071e3; border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 10px; }
         @keyframes spin { to { transform: rotate(360deg); } }
         .loading p { color: #86868b; font-size: 14px; }
@@ -58,7 +63,10 @@
         .footer-links { display: flex; gap: 24px; }
         .footer-links a { font-size: 12px; color: #86868b; text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: #1d1d1f; }
-    </style>
+</style>
+<style>
+#redownload-form, #loading, #error-msg, #result { display: none; }
+</style>
 </head>
 <body>
     <div class="container">
@@ -66,7 +74,32 @@
             <h1>Re-download Software</h1>
             <p class="subtitle">Enter the card you used to purchase. We'll run a $1 authorization (not charged) to verify your card and retrieve your licences.</p>
 
-            <form id="redownload-form" novalidate>
+        <section class="downloads-grid-wrap">
+          <h2 class="section-heading" style="text-align:center; margin:0 0 12px;">Downloads</h2>
+            <div class="downloads-grid" aria-label="Downloads">
+            <div class="download-card">
+              <h3>Call Sheets</h3>
+              <div class="dl-desc">Licence bundle for Call Sheets</div>
+              <a class="download-btn" href="/assets/downloads/call-sheets.zip" data-product="call-sheets" download>Download</a>
+            </div>
+            <div class="download-card">
+              <h3>Budgeting</h3>
+              <div class="dl-desc">Licence bundle for Budgeting</div>
+              <a class="download-btn" href="/assets/downloads/budgeting.zip" data-product="budgeting" download>Download</a>
+            </div>
+            <div class="download-card">
+              <h3>Scheduling</h3>
+              <div class="dl-desc">Licence bundle for Scheduling</div>
+              <a class="download-btn" href="/assets/downloads/scheduling.zip" data-product="scheduling" download>Download</a>
+            </div>
+            <div class="download-card">
+              <h3>Filmmakers Kit</h3>
+              <div class="dl-desc">Licence bundle for Filmmakers Kit</div>
+              <a class="download-btn" href="/assets/downloads/filmmakers-kit.zip" data-product="filmmakers-kit" download>Download</a>
+            </div>
+          </div>
+        </section>
+        <form id="redownload-form" novalidate>
                 <div class="form-group">
                     <label for="card-number">Card Number</label>
                     <input type="tel" id="card-number" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" />
