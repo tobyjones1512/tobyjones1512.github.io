@@ -1005,34 +1005,6 @@
 
       if (isAmex !== prevAmex) updatePriceSummary(isAmex);
     });
-    }
-
-    // ── Card number formatting ───────────────────────────────────────────────
-    const cardInput = document.getElementById('card-number');
-
-    cardInput.addEventListener('input', () => {
-      let raw  = cardInput.value.replace(/\D/g, '');
-      const type = detectCard(raw);
-      const prevAmex = isAmex;
-      isAmex = (type === 'amex');
-
-      // AMEX: 4-6-5 (15 digits); others: 4-4-4-4 (16 digits)
-      let formatted = '';
-      if (isAmex) {
-        raw = raw.slice(0, 15);
-        if (raw.length > 10)      formatted = raw.slice(0,4) + ' ' + raw.slice(4,10) + ' ' + raw.slice(10);
-        else if (raw.length > 4)  formatted = raw.slice(0,4) + ' ' + raw.slice(4);
-        else                       formatted = raw;
-      } else {
-        raw = raw.slice(0, 16);
-        formatted = raw.match(/.{1,4}/g)?.join(' ') || '';
-      }
-
-      cardInput.value = formatted;
-      showBrand(type);
-
-      if (isAmex !== prevAmex) updatePriceSummary(isAmex);
-    });
 
     // ── Month/year/CVV auto-advance ──────────────────────────────────────────
     const expMonth = document.getElementById("exp-month");
