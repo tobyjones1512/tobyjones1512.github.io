@@ -201,7 +201,7 @@ module.exports = async (req, res) => {
           let serialKey = null;
           if (product && PRODUCTS[product] && last4) {
             const { prefix, name: productName, download } = PRODUCTS[product];
-            serialKey = txnId.split('').reverse().join('');
+            serialKey = txnId;
             const record = {
               product,
               key: serialKey,
