@@ -1,0 +1,7 @@
+/* Minimal shared styles for Resend Receipt widget */
+.resend-card { border:1px solid #d2d7; border-radius:12px; padding:12px; display:flex; flex-direction:column; align-items:flex-start; gap:8px; }
+.resend-card label { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.15em; color:#777; }
+.resend-card input { width:100%; padding:8px 10px; border:1px solid #d2d7; border-radius:6px; }
+.rr-status { min-height:18px; }
+.btn { display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border-radius:8px; border:0; background:#0071e3; color:white; font-weight:700; }
+.btn:hover { opacity:.95; transform: translateY(-1px); }
