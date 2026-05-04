@@ -65,10 +65,15 @@ module.exports = async (req, res) => {
   const paymentType = new ApiContracts.PaymentType();
   paymentType.setOpaqueData(opaqueDataType);
 
+  const orderDetails = new ApiContracts.OrderType();
+  orderDetails.setDescription("Redownload Serial Key Verification. WILL NOT CAPTURE.");
+
   const txnRequest = new ApiContracts.TransactionRequestType();
   txnRequest.setTransactionType(ApiContracts.TransactionTypeEnum.AUTHONLYTRANSACTION);
   txnRequest.setPayment(paymentType);
   txnRequest.setAmount("1.00");
+  txnRequest.setTaxExempt(true);
+  txnRequest.setOrder(orderDetails);
 
   const createRequest = new ApiContracts.CreateTransactionRequest();
   createRequest.setMerchantAuthentication(merchantAuth);

@@ -295,22 +295,34 @@
             box-shadow: 0 12px 32px rgba(0,0,0,0.12);
         }
         
-        /* Bundle Link */
+        /* Bundle CTA */
         .bundle-link {
-            padding: 80px 0;
+            padding: 0;
+            background: none;
+        }
+        .bundle-cta {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 80px 24px;
             text-align: center;
-            background: var(--card);
         }
-        
-        .bundle-link a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 20px;
-            transition: opacity 0.2s;
+        .bundle-cta-inner { max-width: 580px; margin: 0 auto; }
+        .bundle-app-icons { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 28px; }
+        .bundle-app-icons img { width: 52px; height: 52px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        .bundle-app-icons .plus { font-size: 18px; color: rgba(255,255,255,0.3); font-weight: 300; }
+        .bundle-cta h2 { font-size: 42px; font-weight: 700; color: #ffffff; letter-spacing: -0.03em; margin-bottom: 12px; }
+        .bundle-cta p { font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.5; margin-bottom: 28px; }
+        .bundle-price-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 32px; }
+        .bundle-new-price { font-size: 28px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em; }
+        .bundle-old-price { font-size: 17px; color: rgba(255,255,255,0.35); text-decoration: line-through; }
+        .bundle-save-badge { background: rgba(52,199,89,0.18); border: 1px solid rgba(52,199,89,0.35); color: #34c759; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 980px; }
+        .bundle-btn {
+            display: inline-block; padding: 16px 40px;
+            background: #ffffff; color: #1d1d1f;
+            font-size: 16px; font-weight: 600; border-radius: 980px;
+            text-decoration: none; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
         }
-        
-        .bundle-link a:hover { opacity: 0.7; }
+        .bundle-btn:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
         
         @media (max-width: 768px) {
             .feature-grid,
@@ -491,9 +503,27 @@
             </div>
         </section>
 
-        <!-- Bundle Link -->
+        <!-- Bundle CTA -->
         <section class="bundle-link">
-            <p>Looking for the full bundle? <a href="/software/filmmakers-kit/">Get Filmmakers Kit (Save 25%) →</a></p>
+            <div class="bundle-cta">
+                <div class="bundle-cta-inner">
+                    <div class="bundle-app-icons">
+                        <img src="/software/scheduling/Icon.png" alt="Scheduling">
+                        <span class="plus">+</span>
+                        <img src="/software/budgeting/Icon.png" alt="Budgeting">
+                        <span class="plus">+</span>
+                        <img src="/software/call-sheets/Icon.png" alt="Call Sheets">
+                    </div>
+                    <h2>Better together.</h2>
+                    <p>Get Scheduling, Budgeting, and Call Sheets in one bundle and save $14.98 compared to buying separately.</p>
+                    <div class="bundle-price-row">
+                        <span class="bundle-new-price">$44.99</span>
+                        <span class="bundle-old-price">$59.97</span>
+                        <span class="bundle-save-badge">SAVE 25%</span>
+                    </div>
+                    <a href="/software/filmmakers-kit/" class="bundle-btn">Get Filmmakers Kit →</a>
+                </div>
+            </div>
         </section>
     </div>
 
