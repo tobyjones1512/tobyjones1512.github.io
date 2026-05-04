@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "authorizenet": "^1.0.10"
+    "authorizenet": "^1.0.10",
+    "@vercel/kv": "^3.0.0"
   }
 }

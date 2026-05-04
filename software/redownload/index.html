@@ -7,54 +7,56 @@
     <script src="https://js.authorize.net/v1/Accept.js" charset="utf-8"></script>
     <style>
         * { margin:0; padding:0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1d1d1f; background: #f5f5f7; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .container { max-width: 500px; width: 100%; padding: 20px; }
-        .card { background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-        h1 { font-size: 32px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
-        .subtitle { color: #86868b; margin-bottom: 32px; font-size: 17px; }
-        
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-size: 14px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px; }
-        input { width: 100%; padding: 12px 16px; border: 1px solid #d2d2d7; border-radius: 10px; font-size: 16px; font-family: inherit; transition: border-color 0.2s; }
-        input:focus { outline: none; border-color: #0071e3; box-shadow: 0 0 0 3px rgba(0,113,227,0.1); }
-        
-        #card-container { margin-bottom: 20px; }
-        
-        .btn-check { width: 100%; padding: 16px; background: #0071e3; color: #fff; font-size: 17px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; transition: all 0.2s; margin-top: 8px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1d1d1f; background: #f5f5f7; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .container { max-width: 520px; width: 100%; padding: 20px; }
+        .card { background: #fff; border-radius: 20px; padding: 44px 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.09); }
+        h1 { font-size: 30px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .subtitle { color: #86868b; margin-bottom: 32px; font-size: 15px; line-height: 1.5; }
+
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #1d1d1f; margin-bottom: 8px; }
+        input { width: 100%; padding: 12px 16px; border: 1.5px solid #d2d2d7; border-radius: 10px; font-size: 15px; font-family: inherit; transition: border-color 0.2s; outline: none; }
+        input:focus { border-color: #0071e3; box-shadow: 0 0 0 3px rgba(0,113,227,0.1); }
+
+        .card-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+        .btn-check { width: 100%; padding: 15px; background: #0071e3; color: #fff; font-size: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; transition: all 0.2s; margin-top: 8px; font-family: inherit; }
         .btn-check:hover:not(:disabled) { background: #0077ed; transform: translateY(-1px); }
-        .btn-check:disabled { opacity: 0.6; cursor: not-allowed; }
-        
-        .result { margin-top: 24px; padding: 20px; border-radius: 12px; background: #f5f5f7; display: none; }
-        .result h3 { font-size: 20px; margin-bottom: 16px; font-weight: 700; }
-        .download-link { display: block; padding: 14px; background: #fff; border-radius: 10px; text-decoration: none; color: #0071e3; font-weight: 600; margin-bottom: 10px; text-align: center; transition: background 0.2s; }
-        .download-link:hover { background: #e8f2ff; }
-        
-        .error { margin-top: 16px; padding: 12px 16px; border-radius: 10px; background: #fdf1f1; color: #b22222; font-size: 14px; display: none; }
-        .success { color: #1a7f4b; }
-        
-        .loading { display: none; text-align: center; margin-top: 16px; }
-        .spinner { width: 24px; height: 24px; border: 3px solid rgba(0,113,227,0.2); border-top-color: #0071e3; border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto; }
+        .btn-check:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        .loading { display: none; text-align: center; margin-top: 20px; }
+        .spinner { width: 24px; height: 24px; border: 3px solid rgba(0,113,227,0.2); border-top-color: #0071e3; border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 10px; }
         @keyframes spin { to { transform: rotate(360deg); } }
-        
+        .loading p { color: #86868b; font-size: 14px; }
+
+        .error-msg { display: none; margin-top: 16px; padding: 12px 16px; border-radius: 10px; background: #fdf1f1; color: #b22222; font-size: 14px; }
+
+        /* Results */
+        .result { display: none; margin-top: 28px; }
+        .result-title { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #1d1d1f; }
+
+        .purchase-item { background: #f5f5f7; border: 1.5px solid #d2d2d7; border-radius: 14px; padding: 20px; margin-bottom: 14px; text-align: left; }
+        .purchase-product { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #86868b; margin-bottom: 6px; }
+        .purchase-key { font-family: 'SF Mono', 'Menlo', 'Monaco', monospace; font-size: 17px; font-weight: 700; letter-spacing: 0.06em; color: #1d1d1f; margin-bottom: 12px; word-break: break-all; }
+        .purchase-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .copy-key-btn { display: inline-flex; align-items: center; gap: 5px; padding: 7px 14px; background: #1d1d1f; color: #fff; border: none; border-radius: 980px; font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .copy-key-btn:hover { background: #333; }
+        .copy-key-btn.copied { background: #1a7f4b; }
+        .dl-link { display: inline-flex; align-items: center; gap: 5px; padding: 7px 14px; background: #e8f2ff; color: #0071e3; border-radius: 980px; font-size: 12px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+        .dl-link:hover { background: #d0e8ff; }
+
+        .no-purchases { text-align: center; padding: 24px; color: #86868b; font-size: 15px; }
+
         .back-link { display: block; text-align: center; margin-top: 24px; color: #86868b; text-decoration: none; font-size: 14px; }
         .back-link:hover { color: #0071e3; }
 
-        /* ── Footer ─────────────────────────────────────── */
-        footer {
-          background: #ffffff;
-          border-top: 1px solid #d2d2d7;
-          padding: 40px 24px;
-        }
-        .footer-inner {
-          max-width: 1080px; margin: 0 auto;
-          display: flex; align-items: center; justify-content: space-between;
-        }
+        .secure-note { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12px; color: #86868b; margin-top: 16px; }
+
+        footer { background: #ffffff; border-top: 1px solid #d2d2d7; padding: 40px 24px; width: 100%; margin-top: auto; }
+        .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
         .footer-copy { font-size: 12px; color: #86868b; }
         .footer-links { display: flex; gap: 24px; }
-        .footer-links a {
-          font-size: 12px; color: #86868b;
-          text-decoration: none; transition: color 0.2s;
-        }
+        .footer-links a { font-size: 12px; color: #86868b; text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: #1d1d1f; }
     </style>
 </head>
@@ -62,182 +64,231 @@
     <div class="container">
         <div class="card">
             <h1>Re-download Software</h1>
-            <p class="subtitle">Enter your email and card details to access your purchased software.</p>
-            
-            <form id="redownload-form">
+            <p class="subtitle">Enter the card you used to purchase. We'll run a $1 authorization (not charged) to verify your card and retrieve your licences.</p>
+
+            <form id="redownload-form" novalidate>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="you@example.com" required>
+                    <label for="card-number">Card Number</label>
+                    <input type="tel" id="card-number" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" />
                 </div>
-                
+
+                <div class="card-row">
+                    <div class="form-group">
+                        <label for="exp-month">Month</label>
+                        <input type="tel" id="exp-month" inputmode="numeric" placeholder="MM" maxlength="2" autocomplete="cc-exp-month" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exp-year">Year</label>
+                        <input type="tel" id="exp-year" inputmode="numeric" placeholder="YY" maxlength="2" autocomplete="cc-exp-year" />
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="tel" id="cvv" inputmode="numeric" placeholder="•••" maxlength="4" autocomplete="cc-csc" />
+                    </div>
+                </div>
+
                 <div class="form-group">
-                    <label>Card Details</label>
-                    <div id="card-container"></div>
+                    <label for="postal">Postal / ZIP Code</label>
+                    <input type="text" id="postal" placeholder="A1A 1A1" autocomplete="postal-code" />
                 </div>
-                
-                <button type="submit" class="btn-check" id="check-btn">Check Purchases</button>
+
+                <button type="submit" class="btn-check" id="check-btn">Find My Licences</button>
+
+                <p class="secure-note">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    Card tokenized by Authorize.net · never stored
+                </p>
             </form>
-            
+
             <div class="loading" id="loading">
                 <div class="spinner"></div>
-                <p style="margin-top: 12px; color: #86868b;">Checking purchases...</p>
+                <p>Verifying card...</p>
             </div>
-            
-            <div class="error" id="error-msg"></div>
-            
+
+            <div class="error-msg" id="error-msg"></div>
+
             <div class="result" id="result">
-                <h3>Your Purchased Apps</h3>
-                <div id="apps-list"></div>
+                <div class="result-title">Your Licences</div>
+                <div id="purchases-list"></div>
             </div>
-            
+
             <a href="/software/" class="back-link">← Back to Software</a>
         </div>
     </div>
 
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-copy">&copy; 2026 Toby Jones. All rights reserved.</span>
+            <div class="footer-links">
+                <a href="/webcare">WebCare+</a>
+                <a href="/email/">Email</a>
+                <a href="/complaints">Complaints</a>
+                <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Config - these should match your Authorize.net settings
-        const API_LOGIN_ID = '__AUTHORIZENET_API_LOGIN_ID__';
-        const CLIENT_KEY = '__AUTHORIZENET_CLIENT_KEY__';
-        const CHECK_PURCHASES_URL = '__CHECK_PURCHASES_URL__';
-        
-        const form = document.getElementById('redownload-form');
-        const checkBtn = document.getElementById('check-btn');
-        const loading = document.getElementById('loading');
-        const errorMsg = document.getElementById('error-msg');
-        const resultDiv = document.getElementById('result');
-        const appsList = document.getElementById('apps-list');
-        
-        form.addEventListener('submit', async (e) => {
+        const API_LOGIN_ID     = '__AUTHORIZENET_API_LOGIN_ID__';
+        const CLIENT_KEY       = '__AUTHORIZENET_CLIENT_KEY__';
+        const VERIFY_CARD_URL  = '__VERIFY_CARD_URL__';
+
+        const PRODUCT_NAMES = {
+            'scheduling':     'Scheduling',
+            'call-sheets':    'Call Sheets',
+            'budgeting':      'Budgeting',
+            'filmmakers-kit': 'Filmmakers Kit',
+        };
+
+        const cardInput = document.getElementById('card-number');
+        const expMonth  = document.getElementById('exp-month');
+        const expYear   = document.getElementById('exp-year');
+        const cvvField  = document.getElementById('cvv');
+
+        // Card number formatting
+        cardInput.addEventListener('input', () => {
+            let raw = cardInput.value.replace(/\D/g, '');
+            const isAmex = /^3[47]/.test(raw);
+            if (isAmex) {
+                raw = raw.slice(0, 15);
+                if (raw.length > 10)      cardInput.value = raw.slice(0,4) + ' ' + raw.slice(4,10) + ' ' + raw.slice(10);
+                else if (raw.length > 4)  cardInput.value = raw.slice(0,4) + ' ' + raw.slice(4);
+                else                       cardInput.value = raw;
+            } else {
+                raw = raw.slice(0, 16);
+                cardInput.value = raw.match(/.{1,4}/g)?.join(' ') || '';
+            }
+        });
+
+        expMonth.addEventListener('input', () => {
+            expMonth.value = expMonth.value.replace(/\D/g, '');
+            if (expMonth.value.length === 2) expYear.focus();
+        });
+        expYear.addEventListener('input', () => {
+            expYear.value = expYear.value.replace(/\D/g, '');
+            if (expYear.value.length === 2) cvvField.focus();
+        });
+        cvvField.addEventListener('input', () => {
+            cvvField.value = cvvField.value.replace(/\D/g, '');
+        });
+
+        document.getElementById('redownload-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             hideError();
-            resultDiv.style.display = 'none';
-            
-            const email = document.getElementById('email').value.trim();
-            if (!email) {
-                showError('Please enter your email address.');
+            document.getElementById('result').style.display = 'none';
+
+            const rawCard = cardInput.value.replace(/\D/g, '');
+            if (!rawCard || !expMonth.value || !expYear.value || !cvvField.value) {
+                showError('Please fill in all card fields.');
                 return;
             }
-            
-            // Get card data from Accept.js
-            const cardNumber = document.getElementById('card-number')?.value?.replace(/\D/g, '');
-            const expMonth = document.getElementById('exp-month')?.value;
-            const expYear = document.getElementById('exp-year')?.value;
-            const cvv = document.getElementById('cvv')?.value;
-            const zip = document.getElementById('postal')?.value;
-            
-            if (!cardNumber || !expMonth || !expYear || !cvv) {
-                showError('Please enter complete card details.');
-                return;
-            }
-            
+
             setLoading(true);
-            
+
             const secureData = {
                 authData: { apiLoginID: API_LOGIN_ID, clientKey: CLIENT_KEY },
                 cardData: {
-                    cardNumber: cardNumber,
-                    month: expMonth.padStart(2, '0'),
-                    year: '20' + expYear,
-                    cardCode: cvv,
-                    zip: zip
+                    cardNumber: rawCard,
+                    month:      expMonth.value.padStart(2, '0'),
+                    year:       '20' + expYear.value,
+                    cardCode:   cvvField.value,
+                    zip:        (document.getElementById('postal').value || '').trim()
                 }
             };
-            
+
             Accept.dispatchData(secureData, async (response) => {
                 if (response.messages.resultCode === 'Error') {
-                    const msgs = response.messages.message.map(m => m.text).join(' ');
-                    showError(msgs);
+                    showError(response.messages.message.map(m => m.text).join(' '));
                     setLoading(false);
                     return;
                 }
-                
+
                 try {
-                    const res = await fetch(CHECK_PURCHASES_URL, {
-                        method: 'POST',
+                    const res = await fetch(VERIFY_CARD_URL, {
+                        method:  'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            opaqueData: response.opaqueData,
-                            email: email
-                        })
+                        body:    JSON.stringify({ opaqueData: response.opaqueData })
                     });
-                    
-                    const data = await res.json();
-                    
-                    if (data.success && data.apps.length > 0) {
-                        showApps(data.apps);
-                    } else if (data.success && data.apps.length === 0) {
-                        showError('No purchases found for this email and card combination.');
+
+                    let data;
+                    try { data = await res.json(); } catch (_) {
+                        showError('Unexpected server response. Please try again.');
+                        setLoading(false);
+                        return;
+                    }
+
+                    if (data.success) {
+                        showPurchases(data.purchases || []);
                     } else {
-                        showError(data.message || 'Failed to check purchases. Please try again.');
+                        showError(data.message || 'Verification failed. Please try again.');
                     }
                 } catch (err) {
                     showError('Network error: ' + (err.message || err));
                 }
-                
+
                 setLoading(false);
             });
         });
-        
-        function showApps(apps) {
-            let html = '';
-            const appMap = {
-                'iptv-manager': { name: 'IPTV Manager', url: '/downloads/iptv-manager.zip' },
-                'scheduling': { name: 'Scheduling', url: '/downloads/scheduling.zip' },
-                'budgeting': { name: 'Budgeting', url: '/downloads/budgeting.zip' },
-                'call-sheets': { name: 'Call Sheets', url: '/downloads/call-sheets.zip' },
-                'filmmakers-kit': { name: 'Filmmakers Kit', url: '/downloads/filmmakers-kit.zip' }
-            };
-            
-            apps.forEach(app => {
-                if (appMap[app]) {
-                    html += `<a href="${appMap[app].url}" class="download-link" download>${appMap[app].name} (Download)</a>`;
-                }
+
+        function showPurchases(purchases) {
+            const list = document.getElementById('purchases-list');
+            const result = document.getElementById('result');
+
+            if (purchases.length === 0) {
+                list.innerHTML = '<div class="no-purchases">No purchases found for this card.</div>';
+                result.style.display = '';
+                return;
+            }
+
+            list.innerHTML = purchases.map((p, i) => {
+                const name = PRODUCT_NAMES[p.product] || p.product;
+                return `
+                <div class="purchase-item">
+                    <div class="purchase-product">${name}</div>
+                    <div class="purchase-key" id="key-${i}">${p.key}</div>
+                    <div class="purchase-actions">
+                        <button class="copy-key-btn" id="copy-${i}" onclick="copyKey(${i})">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            Copy Key
+                        </button>
+                        ${p.downloadUrl ? `<a href="${p.downloadUrl}" class="dl-link" download>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download
+                        </a>` : ''}
+                    </div>
+                </div>`;
+            }).join('');
+
+            result.style.display = '';
+        }
+
+        function copyKey(i) {
+            const key = document.getElementById('key-' + i).textContent;
+            navigator.clipboard.writeText(key).then(() => {
+                const btn = document.getElementById('copy-' + i);
+                btn.classList.add('copied');
+                btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Key';
+                }, 2500);
             });
-            
-            appsList.innerHTML = html;
-            resultDiv.style.display = 'block';
         }
-        
-        function showError(msg) {
-            errorMsg.textContent = msg;
-            errorMsg.style.display = 'block';
-        }
-        
-        function hideError() {
-            errorMsg.style.display = 'none';
-        }
-        
+
         function setLoading(on) {
-            checkBtn.disabled = on;
-            loading.style.display = on ? 'block' : 'none';
+            document.getElementById('check-btn').disabled = on;
+            document.getElementById('loading').style.display = on ? 'block' : 'none';
         }
-        
-        // Initialize Accept.js hosted fields (simplified for redownload)
-        // Note: In production, you'd want to use Accept.js hosted fields for better UX
-        // For simplicity, we'll use basic inputs here
-        const cardContainer = document.getElementById('card-container');
-        cardContainer.innerHTML = `
-            <input type="tel" id="card-number" placeholder="Card Number" maxlength="19" style="margin-bottom:8px;">
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px;">
-                <input type="tel" id="exp-month" placeholder="MM" maxlength="2">
-                <input type="tel" id="exp-year" placeholder="YY" maxlength="2">
-                <input type="tel" id="cvv" placeholder="CVV" maxlength="4">
-            </div>
-            <input type="text" id="postal" placeholder="ZIP/Postal Code">
-        `;
+
+        function showError(msg) {
+            const el = document.getElementById('error-msg');
+            el.textContent = msg;
+            el.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('error-msg').style.display = 'none';
+        }
     </script>
-
-  <footer>
-    <div class="footer-inner">
-      <span class="footer-copy">&copy; 2026 Toby Jones. All rights reserved.</span>
-      <div class="footer-links">
-        <a href="/webcare">WebCare+</a>
-        <a href="/email/">Email</a>
-        <a href="/complaints">Complaints</a>
-        <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-  </footer>
-
 </body>
 </html>
