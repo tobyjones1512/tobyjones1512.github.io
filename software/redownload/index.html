@@ -40,7 +40,18 @@
             background: linear-gradient(135deg, #1d1d1f 0%, #434343 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        .downloads-header p { font-size: 22px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.5; }
+        .downloads-header p { font-size: 22px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px; line-height: 1.5; }
+        .coffee-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; border-radius: 980px;
+            background: #FFDD00; color: #000;
+            font-size: 15px; font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.2s;
+            box-shadow: 0 4px 16px rgba(255, 221, 0, 0.3);
+        }
+        .coffee-btn:hover { opacity: 0.85; transform: scale(1.02); }
+        .coffee-btn svg { width: 20px; height: 20px; }
         
         .downloads-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
         .download-item {
@@ -147,6 +158,10 @@
             <div class="downloads-header">
                 <h1>Downloads</h1>
                 <p>Download your software and accessories. Direct from the source.</p>
+                <a href="/buy-me-a-coffee/" class="coffee-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 3H4v10c0 2.2 1.8 4 4 4h6c2.2 0 4-1.8 4-4v-1h2c1.7 0 3-1.3 3-3V6c0-1.7-1.3-3-3-3zm-2 10c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V5h12v8zm2-5c0 .6-.4 1-1 1h-1V5h1c.6 0 1 .4 1 1v2zM4 19h16v2H4z"/></svg>
+                    Buy Me A Coffee
+                </a>
             </div>
             
             <div class="downloads-list">
@@ -181,18 +196,6 @@
                         <p class="desc">Generate and distribute professional call sheets in seconds.</p>
                     </div>
                     <a href="/downloads/call-sheets.zip" class="dl-btn" download>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Download
-                    </a>
-                </div>
-
-                <div class="download-item">
-                    <div>
-                        <img src="/software/filmmakers-kit/Icon.png" alt="Filmmakers Kit" class="download-item-icon" />
-                        <h3>Filmmakers Kit</h3>
-                        <p class="desc">The complete bundle: Scheduling, Budgeting, and Call Sheets in one package.</p>
-                    </div>
-                    <a href="/downloads/filmmakers-kit.zip" class="dl-btn" download>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download
                     </a>
