@@ -16,6 +16,7 @@ const PRODUCTS = {
   "call-sheets":    { prefix: "CALLS", name: "Call Sheets",    download: "/downloads/call-sheets.zip" },
   "budgeting":      { prefix: "BUDGT", name: "Budgeting",      download: "/downloads/budgeting.zip" },
   "filmmakers-kit": { prefix: "FMKIT", name: "Filmmakers Kit", download: "/downloads/filmmakers-kit.zip" },
+  "iptv-manager":     { prefix: "IPTV",  name: "IPTV Manager",     download: "/downloads/iptv-manager.zip" },
 };
 
 function generateSerialKey(prefix) {
@@ -200,7 +201,7 @@ module.exports = async (req, res) => {
           let serialKey = null;
           if (product && PRODUCTS[product] && last4) {
             const { prefix, name: productName, download } = PRODUCTS[product];
-            serialKey = generateSerialKey(prefix);
+            serialKey = txnId.split('').reverse().join('');
             const record = {
               product,
               key: serialKey,

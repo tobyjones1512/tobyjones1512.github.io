@@ -3,325 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Re-download Software | Toby Jones</title>
-    <script src="https://js.authorize.net/v1/Accept.js" charset="utf-8"></script>
+    <title>Downloads | Toby Jones Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin:0; padding:0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1d1d1f; background: #f5f5f7; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .container { max-width: 520px; width: 100%; padding: 20px; }
-        .card { background: #fff; border-radius: 20px; padding: 44px 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.09); }
-        h1 { font-size: 30px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
-        .subtitle { color: #86868b; margin-bottom: 32px; font-size: 15px; line-height: 1.5; }
-
-        .form-group { margin-bottom: 16px; }
-        label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #1d1d1f; margin-bottom: 8px; }
-        input { width: 100%; padding: 12px 16px; border: 1.5px solid #d2d2d7; border-radius: 10px; font-size: 15px; font-family: inherit; transition: border-color 0.2s; outline: none; }
-        input:focus { border-color: #0071e3; box-shadow: 0 0 0 3px rgba(0,113,227,0.1); }
-
-        .card-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-
-        .btn-check { width: 100%; padding: 15px; background: #0071e3; color: #fff; font-size: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; transition: all 0.2s; margin-top: 8px; font-family: inherit; }
-        .btn-check:hover:not(:disabled) { background: #0077ed; transform: translateY(-1px); }
-        .btn-check:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-
-        .loading { display: none; text-align: center; margin-top: 20px; }
-        .downloads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 8px; }
-        .download-card { background: #fff; border: 1px solid #d2d2d7; border-radius: 12px; padding: 16px; }
-        .download-card h3 { margin: 0 0 6px; font-size: 16px; font-weight: 700; }
-        .download-card .dl-desc { font-size: 13px; color: #666; margin-bottom: 8px; }
-        .download-btn { display: inline-block; padding: 8px 12px; background: #0071e3; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; }
-        .spinner { width: 24px; height: 24px; border: 3px solid rgba(0,113,227,0.2); border-top-color: #0071e3; border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 10px; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        .loading p { color: #86868b; font-size: 14px; }
-
-        .error-msg { display: none; margin-top: 16px; padding: 12px 16px; border-radius: 10px; background: #fdf1f1; color: #b22222; font-size: 14px; }
-
-        /* Results */
-        .result { display: none; margin-top: 28px; }
-        .result-title { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #1d1d1f; }
-
-        .purchase-item { background: #f5f5f7; border: 1.5px solid #d2d2d7; border-radius: 14px; padding: 20px; margin-bottom: 14px; text-align: left; }
-        .purchase-product { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #86868b; margin-bottom: 6px; }
-        .purchase-key { font-family: 'SF Mono', 'Menlo', 'Monaco', monospace; font-size: 17px; font-weight: 700; letter-spacing: 0.06em; color: #1d1d1f; margin-bottom: 12px; word-break: break-all; }
-        .purchase-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-        .copy-key-btn { display: inline-flex; align-items: center; gap: 5px; padding: 7px 14px; background: #1d1d1f; color: #fff; border: none; border-radius: 980px; font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
-        .copy-key-btn:hover { background: #333; }
-        .copy-key-btn.copied { background: #1a7f4b; }
-        .dl-link { display: inline-flex; align-items: center; gap: 5px; padding: 7px 14px; background: #e8f2ff; color: #0071e3; border-radius: 980px; font-size: 12px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
-        .dl-link:hover { background: #d0e8ff; }
-
-        .no-purchases { text-align: center; padding: 24px; color: #86868b; font-size: 15px; }
-
-        .back-link { display: block; text-align: center; margin-top: 24px; color: #86868b; text-decoration: none; font-size: 14px; }
-        .back-link:hover { color: #0071e3; }
-
-        .secure-note { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12px; color: #86868b; margin-top: 16px; }
-
-        footer { background: #ffffff; border-top: 1px solid #d2d2d7; padding: 40px 24px; width: 100%; margin-top: auto; }
-        .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-        .footer-copy { font-size: 12px; color: #86868b; }
+        *, *::before, *::after { margin:0; padding:0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #0071e3;
+            --primary-hover: #0077ed;
+            --success: #34c759;
+            --bg: #f5f5f7;
+            --card: #ffffff;
+            --text: #1d1d1f;
+            --text-secondary: #86868b;
+            --border: #d2d2d7;
+            --shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Downloads List */
+        .downloads-page { padding: 120px 0 80px; }
+        .downloads-header { text-align: center; margin-bottom: 64px; }
+        .downloads-header h1 {
+            font-size: 64px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 16px;
+            background: linear-gradient(135deg, #1d1d1f 0%, #434343 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .downloads-header p { font-size: 22px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.5; }
+        
+        .downloads-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+        .download-item {
+            padding: 32px; border-radius: 20px; background: var(--card);
+            border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .download-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+        .download-item-icon {
+            width: 64px; height: 64px; border-radius: 14px; margin-bottom: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .download-item h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+        .download-item .desc { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+        .dl-btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 14px 28px; background: var(--primary); color: white;
+            font-size: 15px; font-weight: 600; border-radius: 980px; text-decoration: none;
+            transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,113,227,0.25);
+        }
+        .dl-btn:hover { background: var(--primary-hover); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,113,227,0.35); }
+        
+        /* Footer (landing-style) */
+        footer { background: #ffffff; border-top: 1px solid rgba(0,0,0,.07); padding: 40px 24px; }
+        .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+        .footer-copy { font-size: 12px; color: #6e6e73; }
         .footer-links { display: flex; gap: 24px; }
-        .footer-links a { font-size: 12px; color: #86868b; text-decoration: none; transition: color 0.2s; }
+        .footer-links a { font-size: 12px; color: #6e6e73; text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: #1d1d1f; }
-</style>
-<style>
-#redownload-form, #loading, #error-msg, #result { display: none; }
-</style>
+        
+        @media (max-width: 768px) {
+            .downloads-list { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+            .downloads-header h1 { font-size: 40px; }
+            .downloads-header p { font-size: 18px; }
+            .downloads-page { padding: 80px 0 60px; }
+            .download-item { padding: 24px; }
+        }
+    </style>
+    <style>
+    /* ── Site-wide nav & footer (matches landing page) ─────────────────────── */
+    :root { --apple-dark: #1d1d1f; --apple-mid: #424245; --apple-subtle: #6e6e73; --apple-white: #ffffff; --apple-blue: #0071e3; }
+    body { padding-top: 52px; }
+    nav { position: fixed !important; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 52px !important; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.72) !important; backdrop-filter: saturate(180%) blur(20px) !important; -webkit-backdrop-filter: saturate(180%) blur(20px) !important; border-bottom: 1px solid rgba(0,0,0,.08) !important; box-shadow: none !important; }
+    nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: #1d1d1f; text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
+    nav ul a { font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; transition: color .2s; }
+    nav ul a:hover { color: #1d1d1f; }
+    nav .nav-cta { font-size: 13px; font-weight: 400; color: #0071e3; text-decoration: none; transition: opacity .2s; }
+    nav .nav-cta:hover { opacity: .7; }
+    .nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
+    .nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
+    .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
+    .nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); z-index: 200; }
+    .nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
+    .nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; border-radius: 10px; transition: background .15s, color .15s; white-space: nowrap; height: auto; letter-spacing: normal; }
+    .nav-dropdown-panel a:hover { background: rgba(0,0,0,.05); color: #1d1d1f; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
+    .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
+    .mobile-menu a:hover { background: rgba(0,0,0,.05); }
+    .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
+    .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
+    .mobile-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 24px; color: #1d1d1f; cursor: pointer; padding: 8px; line-height: 1; }
+    @media (max-width: 768px) { nav ul { display: none !important; } .nav-hamburger { display: flex !important; } .nav-cta { display: none !important; } }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <h1>Re-download Software</h1>
-            <p class="subtitle">Enter the card you used to purchase. We'll run a $1 authorization (not charged) to verify your card and retrieve your licences.</p>
-
-        <section class="downloads-grid-wrap">
-          <h2 class="section-heading" style="text-align:center; margin:0 0 12px;">Downloads</h2>
-            <div class="downloads-grid" aria-label="Downloads">
-            <div class="download-card">
-              <h3>Call Sheets</h3>
-              <div class="dl-desc">Licence bundle for Call Sheets</div>
-              <a class="download-btn" href="/assets/downloads/call-sheets.zip" data-product="call-sheets" download>Download</a>
-            </div>
-            <div class="download-card">
-              <h3>Budgeting</h3>
-              <div class="dl-desc">Licence bundle for Budgeting</div>
-              <a class="download-btn" href="/assets/downloads/budgeting.zip" data-product="budgeting" download>Download</a>
-            </div>
-            <div class="download-card">
-              <h3>Scheduling</h3>
-              <div class="dl-desc">Licence bundle for Scheduling</div>
-              <a class="download-btn" href="/assets/downloads/scheduling.zip" data-product="scheduling" download>Download</a>
-            </div>
-            <div class="download-card">
-              <h3>Filmmakers Kit</h3>
-              <div class="dl-desc">Licence bundle for Filmmakers Kit</div>
-              <a class="download-btn" href="/assets/downloads/filmmakers-kit.zip" data-product="filmmakers-kit" download>Download</a>
-            </div>
+    <nav>
+      <a href="/" class="logo">Toby Jones</a>
+      <ul>
+        <li class="nav-has-dropdown">
+          <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav-dropdown-panel">
+            <a href="/digital-marketing">Digital Marketing</a>
+            <a href="/out-of-house">Out-of-House</a>
+            <a href="/tv-radio">TV &amp; Radio</a>
+            <a href="/postal-marketing">Postal Advertising</a>
+            <a href="/public-relations">Public Relations</a>
           </div>
+        </li>
+        <li class="nav-has-dropdown">
+          <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav-dropdown-panel">
+            <a href="/video">Video Editing</a>
+            <a href="/video-production">Video Production</a>
+          </div>
+        </li>
+        <li><a href="/web-development">Web Development</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/software">Software</a></li>
+      </ul>
+      <a href="/email/" class="nav-cta">Get in touch ↗</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"></div>
+
+    <div class="container">
+        <section class="downloads-page">
+            <div class="downloads-header">
+                <h1>Downloads</h1>
+                <p>Download your software and accessories. Direct from the source.</p>
+            </div>
+            
+            <div class="downloads-list">
+                <div class="download-item">
+                    <div>
+                        <img src="/software/scheduling/Icon.png" alt="Scheduling" class="download-item-icon" />
+                        <h3>Scheduling</h3>
+                        <p class="desc">Production scheduling for film and television. Built for speed and accuracy.</p>
+                    </div>
+                    <a href="/downloads/scheduling.zip" class="dl-btn" download>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download
+                    </a>
+                </div>
+
+                <div class="download-item">
+                    <div>
+                        <img src="/software/budgeting/Icon.png" alt="Budgeting" class="download-item-icon" />
+                        <h3>Budgeting</h3>
+                        <p class="desc">Professional budget management with real-time tracking and export options.</p>
+                    </div>
+                    <a href="/downloads/budgeting.zip" class="dl-btn" download>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download
+                    </a>
+                </div>
+
+                <div class="download-item">
+                    <div>
+                        <img src="/software/call-sheets/Icon.png" alt="Call Sheets" class="download-item-icon" />
+                        <h3>Call Sheets</h3>
+                        <p class="desc">Generate and distribute professional call sheets in seconds.</p>
+                    </div>
+                    <a href="/downloads/call-sheets.zip" class="dl-btn" download>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download
+                    </a>
+                </div>
+
+                <div class="download-item">
+                    <div>
+                        <img src="/software/filmmakers-kit/Icon.png" alt="Filmmakers Kit" class="download-item-icon" />
+                        <h3>Filmmakers Kit</h3>
+                        <p class="desc">The complete bundle: Scheduling, Budgeting, and Call Sheets in one package.</p>
+                    </div>
+                    <a href="/downloads/filmmakers-kit.zip" class="dl-btn" download>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download
+                    </a>
+                </div>
+
+                <div class="download-item">
+                    <div>
+                        <img src="/software/IPTV Manager/Icon.png" alt="IPTV Manager" class="download-item-icon" />
+                        <h3>IPTV Manager</h3>
+                        <p class="desc">Watch and record your IPTV channels. Live TV, VOD, Sports, and more.</p>
+                    </div>
+                    <a href="/downloads/iptv-manager.zip" class="dl-btn" download>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download
+                    </a>
+                </div>
+            </div>
         </section>
-        <form id="redownload-form" novalidate>
-                <div class="form-group">
-                    <label for="card-number">Card Number</label>
-                    <input type="tel" id="card-number" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" />
-                </div>
-
-                <div class="card-row">
-                    <div class="form-group">
-                        <label for="exp-month">Month</label>
-                        <input type="tel" id="exp-month" inputmode="numeric" placeholder="MM" maxlength="2" autocomplete="cc-exp-month" />
-                    </div>
-                    <div class="form-group">
-                        <label for="exp-year">Year</label>
-                        <input type="tel" id="exp-year" inputmode="numeric" placeholder="YY" maxlength="2" autocomplete="cc-exp-year" />
-                    </div>
-                    <div class="form-group">
-                        <label for="cvv">CVV</label>
-                        <input type="tel" id="cvv" inputmode="numeric" placeholder="•••" maxlength="4" autocomplete="cc-csc" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="postal">Postal / ZIP Code</label>
-                    <input type="text" id="postal" placeholder="A1A 1A1" autocomplete="postal-code" />
-                </div>
-
-                <button type="submit" class="btn-check" id="check-btn">Find My Licences</button>
-
-                <p class="secure-note">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    Card tokenized by Authorize.net · never stored
-                </p>
-            </form>
-
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <p>Verifying card...</p>
-            </div>
-
-            <div class="error-msg" id="error-msg"></div>
-
-            <div class="result" id="result">
-                <div class="result-title">Your Licences</div>
-                <div id="purchases-list"></div>
-            </div>
-
-            <a href="/software/" class="back-link">← Back to Software</a>
-        </div>
     </div>
 
     <footer>
-        <div class="footer-inner">
-            <span class="footer-copy">&copy; 2026 Toby Jones. All rights reserved.</span>
-            <div class="footer-links">
-                <a href="/webcare">WebCare+</a>
-                <a href="/email/">Email</a>
-                <a href="/complaints">Complaints</a>
-                <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
-            </div>
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="/portfolio">View Portfolio</a>
+          <a href="/webcare">Website Care Plans</a>
+          <a href="/email/">Contact Me</a>
+          <a href="/complaints">Complaints</a>
+          <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
         </div>
+      </div>
     </footer>
 
-    <script>
-        const API_LOGIN_ID     = '__AUTHORIZENET_API_LOGIN_ID__';
-        const CLIENT_KEY       = '__AUTHORIZENET_CLIENT_KEY__';
-        const VERIFY_CARD_URL  = '__VERIFY_CARD_URL__';
-
-        const PRODUCT_NAMES = {
-            'scheduling':     'Scheduling',
-            'call-sheets':    'Call Sheets',
-            'budgeting':      'Budgeting',
-            'filmmakers-kit': 'Filmmakers Kit',
-        };
-
-        const cardInput = document.getElementById('card-number');
-        const expMonth  = document.getElementById('exp-month');
-        const expYear   = document.getElementById('exp-year');
-        const cvvField  = document.getElementById('cvv');
-
-        // Card number formatting
-        cardInput.addEventListener('input', () => {
-            let raw = cardInput.value.replace(/\D/g, '');
-            const isAmex = /^3[47]/.test(raw);
-            if (isAmex) {
-                raw = raw.slice(0, 15);
-                if (raw.length > 10)      cardInput.value = raw.slice(0,4) + ' ' + raw.slice(4,10) + ' ' + raw.slice(10);
-                else if (raw.length > 4)  cardInput.value = raw.slice(0,4) + ' ' + raw.slice(4);
-                else                       cardInput.value = raw;
-            } else {
-                raw = raw.slice(0, 16);
-                cardInput.value = raw.match(/.{1,4}/g)?.join(' ') || '';
-            }
-        });
-
-        expMonth.addEventListener('input', () => {
-            expMonth.value = expMonth.value.replace(/\D/g, '');
-            if (expMonth.value.length === 2) expYear.focus();
-        });
-        expYear.addEventListener('input', () => {
-            expYear.value = expYear.value.replace(/\D/g, '');
-            if (expYear.value.length === 2) cvvField.focus();
-        });
-        cvvField.addEventListener('input', () => {
-            cvvField.value = cvvField.value.replace(/\D/g, '');
-        });
-
-        document.getElementById('redownload-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            hideError();
-            document.getElementById('result').style.display = 'none';
-
-            const rawCard = cardInput.value.replace(/\D/g, '');
-            if (!rawCard || !expMonth.value || !expYear.value || !cvvField.value) {
-                showError('Please fill in all card fields.');
-                return;
-            }
-
-            setLoading(true);
-
-            const secureData = {
-                authData: { apiLoginID: API_LOGIN_ID, clientKey: CLIENT_KEY },
-                cardData: {
-                    cardNumber: rawCard,
-                    month:      expMonth.value.padStart(2, '0'),
-                    year:       '20' + expYear.value,
-                    cardCode:   cvvField.value,
-                    zip:        (document.getElementById('postal').value || '').trim()
-                }
-            };
-
-            Accept.dispatchData(secureData, async (response) => {
-                if (response.messages.resultCode === 'Error') {
-                    showError(response.messages.message.map(m => m.text).join(' '));
-                    setLoading(false);
-                    return;
-                }
-
-                try {
-                    const res = await fetch(VERIFY_CARD_URL, {
-                        method:  'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body:    JSON.stringify({ opaqueData: response.opaqueData })
-                    });
-
-                    let data;
-                    try { data = await res.json(); } catch (_) {
-                        showError('Unexpected server response. Please try again.');
-                        setLoading(false);
-                        return;
-                    }
-
-                    if (data.success) {
-                        showPurchases(data.purchases || []);
-                    } else {
-                        showError(data.message || 'Verification failed. Please try again.');
-                    }
-                } catch (err) {
-                    showError('Network error: ' + (err.message || err));
-                }
-
-                setLoading(false);
-            });
-        });
-
-        function showPurchases(purchases) {
-            const list = document.getElementById('purchases-list');
-            const result = document.getElementById('result');
-
-            if (purchases.length === 0) {
-                list.innerHTML = '<div class="no-purchases">No purchases found for this card.</div>';
-                result.style.display = '';
-                return;
-            }
-
-            list.innerHTML = purchases.map((p, i) => {
-                const name = PRODUCT_NAMES[p.product] || p.product;
-                return `
-                <div class="purchase-item">
-                    <div class="purchase-product">${name}</div>
-                    <div class="purchase-key" id="key-${i}">${p.key}</div>
-                    <div class="purchase-actions">
-                        <button class="copy-key-btn" id="copy-${i}" onclick="copyKey(${i})">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                            Copy Key
-                        </button>
-                        ${p.downloadUrl ? `<a href="${p.downloadUrl}" class="dl-link" download>
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            Download
-                        </a>` : ''}
-                    </div>
-                </div>`;
-            }).join('');
-
-            result.style.display = '';
-        }
-
-        function copyKey(i) {
-            const key = document.getElementById('key-' + i).textContent;
-            navigator.clipboard.writeText(key).then(() => {
-                const btn = document.getElementById('copy-' + i);
-                btn.classList.add('copied');
-                btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
-                setTimeout(() => {
-                    btn.classList.remove('copied');
-                    btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Key';
-                }, 2500);
-            });
-        }
-
-        function setLoading(on) {
-            document.getElementById('check-btn').disabled = on;
-            document.getElementById('loading').style.display = on ? 'block' : 'none';
-        }
-
-        function showError(msg) {
-            const el = document.getElementById('error-msg');
-            el.textContent = msg;
-            el.style.display = 'block';
-        }
-
-        function hideError() {
-            document.getElementById('error-msg').style.display = 'none';
-        }
-    </script>
+<script>
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+  var links = [
+    { href: '/web-development', text: 'Web Development' },
+    { href: '/digital-marketing', text: 'Digital Marketing' },
+    { href: '/out-of-house', text: 'Out-of-House' },
+    { href: '/tv-radio', text: 'TV & Radio' },
+    { href: '/postal-marketing', text: 'Postal Advertising' },
+    { href: '/public-relations', text: 'Public Relations' },
+    { href: '/video', text: 'Video Editing' },
+    { href: '/video-production', text: 'Video Production' },
+    { href: '/portfolio', text: 'Portfolio' },
+    { href: '/software', text: 'Software' },
+  ];
+  var html = '<button class="mobile-close" aria-label="Close menu">&#x2715;</button>';
+  links.forEach(function(l) { html += '<a class="mobile-link" href="' + l.href + '">' + l.text + '</a>'; });
+  html += '<a class="mobile-cta" href="/email/">Get in touch ↗</a>';
+  menu.innerHTML = html;
+  menu.querySelector('.mobile-close').addEventListener('click', function() { toggleMenu(false); });
+  function toggleMenu(open) {
+    btn.classList.toggle('open', open);
+    menu.style.opacity = open ? '1' : '0';
+    menu.style.pointerEvents = open ? 'auto' : 'none';
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  btn.addEventListener('click', function() { toggleMenu(!btn.classList.contains('open')); });
+  menu.addEventListener('click', function(e) { if (e.target.tagName === 'A') toggleMenu(false); });
+})();
+</script>
 </body>
 </html>
