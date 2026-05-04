@@ -57,7 +57,16 @@
             </div>
 
             <div class="downloads">
-                <a href="/downloads/scheduling.zip" class="download-btn" download>Download Scheduling</a>
+                <a href="#" class="download-btn" download>Download Scheduling</a>
+                <a href="#" class="download-btn" download>Download Screenplays</a>
+            </div>
+            <!-- Resend receipt UI -->
+            <div id="resend-area" style="margin-top: 12px; text-align:left; display:none;">
+              <label for="resend-email" style="display:block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:#777;">Resend receipt</label>
+              <input id="resend-email" type="email" placeholder="Email to receive receipt (optional)" />
+              <button id="resend-btn" class="btn-check" style="margin-top:6px;">Resend Receipt</button>
+              <div id="resend-status" class="loading"></div>
+            </div>
                 <a href="/downloads/budgeting.zip" class="download-btn" download>Download Budgeting</a>
                 <a href="/downloads/call-sheets.zip" class="download-btn" download>Download Call Sheets</a>
             </div>
@@ -87,6 +96,38 @@
                 }, 2500);
             });
         }
+
+        // Resend receipt frontend wiring
+        (function(){
+          const orderId = new URLSearchParams(window.location.search).get('orderId') || '';
+          const resendArea = document.getElementById('resend-area');
+          if (orderId && resendArea) {
+            resendArea.style.display = 'block';
+            const btn = document.getElementById('resend-btn');
+            const emailInput = document.getElementById('resend-email');
+            const status = document.getElementById('resend-status');
+            btn.addEventListener('click', async () => {
+              const email = emailInput.value;
+              status.textContent = 'Sending...';
+              status.style.display = 'block';
+              try {
+                const r = await fetch('/api/resend-receipt', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ orderId, email })
+                });
+                const d = await r.json();
+                if (d.success) {
+                  status.textContent = 'Receipt resend initiated.';
+                } else {
+                  status.textContent = 'Error: ' + (d.message || 'Unknown error');
+                }
+              } catch (e) {
+                status.textContent = 'Network error: ' + (e?.message || e);
+              }
+            });
+          }
+        })();
     </script>
 </body>
 </html>
