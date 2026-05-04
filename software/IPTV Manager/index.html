@@ -651,29 +651,80 @@
     .trust-bar-mobile { display: none; }
 
     @media (max-width: 700px) {
-      nav { display: none; }
       .trust-bar-desktop { display: none; }
       .trust-bar-mobile { display: flex; gap: 1rem; font-size: 0.74rem; flex-wrap: wrap; }
       .guarantee-inner { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── Site-wide nav & footer (matches landing page) ─────────────────── */
+    body { padding-top: 52px; }
+    nav { position: fixed !important; top: 0; left: 0; right: 0; z-index: 200; padding: 0 24px; height: 52px !important; display: flex !important; align-items: center; justify-content: space-between; background: rgba(255,255,255,.72) !important; backdrop-filter: saturate(180%) blur(20px) !important; -webkit-backdrop-filter: saturate(180%) blur(20px) !important; border-bottom: 1px solid rgba(0,0,0,.08) !important; box-shadow: none !important; }
+    nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: #1d1d1f; text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
+    nav ul a { font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; transition: color .2s; text-transform: none !important; letter-spacing: normal !important; }
+    nav ul a:hover { color: #1d1d1f; }
+    nav .nav-cta { font-size: 13px; font-weight: 400; color: #0071e3; text-decoration: none; transition: opacity .2s; background: none !important; padding: 0 !important; border-radius: 0 !important; }
+    nav .nav-cta:hover { opacity: .7; background: none !important; }
+    .nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
+    .nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
+    .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
+    .nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); z-index: 200; }
+    .nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
+    .nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; border-radius: 10px; transition: background .15s, color .15s; white-space: nowrap; height: auto; letter-spacing: normal !important; text-transform: none !important; }
+    .nav-dropdown-panel a:hover { background: rgba(0,0,0,.05); color: #1d1d1f; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
+    .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; text-transform: none !important; }
+    .mobile-menu a:hover { background: rgba(0,0,0,.05); }
+    .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
+    .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
+    .mobile-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 24px; color: #1d1d1f; cursor: pointer; padding: 8px; line-height: 1; }
+    @media (max-width: 768px) { nav ul { display: none !important; } .nav-hamburger { display: flex !important; } .nav-cta { display: none !important; } }
+    footer { background: #ffffff !important; border-top: 1px solid rgba(0,0,0,.07) !important; padding: 40px 24px !important; color: initial !important; text-align: left !important; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 12px; color: #6e6e73; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: #6e6e73; text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: #1d1d1f; }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-brand">
-      <img src="Icon.png" alt="IPTV Manager icon" />
-      <span>IPTV Manager</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#screenshots">Screenshots</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="purchase/" class="btn-nav">Buy Now - CAD$19.99</a></li>
+    <a href="/" class="logo">Toby Jones</a>
+    <ul>
+      <li class="nav-has-dropdown">
+        <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dropdown-panel">
+          <a href="/digital-marketing">Digital Marketing</a>
+          <a href="/out-of-house">Out-of-House</a>
+          <a href="/tv-radio">TV &amp; Radio</a>
+          <a href="/postal-marketing">Postal Advertising</a>
+          <a href="/public-relations">Public Relations</a>
+        </div>
+      </li>
+      <li class="nav-has-dropdown">
+        <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dropdown-panel">
+          <a href="/video">Video Editing</a>
+          <a href="/video-production">Video Production</a>
+        </div>
+      </li>
+      <li><a href="/web-development">Web Development</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/software">Software</a></li>
     </ul>
+    <a href="/email/" class="nav-cta">Get in touch ↗</a>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
+  <div class="mobile-menu" id="mobileMenu"></div>
 
   <!-- TRUST BAR (desktop: shown here, above hero) -->
   <div class="trust-bar trust-bar-desktop">
@@ -923,14 +974,50 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-brand">
-      <img src="Icon.png" alt="IPTV Manager" />
-      <span>IPTV Manager</span>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/portfolio">View Portfolio</a>
+        <a href="/webcare">Website Care Plans</a>
+        <a href="/email/">Contact Me</a>
+        <a href="/complaints">Complaints</a>
+        <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
-    <p>Designed by <a href="https://tobyjones.ca">Toby Jones</a></p>
-    <p>CAD$19.99 + applicable HST &nbsp;&bull;&nbsp; macOS &amp; Windows</p>
-    <p style="margin-top:0.6rem;font-size:0.78rem;">IPTV Manager is designed for use with legally obtained IPTV subscriptions only.</p>
   </footer>
+
+  <script>
+  (function() {
+    var btn = document.querySelector('.nav-hamburger');
+    var menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    var links = [
+      { href: '/web-development', text: 'Web Development' },
+      { href: '/digital-marketing', text: 'Digital Marketing' },
+      { href: '/out-of-house', text: 'Out-of-House' },
+      { href: '/tv-radio', text: 'TV & Radio' },
+      { href: '/postal-marketing', text: 'Postal Advertising' },
+      { href: '/public-relations', text: 'Public Relations' },
+      { href: '/video', text: 'Video Editing' },
+      { href: '/video-production', text: 'Video Production' },
+      { href: '/portfolio', text: 'Portfolio' },
+      { href: '/software', text: 'Software' },
+    ];
+    var html = '<button class="mobile-close" aria-label="Close menu">&#x2715;</button>';
+    links.forEach(function(l) { html += '<a class="mobile-link" href="' + l.href + '">' + l.text + '</a>'; });
+    html += '<a class="mobile-cta" href="/email/">Get in touch ↗</a>';
+    menu.innerHTML = html;
+    menu.querySelector('.mobile-close').addEventListener('click', function() { toggleMenu(false); });
+    function toggleMenu(open) {
+      btn.classList.toggle('open', open);
+      menu.style.opacity = open ? '1' : '0';
+      menu.style.pointerEvents = open ? 'auto' : 'none';
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    btn.addEventListener('click', function() { toggleMenu(!btn.classList.contains('open')); });
+    menu.addEventListener('click', function(e) { if (e.target.tagName === 'A') toggleMenu(false); });
+  })();
+  </script>
 
   <script>
     const tabs = document.querySelectorAll('.tab-btn');
