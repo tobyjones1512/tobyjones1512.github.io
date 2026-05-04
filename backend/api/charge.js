@@ -71,7 +71,7 @@ async function sendKeyEmail({ email, firstName, productName, serialKey, download
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Toby Jones Software <software@tobyjones.ca>",
+      from: "Toby Jones Software <noreply@tobyjones.ca>",
       to: [email],
       subject: `Your ${productName} Licence Key`,
       html,
