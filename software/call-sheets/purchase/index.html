@@ -1070,7 +1070,8 @@
           email:     document.getElementById("email").value.trim(),
           zip:       document.getElementById("postal").value.trim()
         },
-        description: "Call Sheets - Software License" + (tipAmount > 0 ? " (includes tip: $" + tipAmount.toFixed(2) + ")" : "")
+        description: "Call Sheets - Software License" + (tipAmount > 0 ? " (includes tip: $" + tipAmount.toFixed(2) + ")" : ""),
+        product: "call-sheets"
       };
 
       try {
@@ -1090,7 +1091,7 @@
         }
 
         if (res.ok && data.success) {
-          window.location.href = "../../thank-you/?txn=" + encodeURIComponent(data.transactionId);
+          window.location.href = "../thank-you/?txn=" + encodeURIComponent(data.transactionId) + (data.serialKey ? "&key=" + encodeURIComponent(data.serialKey) : "");
         } else {
           showFormError(data.message || "Payment declined. Please check your details and try again.");
           setLoading(false);

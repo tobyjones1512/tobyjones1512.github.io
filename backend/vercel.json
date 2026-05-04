@@ -2,7 +2,10 @@
   "version": 2,
   "functions": {
     "api/charge.js": {
-      "maxDuration": 10
+      "maxDuration": 15
+    },
+    "api/verify-card.js": {
+      "maxDuration": 15
     }
   }
 }
