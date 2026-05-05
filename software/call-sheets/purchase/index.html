@@ -1201,6 +1201,23 @@
       chargeCard(response.opaqueData);
     }
 
+    async function getLatestDownloadUrl() {
+      try {
+        const res = await fetch("../../call-sheets-versions.csv");
+        if (!res.ok) throw new Error("Could not fetch version info");
+        const csv = await res.text();
+        const lines = csv.trim().split("\n");
+        if (lines.length > 1) {
+          const cols = lines[1].split(",");
+          if (cols.length >= 4) return cols[3].trim();
+        }
+        return null;
+      } catch (e) {
+        console.error("Error fetching download URL:", e);
+        return null;
+      }
+    }
+
     async function chargeCard(opaqueData) {
       const { discount, subtotal, tipAmount, tax, total } = calcPrices(isAmex, promoCode);
 
@@ -1239,7 +1256,12 @@
         }
 
         if (res.ok && data.success) {
-          window.location.href = "../thank-you/?txn=" + encodeURIComponent(data.transactionId) + (data.serialKey ? "&key=" + encodeURIComponent(data.serialKey) : "");
+          const downloadUrl = await getLatestDownloadUrl();
+          if (downloadUrl) {
+            window.location.href = downloadUrl;
+          } else {
+            window.location.href = "../thank-you/?txn=" + encodeURIComponent(data.transactionId) + (data.serialKey ? "&key=" + encodeURIComponent(data.serialKey) : "");
+          }
         } else {
           showFormError(data.message || "Payment declined. Please check your details and try again.");
           setLoading(false);
