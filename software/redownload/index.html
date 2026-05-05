@@ -82,6 +82,29 @@
         .footer-links a { font-size: 12px; color: #6e6e73; text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: #1d1d1f; }
         
+        /* ── Filmmaker's Kit Notice ──────────────────────────── */
+        .filmmaker-kit-notice { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 60px 20px; margin-bottom: 40px; }
+        .fk-card { background: var(--card); border-radius: 20px; padding: 40px; max-width: 700px; margin: 0 auto; box-shadow: 0 20px 60px rgba(102,126,234,0.3); }
+        .fk-header { text-align: center; margin-bottom: 32px; }
+        .fk-header h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+        .fk-header p { font-size: 16px; color: var(--text-secondary); }
+        .fk-code-box { background: var(--bg); border: 2px solid var(--border); border-radius: 16px; padding: 24px; text-align: center; margin-bottom: 32px; }
+        .fk-label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; }
+        .fk-code { font-family: 'SF Mono', monospace; font-size: 28px; font-weight: 700; letter-spacing: 0.08em; color: var(--primary); margin-bottom: 14px; }
+        .fk-copy-btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; font-size: 13px; }
+        .fk-copy-btn:hover { background: var(--primary-hover); }
+        .fk-copy-btn.copied { background: var(--success); }
+        .fk-apps { margin-bottom: 32px; }
+        .fk-apps h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+        .fk-app-list { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .fk-app-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .fk-app-item img { width: 64px; height: 64px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .fk-app-item span { font-size: 13px; font-weight: 600; text-align: center; }
+        .fk-instructions { background: #e8f9ed; border: 1px solid #c3e6d0; border-radius: 12px; padding: 20px; }
+        .fk-instructions h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+        .fk-instructions ol { margin-left: 20px; color: var(--text-secondary); font-size: 14px; line-height: 1.8; }
+        .fk-instructions li { margin-bottom: 8px; }
+
         /* ── Download Code Modal ──────────────────────────── */
         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 1000; }
         .modal-overlay.visible { display: flex; }
@@ -175,6 +198,51 @@
       <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobileMenu"></div>
+
+    <!-- Filmmaker's Kit Code Display -->
+    <div class="filmmaker-kit-notice" id="filmmakersKitNotice" style="display:none">
+        <div class="container">
+            <div class="fk-card">
+                <div class="fk-header">
+                    <h2>Welcome to Filmmaker's Kit!</h2>
+                    <p>Your Filmmaker's Kit includes 3 professional apps. Use the code below to download each one.</p>
+                </div>
+                <div class="fk-code-box">
+                    <div class="fk-label">Your Download Code</div>
+                    <div class="fk-code" id="fkCode">0f18751d</div>
+                    <button class="fk-copy-btn" onclick="copyFKCode()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        Copy
+                    </button>
+                </div>
+                <div class="fk-apps">
+                    <h3>Included Apps</h3>
+                    <div class="fk-app-list">
+                        <div class="fk-app-item">
+                            <img src="/software/call-sheets/Icon.png" alt="Call Sheets" />
+                            <span>Call Sheets</span>
+                        </div>
+                        <div class="fk-app-item">
+                            <img src="/software/scheduling/Icon.png" alt="Scheduling" />
+                            <span>Scheduling</span>
+                        </div>
+                        <div class="fk-app-item">
+                            <img src="/software/budgeting/Icon.png" alt="Budgeting" />
+                            <span>Budgeting</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fk-instructions">
+                    <h3>How to Download</h3>
+                    <ol>
+                        <li>Click "Download" on any app below</li>
+                        <li>Enter your code above when prompted</li>
+                        <li>Repeat for each of the 3 apps</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <section class="downloads-page">
@@ -287,6 +355,20 @@ const filmmakersKitApps = ['call-sheets', 'scheduling', 'budgeting'];
 
 let currentApp = null;
 
+function copyFKCode() {
+  const code = document.getElementById('fkCode').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    const btn = event.target.closest('.fk-copy-btn');
+    const originalHTML = btn.innerHTML;
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = originalHTML;
+    }, 2000);
+  });
+}
+
 function showCodeModal(app, appName) {
   currentApp = app;
   document.getElementById('modalTitle').textContent = 'Download ' + appName;
@@ -333,6 +415,14 @@ function verifyCode() {
 
 // Allow Enter key to submit
 document.addEventListener('DOMContentLoaded', function() {
+  // Check if this is a Filmmaker's Kit purchase
+  const params = new URLSearchParams(window.location.search);
+  const fkCode = params.get('fk');
+  if (fkCode) {
+    document.getElementById('filmmakersKitNotice').style.display = '';
+    document.getElementById('fkCode').textContent = fkCode;
+  }
+
   document.getElementById('dlCode').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') verifyCode();
   });

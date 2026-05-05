@@ -17,6 +17,14 @@
         .download-btn:hover { background: #0077ed; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,113,227,0.4); }
         .back-link { display: block; color: #86868b; text-decoration: none; font-size: 14px; }
         .back-link:hover { color: #0071e3; }
+
+        .dl-code-block { background: #e8f9ed; border: 1.5px solid #c3e6d0; border-radius: 14px; padding: 24px; margin: 32px 0; }
+        .dl-code-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #1a7f4b; margin-bottom: 10px; }
+        .dl-code-value { font-family: 'SF Mono', 'Menlo', 'Monaco', monospace; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; color: #1a7f4b; margin-bottom: 14px; word-break: break-all; }
+        .copy-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; background: #1a7f4b; color: #fff; border: none; border-radius: 980px; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .copy-btn:hover { background: #2d6a4f; }
+        .copy-btn.copied { background: #1a7f4b; }
+        .dl-code-hint { font-size: 13px; color: #2d6a4f; margin-top: 12px; line-height: 1.4; }
     </style>
 </head>
 <body>
@@ -26,9 +34,37 @@
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h1>Thank You!</h1>
-            <p>Your purchase of IPTV Manager was successful. Your download link and licence key have been sent to your email — check your inbox.</p>
+            <p>Your purchase of IPTV Manager was successful.</p>
+
+            <div class="dl-code-block">
+                <div class="dl-code-label">Your Download Code</div>
+                <div class="dl-code-value">96ab7287</div>
+                <button class="copy-btn" onclick="copyDLCode()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    Copy Code
+                </button>
+                <p class="dl-code-hint">You'll need this code to download your software from the redownload page. This is also included in your email receipt.</p>
+            </div>
+
+            <p style="margin-bottom: 16px;">To download your software, visit the <a href="/software/redownload/" style="color: #0071e3; text-decoration: none;">redownload page</a> and enter your code above.</p>
             <a href="/software/" class="back-link">← Back to Software</a>
         </div>
     </div>
+
+    <script>
+        function copyDLCode() {
+            const code = '96ab7287';
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = event.target.closest('.copy-btn');
+                const originalHTML = btn.innerHTML;
+                btn.classList.add('copied');
+                btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = originalHTML;
+                }, 2500);
+            });
+        }
+    </script>
 </body>
 </html>
