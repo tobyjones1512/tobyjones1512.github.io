@@ -41,48 +41,11 @@
             <h1>Thank You!</h1>
             <p class="subtitle">Your purchase of Filmmakers Kit was successful.</p>
 
-            <div class="key-block" id="key-block" style="display:none">
-                <div class="key-label">Your Serial Key</div>
-                <div class="key-value" id="serial-key"></div>
-                <button class="copy-btn" id="copy-btn" onclick="copyKey()">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                    Copy Key
-                </button>
-                <p class="kit-note">This one key activates all three apps.</p>
-                <p class="key-hint">Your serial key is the Transaction ID shown in your email receipt. Keep that email safe for future reference.</p>
-            </div>
-
-            <div class="no-key-note" id="no-key-note" style="display:none">
-                No serial key was returned. Please contact support with your transaction ID.
-            </div>
-
-            <p class="subtitle" style="margin-top:8px;">Your download links have been sent to your email — check your inbox.</p>
+<p class="subtitle" style="margin-top:8px;">Your download links have been sent to your email — check your inbox.</p>
             <a href="/software/" class="back-link">← Back to Software</a>
         </div>
     </div>
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const key = params.get('key');
-        if (key) {
-            document.getElementById('serial-key').textContent = key;
-            document.getElementById('key-block').style.display = '';
-        } else {
-            document.getElementById('no-key-note').style.display = '';
-        }
-
-        function copyKey() {
-            const k = document.getElementById('serial-key').textContent;
-            navigator.clipboard.writeText(k).then(() => {
-                const btn = document.getElementById('copy-btn');
-                btn.classList.add('copied');
-                btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
-                setTimeout(() => {
-                    btn.classList.remove('copied');
-                    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Key';
-                }, 2500);
-            });
-        }
-    </script>
+    <script></script>
 </body>
 </html>
