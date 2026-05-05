@@ -82,12 +82,35 @@
         .footer-links a { font-size: 12px; color: #6e6e73; text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: #1d1d1f; }
         
+        /* ── Download Code Modal ──────────────────────────── */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 1000; }
+        .modal-overlay.visible { display: flex; }
+        .modal-content { background: var(--card); border-radius: 20px; padding: 40px; max-width: 500px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .modal-header { margin-bottom: 24px; }
+        .modal-header h2 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+        .modal-header p { color: var(--text-secondary); font-size: 15px; }
+        .modal-form { margin-bottom: 20px; }
+        .modal-label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); margin-bottom: 10px; }
+        .modal-input { width: 100%; padding: 14px 16px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'SF Mono', monospace; font-size: 15px; letter-spacing: 0.08em; color: var(--text); transition: border-color 0.2s, box-shadow 0.2s; }
+        .modal-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,113,227,0.1); }
+        .modal-input.error { border-color: #ff3b30; box-shadow: 0 0 0 3px rgba(255,59,48,0.1); }
+        .modal-hint { font-size: 13px; color: var(--text-secondary); margin-top: 10px; line-height: 1.5; }
+        .modal-buttons { display: flex; gap: 12px; }
+        .modal-btn { flex: 1; padding: 14px 20px; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .modal-btn-primary { background: var(--primary); color: white; }
+        .modal-btn-primary:hover { background: var(--primary-hover); }
+        .modal-btn-secondary { background: var(--bg); color: var(--text); }
+        .modal-btn-secondary:hover { background: var(--border); }
+        .modal-error { display: none; color: #ff3b30; font-size: 13px; margin-top: 12px; padding: 12px; background: #fff0f0; border: 1px solid #ffd4d4; border-radius: 8px; }
+        .modal-error.visible { display: block; }
+
         @media (max-width: 768px) {
             .downloads-list { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
             .downloads-header h1 { font-size: 40px; }
             .downloads-header p { font-size: 18px; }
             .downloads-page { padding: 80px 0 60px; }
             .download-item { padding: 24px; }
+            .modal-content { padding: 32px 24px; }
         }
     </style>
     <style>
@@ -171,10 +194,10 @@
                         <h3>Scheduling</h3>
                         <p class="desc">Production scheduling for film and television. Built for speed and accuracy.</p>
                     </div>
-                    <a href="/downloads/scheduling.zip" class="dl-btn" download>
+                    <button class="dl-btn" onclick="showCodeModal('scheduling', 'Scheduling')">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download
-                    </a>
+                    </button>
                 </div>
 
                 <div class="download-item">
@@ -183,10 +206,10 @@
                         <h3>Budgeting</h3>
                         <p class="desc">Professional budget management with real-time tracking and export options.</p>
                     </div>
-                    <a href="/downloads/budgeting.zip" class="dl-btn" download>
+                    <button class="dl-btn" onclick="showCodeModal('budgeting', 'Budgeting')">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download
-                    </a>
+                    </button>
                 </div>
 
                 <div class="download-item">
@@ -195,10 +218,10 @@
                         <h3>Call Sheets</h3>
                         <p class="desc">Generate and distribute professional call sheets in seconds.</p>
                     </div>
-                    <a href="/downloads/call-sheets.zip" class="dl-btn" download>
+                    <button class="dl-btn" onclick="showCodeModal('call-sheets', 'Call Sheets')">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download
-                    </a>
+                    </button>
                 </div>
 
                 <div class="download-item">
@@ -207,13 +230,33 @@
                         <h3>IPTV Manager</h3>
                         <p class="desc">Watch and record your IPTV channels. Live TV, VOD, Sports, and more.</p>
                     </div>
-                    <a href="/downloads/iptv-manager.zip" class="dl-btn" download>
+                    <button class="dl-btn" onclick="showCodeModal('iptv-manager', 'IPTV Manager')">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Download
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
+    </div>
+
+    <!-- Download Code Modal -->
+    <div class="modal-overlay" id="codeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Download Software</h2>
+                <p>Enter your Download Code to access the software. You can find this code in your purchase receipt email, labelled 'DL Code'.</p>
+            </div>
+            <div class="modal-form">
+                <label class="modal-label" for="dlCode">Download Code</label>
+                <input type="text" id="dlCode" class="modal-input" placeholder="e.g., 6de68f55" autocomplete="off" />
+                <p class="modal-hint">The code is 8 characters long and found in your receipt email.</p>
+                <div class="modal-error" id="modalError"></div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-primary" onclick="verifyCode()">Verify & Download</button>
+                <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -230,6 +273,75 @@
     </footer>
 
 <script>
+// Download code mapping - validly purchased codes
+const downloadCodes = {
+  '6de68f55': { app: 'call-sheets', name: 'Call Sheets', url: 'http://adfoc.us/875782113257849' },
+  '96ab7287': { app: 'iptv-manager', name: 'IPTV Manager', url: 'https://example.com/iptv-manager-download' },
+  '06be9da9': { app: 'scheduling', name: 'Scheduling', url: 'https://example.com/scheduling-download' },
+  'de53808b': { app: 'budgeting', name: 'Budgeting', url: 'https://example.com/budgeting-download' },
+  '0f18751d': { app: 'filmmakers-kit', name: "Filmmaker's Kit", url: 'https://example.com/filmmakers-kit-download' }
+};
+
+// Map which apps filmmaker's kit code unlocks
+const filmmakersKitApps = ['call-sheets', 'scheduling', 'budgeting'];
+
+let currentApp = null;
+
+function showCodeModal(app, appName) {
+  currentApp = app;
+  document.getElementById('modalTitle').textContent = 'Download ' + appName;
+  document.getElementById('dlCode').value = '';
+  document.getElementById('modalError').classList.remove('visible');
+  document.getElementById('codeModal').classList.add('visible');
+  document.getElementById('dlCode').focus();
+}
+
+function closeModal() {
+  document.getElementById('codeModal').classList.remove('visible');
+  currentApp = null;
+}
+
+function verifyCode() {
+  const code = document.getElementById('dlCode').value.trim().toLowerCase();
+  const errorEl = document.getElementById('modalError');
+
+  if (!code) {
+    errorEl.textContent = 'Please enter a download code.';
+    errorEl.classList.add('visible');
+    return;
+  }
+
+  const codeInfo = downloadCodes[code];
+  if (!codeInfo) {
+    errorEl.textContent = 'Invalid download code. Please check your receipt email.';
+    errorEl.classList.add('visible');
+    return;
+  }
+
+  // Check if code is valid for the requested app
+  const isValid = codeInfo.app === currentApp || (code === '0f18751d' && filmmakersKitApps.includes(currentApp));
+  if (!isValid) {
+    errorEl.textContent = 'This code is for ' + codeInfo.name + ', not ' + currentApp.replace('-', ' ').toUpperCase() + '.';
+    errorEl.classList.add('visible');
+    return;
+  }
+
+  // Code is valid - redirect to download
+  window.location.href = codeInfo.url;
+  closeModal();
+}
+
+// Allow Enter key to submit
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('dlCode').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') verifyCode();
+  });
+  document.getElementById('codeModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+});
+
+// Mobile menu toggle
 (function() {
   var btn = document.querySelector('.nav-hamburger');
   var menu = document.getElementById('mobileMenu');
