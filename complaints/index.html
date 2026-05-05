@@ -66,11 +66,19 @@
     }
     nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: var(--apple-dark); text-decoration: none; }
     nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul li { position: relative; }
     nav ul a { font-size: 13px; font-weight: 400; color: var(--apple-mid); text-decoration: none; transition: color 0.2s; }
     nav ul a:hover { color: var(--apple-dark); }
     nav ul a.active { color: var(--apple-dark); font-weight: 500; }
     nav .nav-cta { font-size: 13px; font-weight: 400; color: var(--apple-blue); text-decoration: none; transition: opacity 0.2s; }
     nav .nav-cta:hover { opacity: 0.7; }
+    .nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
+    .nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
+    .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
+    .nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); z-index: 200; }
+    .nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
+    .nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: var(--apple-mid); text-decoration: none; border-radius: 10px; transition: background .15s, color .15s; white-space: nowrap; height: auto; letter-spacing: normal; }
+    .nav-dropdown-panel a:hover { background: rgba(0,0,0,.05); color: var(--apple-dark); }
     @media (max-width: 768px) { nav ul { display: none; } }
 
     /* ── Hero ────────────────────────────────────────────────────────── */
@@ -271,12 +279,16 @@
   <nav>
     <a href="/" class="logo">Toby Jones</a>
     <ul>
-      <li><a href="/web-development">Web Development</a></li>
-      <li><a href="/digital-marketing">Digital Marketing</a></li>
-      <li><a href="/out-of-house">Out-of-House</a></li>
-      <li><a href="/tv-radio">Commercials</a></li>
-      <li><a href="/postal-marketing">Postal Advertising</a></li>
-      <li><a href="/public-relations">Public Relations</a></li>
+      <li class="nav-has-dropdown">
+        <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dropdown-panel">
+          <a href="/digital-marketing">Digital Marketing</a>
+          <a href="/out-of-house">Out-of-House</a>
+          <a href="/tv-radio">TV &amp; Radio</a>
+          <a href="/postal-marketing">Postal Advertising</a>
+          <a href="/public-relations">Public Relations</a>
+        </div>
+      </li>
       <li class="nav-has-dropdown">
         <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="nav-dropdown-panel">
@@ -284,6 +296,7 @@
           <a href="/video-production">Video Production</a>
         </div>
       </li>
+      <li><a href="/web-development">Web Development</a></li>
       <li><a href="/portfolio">Portfolio</a></li>
       <li><a href="/software">Software</a></li>
     </ul>
@@ -496,10 +509,11 @@
         { href: '/web-development', text: 'Web Development' },
         { href: '/digital-marketing', text: 'Digital Marketing' },
         { href: '/out-of-house', text: 'Out-of-House' },
-        { href: '/tv-radio', text: 'Commercials' },
+        { href: '/tv-radio', text: 'TV & Radio' },
         { href: '/postal-marketing', text: 'Postal Advertising' },
         { href: '/public-relations', text: 'Public Relations' },
         { href: '/video', text: 'Video Editing' },
+        { href: '/video-production', text: 'Video Production' },
         { href: '/portfolio', text: 'Portfolio' },
         { href: '/software', text: 'Software' },
       ];
