@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
   getRequest.setMerchantAuthentication(merchantAuth);
   getRequest.setTransId(transactionId);
 
-  return new Promise((resolve) => {
+  const apiCall = new Promise((resolve) => {
     const ctrl = new ApiControllers.GetTransactionDetailsController(getRequest.getJSON());
     ctrl.setEnvironment(env);
 
@@ -75,4 +75,13 @@ module.exports = async (req, res) => {
       }
     });
   });
+
+  // Ensure we always respond before the client's read timeout fires.
+  const deadline = new Promise((resolve) =>
+    setTimeout(() => resolve(
+      res.status(504).json({ success: false, message: "Request to payment gateway timed out. Please try again." })
+    ), 8000)
+  );
+
+  return Promise.race([apiCall, deadline]);
 };
