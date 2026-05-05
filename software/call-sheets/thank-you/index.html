@@ -28,6 +28,11 @@
         .back-link:hover { color: #0071e3; }
 
         .no-key-note { background: #fff8e7; border: 1px solid #ffd04a; border-radius: 10px; padding: 14px 18px; font-size: 14px; color: #6d4c00; margin-bottom: 28px; }
+
+        .dl-code-block { background: #e8f9ed; border: 1.5px solid #c3e6d0; border-radius: 14px; padding: 24px; margin-bottom: 32px; }
+        .dl-code-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #1a7f4b; margin-bottom: 10px; }
+        .dl-code-value { font-family: 'SF Mono', 'Menlo', 'Monaco', monospace; font-size: 22px; font-weight: 700; letter-spacing: 0.08em; color: #1a7f4b; margin-bottom: 14px; word-break: break-all; }
+        .dl-code-hint { font-size: 13px; color: #2d6a4f; margin-top: 12px; line-height: 1.4; }
   </style>
   <style>
   #resend-area { margin-top: 16px; display: block; text-align: left; }
@@ -60,7 +65,17 @@
                 No serial key was returned. Please contact support with your transaction ID.
             </div>
 
-            <p class="subtitle" style="margin-top:8px;">Your download link has been sent to your email — check your inbox.</p>
+            <div class="dl-code-block">
+                <div class="dl-code-label">Your Download Code</div>
+                <div class="dl-code-value">6de68f55</div>
+                <button class="copy-btn" id="copy-dl-code-btn" onclick="copyDLCode()" style="background: #1a7f4b;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    Copy Code
+                </button>
+                <p class="dl-code-hint">You'll need this code to download your software from the redownload page. This is also included in your email receipt.</p>
+            </div>
+
+            <p class="subtitle" style="margin-top:8px;">To download your software, visit the <a href="/software/redownload/" style="color: #0071e3; text-decoration: none;">redownload page</a> and enter your code above.</p>
             <a href="/software/" class="back-link">← Back to Software</a>
         </div>
     </div>
@@ -84,6 +99,19 @@
                 setTimeout(() => {
                     btn.classList.remove('copied');
                     btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Key';
+                }, 2500);
+            });
+        }
+
+        function copyDLCode() {
+            const code = '6de68f55';
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.getElementById('copy-dl-code-btn');
+                btn.classList.add('copied');
+                btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Code';
                 }, 2500);
             });
         }
