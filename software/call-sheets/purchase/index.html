@@ -748,12 +748,18 @@
         <span id="val-base">CAD $19.99</span>
       </div>
 
-      <div class="summary-line discount" id="line-discount" style="display:none">
+      <div class="summary-line discount" id="line-amex-discount" style="display:none">
         <span>
           <span class="discount-badge">AMEX 25% OFF</span>
-          &nbsp;Discount
         </span>
-        <span id="val-discount">&minus;CAD $5.00</span>
+        <span id="val-amex-discount">&minus;CAD $5.00</span>
+      </div>
+
+      <div class="summary-line discount" id="line-student-discount" style="display:none">
+        <span>
+          <span class="discount-badge">STUDENT 50% OFF</span>
+        </span>
+        <span id="val-student-discount">&minus;CAD $10.00</span>
       </div>
 
       <div class="summary-line" id="line-subtotal" style="display:none">
@@ -968,25 +974,32 @@
     function fmtCAD(n) { return 'CAD $' + n.toFixed(2); }
 
     function updatePriceSummary(amex, promo) {
-      const { discount, subtotal, tipAmount, tax, total, discountBadge } = calcPrices(amex, promo);
+      const amexDiscount = amex ? round2(BASE_PRICE * AMEX_DISCOUNT) : 0;
+      const studentDiscountRate = promo.toUpperCase() === "STUDENT" ? (amex ? STUDENT_DISCOUNT_AMEX : STUDENT_DISCOUNT_REGULAR) : 0;
+      const studentDiscount = promo.toUpperCase() === "STUDENT" ? round2(BASE_PRICE * studentDiscountRate) : 0;
+      const totalDiscount = round2(amexDiscount + studentDiscount);
+      const subtotal = round2(BASE_PRICE - totalDiscount);
+      const tax = round2(subtotal * TAX_RATE);
+      const total = round2(subtotal + tipAmount + tax);
 
       document.getElementById("val-base").textContent     = fmtCAD(BASE_PRICE);
-      document.getElementById("val-discount").textContent = "\u2212" + fmtCAD(discount);
+      document.getElementById("val-amex-discount").textContent = "\u2212" + fmtCAD(amexDiscount);
+      document.getElementById("val-student-discount").textContent = "\u2212" + fmtCAD(studentDiscount);
       document.getElementById("val-subtotal").textContent = fmtCAD(subtotal);
       document.getElementById("val-tip").textContent      = "+" + fmtCAD(tipAmount);
       document.getElementById("val-tax").textContent      = fmtCAD(tax);
       document.getElementById("val-total").textContent    = fmtCAD(total);
       document.getElementById("btn-amount").innerHTML     = fmtCAD(total);
 
-      const discountLineEl = document.getElementById("line-discount");
-      const discountBadgeEl = discountLineEl.querySelector(".discount-badge");
-      if (discountBadge) {
-        discountBadgeEl.textContent = discountBadge;
+      // Update student discount badge based on whether AMEX is used
+      const studentBadgeEl = document.getElementById("line-student-discount").querySelector(".discount-badge");
+      if (promo.toUpperCase() === "STUDENT") {
+        studentBadgeEl.textContent = amex ? "STUDENT 25% OFF" : "STUDENT 50% OFF";
       }
 
-      const hasDiscount = discount > 0;
-      document.getElementById("line-discount").style.display = hasDiscount ? "" : "none";
-      document.getElementById("line-subtotal").style.display = hasDiscount ? "" : "none";
+      document.getElementById("line-amex-discount").style.display = amexDiscount > 0 ? "" : "none";
+      document.getElementById("line-student-discount").style.display = studentDiscount > 0 ? "" : "none";
+      document.getElementById("line-subtotal").style.display = totalDiscount > 0 ? "" : "none";
       document.getElementById("line-tip").style.display     = tipAmount > 0 ? "" : "none";
       document.getElementById("amex-promo").classList.toggle("visible", amex);
     }
