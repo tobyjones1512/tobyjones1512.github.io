@@ -154,22 +154,19 @@
         .hero-feature svg { color: var(--success); }
         
         .btn-buy {
+            display: none;
+        }
+
+        .coming-soon-pill {
             display: inline-block;
-            padding: 18px 48px;
-            background: var(--primary);
-            color: white;
-            font-size: 18px;
+            padding: 12px 32px;
+            background: #d2d2d7;
+            color: #6e6e73;
+            font-size: 16px;
             font-weight: 600;
             border-radius: 980px;
             text-decoration: none;
-            transition: all 0.2s;
-            box-shadow: 0 4px 16px rgba(0,113,227,0.3);
-        }
-        
-        .btn-buy:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,113,227,0.4);
+            cursor: default;
         }
         
         /* Features */
@@ -416,6 +413,7 @@
             <p>Professional film scheduling made simple. Drag-and-drop interface with automatic conflict detection and intelligent call sheet generation.</p>
             <div class="price">$19.99 (excl. tax)</div>
             <a href="/software/scheduling/purchase/" class="btn-buy">Buy Now</a>
+            <div class="coming-soon-pill">Coming Soon</div>
             
             <div class="hero-features">
                 <div class="hero-feature">
