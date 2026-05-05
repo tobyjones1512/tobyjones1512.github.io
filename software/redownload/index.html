@@ -464,8 +464,8 @@ async function verifyCode() {
 
   // Code is valid - get download URL
   let downloadUrl = codeInfo.url;
-  if (code === '0f18751d') {
-    // For filmmaker's kit, fetch the download URL from the app's CSV file
+  if (code === '0f18751d' || currentApp === 'iptv-manager') {
+    // For filmmaker's kit or IPTV Manager, fetch the download URL from the app's CSV file
     downloadUrl = await getDownloadURL(currentApp);
   }
 
