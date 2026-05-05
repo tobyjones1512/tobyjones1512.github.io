@@ -65,6 +65,7 @@
             box-shadow: 0 4px 16px rgba(0,0,0,0.1);
         }
         .download-item h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+        .version-badge { display: inline-block; background: var(--primary); color: white; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 12px; letter-spacing: 0.05em; }
         .download-item .desc { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
         .dl-btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -259,7 +260,10 @@
                 <div class="download-item">
                     <div>
                         <img src="/software/scheduling/Icon.png" alt="Scheduling" class="download-item-icon" />
-                        <h3>Scheduling</h3>
+                        <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                            <h3>Scheduling</h3>
+                            <span class="version-badge" id="scheduling-version">v1.0.0</span>
+                        </div>
                         <p class="desc">Production scheduling for film and television. Built for speed and accuracy.</p>
                     </div>
                     <button class="dl-btn" onclick="showCodeModal('scheduling', 'Scheduling')">
@@ -271,7 +275,10 @@
                 <div class="download-item">
                     <div>
                         <img src="/software/budgeting/Icon.png" alt="Budgeting" class="download-item-icon" />
-                        <h3>Budgeting</h3>
+                        <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                            <h3>Budgeting</h3>
+                            <span class="version-badge" id="budgeting-version">v1.0.0</span>
+                        </div>
                         <p class="desc">Professional budget management with real-time tracking and export options.</p>
                     </div>
                     <button class="dl-btn" onclick="showCodeModal('budgeting', 'Budgeting')">
@@ -283,7 +290,10 @@
                 <div class="download-item">
                     <div>
                         <img src="/software/call-sheets/Icon.png" alt="Call Sheets" class="download-item-icon" />
-                        <h3>Call Sheets</h3>
+                        <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                            <h3>Call Sheets</h3>
+                            <span class="version-badge" id="call-sheets-version">v1.0.0</span>
+                        </div>
                         <p class="desc">Generate and distribute professional call sheets in seconds.</p>
                     </div>
                     <button class="dl-btn" onclick="showCodeModal('call-sheets', 'Call Sheets')">
@@ -295,7 +305,10 @@
                 <div class="download-item">
                     <div>
                         <img src="/software/IPTV Manager/Icon.png" alt="IPTV Manager" class="download-item-icon" />
-                        <h3>IPTV Manager</h3>
+                        <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                            <h3>IPTV Manager</h3>
+                            <span class="version-badge" id="iptv-manager-version">v1.0.0</span>
+                        </div>
                         <p class="desc">Watch and record your IPTV channels. Live TV, VOD, Sports, and more.</p>
                     </div>
                     <button class="dl-btn" onclick="showCodeModal('iptv-manager', 'IPTV Manager')">
@@ -341,6 +354,14 @@
     </footer>
 
 <script>
+// Software versions - update as new versions are released
+const softwareVersions = {
+  'call-sheets': 'v1.0.0',
+  'iptv-manager': 'v1.0.0',
+  'scheduling': 'v1.0.0',
+  'budgeting': 'v1.0.0'
+};
+
 // Download code mapping - validly purchased codes
 const downloadCodes = {
   '6de68f55': { app: 'call-sheets', name: 'Call Sheets', url: 'http://adfoc.us/875782113257849' },
@@ -415,6 +436,14 @@ function verifyCode() {
 
 // Allow Enter key to submit
 document.addEventListener('DOMContentLoaded', function() {
+  // Update version badges
+  Object.keys(softwareVersions).forEach(app => {
+    const versionElement = document.getElementById(app + '-version');
+    if (versionElement) {
+      versionElement.textContent = softwareVersions[app];
+    }
+  });
+
   // Check if this is a Filmmaker's Kit purchase
   const params = new URLSearchParams(window.location.search);
   const fkCode = params.get('fk');
