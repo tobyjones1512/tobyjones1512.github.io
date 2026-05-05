@@ -357,13 +357,23 @@
     </footer>
 
 <script>
-// Software versions - update as new versions are released
-const softwareVersions = {
-  'call-sheets': 'v1.0.0',
-  'iptv-manager': 'v3.0.2',
-  'scheduling': 'v1.0.0',
-  'budgeting': 'v1.0.0'
-};
+// Fetch software versions from CSV files
+async function getVersionFromCSV(appName) {
+  try {
+    const response = await fetch(`/downloads/${appName}-versions.csv`);
+    const csvText = await response.text();
+    const lines = csvText.trim().split('\n');
+    if (lines.length > 1) {
+      const firstDataRow = lines[1];
+      const version = firstDataRow.split(',')[0];
+      return 'v' + version;
+    }
+    return 'v1.0.0';
+  } catch (error) {
+    console.error(`Failed to fetch version for ${appName}:`, error);
+    return 'v1.0.0';
+  }
+}
 
 // Download code mapping - validly purchased codes
 const downloadCodes = {
@@ -438,14 +448,16 @@ function verifyCode() {
 }
 
 // Allow Enter key to submit
-document.addEventListener('DOMContentLoaded', function() {
-  // Update version badges
-  Object.keys(softwareVersions).forEach(app => {
+document.addEventListener('DOMContentLoaded', async function() {
+  // Update version badges from CSV files
+  const apps = ['call-sheets', 'iptv-manager', 'scheduling', 'budgeting'];
+  for (const app of apps) {
+    const version = await getVersionFromCSV(app);
     const versionElement = document.getElementById(app + '-version');
     if (versionElement) {
-      versionElement.textContent = softwareVersions[app];
+      versionElement.textContent = version;
     }
-  });
+  }
 
   // Check if this is a Filmmaker's Kit purchase
   const params = new URLSearchParams(window.location.search);
