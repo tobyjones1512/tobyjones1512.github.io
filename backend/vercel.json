@@ -6,6 +6,12 @@
     },
     "api/verify-card.js": {
       "maxDuration": 15
+    },
+    "api/get-transaction.js": {
+      "maxDuration": 15
+    },
+    "api/check-purchases.js": {
+      "maxDuration": 15
     }
   }
 }
