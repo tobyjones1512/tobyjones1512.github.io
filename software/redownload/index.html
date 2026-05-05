@@ -64,8 +64,9 @@
             width: 64px; height: 64px; border-radius: 14px; margin-bottom: 20px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.1);
         }
-        .download-item h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
-        .version-badge { display: inline-block; background: var(--primary); color: white; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 12px; letter-spacing: 0.05em; }
+        .item-header { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+        .download-item h3 { font-size: 24px; font-weight: 700; margin: 0; letter-spacing: -0.02em; }
+        .version-badge { display: inline-block; background: var(--primary); color: white; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; letter-spacing: 0.05em; white-space: nowrap; }
         .download-item .desc { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
         .dl-btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -260,7 +261,7 @@
                 <div class="download-item">
                     <div>
                         <img src="/software/scheduling/Icon.png" alt="Scheduling" class="download-item-icon" />
-                        <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                        <div class="item-header">
                             <h3>Scheduling</h3>
                             <span class="version-badge" id="scheduling-version">v1.0.0</span>
                         </div>
@@ -275,7 +276,7 @@
                 <div class="download-item">
                     <div>
                         <img src="/software/budgeting/Icon.png" alt="Budgeting" class="download-item-icon" />
-                        <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                        <div class="item-header">
                             <h3>Budgeting</h3>
                             <span class="version-badge" id="budgeting-version">v1.0.0</span>
                         </div>
@@ -290,7 +291,7 @@
                 <div class="download-item">
                     <div>
                         <img src="/software/call-sheets/Icon.png" alt="Call Sheets" class="download-item-icon" />
-                        <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                        <div class="item-header">
                             <h3>Call Sheets</h3>
                             <span class="version-badge" id="call-sheets-version">v1.0.0</span>
                         </div>
@@ -305,7 +306,7 @@
                 <div class="download-item">
                     <div>
                         <img src="/software/IPTV Manager/Icon.png" alt="IPTV Manager" class="download-item-icon" />
-                        <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                        <div class="item-header">
                             <h3>IPTV Manager</h3>
                             <span class="version-badge" id="iptv-manager-version">v1.0.0</span>
                         </div>
