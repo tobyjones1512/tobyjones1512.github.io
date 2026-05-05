@@ -951,11 +951,16 @@
         discountBadge = "AMEX 25% OFF";
       }
 
-      // STUDENT code (applied if entered, may override or add to AMEX discount)
+      // STUDENT code (applied if entered, adds to AMEX discount)
       if (promo.toUpperCase() === "STUDENT") {
         const studentDiscount = amex ? STUDENT_DISCOUNT_AMEX : STUDENT_DISCOUNT_REGULAR;
-        discount = round2(BASE_PRICE * studentDiscount);
-        discountBadge = amex ? "STUDENT 25% OFF" : "STUDENT 50% OFF";
+        const studentAmount = round2(BASE_PRICE * studentDiscount);
+        discount = round2(discount + studentAmount);
+        if (amex) {
+          discountBadge = "AMEX 25% + STUDENT 25% OFF";
+        } else {
+          discountBadge = "STUDENT 50% OFF";
+        }
       }
 
       const subtotal = round2(BASE_PRICE - discount);
