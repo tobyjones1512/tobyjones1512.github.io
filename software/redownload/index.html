@@ -398,10 +398,10 @@ async function getDownloadURL(appName) {
 // Download code mapping - validly purchased codes
 const downloadCodes = {
   '6de68f55': { app: 'call-sheets', name: 'Call Sheets', url: 'http://adfoc.us/875782113257849' },
-  '96ab7287': { app: 'iptv-manager', name: 'IPTV Manager', url: 'https://example.com/iptv-manager-download' },
+  '96ab7287': { app: 'iptv-manager', name: 'IPTV Manager', url: null },
   '06be9da9': { app: 'scheduling', name: 'Scheduling', url: 'https://example.com/scheduling-download' },
   'de53808b': { app: 'budgeting', name: 'Budgeting', url: 'https://example.com/budgeting-download' },
-  '0f18751d': { app: 'filmmakers-kit', name: "Filmmaker's Kit", url: 'https://example.com/filmmakers-kit-download' }
+  '0f18751d': { app: 'filmmakers-kit', name: "Filmmaker's Kit", url: null }
 };
 
 // Map which apps filmmaker's kit code unlocks
@@ -464,8 +464,8 @@ async function verifyCode() {
 
   // Code is valid - get download URL
   let downloadUrl = codeInfo.url;
-  if (code === '0f18751d') {
-    // For filmmaker's kit, fetch the download URL from the app's CSV file
+  if (code === '0f18751d' || currentApp === 'iptv-manager' || !downloadUrl) {
+    // For filmmaker's kit, IPTV Manager, or if no URL is set, fetch from CSV file
     downloadUrl = await getDownloadURL(currentApp);
   }
 
