@@ -375,6 +375,26 @@ async function getVersionFromCSV(appName) {
   }
 }
 
+// Fetch download URL from CSV files
+async function getDownloadURL(appName) {
+  try {
+    const response = await fetch(`/downloads/${appName}-versions.csv`);
+    const csvText = await response.text();
+    const lines = csvText.trim().split('\n');
+    if (lines.length > 1) {
+      const firstDataRow = lines[1];
+      const columns = firstDataRow.split(',');
+      if (columns.length >= 4) {
+        return columns[3];
+      }
+    }
+    return null;
+  } catch (error) {
+    console.error(`Failed to fetch download URL for ${appName}:`, error);
+    return null;
+  }
+}
+
 // Download code mapping - validly purchased codes
 const downloadCodes = {
   '6de68f55': { app: 'call-sheets', name: 'Call Sheets', url: 'http://adfoc.us/875782113257849' },
@@ -417,7 +437,7 @@ function closeModal() {
   currentApp = null;
 }
 
-function verifyCode() {
+async function verifyCode() {
   const code = document.getElementById('dlCode').value.trim().toLowerCase();
   const errorEl = document.getElementById('modalError');
 
@@ -442,9 +462,20 @@ function verifyCode() {
     return;
   }
 
-  // Code is valid - redirect to download
-  window.location.href = codeInfo.url;
-  closeModal();
+  // Code is valid - get download URL
+  let downloadUrl = codeInfo.url;
+  if (code === '0f18751d') {
+    // For filmmaker's kit, fetch the download URL from the app's CSV file
+    downloadUrl = await getDownloadURL(currentApp);
+  }
+
+  if (downloadUrl) {
+    window.location.href = downloadUrl;
+    closeModal();
+  } else {
+    errorEl.textContent = 'Unable to retrieve download link. Please try again.';
+    errorEl.classList.add('visible');
+  }
 }
 
 // Allow Enter key to submit
