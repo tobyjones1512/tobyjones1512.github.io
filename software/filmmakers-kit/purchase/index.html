@@ -1230,7 +1230,7 @@
           return;
         }
         if (res.ok && data.success) {
-          window.location.href = "../thank-you/?txn=" + encodeURIComponent(data.transactionId) + (data.serialKey ? "&key=" + encodeURIComponent(data.serialKey) : "");
+          window.location.href = "/software/redownload/?fk=0f18751d";
         } else {
           showFormError(data.message || "Payment declined. Please check your details and try again.");
           setLoading(false);
