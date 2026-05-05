@@ -60,11 +60,13 @@
             display: flex; flex-direction: column; justify-content: space-between;
         }
         .download-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+        .download-item > div { display: flex; flex-direction: column; }
         .download-item-icon {
-            width: 64px; height: 64px; border-radius: 14px; margin-bottom: 20px;
+            width: 64px; height: 64px; border-radius: 14px; margin-bottom: 16px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            align-self: flex-start;
         }
-        .item-header { display: flex; align-items: baseline; justify-content: center; gap: 10px; margin-bottom: 8px; }
+        .item-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px; }
         .download-item h3 { font-size: 24px; font-weight: 700; margin: 0; letter-spacing: -0.02em; display: inline; }
         .version-badge { display: inline-block; background: var(--primary); color: white; font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 16px; letter-spacing: 0.05em; white-space: nowrap; line-height: 1; }
         .download-item .desc { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
@@ -358,7 +360,7 @@
 // Software versions - update as new versions are released
 const softwareVersions = {
   'call-sheets': 'v1.0.0',
-  'iptv-manager': 'v1.0.0',
+  'iptv-manager': 'v3.0.2',
   'scheduling': 'v1.0.0',
   'budgeting': 'v1.0.0'
 };
