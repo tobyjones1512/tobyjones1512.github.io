@@ -1,4 +1,5 @@
 version,release_date,status,filename,min_macos,release_notes
+4.0.0,2026-05-05,major,IPTV Manager - 4.0.0.zip,10.15,Added FTP and new download and version checks
 3.0.2,2026-04-12,security,IPTV Manager - 3.0.2.zip,10.15,Fixed Minor Data Leak
 3.0.1,2026-04-12,bug fix,IPTV Manager - 3.0.1.zip,10.15,Fixed Check Connection Problems
 3.0.0,2026-04-12,major,IPTV Manager - 3.0.0.zip,10.15,Added visionOS UI theme and fixed transcoding
