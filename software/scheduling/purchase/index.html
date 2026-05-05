@@ -979,13 +979,17 @@
       let discount = 0;
       let discountBadge = "";
 
-      if (promo.toUpperCase() === "STUDENT") {
-        const discountRate = amex ? STUDENT_DISCOUNT_AMEX : STUDENT_DISCOUNT_REGULAR;
-        discount = round2(BASE_PRICE * discountRate);
-        discountBadge = amex ? "STUDENT 25% OFF" : "STUDENT 50% OFF";
-      } else if (amex && !promo) {
+      // AMEX discount (always applied if AMEX is used)
+      if (amex) {
         discount = round2(BASE_PRICE * AMEX_DISCOUNT);
         discountBadge = "AMEX 25% OFF";
+      }
+
+      // STUDENT code (applied if entered, may override AMEX discount)
+      if (promo.toUpperCase() === "STUDENT") {
+        const studentDiscount = amex ? STUDENT_DISCOUNT_AMEX : STUDENT_DISCOUNT_REGULAR;
+        discount = round2(BASE_PRICE * studentDiscount);
+        discountBadge = amex ? "STUDENT 25% OFF" : "STUDENT 50% OFF";
       }
 
       const subtotal = round2(BASE_PRICE - discount);
@@ -1018,7 +1022,7 @@
       document.getElementById("line-discount").style.display = hasDiscount ? "" : "none";
       document.getElementById("line-subtotal").style.display = hasDiscount ? "" : "none";
       document.getElementById("line-tip").style.display     = tipAmount > 0 ? "" : "none";
-      document.getElementById("amex-promo").classList.toggle("visible", amex && !promo);
+      document.getElementById("amex-promo").classList.toggle("visible", amex);
     }
 
     updatePriceSummary(false, "");
@@ -1110,16 +1114,22 @@
         promoCodeInput.classList.remove("error", "success");
         promoCodeSuccess.classList.remove("success");
         promoCodeError.classList.remove("error");
+        promoCodeSuccess.style.display = "none";
+        promoCodeError.style.display = "none";
       } else if (input === "STUDENT") {
         promoCodeInput.classList.add("success");
         promoCodeInput.classList.remove("error");
         promoCodeSuccess.classList.add("success");
         promoCodeError.classList.remove("error");
+        promoCodeSuccess.style.display = "flex";
+        promoCodeError.style.display = "none";
       } else {
         promoCodeInput.classList.add("error");
         promoCodeInput.classList.remove("success");
         promoCodeError.classList.add("error");
         promoCodeSuccess.classList.remove("success");
+        promoCodeSuccess.style.display = "none";
+        promoCodeError.style.display = "flex";
       }
 
       updatePriceSummary(isAmex, promoCode);
