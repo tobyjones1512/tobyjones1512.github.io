@@ -1114,16 +1114,22 @@
         promoCodeInput.classList.remove("error", "success");
         promoCodeSuccess.classList.remove("success");
         promoCodeError.classList.remove("error");
+        promoCodeSuccess.style.display = "none";
+        promoCodeError.style.display = "none";
       } else if (input === "STUDENT") {
         promoCodeInput.classList.add("success");
         promoCodeInput.classList.remove("error");
         promoCodeSuccess.classList.add("success");
         promoCodeError.classList.remove("error");
+        promoCodeSuccess.style.display = "flex";
+        promoCodeError.style.display = "none";
       } else {
         promoCodeInput.classList.add("error");
         promoCodeInput.classList.remove("success");
         promoCodeError.classList.add("error");
         promoCodeSuccess.classList.remove("success");
+        promoCodeSuccess.style.display = "none";
+        promoCodeError.style.display = "flex";
       }
 
       updatePriceSummary(isAmex, promoCode);
