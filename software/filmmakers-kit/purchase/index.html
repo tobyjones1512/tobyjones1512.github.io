@@ -572,6 +572,65 @@
       border: 1px solid #ffd4d4;
     }
 
+    .promo-code-wrap {
+      margin-bottom: 20px;
+    }
+
+    .promo-code-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--text);
+      background: var(--card);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .promo-code-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
+    }
+
+    .promo-code-input.error {
+      border-color: var(--danger);
+      box-shadow: 0 0 0 3px rgba(255,59,48,0.1);
+    }
+
+    .promo-code-input.success {
+      border-color: var(--success);
+      box-shadow: 0 0 0 3px rgba(52,199,89,0.1);
+    }
+
+    .promo-code-message {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+
+    .promo-code-message.success {
+      background: #e8f9ed;
+      color: var(--success);
+      border: 1px solid #c3e6d0;
+      display: flex;
+    }
+
+    .promo-code-message.error {
+      background: #fff0f0;
+      color: var(--danger);
+      border: 1px solid #ffd4d4;
+      display: flex;
+    }
+
     .brand-visa   { display: none; }
     .brand-mc     { display: none; }
     .brand-amex   { display: none; }
@@ -840,6 +899,19 @@
           <div class="field-error" id="err-postal">Required</div>
         </div>
 
+        <div class="promo-code-wrap">
+          <label for="promo-code">Promo Code (Optional)</label>
+          <input type="text" id="promo-code" class="promo-code-input" placeholder="Enter promo code" />
+          <div class="promo-code-message success" id="promo-code-success">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span id="promo-code-success-text">STUDENT code applied!</span>
+          </div>
+          <div class="promo-code-message error" id="promo-code-error">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span id="promo-code-error-text">Invalid promo code</span>
+          </div>
+        </div>
+
         <div class="alert alert-error" id="form-error" role="alert">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           <span id="form-error-msg">An error occurred. Please try again.</span>
@@ -875,23 +947,37 @@
     const BASE_PRICE    = 42.99;
     const TAX_RATE      = 0.13;
     const AMEX_DISCOUNT = 0.25;
+    const STUDENT_DISCOUNT_REGULAR = 0.50;
+    const STUDENT_DISCOUNT_AMEX = 0.25;
 
     let isAmex    = false;
     let tipAmount = 2;
+    let promoCode = "";
 
     function round2(n) { return Math.round(n * 100) / 100; }
     function fmtCAD(n) { return 'CAD $' + n.toFixed(2); }
 
-    function calcPrices(amex) {
-      const discount = amex ? round2(BASE_PRICE * AMEX_DISCOUNT) : 0;
+    function calcPrices(amex, promo) {
+      let discount = 0;
+      let discountBadge = "";
+
+      if (promo.toUpperCase() === "STUDENT") {
+        const discountRate = amex ? STUDENT_DISCOUNT_AMEX : STUDENT_DISCOUNT_REGULAR;
+        discount = round2(BASE_PRICE * discountRate);
+        discountBadge = amex ? "STUDENT 25% OFF" : "STUDENT 50% OFF";
+      } else if (amex && !promo) {
+        discount = round2(BASE_PRICE * AMEX_DISCOUNT);
+        discountBadge = "AMEX 25% OFF";
+      }
+
       const subtotal = round2(BASE_PRICE - discount);
       const tax      = round2(subtotal * TAX_RATE);
       const total    = round2(subtotal + tipAmount + tax);
-      return { discount, subtotal, tax, total };
+      return { discount, subtotal, tax, total, discountBadge };
     }
 
-    function updatePriceSummary(amex) {
-      const { discount, subtotal, tax, total } = calcPrices(amex);
+    function updatePriceSummary(amex, promo) {
+      const { discount, subtotal, tax, total, discountBadge } = calcPrices(amex, promo);
       document.getElementById("val-base").textContent     = fmtCAD(BASE_PRICE);
       document.getElementById("val-discount").textContent = "−" + fmtCAD(discount);
       document.getElementById("val-subtotal").textContent = fmtCAD(subtotal);
@@ -899,21 +985,32 @@
       document.getElementById("val-tax").textContent      = fmtCAD(tax);
       document.getElementById("val-total").textContent    = fmtCAD(total);
       document.getElementById("btn-amount").innerHTML     = fmtCAD(total);
-      document.getElementById("line-discount").style.display = amex ? "" : "none";
-      document.getElementById("line-subtotal").style.display = amex ? "" : "none";
+
+      const discountLineEl = document.getElementById("line-discount");
+      const discountBadgeEl = discountLineEl.querySelector(".discount-badge");
+      if (discountBadge) {
+        discountBadgeEl.textContent = discountBadge;
+      }
+
+      const hasDiscount = discount > 0;
+      document.getElementById("line-discount").style.display = hasDiscount ? "" : "none";
+      document.getElementById("line-subtotal").style.display = hasDiscount ? "" : "none";
       document.getElementById("line-tip").style.display     = tipAmount > 0 ? "" : "none";
-      document.getElementById("amex-promo").classList.toggle("visible", amex);
+      document.getElementById("amex-promo").classList.toggle("visible", amex && !promo);
     }
 
-    updatePriceSummary(false);
+    updatePriceSummary(false, "");
 
     // Tip handling
     const tipButtons     = document.querySelectorAll('.tip-btn');
     const tipCustomInput = document.getElementById('tip-custom');
     const tipRemoveBtn   = document.getElementById('tip-remove');
+    const promoCodeInput = document.getElementById('promo-code');
+    const promoCodeSuccess = document.getElementById('promo-code-success');
+    const promoCodeError = document.getElementById('promo-code-error');
 
     document.getElementById("default-tip").classList.add("active");
-    updatePriceSummary(isAmex);
+    updatePriceSummary(isAmex, "");
 
     tipButtons.forEach(btn => {
       btn.addEventListener("click", () => {
@@ -921,7 +1018,7 @@
         btn.classList.add("active");
         tipAmount = parseFloat(btn.dataset.tip);
         tipCustomInput.value = "";
-        updatePriceSummary(isAmex);
+        updatePriceSummary(isAmex, promoCode);
       });
     });
 
@@ -930,14 +1027,14 @@
       let v = parseFloat(tipCustomInput.value.replace(/[^0-9.]/g, ""));
       if (isNaN(v) || v < 0) v = 0;
       tipAmount = round2(v);
-      updatePriceSummary(isAmex);
+      updatePriceSummary(isAmex, promoCode);
     });
 
     tipRemoveBtn.addEventListener("click", () => {
       tipAmount = 0;
       tipCustomInput.value = "";
       tipButtons.forEach(b => b.classList.remove("active"));
-      updatePriceSummary(isAmex);
+      updatePriceSummary(isAmex, promoCode);
     });
 
     // Card detection
@@ -975,7 +1072,30 @@
       }
       cardInput.value = formatted;
       showBrand(type);
-      if (isAmex !== prevAmex) updatePriceSummary(isAmex);
+      if (isAmex !== prevAmex) updatePriceSummary(isAmex, promoCode);
+    });
+
+    promoCodeInput.addEventListener("input", () => {
+      const input = promoCodeInput.value.trim().toUpperCase();
+      promoCode = input;
+
+      if (input === "") {
+        promoCodeInput.classList.remove("error", "success");
+        promoCodeSuccess.classList.remove("success");
+        promoCodeError.classList.remove("error");
+      } else if (input === "STUDENT") {
+        promoCodeInput.classList.add("success");
+        promoCodeInput.classList.remove("error");
+        promoCodeSuccess.classList.add("success");
+        promoCodeError.classList.remove("error");
+      } else {
+        promoCodeInput.classList.add("error");
+        promoCodeInput.classList.remove("success");
+        promoCodeError.classList.add("error");
+        promoCodeSuccess.classList.remove("success");
+      }
+
+      updatePriceSummary(isAmex, promoCode);
     });
 
     const expMonth = document.getElementById("exp-month");
@@ -1049,7 +1169,7 @@
     }
 
     async function chargeCard(opaqueData) {
-      const { discount, subtotal, tax, total } = calcPrices(isAmex);
+      const { discount, subtotal, tax, total } = calcPrices(isAmex, promoCode);
       const payload = {
         opaqueData,
         amount:    total.toFixed(2),
@@ -1057,6 +1177,7 @@
         taxAmount: tax.toFixed(2),
         tipAmount: tipAmount.toFixed(2),
         discount:  discount.toFixed(2),
+        promoCode: promoCode,
         billing: {
           firstName: document.getElementById("first-name").value.trim(),
           lastName:  document.getElementById("last-name").value.trim(),
