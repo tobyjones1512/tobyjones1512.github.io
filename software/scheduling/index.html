@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin:0; padding:0; box-sizing: border-box; }
-        
+
         :root {
             --primary: #0071e3;
             --primary-hover: #0077ed;
@@ -53,7 +53,7 @@
         .site-header .site-nav .nav-link { text-decoration: none; color: var(--text-secondary); font-size: 14px; }
         .site-header .site-nav .nav-link:hover { color: var(--text); }
         .site-header .site-nav .nav-cta { color: var(--primary); }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--text);
@@ -61,10 +61,9 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-        
+
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        /* Navigation */
+
         nav {
             background: rgba(255,255,255,0.8);
             backdrop-filter: blur(20px);
@@ -79,7 +78,7 @@
             top: 0;
             z-index: 100;
         }
-        
+
         .nav-brand {
             display: flex;
             align-items: center;
@@ -90,17 +89,17 @@
             color: var(--text);
             transition: opacity 0.2s;
         }
-        
+
         .nav-brand:hover { opacity: 0.7; }
         .nav-brand img { width: 36px; height: 36px; border-radius: 8px; }
-        
+
         /* Hero */
         .hero {
             padding: 120px 20px 80px;
             text-align: center;
             background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
         }
-        
+
         .hero img {
             width: 140px;
             height: 140px;
@@ -108,7 +107,7 @@
             box-shadow: 0 24px 64px rgba(0,0,0,0.15);
             margin-bottom: 32px;
         }
-        
+
         .hero h1 {
             font-size: 64px;
             font-weight: 700;
@@ -119,7 +118,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .hero p {
             font-size: 22px;
             color: var(--text-secondary);
@@ -127,14 +126,14 @@
             margin: 0 auto 16px;
             line-height: 1.5;
         }
-        
+
         .hero .price {
             font-size: 28px;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 32px;
         }
-        
+
         .hero-features {
             display: flex;
             justify-content: center;
@@ -142,7 +141,7 @@
             margin-top: 32px;
             flex-wrap: wrap;
         }
-        
+
         .hero-feature {
             display: flex;
             align-items: center;
@@ -150,7 +149,7 @@
             font-size: 15px;
             color: var(--text-secondary);
         }
-        
+
         .hero-feature svg { color: var(--success); }
 
         .btn-buy {
@@ -172,24 +171,12 @@
             box-shadow: 0 8px 24px rgba(0,113,227,0.4);
         }
 
-        .coming-soon-pill {
-            display: none;
-            padding: 12px 32px;
-            background: #d2d2d7;
-            color: #6e6e73;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 980px;
-            text-decoration: none;
-            cursor: default;
-        }
-        
         /* Features */
         .features {
             padding: 100px 0;
             background: var(--card);
         }
-        
+
         .features h2 {
             font-size: 48px;
             font-weight: 700;
@@ -197,7 +184,7 @@
             margin-bottom: 64px;
             letter-spacing: -0.02em;
         }
-        
+
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -205,34 +192,34 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .feature-item {
             padding: 32px;
             border-radius: 20px;
             background: var(--bg);
             transition: transform 0.3s;
         }
-        
+
         .feature-item:hover { transform: translateY(-4px); }
-        
+
         .feature-item h3 {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 12px;
             letter-spacing: -0.02em;
         }
-        
+
         .feature-item p {
             color: var(--text-secondary);
             font-size: 16px;
             line-height: 1.6;
         }
-        
+
         /* Detailed Features */
         .detailed-features {
             padding: 100px 0;
         }
-        
+
         .detailed-features h2 {
             font-size: 48px;
             font-weight: 700;
@@ -240,20 +227,20 @@
             margin-bottom: 16px;
             letter-spacing: -0.02em;
         }
-        
+
         .detailed-features > .container > p {
             text-align: center;
             color: var(--text-secondary);
             font-size: 18px;
             margin-bottom: 64px;
         }
-        
+
         .feature-list {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
-        
+
         .feature-box {
             padding: 24px;
             border-radius: 16px;
@@ -261,30 +248,30 @@
             background: var(--card);
             transition: all 0.3s;
         }
-        
+
         .feature-box:hover {
             box-shadow: var(--shadow);
             transform: translateY(-4px);
         }
-        
+
         .feature-box h3 {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 12px;
         }
-        
+
         .feature-box p {
             color: var(--text-secondary);
             font-size: 15px;
             line-height: 1.6;
         }
-        
+
         /* Screenshots */
         .screenshots {
             padding: 100px 0;
             background: var(--bg);
         }
-        
+
         .screenshots h2 {
             font-size: 48px;
             font-weight: 700;
@@ -292,7 +279,7 @@
             margin-bottom: 64px;
             letter-spacing: -0.02em;
         }
-        
+
         .screenshot-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -300,26 +287,16 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .screenshot-grid img {
             width: 100%;
             border-radius: 16px;
             box-shadow: 0 12px 32px rgba(0,0,0,0.12);
         }
-        
+
         /* Bundle CTA */
-        .bundle-link {
-            padding: 0;
-            background: none;
-        }
-        .bundle-cta {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            padding: 80px 24px;
-            text-align: center;
-            border-radius: 20px;
-            overflow: hidden;
-            margin: 20px;
-        }
+        .bundle-link { padding: 0; background: none; }
+        .bundle-cta { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 80px 24px; text-align: center; border-radius: 20px; overflow: hidden; margin: 20px; }
         .bundle-cta-inner { max-width: 580px; margin: 0 auto; }
         .bundle-app-icons { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 28px; }
         .bundle-app-icons img { width: 52px; height: 52px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
@@ -330,15 +307,21 @@
         .bundle-new-price { font-size: 28px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em; }
         .bundle-old-price { font-size: 17px; color: rgba(255,255,255,0.35); text-decoration: line-through; }
         .bundle-save-badge { background: rgba(52,199,89,0.18); border: 1px solid rgba(52,199,89,0.35); color: #34c759; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 980px; }
-        .bundle-btn {
-            display: inline-block; padding: 16px 40px;
-            background: #ffffff; color: #1d1d1f;
-            font-size: 16px; font-weight: 600; border-radius: 980px;
-            text-decoration: none; transition: all 0.2s;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-        }
+        .bundle-btn { display: inline-block; padding: 16px 40px; background: #ffffff; color: #1d1d1f; font-size: 16px; font-weight: 600; border-radius: 980px; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
         .bundle-btn:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
-        
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a { color: var(--text-secondary); text-decoration: none; }
+        footer a:hover { color: var(--primary); }
+
         @media (max-width: 768px) {
             .feature-grid,
             .feature-list { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
@@ -351,85 +334,84 @@
             .screenshots h2 { font-size: 36px; }
             .feature-item { padding: 24px; }
         }
-    </style>
-    <style>
-    /* ── Site-wide nav & footer (matches landing page) ─────────────────────── */
-    :root { --apple-dark: #1d1d1f; --apple-mid: #424245; --apple-subtle: #6e6e73; --apple-white: #ffffff; --apple-blue: #0071e3; }
-    body { padding-top: 52px; }
-    nav { position: fixed !important; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 52px !important; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.72) !important; backdrop-filter: saturate(180%) blur(20px) !important; -webkit-backdrop-filter: saturate(180%) blur(20px) !important; border-bottom: 1px solid rgba(0,0,0,.08) !important; box-shadow: none !important; }
-    nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: #1d1d1f; text-decoration: none; }
-    nav ul { list-style: none; display: flex; gap: 32px; }
-    nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
-    nav ul a { font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; transition: color .2s; }
-    nav ul a:hover { color: #1d1d1f; }
-    nav .nav-cta { font-size: 13px; font-weight: 400; color: #0071e3; text-decoration: none; transition: opacity .2s; }
-    nav .nav-cta:hover { opacity: .7; }
-    .nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
-    .nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
-    .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
-    .nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); z-index: 200; }
-    .nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
-    .nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; border-radius: 10px; transition: background .15s, color .15s; white-space: nowrap; height: auto; letter-spacing: normal; }
-    .nav-dropdown-panel a:hover { background: rgba(0,0,0,.05); color: #1d1d1f; }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s; }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
-    .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
-    .mobile-menu a:hover { background: rgba(0,0,0,.05); }
-    .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
-    .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
-    .mobile-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 24px; color: #1d1d1f; cursor: pointer; padding: 8px; line-height: 1; }
-    @media (max-width: 768px) { nav ul { display: none !important; } .nav-hamburger { display: flex !important; } .nav-cta { display: none !important; } }
-    footer { background: #ffffff !important; border-top: 1px solid rgba(0,0,0,.07) !important; padding: 40px 24px !important; text-align: left !important; }
-    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .footer-copy { font-size: 12px; color: #6e6e73; }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 12px; color: #6e6e73; text-decoration: none; transition: color .2s; }
-    .footer-links a:hover { color: #1d1d1f; }
-    </style>
-</head>
+  </style>
+<style>
+/* ── Site-wide nav & footer (matches landing page) ─────────────────────── */
+:root { --apple-dark: #1d1d1f; --apple-mid: #424245; --apple-subtle: #6e6e73; --apple-white: #ffffff; --apple-blue: #0071e3; }
+body { padding-top: 52px; }
+nav { position: fixed !important; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 52px !important; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.72) !important; backdrop-filter: saturate(180%) blur(20px) !important; -webkit-backdrop-filter: saturate(180%) blur(20px) !important; border-bottom: 1px solid rgba(0,0,0,.08) !important; box-shadow: none !important; }
+nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: #1d1d1f; text-decoration: none; }
+nav ul { list-style: none; display: flex; gap: 32px; }
+nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
+nav ul a { font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; transition: color .2s; }
+nav ul a:hover { color: #1d1d1f; }
+nav .nav-cta { font-size: 13px; font-weight: 400; color: #0071e3; text-decoration: none; transition: opacity .2s; }
+nav .nav-cta:hover { opacity: .7; }
+.nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
+.nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
+.nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
+.nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); z-index: 200; }
+.nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
+.nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; border-radius: 10px; transition: background .15s, color .15s; white-space: nowrap; height: auto; letter-spacing: normal; }
+.nav-dropdown-panel a:hover { background: rgba(0,0,0,.05); color: #1d1d1f; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
+.mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
+.mobile-menu a:hover { background: rgba(0,0,0,.05); }
+.mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
+.mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
+.mobile-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 24px; color: #1d1d1f; cursor: pointer; padding: 8px; line-height: 1; }
+@media (max-width: 768px) { nav ul { display: none !important; } .nav-hamburger { display: flex !important; } .nav-cta { display: none !important; } }
+footer { background: #ffffff !important; border-top: 1px solid rgba(0,0,0,.07) !important; padding: 40px 24px !important; }
+.footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-copy { font-size: 12px; color: #6e6e73; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 12px; color: #6e6e73; text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: #1d1d1f; }
+</style>
 <body>
-  <nav>
-    <a href="/" class="logo">Toby Jones</a>
-    <ul>
-      <li class="nav-has-dropdown">
-        <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav-dropdown-panel">
-          <a href="/digital-marketing">Digital Marketing</a>
-          <a href="/out-of-house">Out-of-House</a>
-          <a href="/tv-radio">TV &amp; Radio</a>
-          <a href="/postal-marketing">Postal Advertising</a>
-          <a href="/public-relations">Public Relations</a>
-        </div>
-      </li>
-      <li class="nav-has-dropdown active">
-        <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav-dropdown-panel">
-          <a href="/video" class="active">Video Editing</a>
-          <a href="/video-production">Video Production</a>
-        </div>
-      </li>
-      <li><a href="/web-development">Web Development</a></li>
-      <li><a href="/portfolio">Portfolio</a></li>
-      <li><a href="/software">Software</a></li>
-    </ul>
-    <a href="/email/" class="nav-cta">Get in touch ↗</a>
-    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="/" class="logo">Toby Jones</a>
+      <ul>
+        <li class="nav-has-dropdown">
+          <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav-dropdown-panel">
+            <a href="/digital-marketing">Digital Marketing</a>
+            <a href="/out-of-house">Out-of-House</a>
+            <a href="/tv-radio">TV &amp; Radio</a>
+            <a href="/postal-marketing">Postal Advertising</a>
+            <a href="/public-relations">Public Relations</a>
+          </div>
+        </li>
+        <li class="nav-has-dropdown">
+          <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav-dropdown-panel">
+            <a href="/video" class="active">Video Editing</a>
+            <a href="/video-production">Video Production</a>
+          </div>
+        </li>
+        <li><a href="/web-development">Web Development</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/software">Software</a></li>
+      </ul>
+      <a href="/email/" class="nav-cta">Get in touch ↗</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobileMenu"></div>
+
     <div class="container">
         <!-- Hero -->
         <section class="hero">
             <img src="Icon.png" alt="Scheduling Icon">
             <h1>Scheduling</h1>
-            <p>Professional film scheduling made simple. Drag-and-drop interface with automatic conflict detection and intelligent call sheet generation.</p>
+            <p>Build comprehensive shooting schedules. Manage scenes, breaks, and character tracking with Final Draft script import and professional PDF export.</p>
             <div class="price">$19.99 (excl. tax)</div>
             <a href="/software/scheduling/purchase/" class="btn-buy">Buy Now</a>
-            <div class="coming-soon-pill">Coming Soon</div>
-            
+
             <div class="hero-features">
                 <div class="hero-feature">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -449,23 +431,23 @@
         <!-- Features -->
         <section class="features">
             <div class="container">
-                <h2>Powerful Scheduling Tools</h2>
+                <h2>Professional Schedule Building</h2>
                 <div class="feature-grid">
                     <div class="feature-item">
-                        <h3>Visual Timeline</h3>
-                        <p>See your entire production schedule at a glance with our intuitive visual timeline. Drag and drop scenes to rearrange your shoot days instantly.</p>
+                        <h3>Stripboard & Drag-and-Drop</h3>
+                        <p>Organize scenes, day breaks, and banners with intuitive drag-and-drop reordering. Create production schedules your way.</p>
                     </div>
                     <div class="feature-item">
-                        <h3>Conflict Detection</h3>
-                        <p>Automatically detect scheduling conflicts for cast, crew, and locations. Get instant alerts when an actor is double-booked.</p>
+                        <h3>Script Import & Parsing</h3>
+                        <p>Import Final Draft .fdx screenplays directly. Auto-populate scene headings, locations, characters, and cast assignments.</p>
                     </div>
                     <div class="feature-item">
-                        <h3>Call Sheet Generation</h3>
-                        <p>Generate professional call sheets directly from your schedule with one click. Automatically includes all relevant details.</p>
+                        <h3>Scene & Character Management</h3>
+                        <p>Comprehensive scene breakdown panel with INT/EXT, location, time of day, cast tracking, and production elements.</p>
                     </div>
                     <div class="feature-item">
-                        <h3>Export Options</h3>
-                        <p>Export schedules to PDF, CSV, or share directly with your team. Compatible with all major production management tools.</p>
+                        <h3>Smart Day Management</h3>
+                        <p>Automatic day numbering, date assignment with inline editing, and real-time scene and page count statistics.</p>
                     </div>
                 </div>
             </div>
@@ -474,33 +456,57 @@
         <!-- Detailed Features -->
         <section class="detailed-features">
             <div class="container">
-                <h2>Everything You Need</h2>
-                <p>Built for professional filmmakers who need reliable, fast scheduling tools.</p>
-                
+                <h2>Complete Scheduling Toolkit</h2>
+                <p>Everything you need to create and manage professional production schedules.</p>
+
                 <div class="feature-list">
                     <div class="feature-box">
-                        <h3>Scene Management</h3>
-                        <p>Organize scenes with custom tags, priorities, and notes. Attach script pages and reference materials.</p>
+                        <h3>📁 Project Management</h3>
+                        <p>Create, open, save, and auto-save projects. Full project tracking with modification indicators and save as options.</p>
                     </div>
                     <div class="feature-box">
-                        <h3>Cast & Crew</h3>
-                        <p>Manage availability, track contact info, and see who's needed for each scene at a glance.</p>
+                        <h3>🎞️ Stripboard Building</h3>
+                        <p>Add, edit, delete, and duplicate scenes with full drag-and-drop reordering. Create day breaks with automatic numbering.</p>
                     </div>
                     <div class="feature-box">
-                        <h3>Location Tracking</h3>
-                        <p>Link scenes to locations with automatic sunrise/sunset times and weather forecasts.</p>
+                        <h3>📝 Scene Breakdown Details</h3>
+                        <p>Comprehensive scene information including INT/EXT, location, time of day, page count, cast, and production elements.</p>
                     </div>
                     <div class="feature-box">
-                        <h3>Day Breakdown</h3>
-                        <p>Automatically break down your script into shoot days based on your specific criteria and constraints.</p>
+                        <h3>🎭 Production Elements Tracking</h3>
+                        <p>Track props, wardrobe, vehicles, extras, stunts, SFX, VFX, music, animals, hair/makeup, set dressing, and special equipment.</p>
                     </div>
                     <div class="feature-box">
-                        <h3>Progress Tracking</h3>
-                        <p>Track completed scenes, monitor daily progress, and get real-time updates on production status.</p>
+                        <h3>👥 Character Management</h3>
+                        <p>Manage cast members with color-coded badges. Filter stripboard by character to see only their scenes.</p>
                     </div>
                     <div class="feature-box">
-                        <h3>Team Collaboration</h3>
-                        <p>Share schedules with department heads. Control permissions and track who has viewed updates.</p>
+                        <h3>📥 Final Draft Import</h3>
+                        <p>Parse .fdx screenplay files to auto-populate scene headings, scene numbers, characters, and cast assignments.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>🔎 Search & Filtering</h3>
+                        <p>Global search by scene number, INT/EXT, location, time of day. Real-time filtering by character with visual highlighting.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>📄 PDF Export</h3>
+                        <p>Export complete schedules as landscape PDF with full formatting, colors, and professional layout.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>⌨️ Keyboard Shortcuts</h3>
+                        <p>Complete keyboard shortcut support including Cmd+N, Cmd+O, Cmd+S, Cmd+Z undo/redo, and all major functions.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>↩️ Undo/Redo History</h3>
+                        <p>Full undo/redo support with 60-action history for all operations. Smart history snapshots and change tracking.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>🖥️ Professional UI</h3>
+                        <p>Macintosh-style titlebar, organized toolbar, sidebar with character/schedule/location sections, and color-coded stripboard.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>✏️ Context Menus & Inline Editing</h3>
+                        <p>Right-click context menus for quick actions. Double-click to edit day breaks and banners inline.</p>
                     </div>
                 </div>
             </div>
@@ -511,15 +517,15 @@
             <div class="container">
                 <h2>Screenshots</h2>
                 <div class="screenshot-grid">
-                    <img src="screenshots/Main%20Screen.png" alt="Scheduling - Main Screen">
-                    <img src="screenshots/Scene%20Sidebar.png" alt="Scheduling - Scene Sidebar">
-                    <img src="screenshots/Import%20From%20Final%20Draft.png" alt="Scheduling - Import From Final Draft">
-                    <img src="screenshots/Show%20Scenes%20With%20Specific%20Character.png" alt="Scheduling - Show Scenes With Specific Character">
+                    <img src="screenshots/Stripboard.png" alt="Scheduling - Stripboard">
+                    <img src="screenshots/Schedule%20Details.png" alt="Scheduling - Schedule Details">
+                    <img src="screenshots/Character%20Library.png" alt="Scheduling - Character Library">
+                    <img src="screenshots/Day%20Break%20Setup.png" alt="Scheduling - Day Break Setup">
                 </div>
             </div>
         </section>
 
-        <!-- Bundle CTA -->
+        <!-- Bundle Link -->
         <section class="bundle-link">
             <div class="bundle-cta">
                 <div class="bundle-cta-inner">
