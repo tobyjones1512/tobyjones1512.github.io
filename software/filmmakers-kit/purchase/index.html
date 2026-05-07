@@ -658,6 +658,12 @@
       .form-row.cols-3 { grid-template-columns: 1fr 1fr; }
     }
 
+    @media (max-width: 768px) {
+      .whats-included-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
     @media (max-width: 420px) {
       .form-row.cols-2,
       .form-row.cols-3 { grid-template-columns: 1fr; }
@@ -680,6 +686,84 @@
       text-decoration: none; transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--text); }
+
+    /* What's Included card interactions */
+    .whats-included-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .whats-included-card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .whats-included-card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.3s, max-height 0.3s;
+      pointer-events: none;
+    }
+
+    .whats-included-card-bottom.visible {
+      opacity: 1;
+      max-height: 100px;
+      pointer-events: auto;
+    }
+
+    .whats-included-card:hover .whats-included-card-bottom {
+      opacity: 1;
+      max-height: 100px;
+    }
+
+    .whats-included-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .whats-included-btn {
+      padding: 10px 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .whats-included-btn:hover {
+      background: var(--primary-hover);
+    }
+
+    @media (max-width: 768px) {
+      .whats-included-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .whats-included-card-bottom {
+        opacity: 1;
+        max-height: 100px;
+        pointer-events: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1256,25 +1340,53 @@
     function hideFormError() {
       document.getElementById("form-error").classList.remove("visible");
     }
+
+    // Handle tap/click on "What's Included" cards for mobile interaction
+    document.querySelectorAll('.whats-included-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) return;
+        e.preventDefault();
+        const bottom = card.querySelector('.whats-included-card-bottom');
+        bottom.classList.toggle('visible');
+      });
+    });
   </script>
 
   <section style="max-width:1100px; margin:60px auto; padding:0 20px;">
     <h2 style="font-size:32px; font-weight:700; text-align:center; margin-bottom:32px; letter-spacing:-0.02em;">What's Included</h2>
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; max-width:1000px; margin:0 auto;">
-      <div style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
-        <img src="../screenshots/Scheduling.png" alt="Scheduling" style="width:100px; height:100px; border-radius:20px; margin-bottom:16px;" />
-        <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Scheduling</h3>
-        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Manage film schedules with drag-and-drop interface and conflict detection.</p>
+    <div class="whats-included-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; max-width:1000px; margin:0 auto;">
+      <div class="whats-included-card" style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
+        <div class="whats-included-card-content">
+          <img src="../screenshots/Scheduling.png" alt="Scheduling" style="width:100px; height:100px; border-radius:20px; margin-bottom:16px; margin-left:auto; margin-right:auto;" />
+          <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Scheduling</h3>
+          <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Manage film schedules with drag-and-drop interface and conflict detection.</p>
+        </div>
+        <div class="whats-included-card-bottom">
+          <span class="whats-included-price">$14.99</span>
+          <a href="/software/scheduling/" class="whats-included-btn">View App →</a>
+        </div>
       </div>
-      <div style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
-        <img src="../screenshots/Budgeting.png" alt="Budgeting" style="width:100px; height:100px; border-radius:20px; margin-bottom:16px;" />
-        <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Budgeting</h3>
-        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Track film production budgets in real-time with line item tracking.</p>
+      <div class="whats-included-card" style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
+        <div class="whats-included-card-content">
+          <img src="../screenshots/Budgeting.png" alt="Budgeting" style="width:100px; height:100px; border-radius:20px; margin-bottom:16px; margin-left:auto; margin-right:auto;" />
+          <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Budgeting</h3>
+          <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Track film production budgets in real-time with line item tracking.</p>
+        </div>
+        <div class="whats-included-card-bottom">
+          <span class="whats-included-price">$14.99</span>
+          <a href="/software/budgeting/" class="whats-included-btn">View App →</a>
+        </div>
       </div>
-      <div style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
-        <img src="../screenshots/Call Sheets.png" alt="Call Sheets" style="width:100px; height:100px; border-radius:20px; margin-bottom:16px;" />
-        <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Call Sheets</h3>
-        <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Generate professional call sheets in seconds and send to crew.</p>
+      <div class="whats-included-card" style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
+        <div class="whats-included-card-content">
+          <img src="../screenshots/Call Sheets.png" alt="Call Sheets" style="width:100px; height:100px; border-radius:20px; margin-bottom:16px; margin-left:auto; margin-right:auto;" />
+          <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Call Sheets</h3>
+          <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Generate professional call sheets in seconds and send to crew.</p>
+        </div>
+        <div class="whats-included-card-bottom">
+          <span class="whats-included-price">$14.99</span>
+          <a href="/software/call-sheets/" class="whats-included-btn">View App →</a>
+        </div>
       </div>
     </div>
   </section>
