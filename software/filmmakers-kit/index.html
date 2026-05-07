@@ -96,123 +96,318 @@
 
         /* Global Navigation */
         nav {
-            background: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(0,0,0,.08);
             padding: 0 2.5rem;
-            height: 64px;
+            height: 52px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: sticky;
-            top: 64px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
         }
 
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
+        nav .logo {
+            font-size: 17px;
             font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--text);
-            transition: opacity 0.2s;
+            letter-spacing: -0.3px;
+            color: #1d1d1f;
+            text-decoration: none;
         }
 
-        .nav-brand:hover { opacity: 0.7; }
-        .nav-brand img { width: 36px; height: 36px; border-radius: 8px; }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        nav ul li {
+            position: relative;
+            height: 52px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul a {
+            font-size: 13px;
+            font-weight: 400;
+            color: #424245;
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        nav ul a:hover {
+            color: #1d1d1f;
+        }
+
+        nav .nav-cta {
+            font-size: 13px;
+            font-weight: 400;
+            color: #0071e3;
+            text-decoration: none;
+            transition: opacity .2s;
+        }
+
+        nav .nav-cta:hover {
+            opacity: .7;
+        }
+
+        .nav-has-dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: default;
+            user-select: none;
+        }
+
+        .nav-chevron {
+            flex-shrink: 0;
+            opacity: 0.55;
+            transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s;
+        }
+
+        .nav-has-dropdown:hover .nav-chevron {
+            transform: rotate(180deg);
+            opacity: 1;
+        }
+
+        .nav-dropdown-panel {
+            position: absolute;
+            top: 52px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px) scale(0.96);
+            min-width: 210px;
+            background: rgba(255,255,255,.95);
+            backdrop-filter: saturate(180%) blur(24px);
+            -webkit-backdrop-filter: saturate(180%) blur(24px);
+            border: 1px solid rgba(0,0,0,.08);
+            border-radius: 18px;
+            padding: 8px;
+            box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1);
+            z-index: 200;
+        }
+
+        .nav-has-dropdown:hover .nav-dropdown-panel {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateX(-50%) translateY(0) scale(1);
+        }
+
+        .nav-dropdown-panel a {
+            display: block;
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #424245;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background .15s, color .15s;
+            white-space: nowrap;
+            height: auto;
+            letter-spacing: normal;
+        }
+
+        .nav-dropdown-panel a:hover {
+            background: rgba(0,0,0,.05);
+            color: #1d1d1f;
+        }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            border: none;
+            background: none;
+            z-index: 200;
+        }
+
+        .nav-hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #1d1d1f;
+            border-radius: 2px;
+            transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s;
+        }
+
+        .nav-hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .nav-hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 150;
+            background: rgba(255,255,255,.88);
+            backdrop-filter: saturate(200%) blur(40px);
+            -webkit-backdrop-filter: saturate(200%) blur(40px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s cubic-bezier(.22,1,.36,1);
+        }
+
+        .mobile-menu a {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1d1d1f;
+            text-decoration: none;
+            letter-spacing: -.03em;
+            padding: 10px 32px;
+            border-radius: 18px;
+            transition: background .15s;
+        }
+
+        .mobile-menu a:hover {
+            background: rgba(0,0,0,.05);
+        }
+
+        .mobile-menu .mobile-cta {
+            margin-top: 24px;
+            font-size: 17px;
+            font-weight: 500;
+            color: #0071e3;
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 28px;
+            border-radius: 980px;
+            border: 1.5px solid rgba(0,113,227,.4);
+            transition: background .15s;
+        }
+
+        .mobile-menu .mobile-cta:hover {
+            background: rgba(0,113,227,.06);
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #1d1d1f;
+            cursor: pointer;
+            padding: 8px;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none !important;
+            }
+
+            .nav-hamburger {
+                display: flex !important;
+            }
+
+            .nav-cta {
+                display: none !important;
+            }
+        }
 
         /* Hero Section */
         .hero {
             padding: 120px 20px 80px;
             text-align: center;
-            background: linear-gradient(135deg, #ffffff 0%, var(--bg) 100%);
+            background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
         }
 
-        .hero-icon {
+        .hero img {
             width: 140px;
             height: 140px;
-            margin: 0 auto 32px;
             border-radius: 28px;
             box-shadow: 0 24px 64px rgba(0,0,0,0.15);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+            margin-bottom: 32px;
         }
 
         .hero h1 {
             font-size: 64px;
             font-weight: 700;
             letter-spacing: -0.03em;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #1d1d1f 0%, #434343 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 22px;
             color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
+            max-width: 750px;
+            margin: 0 auto 16px;
+            line-height: 1.5;
         }
 
-        .hero-cta {
+        .hero .price {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 32px;
+        }
+
+        .hero-features {
             display: flex;
-            gap: 16px;
             justify-content: center;
+            gap: 32px;
+            margin-top: 32px;
             flex-wrap: wrap;
-            margin-top: 40px;
         }
 
-        .btn {
-            display: inline-flex;
+        .hero-feature {
+            display: flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 32px;
-            border-radius: 980px;
-            font-weight: 600;
             font-size: 15px;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s;
+            color: var(--text-secondary);
         }
 
-        .btn-primary {
+        .hero-feature svg {
+            color: var(--success);
+        }
+
+        .btn-buy {
+            display: inline-block;
+            padding: 18px 48px;
             background: var(--primary);
             color: white;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 980px;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(0,113,227,0.3);
+            border: none;
         }
 
-        .btn-primary:hover {
+        .btn-buy:hover {
             background: var(--primary-hover);
-            box-shadow: 0 12px 32px rgba(0,113,227,0.2);
-        }
-
-        .btn-secondary {
-            background: var(--card);
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background: var(--bg);
-            border-color: var(--text-secondary);
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #e8f9ed;
-            color: #1a7f4b;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            margin-bottom: 24px;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,113,227,0.4);
         }
 
         /* Feature Highlights */
@@ -542,43 +737,6 @@
             transform: translateX(2px);
         }
 
-        /* Pricing Section */
-        .pricing-highlight {
-            background: linear-gradient(135deg, var(--primary) 0%, #0055b8 100%);
-            padding: 60px;
-            border-radius: 24px;
-            color: white;
-            text-align: center;
-            margin: 80px 0;
-        }
-
-        .pricing-highlight h3 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .pricing-highlight p {
-            font-size: 16px;
-            opacity: 0.95;
-            margin-bottom: 24px;
-        }
-
-        .pricing-detail {
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
-            font-size: 14px;
-        }
-
-        .pricing-detail span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            opacity: 0.9;
-        }
-
         .app-card-price-old {
             text-decoration: line-through;
             opacity: 0.7;
@@ -658,13 +816,9 @@
             .app-card { height: 300px; }
             .app-card-content { padding: 20px; }
             .app-card-title { font-size: 24px; }
-            .pricing-highlight { padding: 40px 20px; margin: 40px 0; }
-            .pricing-detail { flex-direction: column; gap: 12px; }
         }
 
         @media (max-width: 480px) {
-            .hero-cta { flex-direction: column; gap: 12px; }
-            .btn { width: 100%; justify-content: center; }
             .hero h1 { font-size: 28px; }
             .carousel-nav { gap: 12px; }
             .carousel-nav button { width: 40px; height: 40px; font-size: 14px; }
@@ -692,36 +846,54 @@
 
     <!-- Global Navigation -->
     <nav>
-        <a href="/" class="nav-brand">
-            <span>Toby Jones</span>
-        </a>
-        <ul style="display: flex; gap: 20px; list-style: none;">
-            <li><a href="/portfolio" style="text-decoration: none; color: var(--text-secondary); font-size: 14px;">Portfolio</a></li>
-            <li><a href="/software" style="text-decoration: none; color: var(--text-secondary); font-size: 14px;">Software</a></li>
-        </ul>
-    </nav>
+      <a href="/" class="logo">Toby Jones</a>
+      <ul>
+        <li class="nav-has-dropdown">
+          <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav-dropdown-panel">
+            <a href="/digital-marketing">Digital Marketing</a>
+            <a href="/out-of-house">Out-of-House</a>
+            <a href="/tv-radio">TV &amp; Radio</a>
+            <a href="/postal-marketing">Postal Advertising</a>
+            <a href="/public-relations">Public Relations</a>
+          </div>
+        </li>
+        <li class="nav-has-dropdown">
+          <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav-dropdown-panel">
+            <a href="/video">Video Editing</a>
+            <a href="/video-production">Video Production</a>
+          </div>
+        </li>
+        <li><a href="/web-development">Web Development</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/software">Software</a></li>
+      </ul>
+      <a href="/email/" class="nav-cta">Get in touch ↗</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"></div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-badge">NOW AVAILABLE</div>
-            <img src="Icon.png" alt="Filmmakers Kit" class="hero-icon">
-            <h1>Filmmakers Kit</h1>
-            <p>Everything you need to manage professional productions. Schedule shoots, track budgets, and generate call sheets with three powerful, integrated applications.</p>
+        <img src="Icon.png" alt="Filmmakers Kit Icon">
+        <h1>Filmmakers Kit</h1>
+        <p>Everything you need to manage professional productions. Schedule shoots, track budgets, and generate call sheets with three powerful, integrated applications.</p>
+        <div class="price">$44.99 - Save $14.98</div>
+        <a href="/software/filmmakers-kit/purchase/" class="btn-buy">Buy Now</a>
 
-            <div class="pricing-highlight">
-                <h3>$44.99</h3>
-                <p>Complete production suite - save $14.98</p>
-                <div class="pricing-detail">
-                    <span>✓ 3 Professional Apps</span>
-                    <span>✓ 25% AMEX Savings</span>
-                    <span>✓ Lifetime License</span>
-                </div>
+        <div class="hero-features">
+            <div class="hero-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Three professional apps
             </div>
-
-            <div class="hero-cta">
-                <a href="/software/filmmakers-kit/purchase/" class="btn btn-primary">Get Filmmakers Kit</a>
-                <a href="#apps" class="btn btn-secondary">Learn More</a>
+            <div class="hero-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M16 12H8M12 8v8"/></svg>
+                Lifetime license
+            </div>
+            <div class="hero-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                25% discount
             </div>
         </div>
     </section>
