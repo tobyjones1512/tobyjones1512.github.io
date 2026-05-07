@@ -703,29 +703,23 @@
     }
 
     .whats-included-card-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
       margin-top: 16px;
       padding-top: 16px;
       border-top: 1px solid var(--border);
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity 0.3s, max-height 0.3s;
-      pointer-events: none;
+      transition: all 0.3s;
     }
 
     .whats-included-card-bottom.visible {
-      opacity: 1;
-      max-height: 100px;
-      pointer-events: auto;
+      display: flex;
+      flex-direction: column;
     }
 
     .whats-included-card:hover .whats-included-card-bottom {
-      opacity: 1;
-      max-height: 100px;
+      display: flex;
+      flex-direction: column;
     }
 
     .whats-included-price {
@@ -735,18 +729,19 @@
     }
 
     .whats-included-btn {
-      padding: 10px 16px;
+      padding: 8px 12px;
       background: var(--primary);
       color: white;
       border: none;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
       transition: background 0.2s;
       white-space: nowrap;
       display: inline-block;
+      flex-shrink: 0;
     }
 
     .whats-included-btn:hover {
@@ -759,9 +754,23 @@
       }
 
       .whats-included-card-bottom {
-        opacity: 1;
-        max-height: 100px;
-        pointer-events: auto;
+        display: flex !important;
+        flex-direction: column;
+      }
+
+      .whats-included-card-bottom > div {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+
+      .whats-included-price {
+        margin-bottom: 8px;
+      }
+
+      .whats-included-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px 16px;
       }
     }
   </style>
@@ -1362,8 +1371,10 @@
           <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Manage film schedules with drag-and-drop interface and conflict detection.</p>
         </div>
         <div class="whats-included-card-bottom">
-          <span class="whats-included-price">$14.99</span>
-          <a href="/software/scheduling/" class="whats-included-btn">View App →</a>
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 12px;">
+            <span class="whats-included-price">$14.99</span>
+            <a href="/software/scheduling/" class="whats-included-btn">View App →</a>
+          </div>
         </div>
       </div>
       <div class="whats-included-card" style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
@@ -1373,8 +1384,10 @@
           <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Track film production budgets in real-time with line item tracking.</p>
         </div>
         <div class="whats-included-card-bottom">
-          <span class="whats-included-price">$14.99</span>
-          <a href="/software/budgeting/" class="whats-included-btn">View App →</a>
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 12px;">
+            <span class="whats-included-price">$14.99</span>
+            <a href="/software/budgeting/" class="whats-included-btn">View App →</a>
+          </div>
         </div>
       </div>
       <div class="whats-included-card" style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
@@ -1384,8 +1397,10 @@
           <p style="font-size:14px; color:var(--text-secondary); line-height:1.5;">Generate professional call sheets in seconds and send to crew.</p>
         </div>
         <div class="whats-included-card-bottom">
-          <span class="whats-included-price">$14.99</span>
-          <a href="/software/call-sheets/" class="whats-included-btn">View App →</a>
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 12px;">
+            <span class="whats-included-price">$14.99</span>
+            <a href="/software/call-sheets/" class="whats-included-btn">View App →</a>
+          </div>
         </div>
       </div>
     </div>
