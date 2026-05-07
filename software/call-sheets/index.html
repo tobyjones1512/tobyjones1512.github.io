@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin:0; padding:0; box-sizing: border-box; }
-        
+
         :root {
             --primary: #0071e3;
             --primary-hover: #0077ed;
@@ -68,7 +68,7 @@
             color: var(--text);
         }
         .site-header .site-nav .nav-cta { color: var(--primary); }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--text);
@@ -76,9 +76,9 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-        
+
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
+
         nav {
             background: rgba(255,255,255,0.8);
             backdrop-filter: blur(20px);
@@ -93,7 +93,7 @@
             top: 0;
             z-index: 100;
         }
-        
+
         .nav-brand {
             display: flex;
             align-items: center;
@@ -104,17 +104,17 @@
             color: var(--text);
             transition: opacity 0.2s;
         }
-        
+
         .nav-brand:hover { opacity: 0.7; }
         .nav-brand img { width: 36px; height: 36px; border-radius: 8px; }
-        
+
         /* Hero */
         .hero {
             padding: 120px 20px 80px;
             text-align: center;
             background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
         }
-        
+
         .hero img {
             width: 140px;
             height: 140px;
@@ -122,7 +122,7 @@
             box-shadow: 0 24px 64px rgba(0,0,0,0.15);
             margin-bottom: 32px;
         }
-        
+
         .hero h1 {
             font-size: 64px;
             font-weight: 700;
@@ -133,7 +133,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .hero p {
             font-size: 22px;
             color: var(--text-secondary);
@@ -141,14 +141,14 @@
             margin: 0 auto 16px;
             line-height: 1.5;
         }
-        
+
         .hero .price {
             font-size: 28px;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 32px;
         }
-        
+
         .hero-features {
             display: flex;
             justify-content: center;
@@ -156,7 +156,7 @@
             margin-top: 32px;
             flex-wrap: wrap;
         }
-        
+
         .hero-feature {
             display: flex;
             align-items: center;
@@ -164,9 +164,9 @@
             font-size: 15px;
             color: var(--text-secondary);
         }
-        
+
         .hero-feature svg { color: var(--success); }
-        
+
         .btn-buy {
             display: inline-block;
             padding: 18px 48px;
@@ -179,19 +179,19 @@
             transition: all 0.2s;
             box-shadow: 0 4px 16px rgba(0,113,227,0.3);
         }
-        
+
         .btn-buy:hover {
             background: var(--primary-hover);
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(0,113,227,0.4);
         }
-        
+
         /* Features */
         .features {
             padding: 100px 0;
             background: var(--card);
         }
-        
+
         .features h2 {
             font-size: 48px;
             font-weight: 700;
@@ -199,7 +199,7 @@
             margin-bottom: 64px;
             letter-spacing: -0.02em;
         }
-        
+
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -207,34 +207,34 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .feature-item {
             padding: 32px;
             border-radius: 20px;
             background: var(--bg);
             transition: transform 0.3s;
         }
-        
+
         .feature-item:hover { transform: translateY(-4px); }
-        
+
         .feature-item h3 {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 12px;
             letter-spacing: -0.02em;
         }
-        
+
         .feature-item p {
             color: var(--text-secondary);
             font-size: 16px;
             line-height: 1.6;
         }
-        
+
         /* Detailed Features */
         .detailed-features {
             padding: 100px 0;
         }
-        
+
         .detailed-features h2 {
             font-size: 48px;
             font-weight: 700;
@@ -242,20 +242,20 @@
             margin-bottom: 16px;
             letter-spacing: -0.02em;
         }
-        
+
         .detailed-features > .container > p {
             text-align: center;
             color: var(--text-secondary);
             font-size: 18px;
             margin-bottom: 64px;
         }
-        
+
         .feature-list {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
-        
+
         .feature-box {
             padding: 24px;
             border-radius: 16px;
@@ -263,30 +263,30 @@
             background: var(--card);
             transition: all 0.3s;
         }
-        
+
         .feature-box:hover {
             box-shadow: var(--shadow);
             transform: translateY(-4px);
         }
-        
+
         .feature-box h3 {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 12px;
         }
-        
+
         .feature-box p {
             color: var(--text-secondary);
             font-size: 15px;
             line-height: 1.6;
         }
-        
+
         /* Screenshots */
         .screenshots {
             padding: 100px 0;
             background: var(--bg);
         }
-        
+
         .screenshots h2 {
             font-size: 48px;
             font-weight: 700;
@@ -294,7 +294,7 @@
             margin-bottom: 64px;
             letter-spacing: -0.02em;
         }
-        
+
         .screenshot-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -302,13 +302,13 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .screenshot-grid img {
             width: 100%;
             border-radius: 16px;
             box-shadow: 0 12px 32px rgba(0,0,0,0.12);
         }
-        
+
         /* Bundle CTA */
         .bundle-link { padding: 0; background: none; }
         .bundle-cta { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 80px 24px; text-align: center; border-radius: 20px; overflow: hidden; margin: 20px; }
@@ -324,21 +324,19 @@
         .bundle-save-badge { background: rgba(52,199,89,0.18); border: 1px solid rgba(52,199,89,0.35); color: #34c759; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 980px; }
         .bundle-btn { display: inline-block; padding: 16px 40px; background: #ffffff; color: #1d1d1f; font-size: 16px; font-weight: 600; border-radius: 980px; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
         .bundle-btn:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
-        
-        /* Footer (landing-style) */
+
+        /* Footer */
         footer {
-            background: #ffffff;
-            border-top: 1px solid rgba(0,0,0,.07);
-            padding: 40px 24px;
+            padding: 48px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
         }
-        .footer-inner {
-            max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-        }
-        .footer-copy { font-size: 12px; color: #6e6e73; }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-links a { font-size: 12px; color: #6e6e73; text-decoration: none; transition: color 0.2s; }
-        .footer-links a:hover { color: #1d1d1f; }
-        
+
+        footer a { color: var(--text-secondary); text-decoration: none; }
+        footer a:hover { color: var(--primary); }
+
         @media (max-width: 768px) {
             .feature-grid,
             .feature-list { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
@@ -351,40 +349,45 @@
             .screenshots h2 { font-size: 36px; }
             .feature-item { padding: 24px; }
         }
-    </style>
-    <style>
-    /* ── Site-wide nav & footer (matches landing page) ─────────────────────── */
-    :root { --apple-dark: #1d1d1f; --apple-mid: #424245; --apple-subtle: #6e6e73; --apple-white: #ffffff; --apple-blue: #0071e3; }
-    body { padding-top: 52px; }
-    nav { position: fixed !important; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 52px !important; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.72) !important; backdrop-filter: saturate(180%) blur(20px) !important; -webkit-backdrop-filter: saturate(180%) blur(20px) !important; border-bottom: 1px solid rgba(0,0,0,.08) !important; box-shadow: none !important; }
-    nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: #1d1d1f; text-decoration: none; }
-    nav ul { list-style: none; display: flex; gap: 32px; }
-    nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
-    nav ul a { font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; transition: color .2s; }
-    nav ul a:hover { color: #1d1d1f; }
-    nav .nav-cta { font-size: 13px; font-weight: 400; color: #0071e3; text-decoration: none; transition: opacity .2s; }
-    nav .nav-cta:hover { opacity: .7; }
-    .nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
-    .nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
-    .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
-    .nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); z-index: 200; }
-    .nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
-    .nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; border-radius: 10px; transition: background .15s, color .15s; white-space: nowrap; height: auto; letter-spacing: normal; }
-    .nav-dropdown-panel a:hover { background: rgba(0,0,0,.05); color: #1d1d1f; }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s; }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
-    .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
-    .mobile-menu a:hover { background: rgba(0,0,0,.05); }
-    .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
-    .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
-    .mobile-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 24px; color: #1d1d1f; cursor: pointer; padding: 8px; line-height: 1; }
-    @media (max-width: 768px) { nav ul { display: none !important; } .nav-hamburger { display: flex !important; } .nav-cta { display: none !important; } }
-    </style>
-</head>
+  </style>
+<style>
+/* ── Site-wide nav & footer (matches landing page) ─────────────────────── */
+:root { --apple-dark: #1d1d1f; --apple-mid: #424245; --apple-subtle: #6e6e73; --apple-white: #ffffff; --apple-blue: #0071e3; }
+body { padding-top: 52px; }
+nav { position: fixed !important; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 52px !important; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.72) !important; backdrop-filter: saturate(180%) blur(20px) !important; -webkit-backdrop-filter: saturate(180%) blur(20px) !important; border-bottom: 1px solid rgba(0,0,0,.08) !important; box-shadow: none !important; }
+nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: #1d1d1f; text-decoration: none; }
+nav ul { list-style: none; display: flex; gap: 32px; }
+nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
+nav ul a { font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; transition: color .2s; }
+nav ul a:hover { color: #1d1d1f; }
+nav .nav-cta { font-size: 13px; font-weight: 400; color: #0071e3; text-decoration: none; transition: opacity .2s; }
+nav .nav-cta:hover { opacity: .7; }
+.nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
+.nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
+.nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
+.nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); z-index: 200; }
+.nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
+.nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; border-radius: 10px; transition: background .15s, color .15s; white-space: nowrap; height: auto; letter-spacing: normal; }
+.nav-dropdown-panel a:hover { background: rgba(0,0,0,.05); color: #1d1d1f; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
+.mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
+.mobile-menu a:hover { background: rgba(0,0,0,.05); }
+.mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
+.mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
+.mobile-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 24px; color: #1d1d1f; cursor: pointer; padding: 8px; line-height: 1; }
+@media (max-width: 768px) { nav ul { display: none !important; } .nav-hamburger { display: flex !important; } .nav-cta { display: none !important; } }
+footer { background: #ffffff !important; border-top: 1px solid rgba(0,0,0,.07) !important; padding: 40px 24px !important; }
+.footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-copy { font-size: 12px; color: #6e6e73; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 12px; color: #6e6e73; text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: #1d1d1f; }
+</style>
 <body>
     <nav>
       <a href="/" class="logo">Toby Jones</a>
@@ -420,10 +423,10 @@
         <section class="hero">
             <img src="Icon.png" alt="Call Sheets Icon">
             <h1>Call Sheets</h1>
-            <p>Generate professional call sheets in seconds. Distribute to cast and crew instantly with automatic updates.</p>
+            <p>Generate professional call sheets in seconds. Distribute to cast and crew instantly with automatic updates from your production schedule.</p>
             <div class="price">$19.99 (excl. tax)</div>
             <a href="/software/call-sheets/purchase/" class="btn-buy">Buy Now</a>
-            
+
             <div class="hero-features">
                 <div class="hero-feature">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -443,19 +446,23 @@
         <!-- Features -->
         <section class="features">
             <div class="container">
-                <h2>Instant Call Sheet Generation</h2>
+                <h2>Professional Call Sheet Generation</h2>
                 <div class="feature-grid">
                     <div class="feature-item">
-                        <h3>One-Click Creation</h3>
-                        <p>Generate professional call sheets directly from your schedule. All details automatically populated and formatted.</p>
+                        <h3>Schedule Import</h3>
+                        <p>Import production schedules directly from Filmmakers Kit (.sked format). Auto-populate cast, locations, and scenes instantly.</p>
                     </div>
                     <div class="feature-item">
-                        <h3>Real-Time Updates</h3>
-                        <p>When schedules change, send updated call sheets automatically. Recipients get instant notifications.</p>
+                        <h3>Bulk Generation</h3>
+                        <p>Create call sheets for multiple shoot days at once. Organize and manage production documentation efficiently.</p>
                     </div>
                     <div class="feature-item">
-                        <h3>Custom Templates</h3>
-                        <p>Create custom call sheet templates to match your production's branding and specific requirements.</p>
+                        <h3>Comprehensive Details</h3>
+                        <p>Track every production need: cast breakdowns, crew assignments, locations, advance schedule, and special requirements.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Professional Export</h3>
+                        <p>Export beautiful, customizable PDF call sheets with color-coded cast, professional layout, and production information.</p>
                     </div>
                 </div>
             </div>
@@ -464,33 +471,57 @@
         <!-- Detailed Features -->
         <section class="detailed-features">
             <div class="container">
-                <h2>Professional Call Sheets</h2>
-                <p>Everything you need to keep your cast and crew informed and on schedule.</p>
-                
+                <h2>Complete Call Sheet Solution</h2>
+                <p>Everything needed for professional production communication and crew management.</p>
+
                 <div class="feature-list">
                     <div class="feature-box">
-                        <h3>Department Views</h3>
-                        <p>Filter call sheets by department. Send specific views to camera, art, makeup, and more.</p>
+                        <h3>📋 Project Management</h3>
+                        <p>Create new projects, import from .sked files, edit production metadata. Organize projects in expandable sidebar tree.</p>
                     </div>
                     <div class="feature-box">
-                        <h3>Map Integration</h3>
-                        <p>Automatic location maps with travel time estimates. Cast knows exactly how to get there.</p>
+                        <h3>📅 Call Sheet Generation</h3>
+                        <p>Auto-create call sheets for individual days or bulk create for multiple days. Auto-populate cast and locations from schedule.</p>
                     </div>
                     <div class="feature-box">
-                        <h3>Weather Forecast</h3>
-                        <p>Built-in weather forecasts for location shoots. Plan accordingly and avoid surprises.</p>
+                        <h3>🎬 Call Sheet Editor</h3>
+                        <p>Edit scenes, cast breakdowns, supporting artists, crew, locations, notes, advance schedule, and special requirements.</p>
                     </div>
                     <div class="feature-box">
-                        <h3>Department Breakdowns</h3>
-                        <p>View department-specific information tailored to each crew role. Send targeted call sheets to departments.</p>
+                        <h3>💾 Data Management</h3>
+                        <p>Auto-save with 600ms debounce. Data stored locally with import/export support for seamless workflow integration.</p>
                     </div>
                     <div class="feature-box">
-                        <h3>Scene Information</h3>
-                        <p>Include scene numbers, descriptions, and location details for each day. Full context at a glance.</p>
+                        <h3>📄 PDF Export</h3>
+                        <p>Professional A4 format with dark header, color-coded character chips, customizable fonts, and accent colors.</p>
                     </div>
                     <div class="feature-box">
-                        <h3>Multi-Format Export</h3>
-                        <p>Export to PDF, print directly, or download as documents. Multiple format options for distribution.</p>
+                        <h3>👥 Crew Database</h3>
+                        <p>Project-level crew management with 33+ pre-categorized roles. Add crew details with phone, email, and default call times.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>🎨 Templates</h3>
+                        <p>Create and manage custom call sheet templates. Customize header color, accent color, and choose body fonts.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>🎭 Cast Tracking</h3>
+                        <p>Color-coded character chips with pickup times, makeup, wardrobe, on-set calls, and detailed notes per actor.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>⌨️ Keyboard Shortcuts</h3>
+                        <p>Quick shortcuts: Cmd+N for new, Cmd+O to import, Cmd+P to export PDF. Streamlined workflow and productivity.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>🏢 Production Banner</h3>
+                        <p>Prominent display of key crew contacts and shoot day info. Quick access to essential production information.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>🎯 Status Management</h3>
+                        <p>Cycle call sheet status: Draft → Final → Sent. Track distribution and finalization of crew documentation.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>📍 Location Details</h3>
+                        <p>Document addresses, parking notes, hospital info, and access details for each location. Complete crew information.</p>
                     </div>
                 </div>
             </div>
