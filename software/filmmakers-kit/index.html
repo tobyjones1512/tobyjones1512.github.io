@@ -34,70 +34,84 @@
             background: var(--bg);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            padding-top: 64px;
         }
 
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Navigation */
-        nav {
+        /* Site Header (Same as other apps) */
+        .site-header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 100;
-            height: 52px;
-            background: rgba(255,255,255,.72);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-            border-bottom: 1px solid rgba(0,0,0,.08);
-            padding: 0 24px;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border);
+            height: 64px;
+        }
+
+        .site-header .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: #1d1d1f; text-decoration: none; }
-        nav ul { list-style: none; display: flex; gap: 32px; }
-        nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
-        nav ul a { font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; transition: color .2s; }
-        nav ul a:hover { color: #1d1d1f; }
-        nav .nav-cta { font-size: 13px; font-weight: 400; color: #0071e3; text-decoration: none; transition: opacity .2s; }
-        nav .nav-cta:hover { opacity: .7; }
-        .nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
-        .nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
-        .nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
-        .nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); z-index: 200; }
-        .nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
-        .nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; border-radius: 10px; transition: background .15s, color .15s; white-space: nowrap; height: auto; letter-spacing: normal; }
-        .nav-dropdown-panel a:hover { background: rgba(0,0,0,.05); color: #1d1d1f; }
-        .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
-        .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s; }
-        .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-        .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-        .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
-        .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
-        .mobile-menu a:hover { background: rgba(0,0,0,.05); }
-        .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
-        .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
-        .mobile-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 24px; color: #1d1d1f; cursor: pointer; padding: 8px; line-height: 1; }
-        @media (max-width: 768px) { nav ul { display: none !important; } .nav-hamburger { display: flex !important; } .nav-cta { display: none !important; } }
+        .site-header .brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 1.05rem;
+            gap: 12px;
+        }
 
-        body { padding-top: 52px; }
+        .site-header .site-logo {
+            height: 28px;
+            width: 28px;
+            border-radius: 6px;
+        }
+
+        .site-header .site-nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .site-header .site-nav .nav-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .site-header .site-nav .nav-link:hover {
+            color: var(--text);
+        }
+
+        .site-header .site-nav .nav-cta {
+            color: var(--primary);
+            font-weight: 500;
+        }
 
         /* Hero Section */
         .hero {
-            padding: 80px 0 60px;
-            background: linear-gradient(135deg, #ffffff 0%, var(--bg) 100%);
+            padding: 120px 20px 80px;
             text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, var(--bg) 100%);
         }
 
         .hero-icon {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             margin: 0 auto 32px;
             border-radius: 28px;
-            box-shadow: 0 20px 64px rgba(0,0,0,0.12);
+            box-shadow: 0 24px 64px rgba(0,0,0,0.15);
             animation: float 3s ease-in-out infinite;
         }
 
@@ -107,14 +121,10 @@
         }
 
         .hero h1 {
-            font-size: 60px;
-            font-weight: 800;
-            letter-spacing: -0.02em;
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #1d1d1f 0%, #424245 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero p {
@@ -193,7 +203,7 @@
 
         .section-header h2 {
             font-size: 48px;
-            font-weight: 800;
+            font-weight: 700;
             letter-spacing: -0.02em;
             margin-bottom: 16px;
         }
@@ -239,95 +249,10 @@
             line-height: 1.6;
         }
 
-        /* App Cards */
-        .apps-showcase {
-            padding: 100px 0;
-            background: var(--bg);
-        }
-
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .app-card {
-            background: var(--card);
-            border-radius: 24px;
-            padding: 48px 32px;
-            border: 1px solid var(--border);
-            text-align: center;
-            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .app-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .app-card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .app-card:hover::before {
-            opacity: 1;
-        }
-
-        .app-card img {
-            width: 88px;
-            height: 88px;
-            border-radius: 20px;
-            margin: 0 auto 24px;
-            display: block;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-        }
-
-        .app-card h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .app-card p {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 28px;
-        }
-
-        .app-card .price {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .app-card a {
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 14px;
-            transition: opacity 0.2s;
-        }
-
-        .app-card a:hover {
-            opacity: 0.7;
-        }
-
         /* Screenshots Section */
         .screenshots-section {
             padding: 100px 0;
-            background: var(--card);
+            background: var(--bg);
         }
 
         .carousel-container {
@@ -340,7 +265,7 @@
             overflow: hidden;
             border-radius: 20px;
             box-shadow: var(--shadow-lg);
-            background: var(--bg);
+            background: var(--card);
         }
 
         .carousel-track {
@@ -397,14 +322,6 @@
             background: var(--text-secondary);
         }
 
-        .carousel-label {
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-top: 16px;
-            font-weight: 500;
-        }
-
         .carousel-nav {
             display: flex;
             justify-content: center;
@@ -433,6 +350,173 @@
             box-shadow: var(--shadow-sm);
         }
 
+        /* TravelCard-inspired App Cards */
+        .apps-showcase {
+            padding: 100px 0;
+            background: var(--card);
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .app-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 420px;
+            border: 1px solid var(--border);
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            cursor: pointer;
+            group: true;
+        }
+
+        .app-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+            z-index: 2;
+            transition: opacity 0.3s;
+        }
+
+        .app-card-background {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .app-card:hover .app-card-background {
+            transform: scale(1.08);
+        }
+
+        .app-card-content {
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 32px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .app-card-header {
+            display: flex;
+            height: 120px;
+            align-items: flex-start;
+        }
+
+        .app-card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .app-card-icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 14px;
+        }
+
+        .app-card-middle {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: translateY(0);
+        }
+
+        .app-card:hover .app-card-middle {
+            transform: translateY(-80px);
+        }
+
+        .app-card-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .app-card-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .app-card-description {
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+
+        .app-card-bottom {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            right: 0;
+            padding: 32px;
+            transition: bottom 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            z-index: 3;
+        }
+
+        .app-card:hover .app-card-bottom {
+            bottom: 0;
+        }
+
+        .app-card-pricing {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-card-price {
+            font-size: 32px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .app-card-period {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .app-card-link {
+            background: white;
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 980px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .app-card-link:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateX(2px);
+        }
+
         /* Pricing Section */
         .pricing-highlight {
             background: linear-gradient(135deg, var(--primary) 0%, #0055b8 100%);
@@ -445,7 +529,7 @@
 
         .pricing-highlight h3 {
             font-size: 32px;
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 12px;
         }
 
@@ -511,7 +595,7 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
             .apps-grid { grid-template-columns: repeat(2, 1fr); }
             .hero h1 { font-size: 48px; }
             .section-header h2 { font-size: 36px; }
@@ -519,12 +603,18 @@
 
         @media (max-width: 768px) {
             body { padding-top: 52px; }
+            .site-header { height: 52px; }
+            .site-header .header-inner { height: 52px; }
+            .site-header .brand { font-size: 14px; }
+            .site-header .site-logo { height: 24px; width: 24px; }
+            .site-header .site-nav { gap: 16px; }
+            .site-header .site-nav .nav-link { font-size: 12px; }
             .hero { padding: 60px 20px 40px; }
             .hero h1 { font-size: 36px; }
             .hero p { font-size: 16px; }
             .hero-icon { width: 100px; height: 100px; }
             .features-grid,
-            .apps-grid { grid-template-columns: 1fr; gap: 32px; }
+            .apps-grid { grid-template-columns: 1fr; gap: 24px; }
             .features-showcase,
             .apps-showcase,
             .screenshots-section { padding: 60px 0; }
@@ -533,15 +623,11 @@
             .section-header p { font-size: 14px; }
             .carousel-slide { padding: 12px; }
             .carousel-slide img { max-height: 400px; }
-            .app-card { padding: 32px 20px; }
-            .pricing-highlight {
-                padding: 40px 20px;
-                margin: 40px 0;
-            }
-            .pricing-detail {
-                flex-direction: column;
-                gap: 12px;
-            }
+            .app-card { height: 300px; }
+            .app-card-content { padding: 20px; }
+            .app-card-title { font-size: 24px; }
+            .pricing-highlight { padding: 40px 20px; margin: 40px 0; }
+            .pricing-detail { flex-direction: column; gap: 12px; }
         }
 
         @media (max-width: 480px) {
@@ -550,38 +636,27 @@
             .hero h1 { font-size: 28px; }
             .carousel-nav { gap: 12px; }
             .carousel-nav button { width: 40px; height: 40px; font-size: 14px; }
+            .app-card-bottom { padding: 16px; }
+            .app-card-price { font-size: 24px; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/" class="logo">Toby Jones</a>
-        <ul>
-            <li class="nav-has-dropdown">
-                <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                <div class="nav-dropdown-panel">
-                    <a href="/digital-marketing">Digital Marketing</a>
-                    <a href="/out-of-house">Out-of-House</a>
-                    <a href="/tv-radio">TV &amp; Radio</a>
-                    <a href="/postal-marketing">Postal Advertising</a>
-                    <a href="/public-relations">Public Relations</a>
-                </div>
-            </li>
-            <li class="nav-has-dropdown">
-                <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                <div class="nav-dropdown-panel">
-                    <a href="/video">Video Editing</a>
-                    <a href="/video-production">Video Production</a>
-                </div>
-            </li>
-            <li><a href="/web-development">Web Development</a></li>
-            <li><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/software">Software</a></li>
-        </ul>
-        <a href="/email/" class="nav-cta">Get in touch ↗</a>
-        <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </nav>
-    <div class="mobile-menu" id="mobileMenu"></div>
+    <!-- Site Header (Same as other apps) -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/software/filmmakers-kit/" class="brand">
+                <img src="Icon.png" alt="Filmmakers Kit" class="site-logo">
+                <span>Filmmakers Kit</span>
+            </a>
+            <nav class="site-nav">
+                <a href="/software/scheduling/" class="nav-link">Scheduling</a>
+                <a href="/software/budgeting/" class="nav-link">Budgeting</a>
+                <a href="/software/call-sheets/" class="nav-link">Call Sheets</a>
+                <a href="/software/filmmakers-kit/purchase/" class="nav-cta">Buy Now</a>
+            </nav>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -647,42 +722,17 @@
             <div class="carousel-container">
                 <div class="carousel-viewport">
                     <div class="carousel-track">
-                        <!-- Scheduling Screenshots -->
-                        <div class="carousel-slide">
-                            <img src="../scheduling/screenshots/Main%20Screen.png" alt="Scheduling - Main Screen">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../scheduling/screenshots/Scene%20Sidebar.png" alt="Scheduling - Scene Sidebar">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../scheduling/screenshots/Import%20From%20Final%20Draft.png" alt="Scheduling - Import From Final Draft">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../scheduling/screenshots/Show%20Scenes%20With%20Specific%20Character.png" alt="Scheduling - Character Filtering">
-                        </div>
-                        <!-- Budgeting Screenshots -->
-                        <div class="carousel-slide">
-                            <img src="../budgeting/screenshots/Top%20Sheet.png" alt="Budgeting - Top Sheet">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../budgeting/screenshots/Budget%20Details.png" alt="Budgeting - Budget Details">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../budgeting/screenshots/Production%20Staff.png" alt="Budgeting - Production Staff">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../budgeting/screenshots/Fringes.png" alt="Budgeting - Fringes">
-                        </div>
-                        <!-- Call Sheets Screenshots -->
-                        <div class="carousel-slide">
-                            <img src="../call-sheets/screenshots/Main%20Screen.png" alt="Call Sheets - Main Screen">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../call-sheets/screenshots/Days%20Screen.png" alt="Call Sheets - Days Screen">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../call-sheets/screenshots/Call%20Sheet%20Export.png" alt="Call Sheets - Export">
-                        </div>
+                        <div class="carousel-slide"><img src="../scheduling/screenshots/Main%20Screen.png" alt="Scheduling - Main Screen"></div>
+                        <div class="carousel-slide"><img src="../scheduling/screenshots/Scene%20Sidebar.png" alt="Scheduling - Scene Sidebar"></div>
+                        <div class="carousel-slide"><img src="../scheduling/screenshots/Import%20From%20Final%20Draft.png" alt="Scheduling - Import From Final Draft"></div>
+                        <div class="carousel-slide"><img src="../scheduling/screenshots/Show%20Scenes%20With%20Specific%20Character.png" alt="Scheduling - Character Filtering"></div>
+                        <div class="carousel-slide"><img src="../budgeting/screenshots/Top%20Sheet.png" alt="Budgeting - Top Sheet"></div>
+                        <div class="carousel-slide"><img src="../budgeting/screenshots/Budget%20Details.png" alt="Budgeting - Budget Details"></div>
+                        <div class="carousel-slide"><img src="../budgeting/screenshots/Production%20Staff.png" alt="Budgeting - Production Staff"></div>
+                        <div class="carousel-slide"><img src="../budgeting/screenshots/Fringes.png" alt="Budgeting - Fringes"></div>
+                        <div class="carousel-slide"><img src="../call-sheets/screenshots/Main%20Screen.png" alt="Call Sheets - Main Screen"></div>
+                        <div class="carousel-slide"><img src="../call-sheets/screenshots/Days%20Screen.png" alt="Call Sheets - Days Screen"></div>
+                        <div class="carousel-slide"><img src="../call-sheets/screenshots/Call%20Sheet%20Export.png" alt="Call Sheets - Export"></div>
                     </div>
                 </div>
 
@@ -708,7 +758,7 @@
         </div>
     </section>
 
-    <!-- Apps Section -->
+    <!-- Apps Section (TravelCard-inspired) -->
     <section class="apps-showcase" id="apps">
         <div class="container">
             <div class="section-header">
@@ -717,27 +767,80 @@
             </div>
 
             <div class="apps-grid">
-                <div class="app-card">
-                    <img src="../scheduling/Icon.png" alt="Scheduling">
-                    <h3>Scheduling</h3>
-                    <p>Professional schedule building with Final Draft import, scene tracking, character management, and production day numbering.</p>
-                    <div class="price">$19.99</div>
-                    <a href="/software/scheduling/">View App →</a>
-                </div>
-                <div class="app-card">
-                    <img src="../budgeting/Icon.png" alt="Budgeting">
-                    <h3>Budgeting</h3>
-                    <p>Complete budget management with hierarchical organization, fringe calculations, and real-time financial tracking.</p>
-                    <div class="price">$19.99</div>
-                    <a href="/software/budgeting/">View App →</a>
-                </div>
-                <div class="app-card">
-                    <img src="../call-sheets/Icon.png" alt="Call Sheets">
-                    <h3>Call Sheets</h3>
-                    <p>Instant call sheet generation with cast tracking, crew management, custom templates, and professional PDF export.</p>
-                    <div class="price">$19.99</div>
-                    <a href="/software/call-sheets/">View App →</a>
-                </div>
+                <a href="/software/scheduling/" class="app-card">
+                    <div class="app-card-background" style="background-image: linear-gradient(135deg, #6366f1 0%, #0071e3 100%);"></div>
+
+                    <div class="app-card-content">
+                        <div class="app-card-header">
+                            <div class="app-card-icon">
+                                <img src="../scheduling/Icon.png" alt="Scheduling">
+                            </div>
+                        </div>
+
+                        <div class="app-card-middle">
+                            <div class="app-card-title">Scheduling</div>
+                            <div class="app-card-subtitle">📅 Production Planning</div>
+                            <div class="app-card-description">Professional schedule building with Final Draft import, scene tracking, character management, and production day numbering.</div>
+                        </div>
+
+                        <div class="app-card-bottom">
+                            <div class="app-card-pricing">
+                                <span class="app-card-price">$19.99</span>
+                            </div>
+                            <button class="app-card-link">View App →</button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/software/budgeting/" class="app-card">
+                    <div class="app-card-background" style="background-image: linear-gradient(135deg, #10b981 0%, #059669 100%);"></div>
+
+                    <div class="app-card-content">
+                        <div class="app-card-header">
+                            <div class="app-card-icon">
+                                <img src="../budgeting/Icon.png" alt="Budgeting">
+                            </div>
+                        </div>
+
+                        <div class="app-card-middle">
+                            <div class="app-card-title">Budgeting</div>
+                            <div class="app-card-subtitle">💰 Financial Tracking</div>
+                            <div class="app-card-description">Complete budget management with hierarchical organization, fringe calculations, and real-time financial tracking.</div>
+                        </div>
+
+                        <div class="app-card-bottom">
+                            <div class="app-card-pricing">
+                                <span class="app-card-price">$19.99</span>
+                            </div>
+                            <button class="app-card-link">View App →</button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/software/call-sheets/" class="app-card">
+                    <div class="app-card-background" style="background-image: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);"></div>
+
+                    <div class="app-card-content">
+                        <div class="app-card-header">
+                            <div class="app-card-icon">
+                                <img src="../call-sheets/Icon.png" alt="Call Sheets">
+                            </div>
+                        </div>
+
+                        <div class="app-card-middle">
+                            <div class="app-card-title">Call Sheets</div>
+                            <div class="app-card-subtitle">📋 Communication</div>
+                            <div class="app-card-description">Instant call sheet generation with cast tracking, crew management, custom templates, and professional PDF export.</div>
+                        </div>
+
+                        <div class="app-card-bottom">
+                            <div class="app-card-pricing">
+                                <span class="app-card-price">$19.99</span>
+                            </div>
+                            <button class="app-card-link">View App →</button>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -756,37 +859,6 @@
     </footer>
 
     <script>
-    (function() {
-        var btn = document.querySelector('.nav-hamburger');
-        var menu = document.getElementById('mobileMenu');
-        if (!btn || !menu) return;
-        var links = [
-            { href: '/web-development', text: 'Web Development' },
-            { href: '/digital-marketing', text: 'Digital Marketing' },
-            { href: '/out-of-house', text: 'Out-of-House' },
-            { href: '/tv-radio', text: 'TV & Radio' },
-            { href: '/postal-marketing', text: 'Postal Advertising' },
-            { href: '/public-relations', text: 'Public Relations' },
-            { href: '/video', text: 'Video Editing' },
-            { href: '/video-production', text: 'Video Production' },
-            { href: '/portfolio', text: 'Portfolio' },
-            { href: '/software', text: 'Software' },
-        ];
-        var html = '<button class="mobile-close" aria-label="Close menu">&#x2715;</button>';
-        links.forEach(function(l) { html += '<a class="mobile-link" href="' + l.href + '">' + l.text + '</a>'; });
-        html += '<a class="mobile-cta" href="/email/">Get in touch ↗</a>';
-        menu.innerHTML = html;
-        menu.querySelector('.mobile-close').addEventListener('click', function() { toggleMenu(false); });
-        function toggleMenu(open) {
-            btn.classList.toggle('open', open);
-            menu.style.opacity = open ? '1' : '0';
-            menu.style.pointerEvents = open ? 'auto' : 'none';
-            document.body.style.overflow = open ? 'hidden' : '';
-        }
-        btn.addEventListener('click', function() { toggleMenu(!btn.classList.contains('open')); });
-        menu.addEventListener('click', function(e) { if (e.target.tagName === 'A') toggleMenu(false); });
-    })();
-
     // Enhanced carousel
     (function() {
         var track = document.querySelector('.carousel-track');
@@ -834,7 +906,6 @@
             });
         });
 
-        // Keyboard navigation
         document.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowLeft') prevSlide();
             if (e.key === 'ArrowRight') nextSlide();
