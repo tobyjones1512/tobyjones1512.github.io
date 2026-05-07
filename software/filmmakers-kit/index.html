@@ -101,14 +101,12 @@
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0,0,0,.08);
             padding: 0 2.5rem;
-            height: 52px;
+            height: 64px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
             z-index: 100;
         }
 
@@ -128,7 +126,7 @@
 
         nav ul li {
             position: relative;
-            height: 52px;
+            height: 64px;
             display: flex;
             align-items: center;
         }
@@ -178,7 +176,7 @@
 
         .nav-dropdown-panel {
             position: absolute;
-            top: 52px;
+            top: 64px;
             left: 50%;
             transform: translateX(-50%) translateY(-10px) scale(0.96);
             min-width: 210px;
@@ -792,7 +790,7 @@
         }
 
         @media (max-width: 768px) {
-            body { padding-top: 52px; }
+            body { padding-top: 64px; }
             .site-header { height: 52px; }
             .site-header .header-inner { height: 52px; }
             .site-header .brand { font-size: 14px; }
