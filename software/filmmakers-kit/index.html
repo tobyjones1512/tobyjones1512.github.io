@@ -1008,6 +1008,52 @@
     </footer>
 
     <script>
+    // Mobile menu toggle
+    (function() {
+        const hamburger = document.querySelector('.nav-hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navUl = document.querySelector('nav ul');
+
+        if (hamburger && mobileMenu && navUl) {
+            // Populate mobile menu with nav items
+            mobileMenu.innerHTML = navUl.innerHTML;
+
+            // Add close button
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'mobile-close';
+            closeBtn.innerHTML = '✕';
+            closeBtn.setAttribute('aria-label', 'Close menu');
+            mobileMenu.insertBefore(closeBtn, mobileMenu.firstChild);
+
+            // Toggle menu
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('open');
+                mobileMenu.classList.toggle('open');
+                mobileMenu.style.opacity = mobileMenu.classList.contains('open') ? '1' : '0';
+                mobileMenu.style.pointerEvents = mobileMenu.classList.contains('open') ? 'auto' : 'none';
+            });
+
+            // Close menu on link click
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('open');
+                    mobileMenu.classList.remove('open');
+                    mobileMenu.style.opacity = '0';
+                    mobileMenu.style.pointerEvents = 'none';
+                });
+            });
+
+            // Close menu on close button click
+            closeBtn.addEventListener('click', function() {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                mobileMenu.style.opacity = '0';
+                mobileMenu.style.pointerEvents = 'none';
+            });
+        }
+    })();
+
     // Enhanced carousel
     (function() {
         var track = document.querySelector('.carousel-track');
