@@ -462,12 +462,8 @@ async function verifyCode() {
     return;
   }
 
-  // Code is valid - get download URL
-  let downloadUrl = codeInfo.url;
-  if (code === '0f18751d' || currentApp === 'iptv-manager' || !downloadUrl) {
-    // For filmmaker's kit, IPTV Manager, or if no URL is set, fetch from CSV file
-    downloadUrl = await getDownloadURL(currentApp);
-  }
+  // Always fetch the download URL from the CSV so it reflects the latest version
+  const downloadUrl = await getDownloadURL(currentApp);
 
   if (downloadUrl) {
     window.location.href = downloadUrl;
