@@ -38,62 +38,6 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Site Header (Matching Call Sheets - STICKY, not fixed) */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .site-header .header-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .site-header .brand {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-
-        .site-header .site-logo {
-            height: 28px;
-            width: 28px;
-            border-radius: 6px;
-            margin-right: 8px;
-        }
-
-        .site-header .site-nav {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .site-header .site-nav .nav-link {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
-        .site-header .site-nav .nav-link:hover {
-            color: var(--text);
-        }
-
-        .site-header .site-nav .nav-cta {
-            color: var(--primary);
-        }
-
         /* Global Navigation */
         nav {
             background: rgba(255,255,255,.8);
@@ -362,10 +306,19 @@
         }
 
         .hero .price {
+            margin-bottom: 32px;
+        }
+
+        .hero .price-amount {
             font-size: 28px;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 32px;
+        }
+
+        .hero .price-savings {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 4px;
         }
 
         .hero-features {
@@ -735,11 +688,10 @@
             transform: translateX(2px);
         }
 
-        .app-card-price-old {
-            text-decoration: line-through;
+        .app-card-price-original {
+            font-size: 14px;
             opacity: 0.7;
-            font-size: 16px;
-            margin-bottom: 8px;
+            margin-top: 4px;
         }
 
         /* Footer */
@@ -791,12 +743,6 @@
 
         @media (max-width: 768px) {
             body { padding-top: 64px; }
-            .site-header { height: 52px; }
-            .site-header .header-inner { height: 52px; }
-            .site-header .brand { font-size: 14px; }
-            .site-header .site-logo { height: 24px; width: 24px; }
-            .site-header .site-nav { gap: 16px; }
-            .site-header .site-nav .nav-link { font-size: 12px; }
             .hero { padding: 60px 20px 40px; }
             .hero h1 { font-size: 36px; }
             .hero p { font-size: 16px; }
@@ -826,22 +772,6 @@
     </style>
 </head>
 <body>
-    <!-- Site Header -->
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="/software/filmmakers-kit/" class="brand">
-                <img src="Icon.png" alt="Filmmakers Kit" class="site-logo">
-                <span>Filmmakers Kit</span>
-            </a>
-            <nav class="site-nav">
-                <a href="/software/scheduling/" class="nav-link">Scheduling</a>
-                <a href="/software/budgeting/" class="nav-link">Budgeting</a>
-                <a href="/software/call-sheets/" class="nav-link">Call Sheets</a>
-                <a href="/software/filmmakers-kit/purchase/" class="nav-cta">Buy Now</a>
-            </nav>
-        </div>
-    </header>
-
     <!-- Global Navigation -->
     <nav>
       <a href="/" class="logo">Toby Jones</a>
@@ -877,7 +807,10 @@
         <img src="Icon.png" alt="Filmmakers Kit Icon">
         <h1>Filmmakers Kit</h1>
         <p>Everything you need to manage professional productions. Schedule shoots, track budgets, and generate call sheets with three powerful, integrated applications.</p>
-        <div class="price">$44.99 - Save $14.98</div>
+        <div class="price">
+            <div class="price-amount">$44.99</div>
+            <div class="price-savings">Save $14.98</div>
+        </div>
         <a href="/software/filmmakers-kit/purchase/" class="btn-buy">Buy Now</a>
 
         <div class="hero-features">
@@ -998,8 +931,8 @@
 
                         <div class="app-card-bottom">
                             <div class="app-card-pricing">
-                                <div class="app-card-price-old">$19.99</div>
                                 <span class="app-card-price">$14.99</span>
+                                <div class="app-card-price-original">$19.99 Without Bundle</div>
                             </div>
                             <button class="app-card-link">View App →</button>
                         </div>
@@ -1024,8 +957,8 @@
 
                         <div class="app-card-bottom">
                             <div class="app-card-pricing">
-                                <div class="app-card-price-old">$19.99</div>
                                 <span class="app-card-price">$14.99</span>
+                                <div class="app-card-price-original">$19.99 Without Bundle</div>
                             </div>
                             <button class="app-card-link">View App →</button>
                         </div>
@@ -1050,8 +983,8 @@
 
                         <div class="app-card-bottom">
                             <div class="app-card-pricing">
-                                <div class="app-card-price-old">$19.99</div>
                                 <span class="app-card-price">$14.99</span>
+                                <div class="app-card-price-original">$19.99 Without Bundle</div>
                             </div>
                             <button class="app-card-link">View App →</button>
                         </div>
