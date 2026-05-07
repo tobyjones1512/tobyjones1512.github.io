@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         :root {
             --primary: #0071e3;
             --primary-hover: #0077ed;
@@ -23,7 +23,7 @@
             --border: #d2d2d7;
             --shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--text);
@@ -31,9 +31,9 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-        
+
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
+
         /* Navigation */
         nav {
             background: rgba(255,255,255,0.8);
@@ -49,7 +49,7 @@
             top: 0;
             z-index: 100;
         }
-        
+
         .nav-brand {
             display: flex;
             align-items: center;
@@ -60,17 +60,17 @@
             color: var(--text);
             transition: opacity 0.2s;
         }
-        
+
         .nav-brand:hover { opacity: 0.7; }
         .nav-brand img { width: 36px; height: 36px; border-radius: 8px; }
-        
+
         /* Hero */
         .hero {
             padding: 120px 20px 80px;
             text-align: center;
             background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
         }
-        
+
         .hero img {
             width: 160px;
             height: 160px;
@@ -78,7 +78,7 @@
             box-shadow: 0 24px 64px rgba(0,0,0,0.15);
             margin-bottom: 32px;
         }
-        
+
         .hero h1 {
             font-size: 64px;
             font-weight: 700;
@@ -89,7 +89,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .hero p {
             font-size: 22px;
             color: var(--text-secondary);
@@ -97,15 +97,15 @@
             margin: 0 auto 32px;
             line-height: 1.5;
         }
-        
+
         .hero .price {
             font-size: 28px;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 16px;
         }
-        
-        .hero         .savings {
+
+        .hero .savings {
             display: inline-block;
             background: #e8f9ed;
             color: var(--success);
@@ -132,7 +132,7 @@
             letter-spacing: 0.01em;
         }
         .amex-offer-pill svg { flex-shrink: 0; }
-        
+
         .btn-buy {
             display: none;
         }
@@ -148,13 +148,13 @@
             text-decoration: none;
             cursor: default;
         }
-        
-        /* Features Comparison */
+
+        /* Features */
         .features {
             padding: 100px 0;
             background: var(--card);
         }
-        
+
         .features h2 {
             font-size: 48px;
             font-weight: 700;
@@ -162,47 +162,78 @@
             margin-bottom: 64px;
             letter-spacing: -0.02em;
         }
-        
+
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .feature-card {
             padding: 32px;
             border-radius: 20px;
             background: var(--bg);
             transition: transform 0.3s;
         }
-        
+
         .feature-card:hover { transform: translateY(-8px); }
         .feature-card img { width: 80px; height: 80px; border-radius: 16px; margin-bottom: 20px; }
         .feature-card h3 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
-        .feature-card p { color: var(--text-secondary); font-size: 16px; line-height: 1.6; margin-bottom: 16px; }
+        .feature-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin-bottom: 16px; }
         .feature-card ul { list-style: none; }
         .feature-card li {
-            padding: 8px 0;
-            font-size: 15px;
+            padding: 6px 0;
+            font-size: 14px;
             color: var(--text-secondary);
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        
+
         .feature-card li::before {
             content: '\2713';
             color: var(--success);
             font-weight: 700;
         }
-        
+
+        /* Screenshots */
+        .screenshots {
+            padding: 100px 0;
+            background: var(--bg);
+        }
+        .screenshots h2 {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .screenshots > .container > p {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-bottom: 64px;
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .screenshot-grid img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+
         /* Apps Grid */
         .apps-section {
             padding: 100px 0;
         }
-        
+
         .apps-section h2 {
             font-size: 48px;
             font-weight: 700;
@@ -210,20 +241,20 @@
             margin-bottom: 16px;
             letter-spacing: -0.02em;
         }
-        
+
         .apps-section > .container > p {
             text-align: center;
             color: var(--text-secondary);
             font-size: 18px;
             margin-bottom: 64px;
         }
-        
+
         .apps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
         }
-        
+
         .app-card {
             background: var(--card);
             border-radius: 20px;
@@ -232,12 +263,12 @@
             transition: all 0.3s;
             text-align: center;
         }
-        
+
         .app-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow);
         }
-        
+
         .app-card img { width: 100px; height: 100px; border-radius: 20px; margin-bottom: 20px; }
         .app-card h3 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
         .app-card p { color: var(--text-secondary); font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
@@ -249,33 +280,8 @@
             font-size: 16px;
             transition: opacity 0.2s;
         }
-        
+
         .app-card a:hover { opacity: 0.7; }
-        
-        /* Screenshots */
-        .screenshots {
-            padding: 100px 0;
-            background: var(--bg);
-        }
-        .screenshots h2 {
-            font-size: 48px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 64px;
-            letter-spacing: -0.02em;
-        }
-        .screenshot-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .screenshot-grid img {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-        }
 
         @media (max-width: 768px) {
             .feature-grid,
@@ -355,13 +361,13 @@
     <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobileMenu"></div>
-    
+
     <div class="container">
         <!-- Hero -->
         <section class="hero">
             <img src="Icon.png" alt="Filmmakers Kit Icon">
             <h1>Filmmakers Kit</h1>
-            <p>Everything you need to manage your film production. Three powerful apps for scheduling, budgeting, and call sheets - bundled together for maximum value.</p>
+            <p>The complete production suite. Manage scheduling, budgets, and call sheets with three integrated apps designed for professional filmmakers.</p>
             <div class="amex-offer-pill">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
                 AMEX cardholders save an extra 25%
@@ -377,44 +383,67 @@
         <!-- Features -->
         <section class="features">
             <div class="container">
-                <h2>Everything you need</h2>
+                <h2>Everything you need for professional productions</h2>
                 <div class="feature-grid">
                     <div class="feature-card">
                         <img src="../scheduling/Icon.png" alt="Scheduling">
-                        <h3>Scheduling</h3>
-                        <p>Manage your film shoot schedule with powerful tools designed for professional filmmakers.</p>
+                        <h3>📅 Scheduling</h3>
+                        <p>Build comprehensive production schedules with professional tools for scene management and crew coordination.</p>
                         <ul>
-                            <li>Drag-and-drop interface</li>
-                            <li>Automatic conflict detection</li>
-                            <li>One-click call sheet generation</li>
-                            <li>Export to PDF or CSV</li>
-                            <li>Cast & crew availability</li>
+                            <li>Stripboard with drag-and-drop reordering</li>
+                            <li>Scene management with INT/EXT tracking</li>
+                            <li>Final Draft script import (.fdx)</li>
+                            <li>Character filtering and management</li>
+                            <li>Automatic day numbering and dates</li>
+                            <li>Global search across schedules</li>
+                            <li>PDF export with professional layout</li>
+                            <li>60-action undo/redo history</li>
                         </ul>
                     </div>
                     <div class="feature-card">
                         <img src="../budgeting/Icon.png" alt="Budgeting">
-                        <h3>Budgeting</h3>
-                        <p>Track your film production budget with real-time updates and detailed reports.</p>
+                        <h3>💰 Budgeting</h3>
+                        <p>Track production budgets with real-time calculations, fringe management, and multiple reporting views.</p>
                         <ul>
+                            <li>Hierarchical budget structure</li>
+                            <li>Categories, accounts, and line items</li>
+                            <li>Multi-currency support</li>
+                            <li>Fringe benefit calculations</li>
+                            <li>Top Sheet and Detail views</li>
+                            <li>Flexible unit options (days, hours, etc.)</li>
                             <li>Real-time budget tracking</li>
-                            <li>Line item management</li>
-                            <li>Department budgeting</li>
-                            <li>Export to Excel & PDF</li>
-                            <li>Expense receipt attachment</li>
+                            <li>PDF and Excel export</li>
                         </ul>
                     </div>
                     <div class="feature-card">
                         <img src="../call-sheets/Icon.png" alt="Call Sheets">
-                        <h3>Call Sheets</h3>
-                        <p>Generate professional call sheets in seconds and distribute to your team instantly.</p>
+                        <h3>📋 Call Sheets</h3>
+                        <p>Generate professional call sheets instantly with cast breakdowns, crew management, and custom templates.</p>
                         <ul>
-                            <li>One-click generation</li>
-                            <li>Department views</li>
-                            <li>Weather forecasts</li>
-                            <li>Custom templates</li>
-                            <li>PDF export</li>
+                            <li>Schedule import (.sked format)</li>
+                            <li>Auto-create individual or bulk call sheets</li>
+                            <li>Cast tracking with color-coded roles</li>
+                            <li>33+ pre-categorized crew roles</li>
+                            <li>Crew database management</li>
+                            <li>Custom call sheet templates</li>
+                            <li>Professional PDF export</li>
+                            <li>Status management (Draft/Final/Sent)</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="screenshots">
+            <div class="container">
+                <h2>See it in action</h2>
+                <p>Professional workflows for comprehensive production management</p>
+                <div class="screenshot-grid">
+                    <img src="../scheduling/screenshots/Main%20Screen.png" alt="Scheduling - Main Screen">
+                    <img src="../scheduling/screenshots/Scene%20Sidebar.png" alt="Scheduling - Scene Sidebar">
+                    <img src="../scheduling/screenshots/Import%20From%20Final%20Draft.png" alt="Scheduling - Import From Final Draft">
+                    <img src="../scheduling/screenshots/Show%20Scenes%20With%20Specific%20Character.png" alt="Scheduling - Show Scenes With Specific Character">
                 </div>
             </div>
         </section>
@@ -423,26 +452,26 @@
         <section class="apps-section">
             <div class="container">
                 <h2>Included Apps</h2>
-                <p>Scheduling, Budgeting, and Call Sheets are part of the Core package. Full Kit coming soon.</p>
+                <p>Three powerful applications in one integrated suite for complete production management.</p>
                 <div class="apps-grid">
                     <div class="app-card">
                         <img src="../scheduling/Icon.png" alt="Scheduling Icon">
                         <h3>Scheduling</h3>
-                        <p>Manage your film shoot schedule with drag-and-drop interface and conflict detection.</p>
+                        <p>Professional schedule building with Final Draft import, character tracking, and production day management.</p>
                         <div class="price">$19.99</div>
                         <a href="/software/scheduling/">Learn More →</a>
                     </div>
                     <div class="app-card">
                         <img src="../budgeting/Icon.png" alt="Budgeting Icon">
                         <h3>Budgeting</h3>
-                        <p>Track your film production budget in real-time with line item tracking.</p>
+                        <p>Complete budget management with hierarchical organization, fringes, and real-time financial tracking.</p>
                         <div class="price">$19.99</div>
                         <a href="/software/budgeting/">Learn More →</a>
                     </div>
                     <div class="app-card">
                         <img src="../call-sheets/Icon.png" alt="Call Sheets Icon">
                         <h3>Call Sheets</h3>
-                        <p>Generate professional call sheets in seconds and send to cast and crew.</p>
+                        <p>Instant call sheet generation with cast breakdowns, crew management, and professional PDF export.</p>
                         <div class="price">$19.99</div>
                         <a href="/software/call-sheets/">Learn More →</a>
                     </div>
