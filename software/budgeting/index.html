@@ -10,562 +10,1661 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin:0; padding:0; box-sizing: border-box; }
-        
+
         :root {
             --primary: #0071e3;
             --primary-hover: #0077ed;
             --success: #34c759;
+            --danger: #ff3b30;
+            --warning: #ff9500;
             --bg: #f5f5f7;
+            --bg-secondary: #efefef;
             --card: #ffffff;
             --text: #1d1d1f;
             --text-secondary: #86868b;
             --border: #d2d2d7;
             --shadow: 0 8px 24px rgba(0,0,0,0.08);
+            --sidebar-width: 280px;
         }
 
-        /* Consistent top header across sections */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid var(--border);
-        }
-        .site-header .header-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .site-header .brand {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-        .site-header .site-logo { height: 28px; width: 28px; border-radius: 6px; margin-right: 8px; }
-        .site-header .site-nav { display: flex; gap: 20px; align-items: center; }
-        .site-header .site-nav .nav-link { text-decoration: none; color: var(--text-secondary); font-size: 14px; }
-        .site-header .site-nav .nav-link:hover { color: var(--text); }
-        .site-header .site-nav .nav-cta { color: var(--primary); }
-        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--text);
             background: var(--bg);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        nav {
-            background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+
+        .app-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* ─────────────────── Top Bar ─────────────────── */
+        .top-bar {
+            height: 52px;
+            background: rgba(255, 255, 255, 0.95);
             border-bottom: 1px solid var(--border);
-            padding: 0 2.5rem;
-            height: 64px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 20px;
+            gap: 20px;
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+
+        .top-bar .logo {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--text);
-            transition: opacity 0.2s;
-        }
-        
-        .nav-brand:hover { opacity: 0.7; }
-        .nav-brand img { width: 36px; height: 36px; border-radius: 8px; }
-        
-        /* Hero */
-        .hero {
-            padding: 120px 20px 80px;
-            text-align: center;
-            background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
-        }
-        
-        .hero img {
-            width: 140px;
-            height: 140px;
-            border-radius: 28px;
-            box-shadow: 0 24px 64px rgba(0,0,0,0.15);
-            margin-bottom: 32px;
-        }
-        
-        .hero h1 {
-            font-size: 64px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #1d1d1f 0%, #434343 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero p {
-            font-size: 22px;
-            color: var(--text-secondary);
-            max-width: 750px;
-            margin: 0 auto 16px;
-            line-height: 1.5;
-        }
-        
-        .hero .price {
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 32px;
-        }
-        
-        .hero-features {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-top: 32px;
-            flex-wrap: wrap;
-        }
-        
-        .hero-feature {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 15px;
+        }
+
+        .top-bar .logo img {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+        }
+
+        .top-bar .budget-title {
+            flex: 1;
+            font-weight: 500;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .top-bar .toolbar {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .toolbar-btn {
+            padding: 6px 12px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            color: var(--text);
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .toolbar-btn:hover {
+            background: var(--bg);
+        }
+
+        .toolbar-btn.primary {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .toolbar-btn.primary:hover {
+            background: var(--primary-hover);
+        }
+
+        /* ─────────────────── Sidebar ─────────────────── */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--card);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+            padding: 16px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 24px;
+        }
+
+        .sidebar-section-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            padding: 0 8px;
+        }
+
+        .budget-summary {
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .summary-row:last-child {
+            margin-bottom: 0;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+            font-weight: 600;
+        }
+
+        .account-tree {
+            font-size: 13px;
+        }
+
+        .account-item {
+            padding: 8px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 4px;
+            transition: background 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .account-item:hover {
+            background: var(--bg);
+        }
+
+        .account-item.active {
+            background: rgba(0, 113, 227, 0.1);
+            color: var(--primary);
+        }
+
+        .account-name {
+            flex: 1;
+        }
+
+        .account-budget {
+            font-size: 12px;
             color: var(--text-secondary);
         }
-        
-        .hero-feature svg { color: var(--success); }
-        
-        .btn-buy {
+
+        .category-header {
+            padding: 4px 8px;
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--text);
+            margin-top: 12px;
+            margin-bottom: 4px;
+        }
+
+        .account-item.sub-account {
+            padding-left: 24px;
+            font-size: 12px;
+        }
+
+        /* ─────────────────── Main Content ─────────────────── */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .view-tabs {
+            display: flex;
+            gap: 0;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 0 16px;
+        }
+
+        .view-tab {
+            padding: 12px 16px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .view-tab:hover {
+            color: var(--text);
+        }
+
+        .view-tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .content-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+
+        .view {
             display: none;
         }
 
-        .coming-soon-pill {
-            display: inline-block;
-            padding: 12px 32px;
-            background: #d2d2d7;
-            color: #6e6e73;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 980px;
-            text-decoration: none;
-            cursor: default;
+        .view.active {
+            display: block;
         }
-        
-        /* Features */
-        .features {
-            padding: 100px 0;
-            background: var(--card);
-        }
-        
-        .features h2 {
-            font-size: 48px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 64px;
-            letter-spacing: -0.02em;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            max-width: 1000px;
+
+        /* ─────────────────── Top Sheet View ─────────────────── */
+        .topsheet {
+            max-width: 900px;
             margin: 0 auto;
         }
-        
-        .feature-item {
-            padding: 32px;
-            border-radius: 20px;
-            background: var(--bg);
-            transition: transform 0.3s;
-        }
-        
-        .feature-item:hover { transform: translateY(-4px); }
-        
-        .feature-item h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.02em;
-        }
-        
-        .feature-item p {
-            color: var(--text-secondary);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        
-        /* Detailed Features */
-        .detailed-features {
-            padding: 100px 0;
-        }
-        
-        .detailed-features h2 {
-            font-size: 48px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-        
-        .detailed-features > .container > p {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 18px;
-            margin-bottom: 64px;
-        }
-        
-        .feature-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        
-        .feature-box {
-            padding: 24px;
-            border-radius: 16px;
+
+        .budget-properties {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
             border: 1px solid var(--border);
-            background: var(--card);
-            transition: all 0.3s;
         }
-        
-        .feature-box:hover {
-            box-shadow: var(--shadow);
-            transform: translateY(-4px);
-        }
-        
-        .feature-box h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        
-        .feature-box p {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.6;
-        }
-        
-        /* Screenshots */
-        .screenshots {
-            padding: 100px 0;
-            background: var(--bg);
-        }
-        
-        .screenshots h2 {
-            font-size: 48px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 64px;
-            letter-spacing: -0.02em;
-        }
-        
-        .screenshot-grid {
+
+        .property-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            max-width: 1000px;
-            margin: 0 auto;
+            gap: 20px;
         }
-        
-        .screenshot-grid img {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+
+        .property-field {
+            display: flex;
+            flex-direction: column;
         }
-        
-        /* Bundle CTA */
-        .bundle-link { padding: 0; background: none; }
-        .bundle-cta { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 80px 24px; text-align: center; border-radius: 20px; overflow: hidden; margin: 20px; }
-        .bundle-cta-inner { max-width: 580px; margin: 0 auto; }
-        .bundle-app-icons { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 28px; }
-        .bundle-app-icons img { width: 52px; height: 52px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
-        .bundle-app-icons .plus { font-size: 18px; color: rgba(255,255,255,0.3); font-weight: 300; }
-        .bundle-cta h2 { font-size: 42px; font-weight: 700; color: #ffffff; letter-spacing: -0.03em; margin-bottom: 12px; }
-        .bundle-cta p { font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.5; margin-bottom: 28px; }
-        .bundle-price-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 32px; }
-        .bundle-new-price { font-size: 28px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em; }
-        .bundle-old-price { font-size: 17px; color: rgba(255,255,255,0.35); text-decoration: line-through; }
-        .bundle-save-badge { background: rgba(52,199,89,0.18); border: 1px solid rgba(52,199,89,0.35); color: #34c759; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 980px; }
-        .bundle-btn { display: inline-block; padding: 16px 40px; background: #ffffff; color: #1d1d1f; font-size: 16px; font-weight: 600; border-radius: 980px; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
-        .bundle-btn:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
-        
-        /* Footer */
-        footer {
-            padding: 48px 0;
-            text-align: center;
+
+        .property-label {
+            font-size: 12px;
+            font-weight: 600;
             color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .property-value {
             font-size: 14px;
+            color: var(--text);
+            padding: 8px 0;
+        }
+
+        .topsheet-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .topsheet-table th {
+            background: var(--bg);
+            padding: 12px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topsheet-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        .topsheet-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .topsheet-table tr.total td {
+            font-weight: 600;
+            background: var(--bg);
             border-top: 1px solid var(--border);
         }
-        
-        footer a { color: var(--text-secondary); text-decoration: none; }
-        footer a:hover { color: var(--primary); }
-        
-        @media (max-width: 768px) {
-            .feature-grid,
-            .feature-list { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-            .screenshot-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 40px; }
-            .hero p { font-size: 18px; }
-            .hero { padding: 80px 20px 60px; }
-            .features h2,
-            .detailed-features h2,
-            .screenshots h2 { font-size: 36px; }
-            .feature-item { padding: 24px; }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--bg-secondary);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 4px;
         }
-  </style>
-<style>
-/* ── Site-wide nav & footer (matches landing page) ─────────────────────── */
-:root { --apple-dark: #1d1d1f; --apple-mid: #424245; --apple-subtle: #6e6e73; --apple-white: #ffffff; --apple-blue: #0071e3; }
-body { padding-top: 52px; }
-nav { position: fixed !important; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 52px !important; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.72) !important; backdrop-filter: saturate(180%) blur(20px) !important; -webkit-backdrop-filter: saturate(180%) blur(20px) !important; border-bottom: 1px solid rgba(0,0,0,.08) !important; box-shadow: none !important; }
-nav .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; color: #1d1d1f; text-decoration: none; }
-nav ul { list-style: none; display: flex; gap: 32px; }
-nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
-nav ul a { font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; transition: color .2s; }
-nav ul a:hover { color: #1d1d1f; }
-nav .nav-cta { font-size: 13px; font-weight: 400; color: #0071e3; text-decoration: none; transition: opacity .2s; }
-nav .nav-cta:hover { opacity: .7; }
-.nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
-.nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
-.nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
-.nav-dropdown-panel { position: absolute; top: 52px; left: 50%; transform: translateX(-50%) translateY(-10px) scale(0.96); min-width: 210px; background: rgba(255,255,255,.95); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); border: 1px solid rgba(0,0,0,.08); border-radius: 18px; padding: 8px; box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06); opacity: 0; pointer-events: none; transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1); z-index: 200; }
-.nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
-.nav-dropdown-panel a { display: block; padding: 8px 14px; font-size: 13px; font-weight: 400; color: #424245; text-decoration: none; border-radius: 10px; transition: background .15s, color .15s; white-space: nowrap; height: auto; letter-spacing: normal; }
-.nav-dropdown-panel a:hover { background: rgba(0,0,0,.05); color: #1d1d1f; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s; }
-.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
-.mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
-.mobile-menu a:hover { background: rgba(0,0,0,.05); }
-.mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; display: inline-flex; align-items: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
-.mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
-.mobile-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 24px; color: #1d1d1f; cursor: pointer; padding: 8px; line-height: 1; }
-@media (max-width: 768px) { nav ul { display: none !important; } .nav-hamburger { display: flex !important; } .nav-cta { display: none !important; } }
-footer { background: #ffffff !important; border-top: 1px solid rgba(0,0,0,.07) !important; padding: 40px 24px !important; }
-.footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.footer-copy { font-size: 12px; color: #6e6e73; }
-.footer-links { display: flex; gap: 24px; }
-.footer-links a { font-size: 12px; color: #6e6e73; text-decoration: none; transition: color .2s; }
-.footer-links a:hover { color: #1d1d1f; }
-</style>
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        /* ─────────────────── Detail View ─────────────────── */
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .detail-table th {
+            background: var(--bg);
+            padding: 12px;
+            text-align: left;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        .detail-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .detail-table tr:hover {
+            background: var(--bg);
+        }
+
+        .line-item-row {
+            cursor: pointer;
+        }
+
+        .line-item-row.selected {
+            background: rgba(0, 113, 227, 0.05);
+        }
+
+        .editable-cell {
+            cursor: text;
+            position: relative;
+        }
+
+        .editable-cell input {
+            width: 100%;
+            border: 1px solid var(--primary);
+            padding: 4px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-family: inherit;
+        }
+
+        /* ─────────────────── Fringes View ─────────────────── */
+        .fringes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .fringe-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .fringe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .fringe-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .fringe-code {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .fringe-details {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+        }
+
+        .fringe-detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fringe-detail-label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+
+        .fringe-detail-value {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        /* ─────────────────── Dialogs ─────────────────── */
+        .dialog-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dialog-overlay.active {
+            display: flex;
+        }
+
+        .dialog {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);
+        }
+
+        .dialog-header {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .dialog-body {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 13px;
+            font-family: inherit;
+            color: var(--text);
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .dialog-footer {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            opacity: 0.9;
+        }
+
+        /* ─────────────────── Empty State ─────────────────── */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .empty-state-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        /* ─────────────────── Responsive ─────────────────── */
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                max-height: 200px;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fringes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dialog {
+                width: 95%;
+            }
+        }
+
+        /* ─────────────────── Scrollbar ─────────────────── */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
 <body>
-    <nav>
-      <a href="/" class="logo">Toby Jones</a>
-      <ul>
-        <li class="nav-has-dropdown">
-          <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="nav-dropdown-panel">
-            <a href="/digital-marketing">Digital Marketing</a>
-            <a href="/out-of-house">Out-of-House</a>
-            <a href="/tv-radio">TV &amp; Radio</a>
-            <a href="/postal-marketing">Postal Advertising</a>
-            <a href="/public-relations">Public Relations</a>
-          </div>
-        </li>
-        <li class="nav-has-dropdown">
-          <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="nav-dropdown-panel">
-            <a href="/video" class="active">Video Editing</a>
-            <a href="/video-production">Video Production</a>
-          </div>
-        </li>
-        <li><a href="/web-development">Web Development</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/software">Software</a></li>
-      </ul>
-      <a href="/email/" class="nav-cta">Get in touch ↗</a>
-      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
-  </nav>
-  <div class="mobile-menu" id="mobileMenu"></div>
-
-    <div class="container">
-        <!-- Hero -->
-        <section class="hero">
-            <img src="Icon.png" alt="Budgeting Icon">
-            <h1>Budgeting</h1>
-            <p>Track your film production budget with real-time updates, detailed reports, and intelligent expense tracking.</p>
-            <div class="price">$19.99 (excl. tax)</div>
-            <a href="/software/budgeting/purchase/" class="btn-buy">Buy Now</a>
-            <div class="coming-soon-pill">Coming Soon</div>
-            
-            <div class="hero-features">
-                <div class="hero-feature">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    One-time purchase
-                </div>
-                <div class="hero-feature">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    256-bit encryption
-                </div>
-                <div class="hero-feature">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    2-day guarantee
-                </div>
-            </div>
-        </section>
-
-        <!-- Features -->
-        <section class="features">
-            <div class="container">
-                <h2>Smart Budget Management</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <h3>Real-Time Tracking</h3>
-                        <p>Watch your budget update instantly as expenses are added. Visual progress bars show department spending at a glance.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>Line Item Control</h3>
-                        <p>Organize expenses by category, subcategory, and vendor. Attach receipts and notes to every transaction.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>Easy To Use</h3>
-                        <p>Intuitive interface designed for filmmakers. No accounting background required. Start tracking expenses in minutes.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>Export Flexibility</h3>
-                        <p>Export budgets to Excel, PDF, or share directly with producers and accountants with one click.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Detailed Features -->
-        <section class="detailed-features">
-            <div class="container">
-                <h2>Complete Budget Solution</h2>
-                <p>Built for productions of every size, from indie shorts to major features.</p>
-                
-                <div class="feature-list">
-                    <div class="feature-box">
-                        <h3>Department Budgets</h3>
-                        <p>Set individual budgets for each department. Track art, camera, cast, crew, locations, post, and more.</p>
-                    </div>
-                    <div class="feature-box">
-                        <h3>Expense Categories</h3>
-                        <p>Customize expense categories. Create sub-categories for detailed tracking and reporting.</p>
-                    </div>
-                    <div class="feature-box">
-                        <h3>Receipt Management</h3>
-                        <p>Snap photos of receipts and attach them to expenses. Never lose track of documentation.</p>
-                    </div>
-                    <div class="feature-box">
-                        <h3>Vendor Tracking</h3>
-                        <p>Maintain vendor contact info and payment terms. Track outstanding invoices and payment status.</p>
-                    </div>
-                    <div class="feature-box">
-                        <h3>Currency Support</h3>
-                        <p>Work in multiple currencies with automatic exchange rates. Perfect for international productions.</p>
-                    </div>
-                    <div class="feature-box">
-                        <h3>Budget Versions</h3>
-                        <p>Save multiple versions of your budget. Compare scenarios and track changes over time.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Screenshots -->
-        <section class="screenshots">
-            <div class="container">
-                <h2>Screenshots</h2>
-                <div class="screenshot-grid">
-                    <img src="screenshots/Top%20Sheet.png" alt="Budgeting - Top Sheet">
-                    <img src="screenshots/Budget%20Details.png" alt="Budgeting - Budget Details">
-                    <img src="screenshots/Production%20Staff.png" alt="Budgeting - Production Staff">
-                    <img src="screenshots/Fringes.png" alt="Budgeting - Fringes">
-                </div>
-            </div>
-        </section>
-
-        <!-- Bundle Link -->
-        <section class="bundle-link">
-            <div class="bundle-cta">
-                <div class="bundle-cta-inner">
-                    <div class="bundle-app-icons">
-                        <img src="/software/scheduling/Icon.png" alt="Scheduling">
-                        <span class="plus">+</span>
-                        <img src="/software/budgeting/Icon.png" alt="Budgeting">
-                        <span class="plus">+</span>
-                        <img src="/software/call-sheets/Icon.png" alt="Call Sheets">
-                    </div>
-                    <h2>Better together.</h2>
-                    <p>Get Scheduling, Budgeting, and Call Sheets in one bundle and save $14.98 compared to buying separately.</p>
-                    <div class="bundle-price-row">
-                        <span class="bundle-new-price">$44.99</span>
-                        <span class="bundle-old-price">$59.97</span>
-                        <span class="bundle-save-badge">SAVE 25%</span>
-                    </div>
-                    <a href="/software/filmmakers-kit/" class="bundle-btn">Get Filmmakers Kit →</a>
-                </div>
-            </div>
-        </section>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="/software" class="logo">
+            <img src="Icon.png" alt="Budgeting">
+            <span>Budgeting</span>
+        </a>
+        <div class="budget-title" id="budgetTitle">Untitled Budget</div>
+        <div class="toolbar">
+            <button class="toolbar-btn" onclick="app.openBudget()" title="Cmd+O">Open</button>
+            <button class="toolbar-btn" onclick="app.saveBudget()" title="Cmd+S">Save</button>
+            <button class="toolbar-btn" onclick="app.showSaveAsDialog()" title="Cmd+Shift+S">Save As</button>
+            <button class="toolbar-btn" onclick="app.showPropertiesDialog()" title="Cmd+I">Properties</button>
+            <button class="toolbar-btn" onclick="app.exportPDF()" title="Cmd+E">Export PDF</button>
+            <button class="toolbar-btn" onclick="app.exportExcel()" title="Cmd+Shift+E">Export Excel</button>
+        </div>
     </div>
 
-    <footer>
-      <div class="footer-inner">
-        <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
-        <div class="footer-links">
-          <a href="/portfolio">View Portfolio</a>
-          <a href="/webcare">Website Care Plans</a>
-          <a href="/email/">Contact Me</a>
-          <a href="/complaints">Complaints</a>
-          <a href="https://instagram.com/toby_jones_marketing" target="_blank" rel="noopener">Instagram</a>
+    <!-- Main App -->
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Quick Actions</div>
+                <button class="toolbar-btn" style="width: 100%; justify-content: center; margin-bottom: 8px;" onclick="app.showNewBudgetDialog()" title="Cmd+N">New Budget</button>
+                <button class="toolbar-btn" style="width: 100%; justify-content: center;" onclick="app.showAddCategoryDialog()" title="Add Category">Add Category</button>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Budget Summary</div>
+                <div class="budget-summary">
+                    <div class="summary-row">
+                        <span>Total Budget:</span>
+                        <span id="summaryTotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Total Spent:</span>
+                        <span id="summarySpent">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Remaining:</span>
+                        <span id="summaryRemaining">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Contingency:</span>
+                        <span id="summaryContingency">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Grand Total:</span>
+                        <span id="summaryGrandTotal">$0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Accounts</div>
+                <div class="account-tree" id="accountTree">
+                    <div class="empty-state" style="padding: 20px;">
+                        <div style="color: var(--text-secondary); font-size: 12px;">No categories yet</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </footer>
-<script>
-(function() {
-  var btn = document.querySelector('.nav-hamburger');
-  var menu = document.getElementById('mobileMenu');
-  if (!btn || !menu) return;
-  var links = [
-    { href: '/web-development', text: 'Web Development' },
-    { href: '/digital-marketing', text: 'Digital Marketing' },
-    { href: '/out-of-house', text: 'Out-of-House' },
-    { href: '/tv-radio', text: 'TV & Radio' },
-    { href: '/postal-marketing', text: 'Postal Advertising' },
-    { href: '/public-relations', text: 'Public Relations' },
-    { href: '/video', text: 'Video Editing' },
-    { href: '/video-production', text: 'Video Production' },
-    { href: '/portfolio', text: 'Portfolio' },
-    { href: '/software', text: 'Software' },
-  ];
-  var html = '<button class="mobile-close" aria-label="Close menu">&#x2715;</button>';
-  links.forEach(function(l) { html += '<a class="mobile-link" href="' + l.href + '">' + l.text + '</a>'; });
-  html += '<a class="mobile-cta" href="/email/">Get in touch ↗</a>';
-  menu.innerHTML = html;
-  menu.querySelector('.mobile-close').addEventListener('click', function() { toggleMenu(false); });
-  function toggleMenu(open) {
-    btn.classList.toggle('open', open);
-    menu.style.opacity = open ? '1' : '0';
-    menu.style.pointerEvents = open ? 'auto' : 'none';
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
-  btn.addEventListener('click', function() { toggleMenu(!btn.classList.contains('open')); });
-  menu.addEventListener('click', function(e) { if (e.target.tagName === 'A') toggleMenu(false); });
-})();
-</script>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="view-tabs">
+                <button class="view-tab active" onclick="app.switchView('topsheet')" title="Cmd+1">Top Sheet</button>
+                <button class="view-tab" onclick="app.switchView('detail')" title="Cmd+2">Detail</button>
+                <button class="view-tab" onclick="app.switchView('fringes')" title="Cmd+3">Fringes</button>
+            </div>
+
+            <div class="content-area">
+                <!-- Top Sheet View -->
+                <div id="topsheetView" class="view active">
+                    <div class="topsheet">
+                        <div class="budget-properties">
+                            <div class="property-grid">
+                                <div class="property-field">
+                                    <div class="property-label">Production Title</div>
+                                    <div class="property-value" id="propTitle">Untitled Production</div>
+                                </div>
+                                <div class="property-field">
+                                    <div class="property-label">Format</div>
+                                    <div class="property-value" id="propFormat">—</div>
+                                </div>
+                                <div class="property-field">
+                                    <div class="property-label">Director</div>
+                                    <div class="property-value" id="propDirector">—</div>
+                                </div>
+                                <div class="property-field">
+                                    <div class="property-label">Producer</div>
+                                    <div class="property-value" id="propProducer">—</div>
+                                </div>
+                                <div class="property-field">
+                                    <div class="property-label">Shoot Start Date</div>
+                                    <div class="property-value" id="propShootDate">—</div>
+                                </div>
+                                <div class="property-field">
+                                    <div class="property-label">Location</div>
+                                    <div class="property-value" id="propLocation">—</div>
+                                </div>
+                                <div class="property-field">
+                                    <div class="property-label">Union Status</div>
+                                    <div class="property-value" id="propUnion">—</div>
+                                </div>
+                                <div class="property-field">
+                                    <div class="property-label">Currency</div>
+                                    <div class="property-value" id="propCurrency">USD</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="topsheet-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th style="text-align: right;">Budget</th>
+                                    <th style="text-align: right;">Spent</th>
+                                    <th style="text-align: right;">Remaining</th>
+                                    <th>Progress</th>
+                                </tr>
+                            </thead>
+                            <tbody id="topsheetBody">
+                                <tr>
+                                    <td colspan="5" class="empty-state" style="padding: 40px;">
+                                        <div style="color: var(--text-secondary);">No budget data. Create categories to begin.</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="total">
+                                    <td>Total</td>
+                                    <td style="text-align: right;" id="topsheetTotalBudget">$0.00</td>
+                                    <td style="text-align: right;" id="topsheetTotalSpent">$0.00</td>
+                                    <td style="text-align: right;" id="topsheetTotalRemaining">$0.00</td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Detail View -->
+                <div id="detailView" class="view">
+                    <div style="max-width: 100%; overflow-x: auto;">
+                        <table class="detail-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Account</th>
+                                    <th>Description</th>
+                                    <th>Vendor</th>
+                                    <th style="text-align: right;">Qty</th>
+                                    <th>Unit</th>
+                                    <th style="text-align: right;">Rate</th>
+                                    <th style="text-align: right;">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="detailBody">
+                                <tr>
+                                    <td colspan="8" class="empty-state" style="padding: 40px;">
+                                        <div style="color: var(--text-secondary);">No line items. Add categories and accounts to create line items.</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Fringes View -->
+                <div id="fringesView" class="view">
+                    <div style="margin-bottom: 16px;">
+                        <button class="toolbar-btn primary" onclick="app.showAddFringeDialog()">Add Fringe</button>
+                    </div>
+                    <div class="fringes-grid" id="fringesGrid">
+                        <div class="empty-state" style="grid-column: 1 / -1;">
+                            <div style="color: var(--text-secondary); font-size: 12px;">No fringes defined. Create fringes to apply benefits to line items.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dialogs -->
+    <div id="newBudgetDialog" class="dialog-overlay">
+        <div class="dialog">
+            <div class="dialog-header">New Budget</div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label class="form-label">Production Title</label>
+                    <input type="text" class="form-input" id="newBudgetTitle" placeholder="Enter production title">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Format</label>
+                    <select class="form-select" id="newBudgetFormat">
+                        <option>Feature</option>
+                        <option>TV</option>
+                        <option>Documentary</option>
+                        <option>Short</option>
+                        <option>Commercial</option>
+                        <option>Music Video</option>
+                        <option>Web Series</option>
+                    </select>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button class="btn btn-secondary" onclick="app.closeDialog('newBudgetDialog')">Cancel</button>
+                <button class="btn btn-primary" onclick="app.createNewBudget()">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="propertiesDialog" class="dialog-overlay">
+        <div class="dialog">
+            <div class="dialog-header">Budget Properties</div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label class="form-label">Production Title</label>
+                    <input type="text" class="form-input" id="propTitleInput" placeholder="Enter production title">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Format</label>
+                    <select class="form-select" id="propFormatInput">
+                        <option>Feature</option>
+                        <option>TV</option>
+                        <option>Documentary</option>
+                        <option>Short</option>
+                        <option>Commercial</option>
+                        <option>Music Video</option>
+                        <option>Web Series</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Director</label>
+                    <input type="text" class="form-input" id="propDirectorInput" placeholder="Director name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Producer</label>
+                    <input type="text" class="form-input" id="propProducerInput" placeholder="Producer name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Executive Producer</label>
+                    <input type="text" class="form-input" id="propExecProdInput" placeholder="Executive Producer name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Production Company</label>
+                    <input type="text" class="form-input" id="propCompanyInput" placeholder="Company name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Distributor</label>
+                    <input type="text" class="form-input" id="propDistributorInput" placeholder="Distributor name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Shoot Start Date</label>
+                    <input type="date" class="form-input" id="propShootDateInput">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-input" id="propLocationInput" placeholder="Shoot location">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Union Status</label>
+                    <select class="form-select" id="propUnionInput">
+                        <option>Non-Union</option>
+                        <option>SAG-AFTRA</option>
+                        <option>IATSE</option>
+                        <option>DGA</option>
+                        <option>Mixed</option>
+                        <option>Ultra Low Budget</option>
+                        <option>Modified Low Budget</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Currency</label>
+                    <select class="form-select" id="propCurrencyInput">
+                        <option value="USD">USD ($)</option>
+                        <option value="GBP">GBP (£)</option>
+                        <option value="EUR">EUR (€)</option>
+                        <option value="CAD">CAD ($)</option>
+                        <option value="AUD">AUD ($)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Episode Count</label>
+                    <input type="number" class="form-input" id="propEpisodeCountInput" placeholder="Number of episodes">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Shoot Days</label>
+                    <input type="number" class="form-input" id="propShootDaysInput" placeholder="Number of shoot days">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Prep Days</label>
+                    <input type="number" class="form-input" id="propPrepDaysInput" placeholder="Number of prep days">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Wrap Days</label>
+                    <input type="number" class="form-input" id="propWrapDaysInput" placeholder="Number of wrap days">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contingency %</label>
+                    <input type="number" class="form-input" id="propContingencyInput" placeholder="Contingency percentage" min="0" max="100" step="0.1">
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button class="btn btn-secondary" onclick="app.closeDialog('propertiesDialog')">Cancel</button>
+                <button class="btn btn-primary" onclick="app.saveProperties()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="addCategoryDialog" class="dialog-overlay">
+        <div class="dialog">
+            <div class="dialog-header">Add Category</div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label class="form-label">Category Name</label>
+                    <input type="text" class="form-input" id="categoryNameInput" placeholder="e.g., Above-the-Line">
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button class="btn btn-secondary" onclick="app.closeDialog('addCategoryDialog')">Cancel</button>
+                <button class="btn btn-primary" onclick="app.createCategory()">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="addAccountDialog" class="dialog-overlay">
+        <div class="dialog">
+            <div class="dialog-header">Add Account</div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label class="form-label">Account Number</label>
+                    <input type="text" class="form-input" id="accountNumberInput" placeholder="e.g., 1000">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Account Name</label>
+                    <input type="text" class="form-input" id="accountNameInput" placeholder="e.g., Director">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Budget Amount</label>
+                    <input type="number" class="form-input" id="accountBudgetInput" placeholder="0.00" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Notes</label>
+                    <textarea class="form-textarea" id="accountNotesInput" placeholder="Account notes"></textarea>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button class="btn btn-secondary" onclick="app.closeDialog('addAccountDialog')">Cancel</button>
+                <button class="btn btn-primary" onclick="app.createAccount()">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="addFringeDialog" class="dialog-overlay">
+        <div class="dialog">
+            <div class="dialog-header">Add Fringe</div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label class="form-label">Fringe Code</label>
+                    <input type="text" class="form-input" id="fringeCodeInput" placeholder="e.g., FICA">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Fringe Name</label>
+                    <input type="text" class="form-input" id="fringeNameInput" placeholder="e.g., Social Security & Medicare">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Percentage</label>
+                    <input type="number" class="form-input" id="fringePercentInput" placeholder="0.00" step="0.01" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Cap Amount (optional)</label>
+                    <input type="number" class="form-input" id="fringeCapInput" placeholder="Leave blank for no cap" step="0.01" min="0">
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button class="btn btn-secondary" onclick="app.closeDialog('addFringeDialog')">Cancel</button>
+                <button class="btn btn-primary" onclick="app.createFringe()">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="addLineItemDialog" class="dialog-overlay">
+        <div class="dialog">
+            <div class="dialog-header">Add Line Item</div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label class="form-label">Account</label>
+                    <select class="form-select" id="lineItemAccountInput">
+                        <option value="">Select account</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <input type="text" class="form-input" id="lineItemDescInput" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Vendor</label>
+                    <input type="text" class="form-input" id="lineItemVendorInput" placeholder="Vendor name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Quantity</label>
+                    <input type="number" class="form-input" id="lineItemQtyInput" placeholder="0" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Unit</label>
+                    <select class="form-select" id="lineItemUnitInput">
+                        <option>Flat</option>
+                        <option>Days</option>
+                        <option>Weeks</option>
+                        <option>Months</option>
+                        <option>Hours</option>
+                        <option>Allow</option>
+                        <option>Lump</option>
+                        <option>Run of Show</option>
+                        <option>Shoot Days</option>
+                        <option>Pages</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Rate per Unit</label>
+                    <input type="number" class="form-input" id="lineItemRateInput" placeholder="0.00" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Multiplier</label>
+                    <input type="number" class="form-input" id="lineItemMultiplierInput" placeholder="1" step="0.01" value="1">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Notes</label>
+                    <textarea class="form-textarea" id="lineItemNotesInput" placeholder="Notes"></textarea>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button class="btn btn-secondary" onclick="app.closeDialog('addLineItemDialog')">Cancel</button>
+                <button class="btn btn-primary" onclick="app.createLineItem()">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="saveAsDialog" class="dialog-overlay">
+        <div class="dialog">
+            <div class="dialog-header">Save Budget As</div>
+            <div class="dialog-body">
+                <div class="form-group">
+                    <label class="form-label">Budget Name</label>
+                    <input type="text" class="form-input" id="saveAsNameInput" placeholder="Budget name">
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button class="btn btn-secondary" onclick="app.closeDialog('saveAsDialog')">Cancel</button>
+                <button class="btn btn-primary" onclick="app.saveAsNew()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Application state
+        const app = {
+            data: {
+                budgetName: 'Untitled Budget',
+                production: {
+                    title: 'Untitled Production',
+                    format: '',
+                    director: '',
+                    producer: '',
+                    execProducer: '',
+                    company: '',
+                    distributor: '',
+                    shootDate: '',
+                    location: '',
+                    union: '',
+                    currency: 'USD',
+                    episodeCount: '',
+                    shootDays: '',
+                    prepDays: '',
+                    wrapDays: '',
+                    contingency: 0
+                },
+                categories: [],
+                fringes: []
+            },
+
+            init() {
+                this.loadBudget();
+                this.attachKeyboardShortcuts();
+                this.render();
+            },
+
+            showDialog(id) {
+                document.getElementById(id).classList.add('active');
+            },
+
+            closeDialog(id) {
+                document.getElementById(id).classList.remove('active');
+            },
+
+            showNewBudgetDialog() {
+                this.showDialog('newBudgetDialog');
+                document.getElementById('newBudgetTitle').focus();
+            },
+
+            showPropertiesDialog() {
+                const p = this.data.production;
+                document.getElementById('propTitleInput').value = p.title;
+                document.getElementById('propFormatInput').value = p.format;
+                document.getElementById('propDirectorInput').value = p.director;
+                document.getElementById('propProducerInput').value = p.producer;
+                document.getElementById('propExecProdInput').value = p.execProducer;
+                document.getElementById('propCompanyInput').value = p.company;
+                document.getElementById('propDistributorInput').value = p.distributor;
+                document.getElementById('propShootDateInput').value = p.shootDate;
+                document.getElementById('propLocationInput').value = p.location;
+                document.getElementById('propUnionInput').value = p.union;
+                document.getElementById('propCurrencyInput').value = p.currency;
+                document.getElementById('propEpisodeCountInput').value = p.episodeCount;
+                document.getElementById('propShootDaysInput').value = p.shootDays;
+                document.getElementById('propPrepDaysInput').value = p.prepDays;
+                document.getElementById('propWrapDaysInput').value = p.wrapDays;
+                document.getElementById('propContingencyInput').value = p.contingency;
+                this.showDialog('propertiesDialog');
+            },
+
+            showSaveAsDialog() {
+                document.getElementById('saveAsNameInput').value = this.data.budgetName;
+                this.showDialog('saveAsDialog');
+                document.getElementById('saveAsNameInput').select();
+            },
+
+            showAddCategoryDialog() {
+                document.getElementById('categoryNameInput').value = '';
+                this.showDialog('addCategoryDialog');
+                document.getElementById('categoryNameInput').focus();
+            },
+
+            showAddAccountDialog(categoryId) {
+                this.currentCategoryId = categoryId;
+                document.getElementById('accountNumberInput').value = '';
+                document.getElementById('accountNameInput').value = '';
+                document.getElementById('accountBudgetInput').value = '';
+                document.getElementById('accountNotesInput').value = '';
+                this.showDialog('addAccountDialog');
+                document.getElementById('accountNumberInput').focus();
+            },
+
+            showAddFringeDialog() {
+                document.getElementById('fringeCodeInput').value = '';
+                document.getElementById('fringeNameInput').value = '';
+                document.getElementById('fringePercentInput').value = '';
+                document.getElementById('fringeCapInput').value = '';
+                this.showDialog('addFringeDialog');
+                document.getElementById('fringeCodeInput').focus();
+            },
+
+            showAddLineItemDialog(accountId) {
+                this.currentAccountId = accountId;
+                this.populateAccountSelect();
+                document.getElementById('lineItemAccountInput').value = accountId;
+                document.getElementById('lineItemDescInput').value = '';
+                document.getElementById('lineItemVendorInput').value = '';
+                document.getElementById('lineItemQtyInput').value = '';
+                document.getElementById('lineItemRateInput').value = '';
+                document.getElementById('lineItemMultiplierInput').value = '1';
+                document.getElementById('lineItemNotesInput').value = '';
+                this.showDialog('addLineItemDialog');
+                document.getElementById('lineItemDescInput').focus();
+            },
+
+            populateAccountSelect() {
+                const select = document.getElementById('lineItemAccountInput');
+                select.innerHTML = '<option value="">Select account</option>';
+                this.data.categories.forEach(cat => {
+                    cat.accounts.forEach(acc => {
+                        const option = document.createElement('option');
+                        option.value = acc.id;
+                        option.text = `${cat.name} - ${acc.name}`;
+                        select.appendChild(option);
+                    });
+                });
+            },
+
+            createNewBudget() {
+                const title = document.getElementById('newBudgetTitle').value.trim();
+                const format = document.getElementById('newBudgetFormat').value;
+
+                if (!title) {
+                    alert('Please enter a production title');
+                    return;
+                }
+
+                this.data.budgetName = title;
+                this.data.production.title = title;
+                this.data.production.format = format;
+                this.data.categories = [];
+                this.data.fringes = [];
+
+                this.closeDialog('newBudgetDialog');
+                this.saveBudget();
+                this.render();
+            },
+
+            createCategory() {
+                const name = document.getElementById('categoryNameInput').value.trim();
+                if (!name) {
+                    alert('Please enter a category name');
+                    return;
+                }
+
+                this.data.categories.push({
+                    id: Date.now(),
+                    name: name,
+                    accounts: []
+                });
+
+                this.closeDialog('addCategoryDialog');
+                this.saveBudget();
+                this.render();
+            },
+
+            createAccount() {
+                const number = document.getElementById('accountNumberInput').value.trim();
+                const name = document.getElementById('accountNameInput').value.trim();
+                const budget = parseFloat(document.getElementById('accountBudgetInput').value) || 0;
+                const notes = document.getElementById('accountNotesInput').value.trim();
+
+                if (!number || !name) {
+                    alert('Please enter account number and name');
+                    return;
+                }
+
+                const category = this.data.categories.find(c => c.id === this.currentCategoryId);
+                if (category) {
+                    category.accounts.push({
+                        id: Date.now(),
+                        number: number,
+                        name: name,
+                        budget: budget,
+                        notes: notes,
+                        lineItems: []
+                    });
+                }
+
+                this.closeDialog('addAccountDialog');
+                this.saveBudget();
+                this.render();
+            },
+
+            createFringe() {
+                const code = document.getElementById('fringeCodeInput').value.trim();
+                const name = document.getElementById('fringeNameInput').value.trim();
+                const percent = parseFloat(document.getElementById('fringePercentInput').value) || 0;
+                const cap = document.getElementById('fringeCapInput').value ? parseFloat(document.getElementById('fringeCapInput').value) : null;
+
+                if (!code || !name || percent === 0) {
+                    alert('Please enter fringe code, name, and percentage');
+                    return;
+                }
+
+                this.data.fringes.push({
+                    id: Date.now(),
+                    code: code,
+                    name: name,
+                    percentage: percent,
+                    cap: cap
+                });
+
+                this.closeDialog('addFringeDialog');
+                this.saveBudget();
+                this.render();
+            },
+
+            createLineItem() {
+                const accountId = document.getElementById('lineItemAccountInput').value;
+                const desc = document.getElementById('lineItemDescInput').value.trim();
+                const vendor = document.getElementById('lineItemVendorInput').value.trim();
+                const qty = parseFloat(document.getElementById('lineItemQtyInput').value) || 0;
+                const unit = document.getElementById('lineItemUnitInput').value;
+                const rate = parseFloat(document.getElementById('lineItemRateInput').value) || 0;
+                const multiplier = parseFloat(document.getElementById('lineItemMultiplierInput').value) || 1;
+                const notes = document.getElementById('lineItemNotesInput').value.trim();
+
+                if (!accountId || !desc) {
+                    alert('Please select account and enter description');
+                    return;
+                }
+
+                for (let cat of this.data.categories) {
+                    const acc = cat.accounts.find(a => a.id === parseInt(accountId));
+                    if (acc) {
+                        acc.lineItems.push({
+                            id: Date.now(),
+                            description: desc,
+                            vendor: vendor,
+                            quantity: qty,
+                            unit: unit,
+                            rate: rate,
+                            multiplier: multiplier,
+                            total: qty * rate * multiplier,
+                            notes: notes,
+                            fringes: []
+                        });
+                        break;
+                    }
+                }
+
+                this.closeDialog('addLineItemDialog');
+                this.saveBudget();
+                this.render();
+            },
+
+            saveProperties() {
+                this.data.production.title = document.getElementById('propTitleInput').value;
+                this.data.production.format = document.getElementById('propFormatInput').value;
+                this.data.production.director = document.getElementById('propDirectorInput').value;
+                this.data.production.producer = document.getElementById('propProducerInput').value;
+                this.data.production.execProducer = document.getElementById('propExecProdInput').value;
+                this.data.production.company = document.getElementById('propCompanyInput').value;
+                this.data.production.distributor = document.getElementById('propDistributorInput').value;
+                this.data.production.shootDate = document.getElementById('propShootDateInput').value;
+                this.data.production.location = document.getElementById('propLocationInput').value;
+                this.data.production.union = document.getElementById('propUnionInput').value;
+                this.data.production.currency = document.getElementById('propCurrencyInput').value;
+                this.data.production.episodeCount = document.getElementById('propEpisodeCountInput').value;
+                this.data.production.shootDays = document.getElementById('propShootDaysInput').value;
+                this.data.production.prepDays = document.getElementById('propPrepDaysInput').value;
+                this.data.production.wrapDays = document.getElementById('propWrapDaysInput').value;
+                this.data.production.contingency = parseFloat(document.getElementById('propContingencyInput').value) || 0;
+
+                this.closeDialog('propertiesDialog');
+                this.saveBudget();
+                this.render();
+            },
+
+            saveAsNew() {
+                const name = document.getElementById('saveAsNameInput').value.trim();
+                if (!name) {
+                    alert('Please enter a budget name');
+                    return;
+                }
+                this.data.budgetName = name;
+                this.closeDialog('saveAsDialog');
+                this.saveBudget();
+                this.render();
+            },
+
+            switchView(view) {
+                document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+                document.querySelectorAll('.view-tab').forEach(t => t.classList.remove('active'));
+
+                document.getElementById(view + 'View').classList.add('active');
+                event.target.classList.add('active');
+            },
+
+            calculateBudgetTotals() {
+                let totalBudget = 0;
+                let totalSpent = 0;
+
+                this.data.categories.forEach(cat => {
+                    cat.accounts.forEach(acc => {
+                        totalBudget += acc.budget;
+                        acc.lineItems.forEach(li => {
+                            totalSpent += li.total;
+                        });
+                    });
+                });
+
+                const remaining = totalBudget - totalSpent;
+                const contingencyAmount = (totalBudget + totalSpent) * (this.data.production.contingency / 100);
+                const grandTotal = totalBudget + contingencyAmount;
+
+                return { totalBudget, totalSpent, remaining, contingencyAmount, grandTotal };
+            },
+
+            formatCurrency(amount) {
+                const symbols = { USD: '$', GBP: '£', EUR: '€', CAD: '$', AUD: '$' };
+                const symbol = symbols[this.data.production.currency] || '$';
+                return symbol + amount.toFixed(2);
+            },
+
+            render() {
+                document.getElementById('budgetTitle').textContent = this.data.budgetName;
+
+                // Update properties display
+                document.getElementById('propTitle').textContent = this.data.production.title;
+                document.getElementById('propFormat').textContent = this.data.production.format || '—';
+                document.getElementById('propDirector').textContent = this.data.production.director || '—';
+                document.getElementById('propProducer').textContent = this.data.production.producer || '—';
+                document.getElementById('propShootDate').textContent = this.data.production.shootDate || '—';
+                document.getElementById('propLocation').textContent = this.data.production.location || '—';
+                document.getElementById('propUnion').textContent = this.data.production.union || '—';
+                document.getElementById('propCurrency').textContent = this.data.production.currency;
+
+                // Calculate totals
+                const { totalBudget, totalSpent, remaining, contingencyAmount, grandTotal } = this.calculateBudgetTotals();
+
+                // Update sidebar summary
+                document.getElementById('summaryTotal').textContent = this.formatCurrency(totalBudget);
+                document.getElementById('summarySpent').textContent = this.formatCurrency(totalSpent);
+                document.getElementById('summaryRemaining').textContent = this.formatCurrency(remaining);
+                document.getElementById('summaryContingency').textContent = this.formatCurrency(contingencyAmount);
+                document.getElementById('summaryGrandTotal').textContent = this.formatCurrency(grandTotal);
+
+                // Render account tree
+                this.renderAccountTree();
+
+                // Render views
+                this.renderTopSheet(totalBudget, totalSpent, remaining);
+                this.renderDetailView();
+                this.renderFringesView();
+            },
+
+            renderAccountTree() {
+                const tree = document.getElementById('accountTree');
+                if (this.data.categories.length === 0) {
+                    tree.innerHTML = '<div class="empty-state" style="padding: 20px;"><div style="color: var(--text-secondary); font-size: 12px;">No categories yet</div></div>';
+                    return;
+                }
+
+                let html = '';
+                this.data.categories.forEach(cat => {
+                    html += `<div class="category-header">${cat.name}</div>`;
+                    cat.accounts.forEach(acc => {
+                        const spent = acc.lineItems.reduce((sum, li) => sum + li.total, 0);
+                        const budgetStr = this.formatCurrency(acc.budget);
+                        html += `<div class="account-item sub-account" onclick="app.selectAccount(${acc.id})">
+                            <span class="account-name">${acc.name}</span>
+                            <span class="account-budget">${budgetStr}</span>
+                        </div>`;
+                    });
+                });
+                tree.innerHTML = html;
+            },
+
+            renderTopSheet(totalBudget, totalSpent, remaining) {
+                const tbody = document.getElementById('topsheetBody');
+                if (this.data.categories.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" class="empty-state" style="padding: 40px;"><div style="color: var(--text-secondary);">No budget data. Create categories to begin.</div></td></tr>';
+                    document.getElementById('topsheetTotalBudget').textContent = this.formatCurrency(0);
+                    document.getElementById('topsheetTotalSpent').textContent = this.formatCurrency(0);
+                    document.getElementById('topsheetTotalRemaining').textContent = this.formatCurrency(0);
+                    return;
+                }
+
+                let html = '';
+                this.data.categories.forEach(cat => {
+                    let catBudget = 0;
+                    let catSpent = 0;
+                    cat.accounts.forEach(acc => {
+                        catBudget += acc.budget;
+                        acc.lineItems.forEach(li => {
+                            catSpent += li.total;
+                        });
+                    });
+                    const catRemaining = catBudget - catSpent;
+                    const progress = catBudget > 0 ? (catSpent / catBudget * 100) : 0;
+
+                    html += `<tr>
+                        <td>${cat.name}</td>
+                        <td style="text-align: right;">${this.formatCurrency(catBudget)}</td>
+                        <td style="text-align: right;">${this.formatCurrency(catSpent)}</td>
+                        <td style="text-align: right;">${this.formatCurrency(catRemaining)}</td>
+                        <td><div class="progress-bar"><div class="progress-fill" style="width: ${Math.min(progress, 100)}%"></div></div></td>
+                    </tr>`;
+                });
+                tbody.innerHTML = html;
+                document.getElementById('topsheetTotalBudget').textContent = this.formatCurrency(totalBudget);
+                document.getElementById('topsheetTotalSpent').textContent = this.formatCurrency(totalSpent);
+                document.getElementById('topsheetTotalRemaining').textContent = this.formatCurrency(remaining);
+            },
+
+            renderDetailView() {
+                const tbody = document.getElementById('detailBody');
+                let html = '';
+                let hasItems = false;
+
+                this.data.categories.forEach(cat => {
+                    cat.accounts.forEach(acc => {
+                        acc.lineItems.forEach(li => {
+                            hasItems = true;
+                            html += `<tr class="line-item-row">
+                                <td>${cat.name}</td>
+                                <td>${acc.name}</td>
+                                <td>${li.description}</td>
+                                <td>${li.vendor}</td>
+                                <td style="text-align: right;">${li.quantity}</td>
+                                <td>${li.unit}</td>
+                                <td style="text-align: right;">${this.formatCurrency(li.rate)}</td>
+                                <td style="text-align: right;">${this.formatCurrency(li.total)}</td>
+                            </tr>`;
+                        });
+                    });
+                });
+
+                if (!hasItems) {
+                    html = '<tr><td colspan="8" class="empty-state" style="padding: 40px;"><div style="color: var(--text-secondary);">No line items. Add categories and accounts to create line items.</div></td></tr>';
+                }
+
+                tbody.innerHTML = html;
+            },
+
+            renderFringesView() {
+                const grid = document.getElementById('fringesGrid');
+                if (this.data.fringes.length === 0) {
+                    grid.innerHTML = '<div class="empty-state" style="grid-column: 1 / -1;"><div style="color: var(--text-secondary); font-size: 12px;">No fringes defined. Create fringes to apply benefits to line items.</div></div>';
+                    return;
+                }
+
+                let html = '';
+                this.data.fringes.forEach(fringe => {
+                    const capText = fringe.cap ? ` (Cap: ${this.formatCurrency(fringe.cap)})` : '';
+                    html += `<div class="fringe-card">
+                        <div class="fringe-header">
+                            <div>
+                                <div class="fringe-name">${fringe.name}</div>
+                                <div class="fringe-code">${fringe.code}</div>
+                            </div>
+                            <button class="btn btn-danger" style="padding: 6px 12px; font-size: 11px;" onclick="app.deleteFringe(${fringe.id})">Delete</button>
+                        </div>
+                        <div class="fringe-details">
+                            <div class="fringe-detail-item">
+                                <div class="fringe-detail-label">Percentage</div>
+                                <div class="fringe-detail-value">${fringe.percentage}%</div>
+                            </div>
+                            <div class="fringe-detail-item">
+                                <div class="fringe-detail-label">Cap</div>
+                                <div class="fringe-detail-value">${fringe.cap ? this.formatCurrency(fringe.cap) : 'None'}</div>
+                            </div>
+                        </div>
+                    </div>`;
+                });
+                grid.innerHTML = html;
+            },
+
+            deleteFringe(fringeId) {
+                if (confirm('Delete this fringe?')) {
+                    this.data.fringes = this.data.fringes.filter(f => f.id !== fringeId);
+                    this.saveBudget();
+                    this.render();
+                }
+            },
+
+            selectAccount(accountId) {
+                // Highlight selected account and show line item options
+            },
+
+            saveBudget() {
+                localStorage.setItem('fmkb_budget', JSON.stringify(this.data));
+            },
+
+            loadBudget() {
+                const saved = localStorage.getItem('fmkb_budget');
+                if (saved) {
+                    this.data = JSON.parse(saved);
+                }
+            },
+
+            openBudget() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = '.fmkb,application/json';
+                input.onchange = e => {
+                    const file = e.target.files[0];
+                    const reader = new FileReader();
+                    reader.onload = event => {
+                        try {
+                            this.data = JSON.parse(event.target.result);
+                            this.saveBudget();
+                            this.render();
+                        } catch (err) {
+                            alert('Error loading budget file');
+                        }
+                    };
+                    reader.readAsText(file);
+                };
+                input.click();
+            },
+
+            exportPDF() {
+                alert('PDF export feature coming soon');
+            },
+
+            exportExcel() {
+                alert('Excel export feature coming soon');
+            },
+
+            attachKeyboardShortcuts() {
+                document.addEventListener('keydown', (e) => {
+                    const isCmd = e.ctrlKey || e.metaKey;
+
+                    if (isCmd && e.key === 'n') { e.preventDefault(); this.showNewBudgetDialog(); }
+                    if (isCmd && e.key === 'o') { e.preventDefault(); this.openBudget(); }
+                    if (isCmd && e.key === 's') {
+                        e.preventDefault();
+                        if (e.shiftKey) this.showSaveAsDialog();
+                        else this.saveBudget();
+                    }
+                    if (isCmd && e.key === 'i') { e.preventDefault(); this.showPropertiesDialog(); }
+                    if (isCmd && e.key === 'e') {
+                        e.preventDefault();
+                        if (e.shiftKey) this.exportExcel();
+                        else this.exportPDF();
+                    }
+                    if (isCmd && e.key === '1') { e.preventDefault(); this.switchView('topsheet'); }
+                    if (isCmd && e.key === '2') { e.preventDefault(); this.switchView('detail'); }
+                    if (isCmd && e.key === '3') { e.preventDefault(); this.switchView('fringes'); }
+                    if (isCmd && e.key === '=') { e.preventDefault(); this.showAddLineItemDialog(); }
+                    if (isCmd && e.key === 'Backspace') { e.preventDefault(); /* delete line item */ }
+                });
+            }
+        };
+
+        // Initialize app when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            app.init();
+        });
+
+        // Close dialogs on overlay click
+        document.querySelectorAll('.dialog-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    overlay.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
