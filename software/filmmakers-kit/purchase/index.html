@@ -658,6 +658,12 @@
       .form-row.cols-3 { grid-template-columns: 1fr 1fr; }
     }
 
+    @media (max-width: 768px) {
+      .whats-included-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
     @media (max-width: 420px) {
       .form-row.cols-2,
       .form-row.cols-3 { grid-template-columns: 1fr; }
@@ -1260,7 +1266,7 @@
 
   <section style="max-width:1100px; margin:60px auto; padding:0 20px;">
     <h2 style="font-size:32px; font-weight:700; text-align:center; margin-bottom:32px; letter-spacing:-0.02em;">What's Included</h2>
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; max-width:1000px; margin:0 auto;">
+    <div class="whats-included-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px; max-width:1000px; margin:0 auto;">
       <div style="text-align:center; padding:24px; background:var(--card); border-radius:20px; border:1px solid var(--border);">
         <img src="../screenshots/Scheduling.png" alt="Scheduling" style="width:100px; height:100px; border-radius:20px; margin-bottom:16px;" />
         <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Scheduling</h3>
