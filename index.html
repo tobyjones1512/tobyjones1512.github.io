@@ -1020,11 +1020,11 @@
     .mobile-section-items { max-height: 0; overflow: hidden; display: flex; flex-direction: column; transition: max-height .35s cubic-bezier(.22,1,.36,1); }
     .mobile-section.open .mobile-section-items { max-height: 400px; }
     .mobile-section .mobile-link { font-size: 21px; padding: 6px 14px; }
-    .mobile-top-link { font-size: 26px; padding: 8px 14px; }
+    .mobile-sections .mobile-top-link { font-size: 26px; padding: 8px 14px; }
     .mobile-sections > * { transition: opacity .3s cubic-bezier(.22,1,.36,1); }
     .mobile-sections.has-open > .mobile-section:not(.open),
     .mobile-sections.has-open > .mobile-top-link,
-    .mobile-sections.has-open > .mobile-cta { opacity: 0.2; }
+    .mobile-sections.has-open > .mobile-cta { opacity: 0; pointer-events: none; }
 
     @media(max-width:768px) { .nav-hamburger { display: flex; } }
 
