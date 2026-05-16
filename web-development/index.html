@@ -8,18 +8,18 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QCV7XEQ8QT');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Design &amp; Development Toronto - Toby Jones</title>
-  <meta name="description" content="Professional website design and development in Toronto. WordPress, WooCommerce, and custom sites built for speed and SEO. WebCare+ maintenance plans available."/>
+  <title>Web Design Toronto - Conversion-Focused Websites for Small Business | Toby Jones</title>
+  <meta name="description" content="Affordable freelance web designer in Toronto specialising in conversion-focused websites for small businesses. Custom web design, WordPress, WooCommerce, responsive design &amp; landing pages. WebCare+ maintenance included."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://tobyjones.ca/web-development/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://tobyjones.ca/web-development/"/>
-  <meta property="og:title" content="Website Design &amp; Development Toronto - Toby Jones"/>
-  <meta property="og:description" content="Professional website design and development in Toronto. WordPress, WooCommerce, and custom sites built for speed and SEO. WebCare+ maintenance plans available."/>
+  <meta property="og:title" content="Web Design Toronto - Conversion-Focused Websites for Small Business | Toby Jones"/>
+  <meta property="og:description" content="Affordable freelance web designer in Toronto specialising in conversion-focused websites for small businesses. Custom web design, WordPress, WooCommerce, responsive design &amp; landing pages. WebCare+ maintenance included."/>
   <meta property="og:site_name" content="Toby Jones"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Website Design &amp; Development Toronto - Toby Jones"/>
-  <meta name="twitter:description" content="Professional website design and development in Toronto. WordPress, WooCommerce, and custom sites built for speed and SEO. WebCare+ maintenance plans available."/>
+  <meta name="twitter:title" content="Web Design Toronto - Conversion-Focused Websites for Small Business | Toby Jones"/>
+  <meta name="twitter:description" content="Affordable freelance web designer in Toronto specialising in conversion-focused websites for small businesses. Custom web design, WordPress, WooCommerce, responsive design &amp; landing pages. WebCare+ maintenance included."/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -121,6 +121,14 @@
     .footer-links a { font-size: 12px; color: var(--subtle); text-decoration: none; transition: color .2s; }
     .footer-links a:hover { color: var(--dark); }
 
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; margin-top: 48px; }
+    .faq-item { border: 1px solid rgba(0,0,0,.07); border-radius: 20px; background: var(--white); overflow: hidden; }
+    .faq-item summary { font-size: 16px; font-weight: 600; color: var(--dark); padding: 24px 28px; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 20px; font-weight: 300; color: var(--subtle); flex-shrink: 0; transition: transform 0.2s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-answer { font-size: 15px; line-height: 1.75; color: var(--subtle); padding: 0 28px 24px; font-weight: 300; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
   /* ── Hamburger / Mobile menu ──────────────────────────────────────── */
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
@@ -186,10 +194,23 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Website Design & Development",
-  "provider": {"@type":"Person","name":"Toby Jones","url":"https://tobyjones.ca"},
-  "areaServed": "Toronto, ON, Canada",
-  "url": "https://tobyjones.ca/web-development"
+  "name": "Web Design & Development Toronto",
+  "description": "Affordable freelance web design in Toronto. Conversion-focused websites for small businesses, landing page design, responsive website design, WordPress, and WooCommerce e-commerce development.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Toby Jones",
+    "url": "https://tobyjones.ca",
+    "address": {"@type":"PostalAddress","addressLocality":"Toronto","addressRegion":"ON","addressCountry":"CA"}
+  },
+  "areaServed": ["Toronto", "Ontario", "Canada"],
+  "url": "https://tobyjones.ca/web-development",
+  "offers": [
+    {"@type": "Offer", "name": "Custom Website Design", "description": "Bespoke website design for small businesses in Toronto"},
+    {"@type": "Offer", "name": "Landing Page Design", "description": "Conversion-focused landing pages"},
+    {"@type": "Offer", "name": "WordPress Website Development", "description": "WordPress websites you can manage yourself"},
+    {"@type": "Offer", "name": "WooCommerce E-commerce", "description": "E-commerce website development for small business"},
+    {"@type": "Offer", "name": "Website Redesign", "description": "Website redesign services for businesses not converting visitors"}
+  ]
 }
 </script>
 </head>
@@ -229,9 +250,9 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
   <section class="hero">
     <div class="hero-inner">
       <div>
-        <div class="hero-eyebrow">Web Development</div>
-        <h1 class="hero-headline">Your Website,<br>Your Way.</h1>
-        <p class="hero-sub">High-performance websites built to convert visitors into customers - tailored, modern, and designed to grow with your business.</p>
+        <div class="hero-eyebrow">Web Design Toronto</div>
+        <h1 class="hero-headline">Affordable Web Design<br>for Toronto Businesses.</h1>
+        <p class="hero-sub">Conversion-focused web design for small businesses in Toronto and across Canada. Custom websites, landing pages, WordPress solutions, and responsive design that turns visitors into paying customers.</p>
         <div class="hero-actions">
           <a href="/email/" class="btn-primary">Get in touch</a>
           <a href="/portfolio" class="btn-secondary">See client work</a>
@@ -258,7 +279,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
       <div class="pitch-grid">
         <div>
           <p class="section-label reveal">The approach</p>
-          <h2 class="section-headline reveal d1">Not just a website.<br>Your hardest-working employee.</h2>
+          <h2 class="section-headline reveal d1">Not just a website.<br>Your hardest-working salesperson.</h2>
         </div>
         <div class="reveal d2">
           <p class="pitch-body">Most websites are digital brochures. I build platforms that work. By combining intuitive user experience with strategic call-to-actions, I fix the leaky bucket in your conversion process - turning more of your visitors into paying customers.</p>
