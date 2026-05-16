@@ -8,18 +8,18 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QCV7XEQ8QT');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Marketing Services Toronto - Toby Jones</title>
-  <meta name="description" content="Strategic digital marketing in Toronto. Brand strategy, social media management, content creation, and PPC advertising to grow your business online."/>
+  <title>Digital Marketing Toronto - Social Media Management &amp; Paid Advertising | Toby Jones</title>
+  <meta name="description" content="Freelance marketing consultant in Toronto. Social media management, paid digital advertising, brand strategy &amp; content creation for small businesses and startups. Grow your Instagram followers and increase website traffic."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://tobyjones.ca/digital-marketing/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://tobyjones.ca/digital-marketing/"/>
-  <meta property="og:title" content="Digital Marketing Services Toronto - Toby Jones"/>
-  <meta property="og:description" content="Strategic digital marketing in Toronto. Brand strategy, social media management, content creation, and PPC advertising to grow your business online."/>
+  <meta property="og:title" content="Digital Marketing Toronto - Social Media Management &amp; Paid Advertising | Toby Jones"/>
+  <meta property="og:description" content="Freelance marketing consultant in Toronto. Social media management, paid digital advertising, brand strategy &amp; content creation for small businesses and startups. Grow your Instagram followers and increase website traffic."/>
   <meta property="og:site_name" content="Toby Jones"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Digital Marketing Services Toronto - Toby Jones"/>
-  <meta name="twitter:description" content="Strategic digital marketing in Toronto. Brand strategy, social media management, content creation, and PPC advertising to grow your business online."/>
+  <meta name="twitter:title" content="Digital Marketing Toronto - Social Media Management &amp; Paid Advertising | Toby Jones"/>
+  <meta name="twitter:description" content="Freelance marketing consultant in Toronto. Social media management, paid digital advertising, brand strategy &amp; content creation for small businesses and startups. Grow your Instagram followers and increase website traffic."/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -121,6 +121,14 @@
     .footer-links a { font-size: 12px; color: var(--subtle); text-decoration: none; transition: color .2s; }
     .footer-links a:hover { color: var(--dark); }
 
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; margin-top: 48px; }
+    .faq-item { border: 1px solid rgba(0,0,0,.07); border-radius: 20px; background: var(--white); overflow: hidden; }
+    .faq-item summary { font-size: 16px; font-weight: 600; color: var(--dark); padding: 24px 28px; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-size: 20px; font-weight: 300; color: var(--subtle); flex-shrink: 0; transition: transform 0.2s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-answer { font-size: 15px; line-height: 1.75; color: var(--subtle); padding: 0 28px 24px; font-weight: 300; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
   /* ── Hamburger / Mobile menu ──────────────────────────────────────── */
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
@@ -186,10 +194,23 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Digital Marketing",
-  "provider": {"@type":"Person","name":"Toby Jones","url":"https://tobyjones.ca"},
-  "areaServed": "Toronto, ON, Canada",
-  "url": "https://tobyjones.ca/digital-marketing"
+  "name": "Digital Marketing Services Toronto",
+  "description": "Freelance digital marketing consultant in Toronto. Social media management, paid advertising, brand strategy, and content creation for small businesses and startups across Canada.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Toby Jones",
+    "url": "https://tobyjones.ca",
+    "address": {"@type":"PostalAddress","addressLocality":"Toronto","addressRegion":"ON","addressCountry":"CA"}
+  },
+  "areaServed": ["Toronto", "Ontario", "Canada"],
+  "url": "https://tobyjones.ca/digital-marketing",
+  "offers": [
+    {"@type": "Offer", "name": "Social Media Management Toronto"},
+    {"@type": "Offer", "name": "Paid Digital Advertising"},
+    {"@type": "Offer", "name": "Brand Strategy Consultant"},
+    {"@type": "Offer", "name": "Content Creation for Small Business"},
+    {"@type": "Offer", "name": "Social Media Marketing Strategy"}
+  ]
 }
 </script>
 </head>
@@ -228,9 +249,9 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
   <section class="hero">
     <div class="hero-inner">
       <div>
-        <div class="hero-eyebrow">Digital Marketing</div>
-        <h1 class="hero-headline">Marketing That<br>Actually Works.</h1>
-        <p class="hero-sub">Brand strategy, social media, and content that builds audiences, drives engagement, and converts followers into customers.</p>
+        <div class="hero-eyebrow">Digital Marketing Toronto</div>
+        <h1 class="hero-headline">Digital Marketing for<br>Toronto Businesses.</h1>
+        <p class="hero-sub">Social media management, paid digital advertising, and brand strategy for small businesses across Toronto and Canada. Stop guessing — start growing with a freelance marketing consultant who delivers measurable results.</p>
         <div class="hero-actions">
           <a href="/email/" class="btn-primary">Get in touch</a>
           <a href="/portfolio" class="btn-secondary">See client work</a>
@@ -337,6 +358,32 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <p class="section-label reveal">Common Questions</p>
+      <h2 class="section-headline reveal d1">Frequently asked about<br>digital marketing in Toronto.</h2>
+      <div class="faq-list">
+        <details class="faq-item reveal d1">
+          <summary>How do I grow my Instagram followers for my business?</summary>
+          <p class="faq-answer">Growing Instagram for business requires consistent, on-brand content, a clear posting strategy, and genuine community engagement. I handle everything — from content creation and scheduling to hashtag strategy and responding to your audience — so your following grows without you lifting a finger.</p>
+        </details>
+        <details class="faq-item reveal d2">
+          <summary>What's the difference between a freelance marketer and an agency?</summary>
+          <p class="faq-answer">When you hire a freelance marketing consultant, you work directly with the expert doing the work. There's no account manager relaying messages, no junior staff executing your campaigns, and no agency markup. You get senior-level strategy at a fraction of the cost.</p>
+        </details>
+        <details class="faq-item reveal d3">
+          <summary>How can I increase traffic to my website?</summary>
+          <p class="faq-answer">Increasing website traffic combines several tactics: SEO-optimised content, active social media presence, paid advertising campaigns, and email marketing. I build a tailored digital marketing strategy that identifies which channels will drive the most qualified traffic for your specific business.</p>
+        </details>
+        <details class="faq-item reveal d1">
+          <summary>Do you offer digital marketing for small businesses?</summary>
+          <p class="faq-answer">Yes — small businesses in Toronto and across Canada are my core clients. I offer flexible, affordable digital marketing packages including social media management, brand strategy, and paid advertising, all designed to deliver real growth without a big-agency price tag.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta">
     <div class="section-inner">
@@ -353,7 +400,7 @@ nav ul li { position: relative; height: 52px; display: flex; align-items: center
 
   <footer>
     <div class="footer-inner">
-          <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+          <span class="footer-copy">© 2026 Toby Jones · Toronto, Canada. All rights reserved.</span>
       <div class="footer-links">
         <a href="/">Home</a>
         <a href="/portfolio">Portfolio</a>
