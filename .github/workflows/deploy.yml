@@ -48,6 +48,8 @@ jobs:
           FILES=(
             "software/IPTV Manager/purchase/index.html"
             "software/scheduling/purchase/index.html"
+            "software/scheduling/purchase/annual/index.html"
+            "software/scheduling/purchase/lifetime/index.html"
             "software/budgeting/purchase/index.html"
             "software/call-sheets/purchase/index.html"
             "software/filmmakers-kit/purchase/index.html"
