@@ -387,6 +387,41 @@ footer { background: #ffffff !important; border-top: 1px solid rgba(0,0,0,.07) !
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { font-size: 12px; color: #6e6e73; text-decoration: none; transition: color .2s; }
 .footer-links a:hover { color: #1d1d1f; }
+
+/* Use badge */
+.use-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(52,199,89,0.1); border: 1px solid rgba(52,199,89,0.3); color: #1a7a3a; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; padding: 6px 16px; border-radius: 980px; margin-bottom: 20px; }
+
+/* Pricing comparison */
+.pricing-comparison-bar { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 24px auto 32px; max-width: 640px; background: rgba(255,59,48,0.05); border: 1px solid rgba(255,59,48,0.15); border-radius: 14px; padding: 14px 24px; }
+.pricing-comparison-bar .industry-label { font-size: 13px; color: var(--text-secondary); }
+.pricing-comparison-bar .industry-price { font-size: 17px; font-weight: 700; color: #ff3b30; text-decoration: line-through; }
+.pricing-comparison-bar .savings-note { font-size: 13px; font-weight: 700; color: var(--success); }
+
+/* Plan cards */
+.pricing-plans { display: flex; gap: 20px; justify-content: center; margin: 0 auto 32px; max-width: 720px; flex-wrap: wrap; }
+.plan-card { background: var(--card); border: 2px solid var(--border); border-radius: 20px; padding: 32px; text-align: left; flex: 1; min-width: 270px; max-width: 330px; transition: all 0.3s; position: relative; }
+.plan-card.featured { border-color: var(--primary); box-shadow: 0 8px 32px rgba(0,113,227,0.15); }
+.plan-card .plan-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; padding: 4px 14px; border-radius: 980px; white-space: nowrap; }
+.plan-card .plan-name { font-size: 15px; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; }
+.plan-card .plan-price { font-size: 40px; font-weight: 700; color: var(--text); letter-spacing: -0.03em; margin-bottom: 4px; }
+.plan-card .plan-period { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; }
+.plan-card .plan-savings { font-size: 13px; color: var(--success); font-weight: 600; margin-bottom: 20px; }
+.plan-card .plan-features { list-style: none; margin-bottom: 24px; }
+.plan-card .plan-features li { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-secondary); margin-bottom: 9px; }
+.plan-card .plan-features li svg { color: var(--success); flex-shrink: 0; }
+.plan-card .btn-plan { display: block; width: 100%; padding: 14px 24px; background: var(--primary); color: white; font-size: 15px; font-weight: 600; border-radius: 12px; text-decoration: none; text-align: center; transition: all 0.2s; box-shadow: 0 4px 14px rgba(0,113,227,0.25); }
+.plan-card .btn-plan:hover { background: var(--primary-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,113,227,0.35); }
+.plan-card.secondary .btn-plan { background: transparent; color: var(--primary); border: 2px solid var(--primary); box-shadow: none; }
+.plan-card.secondary .btn-plan:hover { background: rgba(0,113,227,0.06); transform: translateY(-1px); }
+
+/* Business section */
+.business-section-wrap { padding: 0; background: none; margin: 0 20px 20px; }
+.business-inner { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 72px 24px; text-align: center; border-radius: 20px; }
+.business-inner h2 { font-size: 38px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 16px; }
+.business-inner .business-subtitle { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,59,48,0.15); border: 1px solid rgba(255,59,48,0.3); color: #ff6b6b; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; padding: 5px 14px; border-radius: 980px; margin-bottom: 20px; }
+.business-inner p { font-size: 17px; color: rgba(255,255,255,0.65); max-width: 540px; margin: 0 auto 32px; line-height: 1.6; }
+.business-inner .btn-business { display: inline-block; padding: 16px 40px; background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.25); color: #ffffff; font-size: 16px; font-weight: 600; border-radius: 980px; text-decoration: none; transition: all 0.2s; }
+.business-inner .btn-business:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.4); }
 </style>
 <body>
     <nav>
@@ -423,15 +458,50 @@ footer { background: #ffffff !important; border-top: 1px solid rgba(0,0,0,.07) !
         <section class="hero">
             <img src="Icon.png" alt="Scheduling Icon">
             <h1>Scheduling</h1>
-            <p>Build comprehensive shooting schedules. Manage scenes, breaks, and character tracking with Final Draft script import and professional PDF export.</p>
-            <div class="price">$19.99 (excl. tax)</div>
-            <a href="/software/scheduling/purchase/" class="btn-buy">Buy Now</a>
+            <div class="use-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                For Students &amp; Personal Use Only
+            </div>
+            <p>Build comprehensive shooting schedules. Manage scenes, breaks, and character tracking with Final Draft script import and professional PDF export. Licensed for students and personal productions only.</p>
+
+            <div class="pricing-comparison-bar">
+                <span class="industry-label">Industry-standard scheduling software</span>
+                <span class="industry-price">CAD $660.11/year</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-secondary)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="savings-note">Save over 40% with our plans</span>
+            </div>
+
+            <div class="pricing-plans">
+                <div class="plan-card featured">
+                    <div class="plan-badge">MOST POPULAR</div>
+                    <div class="plan-name">Annual Plan</div>
+                    <div class="plan-price">CAD $399</div>
+                    <div class="plan-period">per year &mdash; billed annually</div>
+                    <div class="plan-savings">Save CAD $261.11 vs industry standard</div>
+                    <ul class="plan-features">
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>All features included</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Instant download code</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Annual subscription</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2-day money-back guarantee</li>
+                    </ul>
+                    <a href="/software/scheduling/purchase/annual/" class="btn-plan">Get Annual Plan &rarr;</a>
+                </div>
+                <div class="plan-card secondary">
+                    <div class="plan-name">Lifetime License</div>
+                    <div class="plan-price">CAD $999</div>
+                    <div class="plan-period">one-time &mdash; never pay again</div>
+                    <div class="plan-savings">Pay once, own it forever</div>
+                    <ul class="plan-features">
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>All features included</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Instant download code</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>No recurring charges</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2-day money-back guarantee</li>
+                    </ul>
+                    <a href="/software/scheduling/purchase/lifetime/" class="btn-plan">Get Lifetime License &rarr;</a>
+                </div>
+            </div>
 
             <div class="hero-features">
-                <div class="hero-feature">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    One-time purchase
-                </div>
                 <div class="hero-feature">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                     256-bit encryption
@@ -439,6 +509,10 @@ footer { background: #ffffff !important; border-top: 1px solid rgba(0,0,0,.07) !
                 <div class="hero-feature">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     2-day guarantee
+                </div>
+                <div class="hero-feature">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Students &amp; personal use
                 </div>
             </div>
         </section>
@@ -537,6 +611,19 @@ footer { background: #ffffff !important; border-top: 1px solid rgba(0,0,0,.07) !
                     <img src="screenshots/Import%20From%20Final%20Draft.png" alt="Scheduling - Import From Final Draft">
                     <img src="screenshots/Show%20Scenes%20With%20Specific%20Character.png" alt="Scheduling - Show Scenes With Specific Character">
                 </div>
+            </div>
+        </section>
+
+        <!-- Business Clients -->
+        <section class="business-section-wrap">
+            <div class="business-inner">
+                <div class="business-subtitle">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    NOT FOR COMMERCIAL USE
+                </div>
+                <h2>Business Clients</h2>
+                <p>This software is licensed for students and personal productions only. Commercial productions and business use require a separate commercial licence. Contact us to discuss your business needs and pricing.</p>
+                <a href="/email/" class="btn-business">Enquire About Business Licensing &rarr;</a>
             </div>
         </section>
 
