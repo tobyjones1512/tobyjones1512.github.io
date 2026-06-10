@@ -12,11 +12,13 @@ const ALLOWED_ORIGINS = [
 ];
 
 const PRODUCTS = {
-  "scheduling":     { prefix: "SCHED", name: "Scheduling",     download: "/downloads/scheduling.zip" },
-  "call-sheets":    { prefix: "CALLS", name: "Call Sheets",    download: "/downloads/call-sheets.zip" },
-  "budgeting":      { prefix: "BUDGT", name: "Budgeting",      download: "/downloads/budgeting.zip" },
-  "filmmakers-kit": { prefix: "FMKIT", name: "Filmmakers Kit", download: "/downloads/filmmakers-kit.zip" },
-  "iptv-manager":     { prefix: "IPTV",  name: "IPTV Manager",     download: "/downloads/iptv-manager.zip" },
+  "scheduling":          { prefix: "SCHED", name: "Scheduling",            download: "/software/redownload/" },
+  "scheduling-annual":   { prefix: "SCHED", name: "Scheduling (Annual)",   download: "/software/redownload/" },
+  "scheduling-lifetime": { prefix: "SCHED", name: "Scheduling (Lifetime)", download: "/software/redownload/" },
+  "call-sheets":         { prefix: "CALLS", name: "Call Sheets",           download: "/software/redownload/" },
+  "budgeting":           { prefix: "BUDGT", name: "Budgeting",             download: "/software/redownload/" },
+  "filmmakers-kit":      { prefix: "FMKIT", name: "Filmmakers Kit",        download: "/software/redownload/" },
+  "iptv-manager":        { prefix: "IPTV",  name: "IPTV Manager",          download: "/software/redownload/" },
 };
 
 function generateSerialKey(prefix) {
@@ -39,9 +41,7 @@ async function sendKeyEmail({ email, firstName, productName, serialKey, download
     : "";
 
   const downloadSection = isBundle
-    ? `<p style="margin:0 0 8px;"><a href="https://tobyjones.ca/downloads/scheduling.zip" style="color:#0071e3;text-decoration:none;font-weight:600;">Download Scheduling →</a></p>
-       <p style="margin:0 0 8px;"><a href="https://tobyjones.ca/downloads/budgeting.zip" style="color:#0071e3;text-decoration:none;font-weight:600;">Download Budgeting →</a></p>
-       <p style="margin:0 0 24px;"><a href="https://tobyjones.ca/downloads/call-sheets.zip" style="color:#0071e3;text-decoration:none;font-weight:600;">Download Call Sheets →</a></p>`
+    ? `<p style="margin:0 0 24px;"><a href="${fullDownload}" style="display:inline-block;padding:14px 32px;background:#0071e3;color:#fff;text-decoration:none;border-radius:980px;font-weight:600;">Download your apps</a></p>`
     : `<p style="margin:0 0 24px;"><a href="${fullDownload}" style="display:inline-block;padding:14px 32px;background:#0071e3;color:#fff;text-decoration:none;border-radius:980px;font-weight:600;">Download ${productName}</a></p>`;
 
   const html = `<!DOCTYPE html><html><body style="margin:0;padding:0;background:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">

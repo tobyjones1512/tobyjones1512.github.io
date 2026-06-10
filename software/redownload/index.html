@@ -238,15 +238,15 @@
                     <h3>Included Apps</h3>
                     <div class="fk-app-list">
                         <div class="fk-app-item">
-                            <img src="/software/call-sheets/Icon.png" alt="Call Sheets" />
+                            <img src="/software/call-sheets/Icon.png" alt="Call Sheets" loading="lazy" decoding="async" />
                             <span>Call Sheets</span>
                         </div>
                         <div class="fk-app-item">
-                            <img src="/software/scheduling/Icon.png" alt="Scheduling" />
+                            <img src="/software/scheduling/Icon.png" alt="Scheduling" loading="lazy" decoding="async" />
                             <span>Scheduling</span>
                         </div>
                         <div class="fk-app-item">
-                            <img src="/software/budgeting/Icon.png" alt="Budgeting" />
+                            <img src="/software/budgeting/Icon.png" alt="Budgeting" loading="lazy" decoding="async" />
                             <span>Budgeting</span>
                         </div>
                     </div>
@@ -277,7 +277,7 @@
             <div class="downloads-list">
                 <div class="download-item">
                     <div>
-                        <img src="/software/scheduling/Icon.png" alt="Scheduling" class="download-item-icon" />
+                        <img src="/software/scheduling/Icon.png" alt="Scheduling" class="download-item-icon" loading="lazy" decoding="async" />
                         <div class="item-header">
                             <h3>Scheduling</h3>
                             <span class="version-badge" id="scheduling-version">v1.0.0</span>
@@ -292,7 +292,7 @@
 
                 <div class="download-item">
                     <div>
-                        <img src="/software/budgeting/Icon.png" alt="Budgeting" class="download-item-icon" />
+                        <img src="/software/budgeting/Icon.png" alt="Budgeting" class="download-item-icon" loading="lazy" decoding="async" />
                         <div class="item-header">
                             <h3>Budgeting</h3>
                             <span class="version-badge" id="budgeting-version">v1.0.0</span>
@@ -307,7 +307,7 @@
 
                 <div class="download-item">
                     <div>
-                        <img src="/software/call-sheets/Icon.png" alt="Call Sheets" class="download-item-icon" />
+                        <img src="/software/call-sheets/Icon.png" alt="Call Sheets" class="download-item-icon" loading="lazy" decoding="async" />
                         <div class="item-header">
                             <h3>Call Sheets</h3>
                             <span class="version-badge" id="call-sheets-version">v1.0.0</span>
@@ -322,7 +322,7 @@
 
                 <div class="download-item">
                     <div>
-                        <img src="/software/IPTV Manager/Icon.png" alt="IPTV Manager" class="download-item-icon" />
+                        <img src="/software/IPTV Manager/Icon.png" alt="IPTV Manager" class="download-item-icon" loading="lazy" decoding="async" />
                         <div class="item-header">
                             <h3>IPTV Manager</h3>
                             <span class="version-badge" id="iptv-manager-version">v1.0.0</span>
@@ -360,7 +360,7 @@
 
     <footer>
       <div class="footer-inner">
-        <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+        <span class="footer-copy">© 2026 Toby Jones · Toronto, Canada. All rights reserved.</span>
         <div class="footer-links">
           <a href="/portfolio">View Portfolio</a>
           <a href="/webcare">Website Care Plans</a>
@@ -409,13 +409,14 @@ async function getDownloadURL(appName) {
   }
 }
 
-// Download code mapping - validly purchased codes
+// Download code mapping - validly purchased codes.
+// Download URLs are always resolved from /downloads/<app>-versions.csv at verify time.
 const downloadCodes = {
-  '6de68f55': { app: 'call-sheets', name: 'Call Sheets', url: 'http://adfoc.us/875782113257849' },
-  '96ab7287': { app: 'iptv-manager', name: 'IPTV Manager', url: null },
-  '06be9da9': { app: 'scheduling', name: 'Scheduling', url: 'https://example.com/scheduling-download' },
-  'de53808b': { app: 'budgeting', name: 'Budgeting', url: 'https://example.com/budgeting-download' },
-  '0f18751d': { app: 'filmmakers-kit', name: "Filmmaker's Kit", url: null }
+  '6de68f55': { app: 'call-sheets', name: 'Call Sheets' },
+  '96ab7287': { app: 'iptv-manager', name: 'IPTV Manager' },
+  '06be9da9': { app: 'scheduling', name: 'Scheduling' },
+  'de53808b': { app: 'budgeting', name: 'Budgeting' },
+  '0f18751d': { app: 'filmmakers-kit', name: "Filmmaker's Kit" }
 };
 
 // Map which apps filmmaker's kit code unlocks
