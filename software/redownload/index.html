@@ -224,7 +224,7 @@
             <div class="fk-card">
                 <div class="fk-header">
                     <h2>Welcome to Filmmaker's Kit!</h2>
-                    <p>Your Filmmaker's Kit includes 3 professional apps. Use the code below to download each one.</p>
+                    <p>Your Filmmaker's Kit includes Scheduling and Call Sheets, with Budgeting coming soon. Use the code below to download each app.</p>
                 </div>
                 <div class="fk-code-box">
                     <div class="fk-label">Your Download Code</div>
@@ -238,16 +238,16 @@
                     <h3>Included Apps</h3>
                     <div class="fk-app-list">
                         <div class="fk-app-item">
-                            <img src="/software/call-sheets/Icon.png" alt="Call Sheets" />
+                            <img src="/software/call-sheets/Icon.png" alt="Call Sheets" loading="lazy" decoding="async" />
                             <span>Call Sheets</span>
                         </div>
                         <div class="fk-app-item">
-                            <img src="/software/scheduling/Icon.png" alt="Scheduling" />
+                            <img src="/software/scheduling/Icon.png" alt="Scheduling" loading="lazy" decoding="async" />
                             <span>Scheduling</span>
                         </div>
-                        <div class="fk-app-item">
-                            <img src="/software/budgeting/Icon.png" alt="Budgeting" />
-                            <span>Budgeting</span>
+                        <div class="fk-app-item" style="opacity:0.45;">
+                            <img src="/software/budgeting/Icon.png" alt="Budgeting" loading="lazy" decoding="async" />
+                            <span>Budgeting (Coming Soon)</span>
                         </div>
                     </div>
                 </div>
@@ -256,7 +256,7 @@
                     <ol>
                         <li>Click "Download" on any app below</li>
                         <li>Enter your code above when prompted</li>
-                        <li>Repeat for each of the 3 apps</li>
+                        <li>Repeat for each app</li>
                     </ol>
                 </div>
             </div>
@@ -277,7 +277,7 @@
             <div class="downloads-list">
                 <div class="download-item">
                     <div>
-                        <img src="/software/scheduling/Icon.png" alt="Scheduling" class="download-item-icon" />
+                        <img src="/software/scheduling/Icon.png" alt="Scheduling" class="download-item-icon" loading="lazy" decoding="async" />
                         <div class="item-header">
                             <h3>Scheduling</h3>
                             <span class="version-badge" id="scheduling-version">v1.0.0</span>
@@ -292,22 +292,21 @@
 
                 <div class="download-item">
                     <div>
-                        <img src="/software/budgeting/Icon.png" alt="Budgeting" class="download-item-icon" />
+                        <img src="/software/budgeting/Icon.png" alt="Budgeting" class="download-item-icon" loading="lazy" decoding="async" />
                         <div class="item-header">
                             <h3>Budgeting</h3>
-                            <span class="version-badge" id="budgeting-version">v1.0.0</span>
+                            <span class="version-badge" style="background:#86868b;">Coming Soon</span>
                         </div>
                         <p class="desc">Professional budget management with real-time tracking and export options.</p>
                     </div>
-                    <button class="dl-btn" onclick="showCodeModal('budgeting', 'Budgeting')">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Download
+                    <button class="dl-btn" disabled style="background:#d2d2d7;box-shadow:none;cursor:default;">
+                        Coming Soon
                     </button>
                 </div>
 
                 <div class="download-item">
                     <div>
-                        <img src="/software/call-sheets/Icon.png" alt="Call Sheets" class="download-item-icon" />
+                        <img src="/software/call-sheets/Icon.png" alt="Call Sheets" class="download-item-icon" loading="lazy" decoding="async" />
                         <div class="item-header">
                             <h3>Call Sheets</h3>
                             <span class="version-badge" id="call-sheets-version">v1.0.0</span>
@@ -322,7 +321,7 @@
 
                 <div class="download-item">
                     <div>
-                        <img src="/software/IPTV Manager/Icon.png" alt="IPTV Manager" class="download-item-icon" />
+                        <img src="/software/IPTV Manager/Icon.png" alt="IPTV Manager" class="download-item-icon" loading="lazy" decoding="async" />
                         <div class="item-header">
                             <h3>IPTV Manager</h3>
                             <span class="version-badge" id="iptv-manager-version">v1.0.0</span>
@@ -360,7 +359,7 @@
 
     <footer>
       <div class="footer-inner">
-        <span class="footer-copy">© 2026 Toby Jones. All rights reserved.</span>
+        <span class="footer-copy">© 2026 Toby Jones · Toronto, Canada. All rights reserved.</span>
         <div class="footer-links">
           <a href="/portfolio">View Portfolio</a>
           <a href="/webcare">Website Care Plans</a>
@@ -409,17 +408,17 @@ async function getDownloadURL(appName) {
   }
 }
 
-// Download code mapping - validly purchased codes
+// Download code mapping - validly purchased codes.
+// Download URLs are always resolved from /downloads/<app>-versions.csv at verify time.
 const downloadCodes = {
-  '6de68f55': { app: 'call-sheets', name: 'Call Sheets', url: 'http://adfoc.us/875782113257849' },
-  '96ab7287': { app: 'iptv-manager', name: 'IPTV Manager', url: null },
-  '06be9da9': { app: 'scheduling', name: 'Scheduling', url: 'https://example.com/scheduling-download' },
-  'de53808b': { app: 'budgeting', name: 'Budgeting', url: 'https://example.com/budgeting-download' },
-  '0f18751d': { app: 'filmmakers-kit', name: "Filmmaker's Kit", url: null }
+  '6de68f55': { app: 'call-sheets', name: 'Call Sheets' },
+  '96ab7287': { app: 'iptv-manager', name: 'IPTV Manager' },
+  '06be9da9': { app: 'scheduling', name: 'Scheduling' },
+  '0f18751d': { app: 'filmmakers-kit', name: "Filmmaker's Kit" }
 };
 
 // Map which apps filmmaker's kit code unlocks
-const filmmakersKitApps = ['call-sheets', 'scheduling', 'budgeting'];
+const filmmakersKitApps = ['call-sheets', 'scheduling'];
 
 let currentApp = null;
 
@@ -491,7 +490,7 @@ async function verifyCode() {
 // Allow Enter key to submit
 document.addEventListener('DOMContentLoaded', async function() {
   // Update version badges from CSV files
-  const apps = ['call-sheets', 'iptv-manager', 'scheduling', 'budgeting'];
+  const apps = ['call-sheets', 'iptv-manager', 'scheduling'];
   for (const app of apps) {
     const version = await getVersionFromCSV(app);
     const versionElement = document.getElementById(app + '-version');
