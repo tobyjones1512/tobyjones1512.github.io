@@ -37,7 +37,7 @@ async function sendKeyEmail({ email, firstName, productName, serialKey, download
   const fullDownload = `https://tobyjones.ca${downloadUrl}`;
 
   const bundleNote = isBundle
-    ? `<p style="color:#1d1d1f;margin:0 0 24px;">This key activates all three apps: Scheduling, Budgeting, and Call Sheets.</p>`
+    ? `<p style="color:#1d1d1f;margin:0 0 24px;">This key activates Scheduling and Call Sheets. Budgeting is coming soon.</p>`
     : "";
 
   const downloadSection = isBundle
