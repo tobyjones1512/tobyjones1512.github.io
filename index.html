@@ -1,1605 +1,527 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-GB">
 <head>
-    <!-- TEMP-UNDER-CONSTRUCTION-REDIRECT: remove this block to restore the page -->
-    <script>window.location.replace("/under-construction/");</script>
-    <meta http-equiv="refresh" content="0; url=/under-construction/" />
-    <!-- /TEMP-UNDER-CONSTRUCTION-REDIRECT -->
-    <meta charset="UTF-8" />
-    <!-- Google tag (gtag.js) -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QCV7XEQ8QT');</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Freelance Web Designer, Video Editor &amp; Marketing Consultant | Toby Jones</title>
-  <meta name="description" content="Affordable freelance web designer, video editor &amp; marketing consultant based in Toronto, Canada. Conversion-focused websites, digital marketing strategy, and video production for businesses worldwide. Let&#39;s grow your brand."/>
-  <meta name="robots" content="index, follow"/>
-  <link rel="canonical" href="https://tobyjones.ca/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://tobyjones.ca/"/>
-  <meta property="og:title" content="Freelance Web Designer, Video Editor &amp; Marketing Consultant | Toby Jones"/>
-  <meta property="og:description" content="Affordable freelance web designer, video editor &amp; marketing consultant based in Toronto, Canada. Conversion-focused websites, digital marketing strategy, and video production for businesses worldwide. Let&#39;s grow your brand."/>
-  <meta property="og:site_name" content="Toby Jones"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Freelance Web Designer, Video Editor &amp; Marketing Consultant | Toby Jones"/>
-  <meta name="twitter:description" content="Affordable freelance web designer, video editor &amp; marketing consultant based in Toronto, Canada. Conversion-focused websites, digital marketing strategy, and video production for businesses worldwide. Let&#39;s grow your brand."/>
-    <style>
-        /* ── Reset & Base ────────────────────────────────────────────────── */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        :root {
-            --apple-dark: #1d1d1f;
-            --apple-mid: #424245;
-            --apple-subtle: #6e6e73;
-            --apple-light: #f5f5f7;
-            --apple-white: #ffffff;
-            --apple-blue: #0071e3;
-            --radius-lg: 28px;
-            --radius-xl: 40px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-                "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-            background: var(--apple-white);
-            color: var(--apple-dark);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ── Scroll-reveal utility ───────────────────────────────────────── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(36px);
-            transition: opacity 0.8s cubic-bezier(.22, 1, .36, 1),
-                transform 0.8s cubic-bezier(.22, 1, .36, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: none;
-        }
-
-        .reveal-delay-1 {
-            transition-delay: 0.1s;
-        }
-
-        .reveal-delay-2 {
-            transition-delay: 0.2s;
-        }
-
-        .reveal-delay-3 {
-            transition-delay: 0.3s;
-        }
-
-        .reveal-delay-4 {
-            transition-delay: 0.4s;
-        }
-
-        /* ── Navigation ──────────────────────────────────────────────────── */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 0 24px;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(255, 255, 255, 0.72);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            transition: background 0.3s;
-        }
-
-        nav .logo {
-            font-size: 17px;
-            font-weight: 600;
-            letter-spacing: -0.3px;
-            color: var(--apple-dark);
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 32px;
-        }
-
-        nav ul a {
-            font-size: 13px;
-            font-weight: 400;
-            color: var(--apple-mid);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        nav ul a:hover {
-            color: var(--apple-dark);
-        }
-
-        nav .nav-cta {
-            font-size: 13px;
-            font-weight: 400;
-            color: var(--apple-blue);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        nav .nav-cta:hover {
-            opacity: 0.7;
-        }
-
-        /* ── Hero ────────────────────────────────────────────────────────── */
-        #hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            min-height: 680px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: #f8f9ff;
-        }
-
-        .hero-blobs {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-        }
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(72px);
-            will-change: transform;
-        }
-        .blob-1 {
-            width: 75vw; height: 75vw;
-            background: #c7d2fe;
-            top: -30%; left: -15%;
-            opacity: 0.75;
-            animation: blob1 14s ease-in-out infinite alternate;
-        }
-        .blob-2 {
-            width: 65vw; height: 65vw;
-            background: #bae6fd;
-            top: 5%; right: -20%;
-            opacity: 0.65;
-            animation: blob2 17s ease-in-out infinite alternate;
-        }
-        .blob-3 {
-            width: 60vw; height: 60vw;
-            background: #fbcfe8;
-            bottom: -25%; left: 15%;
-            opacity: 0.6;
-            animation: blob3 13s ease-in-out infinite alternate;
-        }
-        .blob-4 {
-            width: 45vw; height: 45vw;
-            background: #e0e7ff;
-            bottom: -10%; right: -5%;
-            opacity: 0.55;
-            animation: blob4 16s ease-in-out infinite alternate;
-        }
-        @keyframes blob1 {
-            0%   { transform: translate(0, 0) scale(1); }
-            50%  { transform: translate(7%, 10%) scale(1.08); }
-            100% { transform: translate(-4%, 6%) scale(0.96); }
-        }
-        @keyframes blob2 {
-            0%   { transform: translate(0, 0) scale(1); }
-            50%  { transform: translate(-9%, 7%) scale(1.12); }
-            100% { transform: translate(6%, -6%) scale(0.92); }
-        }
-        @keyframes blob3 {
-            0%   { transform: translate(0, 0) scale(1); }
-            50%  { transform: translate(11%, -9%) scale(1.06); }
-            100% { transform: translate(-7%, 8%) scale(1.1); }
-        }
-        @keyframes blob4 {
-            0%   { transform: translate(0, 0) scale(1); }
-            50%  { transform: translate(-10%, -8%) scale(0.92); }
-            100% { transform: translate(9%, 6%) scale(1.13); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding: 0 24px;
-            max-width: 860px;
-        }
-
-        .hero-eyebrow {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: rgba(29, 29, 31, 0.55);
-            margin-bottom: 24px;
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(.22, 1, .36, 1) 0.3s forwards;
-        }
-
-        .hero-headline {
-            font-size: clamp(52px, 8vw, 96px);
-            font-weight: 700;
-            letter-spacing: -0.04em;
-            line-height: 1.04;
-            color: var(--apple-dark);
-            mix-blend-mode: multiply;
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(.22, 1, .36, 1) 0.5s forwards;
-        }
-
-        .hero-sub {
-            margin-top: 24px;
-            font-size: clamp(17px, 2.5vw, 21px);
-            font-weight: 300;
-            line-height: 1.55;
-            color: rgba(29, 29, 31, 0.7);
-            max-width: 520px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(.22, 1, .36, 1) 0.7s forwards;
-        }
-
-        .hero-actions {
-            margin-top: 40px;
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(.22, 1, .36, 1) 0.9s forwards;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 14px 28px;
-            border-radius: 980px;
-            background: var(--apple-dark);
-            color: #fff;
-            font-size: 15px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s, transform 0.15s;
-        }
-
-        .btn-primary:hover {
-            background: #000;
-            transform: scale(1.02);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 14px 28px;
-            border-radius: 980px;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 0, 0, 0.14);
-            color: var(--apple-dark);
-            font-size: 15px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s, transform 0.15s;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.75);
-            transform: scale(1.02);
-        }
-
-        .scroll-hint {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            opacity: 0;
-            animation: fadeIn 1s ease 1.5s forwards;
-        }
-
-        .scroll-hint span {
-            font-size: 11px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: rgba(29, 29, 31, 0.4);
-        }
-
-        .scroll-arrow {
-            width: 20px;
-            height: 20px;
-            border-right: 1.5px solid rgba(29, 29, 31, 0.3);
-            border-bottom: 1.5px solid rgba(29, 29, 31, 0.3);
-            transform: rotate(45deg);
-            animation: bounce 2s ease infinite;
-        }
-
-        /* ── Section shared ──────────────────────────────────────────────── */
-        section {
-            padding: 120px 24px;
-        }
-
-        .section-inner {
-            max-width: 1080px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--apple-subtle);
-            margin-bottom: 16px;
-        }
-
-        .section-headline {
-            font-size: clamp(32px, 5vw, 56px);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            color: var(--apple-dark);
-            max-width: 640px;
-        }
-
-        .section-body {
-            margin-top: 20px;
-            font-size: 17px;
-            font-weight: 300;
-            line-height: 1.65;
-            color: var(--apple-subtle);
-            max-width: 560px;
-        }
-
-        /* ── About (Glassmorphism) ───────────────────────────────────────── */
-        #about {
-            background: var(--apple-light);
-        }
-
-        .glass-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            background: rgba(255, 255, 255, 0.55);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            padding: 56px;
-            box-shadow:
-                0 2px 1px rgba(0, 0, 0, 0.03),
-                0 8px 16px rgba(0, 0, 0, 0.06),
-                0 32px 64px rgba(0, 0, 0, 0.08);
-        }
-
-        .glass-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-        }
-
-        .about-photo-wrap {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .photo-glow {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
-            filter: blur(24px);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .about-photo {
-            position: relative;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center 15%;
-            border: 1.5px solid rgba(255, 255, 255, 0.7);
-            box-shadow:
-                0 20px 60px rgba(15, 23, 42, 0.18),
-                0 0 0 6px rgba(255, 255, 255, 0.4);
-            margin-bottom: 24px;
-        }
-
-        .about-name {
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: var(--apple-dark);
-            margin-bottom: 6px;
-        }
-
-        .about-role {
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--apple-subtle);
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 16px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            border-radius: 16px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            background: rgba(255, 255, 255, 0.75);
-            text-decoration: none;
-            color: var(--apple-dark);
-            font-size: 13px;
-            font-weight: 500;
-            transition: transform 0.2s cubic-bezier(.22, 1, .36, 1),
-                box-shadow 0.2s, background 0.2s;
-        }
-
-        .social-link:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-link-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .social-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            background: rgba(255, 255, 255, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .social-icon svg {
-            width: 15px;
-            height: 15px;
-            fill: var(--apple-dark);
-        }
-
-        .social-link-text {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-            text-align: left;
-        }
-
-        .social-link-name {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--apple-dark);
-            line-height: 1.3;
-        }
-
-        .social-link-handle {
-            font-size: 11px;
-            color: var(--apple-subtle);
-            line-height: 1.3;
-        }
-
-        .arrow-icon {
-            width: 14px;
-            height: 14px;
-            opacity: 0.35;
-            transition: opacity 0.2s, transform 0.2s;
-        }
-
-        .social-link:hover .arrow-icon {
-            opacity: 0.7;
-            transform: translate(2px, -2px);
-        }
-
-        .about-info {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            border-radius: 980px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            background: rgba(255, 255, 255, 0.7);
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--apple-subtle);
-        }
-
-        .about-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .about-card {
-            padding: 20px 22px;
-            border-radius: 20px;
-            border: 1px solid rgba(0, 0, 0, 0.07);
-            background: rgba(255, 255, 255, 0.7);
-            cursor: default;
-            transition: transform 0.25s cubic-bezier(.22, 1, .36, 1),
-                box-shadow 0.25s;
-        }
-
-        .about-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09);
-        }
-
-        .about-card-label {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: rgba(110, 110, 115, 0.55);
-            margin-bottom: 6px;
-        }
-
-        .about-card-text {
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--apple-mid);
-        }
-
-        /* ── Services ────────────────────────────────────────────────────── */
-        #services {
-            background: var(--apple-white);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-top: 60px;
-        }
-
-        .service-card {
-            padding: 40px 32px;
-            border-radius: var(--radius-lg);
-            border: 1px solid rgba(0, 0, 0, 0.07);
-            background: var(--apple-light);
-            transition: transform 0.3s cubic-bezier(.22, 1, .36, 1),
-                box-shadow 0.3s, background 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: "";
-            position: absolute;
-            top: -60px;
-            right: -60px;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: var(--card-accent, rgba(99, 102, 241, 0.08));
-            filter: blur(40px);
-            pointer-events: none;
-            transition: transform 0.4s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.09);
-        }
-
-        .service-card:hover::before {
-            transform: scale(1.4);
-        }
-
-        .service-card:nth-child(1) {
-            --card-accent: rgba(99, 102, 241, 0.12);
-        }
-
-        .service-card:nth-child(2) {
-            --card-accent: rgba(244, 114, 182, 0.12);
-        }
-
-        .service-card:nth-child(3) {
-            --card-accent: rgba(52, 211, 153, 0.12);
-        }
-
-        .service-card:nth-child(4) {
-            --card-accent: rgba(251, 191, 36, 0.12);
-        }
-
-        .service-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.07);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        }
-
-        .service-icon svg {
-            width: 22px;
-            height: 22px;
-        }
-
-        .service-title {
-            font-size: 19px;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: var(--apple-dark);
-            margin-bottom: 10px;
-        }
-
-        .service-desc {
-            font-size: 14px;
-            line-height: 1.65;
-            color: var(--apple-subtle);
-            font-weight: 300;
-        }
-
-        /* ── Work / Stats ────────────────────────────────────────────────── */
-        #work {
-            background: var(--apple-dark);
-            color: var(--apple-white);
-        }
-
-        #work .section-label {
-            color: rgba(255, 255, 255, 0.45);
-        }
-
-        #work .section-headline {
-            color: var(--apple-white);
-        }
-
-        #work .section-body {
-            color: rgba(255, 255, 255, 0.55);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1px;
-            margin-top: 72px;
-            border-radius: 24px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-cell {
-            padding: 48px 36px;
-            background: rgba(255, 255, 255, 0.04);
-            transition: background 0.3s;
-        }
-
-        .stat-cell:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .stat-num {
-            font-size: clamp(40px, 5vw, 64px);
-            font-weight: 700;
-            letter-spacing: -0.04em;
-            color: var(--apple-white);
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .work-marquee-wrap {
-            margin-top: 80px;
-            overflow: hidden;
-            -webkit-mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-            mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-        }
-
-        .work-marquee {
-            display: flex;
-            gap: 32px;
-            animation: marquee 28s linear infinite;
-            width: max-content;
-        }
-
-        .work-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 22px;
-            border-radius: 980px;
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            background: rgba(255, 255, 255, 0.06);
-            font-size: 13px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.7);
-            white-space: nowrap;
-        }
-
-        .work-pill-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-        }
-
-        /* ── Contact ─────────────────────────────────────────────────────── */
-        #contact {
-            background: var(--apple-light);
-        }
-
-        .contact-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--radius-xl);
-            background: var(--apple-dark);
-            padding: 80px 64px;
-            text-align: center;
-        }
-
-        .contact-card::before {
-            content: "";
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 65%);
-            pointer-events: none;
-        }
-
-        .contact-card h2 {
-            font-size: clamp(36px, 6vw, 72px);
-            font-weight: 700;
-            letter-spacing: -0.04em;
-            line-height: 1.05;
-            color: var(--apple-white);
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .contact-card p {
-            font-size: 17px;
-            font-weight: 300;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.55);
-            max-width: 440px;
-            margin: 0 auto 44px;
-            position: relative;
-        }
-
-        .contact-actions {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-            position: relative;
-        }
-
-        .btn-white {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 14px 28px;
-            border-radius: 980px;
-            background: var(--apple-white);
-            color: var(--apple-dark);
-            font-size: 15px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s, transform 0.15s;
-        }
-
-        .btn-white:hover {
-            background: rgba(255, 255, 255, 0.88);
-            transform: scale(1.02);
-        }
-
-        .btn-outline-white {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 14px 28px;
-            border-radius: 980px;
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 15px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: border-color 0.2s, background 0.2s, transform 0.15s;
-        }
-
-        .btn-outline-white:hover {
-            border-color: rgba(255, 255, 255, 0.55);
-            background: rgba(255, 255, 255, 0.06);
-            transform: scale(1.02);
-        }
-
-        /* ── Footer ──────────────────────────────────────────────────────── */
-        footer {
-            background: var(--apple-white);
-            border-top: 1px solid rgba(0, 0, 0, 0.07);
-            padding: 40px 24px;
-        }
-
-        .footer-inner {
-            max-width: 1080px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .footer-copy {
-            font-size: 12px;
-            color: var(--apple-subtle);
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        .footer-links a {
-            font-size: 12px;
-            color: var(--apple-subtle);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--apple-dark);
-        }
-
-        /* ── Keyframes ───────────────────────────────────────────────────── */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: rotate(45deg) translateY(0);
-            }
-
-            50% {
-                transform: rotate(45deg) translateY(5px);
-            }
-        }
-
-        @keyframes marquee {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* ── Responsive ──────────────────────────────────────────────────── */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .glass-card {
-                padding: 32px 24px;
-            }
-
-            .contact-card {
-                padding: 56px 28px;
-            }
-
-            section {
-                padding: 80px 20px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                margin-top: 40px;
-            }
-
-            .stat-cell {
-                padding: 24px 20px;
-            }
-
-            .stat-num {
-                font-size: 36px;
-            }
-        }
-/* ── FAQ ─────────────────────────────────────────────────────────── */
-.faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; margin-top: 48px; }
-.faq-item { border: 1px solid rgba(0,0,0,0.07); border-radius: 20px; background: rgba(255,255,255,0.7); overflow: hidden; }
-.faq-item summary { font-size: 16px; font-weight: 600; color: var(--apple-dark); padding: 24px 28px; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; }
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::after { content: "+"; font-size: 20px; font-weight: 300; color: var(--apple-subtle); flex-shrink: 0; transition: transform 0.2s; }
-.faq-item[open] summary::after { transform: rotate(45deg); }
-.faq-answer { font-size: 15px; line-height: 1.75; color: var(--apple-subtle); padding: 0 28px 24px; font-weight: 300; }
-    /* ── Hamburger / Mobile menu ──────────────────────────────────────── */
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; z-index: 200; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #1d1d1f; border-radius: 2px; transition: transform .35s cubic-bezier(.22,1,.36,1), opacity .2s, transform .35s; }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu { position: fixed; inset: 0; z-index: 150; background: rgba(255,255,255,.88); backdrop-filter: saturate(200%) blur(40px); -webkit-backdrop-filter: saturate(200%) blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow-y: auto; padding: 64px 0 40px; opacity: 0; pointer-events: none; transition: opacity .3s cubic-bezier(.22,1,.36,1); }
-    .mobile-menu.open { opacity: 1; pointer-events: all; }
-    .mobile-menu a { font-size: 28px; font-weight: 600; color: #1d1d1f; text-decoration: none; letter-spacing: -.03em; padding: 10px 32px; border-radius: 18px; transition: background .15s; }
-    .mobile-menu a:hover { background: rgba(0,0,0,.05); }
-    .mobile-sections { display: flex; flex-direction: column; gap: 24px; width: 100%; max-width: 340px; padding: 0 32px; }
-    .mobile-section { display: flex; flex-direction: column; }
-    .mobile-section-toggle { background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 26px; font-weight: 600; color: #1d1d1f; padding: 8px 14px; border-radius: 18px; width: 100%; text-align: left; letter-spacing: -.03em; font-family: inherit; transition: background .15s; -webkit-tap-highlight-color: transparent; }
-    .mobile-section-toggle:hover { background: rgba(0,0,0,.05); }
-    .mobile-section-toggle:focus { outline: none; }
-    .mobile-chevron { flex-shrink: 0; opacity: .55; transition: transform .25s cubic-bezier(.22,1,.36,1), opacity .25s; }
-    .mobile-section.open .mobile-chevron { transform: rotate(180deg); opacity: 1; }
-    .mobile-section-items { max-height: 0; overflow: hidden; display: flex; flex-direction: column; transition: max-height .35s cubic-bezier(.22,1,.36,1); }
-    .mobile-section.open .mobile-section-items { max-height: 400px; }
-    .mobile-section .mobile-link { font-size: 21px; padding: 6px 14px; }
-    .mobile-sections .mobile-top-link { font-size: 26px; padding: 8px 14px; }
-    .mobile-sections > * { transition: opacity .3s cubic-bezier(.22,1,.36,1); }
-    .mobile-sections.has-open > .mobile-section:not(.open),
-    .mobile-sections.has-open > .mobile-top-link,
-    .mobile-sections.has-open > .mobile-cta { opacity: 0; pointer-events: none; }
-
-    @media(max-width:768px) { .nav-hamburger { display: flex; } }
-
-    @media(max-width:768px){ .nav-cta { display: none; } }
-    .mobile-menu .mobile-cta { margin-top: 24px; font-size: 17px; font-weight: 500; color: #0071e3; text-decoration: none; display: inline-flex; align-items: center; align-self: center; padding: 12px 28px; border-radius: 980px; border: 1.5px solid rgba(0,113,227,.4); transition: background .15s; }
-    .mobile-menu .mobile-cta:hover { background: rgba(0,113,227,.06); }
-    .mobile-close { position: absolute; top: 20px; right: 20px; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.06); border: none; cursor: pointer; font-size: 18px; color: #1d1d1f; display: flex; align-items: center; justify-content: center; transition: background .15s; }
-    .mobile-close:hover { background: rgba(0,0,0,0.1); }
-    .mobile-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 24px; color: #1d1d1f; cursor: pointer; padding: 8px; line-height: 1; }
-/* ── Nav dropdowns ────────────────────────────────────────────────── */
-nav ul li { position: relative; height: 52px; display: flex; align-items: center; }
-.nav-has-dropdown > a { display: flex; align-items: center; gap: 4px; cursor: default; user-select: none; }
-.nav-chevron { flex-shrink: 0; opacity: 0.55; transition: transform 0.22s cubic-bezier(.22,1,.36,1), opacity 0.22s; }
-.nav-has-dropdown:hover .nav-chevron { transform: rotate(180deg); opacity: 1; }
-.nav-dropdown-panel {
-  position: absolute;
-  top: 52px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px) scale(0.96);
-  min-width: 210px;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: saturate(180%) blur(24px);
-  -webkit-backdrop-filter: saturate(180%) blur(24px);
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 18px;
-  padding: 8px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.22s cubic-bezier(.22,1,.36,1), transform 0.22s cubic-bezier(.22,1,.36,1);
-  z-index: 200;
-}
-.nav-has-dropdown:hover .nav-dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0) scale(1); }
-.nav-dropdown-panel a {
-  display: block;
-  padding: 8px 14px;
-  font-size: 13px;
-  font-weight: 400;
-  color: #424245;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: background 0.15s, color 0.15s;
-  white-space: nowrap;
-  height: auto;
-  letter-spacing: normal;
-}
-.nav-dropdown-panel a:hover { background: rgba(0,0,0,0.05); color: #1d1d1f; }
-.nav-dropdown-panel a.active { color: #1d1d1f; font-weight: 500; background: rgba(0,0,0,0.04); }
-.nav-has-dropdown.active > a { color: #1d1d1f; font-weight: 500; }
-</style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Caffeine Media - Video Production, Post &amp; Screenwriting</title>
+<meta name="description" content="Caffeine Media is the post-production house of filmmaker Toby Jones. Video editing, 2D-to-3D stereo conversion, analogue-to-digital film and tape transfer, screenwriting, corporate films, music videos, drama and live-streamed funerals and events.">
+<meta name="theme-color" content="#FBF9F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161010" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/mark.png">
+<meta property="og:title" content="Caffeine Media - Video Production, Post &amp; Screenwriting">
+<meta property="og:description" content="Edit, convert, restore, write, film. The post-production house of filmmaker Toby Jones.">
+<meta property="og:image" content="assets/logo.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Toby Jones - Freelance Web Designer & Marketing Consultant",
-  "description": "Freelance web designer, video editor, and marketing consultant based in Toronto, Canada. Specialising in conversion-focused web design, digital marketing strategy, and video production for businesses worldwide.",
-  "url": "https://tobyjones.ca",
-  "telephone": "",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Toronto",
-    "addressRegion": "ON",
-    "addressCountry": "CA"
-  },
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Freelance Services",
-    "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web Design"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Digital Marketing"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Video Editing"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Video Production"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Screenwriting Services"}}
-    ]
-  },
-  "sameAs": ["https://www.yelp.com/biz/toby-r-jones-whitby"]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much does web design cost in Toronto?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Website costs depend on scope. A landing page typically starts around C$500, a full multi-page business site ranges from C$1,000-$3,000, and e-commerce solutions start from C$2,000. As a freelancer, you get senior-level quality without agency overhead."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's the difference between hiring a freelancer vs. an agency?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "With a freelancer, you work directly with the person doing the work - no account managers, no junior staff learning on your budget, and no inflated overhead. You get experienced, senior-level strategy and execution at a fraction of agency rates."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does a website redesign take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most website redesigns take 2-4 weeks from brief to launch. Landing pages can be turned around in under a week."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "My website isn't converting visitors into customers. Can you help?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes - this is exactly what I specialise in. I audit your site's user experience, messaging, and calls-to-action to identify where visitors are dropping off, then rebuild it to convert."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you offer digital marketing for small businesses?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely. I work with small businesses and startups worldwide, offering social media management, paid digital advertising, brand strategy, and content creation - all tailored to your budget and goals."
-      }
-    }
-  ]
+  "@type": "ProfessionalService",
+  "name": "Caffeine Media",
+  "description": "Post-production house offering video editing, stereo conversion, screenwriting and video production services.",
+  "email": "hello@thecaffeinemediacompany.com",
+  "founder": { "@type": "Person", "name": "Toby Jones", "jobTitle": "Filmmaker & Creative Director" },
+  "areaServed": ["United Kingdom"],
+  "serviceType": ["Video Editing", "Stereo Conversion", "Film and Tape Digitisation", "Screenwriting", "Corporate Video", "Music Video", "Drama Production", "Live Streaming"]
 }
 </script>
 </head>
-
 <body>
 
-    <!-- ── Navigation ─────────────────────────────────────────────────── -->
-    <nav>
-        <a href="/" class="logo">Toby Jones</a>
-        <ul>
-      <li class="nav-has-dropdown">
-        <a href="#">Advertising <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav-dropdown-panel">
-          <a href="/digital-marketing">Digital Marketing</a>
-          <a href="/out-of-house">Out-of-House</a>
-          <a href="/tv-radio">TV &amp; Radio</a>
-          <a href="/postal-marketing">Postal Advertising</a>
-          <a href="/public-relations">Public Relations</a>
-        </div>
-      </li>
-      <li class="nav-has-dropdown">
-        <a href="#">Video <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav-dropdown-panel">
-          <a href="/video">Video Editing</a>
-          <a href="/video-production">Video Production</a>
-        </div>
-      </li>
-      <li><a href="/web-development">Web Development</a></li>
-      <li><a href="/portfolio">Portfolio</a></li>
-      <li><a href="/software">Software</a></li>
-    </ul>
-        <a href="/email/" class="nav-cta">Get in touch ↗</a>
-        <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="scroll-rail" aria-hidden="true"><div class="scroll-rail__fill" id="scrollFill"></div></div>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="Caffeine Media, home">
+      <img src="assets/mark.png" alt="" width="32" height="32" class="nav__mark">
+      <span class="nav__name">Caffeine&nbsp;Media</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#restore">Restoration</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <a class="nav__cta" href="#contact">Get in touch</a>
+
+    <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="sheet" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════ MOBILE SHEET ══════════ -->
+<div class="sheet" id="sheet" hidden>
+  <nav class="sheet__links" aria-label="Mobile">
+    <a href="#services"><span>Services</span><i class="chev" aria-hidden="true"></i></a>
+    <a href="#restore"><span>Restoration &amp; Conversion</span><i class="chev" aria-hidden="true"></i></a>
+    <a href="#work"><span>Work</span><i class="chev" aria-hidden="true"></i></a>
+    <a href="#about"><span>About</span><i class="chev" aria-hidden="true"></i></a>
+    <a href="#process"><span>Process</span><i class="chev" aria-hidden="true"></i></a>
+    <a href="#faq"><span>FAQ</span><i class="chev" aria-hidden="true"></i></a>
   </nav>
-  <div class="mobile-menu" id="mobileMenu"></div>
+  <div class="sheet__foot">
+    <a class="btn btn--primary" href="#contact">Get in touch</a>
+    <a class="sheet__mail" href="mailto:hello@thecaffeinemediacompany.com">hello@thecaffeinemediacompany.com</a>
+  </div>
+</div>
 
-    <!-- ── Hero ───────────────────────────────────────────────────────── -->
-    <section id="hero">
-        <div class="hero-blobs">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-            <div class="blob blob-3"></div>
-            <div class="blob blob-4"></div>
-        </div>
-        <div class="hero-content">
-            <span class="hero-eyebrow">Freelance Web Designer · Video Editor · Marketing Consultant · Toronto, Canada</span>
-            <h1 class="hero-headline">Making your<br>business stand out.</h1>
-            <p class="hero-sub">
-                Web design, digital marketing, and video production - built to convert visitors, grow your audience, and make your brand impossible to ignore.
-            </p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">
-                    Work with me
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor"
-                        stroke-width="1.8">
-                        <path d="M2 7h10M8 3l4 4-4 4" />
-                    </svg>
-                </a>
-                <a href="/portfolio" class="btn-secondary">See my portfolio</a>
+<main id="main">
+<span id="top"></span>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__inner">
+
+    <img src="assets/logo.png" alt="Caffeine Media" class="hero__logo" width="300" height="300">
+
+    <h1 class="hero__title">
+      <span class="line"><span>From raw footage</span></span>
+      <span class="line"><span>to a finished</span></span>
+      <span class="line"><span class="grad">story.</span></span>
+    </h1>
+
+    <p class="hero__sub">
+      Caffeine Media is the post-production house of filmmaker <strong>Toby Jones</strong> - writing,
+      shooting, cutting and restoring video for brands, artists and families, based in Blackpool, UK.
+    </p>
+
+    <div class="hero__links">
+      <a class="link-chev" href="#services">See what we do</a>
+      <a class="link-chev" href="#contact">Start a project</a>
+    </div>
+
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="imessage://hello@thecaffeinemediacompany.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M12 2C6.5 2 2 5.9 2 10.7c0 2.7 1.4 5.1 3.7 6.7-.2 1.4-.9 2.7-1.9 3.7 1.7-.2 3.3-.9 4.7-1.9 1.1.3 2.3.5 3.5.5 5.5 0 10-3.9 10-8.9S17.5 2 12 2Z"/></svg>
+        Message on iMessage
+      </a>
+      <a class="btn btn--ghost" href="mailto:hello@thecaffeinemediacompany.com?subject=Project%20enquiry%20-%20Caffeine%20Media">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M3 5.5h18c.6 0 1 .4 1 1V17c0 .8-.7 1.5-1.5 1.5h-17C2.7 18.5 2 17.8 2 17V6.5c0-.6.4-1 1-1Zm.8 2L12 12.6l8.2-5.1H3.8Z"/></svg>
+        Email us
+      </a>
+    </div>
+
+    <p class="hero__note">Replies usually within a few hours, UK time.</p>
+  </div>
+
+  <div class="hero__strip" aria-hidden="true">
+    <div class="strip">
+      <div class="strip__track">
+        <span>Video Editing</span><i></i><span>2D → 3D Stereo Conversion</span><i></i><span>VHS &amp; Cine Film Transfer</span><i></i><span>Screenwriting</span><i></i><span>Corporate Films</span><i></i><span>Music Videos</span><i></i><span>Drama</span><i></i><span>Live Streaming</span><i></i>
+        <span>Video Editing</span><i></i><span>2D → 3D Stereo Conversion</span><i></i><span>VHS &amp; Cine Film Transfer</span><i></i><span>Screenwriting</span><i></i><span>Corporate Films</span><i></i><span>Music Videos</span><i></i><span>Drama</span><i></i><span>Live Streaming</span><i></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CREDENTIAL BAR ══════════ -->
+<section class="creds" data-rise>
+  <p class="creds__label">Trained and credited at</p>
+  <ul class="creds__list">
+    <li>New York Film Academy</li>
+    <li>The Black List</li>
+    <li>Sky News</li>
+    <li>Mint Slate Media</li>
+    <li>Blackpool Sixth Form College</li>
+  </ul>
+</section>
+
+<!-- ══════════ SERVICES / BENTO ══════════ -->
+<section class="section" id="services">
+  <header class="head" data-rise>
+    <p class="eyebrow">Services</p>
+    <h2 class="head__title">Eight ways we<br>get it finished.</h2>
+    <p class="head__sub">One post-production house, the whole pipeline - from a blank page to a graded master, or from a dusty tape to a file that plays forever.</p>
+  </header>
+
+  <div class="bento">
+
+    <article class="tile tile--wide tile--dark" data-rise style="--d:0ms">
+      <div class="tile__glow" aria-hidden="true"></div>
+      <p class="tile__kicker">Post-production</p>
+      <h3 class="tile__title">Video Editing</h3>
+      <p class="tile__body">The cut is where the film actually gets made. Story-first editing with colour correction, motion graphics, titles and sound - delivered to spec for YouTube, broadcast, socials or cinema.</p>
+      <ul class="chips">
+        <li>Final Cut Pro</li><li>Premiere Pro</li><li>Apple Motion</li><li>Colour</li><li>Sound design</li>
+      </ul>
+      <div class="tile__reel" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </article>
+
+    <article class="tile tile--tall tile--accent" data-rise style="--d:70ms">
+      <p class="tile__kicker">Specialist</p>
+      <h3 class="tile__title">2D → 3D Stereo Conversion</h3>
+      <p class="tile__body">Flat footage rebuilt with real depth. Depth mapping, rotoscoping and clean-plate work to turn an existing 2D edit into a comfortable stereoscopic 3D master for cinema, headsets or 3D displays.</p>
+      <div class="depth" aria-hidden="true">
+        <div class="depth__layer depth__layer--3"></div>
+        <div class="depth__layer depth__layer--2"></div>
+        <div class="depth__layer depth__layer--1"></div>
+        <p class="depth__tag">Depth pass</p>
+      </div>
+    </article>
+
+    <article class="tile" data-rise style="--d:140ms">
+      <p class="tile__kicker">Archive</p>
+      <h3 class="tile__title">Analogue → Digital</h3>
+      <p class="tile__body">VHS, VHS-C, Hi8, Video8, MiniDV, Super 8, 8mm and 16mm cine film captured, cleaned and handed back as archival digital masters plus easy-to-share copies.</p>
+    </article>
+
+    <article class="tile" data-rise style="--d:210ms">
+      <p class="tile__kicker">Development</p>
+      <h3 class="tile__title">Screenwriting</h3>
+      <p class="tile__body">Features, shorts, treatments and punch-ups, written in Final Draft to industry standard. Original feature <em>Vengeance</em> is listed on The Black List.</p>
+    </article>
+
+    <article class="tile" data-rise style="--d:280ms">
+      <p class="tile__kicker">Business</p>
+      <h3 class="tile__title">Corporate Video</h3>
+      <p class="tile__body">Brand films, founder stories, explainers, testimonials, recruitment and event recaps - shot and cut on-brand, sized for every platform you post to.</p>
+    </article>
+
+    <article class="tile" data-rise style="--d:350ms">
+      <p class="tile__kicker">Music</p>
+      <h3 class="tile__title">Music Videos</h3>
+      <p class="tile__body">Concept, storyboard, shoot and grade. Camera, lighting and lens choices built around the record - not the other way round.</p>
+    </article>
+
+    <article class="tile" data-rise style="--d:420ms">
+      <p class="tile__kicker">Narrative</p>
+      <h3 class="tile__title">Drama &amp; Short Film</h3>
+      <p class="tile__body">Original narrative work written, directed and edited in-house, with award-winning shorts screened publicly and produced under tight budgets.</p>
+    </article>
+
+    <article class="tile tile--wide tile--soft" data-rise style="--d:490ms">
+      <p class="tile__kicker">Live</p>
+      <h3 class="tile__title">Live Streaming - funerals &amp; events</h3>
+      <p class="tile__body">
+        For the people who can't be in the room. Discreet, unobtrusive multi-camera streaming of funerals and memorials, delivered on a private link so family abroad can be present - plus a recording afterwards to keep.
+        Also available for weddings, conferences, launches and ceremonies.
+      </p>
+      <ul class="chips">
+        <li>Private links</li><li>Multi-camera</li><li>Recording included</li><li>Discreet setup</li>
+      </ul>
+      <span class="live-dot" aria-hidden="true"><i></i>LIVE</span>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══════════ PINNED RESTORATION STORY ══════════ -->
+<section class="pin" id="restore">
+  <div class="pin__sticky">
+    <div class="pin__grid">
+
+      <div class="pin__copy">
+        <p class="eyebrow eyebrow--light">Restoration &amp; Conversion</p>
+        <h2 class="pin__title">Old formats,<br>new life.</h2>
+
+        <ol class="steps" id="pinSteps">
+          <li class="step is-on">
+            <span class="step__no">01</span>
+            <div>
+              <h3>Capture</h3>
+              <p>Tapes and reels are played back on maintained decks and captured in real time at the highest quality the format allows - no re-filming a screen, no lossy shortcuts.</p>
             </div>
-        </div>
-        <div class="scroll-hint">
-            <span>Scroll</span>
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
-
-    <!-- ── About ──────────────────────────────────────────────────────── -->
-    <section id="about">
-        <div class="section-inner">
-            <div class="glass-card reveal">
-                <div class="about-grid">
-
-                    <!-- Profile photo + socials -->
-                    <div class="about-photo-wrap">
-                        <div class="photo-glow"></div>
-                        <picture>
-                          <source srcset="assets/Me.webp" type="image/webp" />
-                          <img src="assets/Me_opt.jpg" alt="Toby Jones - Freelance Web Designer and Marketing Consultant in Ontario" class="about-photo"
-                               width="800" height="602" loading="lazy" decoding="async" />
-                        </picture>
-                        <div class="about-name">Toby Jones</div>
-                        <div class="about-role">Freelance Web Designer &amp; Marketing Consultant · Toronto, Canada</div>
-
-                        <div class="social-links">
-                            <!-- WhatsApp -->
-                            <a href="https://wa.me/message/SLPLJ2JKP5LFH1" target="_blank" rel="noopener"
-                                class="social-link">
-                                <div class="social-link-left">
-                                    <div class="social-icon">
-                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="social-link-text">
-                                        <span class="social-link-name">WhatsApp</span>
-                                        <span class="social-link-handle">Message me</span>
-                                    </div>
-                                </div>
-                                <svg class="arrow-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor"
-                                    stroke-width="1.8">
-                                    <path d="M3 11L11 3M11 3H5M11 3v6" />
-                                </svg>
-                            </a>
-                            <!-- Yelp -->
-                            <a href="https://www.yelp.com/biz/toby-r-jones-whitby?osq=Marketing&override_cta=Ask+for+information" target="_blank" rel="noopener" class="social-link">
-                                <div class="social-link-left">
-                                    <div class="social-icon">
-                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="m7.6885 15.1415-3.6715.8483c-.3769.0871-.755.183-1.1452.155-.2611-.0188-.5122-.0414-.7606-.213a1.179 1.179 0 0 1-.331-.3594c-.3486-.5519-.3656-1.3661-.3697-2.0004a6.2874 6.2874 0 0 1 .3314-2.0642 1.857 1.857 0 0 1 .1073-.2474 2.3426 2.3426 0 0 1 .1255-.2165 2.4572 2.4572 0 0 1 .1563-.1975 1.1736 1.1736 0 0 1 .399-.2831 1.082 1.082 0 0 1 .4592-.0837c.2355.0016.5139.052.91.1734.0555.0191.1237.0382.1856.0572.3277.1013.7048.2404 1.1499.3987.6863.2404 1.3663.487 2.0463.7397l1.2117.4423c.2217.0807.4363.18.6412.297.174.0984.3273.2298.4512.387a1.217 1.217 0 0 1 .192.4309 1.2205 1.2205 0 0 1-.872 1.4522c-.0468.0151-.0852.0239-.1085.0293l-1.105.2553-.0031-.001zM18.8208 7.565a1.8506 1.8506 0 0 0-.2042-.1754 2.4082 2.4082 0 0 0-.2077-.1394 2.3607 2.3607 0 0 0-.2269-.109 1.1705 1.1705 0 0 0-.482-.0796 1.0862 1.0862 0 0 0-.4498.1263c-.2107.1048-.4388.2732-.742.5551-.042.0417-.0947.0886-.142.133-.2502.2351-.5286.5252-.8599.863a114.6363 114.6363 0 0 0-1.5166 1.5629l-.8962.9293a4.1897 4.1897 0 0 0-.4466.5483 1.541 1.541 0 0 0-.2364.5459 1.2199 1.2199 0 0 0 .0107.4518l.0046.02a1.218 1.218 0 0 0 1.4184.923 1.162 1.162 0 0 0 .1105-.0213l4.7781-1.104c.3766-.087.7587-.1667 1.097-.3631.2269-.1316.4428-.262.5909-.5252a1.1793 1.1793 0 0 0 .1405-.4683c.0733-.6512-.2668-1.3908-.5403-1.963a6.2792 6.2792 0 0 0-1.2001-1.7103zM8.9703.0754a8.6724 8.6724 0 0 0-.83.1564c-.2754.066-.548.1383-.8146.2236-.868.2844-2.0884.8063-2.295 1.8065-.1165.5655.1595 1.1439.3737 1.66.2595.6254.614 1.1889.9373 1.7777.8543 1.5545 1.7245 3.0993 2.5922 4.6457.259.4617.5416 1.0464 1.043 1.2856a1.058 1.058 0 0 0 .1013.0383c.2248.0851.4699.1016.7041.0471a4.3015 4.3015 0 0 0 .0418-.0097 1.2136 1.2136 0 0 0 .5658-.3397 1.1033 1.1033 0 0 0 .079-.0822c.3463-.435.3454-1.0833.3764-1.6134.1042-1.771.2139-3.5423.3009-5.3142.0332-.6712.1055-1.3333.0655-2.0096-.0328-.5579-.0368-1.1984-.3891-1.6563-.6218-.8073-1.9476-.741-2.8523-.6158zm2.084 15.9505a1.1053 1.1053 0 0 0-1.2306-.4145 1.1398 1.1398 0 0 0-.1526.0633 1.4806 1.4806 0 0 0-.2171.1354c-.1992.1475-.3668.3392-.5196.5315-.0386.049-.074.1143-.12.1562l-.7686 1.0573a113.9168 113.9168 0 0 0-1.2913 1.789c-.278.3895-.5184.7184-.7083 1.0094-.036.0547-.0734.116-.1075.1647-.2277.3522-.3566.6092-.4228.8381a1.0945 1.0945 0 0 0-.046.4721c.0211.1655.0768.3246.1635.467.046.0715.0957.1406.1487.207a2.334 2.334 0 0 0 .1754.1825 1.843 1.843 0 0 0 .2108.1732c.5304.369 1.1112.6342 1.722.8391a6.0958 6.0958 0 0 0 1.5716.3004c.091.0046.1821.0025.2728-.006a2.3878 2.3878 0 0 0 .2506-.0351 2.3862 2.3862 0 0 0 .2447-.071 1.1927 1.1927 0 0 0 .4175-.2658c.1127-.113.1994-.249.2541-.3989.0889-.2214.1473-.5026.1857-.92.0034-.0593.0118-.1305.0177-.1958.0304-.3463.0443-.7531.0666-1.2315.0375-.7357.067-1.4681.0903-2.2026 0 0 .0495-1.3053.0494-1.306.0113-.3008.002-.6342-.0814-.9336a1.396 1.396 0 0 0-.1756-.4054zm8.6754 2.0439c-.1605-.176-.3878-.3514-.7462-.5682-.0518-.0288-.1124-.0674-.1684-.1009-.2985-.1795-.658-.3684-1.078-.5965a120.7615 120.7615 0 0 0-1.9427-1.042l-1.1515-.6107c-.0597-.0175-.1203-.0607-.1766-.0878-.2212-.1058-.4558-.2045-.6992-.2498a1.4915 1.4915 0 0 0-.2545-.0265 1.1527 1.1527 0 0 0-.1648.01 1.1077 1.1077 0 0 0-.9227.9133 1.4186 1.4186 0 0 0 .0159.439c.0563.3065.1932.6096.3346.875l.615 1.1526c.3422.65.6884 1.2963 1.0435 1.9406.229.4202.4196.7799.5982 1.078.0338.056.0721.1163.1011.1682.2173.3584.392.584.569.7458.1146.1107.252.195.4026.247.1583.0525.326.071.4919.0546a2.368 2.368 0 0 0 .251-.0435c.0817-.022.1622-.048.241-.0784a1.863 1.863 0 0 0 .2475-.1143 6.1018 6.1018 0 0 0 1.2818-.9597c.4596-.4522.8659-.9454 1.182-1.51.044-.08.0819-.163.1138-.2483a2.49 2.49 0 0 0 .0773-.2411c.0186-.083.033-.1669.0429-.2513a1.188 1.188 0 0 0-.0565-.491 1.0933 1.0933 0 0 0-.248-.4041z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="social-link-text">
-                                        <span class="social-link-name">Yelp</span>
-                                        <span class="social-link-handle">Toby R. Jones</span>
-                                    </div>
-                                </div>
-                                <svg class="arrow-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor"
-                                    stroke-width="1.8">
-                                    <path d="M3 11L11 3M11 3H5M11 3v6" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Info cards -->
-                    <div class="about-info">
-                        <div>
-                            <span class="badge">About me</span>
-                            <h2 class="section-headline" style="margin-top:20px; font-size: clamp(28px,4vw,40px);">
-                                Storytelling at the intersection of brand, screen, and strategy.
-                            </h2>
-                            <p class="section-body" style="max-width:100%;">
-                                I'm Toby - a British creative based in Canada. I work with businesses that know something isn't working: the website isn't converting, the marketing isn't landing, or the brand doesn't match the quality of their work. I find where the problem is. Then I fix it.
-                            </p>
-                        </div>
-
-                        <div class="about-cards">
-                            <div class="about-card">
-                                <div class="about-card-label">Based in</div>
-                                <div class="about-card-text">Toronto, Canada - working with clients worldwide</div>
-                            </div>
-                            <div class="about-card">
-                                <div class="about-card-label">Experience</div>
-                                <div class="about-card-text">Freelance since 2022 - marketing strategy, video
-                                    production, and narrative writing</div>
-                            </div>
-                            <div class="about-card">
-                                <div class="about-card-label">Availability</div>
-                                <div class="about-card-text">Currently taking on new clients. The first step is a free 30-minute call - no pitch, just clarity.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+          </li>
+          <li class="step">
+            <span class="step__no">02</span>
+            <div>
+              <h3>Clean</h3>
+              <p>Tracking noise, dropouts, dust and colour fade are treated frame by frame where it matters. Audio is de-hissed and levelled so voices come back forward.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- ── Services ────────────────────────────────────────────────────── -->
-    <section id="services">
-        <div class="section-inner">
-            <p class="section-label reveal">What I do</p>
-            <h2 class="section-headline reveal reveal-delay-1">Every service your<br>business needs - in one place.</h2>
-            <p class="section-body reveal reveal-delay-2">
-                From websites that convert to campaigns that stick - a full creative service built around your goals, not a guessing game.
-            </p>
-
-            <div class="services-grid">
-
-                <!-- Marketing -->
-                <div class="service-card reveal reveal-delay-1">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.7">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                        </svg>
-                    </div>
-                    <div class="service-title">Digital Marketing</div>
-                    <div class="service-desc">
-                        Social media, paid campaigns, and brand strategy that builds audiences and converts them into customers.
-                    </div>
-                </div>
-
-                <!-- Website Development -->
-                <div class="service-card reveal reveal-delay-2">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.7">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg>
-                    </div>
-                    <div class="service-title">Website Development</div>
-                    <div class="service-desc">
-                        Fast, mobile-first websites designed to turn visitors into paying clients - from landing pages to full business sites.
-                    </div>
-                </div>
-
-                <!-- Video Editing -->
-                <div class="service-card reveal reveal-delay-3">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.7">
-                            <rect x="2" y="3" width="20" height="14" rx="2" />
-                            <path d="M8 21h8M12 17v4" />
-                            <polygon points="10 8 16 11 10 14 10 8" />
-                        </svg>
-                    </div>
-                    <div class="service-title">Video Editing</div>
-                    <div class="service-desc">
-                        Cinematic editing for social content, brand videos, and full productions - a filmmaker's eye on every cut.
-                    </div>
-                </div>
-
-                <!-- Screenwriting -->
-                <div class="service-card reveal reveal-delay-4">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.7">
-                            <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-                        </svg>
-                    </div>
-                    <div class="service-title">Screenwriting</div>
-                    <div class="service-desc">
-                        Scripts for film, TV, and branded content - feature screenplays to commercial copy, all with a distinctive voice.
-                    </div>
-                </div>
-
+          </li>
+          <li class="step">
+            <span class="step__no">03</span>
+            <div>
+              <h3>Deliver</h3>
+              <p>You get an archival master to keep safe, plus everyday MP4s that play on any phone. Optional: a short edited film cut from the best of the footage.</p>
             </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pin__stage" aria-hidden="true">
+        <div class="frame" id="frame" data-stage="0">
+          <div class="frame__plate"></div>
+          <div class="frame__scan"></div>
+          <div class="frame__noise" id="frameNoise"></div>
+          <div class="frame__label" id="frameLabel">CAPTURE</div>
+          <div class="frame__tc" id="frameTC">00:04:12:08</div>
+          <div class="frame__bars">
+            <i style="--h:40%"></i><i style="--h:70%"></i><i style="--h:30%"></i><i style="--h:85%"></i>
+            <i style="--h:55%"></i><i style="--h:65%"></i><i style="--h:25%"></i><i style="--h:75%"></i>
+          </div>
         </div>
-    </section>
+        <p class="frame__caption">VHS · Hi8 · MiniDV · Super 8 · 16mm</p>
+      </div>
 
-    <!-- ── Work / Stats ────────────────────────────────────────────────── -->
-    <section id="work">
-        <div class="section-inner">
-            <p class="section-label reveal">By the numbers</p>
-            <h2 class="section-headline reveal reveal-delay-1">Creative work<br>that moves the needle.</h2>
-            <p class="section-body reveal reveal-delay-2">
-                Multi-disciplinary creative work across web design, marketing, and video - always built around measurable goals.
-            </p>
+    </div>
+  </div>
+</section>
 
-            <div class="stats-grid reveal reveal-delay-3">
-                <div class="stat-cell">
-                    <div class="stat-num">4+</div>
-                    <div class="stat-label">Years freelancing</div>
-                </div>
-                <div class="stat-cell">
-                    <div class="stat-num">4</div>
-                    <div class="stat-label">Core service areas</div>
-                </div>
-                <div class="stat-cell">
-                    <div class="stat-num">∞</div>
-                    <div class="stat-label">Stories to tell</div>
-                </div>
-                <div class="stat-cell">
-                    <div class="stat-num">100%</div>
-                    <div class="stat-label">Remote & flexible</div>
-                </div>
-            </div>
+<!-- ══════════ WORK ══════════ -->
+<section class="section" id="work">
+  <header class="head" data-rise>
+    <p class="eyebrow">Selected work</p>
+    <h2 class="head__title">Recent credits.</h2>
+    <p class="head__sub">A sample of projects written, shot, cut or produced by Toby.</p>
+  </header>
 
-            <div class="work-marquee-wrap" style="margin-top:80px;">
-                <div class="work-marquee" aria-hidden="true">
-                    <span class="work-pill"><span class="work-pill-dot"></span>Brand Strategy</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Social Media</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Video Production</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Screenwriting</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Public Relations</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Content Creation</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Web Development</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Digital Campaigns</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Brand Strategy</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Social Media</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Video Production</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Screenwriting</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Public Relations</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Content Creation</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Web Development</span>
-                    <span class="work-pill"><span class="work-pill-dot"></span>Digital Campaigns</span>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="gallery" data-rise>
+    <div class="gallery__track" id="track">
 
-    <!-- ── FAQ ──────────────────────────────────────────────────────────── -->
-    <section id="faq" style="background: var(--apple-light);">
-        <div class="section-inner">
-            <p class="section-label reveal">Common Questions</p>
-            <h2 class="section-headline reveal reveal-delay-1">Answers to questions<br>clients ask most.</h2>
-            <div class="faq-list">
-                <details class="faq-item reveal reveal-delay-1">
-                    <summary>How much does web design cost in Toronto?</summary>
-                    <p class="faq-answer">Website costs depend on scope. A landing page typically starts around C$500, a full multi-page business site ranges from C$1,000–$3,000, and e-commerce solutions start from C$2,000. As a freelancer, you get senior-level quality without agency overhead.</p>
-                </details>
-                <details class="faq-item reveal reveal-delay-2">
-                    <summary>What's the difference between hiring a freelancer vs. an agency?</summary>
-                    <p class="faq-answer">With a freelancer, you work directly with the person doing the work - no account managers, no junior staff learning on your budget, and no inflated overhead. You get experienced, senior-level strategy and execution at a fraction of agency rates.</p>
-                </details>
-                <details class="faq-item reveal reveal-delay-3">
-                    <summary>How long does a website redesign take?</summary>
-                    <p class="faq-answer">Most website redesigns take 2–4 weeks from brief to launch, depending on the size and complexity of the site. Landing pages can be turned around in under a week. I keep the process completely stress-free with clear timelines and regular updates.</p>
-                </details>
-                <details class="faq-item reveal reveal-delay-4">
-                    <summary>My website isn't converting visitors into customers. Can you help?</summary>
-                    <p class="faq-answer">Yes - this is exactly what I specialise in. Most websites are digital brochures, not sales tools. I audit your site's user experience, messaging, and calls-to-action to identify where visitors are dropping off, then rebuild it to convert.</p>
-                </details>
-                <details class="faq-item reveal reveal-delay-1">
-                    <summary>Do you offer digital marketing for small businesses?</summary>
-                    <p class="faq-answer">Absolutely. I work with small businesses and startups worldwide, offering social media management, paid digital advertising, brand strategy, and content creation - all tailored to your budget and goals.</p>
-                </details>
-            </div>
-        </div>
-    </section>
+      <article class="card">
+        <div class="card__top"><span class="card__year">2026</span><span class="card__place">Toronto, ON</span></div>
+        <h3 class="card__title">Kindly Unfiltered</h3>
+        <p class="card__role">Video Editor &amp; Designer · Season 2</p>
+        <p class="card__body">Edited the full run of season two of an established podcast series for YouTube delivery, working with Mint Slate Media. Every episode cut to a consistent standard on a regular release schedule.</p>
+      </article>
 
-    <!-- ── Contact ─────────────────────────────────────────────────────── -->
-    <section id="contact">
-        <div class="section-inner">
-            <div class="contact-card reveal">
-                <h2>Ready when<br>you are.</h2>
-                <p>If something isn't working, let's find out what. Drop me an email and I'll come back to you fast.</p>
-                <div class="contact-actions">
-                    <a href="/email/" class="btn-white">
-                        contact@tobyjones.ca
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor"
-                            stroke-width="1.8">
-                            <path d="M3 11L11 3M11 3H5M11 3v6" />
-                        </svg>
-                    </a>
-                    <a href="https://wa.me/message/SLPLJ2JKP5LFH1" target="_blank" rel="noopener" class="btn-white">
-                        WhatsApp
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor"
-                            stroke-width="1.8">
-                            <path d="M3 11L11 3M11 3H5M11 3v6" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+      <article class="card card--feature">
+        <div class="card__top"><span class="card__year">2026</span><span class="card__place">The Black List</span></div>
+        <h3 class="card__title">Vengeance</h3>
+        <p class="card__role">Screenwriter</p>
+        <p class="card__body">An original feature-length slasher blending meta-horror with slow-burn revenge. Developed entirely independently from concept through to final draft, and listed on The Black List.</p>
+      </article>
 
-    <!-- ── Footer ──────────────────────────────────────────────────────── -->
-    <footer>
-        <div class="footer-inner">
-          <span class="footer-copy">© 2026 Toby Jones · Toronto, Canada. All rights reserved.</span>
-            <div class="footer-links">
-                <a href="/portfolio">View Portfolio</a>
-                <a href="/webcare">Website Care Plans</a>
-                <a href="/email/">Contact Me</a>
-                <a href="/complaints">Complaints</a>
-            </div>
-        </div>
-    </footer>
+      <article class="card">
+        <div class="card__top"><span class="card__year">2025</span><span class="card__place">New York, NY</span></div>
+        <h3 class="card__title">Dangerous Woman</h3>
+        <p class="card__role">Writer · Director · Editor · Producer</p>
+        <p class="card__body">An original short film based on true events, led on set with cast and crew under a tight budget. All post handled in-house, including sound design and colour.</p>
+      </article>
 
-    <!-- ── Scripts ─────────────────────────────────────────────────────── -->
-    <script>
-        // ── Scroll reveal ────────────────────────────────────────────────────
-        (function () {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) {
-                        e.target.classList.add('visible');
-                        observer.unobserve(e.target);
-                    }
-                });
-            }, { threshold: 0.12 });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        })();
+      <article class="card">
+        <div class="card__top"><span class="card__year">2025</span><span class="card__place">New York, NY</span></div>
+        <h3 class="card__title">Pretty When I Cry</h3>
+        <p class="card__role">Director of Photography</p>
+        <p class="card__body">Operated A camera on a music video shoot, managing lighting, lenses and filters to hit the director's intended look, and contributing to storyboarding and concept design.</p>
+      </article>
 
-        
-    </script>
-<script>
-(function(){
-  var btn = document.querySelector('.nav-hamburger');
-  var menu = document.getElementById('mobileMenu');
-  if(!btn || !menu) return;
-  var categories = [
-    { label: 'Advertising', items: [
-      {href:'/digital-marketing', text:'Digital Marketing'},
-      {href:'/out-of-house', text:'Out-of-House'},
-      {href:'/tv-radio', text:'TV & Radio'},
-      {href:'/postal-marketing', text:'Postal Advertising'},
-      {href:'/public-relations', text:'Public Relations'},
-    ]},
-    { label: 'Video', items: [
-      {href:'/video', text:'Video Editing'},
-      {href:'/video-production', text:'Video Production'},
-    ]},
-  ];
-  var topLinks = [
-    {href:'/web-development', text:'Web Development'},
-    {href:'/portfolio', text:'Portfolio'},
-    {href:'/software', text:'Software'},
-  ];
-  var chevron = '<svg class="mobile-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-  var html = '<button class="mobile-close" aria-label="Close menu">&#x2715;</button>';
-  html += '<div class="mobile-sections">';
-  categories.forEach(function(cat){
-    html += '<div class="mobile-section">';
-    html += '<button class="mobile-section-toggle">'+cat.label+chevron+'</button>';
-    html += '<div class="mobile-section-items">';
-    cat.items.forEach(function(l){
-      html += '<a class="mobile-link" href="'+l.href+'">'+l.text+'</a>';
-    });
-    html += '</div></div>';
-  });
-  topLinks.forEach(function(l){
-    html += '<a class="mobile-link mobile-top-link" href="'+l.href+'">'+l.text+'</a>';
-  });
-  html += '<a class="mobile-cta" href="/email/">Get in touch ↗</a>';
-  html += '</div>';
-  menu.innerHTML = html;
-  menu.querySelector('.mobile-close').addEventListener('click', function(){ toggleMenu(false); });
-  function toggleMenu(open){
-    btn.classList.toggle('open', open);
-    menu.style.opacity = open ? '1' : '0';
-    menu.style.pointerEvents = open ? 'auto' : 'none';
-    document.body.style.overflow = open ? 'hidden' : '';
-    if(!open) {
-      menu.querySelectorAll('.mobile-section').forEach(function(s){ s.classList.remove('open'); });
-      var sections = menu.querySelector('.mobile-sections');
-      if(sections) sections.classList.remove('has-open');
-    }
-  }
-  btn.addEventListener('click', function(){
-    toggleMenu(!btn.classList.contains('open'));
-  });
-  menu.addEventListener('click', function(e){
-    var toggle = e.target.closest('.mobile-section-toggle');
-    if(toggle) {
-      var section = toggle.closest('.mobile-section');
-      var sections = menu.querySelector('.mobile-sections');
-      var isOpen = section.classList.contains('open');
-      menu.querySelectorAll('.mobile-section').forEach(function(s){ s.classList.remove('open'); });
-      if(!isOpen) { section.classList.add('open'); sections.classList.add('has-open'); }
-      else { sections.classList.remove('has-open'); }
-      return;
-    }
-    if(e.target.tagName === 'A') toggleMenu(false);
-  });
-})();
-</script>
+      <article class="card">
+        <div class="card__top"><span class="card__year">2024</span><span class="card__place">New York, NY</span></div>
+        <h3 class="card__title">We Can't Be Friends</h3>
+        <p class="card__role">Writer · Director · Editor · Producer</p>
+        <p class="card__body">An original short film developed from concept through to final cut - directing on set, operating camera, and editing the finished piece independently.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__top"><span class="card__year">2024</span><span class="card__place">Remote, UK</span></div>
+        <h3 class="card__title">Sky News</h3>
+        <p class="card__role">Data Stringer</p>
+        <p class="card__body">Contracted for election night, reporting live data and results as part of Sky News' national coverage - working accurately under significant time pressure.</p>
+      </article>
+
+    </div>
+
+    <div class="gallery__nav">
+      <button class="round" id="prev" aria-label="Previous projects"><i class="arr arr--l"></i></button>
+      <button class="round" id="next" aria-label="Next projects"><i class="arr arr--r"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section class="section section--dark" id="about">
+  <div class="studio">
+    <div class="studio__intro" data-rise>
+      <p class="eyebrow eyebrow--light">About</p>
+      <h2 class="head__title head__title--light">A filmmaker's eye,<br>on your project.</h2>
+      <p class="studio__lede">
+        Toby Jones is a British filmmaker and creative director working across the full production pipeline -
+        writing and directing through to cinematography and editing. Trained at the New York Film Academy in
+        Director's Craft under Thomas Barnes and Till Neumann, with award-winning work screened publicly and an
+        original feature listed on The Black List.
+      </p>
+      <p class="studio__lede">
+        The upshot for you: one person who can take a project from the first conversation to the final export,
+        without briefs getting lost between three different suppliers.
+      </p>
+    </div>
+
+    <div class="stats" data-rise>
+      <div class="stat"><span class="stat__n" data-count="3">0</span><span class="stat__l">College-level awards</span></div>
+      <div class="stat"><span class="stat__n" data-count="2">0</span><span class="stat__l">Further nominations</span></div>
+      <div class="stat"><span class="stat__n" data-count="10">0</span><span class="stat__l">Legacy formats digitised</span></div>
+      <div class="stat"><span class="stat__n" data-count="8">0</span><span class="stat__l">Services under one roof</span></div>
+    </div>
+
+    <div class="studio__cols">
+      <div class="col" data-rise>
+        <h3 class="col__h">Awards</h3>
+        <ul class="list">
+          <li>Best Editor</li>
+          <li>Best Fiction Film Trailer</li>
+          <li>Outstanding Student</li>
+          <li class="muted">Nominated - Best Single Camera Production</li>
+          <li class="muted">Nominated - Best Stop Motion Animation</li>
+        </ul>
+      </div>
+      <div class="col" data-rise style="--d:80ms">
+        <h3 class="col__h">Training</h3>
+        <ul class="list">
+          <li>New York Film Academy - Director's Craft</li>
+          <li class="muted">Cinematography · Video Editing · Screenwriting</li>
+          <li class="muted">Set Design</li>
+          <li>Blackpool Sixth Form College - Film &amp; TV Production</li>
+        </ul>
+      </div>
+      <div class="col" data-rise style="--d:160ms">
+        <h3 class="col__h">Toolkit</h3>
+        <ul class="chips chips--light">
+          <li>Final Cut Pro</li><li>Premiere Pro</li><li>Apple Motion</li><li>Final Draft</li>
+          <li>Photoshop</li><li>Illustrator</li><li>Pixelmator Pro</li><li>DSLR &amp; Mirrorless</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROCESS ══════════ -->
+<section class="section" id="process">
+  <header class="head" data-rise>
+    <p class="eyebrow">How it works</p>
+    <h2 class="head__title">Four steps,<br>no mystery.</h2>
+  </header>
+
+  <ol class="proc">
+    <li class="proc__item" data-rise style="--d:0ms">
+      <span class="proc__no">01</span>
+      <h3>Coffee</h3>
+      <p>A short call or a few messages. What are we making, who is it for, when do you need it, and what's the budget. Honest answer if it isn't a fit.</p>
+    </li>
+    <li class="proc__item" data-rise style="--d:90ms">
+      <span class="proc__no">02</span>
+      <h3>Plan</h3>
+      <p>A written outline: approach, schedule, deliverables and a cost estimate. Scripts, storyboards and shot lists where the project needs them.</p>
+    </li>
+    <li class="proc__item" data-rise style="--d:180ms">
+      <span class="proc__no">03</span>
+      <h3>Make</h3>
+      <p>Shoot, capture or convert. You see a first cut early, then two rounds of notes are built in - so nothing arrives as a surprise.</p>
+    </li>
+    <li class="proc__item" data-rise style="--d:270ms">
+      <span class="proc__no">04</span>
+      <h3>Deliver</h3>
+      <p>Final masters in the formats you actually need, plus platform-sized versions. Project files archived, so a re-edit next year is easy.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="section section--tint" id="faq">
+  <header class="head" data-rise>
+    <p class="eyebrow">Questions</p>
+    <h2 class="head__title">Good to know.</h2>
+  </header>
+
+  <div class="faq" data-rise>
+    <details class="qa">
+      <summary>What do you charge?<i class="plus" aria-hidden="true"></i></summary>
+      <div class="qa__body"><p>Everything is quoted per-project. Send me the scope and you'll get a cost estimate to work from.</p></div>
+    </details>
+    <details class="qa">
+      <summary>How quickly can you turn an edit around?<i class="plus" aria-hidden="true"></i></summary>
+      <div class="qa__body"><p>Short-form social edits are usually a few days. A corporate film or music video is typically one to two weeks from footage to final, depending on rounds of notes. Genuine rush jobs can often be accommodated - ask.</p></div>
+    </details>
+    <details class="qa">
+      <summary>Which tape and film formats can you transfer?<i class="plus" aria-hidden="true"></i></summary>
+      <div class="qa__body"><p>VHS, VHS-C, S-VHS, Video8, Hi8, Digital8 and MiniDV on the tape side; Super 8, standard 8mm and 16mm on the cine side. If you have something unusual - reel-to-reel audio, obsolete camcorder formats - send a photo and I'll tell you honestly whether I can handle it or point you to someone who can.</p></div>
+    </details>
+    <details class="qa">
+      <summary>How does a live-streamed funeral work?<i class="plus" aria-hidden="true"></i></summary>
+      <div class="qa__body"><p>We speak with you or the funeral director beforehand to agree camera positions with the venue. On the day the setup is deliberately small and quiet - nothing that draws attention. Family and friends receive a private link, and a recording is provided afterwards. If plans change at short notice, that's understood and handled without fuss.</p></div>
+    </details>
+    <details class="qa">
+      <summary>Do you travel?<i class="plus" aria-hidden="true"></i></summary>
+      <div class="qa__body"><p>Yes - based in Blackpool, and happy to travel elsewhere in the UK or abroad for the right project. Editing, conversion and screenwriting work is handled remotely for clients anywhere.</p></div>
+    </details>
+    <details class="qa">
+      <summary>Can you work from footage I already have?<i class="plus" aria-hidden="true"></i></summary>
+      <div class="qa__body"><p>Absolutely - a large part of the work is post-only. Send what you have (a hard drive, a cloud link, or old tapes) and it can be cut, graded, converted to 3D or restored without a new shoot.</p></div>
+    </details>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section class="section section--dark contact" id="contact">
+  <div class="contact__inner">
+    <img src="assets/mark.png" alt="" width="72" height="72" class="contact__mark" data-rise>
+    <h2 class="contact__title" data-rise>Let's get the kettle on.</h2>
+    <p class="contact__sub" data-rise>
+      Tell me what you're making - or what's sitting in a box in the loft - and you'll get a straight answer
+      about whether I can help, what it'll take and what it'll cost.
+    </p>
+
+    <div class="contact__grid">
+      <a class="ccard ccard--primary" href="imessage://hello@thecaffeinemediacompany.com" data-rise style="--d:0ms">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="ccard__ico"><path d="M12 2C6.5 2 2 5.9 2 10.7c0 2.7 1.4 5.1 3.7 6.7-.2 1.4-.9 2.7-1.9 3.7 1.7-.2 3.3-.9 4.7-1.9 1.1.3 2.3.5 3.5.5 5.5 0 10-3.9 10-8.9S17.5 2 12 2Z"/></svg>
+        <span class="ccard__h">iMessage</span>
+        <span class="ccard__n">Opens Messages on iPhone, iPad or Mac</span>
+      </a>
+
+      <a class="ccard" href="mailto:hello@thecaffeinemediacompany.com?subject=Project%20enquiry%20-%20Caffeine%20Media" data-rise style="--d:90ms">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="ccard__ico"><path d="M3 5.5h18c.6 0 1 .4 1 1V17c0 .8-.7 1.5-1.5 1.5h-17C2.7 18.5 2 17.8 2 17V6.5c0-.6.4-1 1-1Zm.8 2L12 12.6l8.2-5.1H3.8Z"/></svg>
+        <span class="ccard__h">Email</span>
+        <span class="ccard__v">hello@thecaffeinemediacompany.com</span>
+        <span class="ccard__n">
+          <button class="copy" id="copyMail" type="button">Copy address</button>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <img src="assets/mark.png" alt="" width="40" height="40">
+      <div>
+        <p class="foot__name">Caffeine Media</p>
+        <p class="foot__tag">Post-production, video editing &amp; screenwriting</p>
+      </div>
+    </div>
+
+    <nav class="foot__nav" aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#restore">Restoration</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="foot__contact">
+      <a href="mailto:hello@thecaffeinemediacompany.com">hello@thecaffeinemediacompany.com</a>
+      <a href="imessage://hello@thecaffeinemediacompany.com">iMessage</a>
+    </div>
+  </div>
+  <div class="foot__base">
+    <p>© <span id="yr">2026</span> Caffeine Media. All rights reserved.</p>
+    <p>Blackpool, UK</p>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="Back to top"><i class="arr arr--u"></i></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/app.js"></script>
 </body>
-
 </html>
