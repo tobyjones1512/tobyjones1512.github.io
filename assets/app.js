@@ -103,6 +103,29 @@
     if (window.innerWidth > 900 && sheetOpen) setSheet(false);
   });
 
+  /* ── Apps & Games dropdown ────────────────────────────── */
+  var appsDropdown = $('#appsDropdown');
+  var appsTrigger  = $('#appsTrigger');
+
+  function setApps(open) {
+    if (!appsDropdown || !appsTrigger) return;
+    appsDropdown.classList.toggle('is-open', open);
+    appsTrigger.setAttribute('aria-expanded', String(open));
+  }
+
+  if (appsTrigger) {
+    appsTrigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setApps(!appsDropdown.classList.contains('is-open'));
+    });
+    document.addEventListener('click', function (e) {
+      if (appsDropdown.classList.contains('is-open') && !appsDropdown.contains(e.target)) setApps(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && appsDropdown.classList.contains('is-open')) { setApps(false); appsTrigger.focus(); }
+    });
+  }
+
   /* ── Active nav link ──────────────────────────────────── */
   var navLinks = $$('.nav__links a');
   var sections = navLinks

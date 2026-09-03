@@ -46,10 +46,28 @@
 
     <nav class="nav__links" aria-label="Primary">
       <a href="#services">Services</a>
-      <a href="#restore">Restoration</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#process">Process</a>
+      <div class="nav__dropdown" id="appsDropdown">
+        <button class="nav__dropdown-trigger" id="appsTrigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="appsMenu">
+          Apps &amp; Games
+          <i class="nav__dropdown-chev" aria-hidden="true"></i>
+        </button>
+        <div class="nav__dropdown-menu" id="appsMenu" role="menu" aria-label="Apps & Games">
+          <a class="nav__dropdown-item" href="pill-blast/index.html" role="menuitem" target="_blank" rel="noopener">
+            <img src="pill-blast/assets/app-icon.png" alt="" width="36" height="36">
+            <span>
+              <strong>Pill Blast</strong>
+              <small>Falling-block puzzle game</small>
+            </span>
+          </a>
+          <a class="nav__dropdown-item" href="remy/index.html" role="menuitem" target="_blank" rel="noopener">
+            <img src="remy/assets/app-icon.png" alt="" width="36" height="36">
+            <span>
+              <strong>Remy</strong>
+              <small>World Recipe Book</small>
+            </span>
+          </a>
+        </div>
+      </div>
       <a href="#faq">FAQ</a>
     </nav>
 
@@ -65,11 +83,18 @@
 <div class="sheet" id="sheet" hidden>
   <nav class="sheet__links" aria-label="Mobile">
     <a href="#services"><span>Services</span><i class="chev" aria-hidden="true"></i></a>
-    <a href="#restore"><span>Restoration &amp; Conversion</span><i class="chev" aria-hidden="true"></i></a>
-    <a href="#work"><span>Work</span><i class="chev" aria-hidden="true"></i></a>
-    <a href="#about"><span>About</span><i class="chev" aria-hidden="true"></i></a>
-    <a href="#process"><span>Process</span><i class="chev" aria-hidden="true"></i></a>
     <a href="#faq"><span>FAQ</span><i class="chev" aria-hidden="true"></i></a>
+  </nav>
+  <p class="sheet__label">Apps &amp; Games</p>
+  <nav class="sheet__links sheet__links--apps" aria-label="Apps and games">
+    <a href="pill-blast/index.html" target="_blank" rel="noopener">
+      <span class="sheet__app"><img src="pill-blast/assets/app-icon.png" alt="" width="28" height="28">Pill Blast</span>
+      <i class="chev" aria-hidden="true"></i>
+    </a>
+    <a href="remy/index.html" target="_blank" rel="noopener">
+      <span class="sheet__app"><img src="remy/assets/app-icon.png" alt="" width="28" height="28">Remy</span>
+      <i class="chev" aria-hidden="true"></i>
+    </a>
   </nav>
   <div class="sheet__foot">
     <a class="btn btn--primary" href="#contact">Get in touch</a>
@@ -510,6 +535,7 @@
   </div>
   <div class="foot__base">
     <p>© <span id="yr">2026</span> Caffeine Media. All rights reserved.</p>
+    <p><a href="privacy.html">Privacy Policy</a></p>
     <p>Blackpool, UK</p>
   </div>
 </footer>
