@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   PILL BLAST — game promo microsite
+   PILL BLAST - game promo microsite
    Pastel candy palette, pulled from the app icon & UI
    ═══════════════════════════════════════════════════════════ */
 
@@ -219,23 +219,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .tile--dark .tile__ico { background: rgba(255,255,255,.14); }
 .tile h3 { font-size: 17px; font-weight: 800; }
 .tile__body { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
-
-/* ── Worlds strip ────────────────────────────────────── */
-.worlds {
-  display: flex; gap: 12px; overflow-x: auto; padding: 6px 2px 14px;
-  scrollbar-width: none;
-}
-.worlds::-webkit-scrollbar { display: none; }
-.world {
-  flex: 0 0 auto;
-  min-width: 168px;
-  background: var(--paper);
-  border-radius: var(--r-sm);
-  padding: 16px 18px;
-  box-shadow: var(--shadow-sm);
-}
-.world__n { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--pink); }
-.world__t { margin-top: 4px; font-size: 14.5px; font-weight: 700; line-height: 1.4; }
 
 /* ── Gallery ─────────────────────────────────────────── */
 .gallery {
