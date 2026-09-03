@@ -336,6 +336,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
 @media (max-width: 560px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-grid--single { grid-template-columns: 1fr; max-width: 320px; }
 .contact-card {
   background: var(--paper-2);
   border-radius: var(--r-sm);
