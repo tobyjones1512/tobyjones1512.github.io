@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["3KXHDYVY73.com.tobyjones.Remy"],
+        "components": [
+          { "/": "/remy/r/", "comment": "Open a shared recipe directly in Remy" }
+        ]
+      }
+    ]
+  }
+}
