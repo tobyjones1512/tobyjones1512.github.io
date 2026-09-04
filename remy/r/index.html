@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Recipe from Remy</title>
+<meta name="description" content="Open this recipe in Remy — your smart pocket cookbook.">
+<meta name="theme-color" content="#FFF3E6">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="A Recipe from Remy">
+<meta property="og:description" content="Open this recipe in Remy — your smart pocket cookbook.">
+<meta property="og:image" content="https://thecaffeinemediacompany.com/remy/assets/app-icon.png">
+<meta property="og:type" content="website">
+<meta name="apple-itunes-app" content="app-id=6805551766">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Manrope', sans-serif;
+    background: #FFF3E6;
+    color: #2c2c2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  .card { max-width: 360px; }
+  img.icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  h1 { font-size: 20px; margin: 0 0 8px; }
+  p { color: #6b6b6b; margin: 0 0 24px; line-height: 1.4; }
+  a.button {
+    display: inline-block;
+    background: #e8542f;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="icon" src="../assets/app-icon.png" alt="Remy">
+    <h1>A recipe was shared with you</h1>
+    <p>Open it in Remy — your smart pocket cookbook.</p>
+    <a class="button" href="https://apps.apple.com/us/app/remy-world-recipe-book/id6805551766">Get Remy on the App Store</a>
+  </div>
+  <script>
+    // Reached only when Remy isn't installed (or this isn't Apple/Safari) —
+    // when it is installed, the universal link hands off to the app before
+    // this page ever loads. Messages' link-preview fetcher just parses the
+    // <meta> tags above without running this script, so previews aren't
+    // affected by the redirect.
+    setTimeout(function () {
+      window.location.href = "https://apps.apple.com/us/app/remy-world-recipe-book/id6805551766";
+    }, 1500);
+  </script>
+</body>
+</html>
