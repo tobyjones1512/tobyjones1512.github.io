@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Support - Ultimate Player</title>
+<meta name="description" content="Support and frequently asked questions for Ultimate Player - next-gen media streaming app for Apple devices.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1419">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">
+    <img src="assets/app-icon.png" alt="">
+    Ultimate Player
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#screenshots">Screenshots</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="doc">
+  <a class="doc__back" href="index.html">&larr; Back to Ultimate Player</a>
+
+  <div class="doc__header">
+    <img src="assets/app-icon.png" alt="">
+    <h1>Support</h1>
+  </div>
+  <p class="doc__updated">We usually reply within a few days.</p>
+
+  <div class="doc-card">
+    <h2>Get in touch</h2>
+    <p>Found a bug, have a question about server setup, or want to share a feature idea? Send it over - every message is read.</p>
+    <div class="contact-grid contact-grid--single">
+      <a class="contact-card" href="mailto:hello@thecaffeinemediacompany.com?subject=Ultimate%20Player%20Support">
+        <p class="contact-card__label">Email</p>
+        <p class="contact-card__value">hello@thecaffeinemediacompany.com</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="doc-card">
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <h3>How do I connect to my Jellyfin or Plex server?</h3>
+      <p>Open the app and tap "Add Server". Enter your server's address (local IP or remote URL), port number, and login credentials. Ultimate Player will attempt to connect and verify your server. If you have trouble with remote access, check that you've configured remote access in your server settings and that port forwarding is set up correctly on your router.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does Ultimate Player support IPTV?</h3>
+      <p>Yes. Ultimate Player supports IPTV/Xtream streaming directly. Add an IPTV source the same way you'd add a Jellyfin or Plex server - provide your IPTV provider's URL, port, and credentials.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does my playback position sync across devices?</h3>
+      <p>Yes. When you're signed into the same iCloud account across your devices, your playback position, watch history, and server connections sync automatically. This can take a minute or two; if it's not syncing, check that iCloud Drive is enabled for Ultimate Player in Settings.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How does 3D conversion work?</h3>
+      <p>Our AI-powered 3D conversion analyzes 2D videos and generates depth information to create a 3D experience. Converted videos are processed and stored locally or on your server - we don't upload or store your content. 3D conversion uses credits (credit pricing available in the app).</p>
+    </div>
+    <div class="faq-item">
+      <h3>Will 3D conversion work offline?</h3>
+      <p>3D conversion requires an active internet connection to process on our servers. Once converted, your 3D videos are stored on your device or server and can be watched offline.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I watch on multiple servers at once?</h3>
+      <p>Absolutely. Ultimate Player supports multiple server connections. Add as many servers as you'd like, and switch between them seamlessly from the app's server selector.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is my content private?</h3>
+      <p>Yes. All video streams between your devices and your servers are handled locally. We never access, store, or see your media files - that's the Ultimate Player promise.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Something looks broken or crashed</h3>
+      <p>Email us a short description of what happened, your device model, and your iOS version - screenshots help a lot too. If a specific server or video file is causing issues, let us know so we can debug faster.</p>
+    </div>
+  </div>
+
+  <div class="doc-card">
+    <h2>Something else</h2>
+    <p>For anything not covered here - including account or data requests - email us at the address above. See our <a class="inline" href="privacy.html">Privacy Policy</a> for details on what data Ultimate Player handles.</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="index.html">Ultimate Player</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Ultimate Player. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
