@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Support - DoP Toolkit</title>
+<meta name="description" content="Support and frequently asked questions for DoP Toolkit - the calculator suite for cinematographers, camera operators, and filmmakers.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0C1312">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">
+    <img src="assets/app-icon.png" alt="">
+    DoP Toolkit
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#screenshots">Screenshots</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="doc">
+  <a class="doc__back" href="index.html">&larr; Back to DoP Toolkit</a>
+
+  <div class="doc__header">
+    <img src="assets/app-icon.png" alt="">
+    <h1>Support</h1>
+  </div>
+  <p class="doc__updated">We usually reply within a few days.</p>
+
+  <div class="doc-card">
+    <h2>Get in touch</h2>
+    <p>Found a bug, have a question about a calculator, or want to request a sensor preset? Send it over - every message is read.</p>
+    <div class="contact-grid contact-grid--single">
+      <a class="contact-card" href="mailto:hello@thecaffeinemediacompany.com?subject=DoP%20Toolkit%20Support">
+        <p class="contact-card__label">Email</p>
+        <p class="contact-card__value">hello@thecaffeinemediacompany.com</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="doc-card">
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <h3>How is depth of field calculated?</h3>
+      <p>DoP Toolkit calculates hyperfocal distance and near/far focus limits from your focal length, aperture, focus distance, and sensor size, using the selected camera's circle of confusion. Pick a preset sensor or enter your own for the most accurate results.</p>
+    </div>
+    <div class="faq-item">
+      <h3>My camera isn't in the sensor list - what do I do?</h3>
+      <p>Use the custom sensor option to enter your camera's exact sensor width and height. Once saved, it behaves just like a built-in preset and can be reused across every calculator in the app.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does the Sun &amp; Golden Hour calculator work anywhere in the world?</h3>
+      <p>Yes. Enter any location and date, or use your current location, and DoP Toolkit will calculate accurate sunrise, sunset, golden hour, and blue hour times for that spot.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does the Timecode Calculator support drop-frame?</h3>
+      <p>Yes. You can add, subtract, and convert timecode across common frame rates, including drop-frame formats, with frame-accurate results.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How accurate is the Storage Calculator?</h3>
+      <p>Storage estimates are based on standard bitrates for each codec at the frame rate and duration you enter. Actual file sizes can vary slightly depending on scene complexity and camera settings, so we recommend leaving some headroom on your cards.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does DoP Toolkit work offline?</h3>
+      <p>Yes. Every calculator works fully offline once the app is installed - useful for locations with no signal.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Something looks broken or crashed</h3>
+      <p>Email us a short description of what happened, your device model, and your iOS version - screenshots help a lot too.</p>
+    </div>
+  </div>
+
+  <div class="doc-card">
+    <h2>Something else</h2>
+    <p>For anything not covered here - including account or data requests - email us at the address above. See our <a class="inline" href="privacy.html">Privacy Policy</a> for details on what data DoP Toolkit handles.</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="index.html">DoP Toolkit</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+  </div>
+  <p>© <span id="yr">2026</span> DoP Toolkit. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
