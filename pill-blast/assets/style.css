@@ -106,16 +106,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .badge {
   display: inline-flex; align-items: center; gap: 10px;
-  background: var(--ink); color: #fff;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+  color: #fff;
   padding: 11px 20px 11px 16px;
   border-radius: 14px;
   font-weight: 700; font-size: 14px;
-  opacity: .55;
-  cursor: default;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 150ms, box-shadow 150ms;
+}
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.badge:active {
+  transform: translateY(0);
 }
 .badge svg { width: 22px; height: 22px; flex-shrink: 0; }
 .badge__text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
-.badge__text small { font-size: 10px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; opacity: .8; }
+.badge__text small { font-size: 10px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; opacity: .9; }
 .badge__text span { font-size: 15px; }
 
 .hero__free {
