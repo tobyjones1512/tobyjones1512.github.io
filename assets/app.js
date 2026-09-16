@@ -144,48 +144,6 @@
     sections.forEach(function (s) { secObs.observe(s); });
   }
 
-  /* ── Pinned restoration sequence ──────────────────────── */
-  var pin      = $('#restore');
-  var steps    = $$('.step');
-  var fLabel   = $('#frameLabel');
-  var fNoise   = $('#frameNoise');
-  var fFrame   = $('#frame');
-  var fTC      = $('#frameTC');
-  var labels   = ['CAPTURE', 'CLEAN', 'DELIVER'];
-  var codes    = ['00:04:12:08', '00:11:47:22', '01:02:00:00'];
-  var noiseOp  = [0.5, 0.2, 0.03];
-  var pinIndex = -1;
-
-  function updatePin() {
-    if (!pin || !steps.length) return;
-    if (window.innerWidth <= 900) {           // stacked layout: everything on
-      steps.forEach(function (s) { s.classList.add('is-on'); });
-      return;
-    }
-
-    var rect  = pin.getBoundingClientRect();
-    var total = pin.offsetHeight - window.innerHeight;
-    if (total <= 0) return;
-
-    var p = Math.min(Math.max(-rect.top / total, 0), 0.9999);
-    var i = Math.floor(p * steps.length);
-    if (i === pinIndex) return;
-    pinIndex = i;
-
-    steps.forEach(function (s, n) { s.classList.toggle('is-on', n === i); });
-    if (fLabel) fLabel.textContent = labels[i] || labels[0];
-    if (fTC)    fTC.textContent    = codes[i]  || codes[0];
-    if (fFrame) fFrame.dataset.stage = String(i);
-    if (fNoise) fNoise.style.opacity = noiseOp[i] != null ? noiseOp[i] : 0.5;
-  }
-
-  var pinTick = false;
-  window.addEventListener('scroll', function () {
-    if (!pinTick) { window.requestAnimationFrame(function () { updatePin(); pinTick = false; }); pinTick = true; }
-  }, { passive: true });
-  window.addEventListener('resize', function () { pinIndex = -1; updatePin(); });
-  updatePin();
-
   /* ── Work gallery arrows ──────────────────────────────── */
   var track = $('#track');
   var prev  = $('#prev');
@@ -207,32 +165,6 @@
     track.addEventListener('scroll', function () { window.requestAnimationFrame(syncArrows); }, { passive: true });
     window.addEventListener('resize', syncArrows);
     syncArrows();
-  }
-
-  /* ── Count-up stats ───────────────────────────────────── */
-  var counters = $$('[data-count]');
-  if (counters.length) {
-    if (reduced || !('IntersectionObserver' in window)) {
-      counters.forEach(function (el) { el.textContent = el.dataset.count; });
-    } else {
-      var cObs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          cObs.unobserve(e.target);
-          var el     = e.target;
-          var target = parseInt(el.dataset.count, 10) || 0;
-          var start  = performance.now();
-          var dur    = 1100;
-          (function frame(now) {
-            var t = Math.min((now - start) / dur, 1);
-            var eased = 1 - Math.pow(1 - t, 3);
-            el.textContent = Math.round(eased * target);
-            if (t < 1) requestAnimationFrame(frame);
-          })(start);
-        });
-      }, { threshold: 0.5 });
-      counters.forEach(function (el) { cObs.observe(el); });
-    }
   }
 
   /* ── Toast + copy email ───────────────────────────────── */
@@ -278,16 +210,5 @@
       qas.forEach(function (o) { if (o !== d) o.open = false; });
     });
   });
-
-  /* ── Subtle pointer parallax on the hero glow ─────────── */
-  var glow = $('.hero__glow');
-  if (glow && !reduced && window.matchMedia('(pointer: fine)').matches) {
-    window.addEventListener('mousemove', function (e) {
-      if (window.scrollY > window.innerHeight) return;
-      var x = (e.clientX / window.innerWidth  - 0.5) * 34;
-      var y = (e.clientY / window.innerHeight - 0.5) * 20;
-      glow.style.translate = 'calc(-50% + ' + x.toFixed(1) + 'px) ' + y.toFixed(1) + 'px';
-    }, { passive: true });
-  }
 
 })();

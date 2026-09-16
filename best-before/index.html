@@ -6,7 +6,7 @@
 <title>Best Before - Food inventory & expiry date tracker</title>
 <meta name="description" content="Take control of your kitchen, cut food waste, and save money with Best Before - the intuitive food inventory and expiry date tracker built natively for iOS.">
 <meta name="theme-color" content="#F2F8F2">
-<link rel="icon" href="assets/app-icon.png" type="image/png">
+<link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
 <meta property="og:title" content="Best Before - Food inventory & expiry date tracker">
 <meta property="og:description" content="Take control of your kitchen, cut food waste, and save money with Best Before. Built natively for iOS.">
@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
 </head>
 <body>
 
@@ -51,7 +52,7 @@
         </a>
         <span class="hero__free">Available now for US$1</span>
       </div>
-      <p class="hero__disclaimer">Best Before makes tracking shelf life fast, intelligent, and seamless.</p>
+      <p class="hero__disclaimer">Scan a barcode or add an item by hand, set a reminder, and Best Before tells you before it goes off.</p>
     </div>
 
     <img src="assets/screenshots/Inventory.jpg" alt="Best Before inventory screen showing food items and their expiry dates" class="hero__shot">
@@ -69,39 +70,32 @@
 
     <div class="bento">
       <article class="tile tile--wide tile--dark">
-        <div class="tile__ico">📸</div>
         <h3>Instant Barcode Scanning</h3>
         <p class="tile__body">Quickly scan food barcodes to automatically fetch product names and details using an extensive open food database. Adding groceries has never been faster.</p>
       </article>
       <article class="tile tile--p1">
-        <div class="tile__ico">🧠</div>
         <h3>Smart Categorisation</h3>
         <p class="tile__body">Powered by Apple Intelligence and NLP, Best Before automatically recognises and categorises your groceries into Dairy, Produce, Bakery, Pantry, and more.</p>
       </article>
       <article class="tile tile--p2">
-        <div class="tile__ico">⏰</div>
         <h3>Multi-Schedule Reminders</h3>
         <p class="tile__body">Customise exactly when and how often you get alerted. Set alerts for the day of expiry, days in advance, or multiple daily check-ins (e.g. 8:00 AM and 6:00 PM).</p>
       </article>
       <article class="tile tile--p3">
-        <div class="tile__ico">✅</div>
         <h3>Reminders &amp; Grocery List</h3>
         <p class="tile__body">Items nearing or past expiry can be added to your "Groceries" list with a context menu tap, or directly from notification alerts.</p>
       </article>
       <article class="tile tile--p4">
-        <div class="tile__ico">📱</div>
         <h3>Interactive Widgets</h3>
         <p class="tile__body">Glancable widgets show what's expiring soonest right on your Home Screen. Tap any item directly on the widget to instantly add it to your shopping list.</p>
       </article>
       <article class="tile tile--p1">
-        <div class="tile__ico">👨‍👩‍👧‍👦</div>
         <h3>Real-Time Collaboration</h3>
         <p class="tile__body">Share your kitchen inventory with family via CloudKit. Everyone can view, add, and manage groceries simultaneously across devices.</p>
       </article>
       <article class="tile tile--p2">
-        <div class="tile__ico">🔒</div>
         <h3>Clean, Native &amp; Private</h3>
-        <p class="tile__body">Your data stays in your personal iCloud account — no third-party account registration, ads, or tracking required.</p>
+        <p class="tile__body">Your data stays in your personal iCloud account, with no third-party account registration, ads, or tracking required.</p>
       </article>
     </div>
   </div>
@@ -173,6 +167,7 @@
 </footer>
 
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
 </body>
 </html>
 

@@ -1,0 +1,48 @@
+/* ═══════════════════════════════════════════════════════════
+   Cookie / local-storage notice — shared across every page.
+   ═══════════════════════════════════════════════════════════ */
+.cookie-note {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 200;
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: #1D1512;
+  color: #F6EFE8;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 12px 34px rgba(0,0,0,.28);
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.cookie-note[hidden] { display: none; }
+.cookie-note p { margin: 0; flex: 1 1 260px; }
+.cookie-note a { color: inherit; text-decoration: underline; }
+.cookie-note__actions { display: flex; gap: 8px; flex-shrink: 0; margin-left: auto; }
+.cookie-note button {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 8px;
+  padding: 8px 14px;
+  background: transparent;
+  color: inherit;
+}
+.cookie-note button.cookie-note__accept {
+  background: #F6EFE8;
+  color: #1D1512;
+  border-color: transparent;
+}
+
+@media (max-width: 480px) {
+  .cookie-note { flex-direction: column; align-items: stretch; }
+  .cookie-note__actions { margin-left: 0; }
+  .cookie-note button { flex: 1; text-align: center; }
+}
