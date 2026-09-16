@@ -119,7 +119,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero__free {
   font-size: 13px; font-weight: 700; color: var(--tomato-deep);
   background: rgba(225,85,59,.1);
-  padding: 8px 14px; border-radius: 100px;
+  padding: 8px 14px; border-radius: 8px;
 }
 
 .hero__disclaimer {
@@ -199,13 +199,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .tile--dark { background: var(--tomato-deep); color: #fff; }
 .tile--dark .tile__body { color: rgba(255,255,255,.82); }
 
-.tile__ico {
-  width: 42px; height: 42px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px;
-  background: rgba(255,255,255,.6);
-}
-.tile--dark .tile__ico { background: rgba(255,255,255,.16); }
 .tile h3 { font-size: 17px; font-weight: 800; }
 .tile__body { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
 
@@ -250,7 +243,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
   color: var(--tomato-deep);
   background: rgba(225,85,59,.1);
-  padding: 5px 12px; border-radius: 100px;
+  padding: 5px 12px; border-radius: 8px;
   margin-bottom: 14px;
 }
 .price-card--accent .price-card__tag { background: rgba(255,255,255,.18); color: #fff; }
