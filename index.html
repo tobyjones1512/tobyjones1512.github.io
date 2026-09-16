@@ -29,6 +29,7 @@
   "serviceType": ["Video Editing", "Stereo Conversion", "Film and Tape Digitisation", "Screenwriting", "Corporate Video", "Music Video", "Drama Production", "Live Streaming"]
 }
 </script>
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
 </head>
 <body>
 
@@ -179,9 +180,9 @@
     <img src="assets/logo.png" alt="Caffeine Media" class="hero__logo" width="300" height="300">
 
     <h1 class="hero__title">
-      <span class="line"><span>From raw footage</span></span>
-      <span class="line"><span>to a finished</span></span>
-      <span class="line"><span class="grad">story.</span></span>
+      <span class="line"><span>Video editing,</span></span>
+      <span class="line"><span>restoration and</span></span>
+      <span class="line"><span class="grad">screenwriting.</span></span>
     </h1>
 
     <p class="hero__sub">
@@ -201,15 +202,6 @@
     </div>
 
     <p class="hero__note">Replies usually within a few hours, UK time.</p>
-  </div>
-
-  <div class="hero__strip" aria-hidden="true">
-    <div class="strip">
-      <div class="strip__track">
-        <span>Video Editing</span><i></i><span>2D → 3D Stereo Conversion</span><i></i><span>VHS &amp; Cine Film Transfer</span><i></i><span>Screenwriting</span><i></i><span>Corporate Films</span><i></i><span>Music Videos</span><i></i><span>Drama</span><i></i><span>Live Streaming</span><i></i>
-        <span>Video Editing</span><i></i><span>2D → 3D Stereo Conversion</span><i></i><span>VHS &amp; Cine Film Transfer</span><i></i><span>Screenwriting</span><i></i><span>Corporate Films</span><i></i><span>Music Videos</span><i></i><span>Drama</span><i></i><span>Live Streaming</span><i></i>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -243,9 +235,6 @@
       <ul class="chips">
         <li>Final Cut Pro</li><li>Premiere Pro</li><li>Apple Motion</li><li>Colour</li><li>Sound design</li>
       </ul>
-      <div class="tile__reel" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
     </article>
 
     <article class="tile tile--tall tile--accent" data-rise style="--d:70ms">
@@ -306,56 +295,49 @@
   </div>
 </section>
 
-<!-- ══════════ PINNED RESTORATION STORY ══════════ -->
+<!-- ══════════ RESTORATION STORY ══════════ -->
 <section class="pin" id="restore">
-  <div class="pin__sticky">
-    <div class="pin__grid">
+  <div class="pin__grid">
 
-      <div class="pin__copy">
-        <p class="eyebrow eyebrow--light">Restoration &amp; Conversion</p>
-        <h2 class="pin__title">Old formats,<br>new life.</h2>
+    <div class="pin__copy" data-rise>
+      <p class="eyebrow eyebrow--light">Restoration &amp; Conversion</p>
+      <h2 class="pin__title">Old formats,<br>new life.</h2>
 
-        <ol class="steps" id="pinSteps">
-          <li class="step is-on">
-            <span class="step__no">01</span>
-            <div>
-              <h3>Capture</h3>
-              <p>Tapes and reels are played back on maintained decks and captured in real time at the highest quality the format allows - no re-filming a screen, no lossy shortcuts.</p>
-            </div>
-          </li>
-          <li class="step">
-            <span class="step__no">02</span>
-            <div>
-              <h3>Clean</h3>
-              <p>Tracking noise, dropouts, dust and colour fade are treated frame by frame where it matters. Audio is de-hissed and levelled so voices come back forward.</p>
-            </div>
-          </li>
-          <li class="step">
-            <span class="step__no">03</span>
-            <div>
-              <h3>Deliver</h3>
-              <p>You get an archival master to keep safe, plus everyday MP4s that play on any phone. Optional: a short edited film cut from the best of the footage.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-
-      <div class="pin__stage" aria-hidden="true">
-        <div class="frame" id="frame" data-stage="0">
-          <div class="frame__plate"></div>
-          <div class="frame__scan"></div>
-          <div class="frame__noise" id="frameNoise"></div>
-          <div class="frame__label" id="frameLabel">CAPTURE</div>
-          <div class="frame__tc" id="frameTC">00:04:12:08</div>
-          <div class="frame__bars">
-            <i style="--h:40%"></i><i style="--h:70%"></i><i style="--h:30%"></i><i style="--h:85%"></i>
-            <i style="--h:55%"></i><i style="--h:65%"></i><i style="--h:25%"></i><i style="--h:75%"></i>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__no">01</span>
+          <div>
+            <h3>Capture</h3>
+            <p>Tapes and reels are played back on maintained decks and captured in real time at the highest quality the format allows - no re-filming a screen, no lossy shortcuts.</p>
           </div>
-        </div>
-        <p class="frame__caption">VHS · Hi8 · MiniDV · Super 8 · 16mm</p>
-      </div>
-
+        </li>
+        <li class="step">
+          <span class="step__no">02</span>
+          <div>
+            <h3>Clean</h3>
+            <p>Tracking noise, dropouts, dust and colour fade are treated frame by frame where it matters. Audio is de-hissed and levelled so voices come back forward.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__no">03</span>
+          <div>
+            <h3>Deliver</h3>
+            <p>You get an archival master to keep safe, plus everyday MP4s that play on any phone. Optional: a short edited film cut from the best of the footage.</p>
+          </div>
+        </li>
+      </ol>
     </div>
+
+    <div class="pin__stage" data-rise style="--d:120ms">
+      <ul class="formats">
+        <li class="formats__row"><span>VHS &amp; VHS-C</span><span>Tape</span></li>
+        <li class="formats__row"><span>Video8, Hi8 &amp; Digital8</span><span>Tape</span></li>
+        <li class="formats__row"><span>MiniDV</span><span>Tape</span></li>
+        <li class="formats__row"><span>Super 8 &amp; 8mm</span><span>Cine film</span></li>
+        <li class="formats__row"><span>16mm</span><span>Cine film</span></li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
@@ -440,10 +422,10 @@
     </div>
 
     <div class="stats" data-rise>
-      <div class="stat"><span class="stat__n" data-count="3">0</span><span class="stat__l">College-level awards</span></div>
-      <div class="stat"><span class="stat__n" data-count="2">0</span><span class="stat__l">Further nominations</span></div>
-      <div class="stat"><span class="stat__n" data-count="10">0</span><span class="stat__l">Legacy formats digitised</span></div>
-      <div class="stat"><span class="stat__n" data-count="8">0</span><span class="stat__l">Services under one roof</span></div>
+      <div class="stat"><span class="stat__n">3</span><span class="stat__l">College-level awards</span></div>
+      <div class="stat"><span class="stat__n">2</span><span class="stat__l">Further nominations</span></div>
+      <div class="stat"><span class="stat__n">10</span><span class="stat__l">Legacy formats digitised</span></div>
+      <div class="stat"><span class="stat__n">8</span><span class="stat__l">Services under one roof</span></div>
     </div>
 
     <div class="studio__cols">
@@ -601,7 +583,7 @@
   </div>
   <div class="foot__base">
     <p>© <span id="yr">2026</span> Caffeine Media. All rights reserved.</p>
-    <p><a href="privacy.html">Privacy Policy</a></p>
+    <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></p>
     <p>Blackpool, UK</p>
   </div>
 </footer>
@@ -610,5 +592,6 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="assets/app.js"></script>
+  <script src="/assets/cookie-consent.js" defer></script>
 </body>
 </html>
