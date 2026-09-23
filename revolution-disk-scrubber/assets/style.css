@@ -116,6 +116,21 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .badge__text small { font-size: 10px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; opacity: .8; }
 .badge__text span { font-size: 15px; }
 
+.hero__wiki {
+  margin-top: 12px;
+  flex-basis: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--ink-3);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(123,140,123,.4);
+  transition: color .3s;
+}
+.hero__wiki:hover { color: var(--tomato-deep); }
+.hero__wiki span { font-size: 11px; }
+
 .hero__free {
   font-size: 13px; font-weight: 700; color: var(--tomato-deep);
   background: rgba(225,85,59,.1);
