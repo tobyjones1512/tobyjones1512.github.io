@@ -1,6 +1,6 @@
-/* Shared cookie / local-storage notice. No tracking cookies are set by
-   this site — this banner exists to be upfront about that and to record
-   (via localStorage, on this device only) that it's been dismissed. */
+/* Shared cookie / local-storage notice. Google Analytics is loaded on this
+   site; this banner lets visitors opt out of measurement cookies and records
+   the choice (via localStorage, on this device only). */
 (function () {
   'use strict';
 
@@ -17,7 +17,7 @@
     el.setAttribute('role', 'region');
     el.setAttribute('aria-label', 'Cookie notice');
     el.innerHTML =
-      '<p>This site doesn’t use advertising or tracking cookies. Dismissing this keeps a note of that on your device only. <a href="privacy.html">Privacy Policy</a></p>' +
+      '<p>We use Google Analytics to count visits and see how the site is used. Neither we nor Google use it for advertising or targeting. Dismissing this records your choice on this device only. <a href="privacy.html">Privacy Policy</a></p>' +
       '<div class="cookie-note__actions">' +
         '<button type="button" class="cookie-note__accept">Got it</button>' +
       '</div>';
