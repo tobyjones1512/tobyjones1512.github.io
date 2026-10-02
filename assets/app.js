@@ -50,7 +50,7 @@
     next.addEventListener('click', function () { go(1); });
     track.addEventListener('scroll', sync, { passive: true });
     addEventListener('resize', sync);
-    sync();
+    requestAnimationFrame(sync);
   }
 
   // Copy email
