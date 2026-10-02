@@ -63,7 +63,7 @@ button { font: inherit; color: inherit; }
 a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 2px; }
 
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
-.nav :focus-visible, .sheet :focus-visible, .creds :focus-visible, .restore :focus-visible,
+.nav :focus-visible, .menu :focus-visible, .creds :focus-visible, .restore :focus-visible,
 .foot :focus-visible, .contact :focus-visible, .section--tint :focus-visible, .reel :focus-visible {
   outline-color: var(--field);
 }
@@ -82,7 +82,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 }
 
 /* small condensed caps used for labels inside the spec panels */
-.spec__tag, .frame__meta, .creds__label, .restore__kind, .tools li, .sheet__label, .copy,
+.spec__tag, .frame__meta, .creds__label, .restore__kind, .tools li, .menu__label, .copy,
 .price-card__tag, .sensor-chip, .controls span, .contact-card__label, figcaption, .formats td,
 .drop__btn, .nav__links a {
   font-stretch: 75%;
@@ -202,26 +202,26 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 .nav__burger[aria-expanded="true"] span:first-child { top: 20px; transform: rotate(45deg); }
 .nav__burger[aria-expanded="true"] span:last-child { top: 20px; transform: rotate(-45deg); }
 
-.sheet {
+.menu {
   position: fixed; inset: 64px 0 0; z-index: 49;
   overflow-y: auto; overscroll-behavior: contain;
   background: var(--ink); color: var(--paper);
   padding: 8px var(--gut) 40px;
 }
-.sheet a { color: var(--paper); text-decoration: none; }
-.sheet > nav:first-child a {
+.menu a { color: var(--paper); text-decoration: none; }
+.menu > nav:first-child a {
   display: block; padding: 14px 0; border-bottom: 1px solid #3a332e;
   font-stretch: var(--cond); font-weight: 800; text-transform: uppercase; font-size: 2.5rem; line-height: 1;
   font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
 }
-.sheet__label { color: var(--field); margin: 28px 0 6px; }
-.sheet__apps a {
+.menu__label { color: var(--field); margin: 28px 0 6px; }
+.menu__apps a {
   display: flex; align-items: center; gap: 12px; padding: 10px 0;
   border-bottom: 1px solid #3a332e; font-weight: 600;
 }
-.sheet__apps img { width: 32px; height: 32px; border-radius: 7px; }
-.sheet__foot { display: grid; gap: 16px; margin-top: 28px; justify-items: start; }
-.sheet__foot > a:last-child { text-decoration: underline; color: color-mix(in srgb, var(--paper) 80%, transparent); }
+.menu__apps img { width: 32px; height: 32px; border-radius: 7px; }
+.menu__foot { display: grid; gap: 16px; margin-top: 28px; justify-items: start; }
+.menu__foot > a:last-child { text-decoration: underline; color: color-mix(in srgb, var(--paper) 80%, transparent); }
 
 @media (max-width: 900px) {
   .nav__links, .nav__cta { display: none; }
@@ -526,12 +526,12 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 }
 .totop svg { width: 16px; height: 16px; }
 .totop.is-on { opacity: 1; visibility: visible; }
-.toast {
+.flash {
   position: fixed; left: 50%; bottom: 24px; z-index: 60; transform: translate(-50%, 140%);
   background: var(--ink); color: var(--paper); padding: 12px 18px; font-weight: 600;
   visibility: hidden; transition: transform .3s cubic-bezier(.2, .8, .2, 1), visibility .3s;
 }
-.toast.is-on { transform: translate(-50%, 0); visibility: visible; }
+.flash.is-on { transform: translate(-50%, 0); visibility: visible; }
 
 /* ── Legal pages ───────────────────────────────────── */
 .legal { max-width: 820px; margin-inline: auto; padding: clamp(40px, 7vw, 88px) var(--gut) var(--sec); }
