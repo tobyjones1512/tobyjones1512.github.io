@@ -6,18 +6,18 @@
   var yr = $('#yr');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // Mobile sheet
-  var burger = $('#burger'), sheet = $('#sheet');
+  // Mobile menu
+  var burger = $('#burger'), menu = $('#menu');
   function setSheet(open) {
     burger.setAttribute('aria-expanded', open);
     burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    sheet.hidden = !open;
+    menu.hidden = !open;
     document.body.style.overflow = open ? 'hidden' : '';
   }
-  if (burger && sheet) {
-    burger.addEventListener('click', function () { setSheet(sheet.hidden); });
-    sheet.addEventListener('click', function (e) { if (e.target.closest('a')) setSheet(false); });
-    addEventListener('resize', function () { if (innerWidth > 900 && !sheet.hidden) setSheet(false); });
+  if (burger && menu) {
+    burger.addEventListener('click', function () { setSheet(menu.hidden); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setSheet(false); });
+    addEventListener('resize', function () { if (innerWidth > 900 && !menu.hidden) setSheet(false); });
   }
 
   // Apps & Games dropdown
@@ -33,7 +33,7 @@
 
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    if (sheet && !sheet.hidden) { setSheet(false); burger.focus(); }
+    if (menu && !menu.hidden) { setSheet(false); burger.focus(); }
     if (drop && drop.classList.contains('is-open')) { setDrop(false); trigger.focus(); }
   });
 
@@ -54,15 +54,15 @@
   }
 
   // Copy email
-  var toast = $('#toast'), timer;
+  var flash = $('#flash'), timer;
   function say(msg) {
-    toast.textContent = msg;
-    toast.classList.add('is-on');
+    flash.textContent = msg;
+    flash.classList.add('is-on');
     clearTimeout(timer);
-    timer = setTimeout(function () { toast.classList.remove('is-on'); }, 2400);
+    timer = setTimeout(function () { flash.classList.remove('is-on'); }, 2400);
   }
   var copy = $('#copyMail');
-  if (copy && toast) {
+  if (copy && flash) {
     copy.addEventListener('click', function () {
       var addr = 'hello@thecaffeinemediacompany.com';
       if (navigator.clipboard) {
