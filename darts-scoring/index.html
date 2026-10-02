@@ -6,32 +6,21 @@
 <title>Bullseye - Professional-grade scoring for iPhone</title>
 <meta name="description" content="Bullseye is the ultimate companion app for serious dart players and casual enthusiasts alike. X01 match play, tournaments, timed games, professional statistics and smart rule validation, all in one intuitive app.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#1B1210">
+<meta name="theme-color" content="#E8504F">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
 <meta property="og:title" content="Bullseye - Professional-grade scoring for iPhone">
 <meta property="og:description" content="X01 match play, tournaments, timed games and professional statistics - the ultimate companion app for serious dart players and casual enthusiasts alike.">
 <meta property="og:image" content="assets/app-icon.png">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="/assets/cookie-consent.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QCV7XEQ8QT');
-</script>
+<link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
-<body>
+<body class="app" style="--field: #E8504F">
 
 <header class="nav">
   <a class="nav__brand" href="index.html">
-    <img src="assets/app-icon.png" alt="">
+    <img width="160" height="160" src="assets/app-icon-160.webp" alt="">
     Bullseye
   </a>
   <nav class="nav__links" aria-label="Primary">
@@ -43,11 +32,10 @@
 
 <main>
 
-<!-- ══════════ HERO ══════════ -->
 <section class="hero wrap">
   <div class="hero__grid">
     <div>
-      <img src="assets/app-icon.png" alt="" class="hero__icon">
+      <img width="160" height="160" src="assets/app-icon-160.webp" alt="" class="hero__icon">
       <h1>Every dart. Every leg. Every <em>checkout</em>.</h1>
       <p class="hero__sub">
         Bullseye is a companion app for pub league players and casual enthusiasts alike: X01 match play, tournament
@@ -55,22 +43,20 @@
       </p>
 
       <div class="hero__actions">
-        <span class="badge" aria-label="Coming soon to the App Store">
+        <span class="badge">
           <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 8 184.8 8 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 37.6 59 129.3 107.2 127.8 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-84.1 102.6-121.8-65.2-30.7-65.7-90-65.7-91.9zM255.1 90.7c26.9-32 24.5-61.2 23.7-71.7-23.8 1.4-51.4 16.4-67.1 34.8-17.3 19.6-27.5 44-25.3 71.4 25.9 2 49.5-11 68.7-34.5z"/></svg>
           <span class="badge__text"><small>Coming soon on the</small><span>App Store</span></span>
         </span>
       </div>
     </div>
 
-    <img src="assets/screenshots/scoring.jpg" alt="Bullseye live scoring screen with a digital dartboard keypad" class="hero__shot">
+    <img fetchpriority="high" width="414" height="900" src="assets/screenshots/scoring.webp" srcset="assets/screenshots/scoring-400.webp 400w, assets/screenshots/scoring.webp 414w" sizes="(max-width: 760px) 220px, 300px" alt="Bullseye live scoring screen with a digital dartboard keypad" class="hero__shot">
   </div>
 </section>
 
-<!-- ══════════ FEATURES ══════════ -->
 <section class="section" id="features">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Features</p>
       <h2>Every way you play darts.</h2>
       <p>From a quick match at home to a full pub league season, Bullseye keeps score so you can focus on throwing.</p>
     </header>
@@ -100,11 +86,9 @@
   </div>
 </section>
 
-<!-- ══════════ SMART VALIDATION ══════════ -->
 <section class="section section--tint">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Smart Validation</p>
       <h2>It knows the rules of darts.</h2>
       <p>Bullseye enforces real match rules automatically, so no one has to referee.</p>
     </header>
@@ -129,44 +113,40 @@
   </div>
 </section>
 
-<!-- ══════════ SCREENSHOTS ══════════ -->
 <section class="section" id="screenshots">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Take a look</p>
       <h2>Built for the pace of real play.</h2>
     </header>
 
     <div class="gallery">
       <figure>
-        <img src="assets/screenshots/home-screen.jpg" alt="Bullseye home screen with Match, Competition and Timed play options" loading="lazy">
+        <img width="414" height="900" src="assets/screenshots/home-screen.webp" srcset="assets/screenshots/home-screen-400.webp 400w, assets/screenshots/home-screen.webp 414w" sizes="220px" alt="Bullseye home screen with Match, Competition and Timed play options" loading="lazy">
         <figcaption>Pick a way to play</figcaption>
       </figure>
       <figure>
-        <img src="assets/screenshots/new-match.jpg" alt="New match setup screen with players, starting score and checkout rules" loading="lazy">
+        <img width="414" height="900" src="assets/screenshots/new-match.webp" srcset="assets/screenshots/new-match-400.webp 400w, assets/screenshots/new-match.webp 414w" sizes="220px" alt="New match setup screen with players, starting score and checkout rules" loading="lazy">
         <figcaption>Set up a match</figcaption>
       </figure>
       <figure>
-        <img src="assets/screenshots/scoring.jpg" alt="Live scoring screen with a digital dartboard keypad" loading="lazy">
+        <img width="414" height="900" src="assets/screenshots/scoring.webp" srcset="assets/screenshots/scoring-400.webp 400w, assets/screenshots/scoring.webp 414w" sizes="220px" alt="Live scoring screen with a digital dartboard keypad" loading="lazy">
         <figcaption>Live scoring</figcaption>
       </figure>
       <figure>
-        <img src="assets/screenshots/knockout.jpg" alt="Knockout tournament bracket showing round one matchups" loading="lazy">
+        <img width="414" height="900" src="assets/screenshots/knockout.webp" srcset="assets/screenshots/knockout-400.webp 400w, assets/screenshots/knockout.webp 414w" sizes="220px" alt="Knockout tournament bracket showing round one matchups" loading="lazy">
         <figcaption>Knockout bracket</figcaption>
       </figure>
       <figure>
-        <img src="assets/screenshots/timed.jpg" alt="Timed game screen with a countdown clock" loading="lazy">
+        <img width="414" height="900" src="assets/screenshots/timed.webp" srcset="assets/screenshots/timed-400.webp 400w, assets/screenshots/timed.webp 414w" sizes="220px" alt="Timed game screen with a countdown clock" loading="lazy">
         <figcaption>Timed games</figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<!-- ══════════ WHAT'S INCLUDED ══════════ -->
 <section class="section section--tint">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">What You Get</p>
       <h2>Everything you need to run a match.</h2>
     </header>
 
@@ -200,11 +180,9 @@
   </div>
 </section>
 
-<!-- ══════════ PERFECT FOR ══════════ -->
 <section class="section">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Ideal For</p>
       <h2>Made for pub nights and pro habits alike.</h2>
     </header>
 

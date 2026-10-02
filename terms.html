@@ -6,60 +6,33 @@
 <title>Terms &amp; Conditions - Caffeine Media</title>
 <meta name="description" content="Terms and conditions for engaging Caffeine Media, the post-production house of filmmaker Toby Jones.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#FBF9F7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#161010" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#16110E">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/mark.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/styles.css">
-  <link rel="stylesheet" href="/assets/cookie-consent.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QCV7XEQ8QT');
-</script>
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="scroll-rail" aria-hidden="true"><div class="scroll-rail__fill" id="scrollFill"></div></div>
-
-<!-- ══════════ NAV ══════════ -->
 <header class="nav" id="nav">
   <div class="nav__inner">
     <a class="nav__brand" href="index.html" aria-label="Caffeine Media, home">
-      <img src="assets/mark.png" alt="" width="32" height="32" class="nav__mark">
-      <span class="nav__name">Caffeine&nbsp;Media</span>
+      <img src="assets/mark-96.webp" alt="" width="34" height="34">
+      <span>Caffeine Media</span>
     </a>
 
     <nav class="nav__links" aria-label="Primary">
       <a href="index.html#services">Services</a>
-      <div class="nav__dropdown" id="appsDropdown">
-        <button class="nav__dropdown-trigger" id="appsTrigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="appsMenu">
+      <div class="drop" id="appsDropdown">
+        <button class="drop__btn" id="appsTrigger" type="button" aria-expanded="false" aria-controls="appsMenu">
           Apps &amp; Games
-          <i class="nav__dropdown-chev" aria-hidden="true"></i>
+          <svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
         </button>
-        <div class="nav__dropdown-menu" id="appsMenu" role="menu" aria-label="Apps & Games">
-          <a class="nav__dropdown-item" href="pill-blast/index.html" role="menuitem" target="_blank" rel="noopener">
-            <img src="pill-blast/assets/app-icon.png" alt="" width="36" height="36">
-            <span>
-              <strong>Pill Blast</strong>
-              <small>Falling-block puzzle game</small>
-            </span>
-          </a>
-          <a class="nav__dropdown-item" href="remy/index.html" role="menuitem" target="_blank" rel="noopener">
-            <img src="remy/assets/app-icon.png" alt="" width="36" height="36">
-            <span>
-              <strong>Remy</strong>
-              <small>World Recipe Book</small>
-            </span>
-          </a>
+        <div class="drop__menu" id="appsMenu">
+          <a href="pill-blast/index.html" target="_blank" rel="noopener"><img src="pill-blast/assets/app-icon-160.webp" alt="" width="40" height="40" loading="lazy"><span><b>Pill Blast</b>Falling-block puzzle game</span></a>
+          <a href="remy/index.html" target="_blank" rel="noopener"><img src="remy/assets/app-icon-160.webp" alt="" width="40" height="40" loading="lazy"><span><b>Remy</b>World Recipe Book</span></a>
         </div>
       </div>
       <a href="index.html#faq">FAQ</a>
@@ -67,39 +40,32 @@
 
     <a class="nav__cta" href="index.html#contact">Get in touch</a>
 
-    <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="sheet" aria-label="Open menu">
+    <button class="nav__burger" id="burger" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Open menu">
       <span></span><span></span>
     </button>
   </div>
 </header>
 
-<!-- ══════════ MOBILE SHEET ══════════ -->
 <div class="sheet" id="sheet" hidden>
-  <nav class="sheet__links" aria-label="Mobile">
-    <a href="index.html#services"><span>Services</span><i class="chev" aria-hidden="true"></i></a>
-    <a href="index.html#faq"><span>FAQ</span><i class="chev" aria-hidden="true"></i></a>
+  <nav aria-label="Mobile">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#faq">FAQ</a>
   </nav>
   <p class="sheet__label">Apps &amp; Games</p>
-  <nav class="sheet__links sheet__links--apps" aria-label="Apps and games">
-    <a href="pill-blast/index.html" target="_blank" rel="noopener">
-      <span class="sheet__app"><img src="pill-blast/assets/app-icon.png" alt="" width="28" height="28">Pill Blast</span>
-      <i class="chev" aria-hidden="true"></i>
-    </a>
-    <a href="remy/index.html" target="_blank" rel="noopener">
-      <span class="sheet__app"><img src="remy/assets/app-icon.png" alt="" width="28" height="28">Remy</span>
-      <i class="chev" aria-hidden="true"></i>
-    </a>
+  <nav class="sheet__apps" aria-label="Apps and games">
+    <a href="pill-blast/index.html" target="_blank" rel="noopener"><img src="pill-blast/assets/app-icon-160.webp" alt="" width="32" height="32" loading="lazy">Pill Blast</a>
+    <a href="remy/index.html" target="_blank" rel="noopener"><img src="remy/assets/app-icon-160.webp" alt="" width="32" height="32" loading="lazy">Remy</a>
   </nav>
   <div class="sheet__foot">
-    <a class="btn btn--primary" href="index.html#contact">Get in touch</a>
-    <a class="sheet__mail" href="mailto:hello@thecaffeinemediacompany.com">hello@thecaffeinemediacompany.com</a>
+    <a class="btn btn--red" href="index.html#contact">Get in touch</a>
+    <a href="mailto:hello@thecaffeinemediacompany.com">hello@thecaffeinemediacompany.com</a>
   </div>
 </div>
 
 <main id="main">
 
 <div class="legal">
-  <a class="legal__back" href="index.html">&larr; Back to Caffeine Media</a>
+  <a class="legal__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Back to Caffeine Media</a>
 
   <h1>Terms &amp; Conditions</h1>
   <p class="legal__updated">Last updated 16 September 2026</p>
@@ -167,14 +133,13 @@
 
 </main>
 
-<!-- ══════════ FOOTER ══════════ -->
 <footer class="foot">
-  <div class="foot__inner">
+  <div class="wrap foot__grid">
     <div class="foot__brand">
-      <img src="assets/mark.png" alt="" width="40" height="40">
+      <img src="assets/mark-96.webp" alt="" width="40" height="40" loading="lazy">
       <div>
         <p class="foot__name">Caffeine Media</p>
-        <p class="foot__tag">Post-production, video editing &amp; screenwriting</p>
+        <p>Post-production, video editing &amp; screenwriting</p>
       </div>
     </div>
 
@@ -192,17 +157,17 @@
       <a href="imessage://hello@thecaffeinemediacompany.com">iMessage</a>
     </div>
   </div>
-  <div class="foot__base">
+  <div class="wrap foot__base">
     <p>© <span id="yr">2026</span> Caffeine Media. All rights reserved.</p>
     <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></p>
     <p>Blackpool, UK</p>
   </div>
 </footer>
 
-<button class="totop" id="toTop" aria-label="Back to top"><i class="arr arr--u"></i></button>
+<button class="totop" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 10l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></button>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/app.js"></script>
-  <script src="/assets/cookie-consent.js" defer></script>
+<script src="assets/app.js" defer></script>
+<script src="/assets/cookie-consent.js" defer></script>
 </body>
 </html>

@@ -1,214 +1,90 @@
-/* ═══════════════════════════════════════════════════════════
-   Caffeine Media - interactions
-   Vanilla JS, no dependencies. Everything degrades gracefully.
-   ═══════════════════════════════════════════════════════════ */
+// Caffeine Media: menu, apps dropdown, credits reel, copy-email, back-to-top.
 (function () {
-  'use strict';
+  var $ = function (s) { return document.querySelector(s); };
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var $  = function (s, c) { return (c || document).querySelector(s); };
-  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
-
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ── Current year ─────────────────────────────────────── */
   var yr = $('#yr');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  /* ── Scroll reveal ────────────────────────────────────── */
-  var risers = $$('[data-rise]');
-  if ('IntersectionObserver' in window && !reduced) {
-    var riseObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-in');
-          riseObs.unobserve(e.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
-    risers.forEach(function (el) { riseObs.observe(el); });
-  } else {
-    risers.forEach(function (el) { el.classList.add('is-in'); });
-  }
-
-  /* ── Nav: translucency, hide-on-scroll-down, progress ──── */
-  var nav      = $('#nav');
-  var fill     = $('#scrollFill');
-  var toTop    = $('#toTop');
-  var lastY    = window.scrollY;
-  var ticking  = false;
-
-  function onScroll() {
-    var y   = window.scrollY;
-    var doc = document.documentElement;
-    var max = doc.scrollHeight - window.innerHeight;
-
-    if (fill) fill.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
-
-    if (nav) {
-      nav.classList.toggle('is-top', y < 20);
-      // Hide when scrolling down past the hero, show on any upward scroll.
-      if (!sheetOpen) {
-        if (y > 420 && y > lastY + 4)      nav.classList.add('is-hidden');
-        else if (y < lastY - 4 || y < 200) nav.classList.remove('is-hidden');
-      }
-    }
-
-    if (toTop) toTop.classList.toggle('is-on', y > 900);
-
-    lastY = y;
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', function () {
-    if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
-  }, { passive: true });
-  onScroll();
-
-  if (toTop) {
-    toTop.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
-    });
-  }
-
-  /* ── Mobile sheet ─────────────────────────────────────── */
-  var burger    = $('#burger');
-  var sheet     = $('#sheet');
-  var sheetOpen = false;
-
+  // Mobile sheet
+  var burger = $('#burger'), sheet = $('#sheet');
   function setSheet(open) {
-    if (!sheet || !burger) return;
-    sheetOpen = open;
-    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-expanded', open);
     burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    if (open) {
-      sheet.hidden = false;
-      nav.classList.remove('is-hidden');
-      requestAnimationFrame(function () { sheet.classList.add('is-open'); });
-      document.body.style.overflow = 'hidden';
-    } else {
-      sheet.classList.remove('is-open');
-      document.body.style.overflow = '';
-      window.setTimeout(function () { if (!sheetOpen) sheet.hidden = true; }, 320);
-    }
+    sheet.hidden = !open;
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  if (burger && sheet) {
+    burger.addEventListener('click', function () { setSheet(sheet.hidden); });
+    sheet.addEventListener('click', function (e) { if (e.target.closest('a')) setSheet(false); });
+    addEventListener('resize', function () { if (innerWidth > 900 && !sheet.hidden) setSheet(false); });
   }
 
-  if (burger) burger.addEventListener('click', function () { setSheet(!sheetOpen); });
-  if (sheet)  $$('a', sheet).forEach(function (a) {
-    a.addEventListener('click', function () { setSheet(false); });
-  });
+  // Apps & Games dropdown
+  var drop = $('#appsDropdown'), trigger = $('#appsTrigger');
+  function setDrop(open) {
+    drop.classList.toggle('is-open', open);
+    trigger.setAttribute('aria-expanded', open);
+  }
+  if (drop && trigger) {
+    trigger.addEventListener('click', function () { setDrop(!drop.classList.contains('is-open')); });
+    document.addEventListener('click', function (e) { if (!drop.contains(e.target)) setDrop(false); });
+  }
+
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && sheetOpen) { setSheet(false); burger.focus(); }
+    if (e.key !== 'Escape') return;
+    if (sheet && !sheet.hidden) { setSheet(false); burger.focus(); }
+    if (drop && drop.classList.contains('is-open')) { setDrop(false); trigger.focus(); }
   });
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 900 && sheetOpen) setSheet(false);
-  });
 
-  /* ── Apps & Games dropdown ────────────────────────────── */
-  var appsDropdown = $('#appsDropdown');
-  var appsTrigger  = $('#appsTrigger');
-
-  function setApps(open) {
-    if (!appsDropdown || !appsTrigger) return;
-    appsDropdown.classList.toggle('is-open', open);
-    appsTrigger.setAttribute('aria-expanded', String(open));
-  }
-
-  if (appsTrigger) {
-    appsTrigger.addEventListener('click', function (e) {
-      e.stopPropagation();
-      setApps(!appsDropdown.classList.contains('is-open'));
-    });
-    document.addEventListener('click', function (e) {
-      if (appsDropdown.classList.contains('is-open') && !appsDropdown.contains(e.target)) setApps(false);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && appsDropdown.classList.contains('is-open')) { setApps(false); appsTrigger.focus(); }
-    });
-  }
-
-  /* ── Active nav link ──────────────────────────────────── */
-  var navLinks = $$('.nav__links a');
-  var sections = navLinks
-    .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
-    .filter(Boolean);
-
-  if ('IntersectionObserver' in window && sections.length) {
-    var secObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        navLinks.forEach(function (a) {
-          a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id);
-        });
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    sections.forEach(function (s) { secObs.observe(s); });
-  }
-
-  /* ── Work gallery arrows ──────────────────────────────── */
-  var track = $('#track');
-  var prev  = $('#prev');
-  var next  = $('#next');
-
-  function step() {
-    var card = $('.card', track);
-    return card ? card.getBoundingClientRect().width + 16 : 340;
-  }
-  function syncArrows() {
-    if (!track || !prev || !next) return;
-    var max = track.scrollWidth - track.clientWidth - 2;
-    prev.disabled = track.scrollLeft <= 2;
-    next.disabled = track.scrollLeft >= max;
-  }
+  // Credits reel arrows
+  var track = $('#track'), prev = $('#prev'), next = $('#next');
   if (track && prev && next) {
-    prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: reduced ? 'auto' : 'smooth' }); });
-    next.addEventListener('click', function () { track.scrollBy({ left:  step(), behavior: reduced ? 'auto' : 'smooth' }); });
-    track.addEventListener('scroll', function () { window.requestAnimationFrame(syncArrows); }, { passive: true });
-    window.addEventListener('resize', syncArrows);
-    syncArrows();
+    var step = function () { return track.firstElementChild.offsetWidth + 18; };
+    var sync = function () {
+      prev.disabled = track.scrollLeft < 4;
+      next.disabled = track.scrollLeft > track.scrollWidth - track.clientWidth - 4;
+    };
+    var go = function (dir) { track.scrollBy({ left: dir * step(), behavior: reduced ? 'auto' : 'smooth' }); };
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
+    track.addEventListener('scroll', sync, { passive: true });
+    addEventListener('resize', sync);
+    sync();
   }
 
-  /* ── Toast + copy email ───────────────────────────────── */
-  var toast = $('#toast');
-  var toastTimer;
+  // Copy email
+  var toast = $('#toast'), timer;
   function say(msg) {
-    if (!toast) return;
     toast.textContent = msg;
     toast.classList.add('is-on');
-    window.clearTimeout(toastTimer);
-    toastTimer = window.setTimeout(function () { toast.classList.remove('is-on'); }, 2400);
+    clearTimeout(timer);
+    timer = setTimeout(function () { toast.classList.remove('is-on'); }, 2400);
   }
-
-  var copyBtn = $('#copyMail');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+  var copy = $('#copyMail');
+  if (copy && toast) {
+    copy.addEventListener('click', function () {
       var addr = 'hello@thecaffeinemediacompany.com';
-      var done = function () { say('Email address copied'); };
-      var fail = function () { say(addr); };
-
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(addr).then(done).catch(fail);
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(addr).then(function () { say('Email address copied'); }, function () { say(addr); });
       } else {
-        var ta = document.createElement('textarea');
-        ta.value = addr;
-        ta.setAttribute('readonly', '');
-        ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand('copy'); done(); } catch (err) { fail(); }
-        document.body.removeChild(ta);
+        say(addr);
       }
     });
   }
 
-  /* ── Only one FAQ open at a time ──────────────────────── */
-  var qas = $$('.qa');
+  // Back to top
+  var top = $('#toTop');
+  if (top) {
+    addEventListener('scroll', function () { top.classList.toggle('is-on', scrollY > 900); }, { passive: true });
+    top.addEventListener('click', function () { scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' }); });
+  }
+
+  // Only one FAQ answer open at a time
+  var qas = document.querySelectorAll('.qa');
   qas.forEach(function (d) {
     d.addEventListener('toggle', function () {
-      if (!d.open) return;
-      qas.forEach(function (o) { if (o !== d) o.open = false; });
+      if (d.open) qas.forEach(function (o) { if (o !== d) o.open = false; });
     });
   });
-
 })();
