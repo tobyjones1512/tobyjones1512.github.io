@@ -1,6 +1,6 @@
 /* Caffeine Media
    One stylesheet for the whole site: the studio pages and every app page.
-   The look borrows from the cardboard cartons cine film used to ship in:
+   The look borrows from the cartons cine film used to ship in:
    a flat ink face up front, a ruled spec panel on the back. */
 
 @font-face {
@@ -72,7 +72,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 
 /* condensed display voice */
 .hero__title, .head__title, .head h2, h3, .nav__brand, .nav__cta, .btn, .contact__title,
-.num, .tally-table td, .legal h1, .doc h1, .app .hero h1, .rule__no, .badge__text span {
+.num, .tally-table td, .legal h1, .doc h1, .app .hero h1, .rule__no, .store__text span {
   font-stretch: var(--cond);
   font-weight: 800;
   text-transform: uppercase;
@@ -83,7 +83,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 
 /* small condensed caps used for labels inside the spec panels */
 .spec__tag, .frame__meta, .creds__label, .restore__kind, .tools li, .menu__label, .copy,
-.price-card__tag, .sensor-chip, .controls span, .contact-card__label, figcaption, .formats td,
+.plan__tag, .sensor-chip, .controls span, .mailbox__label, figcaption, .formats td,
 .drop__btn, .nav__links a {
   font-stretch: 75%;
   font-weight: 650;
@@ -542,16 +542,16 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 .legal__back:hover, .doc__back:hover { color: var(--red); }
 .legal h1, .doc h1 { font-size: clamp(3rem, 9vw, 6rem); line-height: .86; }
 .legal__updated, .doc__updated { color: var(--dim); margin: 18px 0 40px; font-weight: 600; }
-.legal-card, .doc-card { border-top: var(--rule); padding: 22px 0 30px; display: grid; gap: 12px; }
-.legal-card h2, .doc-card h2 {
+.legal-part, .doc-part { border-top: var(--rule); padding: 22px 0 30px; display: grid; gap: 12px; }
+.legal-part h2, .doc-part h2 {
   font-stretch: 75%; font-weight: 750; text-transform: uppercase; font-size: 1.5rem; line-height: 1.1;
   font-family: "Archivo", "Archivo Narrow Fallback", sans-serif;
 }
-.legal-card p, .doc-card p, .doc-card li { max-width: 68ch; }
-.doc-card ul { list-style: square; padding-left: 1.2em; display: grid; gap: 6px; }
+.legal-part p, .doc-part p, .doc-part li { max-width: 68ch; }
+.doc-part ul { list-style: square; padding-left: 1.2em; display: grid; gap: 6px; }
 .inline { font-weight: 700; overflow-wrap: anywhere; }
 .lost { text-align: center; }
-.lost .legal-card { text-align: left; }
+.lost .legal-part { text-align: left; }
 .lost__code { font-stretch: var(--cond); font-weight: 850; font-size: clamp(6rem, 24vw, 14rem); line-height: .8; color: var(--red); margin-bottom: 12px; font-family: "Archivo", "Archivo Cond Fallback", sans-serif; }
 .lost__home { margin-top: 28px; }
 
@@ -603,23 +603,23 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
   .hero__shot { justify-self: center; }
 }
 
-.badge {
+.store {
   display: inline-flex; align-items: center; gap: 10px;
   background: var(--ink); color: var(--paper); text-decoration: none;
   padding: 10px 18px 10px 14px; min-height: 56px; border: 2px solid var(--ink);
   transition: background-color .15s, color .15s;
 }
-.badge svg { width: 24px; height: 28px; }
-.badge__text { display: grid; line-height: 1.05; }
-.badge__text small { font-size: .6875rem; }
-.badge__text span { font-size: 1.5rem; line-height: 1; text-transform: none; letter-spacing: 0; }
-a.badge:hover { background: var(--paper); color: var(--ink); }
-span.badge { background: transparent; color: var(--ink); border-style: dashed; }
+.store svg { width: 24px; height: 28px; }
+.store__text { display: grid; line-height: 1.05; }
+.store__text small { font-size: .6875rem; }
+.store__text span { font-size: 1.5rem; line-height: 1; text-transform: none; letter-spacing: 0; }
+a.store:hover { background: var(--paper); color: var(--ink); }
+span.store { background: transparent; color: var(--ink); border-style: dashed; }
 
 .app .section .head h2 { font-size: clamp(2.5rem, 6vw, 5rem); }
 .section--tint { background: var(--ink); color: var(--paper); }
 .section--tint .head > p, .section--tint .tile__body, .section--tint .rule p,
-.section--tint .persona-card p, .section--tint .feature-group li, .section--tint .price-card__note, .section--tint .iap-note { color: #CFC8C1; }
+.section--tint .persona p, .section--tint .feature-group li, .section--tint .plan__note, .section--tint .iap-note { color: #CFC8C1; }
 .section--tint ::selection { background: var(--field); color: var(--ink); }
 
 .bento {
@@ -643,27 +643,27 @@ span.badge { background: transparent; color: var(--ink); border-style: dashed; }
   border-top: var(--rule);
 }
 .pricing { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.rule, .persona-card, .feature-group, .price-card { padding: 24px 24px 24px 0; display: grid; gap: 10px; align-content: start; }
-:is(.rule, .persona-card, .feature-group, .price-card) + :is(.rule, .persona-card, .feature-group, .price-card) { padding-left: 24px; border-left: var(--rule); }
+.rule, .persona, .feature-group, .plan { padding: 24px 24px 24px 0; display: grid; gap: 10px; align-content: start; }
+:is(.rule, .persona, .feature-group, .plan) + :is(.rule, .persona, .feature-group, .plan) { padding-left: 24px; border-left: var(--rule); }
 .rule__no { font-size: 4rem; color: var(--field); font-variant-numeric: tabular-nums; }
 .section:not(.section--tint) .rule__no { color: var(--red); }
-.rule h3, .persona-card h3, .feature-group h3, .price-card h3 { font-size: 1.625rem; }
-.rule p, .persona-card p, .price-card__note { color: var(--dim); }
-.feature-group ul, .price-card ul { display: grid; }
-.feature-group li, .price-card li {
+.rule h3, .persona h3, .feature-group h3, .plan h3 { font-size: 1.625rem; }
+.rule p, .persona p, .plan__note { color: var(--dim); }
+.feature-group ul, .plan ul { display: grid; }
+.feature-group li, .plan li {
   display: flex; gap: 10px; padding-block: 8px; border-bottom: var(--hair);
 }
-.feature-group li::before, .price-card li::before { content: ""; flex: none; width: 7px; height: 7px; margin-top: .6em; background: currentColor; }
-.price-card h3 { order: -1; }
-.price-card__tag { justify-self: start; border: 2px solid currentColor; padding: 4px 9px 3px; }
-.price-card--accent { background: var(--field); color: var(--ink); padding-left: 24px; padding-right: 24px; }
-.price-card--accent .price-card__note { color: var(--ink); }
+.feature-group li::before, .plan li::before { content: ""; flex: none; width: 7px; height: 7px; margin-top: .6em; background: currentColor; }
+.plan h3 { order: -1; }
+.plan__tag { justify-self: start; border: 2px solid currentColor; padding: 4px 9px 3px; }
+.plan--lit { background: var(--field); color: var(--ink); padding-left: 24px; padding-right: 24px; }
+.plan--lit .plan__note { color: var(--ink); }
 .iap-note { margin-top: 18px; font-size: .9375rem; color: var(--dim); }
-.price-card .iap-note { color: var(--ink); font-weight: 700; margin-top: 6px; }
+.plan .iap-note { color: var(--ink); font-weight: 700; margin-top: 6px; }
 .iap-note a { font-weight: 700; }
 @media (max-width: 600px) {
-  :is(.rule, .persona-card, .feature-group, .price-card) + :is(.rule, .persona-card, .feature-group, .price-card) { padding-left: 0; border-left: 0; border-top: var(--rule); }
-  .price-card--accent { padding-left: 20px !important; padding-right: 20px; }
+  :is(.rule, .persona, .feature-group, .plan) + :is(.rule, .persona, .feature-group, .plan) { padding-left: 0; border-left: 0; border-top: var(--rule); }
+  .plan--lit { padding-left: 20px !important; padding-right: 20px; }
 }
 
 .gallery {
@@ -690,18 +690,18 @@ span.badge { background: transparent; color: var(--ink); border-style: dashed; }
 .doc { max-width: 820px; margin-inline: auto; padding: clamp(40px, 7vw, 88px) var(--gut) var(--sec); }
 .doc__header { display: flex; align-items: center; gap: 20px; }
 .doc__header img { width: 72px; height: 72px; border-radius: 16px; }
-.doc-card h3 { font-stretch: 75%; font-weight: 750; font-size: 1.25rem; line-height: 1.2; text-transform: none; letter-spacing: 0; font-family: "Archivo", "Archivo Narrow Fallback", sans-serif; }
+.doc-part h3 { font-stretch: 75%; font-weight: 750; font-size: 1.25rem; line-height: 1.2; text-transform: none; letter-spacing: 0; font-family: "Archivo", "Archivo Narrow Fallback", sans-serif; }
 .faq-item { display: grid; gap: 6px; padding-top: 14px; border-top: var(--hair); }
 .faq-item p { color: var(--dim); }
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 6px; }
-.contact-card {
+.mailbox {
   display: grid; gap: 4px; padding: 20px; background: var(--ink); color: var(--paper); text-decoration: none;
   transition: background-color .15s, color .15s;
 }
-.contact-card:hover { background: var(--field); color: var(--ink); }
-.contact-card__label { color: var(--field); }
-.contact-card:hover .contact-card__label { color: var(--ink); }
-.contact-card__value { font-weight: 700; overflow-wrap: anywhere; }
+.mailbox:hover { background: var(--field); color: var(--ink); }
+.mailbox__label { color: var(--field); }
+.mailbox:hover .mailbox__label { color: var(--ink); }
+.mailbox__value { font-weight: 700; overflow-wrap: anywhere; }
 
 /* ── Cookie notice ─────────────────────────────────── */
 .cookie-note {
