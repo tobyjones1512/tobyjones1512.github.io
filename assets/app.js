@@ -6,35 +6,22 @@
   var yr = $('#yr');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // Mobile menu
-  var burger = $('#burger'), menu = $('#menu');
-  function setSheet(open) {
-    burger.setAttribute('aria-expanded', open);
-    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    menu.hidden = !open;
-    document.body.style.overflow = open ? 'hidden' : '';
+  // Mobile menu and the Apps & Games dropdown are <details> disclosures;
+  // this only adds closing on outside click, Escape and link taps.
+  var more = $('#more'), drop = $('#appsDropdown');
+  if (more) {
+    more.addEventListener('toggle', function () { document.body.style.overflow = more.open ? 'hidden' : ''; });
+    more.addEventListener('click', function (e) { if (e.target.closest('.menu a')) more.open = false; });
+    addEventListener('resize', function () { if (innerWidth > 900) more.open = false; });
   }
-  if (burger && menu) {
-    burger.addEventListener('click', function () { setSheet(menu.hidden); });
-    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setSheet(false); });
-    addEventListener('resize', function () { if (innerWidth > 900 && !menu.hidden) setSheet(false); });
-  }
-
-  // Apps & Games dropdown
-  var drop = $('#appsDropdown'), trigger = $('#appsTrigger');
-  function setDrop(open) {
-    drop.classList.toggle('is-open', open);
-    trigger.setAttribute('aria-expanded', open);
-  }
-  if (drop && trigger) {
-    trigger.addEventListener('click', function () { setDrop(!drop.classList.contains('is-open')); });
-    document.addEventListener('click', function (e) { if (!drop.contains(e.target)) setDrop(false); });
-  }
-
+  document.addEventListener('click', function (e) {
+    if (drop && drop.open && !drop.contains(e.target)) drop.open = false;
+  });
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    if (menu && !menu.hidden) { setSheet(false); burger.focus(); }
-    if (drop && drop.classList.contains('is-open')) { setDrop(false); trigger.focus(); }
+    [more, drop].forEach(function (d) {
+      if (d && d.open) { d.open = false; d.querySelector('summary').focus(); }
+    });
   });
 
   // Credits reel arrows
