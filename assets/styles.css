@@ -11,6 +11,15 @@
   font-display: swap;
 }
 
+/* Arial-based stand-ins scaled to Archivo's width at each stretch, so text
+   wraps the same before and after the web font arrives (no layout shift). */
+@font-face { font-family: "Archivo Fallback"; src: local("Arial"), local("Helvetica"), local("Liberation Sans"), local("Arimo"); font-weight: 400 599; size-adjust: 98.8%; }
+@font-face { font-family: "Archivo Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"), local("Liberation Sans Bold"), local("Arimo Bold"); font-weight: 600 900; size-adjust: 98.8%; }
+@font-face { font-family: "Archivo Narrow Fallback"; src: local("Arial"), local("Helvetica"), local("Liberation Sans"), local("Arimo"); font-weight: 400 599; size-adjust: 79%; }
+@font-face { font-family: "Archivo Narrow Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"), local("Liberation Sans Bold"), local("Arimo Bold"); font-weight: 600 900; size-adjust: 79%; }
+@font-face { font-family: "Archivo Cond Fallback"; src: local("Arial"), local("Helvetica"), local("Liberation Sans"), local("Arimo"); font-weight: 400 599; size-adjust: 66.5%; }
+@font-face { font-family: "Archivo Cond Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"), local("Liberation Sans Bold"), local("Arimo Bold"); font-weight: 600 900; size-adjust: 66.5%; }
+
 :root {
   --field: #F2B705;      /* carton yellow; app pages swap this for their own */
   --red: #C8211A;
@@ -39,7 +48,7 @@ body {
   overflow-x: clip;
   background: var(--paper);
   color: var(--ink);
-  font: 400 1.0625rem/1.55 "Archivo", "Helvetica Neue", Arial, sans-serif;
+  font: 400 1.0625rem/1.55 "Archivo", "Archivo Fallback", sans-serif;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
 }
@@ -69,6 +78,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
   text-transform: uppercase;
   letter-spacing: -.005em;
   line-height: .9;
+  font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
 }
 
 /* small condensed caps used for labels inside the spec panels */
@@ -81,6 +91,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
   letter-spacing: .06em;
   font-size: .8125rem;
   line-height: 1.3;
+  font-family: "Archivo", "Archivo Narrow Fallback", sans-serif;
 }
 
 .wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gut); }
@@ -201,6 +212,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 .sheet > nav:first-child a {
   display: block; padding: 14px 0; border-bottom: 1px solid #3a332e;
   font-stretch: var(--cond); font-weight: 800; text-transform: uppercase; font-size: 2.5rem; line-height: 1;
+  font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
 }
 .sheet__label { color: var(--field); margin: 28px 0 6px; }
 .sheet__apps a {
@@ -439,6 +451,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
   display: flex; justify-content: space-between; align-items: center; gap: 24px;
   padding: 22px 0;
   font-stretch: 75%; font-weight: 750; font-size: 1.5rem; line-height: 1.15;
+  font-family: "Archivo", "Archivo Narrow Fallback", sans-serif;
 }
 .qa summary::-webkit-details-marker { display: none; }
 .qa summary::after {
@@ -472,7 +485,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
   padding: 24px; background: var(--paper); color: var(--ink); text-decoration: none;
 }
 .way svg { width: 28px; height: 28px; fill: currentColor; grid-row: span 2; }
-.way__h { font-stretch: var(--cond); font-weight: 800; text-transform: uppercase; font-size: 2rem; line-height: 1; }
+.way__h { font-stretch: var(--cond); font-weight: 800; text-transform: uppercase; font-size: 2rem; line-height: 1; font-family: "Archivo", "Archivo Cond Fallback", sans-serif; }
 .way__n { color: var(--dim); font-size: .9375rem; }
 .way--ink { background: var(--ink); color: var(--paper); transition: background-color .15s, color .15s; }
 .way--ink .way__n { color: #CFC8C1; }
@@ -494,7 +507,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 .foot__brand { display: flex; gap: 14px; align-items: center; }
 .foot__brand img { width: 40px; height: 40px; }
 .foot__brand p:last-child { color: #CFC8C1; }
-.foot__name { font-stretch: var(--cond); font-weight: 800; text-transform: uppercase; font-size: 1.5rem; line-height: 1; }
+.foot__name { font-stretch: var(--cond); font-weight: 800; text-transform: uppercase; font-size: 1.5rem; line-height: 1; font-family: "Archivo", "Archivo Cond Fallback", sans-serif; }
 .foot__nav, .foot__contact { display: grid; gap: 6px; align-content: start; }
 .foot__nav { grid-template-columns: 1fr 1fr; }
 .foot__contact a { overflow-wrap: anywhere; }
@@ -532,13 +545,14 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 .legal-card, .doc-card { border-top: var(--rule); padding: 22px 0 30px; display: grid; gap: 12px; }
 .legal-card h2, .doc-card h2 {
   font-stretch: 75%; font-weight: 750; text-transform: uppercase; font-size: 1.5rem; line-height: 1.1;
+  font-family: "Archivo", "Archivo Narrow Fallback", sans-serif;
 }
 .legal-card p, .doc-card p, .doc-card li { max-width: 68ch; }
 .doc-card ul { list-style: square; padding-left: 1.2em; display: grid; gap: 6px; }
 .inline { font-weight: 700; overflow-wrap: anywhere; }
 .lost { text-align: center; }
 .lost .legal-card { text-align: left; }
-.lost__code { font-stretch: var(--cond); font-weight: 850; font-size: clamp(6rem, 24vw, 14rem); line-height: .8; color: var(--red); margin-bottom: 12px; }
+.lost__code { font-stretch: var(--cond); font-weight: 850; font-size: clamp(6rem, 24vw, 14rem); line-height: .8; color: var(--red); margin-bottom: 12px; font-family: "Archivo", "Archivo Cond Fallback", sans-serif; }
 .lost__home { margin-top: 28px; }
 
 /* ── App pages ─────────────────────────────────────── */
@@ -565,7 +579,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
   content: ""; position: absolute; left: 50%; bottom: 0; width: 100vw; height: 26px;
   transform: translateX(-50%); background: var(--film) repeat-x 0 0, var(--paper);
 }
-.hero__grid:has(.hero__shot) { align-items: center; gap: 32px clamp(32px, 6vw, 80px); }
+.hero__grid:has(.hero__shot) { align-items: start; gap: 32px clamp(32px, 6vw, 80px); }
 .app .hero__grid { grid-template-columns: minmax(0, 1fr) auto; padding: 0; }
 .hero__icon { width: 88px; height: 88px; border-radius: 20px; margin-bottom: 28px; }
 .app .hero h1 { font-size: clamp(3rem, 8.5vw, 6.75rem); line-height: .86; text-wrap: balance; }
@@ -676,7 +690,7 @@ span.badge { background: transparent; color: var(--ink); border-style: dashed; }
 .doc { max-width: 820px; margin-inline: auto; padding: clamp(40px, 7vw, 88px) var(--gut) var(--sec); }
 .doc__header { display: flex; align-items: center; gap: 20px; }
 .doc__header img { width: 72px; height: 72px; border-radius: 16px; }
-.doc-card h3 { font-stretch: 75%; font-weight: 750; font-size: 1.25rem; line-height: 1.2; text-transform: none; letter-spacing: 0; }
+.doc-card h3 { font-stretch: 75%; font-weight: 750; font-size: 1.25rem; line-height: 1.2; text-transform: none; letter-spacing: 0; font-family: "Archivo", "Archivo Narrow Fallback", sans-serif; }
 .faq-item { display: grid; gap: 6px; padding-top: 14px; border-top: var(--hair); }
 .faq-item p { color: var(--dim); }
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 6px; }
@@ -702,6 +716,7 @@ span.badge { background: transparent; color: var(--ink); border-style: dashed; }
   margin-left: auto; padding: 10px 16px; border: 0; cursor: pointer;
   background: var(--field); color: var(--ink);
   font-stretch: 75%; font-weight: 750; text-transform: uppercase; letter-spacing: .06em;
+  font-family: "Archivo", "Archivo Narrow Fallback", sans-serif;
 }
 
 @media (prefers-reduced-motion: reduce) {
