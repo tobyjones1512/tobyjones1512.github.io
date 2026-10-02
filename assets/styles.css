@@ -63,7 +63,7 @@ button { font: inherit; color: inherit; }
 a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 2px; }
 
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
-.nav :focus-visible, .menu :focus-visible, .creds :focus-visible, .restore :focus-visible,
+.nav :focus-visible, .creds :focus-visible, .restore :focus-visible,
 .foot :focus-visible, .contact :focus-visible, .section--tint :focus-visible, .reel :focus-visible {
   outline-color: var(--field);
 }
@@ -156,12 +156,14 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
   padding: 6px 0; border-bottom: 2px solid transparent;
 }
 .nav__links a:hover, .drop__btn:hover, .drop[open] .drop__btn { border-bottom-color: var(--field); }
-.nav__cta {
-  background: var(--red); color: #fff; text-decoration: none;
-  font-size: 1.125rem; padding: 12px 16px 11px;
+.nav__links .nav__cta {
+  background: var(--red); color: #fff; border: 0;
+  font-stretch: var(--cond); font-weight: 800; letter-spacing: -.005em; line-height: .9;
+  font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
+  font-size: 1.125rem; padding: 12px 16px 11px; margin-left: 4px;
   transition: background-color .15s, color .15s;
 }
-.nav__cta:hover { background: var(--field); color: var(--ink); }
+.nav__links .nav__cta:hover { background: var(--field); color: var(--ink); }
 
 .drop { position: relative; }
 .drop__btn {
@@ -202,30 +204,25 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 .more[open] .nav__burger span:first-child { top: 20px; transform: rotate(45deg); }
 .more[open] .nav__burger span:last-child { top: 20px; transform: rotate(-45deg); }
 
-.menu {
-  position: fixed; inset: 64px 0 0; z-index: 49;
-  overflow-y: auto; overscroll-behavior: contain;
-  background: var(--ink); color: var(--paper);
-  padding: 8px var(--gut) 40px;
-}
-.menu a { color: var(--paper); text-decoration: none; }
-.menu > nav:first-child a {
-  display: block; padding: 14px 0; border-bottom: 1px solid #3a332e;
-  font-stretch: var(--cond); font-weight: 800; text-transform: uppercase; font-size: 2.5rem; line-height: 1;
-  font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
-}
-.menu__label { color: var(--field); margin: 28px 0 6px; }
-.menu__apps a {
-  display: flex; align-items: center; gap: 12px; padding: 10px 0;
-  border-bottom: 1px solid #3a332e; font-weight: 600;
-}
-.menu__apps img { width: 32px; height: 32px; border-radius: 7px; }
-.menu__foot { display: grid; gap: 16px; margin-top: 28px; justify-items: start; }
-.menu__foot > a:last-child { text-decoration: underline; color: color-mix(in srgb, var(--paper) 80%, transparent); }
-
+/* Phones: the same nav opens as a full-screen panel under the bar. */
 @media (max-width: 900px) {
-  .nav__links, .nav__cta { display: none; }
   .more { display: block; }
+  .nav__links { display: none; }
+  .more[open] + .nav__links {
+    display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    position: fixed; inset: 64px 0 0; z-index: 49; margin: 0;
+    overflow-y: auto; overscroll-behavior: contain;
+    background: var(--ink); padding: 8px var(--gut) 40px;
+  }
+  .nav__links > a:not(.nav__cta), .nav__links .drop__btn {
+    padding: 14px 0; border-bottom: 1px solid #3a332e;
+    font-stretch: var(--cond); font-weight: 800; letter-spacing: -.005em; font-size: 2.5rem; line-height: 1;
+    font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
+  }
+  .drop__btn svg { display: none; }
+  .drop__menu { position: static; width: auto; padding: 0; border: 0; }
+  .nav__links .drop__menu a { padding: 10px 0; border-bottom: 1px solid #3a332e; }
+  .nav__links .nav__cta { align-self: start; margin-top: 28px; }
 }
 
 /* ── Hero ──────────────────────────────────────────── */
