@@ -10,8 +10,11 @@
   // this only adds closing on outside click, Escape and link taps.
   var more = $('#more'), drop = $('#appsDropdown');
   if (more) {
-    more.addEventListener('toggle', function () { document.body.style.overflow = more.open ? 'hidden' : ''; });
-    more.addEventListener('click', function (e) { if (e.target.closest('.menu a')) more.open = false; });
+    more.addEventListener('toggle', function () {
+      document.body.style.overflow = more.open ? 'hidden' : '';
+      if (drop) drop.open = more.open;
+    });
+    document.querySelector('.nav__links').addEventListener('click', function (e) { if (e.target.closest('a')) more.open = false; });
     addEventListener('resize', function () { if (innerWidth > 900) more.open = false; });
   }
   document.addEventListener('click', function (e) {
