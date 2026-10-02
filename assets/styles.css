@@ -8,7 +8,7 @@
   src: url("fonts/archivo.woff2") format("woff2");
   font-weight: 400 850;
   font-stretch: 62% 100%;
-  font-display: optional;
+  font-display: swap;
 }
 
 :root {
