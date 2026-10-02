@@ -155,7 +155,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
   font-size: .875rem; color: var(--paper); text-decoration: none;
   padding: 6px 0; border-bottom: 2px solid transparent;
 }
-.nav__links a:hover, .drop__btn:hover, .drop__btn[aria-expanded="true"] { border-bottom-color: var(--field); }
+.nav__links a:hover, .drop__btn:hover, .drop[open] .drop__btn { border-bottom-color: var(--field); }
 .nav__cta {
   background: var(--red); color: #fff; text-decoration: none;
   font-size: 1.125rem; padding: 12px 16px 11px;
@@ -166,17 +166,16 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 .drop { position: relative; }
 .drop__btn {
   display: flex; align-items: center; gap: 6px;
-  background: none; border-width: 0 0 2px; cursor: pointer;
+  list-style: none; cursor: pointer;
 }
+.drop__btn::-webkit-details-marker, .nav__burger::-webkit-details-marker { display: none; }
 .drop__btn svg { transition: transform .2s; }
-.drop__btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.drop[open] .drop__btn svg { transform: rotate(180deg); }
 .drop__menu {
-  display: none;
   position: absolute; top: calc(100% + 17px); left: -20px;
   width: 340px; padding: 8px;
   background: var(--ink); border: 2px solid var(--field); border-top: 0;
 }
-.drop.is-open .drop__menu { display: block; }
 .nav__links .drop__menu a {
   display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: center;
   padding: 10px; border: 0;
@@ -188,9 +187,10 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 .nav__links .drop__menu a:hover { background: var(--field); color: var(--ink); }
 .drop__menu a:hover b { color: var(--ink); }
 
+.more { display: none; margin-left: auto; }
 .nav__burger {
-  display: none; margin-left: auto;
-  width: 44px; height: 44px; padding: 0; background: none; border: 0; cursor: pointer;
+  display: block; list-style: none;
+  width: 44px; height: 44px; cursor: pointer;
   position: relative;
 }
 .nav__burger span {
@@ -199,8 +199,8 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 }
 .nav__burger span:first-child { top: 16px; }
 .nav__burger span:last-child { top: 25px; }
-.nav__burger[aria-expanded="true"] span:first-child { top: 20px; transform: rotate(45deg); }
-.nav__burger[aria-expanded="true"] span:last-child { top: 20px; transform: rotate(-45deg); }
+.more[open] .nav__burger span:first-child { top: 20px; transform: rotate(45deg); }
+.more[open] .nav__burger span:last-child { top: 20px; transform: rotate(-45deg); }
 
 .menu {
   position: fixed; inset: 64px 0 0; z-index: 49;
@@ -225,7 +225,7 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 
 @media (max-width: 900px) {
   .nav__links, .nav__cta { display: none; }
-  .nav__burger { display: block; }
+  .more { display: block; }
 }
 
 /* ── Hero ──────────────────────────────────────────── */
