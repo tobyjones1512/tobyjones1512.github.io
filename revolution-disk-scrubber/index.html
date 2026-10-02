@@ -5,32 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Revolution Disk Scrubber - Wii Modding for macOS</title>
 <meta name="description" content="Revolution Disk Scrubber is a macOS tool that lets you shrink and mod Nintendo Wii ISOs, just like Wii Scrubber. Save disk space and extract or replace game files easily.">
-<meta name="theme-color" content="#2b2b2b">
+<meta name="theme-color" content="#C9D1D9">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
 <meta property="og:title" content="Revolution Disk Scrubber">
 <meta property="og:description" content="Revolution Disk Scrubber is a macOS tool that lets you shrink and mod Nintendo Wii ISOs.">
 <meta property="og:image" content="assets/app-icon.png">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="/assets/cookie-consent.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QCV7XEQ8QT');
-</script>
+<link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
-<body>
+<body class="app" style="--field: #C9D1D9">
 
 <header class="nav">
   <a class="nav__brand" href="index.html">
-    <img src="assets/app-icon.png" alt="Revolution Disk Scrubber App Icon">
+    <img width="160" height="160" src="assets/app-icon-160.webp" alt="Revolution Disk Scrubber App Icon">
     Revolution Disk Scrubber
   </a>
   <nav class="nav__links" aria-label="Primary">
@@ -42,22 +31,21 @@
 
 <main>
 
-<!-- ══════════ HERO ══════════ -->
 <section class="hero wrap">
   <div class="hero__grid">
     <div>
-      <img src="assets/app-icon.png" alt="Revolution Disk Scrubber App Icon" class="hero__icon">
+      <img width="160" height="160" src="assets/app-icon-160.webp" alt="Revolution Disk Scrubber App Icon" class="hero__icon">
       <h1>Wii Scrubber, built natively for macOS.</h1>
       <p class="hero__sub">
         Revolution Disk Scrubber allows you to shrink and manage your Nintendo Wii ISOs. Remove dummy padding data to save significant disk space, and extract or replace game files for your modding projects.
       </p>
 
       <div class="hero__actions">
-        <a class="badge" href="https://caffeineapps.gumroad.com/l/Wii-disk-scrubber?wanted=true" target="_blank" rel="noopener" aria-label="Buy Revolution Disk Scrubber on Gumroad">
+        <a class="badge" href="https://caffeineapps.gumroad.com/l/Wii-disk-scrubber?wanted=true" target="_blank" rel="noopener">
           <span class="badge__text"><small>Buy it on</small><span>Gumroad</span></span>
         </a>
         <a class="hero__wiki" href="https://mkwiiki.org/wiki/Revolution_Disk_Scrubber" target="_blank" rel="noopener">
-          View on the Custom Mario Kart Wiki <span aria-hidden="true">↗</span>
+          View on the Custom Mario Kart Wiki <svg class="arr" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
         </a>
       </div>
       <p class="hero__disclaimer">
@@ -65,15 +53,13 @@
       </p>
     </div>
 
-    <img src="assets/main screen.png" alt="Revolution Disk Scrubber main screen" class="hero__shot">
+    <img fetchpriority="high" width="1000" height="722" src="assets/main-screen.webp" alt="Revolution Disk Scrubber main screen" class="hero__shot hero__shot--wide">
   </div>
 </section>
 
-<!-- ══════════ FEATURES ══════════ -->
 <section class="section" id="features">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Features</p>
       <h2>Shrink &amp; Mod Your ISOs.</h2>
       <p>Everything you need for Wii ISO management on macOS.</p>
     </header>
@@ -103,21 +89,19 @@
   </div>
 </section>
 
-<!-- ══════════ SCREENSHOTS ══════════ -->
 <section class="section section--tint" id="screenshots">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Take a look</p>
       <h2>Built natively for macOS.</h2>
     </header>
 
-    <div class="gallery">
+    <div class="gallery gallery--wide">
       <figure>
-        <img src="assets/main screen.png" alt="Main interface of Revolution Disk Scrubber" loading="lazy">
+        <img width="1000" height="722" src="assets/main-screen.webp" alt="Main interface of Revolution Disk Scrubber" loading="lazy">
         <figcaption>Main Interface</figcaption>
       </figure>
       <figure>
-        <img src="assets/main screen showing save and extract and replace.png" alt="Extract and Replace features in action" loading="lazy">
+        <img width="1000" height="722" src="assets/main-screen-extract.webp" alt="Extract and Replace features in action" loading="lazy">
         <figcaption>Extract &amp; Replace Files</figcaption>
       </figure>
     </div>

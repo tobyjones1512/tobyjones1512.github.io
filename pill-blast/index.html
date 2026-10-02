@@ -6,32 +6,21 @@
 <title>Pill Blast - A falling-block puzzle game for iPhone</title>
 <meta name="description" content="Pill Blast is an infinite falling-block puzzle game for iPhone. Match colours, clear viruses, and explore worlds that never stop unlocking.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#FBDCE7">
+<meta name="theme-color" content="#FF9EC4">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
 <meta property="og:title" content="Pill Blast - A falling-block puzzle game for iPhone">
 <meta property="og:description" content="Match colours, clear viruses, and explore infinite worlds. Free to play on iPhone.">
 <meta property="og:image" content="assets/app-icon.png">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="/assets/cookie-consent.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QCV7XEQ8QT');
-</script>
+<link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
-<body>
+<body class="app" style="--field: #FF9EC4">
 
 <header class="nav">
   <a class="nav__brand" href="index.html">
-    <img src="assets/app-icon.png" alt="">
+    <img width="160" height="160" src="assets/app-icon-160.webp" alt="">
     Pill Blast
   </a>
   <nav class="nav__links" aria-label="Primary">
@@ -45,11 +34,10 @@
 
 <main>
 
-<!-- ══════════ HERO ══════════ -->
 <section class="hero wrap">
   <div class="hero__grid">
     <div>
-      <img src="assets/app-icon.png" alt="" class="hero__icon">
+      <img width="160" height="160" src="assets/app-icon-160.webp" alt="" class="hero__icon">
       <h1>Clear every world, one capsule at a time.</h1>
       <p class="hero__sub">
         Pill Blast is a falling-block puzzle game - match colours,
@@ -57,25 +45,23 @@
       </p>
 
       <div class="hero__actions">
-        <a href="https://apps.apple.com/us/app/pill-blast/id6807119469" class="badge" aria-label="Pill Blast on the App Store">
+        <a href="https://apps.apple.com/us/app/pill-blast/id6807119469" class="badge">
           <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 8 184.8 8 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 37.6 59 129.3 107.2 127.8 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-84.1 102.6-121.8-65.2-30.7-65.7-90-65.7-91.9zM255.1 90.7c26.9-32 24.5-61.2 23.7-71.7-23.8 1.4-51.4 16.4-67.1 34.8-17.3 19.6-27.5 44-25.3 71.4 25.9 2 49.5-11 68.7-34.5z"/></svg>
           <span class="badge__text"><small>Download on the</small><span>App Store</span></span>
         </a>
         <span class="hero__free">Free to play - World 1 unlocked from the start</span>
       </div>
 
-      <div class="hero__hearts">♥ ♥ ♥ <span style="color:var(--ink-3); font-weight:600;">- 3 lives per world, infinite worlds</span></div>
+      <div class="hero__hearts">♥ ♥ ♥ <span>- 3 lives per world, infinite worlds</span></div>
     </div>
 
-    <img src="assets/screenshots/home-screen.jpg" alt="Pill Blast home screen, showing the app title, a pastel pill icon and a Play button" class="hero__shot">
+    <img fetchpriority="high" width="416" height="900" src="assets/screenshots/home-screen.webp" srcset="assets/screenshots/home-screen-400.webp 400w, assets/screenshots/home-screen.webp 416w" sizes="(max-width: 760px) 220px, 300px" alt="Pill Blast home screen, showing the app title, a pastel pill icon and a Play button" class="hero__shot">
   </div>
 </section>
 
-<!-- ══════════ HOW TO PLAY ══════════ -->
 <section class="section" id="how-to-play">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">How to play</p>
       <h2>Simple rules, deep puzzles.</h2>
       <p>Two-part pill capsules fall down an 8-wide, 16-tall board. Line up colours to clear the board of viruses.</p>
     </header>
@@ -106,11 +92,9 @@
   </div>
 </section>
 
-<!-- ══════════ FEATURES ══════════ -->
 <section class="section section--tint" id="features">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Features</p>
       <h2>Worlds that never stop coming.</h2>
       <p>Every world is procedurally generated - there's no fixed ending, and the same seed always plays out the same way for everyone.</p>
     </header>
@@ -140,28 +124,24 @@
   </div>
 </section>
 
-<!-- ══════════ SCREENSHOTS ══════════ -->
 <section class="section" id="screenshots">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Take a look</p>
       <h2>Soft on the eyes, sharp on the puzzles.</h2>
     </header>
 
     <div class="gallery">
-      <img src="assets/screenshots/home-screen.jpg" alt="Home screen with the Pill Blast title and Play button" loading="lazy">
-      <img src="assets/screenshots/world-select.jpg" alt="World select screen showing unlocked and locked worlds" loading="lazy">
-      <img src="assets/screenshots/gameplay.jpg" alt="Gameplay screen mid-level, matching coloured pills against viruses" loading="lazy">
-      <img src="assets/screenshots/challenge-mode.jpg" alt="Challenge Mode list, showing named challenges with pass conditions" loading="lazy">
+      <img width="416" height="900" src="assets/screenshots/home-screen.webp" srcset="assets/screenshots/home-screen-400.webp 400w, assets/screenshots/home-screen.webp 416w" sizes="220px" alt="Home screen with the Pill Blast title and Play button" loading="lazy">
+      <img width="416" height="900" src="assets/screenshots/world-select.webp" srcset="assets/screenshots/world-select-400.webp 400w, assets/screenshots/world-select.webp 416w" sizes="220px" alt="World select screen showing unlocked and locked worlds" loading="lazy">
+      <img width="416" height="900" src="assets/screenshots/gameplay.webp" srcset="assets/screenshots/gameplay-400.webp 400w, assets/screenshots/gameplay.webp 416w" sizes="220px" alt="Gameplay screen mid-level, matching coloured pills against viruses" loading="lazy">
+      <img width="416" height="900" src="assets/screenshots/challenge-mode.webp" srcset="assets/screenshots/challenge-mode-400.webp 400w, assets/screenshots/challenge-mode.webp 416w" sizes="220px" alt="Challenge Mode list, showing named challenges with pass conditions" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- ══════════ PRICING ══════════ -->
 <section class="section section--tint" id="pricing">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Pricing</p>
       <h2>Free to play. Honest about the rest.</h2>
       <p>World 1 is fully playable for free, forever. Everything beyond that is optional.</p>
     </header>

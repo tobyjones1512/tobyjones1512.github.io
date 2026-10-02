@@ -3,12 +3,14 @@
 Static site. No build step, no dependencies, no framework. Open `index.html` and it works.
 
 ```
-index.html          the whole page
-assets/styles.css   all styling
-assets/app.js       all interactions
-assets/logo.png     stacked lockup (hero)
-assets/mark.png     cup + filmstrip mark (nav, footer, contact)
-assets/favicon.png  browser tab icon
+index.html                the whole page
+assets/styles.css         all styling, for the studio pages and every app page
+assets/app.js             studio page interactions
+assets/cookie-consent.js  cookie notice + Google Analytics (loads on first scroll/tap)
+assets/fonts/archivo.woff2  self-hosted Archivo, subset to Latin
+assets/logo*.png/webp     stacked lockup (hero)
+assets/mark*.png/webp     cup + filmstrip mark (nav, footer, contact)
+assets/favicon.png        browser tab icon
 ```
 
 ## Preview locally
@@ -32,14 +34,17 @@ Copy `index.html` and `assets/` into the `caffeinemedia` repo (which already has
 - **The iMessage links** use `imessage://hello@thecaffeinemediacompany.com`. These
   open Messages on iPhone, iPad and Mac. On Windows and Android nothing happens,
   which is why the email option sits right beside it.
-- **Adding a service** - copy any `<article class="tile">` block in the services
-  section. `tile--wide` spans two columns, `tile--tall` spans two rows.
-- **Adding a credit** - copy any `<article class="card">` in the work gallery.
-  `card--feature` is the dark highlighted variant.
-- **Colours and type** are all CSS variables at the top of `styles.css`.
-  Headings use SF Pro on Apple devices and fall back to Manrope elsewhere.
-- **Animations** respect `prefers-reduced-motion`, so anyone who has motion
-  reduced in their system settings gets a still, fully readable page.
+- **Adding a service** - copy any `<article class="spec__cell">` block in the
+  services section. `spec__cell--wide` spans two columns.
+- **Adding a credit** - copy any `<article class="frame">` in the credits reel.
+  `frame--lit` is the yellow highlighted frame.
+- **Colours and type** are CSS variables at the top of `styles.css`. Each app
+  page sets its own accent with `style="--field: #..."` on `<body>`.
+- **Images** - pages load the `.webp` copies; the original PNG/JPGs stay for
+  app icons, Open Graph and as sources. Screenshots have a `-400.webp` copy for
+  phones.
+- **Motion** is limited to the film strips advancing as you scroll, and it
+  switches off under `prefers-reduced-motion`.
 
 ## Content source
 

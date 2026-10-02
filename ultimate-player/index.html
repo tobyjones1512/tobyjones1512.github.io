@@ -5,32 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ultimate Player - Jellyfin, Plex &amp; IPTV Streaming with 3D Video</title>
 <meta name="description" content="Ultimate Player streams from Jellyfin, Plex and IPTV servers across your Apple devices, with native 3D and spatial video playback plus AI-powered 2D-to-3D conversion.">
-<meta name="theme-color" content="#0F1419">
+<meta name="theme-color" content="#A78BFA">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
 <meta property="og:title" content="Ultimate Player - Jellyfin, Plex &amp; IPTV Streaming with 3D Video">
 <meta property="og:description" content="Stream from your personal Jellyfin, Plex, or IPTV server with native 3D video support and AI-powered conversion.">
 <meta property="og:image" content="assets/app-icon.png">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="/assets/cookie-consent.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QCV7XEQ8QT');
-</script>
+<link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
-<body>
+<body class="app" style="--field: #A78BFA">
 
 <header class="nav">
   <a class="nav__brand" href="index.html">
-    <img src="assets/app-icon.png" alt="">
+    <img width="160" height="160" src="assets/app-icon-160.webp" alt="">
     Ultimate Player
   </a>
   <nav class="nav__links" aria-label="Primary">
@@ -42,36 +31,33 @@
 
 <main>
 
-<!-- ══════════ HERO ══════════ -->
 <section class="hero wrap">
   <div class="hero__grid">
     <div>
-      <img src="assets/app-icon.png" alt="" class="hero__icon">
+      <img width="160" height="160" src="assets/app-icon-160.webp" alt="" class="hero__icon">
       <h1>One player for Jellyfin, Plex and IPTV.</h1>
       <p class="hero__sub">
         Ultimate Player streams your personal Jellyfin server, Plex library or IPTV source to iPhone, iPad and Apple TV, with native 3D and spatial video playback and AI-powered 2D-to-3D conversion built in.
       </p>
 
       <div class="hero__actions">
-        <a class="badge" href="https://apps.apple.com/us/app/ultimate-player-iptv-jellyfin/id6803723173" aria-label="Download Ultimate Player on the App Store">
+        <a class="badge" href="https://apps.apple.com/us/app/ultimate-player-iptv-jellyfin/id6803723173">
           <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 8 184.8 8 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 37.6 59 129.3 107.2 127.8 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-84.1 102.6-121.8-65.2-30.7-65.7-90-65.7-91.9zM255.1 90.7c26.9-32 24.5-61.2 23.7-71.7-23.8 1.4-51.4 16.4-67.1 34.8-17.3 19.6-27.5 44-25.3 71.4 25.9 2 49.5-11 68.7-34.5z"/></svg>
           <span class="badge__text"><small>Download on the</small><span>App Store</span></span>
         </a>
-        <a class="badge" href="https://caffeineapps.gumroad.com/l/ultimate-player-for-mac?wanted=true" target="_blank" rel="noopener" aria-label="Buy Ultimate Player macOS Edition on Gumroad">
+        <a class="badge" href="https://caffeineapps.gumroad.com/l/ultimate-player-for-mac?wanted=true" target="_blank" rel="noopener">
           <span class="badge__text"><small>Buy on Gumroad</small><span>macOS Edition</span></span>
         </a>
       </div>
     </div>
 
-    <img src="assets/screenshots/hero-screen.jpg" alt="Ultimate Player interface on iPhone and Apple TV" class="hero__shot">
+    <img fetchpriority="high" width="600" height="1304" src="assets/screenshots/hero-screen.webp" srcset="assets/screenshots/hero-screen-400.webp 400w, assets/screenshots/hero-screen.webp 600w" sizes="(max-width: 760px) 220px, 300px" alt="Ultimate Player interface on iPhone and Apple TV" class="hero__shot">
   </div>
 </section>
 
-<!-- ══════════ FEATURES ══════════ -->
 <section class="section" id="features">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Features</p>
       <h2>Entertainment reimagined for every screen.</h2>
       <p>From 3D conversion to universal server support, here's what Ultimate Player handles for you.</p>
     </header>
@@ -105,11 +91,9 @@
   </div>
 </section>
 
-<!-- ══════════ HIGHLIGHTS ══════════ -->
 <section class="section section--tint">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Why Choose Ultimate Player</p>
       <h2>Built for how you want to watch.</h2>
     </header>
 
@@ -133,40 +117,36 @@
   </div>
 </section>
 
-<!-- ══════════ SCREENSHOTS ══════════ -->
 <section class="section" id="screenshots">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Experience It</p>
       <h2>Designed for cinema-quality entertainment.</h2>
     </header>
 
     <div class="gallery">
       <figure>
-        <img src="assets/screenshots/library.jpg" alt="Ultimate Player library view with organized media" loading="lazy">
+        <img width="600" height="1304" src="assets/screenshots/library.webp" srcset="assets/screenshots/library-400.webp 400w, assets/screenshots/library.webp 600w" sizes="220px" alt="Ultimate Player library view with organized media" loading="lazy">
         <figcaption>Library View</figcaption>
       </figure>
       <figure>
-        <img src="assets/screenshots/playback.jpg" alt="3D video playback with immersive controls" loading="lazy">
+        <img width="600" height="1304" src="assets/screenshots/playback.webp" srcset="assets/screenshots/playback-400.webp 400w, assets/screenshots/playback.webp 600w" sizes="220px" alt="3D video playback with immersive controls" loading="lazy">
         <figcaption>3D Playback</figcaption>
       </figure>
       <figure>
-        <img src="assets/screenshots/conversion.jpg" alt="AI 3D conversion settings" loading="lazy">
+        <img width="600" height="1304" src="assets/screenshots/conversion.webp" srcset="assets/screenshots/conversion-400.webp 400w, assets/screenshots/conversion.webp 600w" sizes="220px" alt="AI 3D conversion settings" loading="lazy">
         <figcaption>AI Conversion</figcaption>
       </figure>
       <figure>
-        <img src="assets/screenshots/tv.jpg" alt="Ultimate Player on Apple TV with full screen controls" loading="lazy">
+        <img width="600" height="1304" src="assets/screenshots/tv.webp" srcset="assets/screenshots/tv-400.webp 400w, assets/screenshots/tv.webp 600w" sizes="220px" alt="Ultimate Player on Apple TV with full screen controls" loading="lazy">
         <figcaption>Apple TV Experience</figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<!-- ══════════ WHAT'S INCLUDED ══════════ -->
 <section class="section section--tint">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">What You Get</p>
       <h2>Everything you need for ultimate entertainment.</h2>
     </header>
 
@@ -202,11 +182,9 @@
   </div>
 </section>
 
-<!-- ══════════ PERFECT FOR ══════════ -->
 <section class="section">
   <div class="wrap">
     <header class="head">
-      <p class="eyebrow">Ideal For</p>
       <h2>Made for media enthusiasts and families.</h2>
     </header>
 
