@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy - Keep</title>
+<meta name="description" content="Privacy Policy for Keep, the private photo and file vault for iPhone.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#8AA0C6">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/app-icon.png">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body class="app" style="--field: #8AA0C6">
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">
+    <img width="160" height="160" src="assets/app-icon-160.png" alt="">
+    Keep
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#sharing">Sharing</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="doc">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Back to Keep</a>
+
+  <div class="doc__header">
+    <img width="160" height="160" src="assets/app-icon-160.png" alt="">
+    <h1>Privacy Policy</h1>
+  </div>
+  <p class="doc__updated">Last updated 3 October 2026</p>
+
+  <div class="doc-part">
+    <h2>Overview</h2>
+    <p>Keep is developed by Toby Jones. This policy explains what happens to your information when you use Keep on iPhone. In short:</p>
+    <ul>
+      <li>What you put in your vault stays on your iPhone, encrypted. We can't see it.</li>
+      <li>You don't need an account. We never ask for your email, phone number or real name.</li>
+      <li>The app has no ads, no analytics and no tracking.</li>
+      <li>If you turn on Sharing, a small amount of data passes through our relay so phones can find each other. Everything is listed below.</li>
+    </ul>
+  </div>
+
+  <div class="doc-part">
+    <h2>Your vault stays on your device</h2>
+    <p>Photos, videos and files you add are encrypted on your iPhone with AES-256-GCM. The key is kept in your iPhone's Keychain, can only be unlocked with your Face ID, Touch ID or PIN, and never leaves the device. Your vault isn't uploaded, synced, or included in iCloud or computer backups.</p>
+    <ul>
+      <li><b>Photo library</b> access is used only to remove originals after you hide them, if you ask Keep to. Importing uses Apple's own picker.</li>
+      <li><b>Camera</b> is used only to scan another person's Keep code when you add them.</li>
+      <li><b>Face ID and Touch ID</b> are handled by iOS. Keep never sees your face or fingerprint data.</li>
+      <li><b>Nudity detection</b> uses Apple's on-device Sensitive Content Analysis, and only if you've turned on Sensitive Content Warning in iOS Settings. Nothing is sent anywhere for this.</li>
+      <li><b>Age check:</b> before nude images can be sent or viewed, Keep asks iOS for your age range using Apple's Declared Age Range. Keep only learns whether you're over the age of majority, never your date of birth.</li>
+    </ul>
+  </div>
+
+  <div class="doc-part">
+    <h2>Sharing (optional)</h2>
+    <p>Sharing is off until you turn it on. When it's on, Keep connects to our relay server, hosted on Vercel with storage by Upstash. The relay does three jobs, and none of them let it read what you share:</p>
+    <ul>
+      <li><b>Connecting phones.</b> It passes short connection messages so two phones can talk directly.</li>
+      <li><b>Mailbox.</b> If the other phone isn't open, your item waits on the relay, already end-to-end encrypted to their device. It's deleted as soon as they collect it, or after 30 days at most.</li>
+      <li><b>Notifications.</b> It sends a generic alert ("Something new…") through Apple's push notification service. Alerts contain no names and no content.</li>
+    </ul>
+    <p>While Sharing is on, the relay stores:</p>
+    <ul>
+      <li>a random Keep address that isn't tied to your identity, and a scrambled (hashed) secret that proves the address is yours</li>
+      <li>the display name you choose (up to 40 characters) and your public key, so people you give your friend code to can add you. These expire after 30 days unless refreshed.</li>
+      <li>"added you" notices, for up to 30 days</li>
+      <li>encrypted items waiting in your mailbox, until collected or for 30 days at most</li>
+      <li>your push notification token, and an Apple DeviceCheck token so a device banned for abuse stays banned if Keep is reinstalled</li>
+      <li>the IP addresses (IPv4 and IPv6) your device last connected from, and their approximate location (city, region and country), kept for <b>90 days</b> for safety, so abusers can be identified if they're reported</li>
+    </ul>
+    <p>Other services involved in Sharing:</p>
+    <ul>
+      <li><b>Apple:</b> push notifications, DeviceCheck and Declared Age Range.</li>
+      <li><b>Vercel and Upstash:</b> host the relay and its storage.</li>
+      <li><b>ipify.org:</b> when Sharing starts, Keep asks ipify for your phone's public IP addresses.</li>
+      <li><b>ipinfo.io:</b> if you're reported, the relay looks up the name of your internet provider from your IP address.</li>
+      <li><b>Google STUN servers:</b> help two phones connect directly. Like any server you connect to, they see your IP address.</li>
+    </ul>
+    <p>None of these services can see what you share.</p>
+  </div>
+
+  <div class="doc-part">
+    <h2>Reports and safety</h2>
+    <p>If you report someone, we receive your Keep address, theirs, the name you know them by, the reason you choose and anything you write. We also receive their stored network details: IP addresses, approximate location and internet provider. You can choose to attach items they sent you. These are encrypted on your iPhone so that only our Review Team can open them, and they're deleted when the report is closed.</p>
+    <p>Reports about content involving a minor never include content. The reported person is banned immediately, and we point you to the authorities, such as NCMEC's CyberTipline in the US.</p>
+    <p>Reports and messages about them are kept for up to about 13 months. We may share report information, including network details, with law enforcement where the law requires it.</p>
+  </div>
+
+  <div class="doc-part">
+    <h2>What we don't do</h2>
+    <p>Keep has no advertising, no analytics and no tracking across apps or websites. We don't sell or share your information with data brokers.</p>
+  </div>
+
+  <div class="doc-part">
+    <h2>Diagnostics</h2>
+    <p>If you choose to share analytics with app developers in your iPhone's Privacy settings, Apple may give us anonymised crash and performance reports to help fix bugs. They don't identify you, and you can turn this off at any time in Settings.</p>
+  </div>
+
+  <div class="doc-part">
+    <h2>Your choices</h2>
+    <ul>
+      <li>Turning Sharing off stops Keep from contacting the relay.</li>
+      <li><b>Settings › Erase Everything</b> deletes your vault from your iPhone. Deleting the app does too. Either way it can't be recovered.</li>
+      <li>To ask for a copy of, or the deletion of, relay data linked to your Keep address, email us with your friend code.</li>
+    </ul>
+  </div>
+
+  <div class="doc-part">
+    <h2>Children's privacy</h2>
+    <p>Keep doesn't ask anyone for personal information. Sending or viewing nude images is blocked for anyone under the age of majority where they live.</p>
+  </div>
+
+  <div class="doc-part">
+    <h2>About this website</h2>
+    <p>This website, unlike the app, uses Google Analytics to count visits. See the <a class="inline" href="../privacy.html">site privacy policy</a> for details.</p>
+  </div>
+
+  <div class="doc-part">
+    <h2>Changes to this policy</h2>
+    <p>If anything about how Keep handles data changes, we'll update this page and, where required, the App Store's privacy label before that change ships.</p>
+  </div>
+
+  <div class="doc-part">
+    <h2>Contact</h2>
+    <p>Questions about this policy or how Keep handles data can be sent to <a class="inline" href="mailto:hello@thecaffeinemediacompany.com?subject=Keep%20Privacy">hello@thecaffeinemediacompany.com</a>.</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="index.html">Keep</a>
+    <a href="support.html">Support</a>
+    <a href="terms.html">Terms of Use</a>
+  </div>
+  <p>© <span id="yr">2026</span> Keep. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>
