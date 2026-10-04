@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wii homebrew - Revolution Editor Guide</title>
+<meta name="description" content="Write, build and run your own Wii apps in C or C++, powered by your own devkitPro install.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="Wii homebrew - Revolution Editor Guide">
+<meta property="og:description" content="Write, build and run your own Wii apps in C or C++, powered by your own devkitPro install.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution Editor app icon">
+    Revolution Editor
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
+    <a href="index.html">Overview</a>
+    <a href="getting-started.html">Getting started</a>
+    <a href="disc-tools.html">Disc tools</a>
+    <a href="archives.html">Archives (SZS / ARC)</a>
+    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+    <a href="models-textures.html">Models & textures</a>
+    <a href="audio-text-ui.html">Audio, text & menus</a>
+    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    <a href="homebrew.html" aria-current="page">Wii homebrew</a>
+    <a href="testing.html">Testing & shipping</a>
+    <a href="faq.html">FAQ & troubleshooting</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>Wii homebrew</h1>
+  <p class="guide__lede">Write, build and run your own Wii apps in C or C++, powered by your own devkitPro install.</p>
+  <div class="doc-part">
+    <h2>What you need</h2>
+    <ul><li><a class='inline' href='https://devkitpro.org/wiki/Getting_Started' target='_blank' rel='noopener'>devkitPro</a> with the <strong>wii-dev</strong> group (devkitPPC and libogc). Revolution Editor doesn't bundle or download it.</li><li><a class='inline' href='https://dolphin-emu.org' target='_blank' rel='noopener'>Dolphin</a> to run what you build, or a real Wii with the Homebrew Channel.</li></ul>
+    <p>Revolution Editor looks for devkitPro in <code>/opt/devkitpro</code> (the installer's default) or <code>$DEVKITPRO</code>. If yours lives elsewhere, choose it in <strong>Settings &gt; Homebrew</strong>, which also shows whether the toolchain was found.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Create a project</h2>
+    <ol><li>Choose <strong>File &gt; New &gt; Wii Homebrew Project…</strong>.</li><li>Name it, pick <strong>C</strong> or <strong>C++</strong>, and choose where to put it.</li><li>Create. The project opens in the workbench with a standard devkitPPC <code>Makefile</code>, a <code>source/main.c</code> (or <code>.cpp</code>) hello-world that draws text and exits on the HOME button, and a <code>.gitignore</code>.</li></ol>
+    <p>Add more <code>.c</code>/<code>.cpp</code> files to <code>source/</code> and headers to <code>include/</code>. Everything opens in the built-in code editor with syntax highlighting, Find and undo.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Build and run</h2>
+    <p>When the open folder is a homebrew project, a <strong>Build &amp; Run</strong> button (hammer) appears in the toolbar.</p>
+    <ul><li>Click it to build with <code>make</code> and boot the resulting <code>.dol</code> in Dolphin.</li><li>Use its menu to <strong>Build</strong> without running, or <strong>Clean</strong>.</li><li>Compiler output streams into the Console. The finished <code>.dol</code> and <code>.elf</code> are written next to your sources.</li></ul>
+    <div class="callout">devkitPro's makefiles can't handle spaces in paths (such as <em>On-Device Documents</em>), so Revolution Editor builds in a space-free staging copy under <code>/tmp</code> and copies the result back. Your project can live anywhere.</div>
+  </div>
+  <div class="doc-part">
+    <h2>On a real Wii</h2>
+    <p>Copy the built <code>.dol</code> to your SD card as <code>apps/&lt;name&gt;/boot.dol</code>, add a <code>meta.xml</code> if you want a title and icon in the Homebrew Channel, and launch it from there.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Coming next</h2>
+    <p>These are planned but <strong>not in the app yet</strong>:</p>
+    <ul><li><strong>Swift</strong>: a restricted subset of Swift translated to C, then built with devkitPPC. Swift has no native PowerPC target, so full Swift can't run on the Wii.</li><li>A <strong>WYSIWYG UI designer</strong> for laying out screens visually.</li><li>A <strong>node-based editor</strong> for building apps without writing code.</li></ul>
+  </div>
+
+  <div class="guide__pager"><a href="nsmbw.html">← New Super Mario Bros. Wii</a><a href="testing.html">Testing & shipping →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution Editor</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution Editor. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>
