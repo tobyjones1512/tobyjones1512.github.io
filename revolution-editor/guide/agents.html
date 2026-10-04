@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coding agents - Revolution Editor Guide</title>
+<meta name="description" content="Have Claude Code, Codex or Antigravity help build your homebrew apps, using your own accounts.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="Coding agents - Revolution Editor Guide">
+<meta property="og:description" content="Have Claude Code, Codex or Antigravity help build your homebrew apps, using your own accounts.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution Editor app icon">
+    Revolution Editor
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
+    <a href="index.html">Overview</a>
+    <a href="getting-started.html">Getting started</a>
+    <a href="disc-tools.html">Disc tools</a>
+    <a href="archives.html">Archives (SZS / ARC)</a>
+    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+    <a href="models-textures.html">Models & textures</a>
+    <a href="audio-text-ui.html">Audio, text & menus</a>
+    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    <a href="homebrew.html">Wii homebrew</a>
+    <a href="swift.html">Swift</a>
+    <a href="ui-designer.html">UI designer</a>
+    <a href="node-editor.html">Node editor</a>
+    <a href="agents.html" aria-current="page">Coding agents</a>
+    <a href="testing.html">Testing & shipping</a>
+    <a href="faq.html">FAQ & troubleshooting</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>Coding agents</h1>
+  <p class="guide__lede">Have Claude Code, Codex or Antigravity help build your homebrew apps, using your own accounts.</p>
+  <div class="doc-part">
+    <h2>What this is</h2>
+    <p>Revolution Editor doesn't include an AI model and never talks to one. Instead it links to the agent tools <strong>you</strong> already have installed, runs them in your project folder, and gives them what they need to be useful: a description of the project and a way to build and check it. You sign in to those tools yourself, and any usage is billed by them.</p>
+    <ul><li><strong>Claude Code</strong> and <strong>Codex</strong> run headlessly from the <strong>Agent</strong> button, and their output streams into the window.</li><li><strong>Antigravity</strong> is an app, so Revolution Editor opens the project in it, and you work there.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Set up</h2>
+    <ol><li>Install the agents you want from their own sites and sign in to them.</li><li>Open <strong>Settings &gt; Agents</strong>. Each one shows whether it was found; use <strong>Choose…</strong> if it wasn't.</li><li>Open a homebrew project (any template).</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>Ask for something</h2>
+    <ol><li>Click <strong>Agent</strong> in the toolbar (the sparkles button).</li><li>Pick an agent, describe what you want (<em>“add a score counter that goes up when I press A”</em>) and press <strong>Run</strong>.</li><li>Watch the output. Files the agent changes appear in the Project Navigator as it works, and open tabs refresh.</li><li><strong>Stop</strong> ends the run.</li></ol>
+    <div class="callout">Use <strong>Source Control</strong> (Git) so you can see what an agent changed and undo it. Initialise a repository before a big request.</div>
+  </div>
+  <div class="doc-part">
+    <h2>What the agent is given</h2>
+    <p>When you create a project, or press <strong>Refresh Agent Files</strong>, these are written to the project folder:</p>
+    <ul><li><code>AGENTS.md</code>: the project layout, the UI and node file formats, the Swift subset and its built-in functions, the C API, and how to build. Codex and Antigravity read this file automatically.</li><li><code>CLAUDE.md</code>: points Claude Code at <code>AGENTS.md</code>.</li><li><code>build.sh</code>: <code>./build.sh --check</code> translates Swift, UI and nodes to C and reports errors in a second; <code>./build.sh</code> builds the <code>.dol</code>; <code>./build.sh --clean</code> cleans.</li></ul>
+    <p>Files you wrote yourself are never overwritten. Only ones Revolution Editor generated are kept up to date.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Permissions and commands</h2>
+    <p>By default Claude Code runs with <code>--permission-mode acceptEdits</code> and may run only <code>./build.sh</code>. Codex runs with <code>--full-auto</code>, which keeps it inside the project folder. Your request is passed as a single argument, never through a shell.</p>
+    <p>The command for each agent is editable in <strong>Settings &gt; Agents</strong>: <code>{prompt}</code> stands for your request, and <strong>Reset</strong> restores the default. That's also how to adapt to a new version of an agent's command-line options.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Any other agent</h2>
+    <p>Anything that can run a shell command can use <code>./build.sh --check</code> and <code>./build.sh</code>. Point it at <code>AGENTS.md</code> and ask it to check its work with the build script.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Privacy</h2>
+    <p>Your request and the project files the agent reads go to whichever service that agent uses, under its own terms. Revolution Editor itself sends nothing anywhere.</p>
+  </div>
+
+  <div class="guide__pager"><a href="node-editor.html">← Node editor</a><a href="testing.html">Testing & shipping →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution Editor</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution Editor. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>

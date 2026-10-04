@@ -41,6 +41,10 @@
     <a href="double-dash.html">Mario Kart: Double Dash!!</a>
     <a href="nsmbw.html">New Super Mario Bros. Wii</a>
     <a href="homebrew.html" aria-current="page">Wii homebrew</a>
+    <a href="swift.html">Swift</a>
+    <a href="ui-designer.html">UI designer</a>
+    <a href="node-editor.html">Node editor</a>
+    <a href="agents.html">Coding agents</a>
     <a href="testing.html">Testing & shipping</a>
     <a href="faq.html">FAQ & troubleshooting</a>
   </nav>
@@ -69,12 +73,17 @@
     <p>Copy the built <code>.dol</code> to your SD card as <code>apps/&lt;name&gt;/boot.dol</code>, add a <code>meta.xml</code> if you want a title and icon in the Homebrew Channel, and launch it from there.</p>
   </div>
   <div class="doc-part">
-    <h2>Coming next</h2>
-    <p>These are planned but <strong>not in the app yet</strong>:</p>
-    <ul><li><strong>Swift</strong>: a restricted subset of Swift translated to C, then built with devkitPPC. Swift has no native PowerPC target, so full Swift can't run on the Wii.</li><li>A <strong>WYSIWYG UI designer</strong> for laying out screens visually.</li><li>A <strong>node-based editor</strong> for building apps without writing code.</li></ul>
+    <h2>Visual apps</h2>
+    <p>Instead of a plain console project, create one of the app templates:</p>
+    <ul><li><strong>C: UI app (designer + nodes)</strong>: lay out the screen in the <a class='inline' href='ui-designer.html'>UI designer</a> and wire the logic in the <a class='inline' href='node-editor.html'>Node editor</a>. No code needed.</li><li><strong>Swift: UI app (designer + Swift)</strong>: the same designer, with your logic written in <a class='inline' href='swift.html'>Swift</a>.</li></ul>
+    <p>Either way you can also add hand-written C or C++ files to <code>source/</code>.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Work with an agent</h2>
+    <p>Revolution Editor can hand a project to Claude Code, Codex or Antigravity. See <a class='inline' href='agents.html'>Coding agents</a>.</p>
   </div>
 
-  <div class="guide__pager"><a href="nsmbw.html">← New Super Mario Bros. Wii</a><a href="testing.html">Testing & shipping →</a></div>
+  <div class="guide__pager"><a href="nsmbw.html">← New Super Mario Bros. Wii</a><a href="swift.html">Swift →</a></div>
   </article>
 </main>
 
