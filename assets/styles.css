@@ -722,3 +722,39 @@ span.store { background: transparent; color: var(--ink); border-style: dashed; }
 
 .arr { display: inline-block; vertical-align: -.1em; }
 .legal__back .arr, .doc__back .arr, .btn .arr { width: 14px; height: 14px; }
+
+/* ── App guide (tutorial / wiki sub-pages) ─────────── */
+.guide {
+  max-width: var(--wrap); margin-inline: auto; padding: clamp(32px, 5vw, 64px) var(--gut) var(--sec);
+  display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 32px clamp(32px, 5vw, 72px); align-items: start;
+}
+.guide__nav { position: sticky; top: 88px; display: grid; border-top: var(--rule); }
+.guide__nav a { padding: 9px 0; border-bottom: var(--hair); text-decoration: none; font-weight: 600; }
+.guide__nav a:hover { color: var(--red); }
+.guide__nav a[aria-current="page"] { font-weight: 800; padding-left: 12px; box-shadow: inset 5px 0 0 var(--field); }
+.guide__nav .guide__nav-h { padding: 12px 0 8px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: .8125rem; border-bottom: var(--hair); }
+.guide__body { max-width: 820px; min-width: 0; }
+.guide__body h1 { font-size: clamp(2.75rem, 8vw, 5.5rem); line-height: .86; text-wrap: balance; }
+.guide__lede { font-size: 1.1875rem; line-height: 1.5; color: var(--dim); margin: 18px 0 36px; max-width: 60ch; }
+.guide .doc-part ol { list-style: decimal; padding-left: 1.4em; display: grid; gap: 6px; }
+.guide .doc-part ol, .guide .doc-part ul { max-width: 68ch; }
+.guide kbd {
+  font: 700 .875em/1 "Archivo", sans-serif; padding: 2px 6px 1px; border: 2px solid var(--ink); background: var(--paper); white-space: nowrap;
+}
+.guide code { font: 600 .9em ui-monospace, SFMono-Regular, Menlo, monospace; background: color-mix(in srgb, var(--field) 35%, var(--paper)); padding: 1px 5px; overflow-wrap: anywhere; }
+.callout { border: 2px solid var(--ink); border-left: 10px solid var(--field); padding: 14px 18px; max-width: 68ch; }
+.callout strong { font-weight: 800; }
+.guide__pager { display: flex; justify-content: space-between; gap: 16px; border-top: var(--rule); padding-top: 20px; margin-top: 12px; font-weight: 700; }
+.guide__pager a:hover { color: var(--red); }
+a.tile { text-decoration: none; color: inherit; transition: background-color .15s; }
+a.tile:hover { background: var(--field); color: var(--ink); }
+a.tile:hover .tile__body { color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { border: 2px solid currentColor; padding: 6px 11px 5px; font-weight: 700; }
+@media (max-width: 860px) {
+  .guide { grid-template-columns: 1fr; }
+  .guide__nav { position: static; }
+}
+.bento--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bento--2 .tile--wide { grid-column: span 2; }
+@media (max-width: 600px) { .bento--2 { grid-template-columns: 1fr; } .bento--2 .tile--wide { grid-column: auto; } }
