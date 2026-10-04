@@ -758,3 +758,5 @@ a.tile:hover .tile__body { color: var(--ink); }
 .bento--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .bento--2 .tile--wide { grid-column: span 2; }
 @media (max-width: 600px) { .bento--2 { grid-template-columns: 1fr; } .bento--2 .tile--wide { grid-column: auto; } }
+.guide pre { max-width: 68ch; overflow-x: auto; border: 2px solid var(--ink); background: color-mix(in srgb, var(--field) 18%, var(--paper)); padding: 14px 16px; }
+.guide pre code { background: none; padding: 0; white-space: pre; overflow-wrap: normal; }

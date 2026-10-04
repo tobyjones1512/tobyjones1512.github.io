@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Node editor - Revolution Editor Guide</title>
+<meta name="description" content="Build app logic by wiring blocks together instead of writing code. It's turned into C when you build.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="Node editor - Revolution Editor Guide">
+<meta property="og:description" content="Build app logic by wiring blocks together instead of writing code. It's turned into C when you build.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution Editor app icon">
+    Revolution Editor
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
+    <a href="index.html">Overview</a>
+    <a href="getting-started.html">Getting started</a>
+    <a href="disc-tools.html">Disc tools</a>
+    <a href="archives.html">Archives (SZS / ARC)</a>
+    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+    <a href="models-textures.html">Models & textures</a>
+    <a href="audio-text-ui.html">Audio, text & menus</a>
+    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    <a href="homebrew.html">Wii homebrew</a>
+    <a href="swift.html">Swift</a>
+    <a href="ui-designer.html">UI designer</a>
+    <a href="node-editor.html" aria-current="page">Node editor</a>
+    <a href="agents.html">Coding agents</a>
+    <a href="testing.html">Testing & shipping</a>
+    <a href="faq.html">FAQ & troubleshooting</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>Node editor</h1>
+  <p class="guide__lede">Build app logic by wiring blocks together instead of writing code. It's turned into C when you build.</p>
+  <div class="doc-part">
+    <h2>Create a graph</h2>
+    <ul><li>A <strong>C: UI app</strong> project includes <code>logic/main.wiinodes</code> with a working example: a counter button.</li><li>Or add one with <strong>File &gt; New &gt; Wii Homebrew &gt; Node Graph (.wiinodes)…</strong>.</li></ul>
+    <p>Double-click the file to open the node editor. Widgets come from the project's <code>.wiiui</code> design.</p>
+  </div>
+  <div class="doc-part">
+    <h2>How it works</h2>
+    <ul><li><strong>Add Node</strong> adds a block from a category: Events, Flow, Actions, Values, Math &amp; Logic and Text.</li><li><strong>Drag between ports</strong> to connect them. A port only joins ports of its own colour.</li><li><strong>White wires</strong> are the order things happen in. Start from an Event node (the red ones) and follow the wires.</li><li><strong>Coloured wires</strong> carry values: blue is a number, green is text, orange is yes/no.</li><li>A data input with nothing wired in shows a box where you type the value to use.</li><li>Drag a node's title to move it, drag the background to pan, and <kbd>Delete</kbd> removes the selected node. Right-click an input port to disconnect it.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Events</h2>
+    <ul><li><strong>On Start</strong>: once, when the app starts.</li><li><strong>On Every Frame</strong>: 60 times a second.</li><li><strong>On Button Pressed</strong>: when a button widget is clicked.</li><li><strong>On Wii Remote Button</strong>: when A, B, 1, 2, +, −, or the D-pad is pressed.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Flow and actions</h2>
+    <ul><li><strong>Branch</strong>: runs one path if a yes/no is true, another if not.</li><li><strong>Repeat</strong>: runs its body a number of times, then continues. Its <em>index</em> output counts from 0.</li><li><strong>Set Text</strong>, <strong>Set Visible</strong> and <strong>Set Color</strong> change a widget.</li><li><strong>Set Number / Text Variable / Yes-No</strong> store a value.</li><li><strong>Exit App</strong> quits to the Homebrew Channel.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Values, math and text</h2>
+    <ul><li><strong>Number</strong>, <strong>Text</strong>, <strong>Yes / No</strong> constants, <strong>Get</strong> blocks for variables and a widget's text, and <strong>Frame Count</strong>.</li><li><strong>Add, Subtract, Multiply, Divide, Remainder, Compare, And, Or, Not</strong> and <strong>Random Number</strong>. Dividing by zero gives 0.</li><li><strong>Number to Text</strong>, <strong>Join Text</strong> and <strong>Text Equals</strong>.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Variables</h2>
+    <p>The <strong>Variables</strong> panel on the right holds values that last while the app runs. Add a Number, Text or Yes/No variable, give it a name and a starting value, then read and change it with Get and Set blocks. Renaming a variable updates every block that uses it.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Example: a click counter</h2>
+    <ol><li>In the UI designer, add a button named <code>go</code> and a label named <code>status</code>.</li><li>In the node editor, make a variable <code>count</code> (Number, starts at 0).</li><li><strong>On Button Pressed</strong> (widget <code>go</code>) → <strong>Set Number</strong> (<code>count</code>), with <strong>Add</strong> (Get <code>count</code> + 1) wired into its value.</li><li>Then → <strong>Set Text</strong> (widget <code>status</code>) with <strong>Join Text</strong> (“Pressed ”, <strong>Number to Text</strong>(Get <code>count</code>)).</li><li>Build &amp; Run, point, and click.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>When a build stops</h2>
+    <p>If a node refers to a widget or variable that doesn't exist, or a chain of blocks runs back into itself, the build stops and the Console says which. Use Repeat for loops.</p>
+  </div>
+
+  <div class="guide__pager"><a href="ui-designer.html">← UI designer</a><a href="agents.html">Coding agents →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution Editor</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution Editor. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>
