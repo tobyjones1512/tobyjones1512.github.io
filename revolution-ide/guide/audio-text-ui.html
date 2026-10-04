@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Audio, text & menus - Revolution IDE Guide</title>
+<meta name="description" content="Make custom music, edit in-game text, and preview menu layouts.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="Audio, text & menus - Revolution IDE Guide">
+<meta property="og:description" content="Make custom music, edit in-game text, and preview menu layouts.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution IDE app icon">
+    Revolution IDE
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
+    <a href="index.html">Overview</a>
+    <a href="getting-started.html">Getting started</a>
+    <a href="disc-tools.html">Disc tools</a>
+    <a href="archives.html">Archives (SZS / ARC)</a>
+    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+    <a href="models-textures.html">Models & textures</a>
+    <a href="audio-text-ui.html" aria-current="page">Audio, text & menus</a>
+    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    <a href="testing.html">Testing & shipping</a>
+    <a href="faq.html">FAQ & troubleshooting</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>Audio, text & menus</h1>
+  <p class="guide__lede">Make custom music, edit in-game text, and preview menu layouts.</p>
+  <div class="doc-part">
+    <h2>BRSTM: music</h2>
+    <p>A <code>.brstm</code> is the streamed music format used by Mario Kart Wii and others. The editor shows the waveform with draggable markers.</p>
+    <ol><li>Open a BRSTM, or <strong>Make .brstm</strong> from any audio file macOS can read (WAV, AIFF, MP3, M4A, FLAC…). It's resampled to 32 kHz like every retail track.</li><li>Click the waveform to play from a point. Drag the blue <strong>Loop</strong> marker and orange <strong>End</strong> marker.</li><li>Use <strong>Play Loop Seam</strong>. It plays the last three seconds and on through the jump back, the only real way to judge a loop point.</li><li>Multi-track streams (alternative layers such as an underwater mix) preview one track at a time.</li><li>Save. The original file is only re-encoded if the audio changed. Saving adds a little silence so the loop start lines up with the 8 KiB block the game loops from, as every retail track does.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>BRSAR: sound archive</h2>
+    <p>A read-only browser for the game's whole sound bank: sounds, instrument banks, players, groups and files, with their documented parameters. It's for finding out what's in there, not for playback or editing.</p>
+  </div>
+  <div class="doc-part">
+    <h2>BMG: in-game text</h2>
+    <p>A <code>.bmg</code> holds a game's messages (menu labels, dialogue, credits) indexed by ID. Edit text in place and add new messages; new IDs start one past the highest existing one.</p>
+    <p>A lock icon means a message has a special 0x1A control code (a Mii name, colour or game reference). It's shown read-only so you can't corrupt it by accident.</p>
+  </div>
+  <div class="doc-part">
+    <h2>BRLYT and BRLAN: menus</h2>
+    <ul><li><strong>BRLYT</strong> opens a menu or HUD layout as its pane hierarchy, with a transform inspector for the selected pane. Edits change pane transforms in place.</li><li><strong>BRLAN</strong> shows a layout animation: which panes and properties animate, and how many frames. It's summary-level.</li><li><strong>Preview UI</strong> (Mario Kart Wii, right-click a UI <code>.szs</code>) draws every screen layout in the archive the way the game does, with its textures and text. Anchors, rotation, scale, visibility and alpha are all honoured.</li></ul>
+  </div>
+
+  <div class="guide__pager"><a href="models-textures.html">← Models & textures</a><a href="double-dash.html">Mario Kart: Double Dash!! →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution IDE</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution IDE. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>

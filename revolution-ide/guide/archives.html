@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Archives (SZS / ARC) - Revolution IDE Guide</title>
+<meta name="description" content="Browse and edit the compressed archives almost every Wii and GameCube game is built from.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="Archives (SZS / ARC) - Revolution IDE Guide">
+<meta property="og:description" content="Browse and edit the compressed archives almost every Wii and GameCube game is built from.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution IDE app icon">
+    Revolution IDE
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
+    <a href="index.html">Overview</a>
+    <a href="getting-started.html">Getting started</a>
+    <a href="disc-tools.html">Disc tools</a>
+    <a href="archives.html" aria-current="page">Archives (SZS / ARC)</a>
+    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+    <a href="models-textures.html">Models & textures</a>
+    <a href="audio-text-ui.html">Audio, text & menus</a>
+    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    <a href="testing.html">Testing & shipping</a>
+    <a href="faq.html">FAQ & troubleshooting</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>Archives (SZS / ARC)</h1>
+  <p class="guide__lede">Browse and edit the compressed archives almost every Wii and GameCube game is built from.</p>
+  <div class="doc-part">
+    <h2>What they are</h2>
+    <p>A <code>.szs</code> or <code>.arc</code> is a folder of files (models, textures, course data) packed into one archive, usually compressed with Yaz0. Revolution IDE also reads Wiimm's <code>.wbz</code> and <code>.wlz</code> track formats.</p>
+    <p>Double-click an archive in the Project Navigator and it opens as a tab. Browse it like any folder, and double-click a file inside to edit it in place with the right editor.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Editing an archive</h2>
+    <ul><li><strong>Add Files</strong>: add one or more files to the top level, or paste files you've copied in Finder.</li><li><strong>New Folder</strong>: adds a subfolder inside the selected folder.</li><li><strong>Rename, Delete, Extract</strong> from the right-click menu.</li><li><strong>Yaz0 Compress</strong>: leave this on to save a compressed file like the game expects; turn it off only if you need an uncompressed copy. <em>Settings</em> can turn it on by default for new archives.</li><li><strong>Save</strong> writes the archive back to wherever it came from, including archives nested inside other archives.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Make a new archive</h2>
+    <p>Right-click in the Project Navigator and choose <strong>New</strong>. You can create an ARC or SZS archive, a BRRES model file, a BMG message table, a KMP (course data or battle arena), a text file and more. In an existing folder, <strong>Make Archive</strong>, <strong>Make .brres</strong> and <strong>Make .brstm</strong> pack things up for you.</p>
+  </div>
+  <div class="doc-part">
+    <h2>The Info button</h2>
+    <p>Not sure what belongs in a <code>.szs</code>? Click <strong>Info</strong> in the archive toolbar. It's a searchable catalogue, per game, of the archive types and the files each one expects. You can hide the button in Settings.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Verify Archive</h2>
+    <p><strong>Verify Archive</strong> checks that a Mario Kart Wii custom track or New Super Mario Bros. Wii level has what it needs to load in-game. It doesn't just look for filenames: every file is parsed with the app's real format readers, so a present-but-truncated file is caught too. Fix what it lists, then verify again.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Scale Track</h2>
+    <p><strong>Scale Track…</strong> makes a whole Mario Kart Wii course bigger or smaller. The course, sky and minimap models, the collision and every KMP point scale together so everything still lines up. Tick the option to scale object (GOBJ) sizes too, so trees and item boxes grow with the track. Object models and karts otherwise keep their size.</p>
+  </div>
+
+  <div class="guide__pager"><a href="disc-tools.html">← Disc tools</a><a href="mkwii-tracks.html">Mario Kart Wii tracks →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution IDE</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution IDE. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>New Super Mario Bros. Wii - Revolution IDE Guide</title>
+<meta name="description" content="Open and edit level archives in a visual level editor.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="New Super Mario Bros. Wii - Revolution IDE Guide">
+<meta property="og:description" content="Open and edit level archives in a visual level editor.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution IDE app icon">
+    Revolution IDE
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
+    <a href="index.html">Overview</a>
+    <a href="getting-started.html">Getting started</a>
+    <a href="disc-tools.html">Disc tools</a>
+    <a href="archives.html">Archives (SZS / ARC)</a>
+    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+    <a href="models-textures.html">Models & textures</a>
+    <a href="audio-text-ui.html">Audio, text & menus</a>
+    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+    <a href="nsmbw.html" aria-current="page">New Super Mario Bros. Wii</a>
+    <a href="testing.html">Testing & shipping</a>
+    <a href="faq.html">FAQ & troubleshooting</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>New Super Mario Bros. Wii</h1>
+  <p class="guide__lede">Open and edit level archives in a visual level editor.</p>
+  <div class="doc-part">
+    <h2>Opening a level</h2>
+    <p>A level is a U8 archive with a <code>course</code> folder holding up to four areas. Revolution IDE recognises one by its contents, not its extension, so an <code>.arc</code> or <code>.szs</code> level opens straight into the level editor. Right-click and choose <strong>Edit Level</strong> if you opened it as a plain archive, or <strong>Open in New Window</strong> for a dedicated window.</p>
+  </div>
+  <div class="doc-part">
+    <h2>The editor</h2>
+    <ul><li><strong>Canvas</strong> with a zoom control. Toggle <em>Objects</em>, <em>Sprites</em>, <em>Entrances</em> and <em>Locations</em> on and off to see only what you're working on.</li><li><strong>Inspector</strong>: click anything on the canvas to edit it. Entrances, locations, zones, sprite types and settings, tile objects (with tileset and layer), and path nodes.</li><li><strong>Add</strong> entrances, locations, objects and sprites, and add or remove path nodes.</li><li><strong>Area summary</strong> for a quick overview of each area.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Before you ship</h2>
+    <p>Run <strong>Verify Archive</strong> on the level to confirm it parses and has everything NSMBW expects. Test it with <a class='inline' href='testing.html'>Hot Swap or Run in Emulator</a>.</p>
+  </div>
+
+  <div class="guide__pager"><a href="double-dash.html">← Mario Kart: Double Dash!!</a><a href="testing.html">Testing & shipping →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution IDE</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution IDE. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>

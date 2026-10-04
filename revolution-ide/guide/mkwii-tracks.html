@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mario Kart Wii tracks - Revolution IDE Guide</title>
+<meta name="description" content="The full track-making toolkit: course data, collision, minimap, sky, cameras, 3D preview and render.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="Mario Kart Wii tracks - Revolution IDE Guide">
+<meta property="og:description" content="The full track-making toolkit: course data, collision, minimap, sky, cameras, 3D preview and render.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution IDE app icon">
+    Revolution IDE
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
+    <a href="index.html">Overview</a>
+    <a href="getting-started.html">Getting started</a>
+    <a href="disc-tools.html">Disc tools</a>
+    <a href="archives.html">Archives (SZS / ARC)</a>
+    <a href="mkwii-tracks.html" aria-current="page">Mario Kart Wii tracks</a>
+    <a href="models-textures.html">Models & textures</a>
+    <a href="audio-text-ui.html">Audio, text & menus</a>
+    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    <a href="testing.html">Testing & shipping</a>
+    <a href="faq.html">FAQ & troubleshooting</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>Mario Kart Wii tracks</h1>
+  <p class="guide__lede">The full track-making toolkit: course data, collision, minimap, sky, cameras, 3D preview and render.</p>
+  <div class="doc-part">
+    <h2>The pieces of a track</h2>
+    <ul><li><code>course_model.brres</code>: what you see.</li><li><code>course.kcl</code>: collision, which decides what the wheels touch.</li><li><code>course.kmp</code>: course data: start points, CPU and item paths, checkpoints, respawns, objects, cameras.</li><li><code>map_model.brres</code>: the minimap.</li><li><code>vrcorn_model.brres</code>: the sky.</li></ul>
+    <p>Turn on <strong>Mario Kart Wii</strong> in Settings &gt; Games to get the game's own tool menu.</p>
+  </div>
+  <div class="doc-part">
+    <h2>KMP: course data</h2>
+    <p>The KMP editor is a top-down 2D canvas with an inspector on the side.</p>
+    <ul><li><strong>Sections</strong>: start points, enemy (CPU) paths, item paths, checkpoints, respawn points, objects, areas, cameras and routes. Each has its own list and properties.</li><li><strong>Backdrop</strong>: load the course model or collision behind your points so you place them against real geometry. Material Colors lets you tint each material so road and grass are easy to tell apart. Purely visual; nothing is saved into the KMP.</li><li><strong>Pen tool</strong>: click for straight segments, click-drag for curves, then <em>Finish</em> to fill the path with evenly spaced points. Choose what kind of point it becomes and the spacing.</li><li><strong>Snap to ground</strong>: raycasts visible points down onto the collision so nothing floats or sinks.</li><li><strong>Duplicate to Enemy / Item / Checkpoint path</strong> and <strong>Equalise Gaps</strong> speed up repetitive work.</li><li><strong>Respawn Point per Checkpoint</strong> builds a respawn point in the middle of every checkpoint, facing the next, snapped to the ground.</li><li><strong>Advanced</strong> opens every field of a section as an editable spreadsheet, for when you need exact values. Integers accept decimal or <code>0x</code> hex.</li><li><strong>Info</strong> explains each section and which games use it.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Check it works</h2>
+    <ul><li><strong>Check Laps</strong> validates checkpoint groups, key checkpoints and quad shapes the way the game uses them, then drives the CPU route round three laps and confirms each one counts.</li><li><strong>Make Testable</strong> fills in whatever the KMP is missing to load and be raced: a start point, respawn points, checkpoints, dead-end paths, and any camera, object or area pointing at something that doesn't exist. It leaves anything already set up alone, lists what it changed, and Undo reverses it.</li><li>Battle arenas are detected automatically (12 start points, battle respawns, no checkpoints) and use the battle rules.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Intro cameras</h2>
+    <p>Open <strong>Intro Cameras…</strong> in the KMP editor to build and play the opening fly-over in 3D, frame for frame at 60 fps.</p>
+    <ul><li>Start from Nintendo's usual three shots (a high overview, a sweep across the far side, a swoop onto the start line) with <em>Standard Intro</em>, or <em>Add Shot</em> one at a time.</li><li>Use the Free view to orbit the track, then send its camera position to a shot's camera or route point.</li><li>A button sets the route, look and zoom speeds so each finishes exactly when the shot ends.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>KCL: collision</h2>
+    <p>Collision is usually a simplified copy of the visible model. There's no vertex editing, as in every KCL tool. The workflow for shape changes is to model collision elsewhere and import the whole mesh. What you can edit is each triangle's surface type.</p>
+    <ul><li><strong>Import OBJ…</strong> (or from a <code>.brres</code>/<code>.szs</code>). Tick <em>Convert Z-up to Y-up</em> for Blender and most other tools. Untick any material to leave its triangles out.</li><li><strong>Assign Surface Types</strong> by flag, individually or in bulk per type. Select a triangle in 3D to grab every connected triangle sharing its type, then retag just that patch.</li><li><strong>Wireframe</strong> and <strong>Culling</strong> help spot overlapping, missing or backwards triangles. If part of the track vanishes with culling on, those triangles' winding is wrong.</li><li><strong>Delete Triangle</strong> removes it from collision only, leaving an invisible hole.</li><li>Link a reference texture to a flag to colour-code it. It's an editor aid and isn't written to the file.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Minimap</h2>
+    <p><strong>Create Map</strong> builds <code>map_model.brres</code> from an existing course model.</p>
+    <ol><li>Tick the textures that belong on the minimap (the road, usually, not scenery or sky).</li><li>Give each a shade: white for the main road, darker for off-road, lower levels or tunnels.</li><li>Create. Retail minimaps are a couple of thousand triangles, so the sheet warns you if you're keeping far more.</li></ol>
+    <p>The <strong>Minimap Editor…</strong> reopens it later.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Sky</h2>
+    <p>The sky picker builds <code>vrcorn_model.brres</code> three ways: from a 2:1 panorama image wrapped all the way round, from your own <code>.obj</code>, or by copying the sky of any retail track or arena from your linked Mario Kart Wii disc.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Objects</h2>
+    <ul><li>If your track uses an object whose model isn't in the project, a banner offers to copy its files in from your linked Mario Kart Wii disc.</li><li>The game can't load brand-new object types, so <strong>custom objects</strong> borrow a retail “host” object: placing one uses the host's ID and replaces the host's model in your track. One custom object per host, per track.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Budget, preview and render</h2>
+    <ul><li><strong>Track Budget</strong> (in the BRRES editor) compares your model against the median and maximum of every retail course. Past the retail maximum the game isn't guaranteed to cope: expect frame drops in split-screen first, then running out of memory.</li><li><strong>Preview Track</strong> opens the whole course in 3D, with a Driver's View that rides the CPU line.</li><li><strong>Create Render</strong> sets lights, camera, background and fog live on the preview, then exports an image at the size you choose.</li><li><strong>Texture Gallery</strong> (File menu) browses every texture on your linked Mario Kart Wii or Double Dash disc and exports them as PNG.</li></ul>
+  </div>
+
+  <div class="guide__pager"><a href="archives.html">← Archives (SZS / ARC)</a><a href="models-textures.html">Models & textures →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution IDE</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution IDE. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>
