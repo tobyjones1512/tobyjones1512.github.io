@@ -65,11 +65,15 @@
   </div>
   <div class="doc-part">
     <h2>Widgets</h2>
-    <ul><li><strong>Rectangle</strong>, <strong>Label</strong> (text), <strong>Button</strong> (clickable with the Wii Remote) and <strong>Image</strong>.</li><li>Drag to move, drag the corner handle to resize, arrow keys to nudge, <kbd>Delete</kbd> to remove.</li><li>The <strong>Layers</strong> list is the draw order: the top is drawn last, on top.</li><li>Set the name, position, size, text, colours and whether it shows at the start on the right.</li></ul>
+    <ul><li><strong>Rectangle</strong>, <strong>Label</strong> (text), <strong>Button</strong> (clickable with the Wii Remote) and <strong>Image</strong>.</li><li>Drag to move, drag the corner handle to resize, arrow keys to nudge, <kbd>Delete</kbd> to remove.</li><li>The <strong>Layers</strong> list is the draw order: the top is drawn last, on top.</li><li>Set the name, position, size, text, colours and whether it shows at the start on the right.</li><li><strong>Right-click a widget</strong> (on the screen or in Layers) to Duplicate it, show or hide it at the start, change its layer (front, forward, backward, back), choose an image, or delete it.</li></ul>
   </div>
   <div class="doc-part">
     <h2>Using it</h2>
     <p>A widget named <code>go</code> is <code>UI.go</code> in <a class='inline' href='swift.html'>Swift</a> and <code>UI_GO</code> in C. Handle button clicks with the <a class='inline' href='node-editor.html'>On Button Pressed</a> node or <code>appOnButton</code>. On the Wii, point and press <kbd>A</kbd> to click; <kbd>HOME</kbd> quits.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Widescreen</h2>
+    <p>Tick <strong>16:9</strong> in the top bar to design for an 854 × 480 screen instead of 640 × 480. The app fills a widescreen TV and is letterboxed on a 4:3 one; a 4:3 design is still pillarboxed on a widescreen TV. Code that draws to the screen sees the wider width.</p>
   </div>
   <div class="doc-part">
     <h2>Images</h2>
