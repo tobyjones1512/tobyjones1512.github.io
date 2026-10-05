@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SwiftUI - Revolution Editor Guide</title>
+<meta name="description" content="Build a Wii app from SwiftUI-style views.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="SwiftUI - Revolution Editor Guide">
+<meta property="og:description" content="Build a Wii app from SwiftUI-style views.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution Editor app icon">
+    Revolution Editor
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
+    <a href="getting-started.html">Getting started</a>
+    <details class="guide__group"><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
+    <a href="disc-tools.html">Disc tools</a>
+    <details class="guide__group" open><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="swiftui.html" aria-current="page">SwiftUI</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>SwiftUI</h1>
+  <p class="guide__lede">Build a Wii app from SwiftUI-style views.</p>
+  <div class="doc-part">
+    <h2>How it works</h2>
+    <p>Choose <strong>Swift: SwiftUI app</strong> when you create a project. You write a <code>View</code> with a <code>body</code>, like on the Mac. Revolution Editor translates it to C and draws the view tree every frame, so <code>@State</code> changes show straight away.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Example</h2>
+    <pre><code>import SwiftUI
+
+@main
+struct CounterApp: App {
+    var body: some Scene {
+        WindowGroup { ContentView() }
+    }
+}
+
+struct ContentView: View {
+    @State private var count = 0
+    @State private var on = true
+
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("Count: \(count)").font(.title)
+            Button("Add") { count += 1 }
+            Toggle("Sound", isOn: $on)
+        }
+        .padding(24)
+    }
+}</code></pre>
+    <figure class="shot"><img src="../assets/shots/swiftui.png" width="640" height="480" alt="A SwiftUI app drawn on a Wii screen: a title, a counter, a toggle and a list" loading="lazy"><figcaption>The SwiftUI template. This frame is drawn by the same code the Wii runs, in a Mac test harness.</figcaption></figure>
+  </div>
+  <div class="doc-part">
+    <h2>Views and modifiers</h2>
+    <ul><li><code>Text</code>, <code>Image</code>, <code>VStack</code>, <code>HStack</code>, <code>ZStack</code>, <code>Spacer</code>, <code>Divider</code>, <code>Group</code>, <code>ForEach</code>, <code>Button</code>, <code>Toggle</code>, <code>Slider</code>, <code>ProgressView</code>, and the shapes <code>Rectangle</code>, <code>RoundedRectangle</code>, <code>Circle</code>, <code>Capsule</code>.</li><li><code>padding</code>, <code>frame</code>, <code>background</code>, <code>foregroundColor</code>, <code>font</code>, <code>opacity</code>, <code>offset</code>, <code>cornerRadius</code>, <code>border</code>, <code>onTapGesture</code>, <code>onAppear</code>, <code>disabled</code>.</li><li><code>@State</code> and <code>@Binding</code> (<code>$value</code>). Your own views can take parameters and bindings.</li><li>Modifiers that only polish the look on a Mac (shadow, animation, transitions) are accepted and ignored.</li></ul>
+    <p>On the Wii, point and press <kbd>A</kbd> to click. The D-pad moves a focus ring.</p>
+  </div>
+  <div class="doc-part">
+    <h2>What doesn't</h2>
+    <p><code>NavigationStack</code>, <code>List</code> scrolling, gestures other than tap, <code>@Observable</code> models, Combine and animation. Use <a class='inline' href='swift.html'>plain Swift</a> types and <code>ForEach</code> instead.</p>
+  </div>
+
+  <div class="guide__pager"><a href="swift.html">← Swift</a><a href="ui-designer.html">UI designer →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution Editor</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution Editor. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>

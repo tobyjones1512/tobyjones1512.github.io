@@ -46,6 +46,7 @@
       <a href="homebrew.html">Overview</a>
       <a href="games.html">Make a game</a>
       <a href="swift.html" aria-current="page">Swift</a>
+      <a href="swiftui.html">SwiftUI</a>
       <a href="ui-designer.html">UI designer</a>
       <a href="node-editor.html">Node editor</a>
       <a href="agents.html">Coding agents</a>
@@ -84,14 +85,15 @@ func appOnButton(_ id: Int) {
   </div>
   <div class="doc-part">
     <h2>What works</h2>
-    <ul><li>Types: <code>Int</code>, <code>Double</code>, <code>Bool</code>, <code>String</code>, <code>UInt32</code>, <code>UInt8</code>, <code>Float</code>, your own structs and enums, and fixed-size arrays.</li><li><code>let</code>, <code>var</code>, functions, <code>if</code>, <code>while</code>, <code>for</code> over ranges and arrays, <code>switch</code>, string interpolation, struct methods.</li><li>Numbers don't convert on their own: write <code>Double(n)</code> or <code>Int(x)</code>.</li><li>Built in: <code>setText</code>, <code>getText</code>, <code>setVisible</code>, <code>setColor</code>, <code>randomInt</code>, <code>exitApp</code>, <code>abs</code>, <code>min</code>, <code>max</code>, <code>sqrt</code>, <code>sin</code>, <code>cos</code>, <code>pow</code>, and the drawing, input and sound functions in <a class='inline' href='games.html'>Make a game</a>.</li></ul>
+    <ul><li>Types: <code>Int</code>, <code>Double</code>, <code>Bool</code>, <code>String</code>, <code>UInt32</code>, <code>UInt8</code>, <code>Float</code>, optionals (<code>Int?</code>), arrays, dictionaries, tuples, structs, classes, enums (with raw values or payloads) and protocols.</li><li>Generics: <code>Stack&lt;Int&gt;</code> and <code>func pick&lt;T&gt;(...)</code>.</li><li>Closures and <code>map</code>, <code>filter</code>, <code>reduce</code>, <code>sorted</code>, <code>forEach</code>, <code>contains</code>; <code>guard</code>, <code>if let</code>, <code>if case</code>, <code>switch</code> with patterns, <code>??</code>, <code>?.</code>.</li><li>Extensions, static and computed properties, <code>inout</code>, nested functions, default arguments, string interpolation and common string methods.</li><li>Numbers don't convert on their own: write <code>Double(n)</code> or <code>Int(x)</code>.</li><li>Built in: <code>setText</code>, <code>getText</code>, <code>setVisible</code>, <code>setColor</code>, <code>randomInt</code>, <code>exitApp</code>, <code>print</code> (shows in an on-screen log), <code>abs</code>, <code>min</code>, <code>max</code>, <code>sqrt</code>, <code>sin</code>, <code>cos</code>, <code>pow</code>, and the drawing, input and sound functions in <a class='inline' href='games.html'>Make a game</a>.</li></ul>
+    <p>Want screens built from views instead? See <a class='inline' href='swiftui.html'>SwiftUI</a>.</p>
   </div>
   <div class="doc-part">
     <h2>What doesn't</h2>
-    <p>Optionals, closures, classes, protocols, generics, dictionaries, tuples, <code>try</code>/<code>throw</code> and the standard library. Strings are limited to 127 characters, and arrays can't be passed to functions. Each of these gives a clear error. For anything else, add a C file to <code>source/</code>; it works alongside the Swift.</p>
+    <p>Class inheritance, protocol extensions, <code>try</code>/<code>throw</code>, <code>defer</code>, async/await and Foundation. Strings are limited to 127 characters, and classes are never freed. Each gives a clear error. For anything else, add a C file to <code>source/</code>; it works alongside the Swift.</p>
   </div>
 
-  <div class="guide__pager"><a href="games.html">← Make a game</a><a href="ui-designer.html">UI designer →</a></div>
+  <div class="guide__pager"><a href="games.html">← Make a game</a><a href="swiftui.html">SwiftUI →</a></div>
   </article>
 </main>
 
