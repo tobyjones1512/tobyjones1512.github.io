@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Models & textures - Revolution Editor Guide</title>
-<meta name="description" content="Edit BRRES files, import OBJ and COLLADA models, and work with textures, normal maps and images.">
+<meta name="description" content="Edit BRRES files, import OBJ and COLLADA models, and work with textures.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
 <meta property="og:title" content="Models & textures - Revolution Editor Guide">
-<meta property="og:description" content="Edit BRRES files, import OBJ and COLLADA models, and work with textures, normal maps and images.">
+<meta property="og:description" content="Edit BRRES files, import OBJ and COLLADA models, and work with textures.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -30,46 +30,48 @@
 </header>
 
 <main class="guide">
-  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
-    <a href="index.html">Overview</a>
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
     <a href="getting-started.html">Getting started</a>
+    <details class="guide__group" open><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html" aria-current="page">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
     <a href="disc-tools.html">Disc tools</a>
-    <a href="archives.html">Archives (SZS / ARC)</a>
-    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
-    <a href="models-textures.html" aria-current="page">Models & textures</a>
-    <a href="audio-text-ui.html">Audio, text & menus</a>
-    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
-    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
-    <a href="homebrew.html">Wii homebrew</a>
-    <a href="swift.html">Swift</a>
-    <a href="ui-designer.html">UI designer</a>
-    <a href="node-editor.html">Node editor</a>
-    <a href="agents.html">Coding agents</a>
-    <a href="testing.html">Testing & shipping</a>
-    <a href="faq.html">FAQ & troubleshooting</a>
+    <details class="guide__group"><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
   </nav>
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
   <h1>Models & textures</h1>
-  <p class="guide__lede">Edit BRRES files, import OBJ and COLLADA models, and work with textures, normal maps and images.</p>
+  <p class="guide__lede">Edit BRRES files, import OBJ and COLLADA models, and work with textures.</p>
   <div class="doc-part">
-    <h2>The BRRES editor</h2>
-    <p>A BRRES bundles a model, its textures and its animations. The editor lists every resource grouped by type. Select one to see it: a 3D viewer for models (drag to orbit, scroll to zoom), a preview for textures, and a keyframe summary for texture animations.</p>
-    <ul><li><strong>Add File…</strong>: add a texture from an image, an <code>.obj</code> (converted to a real model, using its <code>.mtl</code> diffuse colours), or a raw resource.</li><li><strong>Replace from Image…</strong> re-encodes a texture; <strong>Export PNG…</strong> saves it out.</li><li><strong>Extract Raw / Replace Raw From File…</strong> for any resource.</li><li><strong>Rename</strong> and <strong>Delete</strong>. Deleting can't be undone once the archive is saved.</li><li>Resource types without a dedicated editor are kept byte-for-byte, so opening and saving never corrupts them.</li></ul>
+    <h2>BRRES editor</h2>
+    <p>A BRRES holds a model, its textures and animations. Select a resource to see it (drag to orbit a model). You can add a texture from an image or a model from an <code>.obj</code>, replace or export a texture as PNG, rename and delete.</p>
   </div>
   <div class="doc-part">
-    <h2>Importing 3D models</h2>
-    <p>Every model import accepts <code>.obj</code> (with <code>.mtl</code> and textures) and COLLADA <code>.dae</code>. A <code>.dae</code> is converted to an OBJ behind the scenes, so it works everywhere an OBJ does: BRRES models, collision, sky and the Double Dash tools.</p>
-    <p>The <em>Build for</em> setting in Settings &gt; Games chooses how models and collision are encoded. <strong>Dolphin-compatible</strong> is small and fast to build. <strong>Hardware-compatible</strong> uses the community-standard encoders (triangle strips, mipmapped textures, collision as Wiimm's tools build it) for tracks that must run on a real Wii.</p>
+    <h2>Importing models</h2>
+    <p>Everywhere you can import an <code>.obj</code> you can import a COLLADA <code>.dae</code> too. In <strong>Settings &gt; Games</strong>, <em>Build for</em> picks <strong>Dolphin-compatible</strong> (small, quick) or <strong>Hardware-compatible</strong> (what a real Wii needs).</p>
   </div>
   <div class="doc-part">
     <h2>Normal maps</h2>
-    <p>Right-click a texture and choose <strong>Normal Map…</strong> to create one from the texture's brightness (treated as height) or to bake a normal map's relief into the texture.</p>
-    <ul><li>Choose the output format: RGB565 is half the size of RGBA32; CMPR is smallest but blocky.</li><li>Light = high by default, so grout and cracks sink in. Flip it for textures where the dark parts stick out.</li><li>The relief is baked into pixels because Mario Kart Wii's course shader has no per-pixel lighting. Match the direction to the track's sun.</li></ul>
+    <p>Right-click a texture and choose <strong>Normal Map…</strong> to create one from its brightness, or to bake relief into the texture. Mario Kart Wii has no per-pixel lighting, so the effect is baked in.</p>
   </div>
   <div class="doc-part">
-    <h2>Other viewers</h2>
-    <ul><li><strong>TPL</strong>: view every image in a texture bank and export PNG. It doesn't re-encode back to TPL.</li><li><strong>OBJ</strong> and <strong>images</strong> (PNG, JPEG, GIF, TIFF, BMP): view-only previews.</li><li><strong>Text and source files</strong> open in a code editor with syntax highlighting, undo and Find (<kbd>⌘F</kbd>).</li><li><strong>Open in…</strong> hands a file to the external editor you set in Settings, such as Blender or Photoshop.</li></ul>
+    <h2>Viewers</h2>
+    <p>TPL texture banks, OBJ models and images open as read-only previews. Text and source files open in a code editor with highlighting and Find.</p>
   </div>
 
   <div class="guide__pager"><a href="mkwii-tracks.html">← Mario Kart Wii tracks</a><a href="audio-text-ui.html">Audio, text & menus →</a></div>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Make a game - Revolution Editor Guide</title>
+<meta name="description" content="Draw sprites and text, read the controllers and play sounds, at 60 frames a second.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="Make a game - Revolution Editor Guide">
+<meta property="og:description" content="Draw sprites and text, read the controllers and play sounds, at 60 frames a second.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution Editor app icon">
+    Revolution Editor
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
+    <a href="getting-started.html">Getting started</a>
+    <details class="guide__group"><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
+    <a href="disc-tools.html">Disc tools</a>
+    <details class="guide__group" open><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html" aria-current="page">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>Make a game</h1>
+  <p class="guide__lede">Draw sprites and text, read the controllers and play sounds, at 60 frames a second.</p>
+  <div class="doc-part">
+    <h2>Start</h2>
+    <p>Create a project with <strong>Game: Swift</strong>, <strong>Game: C</strong> or <strong>Game: nodes</strong> (<a class='inline' href='homebrew.html'>Wii Homebrew</a>). You get a small ball-and-paddle game with its own sprite and sound. Press <strong>Build &amp; Run</strong> to play it.</p>
+    <figure class="shot"><img src="../assets/shots/game.png" width="640" height="480" alt="The starter game: a ball bouncing above a paddle, with a score" loading="lazy"><figcaption>The starter game. This frame is drawn by the same code the Wii runs, in a Mac test harness.</figcaption></figure>
+  </div>
+  <div class="doc-part">
+    <h2>How a game works</h2>
+    <p>Every frame, the app calls two functions you write:</p>
+    <ul><li><strong>Update</strong> (<code>appOnFrame</code>): read the controllers, move things, check collisions.</li><li><strong>Draw</strong> (<code>appOnDraw</code>): draw everything. The screen is 640 × 480 with y pointing down.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Example (Swift)</h2>
+    <pre><code>var x = 100
+
+func appOnFrame() {
+    if held(Button.right) { x += 4 }
+    if pressed(Button.a) { playSound(Sound.blip) }
+}
+
+func appOnDraw() {
+    drawSprite(Sprite.ball, x, 200)
+    drawText("Score 0", 20, 16, size: 24)
+}</code></pre>
+  </div>
+  <div class="doc-part">
+    <h2>Pictures and sound</h2>
+    <p>Put images (<code>.png</code>, <code>.jpg</code>) and sounds (<code>.wav</code>, <code>.mp3</code>, …) in the project's <code>assets/</code> folder. Each is named after its file: <code>ball.png</code> is <code>Sprite.ball</code>, <code>blip.wav</code> is <code>Sound.blip</code>. Keep sprites small and sounds short; they're stored in memory.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Drawing</h2>
+    <ul><li><code>drawRect(x, y, w, h, r:, g:, b:, a:)</code>: a coloured box.</li><li><code>drawText(text, x, y, size:, r:, g:, b:)</code>: text. Sizes 16, 24, 32 and 48 are always available.</li><li><code>drawSprite(sprite, x, y)</code>, <code>drawSpriteScaled(…)</code> to resize or flip, and <code>drawSpriteRegion(…)</code> for sprite sheets.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Controllers</h2>
+    <ul><li><code>held(button)</code> and <code>pressed(button)</code> for the Wii Remote buttons. <code>pressed</code> is true only on the frame the button goes down.</li><li><code>stickX()</code> and <code>stickY()</code> for a Nunchuk, Classic Controller or GameCube stick (−1 to 1).</li><li><code>pointerX()</code>, <code>pointerY()</code> and <code>pointerVisible()</code> for pointing with the Wii Remote.</li><li>Up to four players: add <code>player: 1</code>, <code>2</code> or <code>3</code>. A GameCube pad or Classic Controller counts as that player's Wii Remote.</li></ul>
+    <p>Other helpers: <code>overlaps(…)</code> for rectangle collisions, <code>randomInt(lo, hi)</code>, <code>playSound(sound)</code>.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Without code</h2>
+    <p>Choose <strong>Game: nodes</strong>. The <a class='inline' href='node-editor.html'>node editor</a> has <strong>On Draw</strong>, <strong>Draw Rectangle</strong>, <strong>Draw Sprite</strong>, <strong>Play Sound</strong> and input nodes such as <strong>Button Held</strong> and <strong>Stick Left/Right</strong>.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Good to know</h2>
+    <ul><li>Drawing uses the Wii's graphics hardware, so many sprites per frame is fine.</li><li>On a widescreen TV the 4:3 picture keeps its shape with bars at the sides.</li><li>Games can still use the <a class='inline' href='ui-designer.html'>UI designer</a> for menus and score text; widgets draw on top of your game.</li></ul>
+  </div>
+
+  <div class="guide__pager"><a href="homebrew.html">← Overview</a><a href="swift.html">Swift →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution Editor</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution Editor. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>

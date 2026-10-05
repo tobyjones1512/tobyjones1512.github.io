@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Swift - Revolution Editor Guide</title>
-<meta name="description" content="Write Wii app logic in Swift. It's translated to C and built with devkitPro.">
+<meta name="description" content="Write app and game logic in Swift. It's translated to C and built with devkitPro.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
 <meta property="og:title" content="Swift - Revolution Editor Guide">
-<meta property="og:description" content="Write Wii app logic in Swift. It's translated to C and built with devkitPro.">
+<meta property="og:description" content="Write app and game logic in Swift. It's translated to C and built with devkitPro.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -30,37 +30,40 @@
 </header>
 
 <main class="guide">
-  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
-    <a href="index.html">Overview</a>
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
     <a href="getting-started.html">Getting started</a>
+    <details class="guide__group"><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
     <a href="disc-tools.html">Disc tools</a>
-    <a href="archives.html">Archives (SZS / ARC)</a>
-    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
-    <a href="models-textures.html">Models & textures</a>
-    <a href="audio-text-ui.html">Audio, text & menus</a>
-    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
-    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
-    <a href="homebrew.html">Wii homebrew</a>
-    <a href="swift.html" aria-current="page">Swift</a>
-    <a href="ui-designer.html">UI designer</a>
-    <a href="node-editor.html">Node editor</a>
-    <a href="agents.html">Coding agents</a>
-    <a href="testing.html">Testing & shipping</a>
-    <a href="faq.html">FAQ & troubleshooting</a>
+    <details class="guide__group" open><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html" aria-current="page">Swift</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
   </nav>
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
   <h1>Swift</h1>
-  <p class="guide__lede">Write Wii app logic in Swift. It's translated to C and built with devkitPro.</p>
+  <p class="guide__lede">Write app and game logic in Swift. It's translated to C and built with devkitPro.</p>
   <div class="doc-part">
     <h2>How it works</h2>
-    <p>devkitPro's compiler can't build Swift for the Wii's PowerPC processor, so Revolution Editor translates a <strong>subset of Swift</strong> to C each time you build, then devkitPPC compiles that. You write real Swift syntax; the translator checks types and reports errors in the usual <code>file:line:column: error:</code> form in the Console.</p>
-    <p>This is a deliberately small language. It covers the logic of menus, tools and simple games, not the whole Swift language or its standard library.</p>
+    <p>The Wii's processor has no Swift compiler, so Revolution Editor translates a <strong>subset of Swift</strong> to C each time you build. You write normal Swift; mistakes show up in the Console like <code>swift/main.swift:12:5: error: …</code>.</p>
   </div>
   <div class="doc-part">
-    <h2>Start a Swift app</h2>
-    <ol><li>Choose <strong>File &gt; New &gt; Wii Homebrew &gt; Project…</strong> and pick <strong>Swift: UI app (designer + Swift)</strong>.</li><li>Design the screen in <code>ui/main.wiiui</code> with the <a class='inline' href='ui-designer.html'>UI designer</a>.</li><li>Write the logic in <code>swift/main.swift</code>. Every <code>.swift</code> file in the <code>swift/</code> folder is translated together.</li><li>Press <strong>Build &amp; Run</strong>.</li></ol>
-    <p>The Swift code is edited in the built-in code editor, with syntax highlighting.</p>
+    <h2>Start</h2>
+    <p>Choose <strong>Swift: UI app</strong> or <strong>Game: Swift</strong> when you create a project, then edit <code>swift/main.swift</code>. Every <code>.swift</code> file in the <code>swift/</code> folder is used.</p>
   </div>
   <div class="doc-part">
     <h2>Example</h2>
@@ -72,29 +75,23 @@ func appOnButton(_ id: Int) {
         setText(UI.status, "Pressed \(count)")
     }
 }</code></pre>
-    <p><code>UI.go</code> is the widget named <code>go</code> in your design. The editor reports a clear error if no such widget exists.</p>
+    <p><code>UI.go</code> is the widget called <code>go</code> in your screen design.</p>
   </div>
   <div class="doc-part">
-    <h2>Entry points</h2>
-    <p>Define any of these and the app calls them:</p>
-    <ul><li><code>func appOnStart()</code>: once, at launch.</li><li><code>func appOnFrame()</code>: every frame.</li><li><code>func appOnButton(_ id: Int)</code>: when a button widget is clicked.</li><li><code>func appOnWpad(_ pressed: UInt32)</code>: when Wii Remote buttons are pressed. Test them with <code>Button.a</code>, <code>.b</code>, <code>.one</code>, <code>.two</code>, <code>.plus</code>, <code>.minus</code>, <code>.up</code>, <code>.down</code>, <code>.left</code>, <code>.right</code>, for example <code>if pressed &amp; Button.a != 0</code>.</li></ul>
-    <div class="callout">A hook can come from Swift <em>or</em> the node graph, not both. If both handle the same one, the build stops and says so.</div>
+    <h2>Functions the app calls</h2>
+    <ul><li><code>appOnStart()</code> once at launch, <code>appOnFrame()</code> and <code>appOnDraw()</code> every frame (see <a class='inline' href='games.html'>Make a game</a>).</li><li><code>appOnButton(_ id: Int)</code> when a button is clicked. <code>appOnWpad(_ pressed: UInt32)</code> when Wii Remote buttons are pressed.</li></ul>
+    <div class="callout">Each of these can come from Swift <em>or</em> the node graph, not both. If both handle the same one, the build stops and says so.</div>
   </div>
   <div class="doc-part">
     <h2>What works</h2>
-    <ul><li><strong>Types</strong>: <code>Int</code>, <code>UInt32</code>, <code>UInt8</code>, <code>Double</code>, <code>Float</code>, <code>Bool</code>, <code>String</code>, your own <code>struct</code> and <code>enum</code>, and fixed-size arrays.</li><li><strong>Statements</strong>: <code>let</code> and <code>var</code>, functions (with argument labels), <code>if</code>/<code>else</code>, <code>while</code>, <code>repeat</code>-<code>while</code>, <code>for</code> over ranges (<code>0..&lt;n</code>, <code>0...n</code>) and arrays, <code>switch</code> (must be exhaustive), <code>break</code>, <code>continue</code>, <code>return</code>.</li><li><strong>Expressions</strong>: arithmetic, comparison, logic and bit operators, the ternary <code>?:</code>, and string interpolation like <code>"Score \(score)"</code>. Strings join with <code>+</code> and compare with <code>==</code>.</li><li><strong>Structs</strong> have stored properties (with defaults), methods, <code>mutating</code> methods and the usual memberwise initialiser, <code>Point(x: 1, y: 2)</code>. <strong>Enums</strong> are plain cases.</li><li><strong>Arrays</strong> are fixed size: <code>[Int](repeating: 0, count: 8)</code> or <code>[1, 2, 3]</code>, with <code>.count</code> and subscripting. An out-of-range index stops the app instead of corrupting memory.</li><li>Numbers don't convert on their own, as in Swift: write <code>Double(n)</code> or <code>Int(x)</code>.</li></ul>
-  </div>
-  <div class="doc-part">
-    <h2>Built-in functions</h2>
-    <ul><li><code>setText(_ widget: Int, _ text: String)</code>, <code>getText(_ widget: Int) -&gt; String</code></li><li><code>setVisible(_ widget: Int, _ visible: Bool)</code>, <code>setColor(_ widget: Int, _ r: Int, _ g: Int, _ b: Int)</code> (0 to 255; the text colour for labels, the fill for everything else)</li><li><code>frameCount() -&gt; Int</code>, <code>randomInt(_ lo: Int, _ hi: Int) -&gt; Int</code>, <code>exitApp()</code></li><li><code>abs</code>, <code>min</code>, <code>max</code> (Int or Double), <code>sqrt</code>, <code>sin</code>, <code>cos</code>, <code>tan</code>, <code>floor</code>, <code>ceil</code>, <code>pow</code></li></ul>
+    <ul><li>Types: <code>Int</code>, <code>Double</code>, <code>Bool</code>, <code>String</code>, <code>UInt32</code>, <code>UInt8</code>, <code>Float</code>, your own structs and enums, and fixed-size arrays.</li><li><code>let</code>, <code>var</code>, functions, <code>if</code>, <code>while</code>, <code>for</code> over ranges and arrays, <code>switch</code>, string interpolation, struct methods.</li><li>Numbers don't convert on their own: write <code>Double(n)</code> or <code>Int(x)</code>.</li><li>Built in: <code>setText</code>, <code>getText</code>, <code>setVisible</code>, <code>setColor</code>, <code>randomInt</code>, <code>exitApp</code>, <code>abs</code>, <code>min</code>, <code>max</code>, <code>sqrt</code>, <code>sin</code>, <code>cos</code>, <code>pow</code>, and the drawing, input and sound functions in <a class='inline' href='games.html'>Make a game</a>.</li></ul>
   </div>
   <div class="doc-part">
     <h2>What doesn't</h2>
-    <p>These produce a clear error saying so: optionals, closures, classes, protocols, generics, dictionaries, tuples, <code>guard</code>, <code>try</code>/<code>throw</code>, overloaded functions, custom initialisers, and the Swift standard library and Foundation. Arrays can't be passed to functions or copied (keep them in a global), and strings are limited to 127 characters.</p>
-    <p>For anything else, write a C or C++ file in <code>source/</code>. It lives happily alongside the Swift.</p>
+    <p>Optionals, closures, classes, protocols, generics, dictionaries, tuples, <code>try</code>/<code>throw</code> and the standard library. Strings are limited to 127 characters, and arrays can't be passed to functions. Each of these gives a clear error. For anything else, add a C file to <code>source/</code>; it works alongside the Swift.</p>
   </div>
 
-  <div class="guide__pager"><a href="homebrew.html">← Wii homebrew</a><a href="ui-designer.html">UI designer →</a></div>
+  <div class="guide__pager"><a href="games.html">← Make a game</a><a href="ui-designer.html">UI designer →</a></div>
   </article>
 </main>
 
