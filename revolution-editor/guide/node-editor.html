@@ -72,6 +72,10 @@
     <ul><li><strong>Events</strong>: On Start, On Every Frame, On Draw, On Button Pressed, On Wii Remote Button.</li><li><strong>Flow</strong>: Branch (true, false, then regardless), Repeat, Exit App.</li><li><strong>Widgets</strong>: get or set text, set visibility or colour, get or set position, move, get size.</li><li><strong>Variables</strong>: a Get and a Set for each of number, text, Boolean and vector, plus <strong>Toggle</strong> to flip a Boolean.</li><li><strong>Game</strong>: draw a rectangle, text or sprite, play a sound, play or stop <strong>music</strong> (a <code>.brstm</code> in <code>assets/</code>). <strong>Input</strong>: button held or pressed, stick, pointer.</li><li><strong>Values and maths</strong>: numbers, text, vectors, variables, add, subtract, compare, random, join text, and more.</li><li><strong>Text</strong>: Join Text, Text Equals, and <strong>Number</strong>, <strong>Boolean</strong>, <strong>Vector</strong> and <strong>Colour to Text</strong> to show any value in a label or on screen.</li></ul>
   </div>
   <div class="doc-part">
+    <h2>Frame rate</h2>
+    <p>In the program graph, open the <strong>Graph</strong> menu and choose a <strong>Frame rate</strong>: 60 (the default), 30, 20, 15 or 10 frames per second. Slower rates give heavy games more time per frame, but everything that moves per frame moves less often, so adjust your speeds to match. Swift code can call <code>setFrameRate(30)</code>.</p>
+  </div>
+  <div class="doc-part">
     <h2>Screen coordinates</h2>
     <p>In the node editor, <code>0, 0</code> is the <strong>bottom left</strong> of the screen and Y counts up (the <strong>Origin</strong> menu in the top bar switches a graph back to top left; graphs made before this option started there). Draw, sprite, text, pointer and widget-position nodes all follow this, and <strong>Get Screen Size</strong> gives the screen's width and height as a vector. Graphs made before this change keep their old top-left origin.</p>
   </div>
@@ -84,6 +88,21 @@
     <p>Every <code>.wiiui</code> file in the project is a screen, named after its file (<code>main.wiiui</code> is the first one shown). Use <strong>Switch UI Screen</strong> to show another; only the current screen's widgets are drawn and clickable. Widget names must be unique across screens. Create more with <strong>New &gt; UI Design</strong>.</p>
   </div>
   <div class="doc-part">
+    <h2>Tidying up</h2>
+    <ul><li><strong>Cleanup</strong> arranges every node into neat left-to-right columns, one block per event, with value nodes next to what uses them.</li><li><strong>Add Box</strong> draws a labelled, coloured box to group nodes. Type its name in the title bar, drag the title bar to move the box and everything inside it, drag the corner to resize, and right-click for colours.</li><li><strong>Analyze</strong> looks for blocks that never run, events and functions that do nothing, unused variables and values, maths that could be worked out in advance, and decisions that never change. Tick what you want and press <strong>Perform Suggestions</strong>; undo reverses it all in one step.</li></ul>
+    <p>When the app is built, those clean-ups, fixed maths and always-the-same decisions are also applied automatically, and variables nothing uses are left out, so the generated code stays small and quick.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Seeing the code, and editing it as C++</h2>
+    <p><strong>Code</strong> shows the C that your graph turns into (C++ accepts it as is). <strong>Convert to C++ File</strong> saves it as a <code>.cpp</code> in <code>source/</code> and builds from that instead: from then on you edit the C++ and the graph no longer affects the app. <strong>Re-attach Graph</strong> goes back to the graph and deletes that file. Sprite actors can be viewed but not converted yet.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Sprite actors</h2>
+    <p>To make many copies of one sprite (bullets, enemies, coins), give it its own logic file. Choose <strong>New &gt; Sprite Actor</strong>, or set an existing graph's <strong>Type</strong> to Sprite Actor in the top bar, then pick its <strong>Sprite</strong> from your <code>assets/</code> folder. The file's name is the actor's name.</p>
+    <ul><li>In the actor's own graph, <strong>On Spawn</strong> runs once when a copy is created and <strong>On Update</strong> runs every frame for each copy. The sprite draws itself.</li><li>The actor graph's <strong>variables belong to each copy</strong>, so every bullet can have its own speed or timer.</li><li><strong>Get / Set Self Position</strong>, <strong>Move Self</strong> and <strong>Destroy Self</strong> work on the copy that is running. <strong>Touching Sprite</strong> is true when the copy overlaps any copy of another actor (or its own kind), and <strong>Destroy Touching Sprites</strong> removes them, and <strong>Destroy All</strong> removes every copy of an actor, from any file.</li><li>In your main graph (or inside another actor) use <strong>Spawn Sprite</strong>, pick the actor, and give it a position. Up to 64 copies of each actor can exist at once.</li></ul>
+    <p>Sprite positions are the sprite's bottom-left corner, counting up from the bottom of the screen. Sprite actors can't use functions or the main program's events yet.</p>
+  </div>
+  <div class="doc-part">
     <h2>Functions</h2>
     <p>Add a <strong>Define Function</strong> node, name it, and build what it does underneath it. Use <strong>Call Function</strong> anywhere to run it, then carry on. Functions share the graph's variables.</p>
   </div>
@@ -94,6 +113,7 @@
   <div class="doc-part">
     <h2>Variables</h2>
     <p>The <strong>Variables</strong> panel holds numbers, text, Boolean (yes/no) or vector values that last while the app runs. Read them with Get blocks and change them with Set blocks.</p>
+    <p>Press <strong>Global</strong> on a variable to make it global: the program's logic and every sprite actor read and change the same single value, and other files list it under <em>Global from other files</em>. Each shared name can be defined in one file only.</p>
     <p>A <strong>vector</strong> is an x and y pair, like a position or a speed. Type it as <code>x, y</code> (for example <code>5, 6</code>) or build one with <strong>Make Vector</strong>. <strong>Split Vector</strong> gives back x and y, and <strong>Get Widget Position</strong> / <strong>Get Widget Size</strong> give a widget's position and size as vectors. <strong>Set Widget Position</strong> puts a widget at a vector and <strong>Move Widget</strong> shifts it by one. Also: and <strong>Add Vectors</strong>, <strong>Subtract Vectors</strong>, <strong>Scale Vector</strong> and <strong>Vector Length</strong> do the maths.</p>
   </div>
   <div class="doc-part">
