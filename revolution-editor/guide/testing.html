@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Testing & shipping - Revolution Editor Guide</title>
-<meta name="description" content="Run your mod in Dolphin, check it, and keep a history of your work.">
+<title>Testing your mod - Revolution Editor Guide</title>
+<meta name="description" content="Run it in Dolphin, check it, and keep a history of your work.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
-<meta property="og:title" content="Testing & shipping - Revolution Editor Guide">
-<meta property="og:description" content="Run your mod in Dolphin, check it, and keep a history of your work.">
+<meta property="og:title" content="Testing your mod - Revolution Editor Guide">
+<meta property="og:description" content="Run it in Dolphin, check it, and keep a history of your work.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -30,57 +30,51 @@
 </header>
 
 <main class="guide">
-  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
-    <a href="index.html">Overview</a>
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
     <a href="getting-started.html">Getting started</a>
+    <details class="guide__group"><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
     <a href="disc-tools.html">Disc tools</a>
-    <a href="archives.html">Archives (SZS / ARC)</a>
-    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
-    <a href="models-textures.html">Models & textures</a>
-    <a href="audio-text-ui.html">Audio, text & menus</a>
-    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
-    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
-    <a href="homebrew.html">Wii homebrew</a>
-    <a href="swift.html">Swift</a>
-    <a href="ui-designer.html">UI designer</a>
-    <a href="node-editor.html">Node editor</a>
-    <a href="agents.html">Coding agents</a>
-    <a href="testing.html" aria-current="page">Testing & shipping</a>
-    <a href="faq.html">FAQ & troubleshooting</a>
+    <details class="guide__group"><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html" aria-current="page">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
   </nav>
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
-  <h1>Testing & shipping</h1>
-  <p class="guide__lede">Run your mod in Dolphin, check it, and keep a history of your work.</p>
+  <h1>Testing your mod</h1>
+  <p class="guide__lede">Run it in Dolphin, check it, and keep a history of your work.</p>
   <div class="doc-part">
-    <h2>Run in Emulator</h2>
-    <p>Revolution Editor doesn't contain an emulator. It launches your own installed copy of <a class='inline' href='https://dolphin-emu.org' target='_blank' rel='noopener'>Dolphin</a>, a separate free, open-source Wii/GameCube emulator. If it isn't found automatically, use <strong>Locate Dolphin…</strong> in Settings &gt; Emulator.</p>
-    <p>Choose a <strong>Mode</strong>:</p>
-    <ul><li><strong>Disk (folder)</strong>: run the project folder directly as an extracted disc. It needs <code>sys/boot.bin</code>.</li><li><strong>WAD</strong>: run a channel <code>.wad</code> found in the project.</li><li><strong>Hot Swap</strong>: keep loose files and swap them into a real disc at boot, with no ISO rebuild.</li></ul>
-    <p><strong>Controller / Wii Remote Settings…</strong> opens Dolphin's own input setup first. Console output streams into the app, and <strong>Stop</strong> ends the run.</p>
+    <h2>Run in Dolphin</h2>
+    <p>Revolution Editor launches your own copy of <a class='inline' href='https://dolphin-emu.org' target='_blank' rel='noopener'>Dolphin</a> (a separate, free emulator). If it isn't found, choose it in <strong>Settings &gt; Emulator</strong>. In the Run menu, <strong>Standard Boot</strong> runs a disc, folder or WAD.</p>
   </div>
   <div class="doc-part">
     <h2>Hot Swap</h2>
-    <p>Rebuilding an ISO for every tweak is slow. Hot Swap patches only the files you choose onto a base disc when you launch.</p>
-    <ol><li>In <strong>Settings &gt; Games</strong>, link your base disc.</li><li>In the Project Navigator, right-click a file and choose <strong>Mark for Hot Swap</strong>.</li><li>Pick what it stands in for. For Mario Kart Wii, choose the track slot (for example Mushroom Cup &gt; Luigi Circuit) and <code>My Track.szs</code> will replace <code>beginner_course.szs</code> and its multiplayer copy.</li><li>Press <strong>Hot Swap</strong> in the toolbar. <strong>Remove from Hot Swap</strong> unmarks a file.</li></ol>
-    <p>Only marked files are swapped, so source assets such as <code>.obj</code> and work-in-progress files never land on the disc. Your original disc is never modified.</p>
-    <p><strong>Wii:</strong> the swap is done through Riivolution inside Dolphin. <strong>GameCube:</strong> the app makes a patched APFS clone of your disc (instant, no extra space until written) that boots in Dolphin, and in Nintendont on a real Wii.</p>
+    <p>Skip rebuilding an ISO. Right-click a file and choose <strong>Mark for Hot Swap</strong>, pick what it replaces (for Mario Kart Wii, a track slot), then press <strong>Run</strong>. Only marked files are swapped onto your base disc, which is never changed. On GameCube, the app makes a patched copy of the disc that boots in Dolphin or Nintendont.</p>
   </div>
   <div class="doc-part">
-    <h2>Testing on a real Wii</h2>
-    <p>Dolphin forgives some things real hardware doesn't. Before you take a track to a console, set <strong>Build for: Hardware-compatible</strong> in Settings &gt; Games and rebuild your model and collision. Run <strong>Check Laps</strong> and <strong>Verify Archive</strong> as well, and test early: bisecting a crash gets harder the more you've changed.</p>
+    <h2>Before a real Wii</h2>
+    <p>Switch <em>Build for</em> to <strong>Hardware-compatible</strong> in <strong>Settings &gt; Games</strong>, rebuild, and run <strong>Check Laps</strong> and <strong>Verify Archive</strong>. Test early; a crash is easier to find the fewer changes you've made.</p>
   </div>
   <div class="doc-part">
-    <h2>Source control</h2>
-    <p><strong>Source Control</strong> in the toolbar is a built-in Git panel. It's optional and uses the <code>git</code> already installed on your Mac.</p>
-    <ul><li><strong>Initialize Git Repository Here</strong> starts tracking the project.</li><li>See <strong>Staged</strong> and <strong>Not Staged</strong> files with a diff preview. <strong>Stage All</strong> selects everything.</li><li>Write a message and <strong>Commit</strong> to save a permanent checkpoint.</li><li><strong>Pull</strong> and <strong>Push</strong> sync with a remote such as GitHub. An orange dot on the toolbar button means uncommitted changes.</li></ul>
-  </div>
-  <div class="doc-part">
-    <h2>Sharing your mod</h2>
-    <p>Mods are distributed as patches or archives you built from your own files. Don't distribute copyrighted game data. Check <strong>Verify Archive</strong> passes, make sure the track works on both Dolphin and (if you target it) hardware, and credit anyone whose work you used.</p>
+    <h2>Source Control</h2>
+    <p>The toolbar's <strong>Source Control</strong> is a built-in Git panel: start a repository, see changed files, commit, pull and push. It's optional and uses the Git on your Mac.</p>
   </div>
 
-  <div class="guide__pager"><a href="agents.html">← Coding agents</a><a href="faq.html">FAQ & troubleshooting →</a></div>
+  <div class="guide__pager"><a href="agents.html">← Coding agents</a><a href="faq.html">FAQ →</a></div>
   </article>
 </main>
 

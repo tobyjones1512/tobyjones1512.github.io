@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>FAQ & troubleshooting - Revolution Editor Guide</title>
-<meta name="description" content="Quick answers to the questions that come up most.">
+<title>FAQ - Revolution Editor Guide</title>
+<meta name="description" content="Quick answers to common questions.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
-<meta property="og:title" content="FAQ & troubleshooting - Revolution Editor Guide">
-<meta property="og:description" content="Quick answers to the questions that come up most.">
+<meta property="og:title" content="FAQ - Revolution Editor Guide">
+<meta property="og:description" content="Quick answers to common questions.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -30,60 +30,59 @@
 </header>
 
 <main class="guide">
-  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
-    <a href="index.html">Overview</a>
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
     <a href="getting-started.html">Getting started</a>
+    <details class="guide__group"><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
     <a href="disc-tools.html">Disc tools</a>
-    <a href="archives.html">Archives (SZS / ARC)</a>
-    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
-    <a href="models-textures.html">Models & textures</a>
-    <a href="audio-text-ui.html">Audio, text & menus</a>
-    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
-    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
-    <a href="homebrew.html">Wii homebrew</a>
-    <a href="swift.html">Swift</a>
-    <a href="ui-designer.html">UI designer</a>
-    <a href="node-editor.html">Node editor</a>
-    <a href="agents.html">Coding agents</a>
-    <a href="testing.html">Testing & shipping</a>
-    <a href="faq.html" aria-current="page">FAQ & troubleshooting</a>
+    <details class="guide__group"><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html" aria-current="page">FAQ</a>
   </nav>
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
-  <h1>FAQ & troubleshooting</h1>
-  <p class="guide__lede">Quick answers to the questions that come up most.</p>
+  <h1>FAQ</h1>
+  <p class="guide__lede">Quick answers to common questions.</p>
   <div class="doc-part">
     <h2>General</h2>
-    <div class="faq-item"><h3>Does Revolution Editor include games, keys or an emulator?</h3><p>No. You supply your own disc images, your own <code>key.bin</code>, and (optionally) your own copy of Dolphin. Nothing is bundled or downloaded.</p></div>
-    <div class="faq-item"><h3>Can I download games with it?</h3><p>No, and it never will. It's for managing and modding backups of games you own.</p></div>
-    <div class="faq-item"><h3>Is this the same as Wii Scrubber?</h3><p>It started as a native Mac take on Wii Scrubber and still has all of its disc tools, but it's now a full modding editor. It is an independent reimplementation from public documentation; no Nintendo or Dolphin code is included.</p></div>
+    <div class="faq-item"><h3>Does it include games, keys or an emulator?</h3><p>No. You bring your own discs, key and (optionally) Dolphin.</p></div>
+    <div class="faq-item"><h3>Can I download games with it?</h3><p>No, and it never will.</p></div>
+    <div class="faq-item"><h3>Is this Wii Scrubber?</h3><p>It started as a Mac take on Wii Scrubber and still has all of its disc tools. It's an independent app; no Nintendo or Dolphin code is inside.</p></div>
   </div>
   <div class="doc-part">
-    <h2>Discs and keys</h2>
-    <div class="faq-item"><h3>My Wii disc won't open</h3><p>Check Settings &gt; Keys: a valid 16-byte <code>key.bin</code> is required for Wii discs. Korean discs also need a <code>kkey.bin</code>.</p></div>
-    <div class="faq-item"><h3>Unscrub says it can't match my DIFF</h3><p>Unscrub only works with the DIFF Revolution Editor made when you cleaned that exact image. It can't read the Windows Wii Scrubber's <code>.dif</code> files.</p></div>
-    <div class="faq-item"><h3>Can I replace files inside a GameCube disc?</h3><p>You can browse and extract GameCube discs; edited files in a disc project are written back when you save.</p></div>
-  </div>
-  <div class="doc-part">
-    <h2>Tracks and models</h2>
-    <div class="faq-item"><h3>My track crashes or freezes on a real Wii but works in Dolphin</h3><p>Switch <em>Build for</em> to Hardware-compatible, rebuild your model and collision, and check the Track Budget against retail. Run Check Laps and Verify Archive too.</p></div>
-    <div class="faq-item"><h3>Part of my collision disappears in the 3D view</h3><p>Turn Culling off. If it comes back, those triangles are wound backwards. Fix them in your modelling tool and re-import.</p></div>
-    <div class="faq-item"><h3>My imported model is rotated or lying on its side</h3><p>Most 3D tools export Z-up; Mario Kart Wii is Y-up. Tick <em>Convert Z-up to Y-up</em> when importing.</p></div>
-    <div class="faq-item"><h3>The minimap doesn't show in-game</h3><p>Keep to a couple of thousand triangles: only the road, no scenery, trees or sky. Create Map warns you when you're over.</p></div>
-    <div class="faq-item"><h3>An object appears invisible or missing</h3><p>Link your Mario Kart Wii disc in Settings &gt; Games. The banner over the track editor will offer to copy the missing object files into the project.</p></div>
+    <h2>Modding</h2>
+    <div class="faq-item"><h3>My Wii disc won't open.</h3><p>Check <strong>Settings &gt; Keys</strong>. A 16-byte <code>key.bin</code> is needed.</p></div>
+    <div class="faq-item"><h3>My track crashes on a real Wii but not in Dolphin.</h3><p>Set <em>Build for</em> to Hardware-compatible, rebuild, and check the Track Budget.</p></div>
+    <div class="faq-item"><h3>My imported model is on its side.</h3><p>Most 3D tools use Z-up. Tick <em>Convert Z-up to Y-up</em> when importing.</p></div>
+    <div class="faq-item"><h3>An object is missing in my track.</h3><p>Link your Mario Kart Wii disc in <strong>Settings &gt; Games</strong>; a banner will offer to copy the files.</p></div>
   </div>
   <div class="doc-part">
     <h2>Homebrew</h2>
-    <div class="faq-item"><h3>Can I really write Wii apps in Swift?</h3><p>A subset of it. Revolution Editor translates that subset to C and devkitPro builds it, because the Wii's processor has no Swift compiler. See <a class='inline' href='swift.html'>Swift</a> for what's supported.</p></div>
-    <div class="faq-item"><h3>Does Revolution Editor use AI?</h3><p>No. It can run Claude Code or Codex you've installed yourself, or open Antigravity, on a homebrew project. See <a class='inline' href='agents.html'>Coding agents</a>.</p></div>
-    <div class="faq-item"><h3>The build says devkitPro wasn't found</h3><p>Install devkitPro with the wii-dev group from devkitpro.org, or choose its folder in Settings &gt; Homebrew.</p></div>
+    <div class="faq-item"><h3>Can I really write Wii apps in Swift?</h3><p>A subset of it, translated to C. See <a class='inline' href='swift.html'>Swift</a>.</p></div>
+    <div class="faq-item"><h3>Can I make a game?</h3><p>Yes. See <a class='inline' href='games.html'>Make a game</a>.</p></div>
+    <div class="faq-item"><h3>Does it use AI?</h3><p>No. It can run Claude Code or Codex you've installed, or open Antigravity. See <a class='inline' href='agents.html'>Coding agents</a>.</p></div>
+    <div class="faq-item"><h3>The build says devkitPro wasn't found.</h3><p>Install <a class='inline' href='https://devkitpro.org/wiki/Getting_Started' target='_blank' rel='noopener'>devkitPro</a> with the wii-dev group, or choose its folder in <strong>Settings &gt; Homebrew</strong>.</p></div>
   </div>
   <div class="doc-part">
     <h2>Still stuck?</h2>
-    <p>Email <a class='inline' href='mailto:hello@thecaffeinemediacompany.com?subject=Revolution%20Editor%20Support'>hello@thecaffeinemediacompany.com</a> with a short description, your macOS version and a screenshot if you can. Every message is read.</p>
+    <p>Email <a class='inline' href='mailto:hello@thecaffeinemediacompany.com?subject=Revolution%20Editor%20Support'>hello@thecaffeinemediacompany.com</a> with what happened, your macOS version and a screenshot if you can.</p>
   </div>
 
-  <div class="guide__pager"><a href="testing.html">← Testing & shipping</a><a href="../support.html">Support →</a></div>
+  <div class="guide__pager"><a href="testing.html">← Testing your mod</a><a href="../support.html">Support →</a></div>
   </article>
 </main>
 

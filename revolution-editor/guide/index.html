@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Guide - Revolution Editor</title>
-<meta name="description" content="Tutorials and reference for every feature of Revolution Editor, the native macOS modding editor for Wii and GameCube.">
+<meta name="description" content="Simple guides for Revolution Editor: make Wii apps and games, or mod existing ones.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
 <meta property="og:title" content="Guide - Revolution Editor">
-<meta property="og:description" content="Tutorials and reference for every feature of Revolution Editor, the native macOS modding editor for Wii and GameCube.">
+<meta property="og:description" content="Simple guides for Revolution Editor: make Wii apps and games, or mod existing ones.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -30,45 +30,39 @@
 </header>
 
 <main class="guide">
-  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
-    <a href="index.html" aria-current="page">Overview</a>
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html" aria-current="page">Guide home</a>
     <a href="getting-started.html">Getting started</a>
+    <details class="guide__group"><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
     <a href="disc-tools.html">Disc tools</a>
-    <a href="archives.html">Archives (SZS / ARC)</a>
-    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
-    <a href="models-textures.html">Models & textures</a>
-    <a href="audio-text-ui.html">Audio, text & menus</a>
-    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
-    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
-    <a href="homebrew.html">Wii homebrew</a>
-    <a href="swift.html">Swift</a>
-    <a href="ui-designer.html">UI designer</a>
-    <a href="node-editor.html">Node editor</a>
-    <a href="agents.html">Coding agents</a>
-    <a href="testing.html">Testing & shipping</a>
-    <a href="faq.html">FAQ & troubleshooting</a>
+    <details class="guide__group"><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
   </nav>
   <article class="guide__body" style="max-width:none">
   <a class="doc__back" href="../index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Back to Revolution Editor</a>
   <h1>The guide.</h1>
-  <p class="guide__lede">Step-by-step tutorials and reference for every part of Revolution Editor. New here? Start with <a class="inline" href="getting-started.html">Getting started</a>.</p>
-  <div class="bento bento--2">
-      <a class="tile tile--wide tile--dark" href="getting-started.html"><h3>Getting started</h3><p class="tile__body">Install Revolution Editor, point it at your own keys and discs, and learn your way around the workbench.</p></a>
-      <a class="tile" href="disc-tools.html"><h3>Disc tools</h3><p class="tile__body">Browse, extract, replace, scrub, unscrub, trim and rearrange Wii disc images. This is the original Revolution Disk Scrubber, built into the editor.</p></a>
-      <a class="tile" href="archives.html"><h3>Archives (SZS / ARC)</h3><p class="tile__body">Browse and edit the compressed archives almost every Wii and GameCube game is built from.</p></a>
-      <a class="tile" href="mkwii-tracks.html"><h3>Mario Kart Wii tracks</h3><p class="tile__body">The full track-making toolkit: course data, collision, minimap, sky, cameras, 3D preview and render.</p></a>
-      <a class="tile" href="models-textures.html"><h3>Models & textures</h3><p class="tile__body">Edit BRRES files, import OBJ and COLLADA models, and work with textures, normal maps and images.</p></a>
-      <a class="tile" href="audio-text-ui.html"><h3>Audio, text & menus</h3><p class="tile__body">Make custom music, edit in-game text, and preview menu layouts.</p></a>
-      <a class="tile" href="double-dash.html"><h3>Mario Kart: Double Dash!!</h3><p class="tile__body">Port courses between Double Dash and Mario Kart Wii, in both directions.</p></a>
-      <a class="tile" href="nsmbw.html"><h3>New Super Mario Bros. Wii</h3><p class="tile__body">Open and edit level archives in a visual level editor.</p></a>
-      <a class="tile" href="homebrew.html"><h3>Wii homebrew</h3><p class="tile__body">Write, build and run your own Wii apps in C or C++, powered by your own devkitPro install.</p></a>
-      <a class="tile" href="swift.html"><h3>Swift</h3><p class="tile__body">Write Wii app logic in Swift. It's translated to C and built with devkitPro.</p></a>
-      <a class="tile" href="ui-designer.html"><h3>UI designer</h3><p class="tile__body">Lay out a Wii app's screen visually: drag, resize and style widgets, then build it into C.</p></a>
-      <a class="tile" href="node-editor.html"><h3>Node editor</h3><p class="tile__body">Build app logic by wiring blocks together instead of writing code. It's turned into C when you build.</p></a>
-      <a class="tile" href="agents.html"><h3>Coding agents</h3><p class="tile__body">Have Claude Code, Codex or Antigravity help build your homebrew apps, using your own accounts.</p></a>
-      <a class="tile" href="testing.html"><h3>Testing & shipping</h3><p class="tile__body">Run your mod in Dolphin, check it, and keep a history of your work.</p></a>
-      <a class="tile" href="faq.html"><h3>FAQ & troubleshooting</h3><p class="tile__body">Quick answers to the questions that come up most.</p></a>
-  </div>
+  <p class="guide__lede">New here? Start with <a class='inline' href='getting-started.html'>Getting started</a>. Then pick what you want to do.</p>
+  <h2 class="guide__h2">Make Wii apps and games</h2>
+  <div class="bento bento--3"><a class="tile" href="homebrew.html"><h3>Overview</h3><p class="tile__body">Make your own Wii apps and games in C, C++ or Swift, or with no code at all.</p></a><a class="tile" href="games.html"><h3>Make a game</h3><p class="tile__body">Draw sprites and text, read the controllers and play sounds, at 60 frames a second.</p></a><a class="tile" href="swift.html"><h3>Swift</h3><p class="tile__body">Write app and game logic in Swift. It's translated to C and built with devkitPro.</p></a><a class="tile" href="ui-designer.html"><h3>UI designer</h3><p class="tile__body">Lay out a screen visually: drag, resize and style widgets.</p></a><a class="tile" href="node-editor.html"><h3>Node editor</h3><p class="tile__body">Build logic by joining blocks instead of writing code.</p></a><a class="tile" href="agents.html"><h3>Coding agents</h3><p class="tile__body">Have Claude Code, Codex or Antigravity help build your app, using your own accounts.</p></a></div>
+  <h2 class="guide__h2">Mod existing games</h2>
+  <div class="bento bento--3"><a class="tile" href="disc-tools.html"><h3>Disc tools</h3><p class="tile__body">Browse, extract, replace, shrink and tidy Wii disc images.</p></a><a class="tile" href="archives.html"><h3>Archives</h3><p class="tile__body">Open the compressed archives most Wii and GameCube games are built from.</p></a><a class="tile" href="mkwii-tracks.html"><h3>Mario Kart Wii tracks</h3><p class="tile__body">Edit course data, collision, minimap and sky, then preview the track in 3D.</p></a><a class="tile" href="models-textures.html"><h3>Models & textures</h3><p class="tile__body">Edit BRRES files, import OBJ and COLLADA models, and work with textures.</p></a><a class="tile" href="audio-text-ui.html"><h3>Audio, text & menus</h3><p class="tile__body">Make custom music, edit in-game text and preview menu screens.</p></a><a class="tile" href="double-dash.html"><h3>Mario Kart: Double Dash!!</h3><p class="tile__body">Move courses between Double Dash and Mario Kart Wii.</p></a><a class="tile" href="nsmbw.html"><h3>New Super Mario Bros. Wii</h3><p class="tile__body">Edit levels in a visual editor.</p></a><a class="tile" href="testing.html"><h3>Testing your mod</h3><p class="tile__body">Run it in Dolphin, check it, and keep a history of your work.</p></a></div>
+  <h2 class="guide__h2">Help</h2>
+  <div class="bento bento--3"><a class="tile" href="faq.html"><h3>FAQ</h3><p class="tile__body">Quick answers to common questions.</p></a></div>
   </article>
 </main>
 

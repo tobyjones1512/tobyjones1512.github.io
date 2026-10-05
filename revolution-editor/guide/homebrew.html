@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Wii homebrew - Revolution Editor Guide</title>
-<meta name="description" content="Write, build and run your own Wii apps in C or C++, powered by your own devkitPro install.">
+<title>Wii Homebrew - Revolution Editor Guide</title>
+<meta name="description" content="Make your own Wii apps and games in C, C++ or Swift, or with no code at all.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
-<meta property="og:title" content="Wii homebrew - Revolution Editor Guide">
-<meta property="og:description" content="Write, build and run your own Wii apps in C or C++, powered by your own devkitPro install.">
+<meta property="og:title" content="Wii Homebrew - Revolution Editor Guide">
+<meta property="og:description" content="Make your own Wii apps and games in C, C++ or Swift, or with no code at all.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -30,60 +30,57 @@
 </header>
 
 <main class="guide">
-  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
-    <a href="index.html">Overview</a>
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
     <a href="getting-started.html">Getting started</a>
+    <details class="guide__group"><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
     <a href="disc-tools.html">Disc tools</a>
-    <a href="archives.html">Archives (SZS / ARC)</a>
-    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
-    <a href="models-textures.html">Models & textures</a>
-    <a href="audio-text-ui.html">Audio, text & menus</a>
-    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
-    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
-    <a href="homebrew.html" aria-current="page">Wii homebrew</a>
-    <a href="swift.html">Swift</a>
-    <a href="ui-designer.html">UI designer</a>
-    <a href="node-editor.html">Node editor</a>
-    <a href="agents.html">Coding agents</a>
-    <a href="testing.html">Testing & shipping</a>
-    <a href="faq.html">FAQ & troubleshooting</a>
+    <details class="guide__group" open><summary>Wii Homebrew</summary>
+      <a href="homebrew.html" aria-current="page">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
   </nav>
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
-  <h1>Wii homebrew</h1>
-  <p class="guide__lede">Write, build and run your own Wii apps in C or C++, powered by your own devkitPro install.</p>
+  <h1>Wii Homebrew</h1>
+  <p class="guide__lede">Make your own Wii apps and games in C, C++ or Swift, or with no code at all.</p>
   <div class="doc-part">
-    <h2>What you need</h2>
-    <ul><li><a class='inline' href='https://devkitpro.org/wiki/Getting_Started' target='_blank' rel='noopener'>devkitPro</a> with the <strong>wii-dev</strong> group (devkitPPC and libogc). Revolution Editor doesn't bundle or download it.</li><li><a class='inline' href='https://dolphin-emu.org' target='_blank' rel='noopener'>Dolphin</a> to run what you build, or a real Wii with the Homebrew Channel.</li></ul>
-    <p>Revolution Editor looks for devkitPro in <code>/opt/devkitpro</code> (the installer's default) or <code>$DEVKITPRO</code>. If yours lives elsewhere, choose it in <strong>Settings &gt; Homebrew</strong>, which also shows whether the toolchain was found.</p>
+    <h2>What you can make</h2>
+    <ul><li><strong>Console apps</strong>: plain C or C++ with devkitPro.</li><li><strong>Apps with screens</strong>: design the screen visually, then add logic with <a class='inline' href='swift.html'>Swift</a>, <a class='inline' href='node-editor.html'>nodes</a> or C.</li><li><strong>Games</strong>: sprites, text, sound and controllers, drawn by the Wii's graphics chip. See <a class='inline' href='games.html'>Make a game</a>.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Set up</h2>
+    <p>Install <a class='inline' href='https://devkitpro.org/wiki/Getting_Started' target='_blank' rel='noopener'>devkitPro</a> with the <strong>wii-dev</strong> group. Revolution Editor finds it in <code>/opt/devkitpro</code>, or choose it in <strong>Settings &gt; Homebrew</strong>. You don't need anything else: Revolution Editor does the rest and runs your app in <a class='inline' href='https://dolphin-emu.org' target='_blank' rel='noopener'>Dolphin</a>.</p>
   </div>
   <div class="doc-part">
     <h2>Create a project</h2>
-    <ol><li>Choose <strong>File &gt; New &gt; Wii Homebrew Project…</strong>.</li><li>Name it, pick <strong>C</strong> or <strong>C++</strong>, and choose where to put it.</li><li>Create. The project opens in the workbench with a standard devkitPPC <code>Makefile</code>, a <code>source/main.c</code> (or <code>.cpp</code>) hello-world that draws text and exits on the HOME button, and a <code>.gitignore</code>.</li></ol>
-    <p>Add more <code>.c</code>/<code>.cpp</code> files to <code>source/</code> and headers to <code>include/</code>. Everything opens in the built-in code editor with syntax highlighting, Find and undo.</p>
+    <p>Choose <strong>File &gt; New &gt; Wii Homebrew &gt; Project…</strong>, name it, and pick a template:</p>
+    <figure class="shot"><img src="../assets/shots/new-project.png" width="1600" height="768" alt="The New Wii Homebrew Project sheet" loading="lazy"><figcaption>Pick a template.</figcaption></figure>
+    <ul><li><strong>C</strong> or <strong>C++</strong>: a plain console app.</li><li><strong>C: UI app (designer + nodes)</strong> and <strong>Swift: UI app</strong>: an app with a designed screen.</li><li><strong>Game: C</strong>, <strong>Game: Swift</strong> and <strong>Game: nodes</strong>: a small playable game to start from.</li></ul>
   </div>
   <div class="doc-part">
     <h2>Build and run</h2>
-    <p>When the open folder is a homebrew project, a <strong>Build &amp; Run</strong> button (hammer) appears in the toolbar.</p>
-    <ul><li>Click it to build with <code>make</code> and boot the resulting <code>.dol</code> in Dolphin.</li><li>Use its menu to <strong>Build</strong> without running, or <strong>Clean</strong>.</li><li>Compiler output streams into the Console. The finished <code>.dol</code> and <code>.elf</code> are written next to your sources.</li></ul>
-    <div class="callout">devkitPro's makefiles can't handle spaces in paths (such as <em>On-Device Documents</em>), so Revolution Editor builds in a space-free staging copy under <code>/tmp</code> and copies the result back. Your project can live anywhere.</div>
+    <p>Click <strong>Build &amp; Run</strong> (the hammer) in the toolbar. The app builds, then starts in Dolphin. Its menu can build or clean only. Output appears in the Console. To use it on a real Wii, copy the built <code>.dol</code> to <code>apps/&lt;name&gt;/boot.dol</code> on an SD card.</p>
   </div>
   <div class="doc-part">
-    <h2>On a real Wii</h2>
-    <p>Copy the built <code>.dol</code> to your SD card as <code>apps/&lt;name&gt;/boot.dol</code>, add a <code>meta.xml</code> if you want a title and icon in the Homebrew Channel, and launch it from there.</p>
-  </div>
-  <div class="doc-part">
-    <h2>Visual apps</h2>
-    <p>Instead of a plain console project, create one of the app templates:</p>
-    <ul><li><strong>C: UI app (designer + nodes)</strong>: lay out the screen in the <a class='inline' href='ui-designer.html'>UI designer</a> and wire the logic in the <a class='inline' href='node-editor.html'>Node editor</a>. No code needed.</li><li><strong>Swift: UI app (designer + Swift)</strong>: the same designer, with your logic written in <a class='inline' href='swift.html'>Swift</a>.</li></ul>
-    <p>Either way you can also add hand-written C or C++ files to <code>source/</code>.</p>
-  </div>
-  <div class="doc-part">
-    <h2>Work with an agent</h2>
-    <p>Revolution Editor can hand a project to Claude Code, Codex or Antigravity. See <a class='inline' href='agents.html'>Coding agents</a>.</p>
+    <h2>Next</h2>
+    <ul><li><a class='inline' href='games.html'>Make a game</a></li><li><a class='inline' href='ui-designer.html'>UI designer</a></li><li><a class='inline' href='swift.html'>Swift</a></li><li><a class='inline' href='node-editor.html'>Node editor</a></li><li><a class='inline' href='agents.html'>Coding agents</a></li></ul>
   </div>
 
-  <div class="guide__pager"><a href="nsmbw.html">← New Super Mario Bros. Wii</a><a href="swift.html">Swift →</a></div>
+  <div class="guide__pager"><a href="disc-tools.html">← Disc tools</a><a href="games.html">Make a game →</a></div>
   </article>
 </main>
 

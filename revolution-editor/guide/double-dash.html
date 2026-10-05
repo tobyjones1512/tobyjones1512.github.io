@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mario Kart: Double Dash!! - Revolution Editor Guide</title>
-<meta name="description" content="Port courses between Double Dash and Mario Kart Wii, in both directions.">
+<meta name="description" content="Move courses between Double Dash and Mario Kart Wii.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
 <meta property="og:title" content="Mario Kart: Double Dash!! - Revolution Editor Guide">
-<meta property="og:description" content="Port courses between Double Dash and Mario Kart Wii, in both directions.">
+<meta property="og:description" content="Move courses between Double Dash and Mario Kart Wii.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -30,49 +30,48 @@
 </header>
 
 <main class="guide">
-  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
-    <a href="index.html">Overview</a>
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
     <a href="getting-started.html">Getting started</a>
+    <details class="guide__group" open><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html" aria-current="page">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
     <a href="disc-tools.html">Disc tools</a>
-    <a href="archives.html">Archives (SZS / ARC)</a>
-    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
-    <a href="models-textures.html">Models & textures</a>
-    <a href="audio-text-ui.html">Audio, text & menus</a>
-    <a href="double-dash.html" aria-current="page">Mario Kart: Double Dash!!</a>
-    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
-    <a href="homebrew.html">Wii homebrew</a>
-    <a href="swift.html">Swift</a>
-    <a href="ui-designer.html">UI designer</a>
-    <a href="node-editor.html">Node editor</a>
-    <a href="agents.html">Coding agents</a>
-    <a href="testing.html">Testing & shipping</a>
-    <a href="faq.html">FAQ & troubleshooting</a>
+    <details class="guide__group"><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
   </nav>
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
   <h1>Mario Kart: Double Dash!!</h1>
-  <p class="guide__lede">Port courses between Double Dash and Mario Kart Wii, in both directions.</p>
+  <p class="guide__lede">Move courses between Double Dash and Mario Kart Wii.</p>
   <div class="doc-part">
     <h2>Set up</h2>
-    <p>In <strong>Settings &gt; Games</strong>, link your Double Dash disc. The app reads each slot's minimap position from it, fills the Texture Gallery, and uses it as the base for Hot Swap. Turn on the <strong>Mario Kart: Double Dash!!</strong> tools there too.</p>
+    <p>In <strong>Settings &gt; Games</strong>, link your Double Dash disc and turn on its tools.</p>
   </div>
   <div class="doc-part">
-    <h2>Port Double Dash → Mario Kart Wii</h2>
-    <ol><li>Open your Double Dash disc or its extracted <code>Course</code> folder.</li><li>Right-click a course archive and choose <strong>Port &gt; To Mario Kart Wii</strong>, or use <strong>Port from Double Dash</strong> to convert several courses at once.</li><li>Set the <strong>Scale</strong>. Nintendo's own Wii remake of Mario Circuit is about 1.18× the original, a good starting point.</li><li>Each course comes out as a <code>.szs</code> beside your disc image. Rename it to the track slot you want to replace, for example <code>beginner_course.szs</code>.</li></ol>
-    <p>What comes across: the model, sky, collision (with walls), minimap and course data: start, CPU and item paths, checkpoints, respawn points, item boxes and intro cameras.</p>
+    <h2>Double Dash to Mario Kart Wii</h2>
+    <p>Right-click a course archive and choose <strong>Port &gt; To Mario Kart Wii</strong>. Pick a scale (around 1.18 matches Nintendo's own remake of Mario Circuit). You get a <code>.szs</code> with the model, sky, collision, minimap and course data. Rename it to the slot you want to replace.</p>
   </div>
   <div class="doc-part">
-    <h2>Port Mario Kart Wii → Double Dash</h2>
-    <ol><li>Right-click a Wii track <code>.szs</code> and choose <strong>To Double Dash…</strong>.</li><li>Pick the course slot it <strong>replaces</strong>.</li><li>Optionally <em>Scale to fit the slot's minimap</em>. Double Dash hardcodes each slot's minimap area, so the track is always centred on it; scaling also fills it, which changes how big the track feels to drive. Double Dash courses are roughly 1/1.32 the size of their Wii remakes.</li><li>The app writes the slot's single-player and multiplayer archives (<code>Course/&lt;Slot&gt;.arc</code> and <code>&lt;Slot&gt;L.arc</code>) next to the track.</li></ol>
-    <p>Lightmaps are baked into vertex colours, the minimap is generated, and the course data is checked the way the community's course editor checks it. Mario Kart Wii tolerates a fan of checkpoints around a hairpin that Double Dash doesn't, so non-convex checkpoint quads are repaired automatically.</p>
+    <h2>Mario Kart Wii to Double Dash</h2>
+    <p>Right-click a track <code>.szs</code> and choose <strong>To Double Dash…</strong>. Pick the slot to replace. The app writes both the single-player and multiplayer archives and repairs checkpoints Double Dash can't handle.</p>
   </div>
   <div class="doc-part">
-    <h2>Viewing Double Dash files</h2>
-    <ul><li><code>.bmd</code> / <code>.bdl</code> models open in a view-only 3D viewer with their textures.</li><li><code>.btk</code> and <code>.bca</code> animations open as per-target tracks you can scrub.</li><li><code>.arc</code> course archives browse like any other archive.</li></ul>
-  </div>
-  <div class="doc-part">
-    <h2>Testing</h2>
-    <p>Double Dash is GameCube, and Riivolution is Wii-only, so Hot Swap works differently here. See <a class='inline' href='testing.html'>Testing &amp; shipping</a>.</p>
+    <h2>Viewing</h2>
+    <p><code>.bmd</code>/<code>.bdl</code> models and <code>.btk</code>/<code>.bca</code> animations open as read-only previews. Test with Hot Swap (<a class='inline' href='testing.html'>Testing</a>).</p>
   </div>
 
   <div class="guide__pager"><a href="audio-text-ui.html">← Audio, text & menus</a><a href="nsmbw.html">New Super Mario Bros. Wii →</a></div>

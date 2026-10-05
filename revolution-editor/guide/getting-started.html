@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Getting started - Revolution Editor Guide</title>
-<meta name="description" content="Install Revolution Editor, point it at your own keys and discs, and learn your way around the workbench.">
+<meta name="description" content="Install Revolution Editor and open your first project.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
 <meta property="og:title" content="Getting started - Revolution Editor Guide">
-<meta property="og:description" content="Install Revolution Editor, point it at your own keys and discs, and learn your way around the workbench.">
+<meta property="og:description" content="Install Revolution Editor and open your first project.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -30,63 +30,57 @@
 </header>
 
 <main class="guide">
-  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
-    <a href="index.html">Overview</a>
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
     <a href="getting-started.html" aria-current="page">Getting started</a>
+    <details class="guide__group"><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
     <a href="disc-tools.html">Disc tools</a>
-    <a href="archives.html">Archives (SZS / ARC)</a>
-    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
-    <a href="models-textures.html">Models & textures</a>
-    <a href="audio-text-ui.html">Audio, text & menus</a>
-    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
-    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
-    <a href="homebrew.html">Wii homebrew</a>
-    <a href="swift.html">Swift</a>
-    <a href="ui-designer.html">UI designer</a>
-    <a href="node-editor.html">Node editor</a>
-    <a href="agents.html">Coding agents</a>
-    <a href="testing.html">Testing & shipping</a>
-    <a href="faq.html">FAQ & troubleshooting</a>
+    <details class="guide__group"><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
   </nav>
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
   <h1>Getting started</h1>
-  <p class="guide__lede">Install Revolution Editor, point it at your own keys and discs, and learn your way around the workbench.</p>
+  <p class="guide__lede">Install Revolution Editor and open your first project.</p>
   <div class="doc-part">
     <h2>What you need</h2>
-    <ul><li>A Mac running macOS 27 or later.</li><li>Your own legally obtained game files: a disc image, or an extracted game folder.</li><li>For Wii discs: your own <code>key.bin</code> (16 bytes). Revolution Editor never ships or downloads one.</li><li>Optional: <a class='inline' href='https://dolphin-emu.org' target='_blank' rel='noopener'>Dolphin</a>, the free emulator, if you want to test your mods without leaving the Mac.</li></ul>
-    <div class="callout"><strong>Legal backups only.</strong> Revolution Editor is for editing and testing homebrew mods of games you own. It contains no Nintendo code, keys or game data.</div>
+    <ul><li>A Mac running macOS 27 or later.</li><li>Your own game files: a disc image, or an extracted game folder.</li><li>For Wii discs, your own <code>key.bin</code>. The app never includes or downloads one.</li><li>Optional: <a class='inline' href='https://dolphin-emu.org' target='_blank' rel='noopener'>Dolphin</a>, a free emulator, to test your work.</li></ul>
+    <div class="callout"><strong>Your own games only.</strong> Revolution Editor contains no Nintendo code, keys or game data.</div>
   </div>
   <div class="doc-part">
     <h2>Install</h2>
-    <ol><li>Buy and download Revolution Editor from <a class='inline' href='https://caffeineapps.gumroad.com/l/Wii-disk-scrubber?wanted=true' target='_blank' rel='noopener'>Gumroad</a>.</li><li>Unzip it and drag <strong>Revolution Editor</strong> into your Applications folder.</li><li>Open it. If macOS asks, confirm you want to open an app downloaded from the internet.</li></ol>
+    <ol><li>Download it from <a class='inline' href='https://caffeineapps.gumroad.com/l/Wii-disk-scrubber?wanted=true' target='_blank' rel='noopener'>Gumroad</a>.</li><li>Drag <strong>Revolution Editor</strong> into your Applications folder and open it.</li></ol>
   </div>
   <div class="doc-part">
-    <h2>Add your encryption key</h2>
-    <p>Wii discs are AES-encrypted, so the app needs a key to read them.</p>
-    <ol><li>Open <strong>Settings &gt; Keys</strong> (or the Keys button in the Disc Scrubber window).</li><li>Choose your <code>key.bin</code>. Korean-region discs also need a <code>kkey.bin</code>; most people never do.</li><li>The app remembers your choice. <strong>Forget</strong> clears it.</li></ol>
-    <p>Extracted game folders and GameCube images don't need a key.</p>
+    <h2>Add your key</h2>
+    <p>Wii discs are encrypted. Open <strong>Settings &gt; Keys</strong>, choose your <code>key.bin</code>, and the app remembers it. Extracted folders and GameCube images don't need one.</p>
   </div>
   <div class="doc-part">
     <h2>Open something</h2>
-    <p>Everything starts from the <strong>File &gt; Open</strong> menu:</p>
-    <ul><li><strong>File…</strong> <kbd>⌘O</kbd>: a single <code>.szs</code>, <code>.arc</code>, <code>.kmp</code>, <code>.kcl</code>, <code>.brres</code> or any other supported file.</li><li><strong>Folder…</strong> <kbd>⇧⌘O</kbd>: a project folder, such as an extracted disc or a track you're building.</li><li><strong>Wii/GCN Disc Image…</strong>: browse a disc image directly.</li><li><strong>New Window</strong> <kbd>⇧⌘N</kbd> opens another workbench; recent files live under the Open menu.</li></ul>
-    <p>Folder projects are a live view of the disk. Add a file in Finder, run <code>git checkout</code>, or extract something from another tool and it appears in the sidebar without reopening anything.</p>
+    <ul><li><strong>File &gt; Open &gt; File…</strong> <kbd>⌘O</kbd> for a single file.</li><li><strong>Folder…</strong> <kbd>⇧⌘O</kbd> for a project folder.</li><li><strong>Wii/GCN Disc Image…</strong> to browse a disc.</li></ul>
+    <p>The window has your files on the left, an editor for each file type in the middle, and a console at the bottom. The sidebar updates by itself when files change in Finder.</p>
   </div>
   <div class="doc-part">
-    <h2>The workbench</h2>
-    <ul><li><strong>Project Navigator</strong> (left): your folder, with archives you can expand like folders. Right-click for New, Rename, Duplicate, Copy/Paste, Extract, Convert To, Show in Finder and Move to Trash. Drag files in and out; drags inside the project move, drags from outside copy, and <kbd>⌥</kbd> flips either.</li><li><strong>Editor tabs</strong> (centre): every format opens in its own purpose-built editor. A dot on a tab means unsaved changes. Right-click an archive and choose <em>Open in New Window</em> if you prefer a window.</li><li><strong>Console</strong> (bottom): build, verify and emulator output.</li><li><strong>Toolbar</strong>: Save, Source Control, Disc Scrubber and Hot Swap.</li></ul>
-  </div>
-  <div class="doc-part">
-    <h2>Settings worth knowing</h2>
-    <ul><li><strong>Games</strong>: link your own Mario Kart Wii and Double Dash discs. Missing object models are copied in from them, and their textures and skies fill the Texture Gallery and sky picker. This is also where you turn per-game tool menus on or off, and choose <em>Build for</em> Dolphin-compatible or Hardware-compatible output.</li><li><strong>Archive Editor &amp; Workbench</strong>: compress new archives (Yaz0) by default, open archives in a new window, drag-copies, collapse the console on launch.</li><li><strong>Editing</strong>: how many Undo steps each editor keeps, and the extra height used when snapping points to the ground.</li><li><strong>Emulator</strong>: where Dolphin lives, and whether to dump textures on launch.</li><li><strong>External Editors</strong>: optional apps used for “Open in…”.</li></ul>
-  </div>
-  <div class="doc-part">
-    <h2>Undo history</h2>
-    <p>Every editor keeps a history. Use <strong>Edit &gt; Undo/Redo</strong> (<kbd>⌘Z</kbd>, and <kbd>⌘Y</kbd> for Redo) or open the <strong>History</strong> button in the editor toolbar to see every recorded step and jump straight to any of them, Photoshop-style.</p>
+    <h2>Good to know</h2>
+    <ul><li>Every editor has <strong>Undo</strong> and a <strong>History</strong> list you can jump around in.</li><li>Right-click a file or folder for New, Rename, Duplicate, Extract and more.</li><li><strong>Settings</strong> is where you link your own game discs, set the Dolphin location and choose how models are built.</li></ul>
   </div>
 
-  <div class="guide__pager"><a href="index.html">← Guide overview</a><a href="disc-tools.html">Disc tools →</a></div>
+  <div class="guide__pager"><a href="index.html">← Guide home</a><a href="archives.html">Archives →</a></div>
   </article>
 </main>
 
