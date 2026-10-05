@@ -93,7 +93,7 @@ func appOnDraw() {
   <div class="doc-part">
     <h2>Controllers</h2>
     <ul><li><code>held(button)</code> and <code>pressed(button)</code> for the Wii Remote buttons. <code>pressed</code> is true only on the frame the button goes down.</li><li><code>stickX()</code> and <code>stickY()</code> for a Nunchuk, Classic Controller or GameCube stick (−1 to 1).</li><li><code>pointerX()</code>, <code>pointerY()</code> and <code>pointerVisible()</code> for pointing with the Wii Remote.</li><li>Up to four players: add <code>player: 1</code>, <code>2</code> or <code>3</code>. A GameCube pad or Classic Controller counts as that player's Wii Remote.</li></ul>
-    <p>Other helpers: <code>overlaps(…)</code> for rectangle collisions, <code>randomInt(lo, hi)</code>, <code>playSound(sound)</code>.</p>
+    <p>Other helpers: <code>overlaps(…)</code> for rectangle collisions, <code>randomInt(lo, hi)</code>, <code>playSound(sound)</code>. Music: put a <code>.brstm</code> (for example one from Mario Kart Wii, or made with <strong>Make .brstm</strong>) in <code>assets/</code> and call <code>playMusic(Music.name)</code>; it streams and loops using the file's loop points. <code>stopMusic()</code> and <code>musicPlaying()</code> do what they say. The Play Music node does the same.</p>
   </div>
   <div class="doc-part">
     <h2>Without code</h2>
