@@ -69,7 +69,19 @@
   </div>
   <div class="doc-part">
     <h2>Blocks</h2>
-    <ul><li><strong>Events</strong>: On Start, On Every Frame, On Draw, On Button Pressed, On Wii Remote Button.</li><li><strong>Flow</strong>: Branch (true, false, then regardless), Repeat, Exit App.</li><li><strong>Widgets</strong>: get or set text, set visibility or colour, get or set position, move, get size.</li><li><strong>Variables</strong>: a Get and a Set for each of number, text, Boolean and vector, plus <strong>Toggle</strong> to flip a Boolean.</li><li><strong>Game</strong>: draw a rectangle, text or sprite, play a sound. <strong>Input</strong>: button held or pressed, stick, pointer.</li><li><strong>Values and maths</strong>: numbers, text, vectors, variables, add, subtract, compare, random, join text, and more.</li></ul>
+    <ul><li><strong>Events</strong>: On Start, On Every Frame, On Draw, On Button Pressed, On Wii Remote Button.</li><li><strong>Flow</strong>: Branch (true, false, then regardless), Repeat, Exit App.</li><li><strong>Widgets</strong>: get or set text, set visibility or colour, get or set position, move, get size.</li><li><strong>Variables</strong>: a Get and a Set for each of number, text, Boolean and vector, plus <strong>Toggle</strong> to flip a Boolean.</li><li><strong>Game</strong>: draw a rectangle, text or sprite, play a sound, play or stop <strong>music</strong> (a <code>.brstm</code> in <code>assets/</code>). <strong>Input</strong>: button held or pressed, stick, pointer.</li><li><strong>Values and maths</strong>: numbers, text, vectors, variables, add, subtract, compare, random, join text, and more.</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>Screen coordinates</h2>
+    <p>In the node editor, <code>0, 0</code> is the <strong>bottom left</strong> of the screen and Y counts up. Draw, sprite, text, pointer and widget-position nodes all follow this, and <strong>Get Screen Size</strong> gives the screen's width and height as a vector. Graphs made before this change keep their old top-left origin.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Functions</h2>
+    <p>Add a <strong>Define Function</strong> node, name it, and build what it does underneath it. Use <strong>Call Function</strong> anywhere to run it, then carry on. Functions share the graph's variables.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Easing with sine, cosine and tangent</h2>
+    <p><strong>Sine</strong>, <strong>Cosine</strong> and <strong>Tangent</strong> take an angle (in degrees or radians). Feed in Frame Count or a variable that counts up to get a smooth back-and-forth value for bobbing, pulsing or orbiting things.</p>
   </div>
   <div class="doc-part">
     <h2>Variables</h2>
