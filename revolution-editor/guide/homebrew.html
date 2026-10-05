@@ -74,7 +74,17 @@
   </div>
   <div class="doc-part">
     <h2>Build and run</h2>
-    <p>Click <strong>Build &amp; Run</strong> (the hammer) in the toolbar. The app builds, then starts in Dolphin. Its menu can build or clean only. Output appears in the Console. To use it on a real Wii, copy the built <code>.dol</code> to <code>apps/&lt;name&gt;/boot.dol</code> on an SD card.</p>
+    <p>Click <strong>Build &amp; Run</strong> (the hammer) in the toolbar. The app builds, then starts in Dolphin. Its menu can build or clean only. Output appears in the Console.</p>
+    <p>Builds go in the project's <code>out/</code> folder: <code>out/&lt;name&gt;.dol</code>, plus a ready-made Homebrew Channel package in <code>out/apps/&lt;name&gt;/</code> (<code>boot.dol</code>, <code>meta.xml</code> and <code>icon.png</code>). To use it on a real Wii, copy that <code>apps/&lt;name&gt;</code> folder to your SD card.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Run via the Homebrew Channel</h2>
+    <p>In a homebrew project the toolbar's Run button is <strong>Run via Homebrew</strong>. It builds, copies the app to Dolphin's SD card folder (<code>Load/WiiSDSync/apps/&lt;name&gt;/</code>), turns on Dolphin's SD card folder sync, and boots the Homebrew Channel so you can launch your app the way you would on a real Wii. The Homebrew Channel must be installed in Dolphin first (<strong>Tools &gt; Install WAD</strong>). Close Dolphin before you click Run.</p>
+    <p>Right-click any file or folder in the project and choose <strong>Add to Homebrew in Dolphin</strong> to copy it into your app's folder on that SD card, where the app can read it from <code>sd:/apps/&lt;name&gt;/</code>. <strong>Install to Dolphin SD Card</strong> in the Build menu copies the last build.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Name, author and icon</h2>
+    <p>Open the Build menu and choose <strong>Homebrew Channel Info...</strong> to set your app's name, author, version, descriptions and a picture for its icon (scaled to 128 × 48). They're saved as <code>meta.json</code> and <code>icon.png</code>, and every build puts them in the Homebrew Channel package.</p>
   </div>
   <div class="doc-part">
     <h2>Next</h2>
