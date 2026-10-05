@@ -73,7 +73,15 @@
   </div>
   <div class="doc-part">
     <h2>Screen coordinates</h2>
-    <p>In the node editor, <code>0, 0</code> is the <strong>bottom left</strong> of the screen and Y counts up. Draw, sprite, text, pointer and widget-position nodes all follow this, and <strong>Get Screen Size</strong> gives the screen's width and height as a vector. Graphs made before this change keep their old top-left origin.</p>
+    <p>In the node editor, <code>0, 0</code> is the <strong>bottom left</strong> of the screen and Y counts up (the <strong>Origin</strong> menu in the top bar switches a graph back to top left; graphs made before this option started there). Draw, sprite, text, pointer and widget-position nodes all follow this, and <strong>Get Screen Size</strong> gives the screen's width and height as a vector. Graphs made before this change keep their old top-left origin.</p>
+  </div>
+  <div class="doc-part">
+    <h2>Vectors and colours in draw blocks</h2>
+    <p><strong>Draw Rectangle</strong>, <strong>Draw Text</strong> and <strong>Draw Sprite</strong> take a <strong>position</strong> vector (and a <strong>size</strong> vector for rectangles) instead of separate x, y, width and height. Type <code>x, y</code> in the box or wire in a vector. Colours work the same way: the colour input has a picker, or wire in a <strong>Colour</strong> block, which has its own picker and also takes R, G and B from numbers or variables (0 to 255). <strong>Set Color</strong> takes a colour too. Old graphs are converted when opened.</p>
+  </div>
+  <div class="doc-part">
+    <h2>UI screens</h2>
+    <p>Every <code>.wiiui</code> file in the project is a screen, named after its file (<code>main.wiiui</code> is the first one shown). Use <strong>Switch UI Screen</strong> to show another; only the current screen's widgets are drawn and clickable. Widget names must be unique across screens. Create more with <strong>New &gt; UI Design</strong>.</p>
   </div>
   <div class="doc-part">
     <h2>Functions</h2>
