@@ -760,3 +760,32 @@ a.tile:hover .tile__body { color: var(--ink); }
 @media (max-width: 600px) { .bento--2 { grid-template-columns: 1fr; } .bento--2 .tile--wide { grid-column: auto; } }
 .guide pre { max-width: 68ch; overflow-x: auto; border: 2px solid var(--ink); background: color-mix(in srgb, var(--field) 18%, var(--paper)); padding: 14px 16px; }
 .guide pre code { background: none; padding: 0; white-space: pre; overflow-wrap: normal; }
+
+/* ── Guide: grouped sidebar, screenshots ─────────── */
+.guide__group { border-bottom: var(--hair); }
+.guide__group summary { padding: 9px 0; font-weight: 800; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
+.guide__group summary::-webkit-details-marker { display: none; }
+.guide__group summary::after { content: "+"; font-weight: 600; }
+.guide__group[open] summary::after { content: "–"; }
+.guide__group a { display: block; padding: 7px 0 7px 14px; border-top: var(--hair); font-size: .96rem; }
+.guide__group a[aria-current="page"] { padding-left: 20px; }
+.guide__h2 { font-stretch: 75%; font-weight: 750; text-transform: uppercase; font-size: 1.5rem; line-height: 1.1; margin: 36px 0 14px; font-family: "Archivo", "Archivo Narrow Fallback", sans-serif; }
+.guide__h2:first-of-type { margin-top: 8px; }
+.bento--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .bento--3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .bento--3 { grid-template-columns: 1fr; } }
+.shot { display: grid; gap: 8px; margin: 6px 0 4px; }
+.shot img { width: 100%; height: auto; border: 2px solid var(--ink); background: var(--paper); }
+.shot figcaption, .shots figcaption { color: var(--dim); font-size: .9375rem; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; align-items: start; }
+.shots figure { display: grid; gap: 10px; }
+.shots img { width: 100%; height: auto; border: 2px solid var(--paper); background: var(--paper); }
+.section--tint .shots figcaption { color: #CFC8C1; }
+.hero__grid--stack, .app .hero__grid.hero__grid--stack { grid-template-columns: 1fr; gap: 32px; }
+.hero__grid--stack .hero__shot--wide { width: 100%; max-width: 1000px; }
+.steps--light p { color: var(--dim); }
+.steps--light li { border-top-color: var(--ink); }
+.steps--light .num { color: var(--red); }
+.guide__nav > a { padding: 9px 0; }
+.shots figure:first-child { grid-column: 1 / -1; }
+.shot img[src$="game.png"] { max-width: 640px; }

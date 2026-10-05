@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>UI designer - Revolution Editor Guide</title>
-<meta name="description" content="Lay out a Wii app's screen visually: drag, resize and style widgets, then build it into C.">
+<meta name="description" content="Lay out a screen visually: drag, resize and style widgets.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
 <meta property="og:title" content="UI designer - Revolution Editor Guide">
-<meta property="og:description" content="Lay out a Wii app's screen visually: drag, resize and style widgets, then build it into C.">
+<meta property="og:description" content="Lay out a screen visually: drag, resize and style widgets.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -30,54 +30,49 @@
 </header>
 
 <main class="guide">
-  <nav class="guide__nav" aria-label="Guide"><span class="guide__nav-h">Guide</span>
-    <a href="index.html">Overview</a>
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
     <a href="getting-started.html">Getting started</a>
+    <details class="guide__group"><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
     <a href="disc-tools.html">Disc tools</a>
-    <a href="archives.html">Archives (SZS / ARC)</a>
-    <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
-    <a href="models-textures.html">Models & textures</a>
-    <a href="audio-text-ui.html">Audio, text & menus</a>
-    <a href="double-dash.html">Mario Kart: Double Dash!!</a>
-    <a href="nsmbw.html">New Super Mario Bros. Wii</a>
-    <a href="homebrew.html">Wii homebrew</a>
-    <a href="swift.html">Swift</a>
-    <a href="ui-designer.html" aria-current="page">UI designer</a>
-    <a href="node-editor.html">Node editor</a>
-    <a href="agents.html">Coding agents</a>
-    <a href="testing.html">Testing & shipping</a>
-    <a href="faq.html">FAQ & troubleshooting</a>
+    <details class="guide__group" open><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="ui-designer.html" aria-current="page">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
   </nav>
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
   <h1>UI designer</h1>
-  <p class="guide__lede">Lay out a Wii app's screen visually: drag, resize and style widgets, then build it into C.</p>
+  <p class="guide__lede">Lay out a screen visually: drag, resize and style widgets.</p>
   <div class="doc-part">
-    <h2>Create a design</h2>
-    <ul><li>Start a project with <strong>C: UI app (designer + nodes)</strong>, which includes <code>ui/main.wiiui</code>.</li><li>Or add one to any homebrew project with <strong>File &gt; New &gt; Wii Homebrew &gt; UI Design (.wiiui)…</strong>.</li></ul>
-    <p>Double-click the <code>.wiiui</code> file to open the designer.</p>
+    <h2>Open it</h2>
+    <p>A UI app or game project includes <code>ui/main.wiiui</code>. Double-click it. You can also add one with <strong>File &gt; New &gt; Wii Homebrew &gt; UI Design</strong>.</p>
+    <figure class="shot"><img src="../assets/shots/ui-designer.png" width="1600" height="949" alt="The UI designer showing a menu screen with buttons, and the properties of the selected button" loading="lazy"><figcaption>The UI designer. Layers on the left, the screen in the middle, properties on the right.</figcaption></figure>
   </div>
   <div class="doc-part">
-    <h2>The screen</h2>
-    <p>The canvas is the Wii's 640 × 480 screen. Add widgets with <strong>Add Widget</strong>:</p>
-    <ul><li><strong>Rectangle</strong>: a flat coloured box.</li><li><strong>Label</strong>: text. Pick the size and colour.</li><li><strong>Button</strong>: clickable with the Wii Remote. It highlights when pointed at and darkens while pressed.</li><li><strong>Image</strong>: a PNG or JPEG, scaled to the widget's size when you build. Images from outside the project are copied into <code>assets/</code>. Keep them small: they become C arrays.</li></ul>
+    <h2>Widgets</h2>
+    <ul><li><strong>Rectangle</strong>, <strong>Label</strong> (text), <strong>Button</strong> (clickable with the Wii Remote) and <strong>Image</strong>.</li><li>Drag to move, drag the corner handle to resize, arrow keys to nudge, <kbd>Delete</kbd> to remove.</li><li>The <strong>Layers</strong> list is the draw order: the top is drawn last, on top.</li><li>Set the name, position, size, text, colours and whether it shows at the start on the right.</li></ul>
   </div>
   <div class="doc-part">
-    <h2>Editing</h2>
-    <ul><li><strong>Drag</strong> a widget to move it, and drag the <strong>corner handle</strong> to resize it.</li><li><kbd>←</kbd> <kbd>↑</kbd> <kbd>→</kbd> <kbd>↓</kbd> nudge by one pixel, and <kbd>Delete</kbd> removes it.</li><li>The <strong>Layers</strong> list on the left is draw order: top of the list is drawn last, on top. Use the arrows to bring forward or send backward.</li><li>The <strong>inspector</strong> on the right has the widget's name, position, size, text, size, colours and whether it's visible at start.</li><li><strong>Undo / Redo</strong> in the top bar, and a background colour picker.</li></ul>
-    <p>Names must be letters, digits and underscores, and unique. A widget named <code>go</code> is <code>UI_GO</code> in your code.</p>
+    <h2>Using it</h2>
+    <p>A widget named <code>go</code> is <code>UI.go</code> in <a class='inline' href='swift.html'>Swift</a> and <code>UI_GO</code> in C. Handle button clicks with the <a class='inline' href='node-editor.html'>On Button Pressed</a> node or <code>appOnButton</code>. On the Wii, point and press <kbd>A</kbd> to click; <kbd>HOME</kbd> quits.</p>
   </div>
   <div class="doc-part">
-    <h2>In your code</h2>
-    <p>On Build, the design is turned into <code>source/generated/</code>: a small renderer, your widgets and a font atlas for each text size you used. The atlas is drawn from the Mac's Helvetica, so text on the Wii matches the designer.</p>
-    <p>The generated API is plain C, so you can use it from your own code too:</p>
-    <ul><li><code>wiiui_set_text(UI_STATUS, "Hello")</code> and <code>wiiui_get_text(id)</code></li><li><code>wiiui_set_visible(id, 0/1)</code> and <code>wiiui_set_color(id, r, g, b)</code></li><li>Hooks you can define: <code>app_on_start()</code>, <code>app_on_frame()</code>, <code>app_on_button(int id)</code> and <code>app_on_wpad(unsigned int pressed)</code>.</li></ul>
-    <p>Without writing any C, use the <a class='inline' href='node-editor.html'>Node editor</a> to react to buttons.</p>
-  </div>
-  <div class="doc-part">
-    <h2>On the Wii</h2>
-    <p>Point the Wii Remote at the screen and press <kbd>A</kbd> to click. Press <kbd>HOME</kbd> to quit. In Dolphin, map the Wii Remote's IR pointer to your mouse in Controller Settings.</p>
-    <div class="callout"><strong>Good to know:</strong> the screen is drawn by the CPU into the video framebuffer, which is plenty for menus and tools but not meant for fast games.</div>
+    <h2>Images</h2>
+    <p>Image widgets scale a picture to the widget's size. Pictures from elsewhere are copied into <code>assets/</code>.</p>
   </div>
 
   <div class="guide__pager"><a href="swift.html">← Swift</a><a href="node-editor.html">Node editor →</a></div>

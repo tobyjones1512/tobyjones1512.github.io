@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Revolution Editor - Wii &amp; GameCube Modding Editor for macOS</title>
-<meta name="description" content="Revolution Editor is a native macOS editor for Wii and GameCube modding: track, level, model, texture, audio and text editors, plus disc scrubbing, Hot Swap testing in Dolphin and Git.">
+<title>Revolution Editor - Make and mod Wii games on your Mac</title>
+<meta name="description" content="Revolution Editor is a Mac app for making Wii apps and games in C, C++, Swift or nodes, and for modding Wii and GameCube games.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
-<meta property="og:title" content="Revolution Editor - Wii &amp; GameCube Modding Editor for macOS">
-<meta property="og:description" content="Revolution Editor is a native macOS editor for Wii and GameCube modding: track, level, model, texture, audio and text editors, plus disc scrubbing, Hot Swap testing in Dolphin and Git.">
-<meta property="og:image" content="assets/app-icon.png">
+<meta property="og:title" content="Revolution Editor - Make and mod Wii games on your Mac">
+<meta property="og:description" content="Revolution Editor is a Mac app for making Wii apps and games in C, C++, Swift or nodes, and for modding Wii and GameCube games.">
+<meta property="og:image" content="assets/shots/ui-designer.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
@@ -32,14 +32,13 @@
 <main>
 
 <section class="hero wrap">
-  <div class="hero__grid">
+  <div class="hero__grid hero__grid--stack">
     <div>
       <img width="160" height="160" src="assets/app-icon-160.png" alt="Revolution Editor app icon" class="hero__icon">
-      <h1>The Wii modding editor, <em>native on your Mac.</em></h1>
+      <h1>Make Wii games, <em>on your Mac.</em></h1>
       <p class="hero__sub">
-        Revolution Editor brings everything you need to mod Wii and GameCube games into one app: a project navigator and purpose-built editors for tracks, levels, models, textures, music and menus, plus the disc tools it grew out of. Edit, preview in 3D, and test in Dolphin without leaving the window.
+        Revolution Editor is one app for making your own Wii apps and games, in C, C++, Swift or with no code, and for modding the games you already own. Design, build, and run in Dolphin without leaving the window.
       </p>
-
       <div class="hero__actions">
         <a class="store" href="https://caffeineapps.gumroad.com/l/Wii-disk-scrubber?wanted=true" target="_blank" rel="noopener">
           <span class="store__text"><small>Buy it on</small><span>Gumroad</span></span>
@@ -47,94 +46,64 @@
         <a class="hero__wiki" href="guide/index.html">Read the guide <svg class="arr" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
       </div>
       <p class="hero__disclaimer">
-        <strong>Important:</strong> Revolution Editor is for editing and testing homebrew mods of games you legally own. It contains no Nintendo code, keys or game data, and we do not condone piracy in any form.
+        <strong>Important:</strong> for games you legally own. It contains no Nintendo code, keys or game data, and we do not condone piracy.
       </p>
     </div>
+    <img fetchpriority="high" width="1600" height="949" src="assets/shots/ui-designer.png" alt="The UI designer: a menu screen with buttons and its properties" class="hero__shot hero__shot--wide">
   </div>
 </section>
 
 <section class="section" id="features">
   <div class="wrap">
     <header class="head">
-      <h2>Mod it all in one place.</h2>
-      <p>From a raw disc image to a track running in Dolphin.</p>
+      <h2>Everything in one place.</h2>
     </header>
-
-    <div class="bento">
-      <a class="tile tile--wide tile--dark" href="guide/mkwii-tracks.html">
-        <h3>Mario Kart Wii track tools</h3>
-        <p class="tile__body">Edit course data on a top-down canvas, retag collision, build the minimap and sky, design the intro camera, then check laps and preview the whole course in 3D.</p>
-      </a>
-      <a class="tile" href="guide/models-textures.html">
-        <h3>Models &amp; textures</h3>
-        <p class="tile__body">Import OBJ and COLLADA, edit BRRES files, bake normal maps and compare against retail track budgets.</p>
-      </a>
-      <a class="tile" href="guide/testing.html">
-        <h3>Hot Swap testing</h3>
-        <p class="tile__body">Mark loose files and launch Dolphin with them swapped onto your base disc. No ISO rebuild, original disc untouched.</p>
-      </a>
-      <a class="tile" href="guide/double-dash.html">
-        <h3>Double Dash ports</h3>
-        <p class="tile__body">Bring Double Dash courses to Mario Kart Wii, or send your Wii tracks back the other way.</p>
-      </a>
-      <a class="tile" href="guide/audio-text-ui.html">
-        <h3>Music, text &amp; menus</h3>
-        <p class="tile__body">Loop-aware BRSTM editing from any audio file, BMG message tables, and UI layout previews.</p>
-      </a>
-      <a class="tile" href="guide/disc-tools.html">
-        <h3>Disc tools</h3>
-        <p class="tile__body">Browse, extract and replace files, scrub and unscrub ISOs, trim, and manage partitions.</p>
-      </a>
-      <a class="tile" href="guide/homebrew.html">
-        <h3>Wii homebrew</h3>
-        <p class="tile__body">Build Wii apps in C, C++ or Swift with your own devkitPro and run them in Dolphin. Design the screen visually, wire logic with nodes, or let Claude Code, Codex or Antigravity help.</p>
-      </a>
-      <a class="tile" href="guide/nsmbw.html">
-        <h3>NSMBW level editor</h3>
-        <p class="tile__body">Edit sprites, entrances, zones and paths in New Super Mario Bros. Wii levels.</p>
-      </a>
-      <a class="tile" href="guide/testing.html">
-        <h3>Built-in Git</h3>
-        <p class="tile__body">Stage, commit, pull and push from the toolbar, plus per-editor undo history you can jump around in.</p>
-      </a>
+    <div class="bento bento--3">
+      <a class="tile tile--dark" href="guide/games.html"><h3>Make a game</h3><p class="tile__body">Sprites, text, sound and controllers, drawn by the Wii's graphics chip.</p></a>
+      <a class="tile" href="guide/ui-designer.html"><h3>Design screens</h3><p class="tile__body">Drag and drop buttons, text and pictures. No layout code.</p></a>
+      <a class="tile" href="guide/node-editor.html"><h3>No code needed</h3><p class="tile__body">Join blocks together to build how your app behaves.</p></a>
+      <a class="tile" href="guide/swift.html"><h3>Swift, C or C++</h3><p class="tile__body">Write in Swift (translated to C), or C and C++ with devkitPro.</p></a>
+      <a class="tile" href="guide/agents.html"><h3>Ask an agent</h3><p class="tile__body">Have Claude Code, Codex or Antigravity help, with your own accounts.</p></a>
+      <a class="tile" href="guide/mkwii-tracks.html"><h3>Mod Wii games</h3><p class="tile__body">Tracks, levels, models, textures, music and text, plus disc tools.</p></a>
     </div>
   </div>
 </section>
 
-<section class="section section--tint" id="how">
+<section class="section section--tint" id="shots">
   <div class="wrap">
     <header class="head">
-      <h2>From disc to Dolphin.</h2>
+      <h2>See it.</h2>
     </header>
-    <ol class="steps">
-      <li><span class="num">01</span><div><h3>Open a project</h3><p>Drop in a disc image or an extracted game folder. Archives expand like folders, and the sidebar stays in sync with Finder.</p></div></li>
-      <li><span class="num">02</span><div><h3>Edit with real tools</h3><p>Every format opens in its own editor, with 3D previews, validators and a full undo history. Imports from Blender and other tools just work.</p></div></li>
-      <li><span class="num">03</span><div><h3>Test and ship</h3><p>Verify your archive, hot swap it into Dolphin, and build for real hardware when you're ready.</p></div></li>
+    <div class="shots">
+      <figure><img src="assets/shots/node-editor.png" width="1600" height="512" alt="The node editor" loading="lazy"><figcaption>Build logic by joining blocks.</figcaption></figure>
+      <figure><img src="assets/shots/agent.png" width="1600" height="1300" alt="The agent window" loading="lazy"><figcaption>Ask an agent to make a change.</figcaption></figure>
+      <figure><img src="assets/shots/game.png" width="640" height="480" alt="The starter game" loading="lazy"><figcaption>The starter game you get with a new project.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <header class="head">
+      <h2>From idea to Dolphin.</h2>
+    </header>
+    <ol class="steps steps--light">
+      <li><span class="num">01</span><div><h3>Start</h3><p>Pick a template: an app, a game, or a mod of a game you own.</p></div></li>
+      <li><span class="num">02</span><div><h3>Build it</h3><p>Design the screen, write Swift or C, or join nodes. Undo and history everywhere.</p></div></li>
+      <li><span class="num">03</span><div><h3>Run it</h3><p>Press Build &amp; Run. It starts in Dolphin, ready to copy to a real Wii.</p></div></li>
     </ol>
   </div>
 </section>
 
-<section class="section" id="formats">
-  <div class="wrap">
-    <header class="head">
-      <h2>Formats it speaks.</h2>
-      <p>Verified against real game files, not just against itself.</p>
-    </header>
-    <div class="chips">
-      <span>SZS / ARC / U8</span><span>WBZ / WLZ</span><span>KMP</span><span>KCL</span><span>BRRES</span><span>MDL0</span><span>TEX0 / TPL</span><span>BMG</span><span>BRSTM</span><span>BRSAR</span><span>BRLYT / BRLAN</span><span>NSMBW levels</span><span>OBJ / DAE import</span><span>J3D (BMD / BDL / BTK / BCA)</span><span>BOL / BCO</span><span>RARC</span><span>Wii &amp; GCN discs</span>
-    </div>
-  </div>
-</section>
-
-<section class="section section--tint" id="native">
+<section class="section section--tint" id="yours">
   <div class="wrap">
     <header class="head">
       <h2>Yours, and only yours.</h2>
     </header>
     <div class="rules">
-      <div class="rule"><h3>Native macOS</h3><p>No Wine, no virtual machine. A fast, native app.</p></div>
-      <div class="rule"><h3>Bring your own files</h3><p>Your discs, your <code>key.bin</code>, your copy of Dolphin. Nothing is bundled or downloaded.</p></div>
-      <div class="rule"><h3>Independent</h3><p>Built from public documentation and community wikis. No Nintendo or Dolphin code inside.</p></div>
+      <div class="rule"><h3>Native on Mac</h3><p>No Wine, no virtual machine.</p></div>
+      <div class="rule"><h3>Bring your own</h3><p>Your games, your key, your devkitPro, your Dolphin. Nothing is bundled.</p></div>
+      <div class="rule"><h3>Independent</h3><p>Built from public documentation. No Nintendo or Dolphin code inside.</p></div>
     </div>
   </div>
 </section>
