@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tutorial: a battle arena - Revolution Editor Guide</title>
+<meta name="description" content="Build a Mario Kart Wii battle arena step by step, for Balloon Battle and Coin Runners.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="Tutorial: a battle arena - Revolution Editor Guide">
+<meta property="og:description" content="Build a Mario Kart Wii battle arena step by step, for Balloon Battle and Coin Runners.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution Editor app icon">
+    Revolution Editor
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
+    <a href="getting-started.html">Getting started</a>
+    <details class="guide__group" open><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="tutorial-track.html">Tutorial: custom track</a>
+      <a href="tutorial-battle.html" aria-current="page">Tutorial: battle arena</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
+    <a href="disc-tools.html">Disc tools</a>
+    <details class="guide__group"><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="swiftui.html">SwiftUI</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>Tutorial: a battle arena</h1>
+  <p class="guide__lede">Build a Mario Kart Wii battle arena step by step, for Balloon Battle and Coin Runners.</p>
+  <div class="doc-part">
+    <h2>Before you start</h2>
+    <p>A battle arena is built like a race track (do the <a class='inline' href='tutorial-track.html'>custom track tutorial</a> first), with different course data. It's still one <code>.szs</code> holding <code>course_model.brres</code>, <code>course.kcl</code>, <code>course.kmp</code>, <code>map_model.brres</code> and <code>vrcorn_model.brres</code>.</p><p>What every retail arena has, and yours needs:</p><ul><li>12 start points, one per player, numbered 0 to 11 (a race track has one).</li><li>4 battle respawn points (MSPT).</li><li>Respawn points (JGPT), usually 12.</li><li>A CPU network of enemy points, many small linked paths.</li><li>No checkpoints and no item paths.</li><li>Item boxes, and for Coin Runners, coins (72 to 134 on retail arenas).</li></ul>
+  </div>
+  <div class="doc-part">
+    <h2>1. Model, collision, minimap and sky</h2>
+    <ol><li>Open a folder, export your arena as <code>course_model.obj</code> and build <code>course_model.brres</code> with <strong>Make .brres</strong>, exactly as in <a class='inline' href='tutorial-track.html'>the track tutorial</a>.</li><li>Make <code>course.kcl</code> with <strong>File &gt; New &gt; Collision (KCL) from Model...</strong>. Arenas are enclosed: make the outer walls walls, and anything you can fall into a fall boundary.</li><li>Make the minimap with <strong>Mario Kart Wii &gt; Minimap Editor...</strong> and the sky with <strong>File &gt; New &gt; Skybox</strong>.</li><li>Optionally bake shadows with <strong>Mario Kart Wii &gt; Create Shadow Map...</strong> on the course model.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>2. Battle course data</h2>
+    <ol><li>Choose <strong>File &gt; New &gt; Battle Arena Course Data (KMP)...</strong>, save it as <code>course.kmp</code> and open it. It starts with the 12 starts, 4 battle respawns, 12 respawns and a CPU loop a working arena needs.</li><li>Load your course model and collision behind the canvas with <strong>Auto-Detect</strong>.</li><li>Drag the 12 start points round the arena, spread out and facing inwards. Keep each one's player number; the inspector shows it.</li><li>Place the 4 <strong>Battle Respawn Points (MSPT)</strong> in safe open spots. Right-click a point for <strong>Duplicate</strong>, <strong>Snap to Ground</strong> and <strong>Delete</strong>.</li><li>Draw the CPU network with the pen tool: several short enemy paths that link up so CPU racers can roam the whole arena. Right-click points to add more before or after them.</li><li>Add item boxes as <strong>Object (GOBJ)</strong> points, and coins (object 0x73) if you want Coin Runners to work. <strong>Duplicate</strong> on the right-click menu places them quickly.</li><li>Select everything and <strong>Snap to Ground</strong>.</li><li>Check the editor's header says <strong>Battle Arena</strong>: that means the course data is recognised as an arena, so <strong>Tools &gt; Make Testable</strong> and Verify Archive use the battle rules. Run Make Testable to fill in anything missing (start numbering, battle respawns, respawns).</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>3. Pack and play</h2>
+    <ol><li>Put the five files in a folder (or an <code>.szs</code> made with <strong>File &gt; New &gt; SZS Archive...</strong>) and press <strong>Verify Archive</strong> with the type set to <em>Custom Battle Arena</em>.</li><li>Right-click it and choose <strong>Mark for Hot Swap &gt; Mario Kart Wii &gt; Battle Maps</strong>, then the arena to replace (Block Plaza is a good first choice).</li><li>Press <strong>Run</strong>. The checks before Dolphin starts won't let an arena run on a race track's slot, or a race track on an arena's slot, and list anything else likely to crash.</li><li>Start a Balloon Battle or Coin Runners on the arena you replaced.</li></ol><p>More in <a class='inline' href='testing.html'>Testing your mod</a> and <a class='inline' href='mkwii-tracks.html'>Mario Kart Wii tracks</a>.</p>
+  </div>
+  <div class="doc-part">
+    <h2>If it crashes</h2>
+    <ul><li>Make sure there are exactly 12 start points numbered 0 to 11, and 4 battle respawns. Make Testable fixes both.</li><li>An arena has no checkpoints. Add one and its course data is treated as a race track's, and the checks before playing will stop it running on an arena slot.</li><li>Coins and item boxes need <code>coin.brres</code> and <code>itembox.brres</code> in the archive. The missing-files banner copies them from your disc.</li></ul>
+  </div>
+  <div class="guide__pager"><a href="tutorial-track.html">← Tutorial: a custom track</a><a href="models-textures.html">Models & textures →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution Editor</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution Editor. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="tobyjones1512" data-description="Support me on Buy me a coffee!" data-message="Thank you for your interest in my apps... please buy me a coffee?? 😁" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
+</html>

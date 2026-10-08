@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tutorial: a custom track - Revolution Editor Guide</title>
+<meta name="description" content="Build a Mario Kart Wii track step by step, from a 3D model to racing it in Dolphin.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="Tutorial: a custom track - Revolution Editor Guide">
+<meta property="og:description" content="Build a Mario Kart Wii track step by step, from a 3D model to racing it in Dolphin.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution Editor app icon">
+    Revolution Editor
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
+    <a href="getting-started.html">Getting started</a>
+    <details class="guide__group" open><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="tutorial-track.html" aria-current="page">Tutorial: custom track</a>
+      <a href="tutorial-battle.html">Tutorial: battle arena</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
+    <a href="disc-tools.html">Disc tools</a>
+    <details class="guide__group"><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="swiftui.html">SwiftUI</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>Tutorial: a custom track</h1>
+  <p class="guide__lede">Build a Mario Kart Wii track step by step, from a 3D model to racing it in Dolphin.</p>
+  <div class="doc-part">
+    <h2>Before you start</h2>
+    <p>This tutorial takes a track from nothing to racing it in Dolphin. You need Revolution Editor set up with your key and your Mario Kart Wii disc linked (see <a class='inline' href='getting-started.html'>Getting started</a>), Dolphin installed, and a 3D model of your track from Blender or any other 3D app, exported as <code>.obj</code> or <code>.dae</code>. Plan on an evening for a first track.</p><p>A track is one <code>.szs</code> archive holding five files. You'll make each in turn:</p><ul><li><code>course_model.brres</code>: the model you see.</li><li><code>course.kcl</code>: collision, what you drive on.</li><li><code>course.kmp</code>: start, paths, checkpoints, respawns, objects and cameras.</li><li><code>map_model.brres</code>: the minimap.</li><li><code>vrcorn_model.brres</code>: the sky.</li></ul><p>The game needs all five. A track missing any of them crashes.</p>
+  </div>
+  <div class="doc-part">
+    <h2>1. Make a project</h2>
+    <ol><li>Make a folder for your track in Finder and open it with <strong>File &gt; Open &gt; Folder</strong>.</li><li>Export your model as <code>course_model.obj</code> (or <code>.dae</code>) and copy it, its <code>.mtl</code> and its texture images into the folder. The name matters: it's how the next step knows this is the course model.</li><li>Keep the road surfaces as their own materials in your 3D app (for example <em>road</em>, <em>grass</em>, <em>wall</em>). Material names drive the collision and minimap steps later.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>2. The course model</h2>
+    <ol><li>In the Project Navigator, right-click <code>course_model.obj</code> and choose <strong>Make .brres</strong>. You get <code>course_model.brres</code> with the model inside named <code>course</code>, the name the game looks for. (Renaming the file afterwards doesn't rename the model, so name the <code>.obj</code> first.)</li><li>Open it to check the textures. Look at <strong>Track Budget</strong> in the model view: stay under the retail maximum for triangles, meshes and texture memory, or the track may run slowly or not load on a real Wii.</li><li>Optional, but it makes a big difference: right-click <code>course_model.brres</code> and choose <strong>Mario Kart Wii &gt; Create Shadow Map...</strong>. Drag the sun's direction, height, softness and strength and watch the live 3D preview update, then press <strong>Create Shadow Map</strong>. Undo puts the model back.</li></ol><p>More on models and textures in <a class='inline' href='models-textures.html'>Models &amp; textures</a>.</p>
+  </div>
+  <div class="doc-part">
+    <h2>3. Collision</h2>
+    <ol><li>Choose <strong>File &gt; New &gt; Collision (KCL) from Model...</strong> and pick <code>course_model.obj</code>. Tick <em>Convert Z-up to Y-up</em> only if your model is Z-up (Blender exports can be either; if the track comes in standing on its side, redo it with the other setting).</li><li>Save it as <code>course.kcl</code>. Surface types are guessed from material names: road, grass and sand become road, off-road and so on.</li><li>Open it and check every surface type in the list. Select a triangle to retag everything connected to it. Walls must be walls and anything below the track you can fall to should be <em>Fall Boundary</em>, or racers will drive forever under the map.</li><li>Turn on <strong>Wireframe Mode</strong> to spot holes. A hole in the road drops karts through the world.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>4. Course data (KMP)</h2>
+    <p>Choose <strong>File &gt; New &gt; Course Data (KMP)...</strong>, save it as <code>course.kmp</code> and open it. Load your course model behind the canvas (<strong>Auto-Detect</strong> finds <code>course_model.brres</code> in the folder) and load <code>course.kcl</code> the same way so points can snap to the ground.</p><ol><li><strong>Start point.</strong> Use the <strong>+</strong> menu, <strong>Start Point (KTPT)</strong>, and drag it onto the start line facing the way you race.</li><li><strong>Enemy path.</strong> CPU racers follow it. Pick the pen tool, click along the racing line all the way round and press <strong>Finish</strong>. Points come out evenly spaced. Right-click any point for <strong>Add Point Before</strong>, <strong>Add Point After</strong>, <strong>Move Earlier</strong>, <strong>Move Later</strong>, <strong>Snap to Ground</strong> and <strong>Delete</strong>.</li><li><strong>Item path.</strong> Choose <strong>Tools &gt; Enemy Paths to Item Paths...</strong> to copy the enemy path. Bullet Bills and shells follow it.</li><li><strong>Checkpoints.</strong> Draw a checkpoint path with the pen tool the same way. Each checkpoint is a line across the track; they must span the whole road and never cross. The first is the finish line.</li><li><strong>Respawns.</strong> <strong>Tools &gt; Respawn Point per Checkpoint</strong> adds one respawn for every checkpoint, on the ground and facing forward.</li><li><strong>Item boxes and objects.</strong> Add <strong>Object (GOBJ)</strong> points and set their type (Item Box for item boxes). Right-click empty canvas to add one right where you clicked, and press <strong>&#8984;D</strong> (or right-click, <strong>Duplicate</strong>) to place rows of them quickly. If an object's files are missing, a banner offers to copy them from your disc.</li><li><strong>Cameras.</strong> <strong>Tools &gt; Intro Cameras...</strong> builds the opening fly-over and lets you play it.</li><li><strong>Snap to ground.</strong> Select everything with a marquee and choose <strong>Snap to Ground</strong> so every point sits on the collision.</li><li><strong>Check it.</strong> Run <strong>Tools &gt; Check Laps</strong>. It drives the CPU route three laps and lists anything that stops a lap counting. Then <strong>Tools &gt; Make Testable</strong> fills in anything still missing.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>5. Minimap</h2>
+    <ol><li>Right-click <code>course_model.brres</code> and choose <strong>Mario Kart Wii &gt; Minimap Editor...</strong>.</li><li>Tick only the textures that belong on the map, usually just the road, and pick a shade for each. Keep it to a couple of thousand triangles; a heavy minimap can fail to show in-game.</li><li>It's saved as <code>map_model.brres</code> beside the course model.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>6. Sky</h2>
+    <ol><li>Choose <strong>File &gt; New &gt; Skybox &gt; From Game...</strong> to copy any retail track's sky from your disc, or <strong>Custom...</strong> to make one from a 2:1 panorama image or your own model.</li><li>Save it as <code>vrcorn_model.brres</code>.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>7. Pack the track</h2>
+    <ol><li>Make a folder called (for example) <code>My Track</code> and move the five files into it. A marked folder is packed into a <code>.szs</code> for you when you play.</li><li>Or choose <strong>File &gt; New &gt; SZS Archive...</strong> and drag the five files in. Open it and press <strong>Verify Archive</strong>; every required check must pass.</li><li>Right-click the archive and choose <strong>Mario Kart Wii &gt; Edit Track in 3D...</strong> to drive round it in the 3D preview before you go near the emulator.</li></ol><p>See <a class='inline' href='archives.html'>Archives</a> for more on <code>.szs</code> files.</p>
+  </div>
+  <div class="doc-part">
+    <h2>8. Play it</h2>
+    <ol><li>Right-click the track and choose <strong>Mark for Hot Swap &gt; Mario Kart Wii &gt; Tracks</strong>, then a cup and the track yours will replace (Luigi Circuit is a good first choice).</li><li>Press <strong>Run</strong>. The first time, choose your Mario Kart Wii disc as the base disc.</li><li>Before Dolphin starts, every marked track is checked. <strong>Errors</strong> are things that are likely to crash the game, and the track won't run until they're fixed (you can turn this off under <strong>Safeguards</strong> in <strong>Settings &gt; Emulator</strong>, but it's there for a reason). <strong>Warnings</strong> and <strong>Suggestions</strong> (no item boxes, no cameras) don't stop you playing.</li><li>Pick the cup and track in-game. Your disc image is never changed.</li></ol><p>Details in <a class='inline' href='testing.html'>Testing your mod</a>.</p>
+  </div>
+  <div class="doc-part">
+    <h2>If it crashes</h2>
+    <ul><li>Open <code>course.kmp</code> and run <strong>Check Laps</strong> and <strong>Make Testable</strong> again.</li><li>Check the minimap was made with the <strong>Minimap Editor</strong>; a hand-made one is the most common crash on a real Wii.</li><li>Every item path needs a path leading into it. Make Testable removes unreachable ones.</li><li>Objects that move along a route need one. Verify Archive names any that don't.</li><li>For a real Wii, switch <em>Build for</em> to <strong>Hardware-compatible</strong> in <strong>Settings &gt; Games</strong> and rebuild the models. Dolphin forgives things a Wii doesn't.</li></ul><p>Next: make a <a class='inline' href='tutorial-battle.html'>battle arena</a>, or see the <a class='inline' href='faq.html'>FAQ</a>.</p>
+  </div>
+  <div class="guide__pager"><a href="mkwii-tracks.html">← Mario Kart Wii tracks</a><a href="tutorial-battle.html">Tutorial: a battle arena →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution Editor</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution Editor. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="tobyjones1512" data-description="Support me on Buy me a coffee!" data-message="Thank you for your interest in my apps... please buy me a coffee?? 😁" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
+</html>

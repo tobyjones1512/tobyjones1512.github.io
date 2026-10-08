@@ -36,6 +36,8 @@
     <details class="guide__group" open><summary>Modding</summary>
       <a href="archives.html">Archives</a>
       <a href="mkwii-tracks.html" aria-current="page">Mario Kart Wii tracks</a>
+      <a href="tutorial-track.html">Tutorial: custom track</a>
+      <a href="tutorial-battle.html">Tutorial: battle arena</a>
       <a href="models-textures.html">Models & textures</a>
       <a href="audio-text-ui.html">Audio, text & menus</a>
       <a href="double-dash.html">Mario Kart: Double Dash!!</a>
@@ -57,7 +59,7 @@
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
   <h1>Mario Kart Wii tracks</h1>
-  <p class="guide__lede">Edit course data, collision, minimap and sky, then preview the track in 3D.</p>
+  <p class="guide__lede">Edit course data, collision, minimap and sky, then preview the track in 3D. New to this? Follow the step-by-step <a class='inline' href='tutorial-track.html'>custom track tutorial</a> or <a class='inline' href='tutorial-battle.html'>battle arena tutorial</a>.</p>
   <div class="doc-part">
     <h2>What a track is</h2>
     <ul><li><code>course_model.brres</code>: what you see.</li><li><code>course.kcl</code>: collision.</li><li><code>course.kmp</code>: start points, paths, checkpoints, respawns, objects, cameras.</li><li><code>map_model.brres</code>: the minimap.</li><li><code>vrcorn_model.brres</code>: the sky.</li></ul>
@@ -65,7 +67,7 @@
   <div class="doc-part">
     <h2>Course data (KMP)</h2>
     <p>A top-down canvas with an inspector. Load the course model behind your points so you can place them on the real track.</p>
-    <ul><li>A <strong>pen tool</strong> draws paths with evenly spaced points. <strong>Snap to ground</strong> drops points onto the collision.</li><li><strong>Make Testable</strong> fills in anything missing so the track will load. <strong>Check Laps</strong> drives the CPU route three laps to confirm checkpoints work.</li><li><strong>Intro Cameras…</strong> builds and plays the opening fly-over. <strong>Advanced</strong> shows every field as a spreadsheet.</li></ul>
+    <ul><li>A <strong>pen tool</strong> draws paths with evenly spaced points. <strong>Snap to ground</strong> drops points onto the collision.</li><li><strong>Make Testable</strong> fills in anything missing so the track will load. <strong>Check Laps</strong> drives the CPU route three laps to confirm checkpoints work.</li><li><strong>Intro Cameras…</strong> builds and plays the opening fly-over. <strong>Advanced</strong> shows every field as a spreadsheet.</li><li>Right-click a point for <strong>Add Point Before</strong> and <strong>After</strong>, <strong>Duplicate</strong> (objects, starts, respawns, areas and cameras), <strong>Move Earlier</strong> and <strong>Later</strong>, <strong>Snap to Ground</strong> and <strong>Delete</strong>. Right-click empty canvas to add any kind of point right there. <strong>&#8984;D</strong> duplicates the selected object, start, respawn, area or camera.</li></ul>
   </div>
   <div class="doc-part">
     <h2>Collision (KCL)</h2>
@@ -77,10 +79,10 @@
   </div>
   <div class="doc-part">
     <h2>Objects, budget and preview</h2>
-    <ul><li>If your track uses objects whose files are missing, a banner offers to copy them from your linked disc.</li><li><strong>Track Budget</strong> (in the model editor) compares your model with every retail course. Stay under the retail maximum.</li><li><strong>Preview Track</strong> shows the whole course in 3D, including a driver's-eye view. <strong>Create Render</strong> exports an image.</li></ul>
+    <ul><li>If your track uses objects whose files are missing, a banner offers to copy them from your linked disc.</li><li><strong>Shadows:</strong> right-click <code>course_model.brres</code> and choose <strong>Mario Kart Wii &gt; Create Shadow Map...</strong>. Move the sun and change its softness and strength while a live 3D preview shows the shadows on your track. Your last settings are remembered; <strong>Reset</strong> goes back to the default sun.</li><li><strong>Track Budget</strong> (in the model editor) compares your model with every retail course. Stay under the retail maximum.</li><li><strong>Preview Track</strong> shows the whole course in 3D, including a driver's-eye view. <strong>Create Render</strong> exports an image.</li></ul>
   </div>
 
-  <div class="guide__pager"><a href="archives.html">← Archives</a><a href="models-textures.html">Models & textures →</a></div>
+  <div class="guide__pager"><a href="archives.html">← Archives</a><a href="tutorial-track.html">Tutorial: a custom track →</a></div>
   </article>
 </main>
 
