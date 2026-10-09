@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Audio, text & menus - Revolution Editor Guide</title>
-<meta name="description" content="Make custom music, edit in-game text and preview menu screens.">
+<title>Double Dash: a battle stage - Revolution Editor Guide</title>
+<meta name="description" content="Build a Mario Kart: Double Dash!! battle stage step by step.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
-<meta property="og:title" content="Audio, text & menus - Revolution Editor Guide">
-<meta property="og:description" content="Make custom music, edit in-game text and preview menu screens.">
+<meta property="og:title" content="Double Dash: a battle stage - Revolution Editor Guide">
+<meta property="og:description" content="Build a Mario Kart: Double Dash!! battle stage step by step.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -33,17 +33,17 @@
   <nav class="guide__nav" aria-label="Guide">
     <a href="index.html">Guide home</a>
     <a href="getting-started.html">Getting started</a>
-    <details class="guide__group"><summary>Tutorials</summary>
+    <details class="guide__group" open><summary>Tutorials</summary>
       <a href="tutorial-track.html">Mario Kart Wii: custom track</a>
       <a href="tutorial-battle.html">Mario Kart Wii: battle arena</a>
       <a href="tutorial-mkdd-course.html">Double Dash: custom course</a>
-      <a href="tutorial-mkdd-battle.html">Double Dash: battle stage</a>
+      <a href="tutorial-mkdd-battle.html" aria-current="page">Double Dash: battle stage</a>
     </details>
-    <details class="guide__group" open><summary>Modding</summary>
+    <details class="guide__group"><summary>Modding</summary>
       <a href="archives.html">Archives</a>
       <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
       <a href="models-textures.html">Models & textures</a>
-      <a href="audio-text-ui.html" aria-current="page">Audio, text & menus</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
       <a href="double-dash.html">Mario Kart: Double Dash!!</a>
       <a href="nsmbw.html">New Super Mario Bros. Wii</a>
     </details>
@@ -62,22 +62,30 @@
   </nav>
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
-  <h1>Audio, text & menus</h1>
-  <p class="guide__lede">Make custom music, edit in-game text and preview menu screens.</p>
+  <h1>Double Dash: a battle stage</h1>
+  <p class="guide__lede">Build a Mario Kart: Double Dash!! battle stage step by step.</p>
   <div class="doc-part">
-    <h2>Music (BRSTM)</h2>
-    <ol><li>Right-click an audio file (WAV, MP3, M4A, FLAC…) and choose <strong>Make .brstm</strong>, or open a <code>.brstm</code>.</li><li>Drag the <strong>Loop</strong> and <strong>End</strong> markers on the waveform.</li><li>Use <strong>Play Loop Seam</strong> to hear the jump back to the start, then save.</li></ol>
+    <h2>Before you start</h2>
+    <p>A Double Dash battle stage is built like a course (do the <a class='inline' href='tutorial-mkdd-course.html'>Double Dash course tutorial</a> first), with different course data. Every retail stage has:</p><ul><li>8 start points, one per player, in a ring facing the middle.</li><li>No enemy route and no checkpoints.</li><li>Item boxes (Block City's move about).</li><li>Usually no respawn points.</li></ul>
   </div>
   <div class="doc-part">
-    <h2>Text (BMG)</h2>
-    <p>Edit messages by ID and add new ones. A lock marks a message with a special control code, which is read-only so it can't be broken.</p>
+    <h2>1. Build it</h2>
+    <ol><li>Make the arena model, with materials named as in the course tutorial: walls round the edge, a fall where you can drop off.</li><li>Choose <strong>File &gt; New &gt; Mario Kart: Double Dash!! &gt; Course from Model...</strong> and pick a battle slot (marked <em>(battle)</em>, for example Block City).</li><li>Press <strong>Create</strong>. For a battle slot you get the 8 starts in a ring, centred on your arena and placed on its floor.</li></ol>
   </div>
   <div class="doc-part">
-    <h2>Menus</h2>
-    <p>Open a <code>.brlyt</code> layout to move its panes, or use <strong>Preview UI</strong> on a UI <code>.szs</code> to see every screen as the game draws it. <code>.brsar</code> sound archives open in a read-only browser.</p>
+    <h2>2. Course data</h2>
+    <p>Open <code>*_course.bol</code>. The editor shows a <strong>Battle Stage</strong> badge and checks it with battle rules.</p><ol><li>Drag the 8 start points where you want them, spread round the arena and facing in. Keep each one's player number.</li><li>Add item boxes: right-click empty canvas, <strong>Add Object Here</strong>, type <strong>GeoItemBox</strong>, then <strong>&#8984;D</strong> for more.</li><li>Select everything and <strong>Snap to Ground</strong>.</li><li>Press <strong>Make Testable</strong> to fill in anything missing.</li></ol><p>Need course data from scratch? <strong>File &gt; New &gt; Mario Kart: Double Dash!! &gt; Battle Stage Course Data (BOL)...</strong> makes one with the 8 starts.</p>
+  </div>
+  <div class="doc-part">
+    <h2>3. Play it</h2>
+    <ol><li>Right-click the <code>.arc</code> and choose <strong>Mark for Hot Swap &gt; Mario Kart: Double Dash!! &gt; Battle Maps</strong>, then the stage to replace.</li><li>Press <strong>Run</strong>, fix anything the checks find (Auto Correct where offered), and start a battle on the stage you replaced.</li></ol><p>More in <a class='inline' href='testing.html'>Testing your mod</a>.</p>
+  </div>
+  <div class="doc-part">
+    <h2>If it freezes</h2>
+    <ul><li>A battle stage needs exactly 8 start points: the editor only shows the <strong>Battle Stage</strong> badge when it has them.</li><li>Leave out checkpoints and the enemy route: they're for races.</li><li>If an object's models are missing, accept the banner that imports them.</li></ul>
   </div>
 
-  <div class="guide__pager"><a href="models-textures.html">← Models & textures</a><a href="double-dash.html">Mario Kart: Double Dash!! →</a></div>
+  <div class="guide__pager"><a href="tutorial-mkdd-course.html">← Double Dash: a custom course</a><a href="archives.html">Archives →</a></div>
   </article>
 </main>
 

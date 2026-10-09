@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Double Dash: a custom course - Revolution Editor Guide</title>
+<meta name="description" content="Build a Mario Kart: Double Dash!! course step by step, from a 3D model to racing it in Dolphin.">
+<meta name="theme-color" content="#8EC9F0">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/app-icon.png">
+<meta property="og:title" content="Double Dash: a custom course - Revolution Editor Guide">
+<meta property="og:description" content="Build a Mario Kart: Double Dash!! course step by step, from a 3D model to racing it in Dolphin.">
+<meta property="og:image" content="../assets/app-icon.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="app" style="--field: #8EC9F0">
+
+<header class="nav">
+  <a class="nav__brand" href="../index.html">
+    <img width="160" height="160" src="../assets/app-icon-160.png" alt="Revolution Editor app icon">
+    Revolution Editor
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="../index.html#features">Features</a>
+    <a href="../guide/index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="guide">
+  <nav class="guide__nav" aria-label="Guide">
+    <a href="index.html">Guide home</a>
+    <a href="getting-started.html">Getting started</a>
+    <details class="guide__group" open><summary>Tutorials</summary>
+      <a href="tutorial-track.html">Mario Kart Wii: custom track</a>
+      <a href="tutorial-battle.html">Mario Kart Wii: battle arena</a>
+      <a href="tutorial-mkdd-course.html" aria-current="page">Double Dash: custom course</a>
+      <a href="tutorial-mkdd-battle.html">Double Dash: battle stage</a>
+    </details>
+    <details class="guide__group"><summary>Modding</summary>
+      <a href="archives.html">Archives</a>
+      <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
+      <a href="models-textures.html">Models & textures</a>
+      <a href="audio-text-ui.html">Audio, text & menus</a>
+      <a href="double-dash.html">Mario Kart: Double Dash!!</a>
+      <a href="nsmbw.html">New Super Mario Bros. Wii</a>
+    </details>
+    <a href="disc-tools.html">Disc tools</a>
+    <details class="guide__group"><summary>Wii Homebrew</summary>
+      <a href="homebrew.html">Overview</a>
+      <a href="games.html">Make a game</a>
+      <a href="swift.html">Swift</a>
+      <a href="swiftui.html">SwiftUI</a>
+      <a href="ui-designer.html">UI designer</a>
+      <a href="node-editor.html">Node editor</a>
+      <a href="agents.html">Coding agents</a>
+    </details>
+    <a href="testing.html">Testing your mod</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <article class="guide__body">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
+  <h1>Double Dash: a custom course</h1>
+  <p class="guide__lede">Build a Mario Kart: Double Dash!! course step by step, from a 3D model to racing it in Dolphin.</p>
+  <div class="doc-part">
+    <h2>Before you start</h2>
+    <p>This tutorial takes a Mario Kart: Double Dash!! course from a 3D model to racing it in Dolphin. You need your Double Dash disc linked and its tools turned on in <strong>Settings &gt; Games</strong>, Dolphin installed, and a model of your course exported as <code>.obj</code> or <code>.dae</code>. If you've made a Mario Kart Wii track, most of this will feel familiar: the editors are the same.</p><p>A Double Dash course is a slot's <code>.arc</code> archive (for example <code>Luigi2.arc</code> for Luigi Circuit), plus a multiplayer copy ending in <code>L.arc</code>. Inside, with the slot's file prefix:</p><ul><li><code>luigi_course.bmd</code>: the model you see.</li><li><code>luigi_course.bco</code>: collision.</li><li><code>luigi_course.bol</code>: start, enemy route, checkpoints, respawns, objects and cameras.</li><li><code>luigi_map.bti</code>: the minimap, a picture of the road.</li><li><code>luigi_sky.bmd</code>: the sky (optional).</li><li><code>objects/</code>: models for the course's objects.</li></ul><p>Each slot's minimap area is fixed in the game itself, which is why the app reads it from your disc.</p>
+  </div>
+  <div class="doc-part">
+    <h2>1. Prepare the model</h2>
+    <ol><li>Name your materials after what they are. The app guesses each surface from its material name: <em>grass</em> or <em>offroad</em> is off-road, <em>sand</em>, <em>dirt</em>, <em>mud</em>, <em>gravel</em>, <em>ice</em> and <em>snow</em> are what they say, <em>wall</em>, <em>fence</em>, <em>rail</em> or <em>barrier</em> is a wall, <em>water</em>, <em>lava</em> or <em>void</em> is a fall, <em>boost</em> or <em>dash</em> is a boost, <em>ramp</em> or <em>jump</em> is a ramp, and anything else is road.</li><li>Keep it under about 15,000 triangles, the busiest retail course. Textures are shrunk to fit the GameCube's memory for you.</li><li>Export a sky model too if you want one.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>2. Build the course</h2>
+    <ol><li>Choose <strong>File &gt; New &gt; Mario Kart: Double Dash!! &gt; Course from Model...</strong>.</li><li>Pick the slot it <strong>Replaces</strong> (Luigi Circuit is a good first choice), your course model and, optionally, the sky model. Leave <strong>Scale</strong> at 1 unless your model is the wrong size.</li><li>Press <strong>Create</strong> and choose a folder. The slot's archives are written there, with a start point on the road, an intro camera, collision and a minimap. The console lists what was made and what's still missing.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>3. Check the collision</h2>
+    <ol><li>Double-click the <code>.arc</code> to open it, then open <code>*_course.bco</code>.</li><li>Check every surface in the list is what you meant. Select a triangle to retag everything connected to it, and make sure walls are walls and anything you can fall into is a fall.</li></ol><p>More in <a class='inline' href='mkwii-tracks.html'>Mario Kart Wii tracks</a>: the collision editor works the same way.</p>
+  </div>
+  <div class="doc-part">
+    <h2>4. Course data</h2>
+    <p>Open <code>*_course.bol</code>. The course model and collision load behind the canvas on their own.</p><ol><li><strong>Start point.</strong> Already on the road: drag it onto your start line and turn it to face the way you race.</li><li><strong>Enemy route.</strong> CPU karts follow it. Pick the pen tool, click along the racing line all the way round and press <strong>Finish</strong>. Right-click points to add more before or after them.</li><li><strong>Checkpoints.</strong> Draw them with the pen tool too, across the whole road, in driving order. Double Dash freezes while loading if the shape between two checkpoints bends, so keep them evenly spaced on curves.</li><li><strong>Item boxes.</strong> Right-click empty canvas and choose <strong>Add Object Here</strong>, then set its type to <strong>GeoItemBox</strong>. Press <strong>&#8984;D</strong> to place more.</li><li><strong>Objects.</strong> Any other object works the same way. If its models aren't in the course, a banner imports them into <code>objects/</code> from your disc.</li><li><strong>Cameras.</strong> <strong>Tools &gt; Intro Cameras...</strong> edits the opening fly-over.</li><li><strong>Snap to Ground.</strong> Select everything with a marquee and choose <strong>Snap to Ground</strong>.</li><li><strong>Check it.</strong> Press <strong>Check Laps</strong>: it lists anything Double Dash can't cope with. <strong>Make Testable</strong> fixes most of them.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>5. Minimap, shadows and budget</h2>
+    <ol><li>The minimap was drawn from the collision. To redraw it (after changing the collision, or scaling), right-click the <code>.arc</code> and choose <strong>Mario Kart: Double Dash!! &gt; Minimap Editor...</strong>, and tick the surfaces that belong on it.</li><li>For shadows, choose <strong>Mario Kart: Double Dash!! &gt; Create Shadow Map...</strong>. Move the sun and watch the live preview; the shadows are baked into the model's vertex colours, the way retail courses are lit.</li><li>Open <code>*_course.bmd</code> to see its <strong>Track Budget</strong> next to every retail course.</li></ol>
+  </div>
+  <div class="doc-part">
+    <h2>6. Drive it</h2>
+    <p>Right-click the <code>.arc</code> and choose <strong>Mario Kart: Double Dash!! &gt; Edit Track in 3D...</strong> to look round the course and drive the route before going near the emulator.</p>
+  </div>
+  <div class="doc-part">
+    <h2>7. Play it</h2>
+    <ol><li>Right-click the <code>.arc</code> and choose <strong>Mark for Hot Swap &gt; Mario Kart: Double Dash!! &gt; Tracks</strong>, then a cup and the course to replace. Its files are renamed for that slot, so any of your course archives can go in any slot.</li><li>Press <strong>Run</strong>. The first time, choose your Double Dash disc as the base disc.</li><li>Before Dolphin starts, the course is checked. Errors stop it, each with what to do; press <strong>Auto Correct</strong> where it's offered to fix it for you.</li><li>Dolphin boots a patched copy of your disc; the original is never changed. The same copy runs in Nintendont on a real Wii or GameCube.</li></ol><p>More in <a class='inline' href='testing.html'>Testing your mod</a>.</p>
+  </div>
+  <div class="doc-part">
+    <h2>If it freezes</h2>
+    <ul><li>Run <strong>Check Laps</strong>: a bent checkpoint quad freezes the game while the course loads.</li><li>Every enemy route group must join another at both ends, so the route loops. Make Testable joins them to the nearest.</li><li>Parts of the course outside the slot's minimap area don't show on it. Scale the course or pick a slot with more room.</li><li>Too many triangles slows the game down, especially in split-screen. Check the Track Budget.</li></ul><p>Next: a <a class='inline' href='tutorial-mkdd-battle.html'>Double Dash battle stage</a>, or the <a class='inline' href='double-dash.html'>Double Dash reference</a>.</p>
+  </div>
+
+  <div class="guide__pager"><a href="tutorial-battle.html">← Mario Kart Wii: a battle arena</a><a href="tutorial-mkdd-battle.html">Double Dash: a battle stage →</a></div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="foot__links">
+    <a href="../index.html">Revolution Editor</a>
+    <a href="index.html">Guide</a>
+    <a href="../support.html">Support</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> Revolution Editor. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script src="/assets/cookie-consent.js" defer></script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="tobyjones1512" data-description="Support me on Buy me a coffee!" data-message="Thank you for your interest in my apps... please buy me a coffee?? 😁" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
+</html>
