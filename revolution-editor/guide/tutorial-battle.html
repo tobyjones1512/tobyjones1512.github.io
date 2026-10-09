@@ -36,8 +36,8 @@
     <details class="guide__group" open><summary>Tutorials</summary>
       <a href="tutorial-track.html">Mario Kart Wii: custom track</a>
       <a href="tutorial-battle.html" aria-current="page">Mario Kart Wii: battle arena</a>
-      <a href="tutorial-mkdd-course.html">Double Dash: custom course</a>
-      <a href="tutorial-mkdd-battle.html">Double Dash: battle stage</a>
+      <a href="tutorial-mkdd-course.html">Double Dash: custom track</a>
+      <a href="tutorial-mkdd-battle.html">Double Dash: battle arena</a>
     </details>
     <details class="guide__group"><summary>Modding</summary>
       <a href="archives.html">Archives</a>
@@ -70,11 +70,11 @@
   </div>
   <div class="doc-part">
     <h2>1. Model, collision, minimap and sky</h2>
-    <ol><li>Open a folder, export your arena as <code>course_model.obj</code> and build <code>course_model.brres</code> with <strong>Make .brres</strong>, exactly as in <a class='inline' href='tutorial-track.html'>the track tutorial</a>.</li><li>Make <code>course.kcl</code> with <strong>File &gt; New &gt; Collision (KCL) from Model...</strong>. Arenas are enclosed: make the outer walls walls, and anything you can fall into a fall boundary.</li><li>Make the minimap with <strong>Mario Kart Wii &gt; Minimap Editor...</strong> and the sky with <strong>File &gt; New &gt; Skybox</strong>.</li><li>Optionally bake shadows with <strong>Mario Kart Wii &gt; Create Shadow Map...</strong> on the course model.</li></ol>
+    <ol><li>Open a folder, export your arena as <code>course_model.obj</code> and build <code>course_model.brres</code> with <strong>Make .brres</strong>, exactly as in <a class='inline' href='tutorial-track.html'>the track tutorial</a>.</li><li>Make <code>course.kcl</code> with <strong>File &gt; New &gt; Collision (KCL) from Model...</strong>. Arenas are enclosed: make the outer walls walls, and anything you can fall into a fall boundary.</li><li>Make the minimap with <strong>Mario Kart Wii &gt; Minimap Editor...</strong> and the sky with <strong>File &gt; New &gt; Skybox</strong>.</li><li>Optionally bake shadows with <strong>Mario Kart Wii &gt; Create Shadow Map...</strong> on the track model.</li></ol>
   </div>
   <div class="doc-part">
     <h2>2. Battle course data</h2>
-    <ol><li>Choose <strong>File &gt; New &gt; Battle Arena Course Data (KMP)...</strong>, save it as <code>course.kmp</code> and open it. It starts with the 12 starts, 4 battle respawns, 12 respawns and a CPU loop a working arena needs.</li><li>Load your course model and collision behind the canvas with <strong>Auto-Detect</strong>.</li><li>Drag the 12 start points round the arena, spread out and facing inwards. Keep each one's player number; the inspector shows it.</li><li>Place the 4 <strong>Battle Respawn Points (MSPT)</strong> in safe open spots. Right-click a point for <strong>Duplicate</strong>, <strong>Snap to Ground</strong> and <strong>Delete</strong>.</li><li>Draw the CPU network with the pen tool: several short enemy paths that link up so CPU racers can roam the whole arena. Right-click points to add more before or after them.</li><li>Add item boxes as <strong>Object (GOBJ)</strong> points, and coins (object 0x73) if you want Coin Runners to work. <strong>Duplicate</strong> on the right-click menu places them quickly.</li><li>Select everything and <strong>Snap to Ground</strong>.</li><li>Check the editor's header says <strong>Battle Arena</strong>: that means the course data is recognised as an arena, so <strong>Tools &gt; Make Testable</strong> and Verify Archive use the battle rules. Run Make Testable to fill in anything missing (start numbering, battle respawns, respawns).</li></ol>
+    <ol><li>Choose <strong>File &gt; New &gt; Battle Arena Course Data (KMP)...</strong>, save it as <code>course.kmp</code> and open it. It starts with the 12 starts, 4 battle respawns, 12 respawns and a CPU loop a working arena needs.</li><li>Load your track model and collision behind the canvas with <strong>Auto-Detect</strong>.</li><li>Drag the 12 start points round the arena, spread out and facing inwards. Keep each one's player number; the inspector shows it.</li><li>Place the 4 <strong>Battle Respawn Points (MSPT)</strong> in safe open spots. Right-click a point for <strong>Duplicate</strong>, <strong>Snap to Ground</strong> and <strong>Delete</strong>.</li><li>Draw the CPU network with the pen tool: several short enemy paths that link up so CPU racers can roam the whole arena. Right-click points to add more before or after them.</li><li>Add item boxes as <strong>Object (GOBJ)</strong> points, and coins (object 0x73) if you want Coin Runners to work. <strong>Duplicate</strong> on the right-click menu places them quickly.</li><li>Select everything and <strong>Snap to Ground</strong>.</li><li>Check the editor's header says <strong>Battle Arena</strong>: that means the course data is recognised as an arena, so <strong>Tools &gt; Make Testable</strong> and Verify Archive use the battle rules. Run Make Testable to fill in anything missing (start numbering, battle respawns, respawns).</li></ol>
   </div>
   <div class="doc-part">
     <h2>3. Pack and play</h2>
@@ -84,7 +84,7 @@
     <h2>If it crashes</h2>
     <ul><li>Make sure there are exactly 12 start points numbered 0 to 11, and 4 battle respawns. Make Testable fixes both.</li><li>An arena has no checkpoints. Add one and its course data is treated as a race track's, and the checks before playing will stop it running on an arena slot.</li><li>Every arena needs <code>itembox.brres</code> in the archive, and Coin Runners needs <code>coin.brres</code> too. The missing-files banner copies them from your disc.</li></ul>
   </div>
-  <div class="guide__pager"><a href="tutorial-track.html">← Mario Kart Wii: a custom track</a><a href="tutorial-mkdd-course.html">Double Dash: a custom course →</a></div>
+  <div class="guide__pager"><a href="tutorial-track.html">← Mario Kart Wii: a custom track</a><a href="tutorial-mkdd-course.html">Double Dash: a custom track →</a></div>
   </article>
 </main>
 
