@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tutorial: a custom track - Revolution Editor Guide</title>
+<title>Mario Kart Wii: a custom track - Revolution Editor Guide</title>
 <meta name="description" content="Build a Mario Kart Wii track step by step, from a 3D model to racing it in Dolphin.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
-<meta property="og:title" content="Tutorial: a custom track - Revolution Editor Guide">
+<meta property="og:title" content="Mario Kart Wii: a custom track - Revolution Editor Guide">
 <meta property="og:description" content="Build a Mario Kart Wii track step by step, from a 3D model to racing it in Dolphin.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
@@ -33,11 +33,15 @@
   <nav class="guide__nav" aria-label="Guide">
     <a href="index.html">Guide home</a>
     <a href="getting-started.html">Getting started</a>
-    <details class="guide__group" open><summary>Modding</summary>
+    <details class="guide__group" open><summary>Tutorials</summary>
+      <a href="tutorial-track.html" aria-current="page">Mario Kart Wii: custom track</a>
+      <a href="tutorial-battle.html">Mario Kart Wii: battle arena</a>
+      <a href="tutorial-mkdd-course.html">Double Dash: custom course</a>
+      <a href="tutorial-mkdd-battle.html">Double Dash: battle stage</a>
+    </details>
+    <details class="guide__group"><summary>Modding</summary>
       <a href="archives.html">Archives</a>
       <a href="mkwii-tracks.html">Mario Kart Wii tracks</a>
-      <a href="tutorial-track.html" aria-current="page">Tutorial: custom track</a>
-      <a href="tutorial-battle.html">Tutorial: battle arena</a>
       <a href="models-textures.html">Models & textures</a>
       <a href="audio-text-ui.html">Audio, text & menus</a>
       <a href="double-dash.html">Mario Kart: Double Dash!!</a>
@@ -58,7 +62,7 @@
   </nav>
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
-  <h1>Tutorial: a custom track</h1>
+  <h1>Mario Kart Wii: a custom track</h1>
   <p class="guide__lede">Build a Mario Kart Wii track step by step, from a 3D model to racing it in Dolphin.</p>
   <div class="doc-part">
     <h2>Before you start</h2>
@@ -94,13 +98,13 @@
   </div>
   <div class="doc-part">
     <h2>8. Play it</h2>
-    <ol><li>Right-click the track and choose <strong>Mark for Hot Swap &gt; Mario Kart Wii &gt; Tracks</strong>, then a cup and the track yours will replace (Luigi Circuit is a good first choice).</li><li>Press <strong>Run</strong>. The first time, choose your Mario Kart Wii disc as the base disc.</li><li>Before Dolphin starts, every marked track is checked. <strong>Errors</strong> are things that are likely to crash the game, and the track won't run until they're fixed (you can turn this off under <strong>Safeguards</strong> in <strong>Settings &gt; Emulator</strong>, but it's there for a reason). <strong>Warnings</strong> and <strong>Suggestions</strong> (no item boxes, no cameras) don't stop you playing.</li><li>Pick the cup and track in-game. Your disc image is never changed.</li></ol><p>Details in <a class='inline' href='testing.html'>Testing your mod</a>.</p>
+    <ol><li>Right-click the track and choose <strong>Mark for Hot Swap &gt; Mario Kart Wii &gt; Tracks</strong>, then a cup and the track yours will replace (Luigi Circuit is a good first choice).</li><li>Press <strong>Run</strong>. The first time, choose your Mario Kart Wii disc as the base disc.</li><li>Before Dolphin starts, every marked track is checked. <strong>Errors</strong> are things that are likely to crash the game, each with what to do about it, and the track won't run until they're fixed. Press <strong>Auto Correct</strong> where it's offered and the app fixes it for you (you can turn this off under <strong>Safeguards</strong> in <strong>Settings &gt; Emulator</strong>, but it's there for a reason). <strong>Warnings</strong> and <strong>Suggestions</strong> (no item boxes, no cameras) don't stop you playing.</li><li>Pick the cup and track in-game. Your disc image is never changed.</li></ol><p>Details in <a class='inline' href='testing.html'>Testing your mod</a>.</p>
   </div>
   <div class="doc-part">
     <h2>If it crashes</h2>
     <ul><li>Open <code>course.kmp</code> and run <strong>Check Laps</strong> and <strong>Make Testable</strong> again.</li><li>Check the minimap was made with the <strong>Minimap Editor</strong>; a hand-made one is the most common crash on a real Wii.</li><li>Every item path needs a path leading into it. Make Testable removes unreachable ones.</li><li>Objects that move along a route need one. Verify Archive names any that don't.</li><li>For a real Wii, switch <em>Build for</em> to <strong>Hardware-compatible</strong> in <strong>Settings &gt; Games</strong> and rebuild the models. Dolphin forgives things a Wii doesn't.</li></ul><p>Next: make a <a class='inline' href='tutorial-battle.html'>battle arena</a>, or see the <a class='inline' href='faq.html'>FAQ</a>.</p>
   </div>
-  <div class="guide__pager"><a href="mkwii-tracks.html">← Mario Kart Wii tracks</a><a href="tutorial-battle.html">Tutorial: a battle arena →</a></div>
+  <div class="guide__pager"><a href="getting-started.html">← Getting started</a><a href="tutorial-battle.html">Mario Kart Wii: a battle arena →</a></div>
   </article>
 </main>
 
