@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mario Kart: Double Dash!! - Revolution Editor Guide</title>
-<meta name="description" content="Make Double Dash courses and battle stages, or move courses between Double Dash and Mario Kart Wii.">
+<meta name="description" content="Make Double Dash tracks and battle arenas, or move tracks between Double Dash and Mario Kart Wii.">
 <meta name="theme-color" content="#8EC9F0">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/app-icon.png">
 <meta property="og:title" content="Mario Kart: Double Dash!! - Revolution Editor Guide">
-<meta property="og:description" content="Make Double Dash courses and battle stages, or move courses between Double Dash and Mario Kart Wii.">
+<meta property="og:description" content="Make Double Dash tracks and battle arenas, or move tracks between Double Dash and Mario Kart Wii.">
 <meta property="og:image" content="../assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../../assets/styles.css">
@@ -36,8 +36,8 @@
     <details class="guide__group"><summary>Tutorials</summary>
       <a href="tutorial-track.html">Mario Kart Wii: custom track</a>
       <a href="tutorial-battle.html">Mario Kart Wii: battle arena</a>
-      <a href="tutorial-mkdd-course.html">Double Dash: custom course</a>
-      <a href="tutorial-mkdd-battle.html">Double Dash: battle stage</a>
+      <a href="tutorial-mkdd-course.html">Double Dash: custom track</a>
+      <a href="tutorial-mkdd-battle.html">Double Dash: battle arena</a>
     </details>
     <details class="guide__group" open><summary>Modding</summary>
       <a href="archives.html">Archives</a>
@@ -63,29 +63,29 @@
   <article class="guide__body">
   <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Guide</a>
   <h1>Mario Kart: Double Dash!!</h1>
-  <p class="guide__lede">Make Double Dash courses and battle stages with the same tools as Mario Kart Wii tracks, or move courses between the two games. New to it? Follow the <a class='inline' href='tutorial-mkdd-course.html'>course tutorial</a> or the <a class='inline' href='tutorial-mkdd-battle.html'>battle stage tutorial</a>.</p>
+  <p class="guide__lede">Make Double Dash tracks and battle arenas with the same tools as Mario Kart Wii tracks, or move tracks between the two games. New to it? Follow the <a class='inline' href='tutorial-mkdd-course.html'>track tutorial</a> or the <a class='inline' href='tutorial-mkdd-battle.html'>battle arena tutorial</a>.</p>
   <div class="doc-part">
     <h2>Set up</h2>
     <p>In <strong>Settings &gt; Games</strong>, link your Double Dash disc and turn on its tools. The disc is where each slot's minimap area, retail skies and object models come from.</p>
   </div>
   <div class="doc-part">
-    <h2>A new course</h2>
-    <p><strong>File &gt; New &gt; Mario Kart: Double Dash!! &gt; Course from Model...</strong> builds a slot's archives from your <code>.obj</code> or <code>.dae</code>: the model, collision (surfaces guessed from material names), a minimap, an optional sky, a start point and an intro camera. Then open the archive to draw the enemy route and checkpoints. The same menu makes course data (BOL), battle stage course data (8 starts), collision (BCO) from a model, and a sky (your own, or any retail course's).</p>
+    <h2>A new track</h2>
+    <p><strong>File &gt; New &gt; Mario Kart: Double Dash!! &gt; Track from Model...</strong> builds a slot's archives from your <code>.obj</code> or <code>.dae</code>: the model, collision (surfaces guessed from material names), a minimap, an optional sky, a start point and an intro camera. Then open the archive to draw the enemy route and checkpoints. The same menu makes course data (BOL), battle arena course data (8 starts), collision (BCO) from a model, and a sky (your own, or any retail track's).</p>
   </div>
   <div class="doc-part">
     <h2>Course data (BOL)</h2>
     <p>A <code>.bol</code> opens in the same editor as a Mario Kart Wii <code>.kmp</code>: the pen tool, Snap to Ground, the right-click menu (add points before or after, duplicate, delete) and &#8984;D all work.</p>
-    <ul><li><strong>Check Laps</strong> checks it the way Double Dash needs: one start, a looping enemy route, convex checkpoint quads (a bent one freezes the game while loading), respawns that rejoin the route, and intro cameras that don't loop.</li><li><strong>Make Testable</strong> fixes most of what Check Laps finds. It follows retail, so it doesn't add respawn points (battle stages and Luigi Circuit have none).</li><li>A battle stage shows a <strong>Battle Stage</strong> badge and is checked with battle rules.</li><li>If an object needs models the course doesn't have, a banner imports them into its <code>objects</code> folder from your disc.</li></ul>
+    <ul><li><strong>Check Laps</strong> checks it the way Double Dash needs: one start, a looping enemy route, convex checkpoint quads (a bent one freezes the game while loading), respawns that rejoin the route, and intro cameras that don't loop.</li><li><strong>Make Testable</strong> fixes most of what Check Laps finds. It follows retail, so it doesn't add respawn points (battle arenas and Luigi Circuit have none).</li><li>A battle arena shows a <strong>Battle Arena</strong> badge and is checked with battle rules.</li><li>If an object needs models the track doesn't have, a banner imports them into its <code>objects</code> folder from your disc.</li></ul>
   </div>
   <div class="doc-part">
-    <h2>Course tools</h2>
-    <p>Right-click a course <code>.arc</code> and open <strong>Mario Kart: Double Dash!!</strong>:</p>
-    <ul><li><strong>Edit Track in 3D...</strong>: the 3D track editor, as for Wii tracks.</li><li><strong>Scale Track...</strong>: scales the course and sky models, collision and every course-data point together. Double Dash fixes each slot's minimap area, so redraw the minimap afterwards.</li><li><strong>Minimap Editor...</strong>: redraws the minimap from the collision. Tick the surfaces that belong on it and set the outline, with a live preview.</li><li><strong>Create Shadow Map...</strong>: the same sun controls and live 3D preview as the Wii version. Double Dash shades courses through vertex colours, so the shadows are baked into them. Also on a loose <code>_course.bmd</code>.</li></ul>
-    <p>Opening a <code>.bmd</code> shows <strong>Track Budget</strong>: its triangles, vertices, draw calls and texture memory next to every retail Double Dash course.</p>
+    <h2>Track tools</h2>
+    <p>Right-click a track <code>.arc</code> and open <strong>Mario Kart: Double Dash!!</strong>:</p>
+    <ul><li><strong>Edit Track in 3D...</strong>: the 3D track editor, as for Wii tracks.</li><li><strong>Scale Track...</strong>: scales the track and sky models, collision and every course-data point together. Double Dash fixes each slot's minimap area, so redraw the minimap afterwards.</li><li><strong>Minimap Editor...</strong>: redraws the minimap from the collision. Tick the surfaces that belong on it and set the outline, with a live preview.</li><li><strong>Create Shadow Map...</strong>: the same sun controls and live 3D preview as the Wii version. Double Dash shades tracks through vertex colours, so the shadows are baked into them. Also on a loose <code>_course.bmd</code>.</li></ul>
+    <p>Opening a <code>.bmd</code> shows <strong>Track Budget</strong>: its triangles, vertices, draw calls and texture memory next to every retail Double Dash track.</p>
   </div>
   <div class="doc-part">
     <h2>Double Dash to Mario Kart Wii</h2>
-    <p>Right-click a course archive and choose <strong>Port &gt; To Mario Kart Wii</strong>. Pick a scale (around 1.18 matches Nintendo's own remake of Mario Circuit). You get a <code>.szs</code> with the model, sky, collision, minimap and course data. Mark it for Hot Swap onto the slot you want to replace.</p>
+    <p>Right-click a track archive and choose <strong>Port &gt; To Mario Kart Wii</strong>. Pick a scale (around 1.18 matches Nintendo's own remake of Mario Circuit). You get a <code>.szs</code> with the model, sky, collision, minimap and course data. Mark it for Hot Swap onto the slot you want to replace.</p>
   </div>
   <div class="doc-part">
     <h2>Mario Kart Wii to Double Dash</h2>
@@ -93,7 +93,7 @@
   </div>
   <div class="doc-part">
     <h2>Testing</h2>
-    <p>Mark the course for Hot Swap onto a Double Dash slot and press <strong>Run</strong>. The same checks as for Wii tracks run first: errors stop it (with Auto Correct where the fix is mechanical, such as running Make Testable), and suggestions point out missing item boxes or cameras. See <a class='inline' href='testing.html'>Testing your mod</a>.</p>
+    <p>Mark the track for Hot Swap onto a Double Dash slot and press <strong>Run</strong>. The same checks as for Wii tracks run first: errors stop it (with Auto Correct where the fix is mechanical, such as running Make Testable), and suggestions point out missing item boxes or cameras. See <a class='inline' href='testing.html'>Testing your mod</a>.</p>
   </div>
 
   <div class="guide__pager"><a href="audio-text-ui.html">← Audio, text & menus</a><a href="nsmbw.html">New Super Mario Bros. Wii →</a></div>
