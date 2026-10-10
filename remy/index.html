@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Remy - World Recipe Book, your smart pocket cookbook</title>
-<meta name="description" content="Remy is your all-in-one digital cookbook, smart nutrition tracker and kitchen companion for iPhone. Save recipes, scan barcodes to log nutrition, track diet rings, discover new dishes, and convert ingredients and oven temperatures on the fly.">
-<meta name="theme-color" content="#FF7A5C">
+<title>Remy - World Recipe Book: cook more, level up</title>
+<meta name="description" content="Remy is a free recipe book for iPhone and iPad with a sassy chef's-hat mascot. Save and cook recipes step by step, earn XP, keep weekly streaks and collect stickers, plus diet tracking with Apple Health and diabetes management.">
+<meta name="theme-color" content="#E8442E">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
-<meta property="og:title" content="Remy - World Recipe Book, your smart pocket cookbook">
-<meta property="og:description" content="Your all-in-one digital cookbook, smart nutrition tracker and kitchen companion. Free to download on iPhone.">
+<meta property="og:title" content="Remy - World Recipe Book: cook more, level up">
+<meta property="og:description" content="Your recipes in one crate, cheered on by a very opinionated chef's hat. Free on iPhone and iPad.">
 <meta property="og:image" content="assets/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="assets/remy.css">
 </head>
-<body class="app" style="--field: #FF7A5C">
+<body class="app remy">
 
 <header class="nav">
   <a class="nav__brand" href="index.html">
@@ -22,166 +23,201 @@
     Remy
   </a>
   <nav class="nav__links" aria-label="Primary">
+    <a href="#meet-remy">Meet Remy</a>
     <a href="#features">Features</a>
+    <a href="#health">Health</a>
     <a href="#screenshots">Screenshots</a>
-    <a href="#pricing">Pricing</a>
     <a href="support.html">Support</a>
   </nav>
 </header>
 
 <main>
 
-<section class="hero wrap">
-  <div class="hero__grid">
+<section class="r-hero burst">
+  <div class="wrap r-hero__grid">
     <div>
-      <img width="160" height="160" src="assets/app-icon-160.webp" alt="" class="hero__icon">
-      <h1>Your smart pocket cookbook.</h1>
-      <p class="hero__sub">
-        Remy is your all-in-one digital cookbook, smart nutrition tracker<sup>*</sup> and kitchen companion -
-        built to streamline your cooking from prep to plate. Save the recipes you love, discover new ones,
-        and ditch lost handwritten cards and sticky-screen Google searches for good.
+      <img width="160" height="160" src="assets/app-icon-160.webp" alt="" class="r-hero__icon">
+      <h1 class="label">Cook more. Level up.</h1>
+      <p class="r-hero__sub">
+        Remy is your recipe book in one crate, cheered on by a very opinionated chef's hat.
+        Save the recipes you love, cook them step by step, and earn XP, streaks and stickers every time you do.
       </p>
-
-      <div class="hero__actions">
+      <div class="r-hero__actions">
         <a class="store" href="https://apps.apple.com/us/app/remy-world-recipe-book/id6805551766">
           <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 8 184.8 8 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 37.6 59 129.3 107.2 127.8 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-84.1 102.6-121.8-65.2-30.7-65.7-90-65.7-91.9zM255.1 90.7c26.9-32 24.5-61.2 23.7-71.7-23.8 1.4-51.4 16.4-67.1 34.8-17.3 19.6-27.5 44-25.3 71.4 25.9 2 49.5-11 68.7-34.5z"/></svg>
           <span class="store__text"><small>Download on the</small><span>App Store</span></span>
         </a>
-        <span class="hero__free">Free to try - your first 2 recipe imports are on the house</span>
+        <span class="r-hero__free">Free on iPhone and iPad. Every feature included.</span>
       </div>
-      <p class="hero__disclaimer"><sup>*</sup>Nutrition information is for general guidance only and isn't a substitute for professional medical or dietary advice.</p>
     </div>
-
-    <img fetchpriority="high" width="600" height="1298" src="assets/screenshots/home-screen.webp" srcset="assets/screenshots/home-screen-400.webp 400w, assets/screenshots/home-screen.webp 600w" sizes="(max-width: 760px) 220px, 300px" alt="Remy library screen, showing saved recipes grouped by Starters and Mains" class="hero__shot">
-  </div>
-</section>
-
-<section class="section" id="features">
-  <div class="wrap">
-    <header class="head">
-      <h2>Everything a real cookbook does - smarter.</h2>
-      <p>Remy keeps your own recipes, helps you find new ones, and does the fiddly conversions for you.</p>
-    </header>
-
-    <div class="bento">
-      <article class="tile tile--wide tile--dark">
-        <h3>Your personal recipe vault</h3>
-        <p class="tile__body">Save, edit and organise every dish you love in one clean space. Group your collection with Recipe Groups - from quick weeknight dinners to holiday feasts - so the right meal is always at your fingertips.</p>
-      </article>
-      <article class="tile tile--p1">
-        <h3>Smart unit &amp; temp conversions</h3>
-        <p class="tile__body">Switch between metric and imperial measurements (grams, ounces, US cups) or flip oven temperatures (°C, °F, Gas Mark) without leaving the recipe.</p>
-      </article>
-      <article class="tile tile--p2">
-        <h3>Nutrition &amp; barcode scanning</h3>
-        <p class="tile__body">Snap a barcode or a nutrition label with your camera to instantly log ingredients, analyse macros, and keep your health goals front and centre.</p>
-      </article>
-      <article class="tile tile--p3">
-        <h3>Diet tracking &amp; home screen rings</h3>
-        <p class="tile__body">Monitor daily calories and macro targets, and glance at your progress anytime with the Diet Rings widget on your Home and Lock Screens.</p>
-      </article>
-      <article class="tile tile--p4">
-        <h3>Discover</h3>
-        <p class="tile__body">Browse recipes pulled from trusted creators - Jamie Oliver, Budget Bytes and more - filterable by category, ready to save into your own library.</p>
-      </article>
-      <article class="tile tile--p1">
-        <h3>World Cuisine</h3>
-        <p class="tile__body">Explore dishes by region, from Caribbean jerk chicken and curry goat to cuisines from around the world - a shortcut when you want something different.</p>
-      </article>
-      <article class="tile tile--p2">
-        <h3>Endless culinary discovery</h3>
-        <p class="tile__body">Tell Remy what you like, what you dislike, and any allergies to watch for, and it tailors suggestions around them - backed by integrations with Open Recipes DB for community favourites and OpenStove for smart-kitchen compatibility.</p>
-      </article>
-      <article class="tile tile--p3">
-        <h3>Apple Shortcuts automation</h3>
-        <p class="tile__body">Add ingredients to your grocery list, launch your dinner prep timer, or log meals completely hands-free using custom Siri Shortcuts.</p>
-      </article>
-      <article class="tile tile--p4">
-        <h3>Built for everyone</h3>
-        <p class="tile__body">Fully optimised with thoughtful accessibility features, including VoiceOver support, Dynamic Type, and high-contrast, kitchen-friendly modes.</p>
-      </article>
-      <article class="tile tile--p1">
-        <h3>iCloud sync</h3>
-        <p class="tile__body">Keep your entire recipe library, custom tags and dietary stats synced across all your Apple devices, at no extra charge.</p>
-      </article>
-      <article class="tile tile--p2">
-        <h3>Pantry &amp; expiry tracking</h3>
-        <p class="tile__body">Scan or add items to a shared kitchen inventory and get reminders before things go off - formerly our standalone Best Before app, now built right into Remy.</p>
-      </article>
+    <div class="phone">
+      <img fetchpriority="high" width="600" height="1304" src="assets/shots/library-600.webp" srcset="assets/shots/library-400.webp 400w, assets/shots/library-600.webp 600w" sizes="(max-width: 760px) 220px, 300px" alt="Remy's library: a Head Chef level card with a 7-week streak, Remy's daily dare, and recipe cards with photos">
     </div>
   </div>
 </section>
 
-<section class="section section--tint" id="screenshots">
+<section class="r-section" id="meet-remy">
   <div class="wrap">
-    <header class="head">
-      <h2>Clean, calm, and built for the kitchen.</h2>
-    </header>
-
-    <div class="gallery">
-      <figure>
-        <img width="600" height="1298" src="assets/screenshots/home-screen.webp" srcset="assets/screenshots/home-screen-400.webp 400w, assets/screenshots/home-screen.webp 600w" sizes="220px" alt="Library screen with saved recipes grouped into Recipe Groups like Chippy, Starters and Mains" loading="lazy">
-        <figcaption>Recipe vault &amp; groups</figcaption>
-      </figure>
-      <figure>
-        <img width="414" height="900" src="assets/screenshots/step-by-step.webp" srcset="assets/screenshots/step-by-step-400.webp 400w, assets/screenshots/step-by-step.webp 414w" sizes="220px" alt="Recipe screen showing metric/imperial and Celsius/Fahrenheit/gas mark toggles, plus a nutrition traffic-light panel" loading="lazy">
-        <figcaption>Smart conversion</figcaption>
-      </figure>
-      <figure>
-        <img width="600" height="1298" src="assets/screenshots/logging-meals.webp" srcset="assets/screenshots/logging-meals-400.webp 400w, assets/screenshots/logging-meals.webp 600w" sizes="220px" alt="Log Food screen showing barcode scanning and nutrition label photo import" loading="lazy">
-        <figcaption>Nutrition &amp; barcode scanning</figcaption>
-      </figure>
-      <figure>
-        <img width="600" height="1298" src="assets/screenshots/track-diet-with-rings.webp" srcset="assets/screenshots/track-diet-with-rings-400.webp 400w, assets/screenshots/track-diet-with-rings.webp 600w" sizes="220px" alt="Diet screen with calorie and macro rings, plus daily macro progress bars" loading="lazy">
-        <figcaption>Diet rings &amp; widget</figcaption>
-      </figure>
-      <figure>
-        <img width="600" height="1298" src="assets/screenshots/discover.webp" srcset="assets/screenshots/discover-400.webp 400w, assets/screenshots/discover.webp 600w" sizes="220px" alt="Discover screen listing recipes from creators like Jamie Oliver and Budget Bytes" loading="lazy">
-        <figcaption>Discover</figcaption>
-      </figure>
-      <figure>
-        <img width="414" height="900" src="assets/screenshots/world-cuisine.webp" srcset="assets/screenshots/world-cuisine-400.webp 400w, assets/screenshots/world-cuisine.webp 414w" sizes="220px" alt="World Cuisine screen showing a list of Caribbean recipes" loading="lazy">
-        <figcaption>World Cuisine</figcaption>
-      </figure>
-      <figure>
-        <img width="600" height="1298" src="assets/screenshots/best-before.webp" srcset="assets/screenshots/best-before-400.webp 400w, assets/screenshots/best-before.webp 600w" sizes="220px" alt="Pantry inventory screen showing food items grouped by expiry date" loading="lazy">
-        <figcaption>Pantry &amp; expiry tracking</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="pricing">
-  <div class="wrap">
-    <header class="head">
-      <h2>Free to try. Pay only if you need more.</h2>
-      <p>Download Remy and use the whole app for free - browse Discover, World Cuisine and Ideas, and save your first 2 recipes into your own library at no cost.</p>
-    </header>
-
-    <div class="pricing">
-      <div class="plan">
-        <span class="plan__tag">Per recipe</span>
-        <h3>Save as you go</h3>
-        <p class="plan__note">Past your first 2 free recipes, save more into your library one at a time for a small one-time price each.</p>
-        <ul>
-          <li>US$0.29 per recipe</li>
-          <li>Full ingredients, steps and nutrition</li>
-          <li>Yours forever, no subscription</li>
-        </ul>
+    <div class="meet">
+      <img src="assets/remy-mascot.webp" width="476" height="480" alt="Remy, a cartoon chef's hat with a cheeky smile" class="meet__mascot">
+      <div>
+        <h2 class="label r-title">Meet Remy.</h2>
+        <p class="bubble">"You haven't made that shakshuka in 32 days, and I'm starting to take it personally."</p>
+        <p class="meet__text">
+          Finish a recipe in Step by Step to earn XP and climb from Kitchen Porter to Culinary Legend.
+          Cook once a week to stamp that week's crate and keep your streak alive, and take Remy's daily dare
+          to try something you've never made. Prefer it plain? Simple Mode hides the game and keeps your progress.
+        </p>
+        <div class="meet__stickers" aria-label="Some of the stickers you can earn">
+          <span class="sticker">First Cook</span>
+          <span class="sticker">High Five</span>
+          <span class="sticker">Hat Trick</span>
+          <span class="sticker">Globetrotter</span>
+          <span class="sticker">Night Owl</span>
+          <span class="sticker">Early Bird</span>
+          <span class="sticker">Sweet Tooth</span>
+          <span class="sticker">Repeat Offender</span>
+        </div>
       </div>
-      <div class="plan plan--lit">
-        <span class="plan__tag">Subscription or lifetime</span>
-        <h3>Unlock Full App</h3>
-        <p class="plan__note">Cooking a lot? Unlock removes the 2-recipe limit, so you can save as many recipes to your library as you like, forever.</p>
+    </div>
+    <div class="duo">
+      <div class="phone"><img width="600" height="1304" src="assets/shots/celebrate-600.webp" srcset="assets/shots/celebrate-400.webp 400w, assets/shots/celebrate-600.webp 600w" sizes="240px" alt="The Chef's kiss celebration after finishing a recipe: +95 XP, a level up and a new Repeat Offender sticker" loading="lazy"></div>
+      <div class="phone"><img width="600" height="1304" src="assets/shots/crate-600.webp" srcset="assets/shots/crate-400.webp 400w, assets/shots/crate-600.webp 600w" sizes="240px" alt="Remy's Crate: level progress, weekly crate stamps and the sticker book" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="r-section r-section--cream" id="features">
+  <div class="wrap">
+    <header class="r-head">
+      <h2 class="label">Everything a cookbook does, and then some.</h2>
+      <p>Keep your own recipes, find new ones, and let Remy do the fiddly bits while you cook.</p>
+    </header>
+    <div class="cards">
+      <article class="card card--tomato card--wide">
+        <h3 class="label">Your recipe crate</h3>
+        <p>Import recipes from websites, photos, PDFs or the Share sheet, and keep them as photo cards with cook times at a glance. Sort them into Groups, from weeknight dinners to holiday feasts. Your library syncs across your devices with iCloud.</p>
+      </article>
+      <article class="card">
+        <h3 class="label">Step by Step</h3>
+        <p>Big, clear steps one at a time, with one-tap timers that alert you even when Remy isn't open, food safety tips, and steps read aloud if you like. On wide screens the ingredients stay beside the steps.</p>
+      </article>
+      <article class="card">
+        <h3 class="label">Any recipe, your way</h3>
+        <p>Scale servings, switch between metric, imperial and US cups, flip oven temperatures between °C, °F and Gas Mark, and spot allergens at a glance.</p>
+      </article>
+      <article class="card card--citrus">
+        <h3 class="label">Discover</h3>
+        <p>Hand-picked recipes from food sites like Jamie Oliver and Budget Bytes, filtered by category and added to your library in a tap.</p>
+      </article>
+      <article class="card">
+        <h3 class="label">World Cuisine</h3>
+        <p>Explore dishes from 16 cuisines, from Italian and Indian to West African and Latin American.</p>
+      </article>
+      <article class="card">
+        <h3 class="label">Ideas</h3>
+        <p>Tell Remy what you like, what you don't, and any allergies, and it suggests recipes around them.</p>
+      </article>
+      <article class="card card--leaf">
+        <h3 class="label">Best Before</h3>
+        <p>Scan barcodes to build a kitchen inventory, get a nudge before things go off, and add what's running out to your grocery list.</p>
+      </article>
+      <article class="card">
+        <h3 class="label">Widgets &amp; shortcuts</h3>
+        <p>Recipe Spotlight, Today's Meals, Quick Actions and Blood Glucose widgets, Control Center buttons, and Siri Shortcuts.</p>
+      </article>
+      <article class="card card--wide">
+        <h3 class="label">Make it yours</h3>
+        <p>Pick from nine app icons, from the classic chef's hat to a frying pan and an oven, in seven themes including Hand-Drawn, Union Flag and Pride.</p>
+        <div class="icons">
+          <img src="assets/icons/Recipes-Classic.webp" width="160" height="160" alt="Classic chef's hat icon" loading="lazy">
+          <img src="assets/icons/Recipes-HandDrawn.webp" width="160" height="160" alt="Hand-drawn chef's hat icon" loading="lazy">
+          <img src="assets/icons/FryingPan-Classic.webp" width="160" height="160" alt="Frying pan icon" loading="lazy">
+          <img src="assets/icons/Oven-HandDrawn.webp" width="160" height="160" alt="Hand-drawn oven icon" loading="lazy">
+          <img src="assets/icons/Discover-Ocean.webp" width="160" height="160" alt="Discover icon in Ocean" loading="lazy">
+          <img src="assets/icons/Recipes-UnionFlag.webp" width="160" height="160" alt="Chef's hat icon on the Union flag" loading="lazy">
+          <img src="assets/icons/Ideas-Pride.webp" width="160" height="160" alt="Ideas icon on the Pride flag" loading="lazy">
+          <img src="assets/icons/Diet-Forest.webp" width="160" height="160" alt="Diet icon in Forest" loading="lazy">
+          <img src="assets/icons/Diabetes-Midnight.webp" width="160" height="160" alt="Diabetes icon in Midnight" loading="lazy">
+        </div>
+      </article>
+      <article class="card">
+        <h3 class="label">Built for everyone</h3>
+        <p>VoiceOver and Dynamic Type support, steps read aloud, and symbol and colour guidance that marks up ingredients, temperatures and times.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="r-section" id="health">
+  <div class="wrap health">
+    <div>
+      <header class="r-head r-head--tight">
+        <h2 class="label">Health, built in.</h2>
+        <p>Turn on Diet tracking and Remy becomes a food diary that works with Apple Health. Add Diabetes Management and the tab becomes Health.</p>
+      </header>
+      <ul>
+        <li>Log meals, scan barcodes and nutrition labels, and track calories, macros, vitamins and minerals against daily goals.</li>
+        <li>Record blood glucose, insulin and Metformin, by hand or from a Bluetooth meter, with daily reminders that badge Remy's icon until you've logged it.</li>
+        <li>Readings and insulin are saved to Apple Health too, and readings from other apps and CGMs show up in Remy.</li>
+        <li>Filter your history, add notes, and export a PDF report for your doctor.</li>
+        <li>General advice from the NHS and Diabetes UK, matched to what you've logged and always linked to its source.</li>
+      </ul>
+      <p class="note">Nutrition figures for recipes are estimates, and Remy's advice is general information, not medical advice. Don't use them to work out insulin or other medicine doses, and speak to your doctor or diabetes care team before changing your diet or treatment.</p>
+    </div>
+    <div class="phones">
+      <div class="phone"><img width="600" height="1304" src="assets/shots/health-600.webp" srcset="assets/shots/health-400.webp 400w, assets/shots/health-600.webp 600w" sizes="240px" alt="The Health tab: calorie and nutrient rings with suggestions" loading="lazy"></div>
+      <div class="phone"><img width="600" height="1304" src="assets/shots/diabetes-600.webp" srcset="assets/shots/diabetes-400.webp 400w, assets/shots/diabetes-600.webp 600w" sizes="240px" alt="Diabetes Management: latest blood glucose, a week's chart and quick log buttons" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="r-section r-section--ultra burst" id="screenshots">
+  <div class="wrap">
+    <header class="r-head">
+      <h2 class="label">Have a look inside.</h2>
+    </header>
+    <div class="r-gallery">
+      <figure><div class="phone"><img width="400" height="870" src="assets/shots/library-400.webp" alt="Library with level card, daily dare and recipe cards" loading="lazy"></div><figcaption>Your recipe crate</figcaption></figure>
+      <figure><div class="phone"><img width="400" height="870" src="assets/shots/detail-400.webp" alt="A recipe with Start Cooking, servings, units and oven settings" loading="lazy"></div><figcaption>Any recipe, your way</figcaption></figure>
+      <figure><div class="phone"><img width="400" height="870" src="assets/shots/steps-400.webp" alt="Step by Step with a 7 minute timer" loading="lazy"></div><figcaption>Step by Step</figcaption></figure>
+      <figure><div class="phone"><img width="400" height="870" src="assets/shots/celebrate-400.webp" alt="Celebration after finishing a recipe" loading="lazy"></div><figcaption>Every cook counts</figcaption></figure>
+      <figure><div class="phone"><img width="400" height="870" src="assets/shots/crate-400.webp" alt="Remy's Crate sticker book" loading="lazy"></div><figcaption>Collect every sticker</figcaption></figure>
+      <figure><div class="phone"><img width="400" height="870" src="assets/shots/discover-400.webp" alt="Discover recipes by category" loading="lazy"></div><figcaption>Discover</figcaption></figure>
+      <figure><div class="phone"><img width="400" height="870" src="assets/shots/worldCuisine-400.webp" alt="World Cuisine list of cuisines" loading="lazy"></div><figcaption>World Cuisine</figcaption></figure>
+      <figure><div class="phone"><img width="400" height="870" src="assets/shots/health-400.webp" alt="Health tab rings" loading="lazy"></div><figcaption>Health</figcaption></figure>
+      <figure><div class="phone"><img width="400" height="870" src="assets/shots/diabetes-400.webp" alt="Diabetes Management" loading="lazy"></div><figcaption>Diabetes</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="r-section" id="pricing">
+  <div class="wrap">
+    <header class="r-head">
+      <h2 class="label">Free, with every feature.</h2>
+      <p>Everything in Remy is free, supported by ads. Prefer it without them? Remove them whenever you like.</p>
+    </header>
+    <div class="r-pricing">
+      <div class="card">
+        <h3 class="label">Free</h3>
         <ul>
+          <li>Every feature, from Step by Step to Diabetes Management</li>
           <li>Unlimited recipes in your library</li>
-          <li>Discover &amp; World Cuisine included</li>
-          <li>Cancel anytime, or buy once for life</li>
+          <li>Add recipes from Discover by watching a short ad, or buy one instead</li>
         </ul>
-        <p class="iap-note">US$2.99/year or US$8.99 for life</p>
+      </div>
+      <div class="card card--tomato">
+        <h3 class="label">Remove Ads</h3>
+        <ul>
+          <li>A one-off purchase, or a yearly subscription you can cancel any time</li>
+          <li>No banner, between-recipe or app-opening ads</li>
+          <li>Add recipes from Discover without an ad</li>
+        </ul>
       </div>
     </div>
-    <p class="iap-note">By subscribing you agree to Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard EULA</a>.</p>
+    <p class="r-disclaimer">Prices are shown in the App Store. By subscribing you agree to Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard EULA</a>.</p>
+
+    <p class="made-in">Designed by <a href="https://thecaffeinemediacompany.com">Toby Jones</a> in England, UK</p>
   </div>
 </section>
 
@@ -197,7 +233,7 @@
 </footer>
 
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
-  <script src="/assets/cookie-consent.js" defer></script>
+<script src="/assets/cookie-consent.js" defer></script>
 <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="tobyjones1512" data-description="Support me on Buy me a coffee!" data-message="Thank you for your interest in my apps... please buy me a coffee?? 😁" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
 </html>

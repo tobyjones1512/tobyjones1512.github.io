@@ -1,0 +1,229 @@
+/* Remy's page in the app's "crate" look: Shrikhand labels, crate colours,
+   sunbursts and sticker-like cards. Loaded after the site's styles.css,
+   which still provides the nav and footer. */
+
+@font-face {
+  font-family: "Shrikhand";
+  src: url("fonts/Shrikhand-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+.remy {
+  --tomato: #E8442E;
+  --tomato-deep: #C9361F;
+  --citrus: #F6B81F;
+  --leaf: #2F7D3A;
+  --ultra: #1D3A8A;
+  --cream: #FFF6EA;
+  --crate-ink: #3A1A14;
+  --ground: #F4ECDF;
+  --pine: #E8CFA3;
+  --field: var(--tomato);
+  background: var(--ground);
+  color: var(--crate-ink);
+}
+
+.remy .label {
+  font-family: "Shrikhand", Georgia, serif;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-stretch: normal;
+}
+
+.remy .nav { background: var(--crate-ink); color: var(--cream); }
+.remy .nav__brand { color: var(--cream); font-family: "Shrikhand", Georgia, serif; font-weight: 400; text-transform: none; font-stretch: normal; }
+.remy .nav__links a { color: var(--cream); }
+.remy .nav__links a:hover { border-bottom-color: var(--citrus); }
+
+/* Sunburst behind a section, drawn with a conic gradient. */
+.burst {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.burst::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: -1;
+  background: repeating-conic-gradient(from 0deg at 50% 40%, rgb(255 255 255 / .1) 0deg 7.5deg, transparent 7.5deg 15deg);
+}
+
+/* Hero */
+.r-hero {
+  background: var(--tomato);
+  color: var(--cream);
+  padding: clamp(40px, 7vw, 88px) 0 clamp(48px, 7vw, 96px);
+}
+.r-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 40px clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+.r-hero__icon { width: 88px; height: 88px; border-radius: 20px; box-shadow: 0 6px 0 rgb(0 0 0 / .18); }
+.r-hero h1 {
+  font-size: clamp(3.25rem, 9vw, 6.5rem);
+  line-height: .95;
+  margin-top: 24px;
+  text-shadow: 0 4px 0 var(--tomato-deep);
+}
+.r-hero__sub { margin-top: 20px; font-size: 1.1875rem; line-height: 1.5; max-width: 50ch; }
+.r-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 28px; }
+.r-hero__free { font-weight: 700; max-width: 32ch; }
+.r-hero .store { background: var(--crate-ink); color: var(--cream); }
+
+.phone {
+  width: clamp(220px, 26vw, 300px);
+  border-radius: 40px;
+  border: 9px solid #1B1714;
+  background: #1B1714;
+  box-shadow: 0 24px 50px rgb(58 26 20 / .35);
+  overflow: hidden;
+}
+.phone img { display: block; width: 100%; height: auto; }
+.r-hero .phone { transform: rotate(3deg); justify-self: center; }
+
+/* Section headings */
+.r-section { padding: clamp(56px, 8vw, 104px) 0; }
+.r-head { max-width: 760px; margin-bottom: 36px; }
+.r-head h2 { font-size: clamp(2.5rem, 6vw, 4.25rem); line-height: 1; color: var(--tomato); }
+.r-head p { margin-top: 14px; font-size: 1.125rem; line-height: 1.5; color: #6B4B40; }
+
+/* Meet Remy */
+.meet {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 28px clamp(24px, 5vw, 64px);
+  align-items: center;
+}
+.meet__mascot { width: clamp(150px, 22vw, 240px); height: auto; filter: drop-shadow(0 10px 18px rgb(58 26 20 / .25)); }
+.bubble {
+  position: relative;
+  background: var(--cream);
+  border-radius: 22px;
+  padding: 18px 22px;
+  font-size: 1.125rem;
+  line-height: 1.45;
+  box-shadow: 0 4px 0 var(--pine);
+  max-width: 44ch;
+}
+.meet__stickers { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.sticker {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 800; font-size: .875rem; text-transform: uppercase;
+  color: var(--cream);
+  box-shadow: 0 3px 0 rgb(0 0 0 / .18);
+}
+.sticker:nth-child(4n+1) { background: var(--tomato); transform: rotate(-3deg); }
+.sticker:nth-child(4n+2) { background: var(--citrus); color: var(--crate-ink); transform: rotate(2deg); }
+.sticker:nth-child(4n+3) { background: var(--leaf); transform: rotate(-1deg); }
+.sticker:nth-child(4n+4) { background: var(--ultra); transform: rotate(3deg); }
+
+.duo { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 44px; }
+.duo .phone:nth-child(odd) { transform: rotate(-2deg); }
+.duo .phone:nth-child(even) { transform: rotate(2deg); }
+
+/* Feature cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 18px;
+}
+.card {
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 0 var(--pine);
+}
+.card h3 { font-size: 1.5rem; line-height: 1.1; color: var(--tomato); margin-bottom: 10px; }
+.card p { line-height: 1.5; }
+.card--tomato { background: var(--tomato); color: var(--cream); box-shadow: 0 4px 0 var(--tomato-deep); }
+.card--tomato h3, .card--ultra h3, .card--leaf h3 { color: var(--cream); }
+.card--ultra { background: var(--ultra); color: var(--cream); box-shadow: 0 4px 0 #13285F; }
+.card--leaf { background: var(--leaf); color: var(--cream); box-shadow: 0 4px 0 #225C2A; }
+.card--citrus { background: var(--citrus); box-shadow: 0 4px 0 #C99410; }
+.card--citrus h3 { color: var(--crate-ink); }
+.card--wide { grid-column: span 2; }
+@media (max-width: 640px) { .card--wide { grid-column: auto; } }
+
+/* Health block */
+.health {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px clamp(24px, 5vw, 64px);
+  align-items: center;
+}
+.health ul { display: grid; gap: 10px; margin-top: 18px; padding-left: 1.2em; list-style: disc; line-height: 1.45; }
+.health .phones { display: flex; gap: 18px; }
+.health .phone { width: clamp(180px, 20vw, 240px); }
+.note {
+  margin-top: 22px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgb(246 184 31 / .22);
+  font-size: .9375rem;
+  line-height: 1.45;
+}
+
+/* Gallery */
+.r-gallery {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 4px 28px;
+}
+.r-gallery figure { flex: 0 0 auto; scroll-snap-align: start; }
+.r-gallery .phone { width: 220px; }
+.r-gallery figcaption { margin-top: 14px; text-align: center; font-weight: 800; }
+
+/* Icons */
+.icons { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+.icons img { width: 72px; height: 72px; border-radius: 17px; box-shadow: 0 3px 8px rgb(58 26 20 / .2); }
+
+/* Pricing */
+.r-pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px; }
+.r-pricing ul { margin-top: 14px; display: grid; gap: 8px; padding-left: 1.2em; list-style: disc; line-height: 1.45; }
+
+/* Credit banner, as in the app */
+.made-in {
+  margin-top: 44px;
+  border-radius: 16px;
+  padding: 26px 18px;
+  text-align: center;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 1px rgb(0 0 0 / .9), 0 0 8px rgb(0 0 0 / .7);
+  background: linear-gradient(rgb(0 0 0 / .25), rgb(0 0 0 / .25)), url("union-flag.svg") center / 100% 100%;
+}
+.made-in a { color: #fff; text-decoration: underline; }
+
+.r-disclaimer { margin-top: 28px; font-size: .875rem; line-height: 1.5; color: #6B4B40; max-width: 80ch; }
+
+@media (max-width: 760px) {
+  .r-hero__grid, .meet, .health { grid-template-columns: 1fr; }
+  .meet__mascot { justify-self: center; }
+  .health .phones { justify-content: center; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .phone { transition: transform .25s ease; }
+  .phone:hover { transform: rotate(0) translateY(-4px); }
+}
+
+.r-title { font-size: clamp(2.5rem, 6vw, 4.25rem); line-height: 1; color: var(--tomato); }
+.meet .bubble { margin-top: 18px; }
+.meet__text { margin-top: 18px; font-size: 1.125rem; line-height: 1.5; max-width: 56ch; }
+.r-head--tight { margin-bottom: 0; }
+.r-section--cream { background: var(--cream); }
+.r-section--cream .card { background: var(--ground); }
+.r-section--cream .card--tomato { background: var(--tomato); }
+.r-section--cream .card--citrus { background: var(--citrus); }
+.r-section--cream .card--leaf { background: var(--leaf); }
+.r-section--ultra { background: var(--ultra); color: var(--cream); }
+.r-section--ultra .r-head h2 { color: var(--cream); }
+.r-section--ultra .phone { box-shadow: 0 16px 34px rgb(0 0 0 / .35); }
