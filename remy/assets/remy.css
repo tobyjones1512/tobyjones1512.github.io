@@ -182,7 +182,8 @@
 .r-gallery figcaption { margin-top: 14px; text-align: center; font-weight: 800; }
 
 /* Icons */
-.icons { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+.icons { display: grid; grid-template-columns: repeat(auto-fill, 72px); gap: 14px; margin-top: 8px; }
+.icons img[hidden] { display: none; }
 .icons img { width: 72px; height: 72px; border-radius: 17px; box-shadow: 0 3px 8px rgb(58 26 20 / .2); }
 
 /* Pricing */
