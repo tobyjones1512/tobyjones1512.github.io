@@ -233,6 +233,22 @@
 </footer>
 
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+// Make It Yours: show at most two rows of icons, and only full rows.
+(function () {
+  var grid = document.querySelector('.icons');
+  if (!grid) return;
+  var icons = Array.prototype.slice.call(grid.children);
+  function fit() {
+    var columns = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+    var rows = Math.min(2, Math.floor(icons.length / columns));
+    var shown = rows > 0 ? rows * columns : icons.length;
+    icons.forEach(function (icon, i) { icon.hidden = i >= shown; });
+  }
+  fit();
+  new ResizeObserver(fit).observe(grid);
+})();
+</script>
 <script src="/assets/cookie-consent.js" defer></script>
 <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="tobyjones1512" data-description="Support me on Buy me a coffee!" data-message="Thank you for your interest in my apps... please buy me a coffee?? 😁" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
