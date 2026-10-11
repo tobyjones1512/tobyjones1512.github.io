@@ -1,0 +1,198 @@
+/* Sleepyhead
+   Mirrors the app's design system (Theme.swift): the dawn sky gradient with
+   stars and a rising glow, frosted glass cards, white type on dark and
+   rounded system type. Loaded after ../assets/styles.css. */
+
+body.sleepy {
+  --sky-0: #0A0D24;
+  --sky-1: #171438;
+  --sky-2: #6B3847;
+  --sky-3: #EB8C52;
+  --glow: #FFC773;
+  --orange: #FF9F0A;
+  --green: #34C759;
+  --cyan: #64D2FF;
+  --text: #fff;
+  --text-2: rgba(255, 255, 255, .7);
+  --text-3: rgba(255, 255, 255, .5);
+  --glass: rgba(255, 255, 255, .1);
+  --glass-edge: rgba(255, 255, 255, .2);
+  --ink: #fff;
+  --paper: var(--sky-0);
+  --dim: var(--text-2);
+  --field: var(--orange);
+  --rule: 1px solid var(--glass-edge);
+  --hair: 1px solid rgba(255, 255, 255, .14);
+  --rounded: ui-rounded, "SF Pro Rounded", "Nunito", "Hiragino Maru Gothic ProN", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  position: relative;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: var(--rounded);
+  background:
+    radial-gradient(ellipse 90% 520px at 50% 100%, rgba(255, 199, 115, .55), rgba(255, 199, 115, 0) 70%) no-repeat,
+    linear-gradient(180deg, var(--sky-0) 0%, var(--sky-1) 35%, var(--sky-2) 72%, var(--sky-3) 100%) fixed;
+  background-color: var(--sky-0);
+}
+body.sleepy::before {
+  content: "";
+  position: absolute; inset: 0 0 auto 0; height: min(100%, 1100px);
+  pointer-events: none; z-index: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 7% 12%, rgba(255,255,255,.8), transparent),
+    radial-gradient(1px 1px at 14% 31%, rgba(255,255,255,.55), transparent),
+    radial-gradient(2px 2px at 22% 7%, rgba(255,255,255,.7), transparent),
+    radial-gradient(1px 1px at 29% 22%, rgba(255,255,255,.6), transparent),
+    radial-gradient(1.5px 1.5px at 37% 38%, rgba(255,255,255,.5), transparent),
+    radial-gradient(1px 1px at 44% 14%, rgba(255,255,255,.8), transparent),
+    radial-gradient(2px 2px at 52% 28%, rgba(255,255,255,.55), transparent),
+    radial-gradient(1px 1px at 59% 6%, rgba(255,255,255,.7), transparent),
+    radial-gradient(1.5px 1.5px at 66% 35%, rgba(255,255,255,.6), transparent),
+    radial-gradient(1px 1px at 73% 17%, rgba(255,255,255,.8), transparent),
+    radial-gradient(2px 2px at 81% 9%, rgba(255,255,255,.6), transparent),
+    radial-gradient(1px 1px at 88% 26%, rgba(255,255,255,.5), transparent),
+    radial-gradient(1.5px 1.5px at 94% 15%, rgba(255,255,255,.75), transparent),
+    radial-gradient(1px 1px at 4% 44%, rgba(255,255,255,.45), transparent),
+    radial-gradient(1px 1px at 48% 46%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1.5px 1.5px at 91% 48%, rgba(255,255,255,.45), transparent);
+}
+body.sleepy > * { position: relative; z-index: 1; }
+body.sleepy ::selection { background: var(--glow); color: var(--sky-0); }
+body.sleepy :focus-visible { outline: 3px solid var(--glow); outline-offset: 3px; }
+body.sleepy a { text-decoration-thickness: 1px; }
+
+/* type: rounded, sentence case, no condensed caps */
+body.sleepy :is(h1, h2, h3, .nav__brand, .btn, .rule__no, .store__text span, .doc h1, .app .hero h1, .head h2),
+body.sleepy :is(.nav__links a, figcaption, .mailbox__label, .doc-part h2, .doc-part h3) {
+  font-family: var(--rounded);
+  font-stretch: 100%;
+  text-transform: none;
+  letter-spacing: 0;
+}
+body.sleepy :is(h1, h2, h3, .nav__brand, .store__text span) { font-weight: 700; line-height: 1.12; }
+
+/* glass */
+body.sleepy :is(.nav, .tile, .rule, .mailbox, .store, .faq-item, .gallery figure, .callout) {
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  backdrop-filter: blur(22px) saturate(1.4);
+}
+
+/* nav */
+body.sleepy .nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(10, 13, 36, .55);
+  border-bottom: 1px solid var(--glass-edge);
+  color: var(--text);
+}
+body.sleepy .nav__brand { color: var(--text); font-size: 1.25rem; }
+body.sleepy .nav__brand img { border-radius: 9px; }
+body.sleepy .nav__links a { color: var(--text-2); font-size: .9375rem; font-weight: 600; border-bottom: 0; }
+body.sleepy .nav__links a:hover { color: var(--text); }
+body.sleepy .nav__links .nav__cta {
+  background: #fff; color: var(--sky-0); font-size: .9375rem; padding: 9px 16px; border-radius: 999px; margin-left: 4px;
+}
+body.sleepy .nav__links .nav__cta:hover { background: var(--glow); color: var(--sky-0); }
+
+/* hero */
+body.sleepy .app .hero, body.sleepy .hero {
+  background: none; box-shadow: none; clip-path: none; color: var(--text);
+  padding-top: clamp(40px, 7vw, 88px); padding-bottom: clamp(40px, 7vw, 88px);
+}
+body.sleepy .hero::after { display: none; }
+body.sleepy .hero__icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 10px 40px rgba(255, 159, 10, .35); }
+body.sleepy .hero h1 {
+  font-size: clamp(2.75rem, 7vw, 5.25rem); font-weight: 800; line-height: 1.02; text-wrap: balance;
+}
+body.sleepy .hero h1 em {
+  font-style: normal; background: none; padding: 0; color: transparent;
+  background-image: linear-gradient(90deg, var(--glow), var(--orange));
+  -webkit-background-clip: text; background-clip: text;
+}
+body.sleepy .hero__sub { color: var(--text-2); }
+body.sleepy .hero__disclaimer { color: var(--text-3); }
+body.sleepy .hero__shot {
+  border: 0; background: none; border-radius: 40px;
+  box-shadow: 0 0 0 1px var(--glass-edge), 0 30px 80px rgba(0, 0, 0, .5), 0 0 120px rgba(255, 159, 10, .25);
+}
+
+/* App Store badge */
+body.sleepy .store, body.sleepy span.store {
+  background: #fff; color: #000; border: 0; border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+body.sleepy a.store:hover { background: var(--glow); color: #000; transform: translateY(-1px); }
+body.sleepy .store__text small { font-size: .6875rem; font-weight: 500; }
+body.sleepy .store__text span { font-size: 1.5rem; font-weight: 600; }
+body.sleepy .store svg { width: 26px; height: 30px; }
+
+/* sections */
+body.sleepy .section, body.sleepy .section--tint { background: none; color: var(--text); }
+body.sleepy .head h2 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.08; }
+body.sleepy .head > p, body.sleepy .section--tint .head > p { color: var(--text-2); }
+
+/* cards */
+body.sleepy .bento { border: 0; gap: 14px; }
+body.sleepy .tile {
+  border: 1px solid var(--glass-edge); background: var(--glass);
+  border-radius: 28px; padding: 24px 22px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15);
+}
+body.sleepy .tile h3 { font-size: 1.375rem; }
+body.sleepy .tile__body, body.sleepy .section--tint .tile__body { color: var(--text-2); }
+body.sleepy .tile--dark {
+  background: linear-gradient(135deg, rgba(255, 159, 10, .28), rgba(255, 199, 115, .10)); color: var(--text);
+  border-color: rgba(255, 199, 115, .45);
+}
+body.sleepy .tile--dark .tile__body { color: rgba(255, 255, 255, .85); }
+
+body.sleepy .rules { border: 0; gap: 14px; }
+body.sleepy .rule, body.sleepy .rule + .rule {
+  padding: 22px; border: 1px solid var(--glass-edge); background: var(--glass); border-radius: 28px;
+}
+body.sleepy .rule p { color: var(--text-2); }
+body.sleepy .rule__no, body.sleepy .section:not(.section--tint) .rule__no {
+  color: var(--glow); font-size: 2.25rem; font-weight: 800; line-height: 1;
+}
+
+/* screenshots */
+body.sleepy .gallery { gap: 20px; padding-bottom: 20px; scrollbar-color: rgba(255,255,255,.4) transparent; }
+body.sleepy .gallery img {
+  border: 0; border-radius: 30px; box-shadow: 0 0 0 1px var(--glass-edge), 0 18px 50px rgba(0, 0, 0, .45);
+}
+body.sleepy figcaption { color: var(--text-2); font-size: .9375rem; font-weight: 600; text-align: center; }
+
+/* footer */
+body.sleepy .foot, body.sleepy .app .foot {
+  background: rgba(10, 13, 36, .6); color: var(--text-2); border-top: 1px solid var(--glass-edge);
+  -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px);
+}
+body.sleepy .foot a { color: var(--text); }
+body.sleepy .foot a:hover { color: var(--glow); }
+
+/* support / privacy / terms */
+body.sleepy .doc__back { color: var(--text-2); }
+body.sleepy .doc__back:hover { color: var(--glow); }
+body.sleepy .doc h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); font-weight: 800; line-height: 1.05; }
+body.sleepy .doc__updated { color: var(--text-3); }
+body.sleepy .doc-part {
+  border: 1px solid var(--glass-edge); background: var(--glass); border-radius: 28px;
+  padding: 24px 22px; margin-bottom: 14px; gap: 12px;
+  -webkit-backdrop-filter: blur(22px) saturate(1.4); backdrop-filter: blur(22px) saturate(1.4);
+}
+body.sleepy .doc-part h2 { font-size: 1.375rem; font-weight: 700; line-height: 1.2; }
+body.sleepy .doc-part ul { list-style: disc; }
+body.sleepy .doc-part a, body.sleepy .inline { color: var(--glow); }
+body.sleepy .faq-item { border-top: var(--hair); background: none; border-radius: 0; -webkit-backdrop-filter: none; backdrop-filter: none; }
+body.sleepy .faq-item p { color: var(--text-2); }
+body.sleepy .mailbox {
+  background: rgba(255, 159, 10, .2); border: 1px solid rgba(255, 199, 115, .45); border-radius: 20px; color: var(--text);
+}
+body.sleepy .mailbox:hover { background: rgba(255, 159, 10, .32); color: var(--text); }
+body.sleepy .mailbox__label, body.sleepy .mailbox:hover .mailbox__label { color: var(--glow); }
+body.sleepy .cookie-note { background: rgba(10, 13, 36, .85); border: 1px solid var(--glass-edge); border-radius: 20px; }
+body.sleepy .cookie-note button { background: #fff; color: var(--sky-0); border-radius: 999px; font-family: var(--rounded); font-stretch: 100%; text-transform: none; letter-spacing: 0; }
+
+@media (max-width: 640px) {
+  body.sleepy .nav { padding-inline: var(--gut); }
+}
