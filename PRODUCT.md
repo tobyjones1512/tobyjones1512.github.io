@@ -9,7 +9,7 @@ web
 ## Users
 
 - Prospective clients of Caffeine Media: brands, musicians, families and event organisers who need video edited, shot, written, restored or live-streamed. Many arrive with a specific job ("digitise grandad's cine reels", "stream a funeral for family abroad").
-- App Store visitors and existing users of Toby Jones's iOS/macOS apps (Bullseye darts, DoP Toolkit, Pill Blast, Remy, Revolution Disk Scrubber, Snooker Scoring, Ultimate Player, iFart) who need a product page, support answers or the privacy policy. Apple review also reads the support and privacy pages.
+- App Store visitors and existing users of Toby Jones's iOS/macOS apps (DoP Toolkit, Pill Blast, Remy, Revolution Disk Scrubber, Snooker Scoring, Ultimate Player, iFart) who need a product page, support answers or the privacy policy. Apple review also reads the support and privacy pages.
 
 ## Product Purpose
 
