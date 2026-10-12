@@ -136,7 +136,7 @@
   </div>
   <div class="doc-part">
     <h2>Converting single files</h2>
-    <p>You don't have to port a whole archive. With a file open, the <strong>File</strong> menu offers the conversion for it:</p>
+    <p>You don't have to port a whole archive. Right-click the file in the Project Navigator, or its tab, to convert it:</p>
     <ul><li><strong>KCL &harr; BCO</strong> (collision) and <strong>KMP &harr; BOL</strong> (course data). Positions are scaled; with no model there is no ground to lift collision onto or minimap to fit the track in, so for the best result use the archive port. A KMP's own opening fly-over becomes the Double Dash intro cameras.</li><li><strong>Model: BRRES &harr; BMD.</strong> Geometry, materials and textures only.</li><li><strong>Texture animation: BTK &harr; SRT0.</strong> A BTK becomes a BRRES holding an SRT0, and the first SRT0 in a BRRES becomes a BTK. Materials keep their names, so the animation only takes effect on a model with materials of the same name. Rotation centres are dropped, because SRT0 has none.</li></ul>
     <p>Skeletal animation (BCA, CHR0) isn't converted.</p>
   </div>
