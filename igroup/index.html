@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>iGroup - tabs for every window on your Mac</title>
+<meta name="description" content="iGroup puts windows from any Mac app into one tabbed group. Drag a window onto another, and a tab bar joins them. Save groups, auto-tab apps, and keep groups together in Stage Manager.">
+<meta property="og:site_name" content="Caffeine Media">
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecaffeinemediacompany.com/igroup/">
+<meta property="og:title" content="iGroup - tabs for every window on your Mac">
+<meta property="og:description" content="Drag one window onto another and they share a tab bar. Safari, Pages, Keynote, Finder: any app, one group.">
+<meta property="og:image" content="https://thecaffeinemediacompany.com/igroup/assets/app-icon.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#2D5B88">
+<link rel="canonical" href="https://thecaffeinemediacompany.com/igroup/">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/app-icon.png">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="assets/igroup.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "iGroup",
+ "applicationCategory": "UtilitiesApplication",
+ "operatingSystem": "macOS 27 or later",
+ "description": "iGroup puts windows from any Mac app into one tabbed group. Drag a window onto another to tab them together, save groups and restore them later.",
+ "url": "https://thecaffeinemediacompany.com/igroup/",
+ "image": "https://thecaffeinemediacompany.com/igroup/assets/app-icon.png",
+ "author": { "@type": "Organization", "name": "Caffeine Media", "url": "https://thecaffeinemediacompany.com/" }
+}
+</script>
+</head>
+<body class="app igroup">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">
+    <img width="160" height="160" src="assets/app-icon-160.png" alt="">
+    iGroup
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#how">How it works</a>
+    <a href="#features">Features</a>
+    <a href="#styles">Tab styles</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main id="main" class="desk">
+
+<section class="ig-hero wrap" aria-labelledby="title">
+  <div class="ig-hero__words">
+    <h1 id="title"><span class="ig-hero__name">iGroup</span> Tabs for every window on your Mac.</h1>
+  </div>
+
+  <div class="stage" id="stage" role="img" aria-label="Animation: a Pages window and a Keynote window snap onto a Safari window, and their tabs line up in one tab bar.">
+    <div class="win stage__win" data-app="safari" style="--x:0;--y:0">
+      <div class="win__tabs">
+        <span class="tab is-on" data-for="safari"><i class="glyph glyph--safari"></i>Caffeine Media</span>
+      </div>
+      <div class="win__body">
+        <div class="pane pane--safari is-on" data-pane="safari">
+          <span class="addr">thecaffeinemediacompany.com</span>
+          <span class="blk blk--hero"></span>
+          <span class="blk blk--row"></span><span class="blk blk--row"></span><span class="blk blk--row s"></span>
+        </div>
+        <div class="pane pane--pages" data-pane="pages" hidden>
+          <span class="doc-h">Launch notes</span>
+          <span class="ln"></span><span class="ln"></span><span class="ln s"></span><span class="ln"></span><span class="ln m"></span>
+        </div>
+        <div class="pane pane--keynote" data-pane="keynote" hidden>
+          <span class="slide"><b>Autumn Launch</b><small>Plan, shoot, edit, deliver</small></span>
+          <span class="thumbs"><i></i><i></i><i></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="win stage__win stage__win--loose" data-app="pages" style="--x:1;--y:1">
+      <div class="win__tabs"><span class="tab"><i class="glyph glyph--pages"></i>Launch Notes</span></div>
+      <div class="win__body"><div class="pane pane--pages is-on"><span class="doc-h">Launch notes</span><span class="ln"></span><span class="ln"></span><span class="ln s"></span><span class="ln"></span></div></div>
+    </div>
+    <div class="win stage__win stage__win--loose" data-app="keynote" style="--x:2;--y:2">
+      <div class="win__tabs"><span class="tab"><i class="glyph glyph--keynote"></i>Autumn Launch</span></div>
+      <div class="win__body"><div class="pane pane--keynote is-on"><span class="slide"><b>Autumn Launch</b><small>Plan, shoot, edit, deliver</small></span></div></div>
+    </div>
+  </div>
+
+  <div class="win get">
+    <div class="win__tabs"><span class="tab is-on">Get iGroup</span></div>
+    <div class="win__body get__body">
+      <p class="get__lede">Drag one window onto another and they share a tab bar. Safari, Pages, Keynote, Finder, anything: one window frame, one click between them.</p>
+      <div class="get__btns">
+        <span class="store">
+          <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 8 184.8 8 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 37.6 59 129.3 107.2 127.8 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-84.1 102.6-121.8-65.2-30.7-65.7-90-65.7-91.9zM255.1 90.7c26.9-32 24.5-61.2 23.7-71.7-23.8 1.4-51.4 16.4-67.1 34.8-17.3 19.6-27.5 44-25.3 71.4 25.9 2 49.5-11 68.7-34.5z"/></svg>
+          <span class="store__text"><small>Coming soon on the</small><span>Mac App Store</span></span>
+        </span>
+        <span class="store">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span class="store__text"><small>Coming soon on</small><span>Gumroad</span></span>
+        </span>
+      </div>
+      <p class="get__req">For macOS 27 or later.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ig-sec wrap" id="how" aria-labelledby="how-h">
+  <h2 id="how-h" class="desk__h">Four moves. That's the lot.</h2>
+  <div class="win">
+    <div class="win__tabs"><span class="tab is-on">How it works</span></div>
+    <ol class="win__body steps4">
+      <li><span class="num">1</span><h3>Drag</h3><p>Drag any window onto another window's title bar. Hold a key first if you'd rather grouping only happens on purpose.</p></li>
+      <li><span class="num">2</span><h3>Snap</h3><p>A tab bar appears above them and the windows share one frame. Move or resize one, and the rest follow.</p></li>
+      <li><span class="num">3</span><h3>Switch</h3><p>Click a tab, or press <kbd>⌃⌥⇥</kbd>, to bring that window to the front. Drag a tab away to pull it out again.</p></li>
+      <li><span class="num">4</span><h3>Save</h3><p>Right-click a tab and choose Save Group. Restore it later, apps and all, from the menu bar or a launcher in your Dock.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="ig-sec wrap" id="features" aria-labelledby="feat-h">
+  <h2 id="feat-h" class="desk__h">And everything around it.</h2>
+  <div class="win feat">
+    <div class="win__tabs" aria-hidden="true">
+      <span class="tab is-on">Features</span><span class="tab">Stage Manager</span><span class="tab">Dock</span><span class="tab">Shortcuts</span>
+    </div>
+    <div class="win__body feat__grid">
+      <div class="feat__p"><h3>Same app, one group</h3><p>Auto-tab gathers an app's open windows into one group and adds its new windows as tabs. Turn it on for every app, or only the ones you choose. Press <kbd>⌘N</kbd> in a grouped window and the new window opens as a tab.</p></div>
+      <div class="feat__p"><h3>One item in Stage Manager</h3><p>A group shows as one item in the Stage Manager strip, and minimising it sends the whole group there together. Bring it back and every tab comes with it.</p></div>
+      <div class="feat__p"><h3>A Dock icon for your groups</h3><p>Show iGroup in the Dock and its icon combines the front group's apps and shows how many groups are open. Its menu lists every group and saved grouping.</p></div>
+      <div class="feat__p"><h3>Rules and app lists</h3><p>Match windows by app and title text, then always tab the matches together or never group them. Keep a list of apps iGroup should never touch, or the only apps it should.</p></div>
+      <div class="feat__p"><h3>Keyboard shortcuts</h3><p><kbd>⌃⌥⇥</kbd> next tab, <kbd>⌃⌥⇧⇥</kbd> previous, <kbd>⌃⌥W</kbd> close, <kbd>⌃⌥U</kbd> ungroup and <kbd>⌃⌥R</kbd> rename. Change any of them in Settings.</p></div>
+      <div class="feat__p"><h3>One kind of tab</h3><p>Use iGroup tabs instead of native tabs in Finder and TextEdit. Turn it off and your old settings come back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ig-sec wrap" id="styles" aria-labelledby="styles-h">
+  <h2 id="styles-h" class="desk__h">Four tab styles. Any size.</h2>
+  <div class="win">
+    <div class="win__tabs"><span class="tab is-on">Appearance</span></div>
+    <div class="win__body strip">
+      <div class="strip__row" data-style="rounded"><p class="strip__name">Rounded (browser)</p><div class="mini"><span class="on">Safari</span><span>Pages</span><span>Keynote</span></div></div>
+      <div class="strip__row" data-style="pill"><p class="strip__name">Pill</p><div class="mini"><span class="on">Safari</span><span>Pages</span><span>Keynote</span></div></div>
+      <div class="strip__row" data-style="square"><p class="strip__name">Square</p><div class="mini"><span class="on">Safari</span><span>Pages</span><span>Keynote</span></div></div>
+      <div class="strip__row" data-style="minimal"><p class="strip__name">Minimal (underline)</p><div class="mini"><span class="on">Safari</span><span>Pages</span><span>Keynote</span></div></div>
+      <p class="strip__note">Each style keeps its own height (20 to 48 pt) and padding (2 to 24 pt). Choose when close buttons show, whether tabs carry app icons, a background bar, your own tab colours, an accent colour per group, and the outline that shows where a dragged window will land.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ig-sec wrap" id="needs" aria-labelledby="needs-h">
+  <h2 id="needs-h" class="desk__h">What it needs.</h2>
+  <div class="win">
+    <div class="win__tabs"><span class="tab is-on">About iGroup</span></div>
+    <dl class="win__body facts">
+      <div><dt>System</dt><dd>macOS 27 or later.</dd></div>
+      <div><dt>Permission</dt><dd>Accessibility access, so iGroup can move, raise and tab other apps' windows. It asks on first launch.</dd></div>
+      <div><dt>Works with</dt><dd>Any app with standard windows.</dd></div>
+      <div><dt>Languages</dt><dd>English, Chinese (Simplified and Traditional), French, German, Korean, Portuguese (Brazil), Russian and Spanish.</dd></div>
+      <div><dt>Your data</dt><dd>No account and no tracking. Groups and settings stay on your Mac. <a href="privacy.html">Privacy policy</a></dd></div>
+    </dl>
+  </div>
+  <p class="made-in">Created by <a href="https://thecaffeinemediacompany.com">Toby Jones</a> in England, UK</p>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__links wrap">
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+  <p class="wrap">© <span id="yr">2026</span> iGroup. Made by Toby Jones.</p>
+</footer>
+
+<script src="assets/igroup.js" defer></script>
+<script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>
