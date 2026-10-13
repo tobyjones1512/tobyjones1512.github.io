@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Support - iGroup</title>
+<meta name="description" content="Help and frequently asked questions for iGroup, window tabs for macOS.">
+<meta name="theme-color" content="#2D5B88">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/app-icon.png">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body class="app" style="--field: #FFCB00">
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">
+    <img width="160" height="160" src="assets/app-icon-160.png" alt="">
+    iGroup
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#features">Features</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main class="doc" id="main">
+  <a class="doc__back" href="index.html"><svg class="arr" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M14 8H3m4-5L2 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Back to iGroup</a>
+
+  <div class="doc__header">
+    <img width="160" height="160" src="assets/app-icon-160.png" alt="">
+    <h1>Support</h1>
+  </div>
+  <p class="doc__updated">We usually reply within a few days.</p>
+
+  <div class="doc-part">
+    <h2>Get in touch</h2>
+    <p>Found a bug, hit a window that won't group, or have an idea? Send it over, ideally with the app and macOS version. Every message is read.</p>
+    <div class="contact-grid">
+      <a class="mailbox" href="mailto:hello@thecaffeinemediacompany.com?subject=iGroup%20Support">
+        <p class="mailbox__label">Help &amp; feedback</p>
+        <p class="mailbox__value">hello@thecaffeinemediacompany.com</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="doc-part">
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <h3>How do I group two windows?</h3>
+      <p>Drag a window by its title bar and drop it onto another window's title bar. A tab bar appears above them. Keep dragging other windows onto the tab bar to add more tabs.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Nothing happens when I drag a window</h3>
+      <p>iGroup needs Accessibility access to move and tab other apps' windows. Open System Settings › Privacy &amp; Security › Accessibility and switch iGroup on. If it is already on, switch it off and on again. Also check that Enable iGroup is ticked in the menu bar menu, and whether Settings › General asks you to hold a key while grouping.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I take a window out of a group?</h3>
+      <p>Drag its tab away from the tab bar, or press ⌃⌥U. Right-click a tab for more options, including Ungroup.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I switch tabs from the keyboard?</h3>
+      <p>⌃⌥⇥ goes to the next tab and ⌃⌥⇧⇥ to the previous one. ⌃⌥W closes a tab and ⌃⌥R renames it. Change any of them in Settings › Shortcuts.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can windows of the same app tab together automatically?</h3>
+      <p>Yes. In Settings › General, set Auto-tab windows of the same app to All apps, or to Only apps chosen in Apps and pick them in the Apps tab.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why did my Stage Manager setting change?</h3>
+      <p>If you choose Keep tab groups together in Stage Manager, iGroup sets Stage Manager to show an app's windows all at once. It asks first. Turn the option off in Settings › General and your previous setting comes back.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why don't Finder or TextEdit open native tabs any more?</h3>
+      <p>Use iGroup tabs instead of native tabs is on. It turns off Prefer tabs and Finder's Open folders in tabs so iGroup can tab those windows. Turn it off in Settings › General and your old settings are restored.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I save a group and open it again?</h3>
+      <p>Right-click a tab and choose Save Group. Restore it from the menu bar menu or from Settings › Groups, which can also save a launcher you can keep in the Dock. Restoring opens any apps that aren't running and tabs their windows together.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I change how tabs look?</h3>
+      <p>Settings › Appearance has four tab styles: Rounded, Pill, Square and Minimal. Each style keeps its own height and padding. You can also choose close buttons, app icons, a background bar, tab colours and an accent colour for each group.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Which Macs does iGroup run on?</h3>
+      <p>Any Mac running macOS 27 or later.</p>
+    </div>
+  </div>
+</main>
+
+<p class="made-in wrap">Created by <a href="https://thecaffeinemediacompany.com">Toby Jones</a> in England, UK</p>
+<footer class="foot">
+  <div class="foot__links">
+    <a href="index.html">iGroup</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </div>
+  <p>© <span id="yr">2026</span> iGroup. Made by Toby Jones.</p>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>
