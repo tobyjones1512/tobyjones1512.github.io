@@ -154,6 +154,8 @@ kbd {
 [data-style="minimal"] .mini span { background: transparent; box-shadow: inset 0 -2px 0 transparent; }
 [data-style="minimal"] .mini span.on { background: transparent; color: #fff; box-shadow: inset 0 -3px 0 #0A84FF; }
 
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #000; }
+.shots img { width: 100%; height: auto; }
 .facts { display: grid; }
 .facts div { display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 16px clamp(20px, 3vw, 32px); }
 .facts div + div { border-top: 2px solid #000; }
@@ -180,7 +182,8 @@ kbd {
   .feat__p, .feat__p:nth-child(n) { border-right: 0; border-bottom: 2px solid #000; }
   .feat__p:last-child { border-bottom: 0; }
   .steps4 li + li { border-left: 0; border-top: 2px solid #000; }
-  .strip__row, .facts div { grid-template-columns: 1fr; gap: 10px; }
+  .strip__row, .facts div, .shots { grid-template-columns: 1fr; gap: 10px; }
+  .shots { gap: 2px; }
   .tab { padding: 0 11px; }
 }
 @media (prefers-reduced-motion: reduce) {
