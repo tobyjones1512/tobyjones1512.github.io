@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>iGroup - tabs for every window on your Mac</title>
-<meta name="description" content="iGroup puts windows from any Mac app into one tabbed group. Drag a window onto another, and a tab bar joins them. Save groups, auto-tab apps, and keep groups together in Stage Manager.">
+<meta name="description" content="iGroup puts windows from any Mac app into one tabbed group. Drag a window onto another, and a tab bar joins them. Open apps and websites from a New Tab Page, launch Tab Presets from Spotlight or the Dock, and keep groups together in Stage Manager.">
 <meta property="og:site_name" content="Caffeine Media">
 <meta property="og:locale" content="en_GB">
 <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
  "@type": "SoftwareApplication",
  "name": "iGroup",
  "applicationCategory": "UtilitiesApplication",
- "operatingSystem": "macOS 14 or later",
+ "operatingSystem": "macOS 10.14 or later",
  "description": "iGroup puts windows from any Mac app into one tabbed group. Drag a window onto another to tab them together, save groups and restore them later.",
  "url": "https://thecaffeinemediacompany.com/igroup/",
  "image": "https://thecaffeinemediacompany.com/igroup/assets/app-icon.png",
@@ -103,7 +103,7 @@
           <span class="store__text"><small>Download it on</small><span>Gumroad</span></span>
         </a>
       </div>
-      <p class="get__req">For macOS 14 Sonoma or later.</p>
+      <p class="get__req">For macOS 14 Sonoma or later. The Legacy Edition, available on Gumroad, works on macOS 10.14 Mojave or later.</p>
     </div>
   </div>
 </section>
@@ -116,7 +116,7 @@
       <li><span class="num">1</span><h3>Drag</h3><p>Drag any window onto another window's title bar. Hold a key first if you'd rather grouping only happens on purpose.</p></li>
       <li><span class="num">2</span><h3>Snap</h3><p>A tab bar appears above them and the windows share one frame. Move or resize one, and the rest follow.</p></li>
       <li><span class="num">3</span><h3>Switch</h3><p>Click a tab, or press <kbd>⌃⌥⇥</kbd>, to bring that window to the front. Drag a tab away to pull it out again.</p></li>
-      <li><span class="num">4</span><h3>Save</h3><p>Right-click a tab and choose Save Group. Restore it later, apps and all, from the menu bar or a launcher in your Dock.</p></li>
+      <li><span class="num">4</span><h3>Save</h3><p>Right-click a tab and choose Save Group to make a Tab Preset. Open it later, apps and all, from Spotlight, Launchpad, the Dock or the menu bar.</p></li>
     </ol>
   </div>
 </section>
@@ -125,12 +125,18 @@
   <h2 id="feat-h" class="desk__h">And everything around it.</h2>
   <div class="win feat">
     <div class="win__tabs" aria-hidden="true">
-      <span class="tab is-on">Features</span><span class="tab">Stage Manager</span><span class="tab">Dock</span><span class="tab">Shortcuts</span>
+      <span class="tab is-on">Features</span><span class="tab">New Tab</span><span class="tab">Presets</span><span class="tab">Safari</span><span class="tab">Dock</span>
     </div>
     <div class="win__body feat__grid">
-      <div class="feat__p"><h3>Same app, one group</h3><p>Auto-tab gathers an app's open windows into one group and adds its new windows as tabs. Turn it on for every app, or only the ones you choose. Press <kbd>⌘N</kbd> in a grouped window and the new window opens as a tab.</p></div>
+      <div class="feat__p"><h3>A New Tab Page</h3><p>Click <kbd>+</kbd> and the new tab opens on a page of your apps, most used first. Type in one box to find an app or a Tab Preset, open a website, or search the web in your default browser. Prefer something simpler? Make <kbd>+</kbd> open an app you choose, or a new window of the app in front.</p></div>
+      <div class="feat__p"><h3>Tab Presets</h3><p>Save a set of apps and webpages as a preset with its own name and colour. iGroup turns it into an app with an icon made from its apps, so you can open it from Spotlight, Launchpad, the Dock or your desktop, and everything opens tabbed together.</p></div>
+      <div class="feat__p"><h3>Safari tabs, group tabs</h3><p>Turn on the iGroup Tabs Safari extension and a new tab in a grouped Safari window opens as a tab of the group instead, next to your other apps. It's optional and stays off until you switch it on.</p></div>
+      <div class="feat__p"><h3>Every group in the Dock</h3><p>Give each group its own Dock item, drawn from its apps in its colour, whether the group is minimised or not. Click it to bring the group forward.</p></div>
+      <div class="feat__p"><h3>A colour for each group</h3><p>New groups each get their own accent colour, so you can tell them apart at a glance. Pick a different one, or switch it off.</p></div>
+      <div class="feat__p"><h3>Tabs that make room</h3><p>Drag a tab along the bar and the others slide aside to make room for it. Click any part of a group's bar to bring that group to the front.</p></div>
+      <div class="feat__p"><h3>Same app, one group</h3><p>Auto-tab gathers an app's open windows into one group and adds its new windows as tabs. Turn it on for every app, or only the ones you choose. Smaller windows, like palettes and pop-ups, are left alone. Press <kbd>⌘N</kbd> in a grouped window and the new window opens as a tab.</p></div>
       <div class="feat__p"><h3>One item in Stage Manager</h3><p>A group shows as one item in the Stage Manager strip, and minimising it sends the whole group there together. Bring it back and every tab comes with it.</p></div>
-      <div class="feat__p"><h3>A Dock icon for your groups</h3><p>Show iGroup in the Dock and its icon combines the front group's apps and shows how many groups are open. Its menu lists every group and saved grouping.</p></div>
+      <div class="feat__p"><h3>A Dock icon for your groups</h3><p>Show iGroup in the Dock and its icon combines the front group's apps and shows how many groups are open. Its menu lists every group and Tab Preset.</p></div>
       <div class="feat__p"><h3>Rules and app lists</h3><p>Match windows by app and title text, then always tab the matches together or never group them. Keep a list of apps iGroup should never touch, or the only apps it should.</p></div>
       <div class="feat__p"><h3>Keyboard shortcuts</h3><p><kbd>⌃⌥⇥</kbd> next tab, <kbd>⌃⌥⇧⇥</kbd> previous, <kbd>⌃⌥W</kbd> close, <kbd>⌃⌥U</kbd> ungroup and <kbd>⌃⌥R</kbd> rename. Change any of them in Settings.</p></div>
       <div class="feat__p"><h3>One kind of tab</h3><p>Use iGroup tabs instead of native tabs in Finder and TextEdit. Turn it off and your old settings come back.</p></div>
@@ -157,6 +163,7 @@
   <div class="win">
     <div class="win__tabs"><span class="tab is-on">Screenshots</span></div>
     <div class="win__body shots">
+      <img class="wide" width="1440" height="900" src="assets/screenshots/shot-5.jpg" alt="iGroup's New Tab Page: a search box above a row of Tab Presets and a grid of apps, in a new tab of a group with Safari, Pages and Keynote" loading="lazy">
       <img width="1440" height="900" src="assets/screenshots/shot-1.jpg" alt="Safari, Pages and Keynote windows sharing one iGroup tab bar, with the Safari tab in front" loading="lazy">
       <img width="1440" height="900" src="assets/screenshots/shot-2.jpg" alt="The Pages tab in front in a group with Safari and Keynote" loading="lazy">
       <img width="1440" height="900" src="assets/screenshots/shot-3.jpg" alt="The Keynote tab in front, with a yellow group accent on the tab bar" loading="lazy">
@@ -170,10 +177,10 @@
   <div class="win">
     <div class="win__tabs"><span class="tab is-on">About iGroup</span></div>
     <dl class="win__body facts">
-      <div><dt>System</dt><dd>macOS 14 Sonoma or later. Liquid Glass tabs need macOS 26 or later.</dd></div>
+      <div><dt>System</dt><dd>macOS 14 Sonoma or later. Liquid Glass tabs need macOS 26 or later. Older Macs: the Legacy Edition, available on Gumroad, works on macOS 10.14 Mojave or later. It doesn't include the New Tab Page, Tab Preset apps, the Safari extension or Dock items for each group.</dd></div>
       <div><dt>Permission</dt><dd>Accessibility access, so iGroup can move, raise and tab other apps' windows. It asks on first launch.</dd></div>
       <div><dt>Works with</dt><dd>Any app with standard windows.</dd></div>
-      <div><dt>Languages</dt><dd>English, Chinese (Simplified and Traditional), French, German, Korean, Portuguese (Brazil), Russian and Spanish.</dd></div>
+      <div><dt>Languages</dt><dd>English, Chinese (Simplified and Traditional), French, German, Korean, Portuguese (Brazil), Russian and Spanish. The Legacy Edition is in English.</dd></div>
       <div><dt>Your data</dt><dd>No account and no tracking. Groups and settings stay on your Mac. <a href="privacy.html">Privacy policy</a></dd></div>
     </dl>
   </div>
