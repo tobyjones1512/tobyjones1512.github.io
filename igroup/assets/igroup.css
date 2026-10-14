@@ -105,6 +105,8 @@
 .get__lede { font-size: 1.125rem; line-height: 1.5; }
 .get__btns { display: flex; flex-wrap: wrap; gap: 10px; }
 .igroup span.store { color: #000; border-color: #000; }
+.igroup a.store { background: #000; color: #fff; border-color: #000; }
+.igroup a.store:hover, .igroup a.store:focus-visible { background: #FFCB00; color: #000; }
 .get__req { font-size: .9375rem; color: #3D3D3D; }
 
 /* ── Sections on the desktop ───────────────────────── */
