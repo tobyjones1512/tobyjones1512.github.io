@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apps &amp; Games - Caffeine Media</title>
+<meta name="description" content="iOS and macOS apps by Caffeine Media: cinematography tools, games, utilities and more, all made in-house.">
+<meta name="theme-color" content="#16110E">
+<meta property="og:site_name" content="Caffeine Media">
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecaffeinemediacompany.com/apps/">
+<meta property="og:title" content="Apps &amp; Games - Caffeine Media">
+<meta property="og:description" content="iOS and macOS apps by Caffeine Media: cinematography tools, games, utilities and more.">
+<meta property="og:image" content="https://thecaffeinemediacompany.com/assets/logo.png">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/mark.png">
+<link rel="canonical" href="https://thecaffeinemediacompany.com/apps/">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.apps-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: var(--rule); border-left: var(--rule);
+}
+.app-card {
+  border-right: var(--rule); border-bottom: var(--rule);
+  padding: clamp(22px, 3vw, 34px);
+  display: flex; flex-direction: column; gap: 12px;
+  text-decoration: none; color: inherit;
+  transition: background-color .15s, color .15s;
+}
+.app-card:hover { background: var(--ink); color: var(--paper); }
+.app-card:hover .spec__tag { color: var(--field); }
+.app-card:hover .app-card__desc { color: #CFC8C1; }
+.app-card__icon { width: 72px; height: 72px; border-radius: 16px; display: block; }
+.app-card__name {
+  font-stretch: var(--cond); font-weight: 800; text-transform: uppercase;
+  letter-spacing: -.005em; line-height: .9;
+  font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+}
+.app-card__desc { color: var(--dim); font-size: .9375rem; flex: 1; }
+@media (max-width: 760px) { .apps-list { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .apps-list { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="../index.html" aria-label="Caffeine Media, home">
+      <img src="../assets/mark-96.webp" alt="" width="34" height="34">
+      <span>Caffeine Media</span>
+    </a>
+
+    <details class="more" id="more">
+      <summary class="nav__burger" aria-label="Menu"><span></span><span></span></summary>
+    </details>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a class="nav__cta" href="../index.html#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <h1 class="hero__title">Apps<br>&amp; Games.</h1>
+  </div>
+  <div class="hero__band">
+    <div class="wrap">
+      <p class="hero__sub">Twelve apps for iPhone, iPad, Mac and more: filmmaking tools, games and everyday utilities, all made in-house.</p>
+    </div>
+  </div>
+  <div class="film" aria-hidden="true"></div>
+</section>
+
+<section class="section" id="apps">
+  <div class="wrap">
+    <div class="apps-list">
+
+      <a class="app-card" href="../dop-toolkit/index.html">
+        <img class="app-card__icon" src="../dop-toolkit/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">DoP Toolkit</p>
+        <p class="app-card__desc">Cinematography calculators for depth of field, exposure, frame rates and lens choice, built for on-set use.</p>
+      </a>
+
+      <a class="app-card" href="../food-hygiene/index.html">
+        <img class="app-card__icon" src="../food-hygiene/assets/app-icon-160.png" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">FSA Food Hygiene Ratings</p>
+        <p class="app-card__desc">Check the Food Standards Agency hygiene rating of any restaurant or takeaway in the UK before you eat.</p>
+      </a>
+
+      <a class="app-card" href="../fuel-prices/index.html">
+        <img class="app-card__icon" src="../fuel-prices/assets/app-icon-160.png" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">Fuel Prices</p>
+        <p class="app-card__desc">Live UK forecourt prices from the GOV.UK Fuel Finder service. Nearby list, map, and price alerts.</p>
+      </a>
+
+      <a class="app-card" href="../igroup/index.html">
+        <img class="app-card__icon" src="../igroup/assets/app-icon-160.png" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">macOS</p>
+        <p class="app-card__name">iGroup</p>
+        <p class="app-card__desc">Tabs for every window on your Mac. Drag one window onto another to group them. Any app, one tab bar.</p>
+      </a>
+
+      <a class="app-card" href="../keep/index.html">
+        <img class="app-card__icon" src="../keep/assets/app-icon-160.png" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">Keep</p>
+        <p class="app-card__desc">A private photo vault. Keep your most personal photos hidden and locked behind Face ID or Touch ID.</p>
+      </a>
+
+      <a class="app-card" href="../pill-blast/index.html">
+        <img class="app-card__icon" src="../pill-blast/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">Pill Blast</p>
+        <p class="app-card__desc">An infinite falling-block puzzle game. Match colours, clear viruses, and explore worlds that never stop unlocking.</p>
+      </a>
+
+      <a class="app-card" href="../remy/index.html">
+        <img class="app-card__icon" src="../remy/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">Remy</p>
+        <p class="app-card__desc">A world recipe book. Browse, save and cook dishes from cuisines across every continent.</p>
+      </a>
+
+      <a class="app-card" href="../revolution-disk-scrubber/index.html">
+        <img class="app-card__icon" src="../revolution-disk-scrubber/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">macOS</p>
+        <p class="app-card__name">Revolution Disk Scrubber</p>
+        <p class="app-card__desc">Scrub, trim and patch Wii disc images for homebrew and backup purposes.</p>
+      </a>
+
+      <a class="app-card" href="../revolution-editor/index.html">
+        <img class="app-card__icon" src="../revolution-editor/assets/app-icon-160.png" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">macOS</p>
+        <p class="app-card__name">Revolution Editor</p>
+        <p class="app-card__desc">A full development environment for Wii homebrew. Write apps and games in Swift or C, with a visual UI designer.</p>
+      </a>
+
+      <a class="app-card" href="../sleepyhead/index.html">
+        <img class="app-card__icon" src="../sleepyhead/assets/app-icon-160.png" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">Sleepyhead</p>
+        <p class="app-card__desc">A wake-up alarm designed to get you up on time without feeling rushed.</p>
+      </a>
+
+      <a class="app-card" href="../snooker-scoring/index.html">
+        <img class="app-card__icon" src="../snooker-scoring/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">Snooker Scoring</p>
+        <p class="app-card__desc">Record every shot, track tournament play, and keep a complete history of your matches. No pencil needed.</p>
+      </a>
+
+      <a class="app-card" href="../ultimate-player/index.html">
+        <img class="app-card__icon" src="../ultimate-player/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS · macOS · tvOS · visionOS</p>
+        <p class="app-card__name">Ultimate Player</p>
+        <p class="app-card__desc">Stream and play your own video and audio across iPhone, iPad, Mac, Apple TV and Apple Vision Pro.</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <img src="../assets/mark-96.webp" alt="" width="40" height="40" loading="lazy">
+      <div>
+        <p class="foot__name">Caffeine Media</p>
+        <p>Post-production, video editing &amp; screenwriting</p>
+      </div>
+    </div>
+
+    <nav class="foot__nav" aria-label="Footer">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#restore">Restoration</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#process">Process</a>
+      <a href="../index.html#faq">FAQ</a>
+    </nav>
+
+    <div class="foot__contact">
+      <a href="mailto:hello@thecaffeinemediacompany.com">hello@thecaffeinemediacompany.com</a>
+      <a href="imessage://hello@thecaffeinemediacompany.com">iMessage</a>
+    </div>
+  </div>
+  <div class="wrap foot__base">
+    <p>© <span id="yr">2026</span> Caffeine Media. All rights reserved.</p>
+    <p><a href="../privacy.html">Privacy Policy</a> · <a href="../terms.html">Terms &amp; Conditions</a></p>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 10l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></button>
+<div class="flash" id="flash" role="status" aria-live="polite"></div>
+
+<script src="../assets/app.js" defer></script>
+<script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>
