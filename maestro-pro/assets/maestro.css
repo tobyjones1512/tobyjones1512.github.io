@@ -254,3 +254,9 @@ a.beta:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(246,168,40,.
   .js .rows li,.js .spec dt,.js .spec dd{opacity:1;transform:none}
   @view-transition{navigation:none}
 }
+
+/* screenshot gallery */
+.gal__h{font-family:var(--serif,inherit);font-weight:500;font-size:1.15rem;color:var(--brass);margin:clamp(28px,4vw,48px) 0 16px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:clamp(14px,2vw,24px)}
+.gal--mac{grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr))}
+.gal__i{margin:0}.gal__i img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--rule)}
