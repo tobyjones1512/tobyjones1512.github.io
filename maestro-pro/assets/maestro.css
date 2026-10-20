@@ -260,3 +260,13 @@ a.beta:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(246,168,40,.
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:clamp(14px,2vw,24px)}
 .gal--mac{grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr))}
 .gal__i{margin:0}.gal__i img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--rule)}
+
+/* phone dropdown menu (assets/nav.js) */
+.top__toggle{display:none}
+@media (max-width:640px){
+  .top__toggle{display:inline-block;margin-left:auto;background:none;color:var(--cream);border:1px solid var(--rule);border-radius:8px;padding:8px 14px;font:inherit;font-weight:600;font-size:.95rem;cursor:pointer}
+  .top__toggle::after{content:" \25BE"}
+  .top__toggle~.top__links{display:none;width:100%;flex-direction:column;gap:0;order:3;border-top:1px solid var(--rule);margin-top:6px}
+  .top.open .top__toggle~.top__links{display:flex}
+  .top__toggle~.top__links a{padding:12px 0;border-bottom:1px solid var(--rule)}
+}
