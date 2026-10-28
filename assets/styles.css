@@ -612,6 +612,8 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
 .store__text small { font-size: .6875rem; }
 .store__text span { font-size: 1.5rem; line-height: 1; text-transform: none; letter-spacing: 0; }
 a.store:hover { background: var(--paper); color: var(--ink); }
+.badge { display: inline-block; line-height: 0; }
+.badge img { height: 56px; width: auto; }
 span.store { background: transparent; color: var(--ink); border-style: dashed; }
 
 .app .section .head h2 { font-size: clamp(2.5rem, 6vw, 5rem); }
