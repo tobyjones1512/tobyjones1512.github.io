@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Builds the Food Hygiene app's regional rating snapshots (food-hygiene/data/*.json + manifest.json).
+"""Builds the Food Hygiene app's regional rating snapshots for feeds the app can't query live
+(address-only feeds that need geocoding). Regions whose feeds have coordinates are queried live in the app.
+
+Builds the regional rating snapshots (food-hygiene/data/*.json + manifest.json).
 
 Each source is an official open-data feed from a US state, county or city health department. The
 build keeps the most recent inspection per establishment, geocodes addresses with the US Census
@@ -143,54 +146,6 @@ def latest_per(rows, keyf, datef):
     return list(best.values())
 
 
-def src_ny_state():
-    rows = socrata("data.ny.gov", "d6dy-3h7r", "trade_name,street,city,zipcode,inspection_grade,inspection_date,georeference",
-                   where="georeference IS NOT NULL AND inspection_grade IS NOT NULL")
-    rows = [r for r in rows if r.get("inspection_grade") in ("A", "B", "C") and r.get("georeference") and r.get("trade_name")]
-    out = []
-    for r in latest_per(rows, lambda r: sid(r["trade_name"], r.get("street", ""), r.get("zipcode", "")), lambda r: r["inspection_date"]):
-        lon, lat = r["georeference"]["coordinates"]
-        out.append({"id": sid(r["trade_name"], r.get("street", ""), r.get("zipcode", "")), "name": title(r["trade_name"]),
-                    "address": ", ".join(p for p in (title(r.get("street")), title(r.get("city")), "NY", r.get("zipcode", "")) if p),
-                    "lat": round(float(lat), 5), "lon": round(float(lon), 5), "rk": r["inspection_grade"], "date": r["inspection_date"][:10]})
-    return out
-
-
-def src_santa_clara():
-    biz = {b["business_id"]: b for b in socrata("data.sccgov.org", "vuw7-jmjk", "business_id,name,address,city,state,postal_code,latitude,longitude")}
-    ins = socrata("data.sccgov.org", "2u2d-8jej", "business_id,date,result", where="result in ('G','Y','R')")
-    out = []
-    for r in latest_per(ins, lambda r: r["business_id"], lambda r: r["date"]):
-        b = biz.get(r["business_id"])
-        if not b or not b.get("latitude"):
-            continue
-        d = r["date"]
-        out.append({"id": r["business_id"], "name": title(b["name"]),
-                    "address": ", ".join(p for p in (title(b.get("address")), title(b.get("city")), b.get("state", "CA"), b.get("postal_code", "")[:5]) if p),
-                    "lat": round(float(b["latitude"]), 5), "lon": round(float(b["longitude"]), 5), "rk": r["result"], "date": f"{d[:4]}-{d[4:6]}-{d[6:8]}"})
-    return out
-
-
-def src_wake():
-    base = "https://maps.wake.gov/arcgis/rest/services/Inspections/RestaurantInspectionsOpenData/MapServer"
-    places = {f["attributes"]["HSISID"]: f for f in arcgis(base + "/0", geometry=True)}
-    ins = [f["attributes"] for f in arcgis(base + "/1", where="SCORE IS NOT NULL")]
-    out = []
-    for a in latest_per(ins, lambda a: a["HSISID"], lambda a: a["DATE_"] or 0):
-        f = places.get(a["HSISID"])
-        if not f or not f.get("geometry") or not a.get("DATE_"):
-            continue
-        p, score = f["attributes"], float(a["SCORE"])
-        rk = "A" if score >= 90 else "B" if score >= 80 else "C" if score >= 70 else "X"
-        g = f["geometry"]
-        out.append({"id": a["HSISID"], "name": title(p["NAME"]),
-                    "address": ", ".join(x for x in (title(p.get("ADDRESS1")), title(p.get("CITY")), "NC", clean(p.get("POSTALCODE"))[:5]) if x),
-                    "lat": round(g["y"], 5), "lon": round(g["x"], 5), "rk": rk,
-                    "date": datetime.datetime.fromtimestamp(a["DATE_"] / 1000, datetime.timezone.utc).date().isoformat(),
-                    "detail": f"score {score:g}", "type": title(p.get("FACILITYTYPE"))})
-    return out
-
-
 def src_king():
     rows = socrata("data.kingcounty.gov", "r878-4sxa", "business_id,name,address,city,zip_code,inspection_date,grade,classification",
                    where="grade IS NOT NULL")
@@ -230,17 +185,6 @@ def src_louisville():
 
 
 REGIONS = [
-    dict(id="ny-state", name="New York State food stores", country="United States", fetch=src_ny_state,
-         scheme="NYS Food Store Grades", summary="Grade A, B or C for grocery and convenience stores outside New York City, from the NYS Department of Agriculture and Markets.",
-         authority="NYS Department of Agriculture and Markets", source="data.ny.gov", ratings=GRADES, type="Food store"),
-    dict(id="santa-clara-ca", name="Santa Clara County, California", country="United States", fetch=src_santa_clara,
-         scheme="Santa Clara County Food Placards", summary="A green (pass), yellow (conditional pass) or red (closed) placard from County Environmental Health. Covers San Jose and Silicon Valley.",
-         authority="Santa Clara County Department of Environmental Health", source="Santa Clara County Open Data",
-         ratings=[R("G", "✓", "Green placard – Pass", "good", 80), R("Y", "!", "Yellow placard – Conditional Pass", "fair", 50), R("R", "✗", "Red placard – Closed", "poor", 10)]),
-    dict(id="wake-nc", name="Wake County, North Carolina", country="United States", fetch=src_wake,
-         scheme="Wake County Restaurant Grades", summary="Grade A (90-100), B (80-89) or C (70-79) from a score out of 100. Covers Raleigh, Cary and Wake County.",
-         authority="Wake County Environmental Services", source="Wake County Open Data",
-         ratings=GRADES + [R("X", "<70", "Score below 70", "poor", 60)]),
     dict(id="king-wa", name="King County, Washington", country="United States", fetch=src_king, geocode=True,
          scheme="King County Food Safety Rating", summary="Rated 1 (excellent) to 4 (needs to improve) from recent inspections, by Public Health - Seattle & King County.",
          authority="Public Health - Seattle & King County", source="King County Open Data",
