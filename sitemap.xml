@@ -21,6 +21,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://thecaffeinemediacompany.com/assets-maker/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thecaffeinemediacompany.com/keep/</loc>
     <lastmod>2026-10-06</lastmod>
     <priority>0.8</priority>
