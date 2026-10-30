@@ -36,7 +36,7 @@
 
   <div class="doc-part">
     <h2>Overview</h2>
-    <p>FSA Food Hygiene Ratings is developed by Toby Jones. It's free and supported by ads from Google AdMob. It has no accounts and no analytics of its own, and it doesn't connect to any server of ours.</p>
+    <p>FSA Food Hygiene Ratings is developed by Toby Jones. It's free and supported by ads from Google AdMob. It has no accounts and no analytics of its own. The only server of ours it contacts is this website, to download public rating data (see below), and that never includes your location.</p>
   </div>
 
   <div class="doc-part">
@@ -49,6 +49,7 @@
     <ul>
       <li><b>Food Standards Agency:</b> UK rating data is fetched from the FSA's public API. See the FSA's own privacy notice for how they handle requests.</li>
       <li><b>City of Toronto Open Data:</b> about once a month the app downloads the public DineSafe file (about 46 MB) from the City of Toronto. The request doesn't include your location. Contains information licensed under the Open Government Licence - Toronto.</li>
+      <li><b>This website:</b> for many US areas, the app downloads a public list of supported places and a data file for your area (up to a few megabytes) the first time you use it there, then about once a month. The request asks for a file by name and doesn't include your location, though the website's host can see the IP address of any request, as with any website. Rating data in these files comes from the health departments named in the app and is not changed by us.</li>
       <li><b>US open data portals:</b> in supported US areas, rating data is fetched from NYC Open Data, the City of Chicago Data Portal, Austin Open Data, Montgomery County Open Data or the Colorado Information Marketplace. Each has its own privacy notice.</li>
       <li><b>Apple:</b> purchases (removing ads, and the optional Buy me a coffee tips) are handled by Apple. We never see your payment details. Tips unlock nothing.</li>
       <li><b>Apple Maps:</b> the map tab, maps and directions are provided by Apple.</li>
