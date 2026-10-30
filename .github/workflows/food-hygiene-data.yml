@@ -1,0 +1,31 @@
+name: Refresh Food Hygiene data
+
+on:
+  schedule:
+    # The 2nd of each month. The app checks the manifest daily and downloads any region with a newer build.
+    - cron: "17 4 2 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build rating snapshots
+        run: python3 tools/food-hygiene/build.py
+      - name: Commit and redeploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add food-hygiene/data tools/food-hygiene/geocode-cache.json
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Refresh Food Hygiene rating data"
+          git push
+          # Pushes made with GITHUB_TOKEN don't trigger other workflows, so start the Pages deploy directly.
+          gh workflow run static.yml
