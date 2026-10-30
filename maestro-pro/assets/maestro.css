@@ -31,6 +31,9 @@ a{color:inherit}
 .top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px var(--gutter);max-width:var(--max);margin-inline:auto}
 .top__brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--serif);font-weight:700;font-size:1.25rem;letter-spacing:.01em}
 .top__brand img{width:38px;height:38px;border-radius:9px;box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 6px 14px rgba(0,0,0,.5)}
+.top__back{display:inline-flex;align-items:center;gap:8px;flex:none;padding:7px 14px 6px;border:2px solid var(--brass-dim);border-radius:999px;text-decoration:none;color:var(--cream);font-weight:700;font-size:.9rem;line-height:1.2;transition:background-color .2s,color .2s,border-color .2s}
+.top__back svg{width:14px;height:14px;flex:none}
+.top__back:hover{background:var(--amber);border-color:var(--amber);color:var(--walnut)}
 .top__links{display:flex;gap:clamp(14px,3vw,30px);flex-wrap:wrap;justify-content:flex-end}
 .top__links a{text-decoration:none;color:var(--brass);font-weight:600;font-size:.95rem;padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
 .top__links a:hover,.top__links a[aria-current]{color:var(--cream);border-color:var(--amber)}
