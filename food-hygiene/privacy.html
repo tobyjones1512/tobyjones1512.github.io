@@ -41,13 +41,14 @@
 
   <div class="doc-part">
     <h2>Location</h2>
-    <p>If you allow it, your location is used to find places near you. To do that, your approximate position is sent to the public ratings service for your area, along with any search you type: the Food Standards Agency in the UK, or the open data portal of your city or county in the US. We never see or store it. The Nearby Ratings widget uses your location in the same way when it refreshes, and only if you've allowed location in the app. To work out which country you're in, your position may also be checked against Apple's reverse geocoding service.</p>
+    <p>If you allow it, your location is used to find places near you. To do that, your approximate position is sent to the public ratings service for your area, along with any search you type: the Food Standards Agency in the UK, or, in the US, the open data portal of your city or county. In Toronto no location is sent: the app downloads the city's public DineSafe file and looks up places on your phone. We never see or store it. The Nearby Ratings widget uses your location in the same way when it refreshes, and only if you've allowed location in the app. To work out which country you're in, your position may also be checked against Apple's reverse geocoding service.</p>
   </div>
 
   <div class="doc-part">
     <h2>Other services</h2>
     <ul>
       <li><b>Food Standards Agency:</b> UK rating data is fetched from the FSA's public API. See the FSA's own privacy notice for how they handle requests.</li>
+      <li><b>City of Toronto Open Data:</b> about once a month the app downloads the public DineSafe file (about 46 MB) from the City of Toronto. The request doesn't include your location. Contains information licensed under the Open Government Licence - Toronto.</li>
       <li><b>US open data portals:</b> in supported US areas, rating data is fetched from NYC Open Data, the City of Chicago Data Portal, Austin Open Data, Montgomery County Open Data or the Colorado Information Marketplace. Each has its own privacy notice.</li>
       <li><b>Apple:</b> purchases (removing ads, and the optional Buy me a coffee tips) are handled by Apple. We never see your payment details. Tips unlock nothing.</li>
       <li><b>Apple Maps:</b> the map tab, maps and directions are provided by Apple.</li>
