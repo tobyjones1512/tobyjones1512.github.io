@@ -566,6 +566,16 @@ code { font: .9em/1 ui-monospace, Menlo, monospace; background: color-mix(in srg
   .app .nav__links a { padding: 10px 0; }
 }
 
+/* Back to Apps & Games, sits in the app header beside the brand */
+.nav__back {
+  display: inline-flex; align-items: center; gap: 8px; flex: none;
+  padding: 7px 14px 6px; border: 2px solid var(--paper);
+  font-size: .875rem; font-weight: 700; line-height: 1.2; color: var(--paper); text-decoration: none;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.nav__back svg { width: 14px; height: 14px; flex: none; }
+.nav__back:hover { background: var(--field); border-color: var(--field); color: var(--ink); }
+
 .app .hero {
   position: relative;
   background: var(--field);
