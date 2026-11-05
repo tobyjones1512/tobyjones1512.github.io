@@ -40,6 +40,12 @@
   font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
   font-size: clamp(1.5rem, 2.8vw, 2.25rem);
 }
+.apps-cat {
+  font-stretch: var(--cond); font-weight: 800; text-transform: uppercase; line-height: .9;
+  font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem); margin: clamp(44px, 7vw, 84px) 0 22px;
+}
+.apps-cat:first-child { margin-top: 0; }
 .app-card__desc { color: var(--dim); font-size: .9375rem; flex: 1; }
 @media (max-width: 760px) { .apps-list { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .apps-list { grid-template-columns: 1fr; } }
@@ -85,14 +91,8 @@
 
 <section class="section" id="apps">
   <div class="wrap">
+    <h2 class="apps-cat">Lifestyle</h2>
     <div class="apps-list">
-
-      <a class="app-card" href="../dop-toolkit/index.html">
-        <img class="app-card__icon" src="../dop-toolkit/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
-        <p class="spec__tag">iOS</p>
-        <p class="app-card__name">DoP Toolkit</p>
-        <p class="app-card__desc">Cinematography calculators for depth of field, exposure, frame rates and lens choice, built for on-set use.</p>
-      </a>
 
       <a class="app-card" href="../food-hygiene/index.html">
         <img class="app-card__icon" src="../food-hygiene/assets/app-icon-160.png" alt="" width="72" height="72" loading="lazy">
@@ -115,12 +115,50 @@
         <p class="app-card__desc">Tabs for every window on your Mac. Drag one window onto another to group them. Any app, one tab bar.</p>
       </a>
 
+      <a class="app-card" href="../remy/index.html">
+        <img class="app-card__icon" src="../remy/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">Remy</p>
+        <p class="app-card__desc">A world recipe book. Browse, save and cook dishes from cuisines across every continent.</p>
+      </a>
+
+      <a class="app-card" href="../sleepyhead/index.html">
+        <img class="app-card__icon" src="../sleepyhead/assets/app-icon-160.png" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">Sleepyhead</p>
+        <p class="app-card__desc">A wake-up alarm designed to get you up on time without feeling rushed.</p>
+      </a>
+
+    </div>
+
+    <h2 class="apps-cat">Multimedia</h2>
+    <div class="apps-list">
+
+      <a class="app-card" href="../dop-toolkit/index.html">
+        <img class="app-card__icon" src="../dop-toolkit/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS</p>
+        <p class="app-card__name">DoP Toolkit</p>
+        <p class="app-card__desc">Cinematography calculators for depth of field, exposure, frame rates and lens choice, built for on-set use.</p>
+      </a>
+
       <a class="app-card" href="../maestro-pro/index.html">
         <img class="app-card__icon" src="../maestro-pro/assets/app-icon-160.png" alt="" width="72" height="72" loading="lazy">
         <p class="spec__tag">iPad · macOS · iPhone Duo</p>
         <p class="app-card__name">Maestro Pro</p>
         <p class="app-card__desc">Sheet music that plays along: notes light up as they sound and the page turns itself. TestFlight beta coming soon.</p>
       </a>
+
+      <a class="app-card" href="../ultimate-player/index.html">
+        <img class="app-card__icon" src="../ultimate-player/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS · macOS · tvOS · visionOS</p>
+        <p class="app-card__name">Ultimate Player</p>
+        <p class="app-card__desc">Stream and play your own video and audio across iPhone, iPad, Mac, Apple TV and Apple Vision Pro.</p>
+      </a>
+
+    </div>
+
+    <h2 class="apps-cat">Games</h2>
+    <div class="apps-list">
 
       <a class="app-card" href="../pill-blast/index.html">
         <img class="app-card__icon" src="../pill-blast/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
@@ -129,12 +167,24 @@
         <p class="app-card__desc">An infinite falling-block puzzle game. Match colours, clear viruses, and explore worlds that never stop unlocking.</p>
       </a>
 
-      <a class="app-card" href="../remy/index.html">
-        <img class="app-card__icon" src="../remy/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
+      <a class="app-card" href="../snooker-scoring/index.html">
+        <img class="app-card__icon" src="../snooker-scoring/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
         <p class="spec__tag">iOS</p>
-        <p class="app-card__name">Remy</p>
-        <p class="app-card__desc">A world recipe book. Browse, save and cook dishes from cuisines across every continent.</p>
+        <p class="app-card__name">Snooker Scoring</p>
+        <p class="app-card__desc">Record every shot, track tournament play, and keep a complete history of your matches. No pencil needed.</p>
       </a>
+
+      <a class="app-card" href="https://whiskerswordquest.app" target="_blank" rel="noopener">
+        <img class="app-card__icon" src="../assets/whiskers-word-quest-icon-160.png" alt="" width="72" height="72" loading="lazy">
+        <p class="spec__tag">iOS · iPad · Pre-Alpha</p>
+        <p class="app-card__name">Whiskers' Word Quest</p>
+        <p class="app-card__desc">Grammar, spelling and phonics games for children aged 5 to 11, with Whiskers the cat. Pre-Alpha on TestFlight.</p>
+      </a>
+
+    </div>
+
+    <h2 class="apps-cat">Developer Tools</h2>
+    <div class="apps-list">
 
       <a class="app-card" href="../revolution-disk-scrubber/index.html">
         <img class="app-card__icon" src="../revolution-disk-scrubber/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
@@ -148,27 +198,6 @@
         <p class="spec__tag">macOS</p>
         <p class="app-card__name">Revolution Editor</p>
         <p class="app-card__desc">A full development environment for Wii homebrew. Write apps and games in Swift or C, with a visual UI designer.</p>
-      </a>
-
-      <a class="app-card" href="../sleepyhead/index.html">
-        <img class="app-card__icon" src="../sleepyhead/assets/app-icon-160.png" alt="" width="72" height="72" loading="lazy">
-        <p class="spec__tag">iOS</p>
-        <p class="app-card__name">Sleepyhead</p>
-        <p class="app-card__desc">A wake-up alarm designed to get you up on time without feeling rushed.</p>
-      </a>
-
-      <a class="app-card" href="../snooker-scoring/index.html">
-        <img class="app-card__icon" src="../snooker-scoring/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
-        <p class="spec__tag">iOS</p>
-        <p class="app-card__name">Snooker Scoring</p>
-        <p class="app-card__desc">Record every shot, track tournament play, and keep a complete history of your matches. No pencil needed.</p>
-      </a>
-
-      <a class="app-card" href="../ultimate-player/index.html">
-        <img class="app-card__icon" src="../ultimate-player/assets/app-icon-160.webp" alt="" width="72" height="72" loading="lazy">
-        <p class="spec__tag">iOS · macOS · tvOS · visionOS</p>
-        <p class="app-card__name">Ultimate Player</p>
-        <p class="app-card__desc">Stream and play your own video and audio across iPhone, iPad, Mac, Apple TV and Apple Vision Pro.</p>
       </a>
 
     </div>
