@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Your Maestro Pro licence key</title>
+</head>
+<body>
+<h1>Your Maestro Pro licence key</h1>
+<p>Enter the email address you paid with. If we find your payment, we will email you your licence key.</p>
+<form id="m">
+  <p><label>Email<br><input name="email" type="email" required></label> <button type="submit">Email me my key</button></p>
+  <p id="msg"></p>
+</form>
+<p>In the app, tap &ldquo;Already have a licence key?&rdquo; on the paywall and enter the key and the same email address.</p>
+<p><a id="dl" href="">Download Maestro Pro</a></p>
+<script>
+// Download link, blank for now.
+var DOWNLOAD_URL = "";
+document.getElementById("dl").href = DOWNLOAD_URL;
+var email = "";
+try { email = localStorage.getItem("maestroEmail") || ""; } catch (e) {}
+document.getElementById("m").email.value = email;
+document.getElementById("m").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var msg = document.getElementById("msg"), v = this.email.value;
+  try { localStorage.setItem("maestroEmail", v); } catch (x) {}
+  msg.textContent = "Checking...";
+  fetch("https://fider-feedback-api.vercel.app/api/student-key", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email: v })
+  }).then(function (r) { return r.json(); }).then(function (d) {
+    msg.textContent = d.ok ? "Sent. Check your inbox." : (d.error || "Couldn't send.");
+  }).catch(function () { msg.textContent = "Couldn't send. Try again."; });
+});
+</script>
+</body>
+</html>
