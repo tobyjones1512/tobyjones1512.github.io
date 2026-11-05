@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Maestro Pro for Students</title>
+</head>
+<body>
+<h1>Maestro Pro for Students</h1>
+<form id="f" style="width:340px;height:330px;border:1px solid #000;padding:12px;overflow:hidden">
+  <p><label>Name<br><input name="name" required></label></p>
+  <p><label>Email<br><input name="email" type="email" required></label></p>
+  <p>How would you like to pay?</p>
+  <p><label><input type="radio" name="plan" value="yearly" required> &pound;48 per year</label></p>
+  <p><label><input type="radio" name="plan" value="monthly"> &pound;6 per month (12-month contract)</label></p>
+  <p><button type="submit">Continue</button></p>
+</form>
+<script>
+// Redirect targets. Monthly is blank for now.
+var URLS = {
+  yearly: "https://pay.gocardless.com/BRT01M6NWC7RKKBJTJ5Z5Y4J36HSM",
+  monthly: ""
+};
+document.getElementById("f").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var url = URLS[this.plan.value];
+  if (url) location.href = url;
+});
+</script>
+</body>
+</html>
