@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://thecaffeinemediacompany.com/cardless/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thecaffeinemediacompany.com/dop-toolkit/</loc>
     <lastmod>2026-10-06</lastmod>
     <priority>0.8</priority>
