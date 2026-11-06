@@ -802,3 +802,4 @@ a.tile:hover .tile__body { color: var(--ink); }
 .guide__nav > a { padding: 9px 0; }
 .shots figure:first-child { grid-column: 1 / -1; }
 .shot img[src$="game.png"] { max-width: 640px; }
+.dep { font-size: .45em; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; opacity: .7; white-space: nowrap; }
