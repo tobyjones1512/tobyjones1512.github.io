@@ -1,0 +1,569 @@
+{
+  "nodes": [
+    {
+      "id": "203485f452575afd",
+      "type": "group",
+      "label": "Import",
+      "x": -20,
+      "y": -20,
+      "width": 360,
+      "height": 560,
+      "color": "4"
+    },
+    {
+      "id": "95356fa8ecb92d5f",
+      "type": "group",
+      "label": "Model",
+      "x": 380,
+      "y": -20,
+      "width": 720,
+      "height": 560,
+      "color": "6"
+    },
+    {
+      "id": "6cda853f4e967faa",
+      "type": "group",
+      "label": "Playback & UI",
+      "x": 1140,
+      "y": -20,
+      "width": 720,
+      "height": 760,
+      "color": "2"
+    },
+    {
+      "id": "fd3153c3291d788c",
+      "type": "text",
+      "text": "## Library.swift\nImport PDF / MusicXML / .mxl + backing track, copied into Application Support. `ScoreItem` JSON per score.",
+      "x": 0,
+      "y": 0,
+      "width": 320,
+      "height": 160
+    },
+    {
+      "id": "a721aa6a4cec1a20",
+      "type": "text",
+      "text": "## ScoreLoader\nPicks the path by file type and returns `LoadedScore` (PDF pages + `Timeline`).",
+      "x": 0,
+      "y": 200,
+      "width": 320,
+      "height": 140
+    },
+    {
+      "id": "28ec1174415e9dc0",
+      "type": "text",
+      "text": "## Drag & drop · ⌘O\n`fileImporter` + `onDrop`, Welcome screen sample.",
+      "x": 0,
+      "y": 380,
+      "width": 320,
+      "height": 140
+    },
+    {
+      "id": "81294aaa335d4171",
+      "type": "text",
+      "text": "## MusicXML.swift\nPartwise XML → `ParsedScore` (480 ticks/quarter). Minimal zip reader for .mxl.",
+      "x": 400,
+      "y": 0,
+      "width": 320,
+      "height": 160,
+      "color": "5"
+    },
+    {
+      "id": "e534c5dffb0474d8",
+      "type": "text",
+      "text": "## Engraver.swift\nLays out pages with Bravura (SMuFL) into a PDF and records each note's rect & timing.",
+      "x": 760,
+      "y": 0,
+      "width": 320,
+      "height": 160,
+      "color": "5"
+    },
+    {
+      "id": "72f72491dc9c50e1",
+      "type": "text",
+      "text": "## SheetReader.swift\nPDF → staves, barlines, noteheads, stems, beams/flags, dots, rests → exact rhythm + metre per bar (spacing fallback, exact-bar count).",
+      "x": 400,
+      "y": 220,
+      "width": 320,
+      "height": 180,
+      "color": "3"
+    },
+    {
+      "id": "8ee29c56d321b53f",
+      "type": "text",
+      "text": "## Timeline.swift\n`NoteEvent` (start, duration, rect) · `MeasureMark` (playhead anchors) · `SystemMark` (auto-scroll targets).",
+      "x": 760,
+      "y": 220,
+      "width": 320,
+      "height": 180,
+      "color": "6"
+    },
+    {
+      "id": "d3a20515a4e0e900",
+      "type": "text",
+      "text": "## Checks/main.swift\nEngrave → read back → assert bars & onsets match.",
+      "x": 400,
+      "y": 440,
+      "width": 680,
+      "height": 80
+    },
+    {
+      "id": "0ee99363715e1e2e",
+      "type": "text",
+      "text": "## Transport.swift\nClock: backing-track time or CADisplayLink; signed track offset (skip intro or delay start), waveform + silence detection. Count-in, metronome clicks, seek, skip bar.",
+      "x": 1160,
+      "y": 0,
+      "width": 320,
+      "height": 180,
+      "color": "1"
+    },
+    {
+      "id": "a50af5739fc75fcb",
+      "type": "text",
+      "text": "## ScoreView.swift\nPages on stage · sounding notes recoloured via a per-page ink mask · Playhead + bar wash · Follower auto-scroll · tap-to-seek ripple · Inspector.",
+      "x": 1520,
+      "y": 0,
+      "width": 320,
+      "height": 220,
+      "color": "2"
+    },
+    {
+      "id": "261a34da2d4af518",
+      "type": "text",
+      "text": "## TransportBar.swift\nGlass panel: scrubber with bar ticks, play/pause, BAR · BEAT · TIME readout, metronome, tempo chip. Adaptive width.",
+      "x": 1160,
+      "y": 240,
+      "width": 320,
+      "height": 200,
+      "color": "2"
+    },
+    {
+      "id": "a9d68c860cc0f9d5",
+      "type": "text",
+      "text": "## MyApp.swift\nTheme, Playback menu & shortcuts (Space, ←/→, Return, K, ⌥⌘I), Catalyst window.",
+      "x": 1520,
+      "y": 260,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "3e86944a55d10212",
+      "type": "text",
+      "text": "## ContentView.swift\nSplit view, library sidebar with thumbnails, ambient mesh Welcome, drop halo.",
+      "x": 1160,
+      "y": 480,
+      "width": 680,
+      "height": 120
+    },
+    {
+      "id": "9e1066701a0c45ff",
+      "type": "group",
+      "label": "Editing",
+      "x": 380,
+      "y": 580,
+      "width": 720,
+      "height": 520,
+      "color": "1"
+    },
+    {
+      "id": "144cfe06beec450b",
+      "type": "group",
+      "label": "Sound & Words",
+      "x": 1140,
+      "y": 780,
+      "width": 720,
+      "height": 560,
+      "color": "3"
+    },
+    {
+      "id": "b039275f90b44990",
+      "type": "group",
+      "label": "Out & Help",
+      "x": -20,
+      "y": 580,
+      "width": 360,
+      "height": 760,
+      "color": "5"
+    },
+    {
+      "id": "72ee8fdab2b84dd6",
+      "type": "text",
+      "text": "## ScoreEdit.swift\nEvery change to a `ParsedScore`: place, resize, rests, ties, accidentals, articulations, dynamics, hairpins, bars, repeats, endings, jumps, tempo. Keeps bars complete (beat-aware rests); free-editing variants do exactly what is asked.",
+      "x": 400,
+      "y": 600,
+      "width": 320,
+      "height": 200
+    },
+    {
+      "id": "75287da6031844c0",
+      "type": "text",
+      "text": "## ScoreEditorView.swift\nEight modes (Notes, Rests, Marks, Dynamics, Bars, Form, Erase, Draw), the quick menu, Pencil touch layer, undo with the system UndoManager.",
+      "x": 760,
+      "y": 600,
+      "width": 320,
+      "height": 200
+    },
+    {
+      "id": "9552748eb7c64d1f",
+      "type": "text",
+      "text": "## Dynamics (MusicXML.swift)\nHairpins and p…fff become a loudness factor per note; `NoteEvent.velocity`.",
+      "x": 400,
+      "y": 840,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "0ee3a9274b284a7a",
+      "type": "text",
+      "text": "## Checks/main.swift\nAlso a random-edit sweep (43,000 edits, every bar must stay complete) and a free-editing sweep.",
+      "x": 760,
+      "y": 840,
+      "width": 320,
+      "height": 120
+    },
+    {
+      "id": "654db4f8567f4a58",
+      "type": "text",
+      "text": "## Instrument.swift\nAdditive `Synth`: piano, organ, guitar, bass, flute, clarinet, saxes, trumpet; velocity per note; an instrument per staff.",
+      "x": 1160,
+      "y": 800,
+      "width": 320,
+      "height": 150
+    },
+    {
+      "id": "2eb74067af2a46d0",
+      "type": "text",
+      "text": "## Lyrics · Karaoke · CDG\nLRC/TXT/KAR/CDG; words under the notes (`ScoreEdit.addLyrics`) and a lyrics screen.",
+      "x": 1520,
+      "y": 800,
+      "width": 320,
+      "height": 150
+    },
+    {
+      "id": "bc26ff6627eb44f9",
+      "type": "text",
+      "text": "## ExportScore.swift · Sharing.swift\nMusicXML, PDF, Print from the library menu; .playalong files; video export.",
+      "x": 0,
+      "y": 600,
+      "width": 320,
+      "height": 150
+    },
+    {
+      "id": "871ddff322134630",
+      "type": "text",
+      "text": "## FreeScores.swift\nClassical set + the Modern Jazz Fake Book (list bundled, tunes download on request).",
+      "x": 0,
+      "y": 780,
+      "width": 320,
+      "height": 140
+    },
+    {
+      "id": "d1360b52ef254954",
+      "type": "text",
+      "text": "## HelpView.swift\nIn-app guide, one topic per feature.",
+      "x": 0,
+      "y": 960,
+      "width": 320,
+      "height": 100
+    },
+    {
+      "id": "f2e6c266c0704bd3",
+      "type": "text",
+      "text": "## Customisable toolbars\n`.toolbar(id:)` + `.toolbarRole(.editor)` on the score and lyrics screens (iPad and Mac).",
+      "x": 0,
+      "y": 1100,
+      "width": 320,
+      "height": 130
+    },
+    {
+      "id": "fa85db1c0e2448cc",
+      "type": "text",
+      "text": "## Chords.swift · ChordView.swift\nChord symbols from the file (`<harmony>`) or worked out per half bar; the chart view (advanced mode).",
+      "x": 1160,
+      "y": 1000,
+      "width": 320,
+      "height": 150
+    },
+    {
+      "id": "de53d1499d6f4d61",
+      "type": "text",
+      "text": "## Medley (ScoreEdit · MedleySheet)\n`BarClip` copy/paste/insert bars between scores; keeps each piece's key, metre, tempo; match-key transposes.",
+      "x": 400,
+      "y": 1120,
+      "width": 320,
+      "height": 150
+    },
+    {
+      "id": "88128485f64f8713",
+      "type": "text",
+      "text": "## Pitch.swift · PitchListener.swift\nYIN pitch finder (Accelerate), `NoteJudge` (right note, in tune, held long enough, re-attack for repeats), `TapTempo`. Mic tap on the audio thread via `PitchAnalyzer`.",
+      "x": 1520,
+      "y": 1000,
+      "width": 320,
+      "height": 170
+    },
+    {
+      "id": "683da415feba935a",
+      "type": "text",
+      "text": "## TunerView.swift\nNeedle, 8 s trace, hold-a-steady-note ring, A=415-466, reference tone, written pitch for B♭/E♭.",
+      "x": 1520,
+      "y": 1210,
+      "width": 320,
+      "height": 150
+    },
+    {
+      "id": "d354e492a77ead32",
+      "type": "text",
+      "text": "## Practice.swift (Wait for Me)\n`PracticeSession` parks the transport on each note until `NoteJudge` says done. Panel above the transport bar. Not with a backing track.",
+      "x": 1880,
+      "y": 1000,
+      "width": 320,
+      "height": 170
+    },
+    {
+      "id": "ca67e7d04f85d3ec",
+      "type": "text",
+      "text": "## TapTempoView.swift · Loop\nTap pad (space bar when focused) in the tempo chip and Inspector; `Transport.loop` repeats chosen bars.",
+      "x": 1880,
+      "y": 1210,
+      "width": 320,
+      "height": 150
+    },
+    {
+      "id": "add2702a3564d2c8",
+      "type": "text",
+      "text": "## More notation (MusicXML · Engraver)\nSlurs, grace notes, trills, mordents, turns, fingering, arpeggio, breath/caesura, 8va lines, pedal. Read, written, transposed, drawn.",
+      "x": 1160,
+      "y": 1210,
+      "width": 320,
+      "height": 170
+    },
+    {
+      "id": "ea92f0e54d484d0b",
+      "type": "text",
+      "text": "## Take.swift · Recording.swift\n`Take` (pitch frames with the score beat), `TakeJudge` (green: due, red: late or wrong), `RecordSession`, `ReviewSession`, panels. `Transport.review` lights notes.",
+      "x": 2240,
+      "y": 1000,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "5da7ccabfd6bb5c1",
+      "type": "text",
+      "text": "## Page turn (ScoreView)\n`PagedScore` + `PageCurl` (UIPageViewController curl), `PageWatcher` follows the playhead. Off: `ScorePages` scrolls.",
+      "x": 2240,
+      "y": 1230,
+      "width": 320,
+      "height": 160
+    },
+    {
+      "id": "8e7b9b623765d69e",
+      "type": "text",
+      "text": "## Shortcuts.swift · ShortcutsView\n`ShortcutAction` defaults, overrides stored as JSON in `shortcuts`, `AppCommands` menus, capture UI in Settings.",
+      "x": 2240,
+      "y": 1430,
+      "width": 320,
+      "height": 160
+    },
+    {
+      "id": "8e6875a7039eb25c",
+      "type": "text",
+      "text": "## Several backing tracks (Transport)\n`ExtraTrack`, `Transport.setExtras`: all follow the first track's clock. Enabled = volume 0, so time holds. `VocalReducer` cuts the middle.",
+      "x": 2600,
+      "y": 1000,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "9f5c61d026a46735",
+      "type": "text",
+      "text": "## ReviewText · ReviewAI · WrittenReviewView\nFacts from the take, `{bar:N}` tokens as links, rules review, Apple Intelligence rewrites each paragraph (checked, terse), tap to focus notes.",
+      "x": 2600,
+      "y": 1230,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "c1dc49f1052e6172",
+      "type": "text",
+      "text": "## AppleMusic.swift · TTML.swift\nMusicKit search and `ExternalTrack` playback kept in time by the transport; lyrics via TTML to LRC. Cannot pitch-shift or remove vocals.",
+      "x": 2600,
+      "y": 1460,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "504a78036c7f79eb",
+      "type": "text",
+      "text": "## Set-Lists\nRenamed from Playlists; `lengthBeats`/`trackSeconds` cached per score for the duration estimate.",
+      "x": 2600,
+      "y": 1690,
+      "width": 320,
+      "height": 140
+    }
+  ],
+  "edges": [
+    {
+      "id": "252446e6fc78eab0",
+      "fromNode": "fd3153c3291d788c",
+      "toNode": "81294aaa335d4171",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "MusicXML/MXL"
+    },
+    {
+      "id": "50ca4ff972785bf3",
+      "fromNode": "fd3153c3291d788c",
+      "toNode": "72f72491dc9c50e1",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "PDF"
+    },
+    {
+      "id": "200c586e4346a8ba",
+      "fromNode": "81294aaa335d4171",
+      "toNode": "e534c5dffb0474d8",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "060185ffc233c572",
+      "fromNode": "e534c5dffb0474d8",
+      "toNode": "8ee29c56d321b53f",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "exact timing"
+    },
+    {
+      "id": "48206e1f0fe71d9e",
+      "fromNode": "72f72491dc9c50e1",
+      "toNode": "8ee29c56d321b53f",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "approx. timing"
+    },
+    {
+      "id": "12b5f1980382d7f3",
+      "fromNode": "8ee29c56d321b53f",
+      "toNode": "0ee99363715e1e2e",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "6c255024cec33473",
+      "fromNode": "0ee99363715e1e2e",
+      "toNode": "a50af5739fc75fcb",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "beat"
+    },
+    {
+      "id": "453bbc114a3916e1",
+      "fromNode": "0ee99363715e1e2e",
+      "toNode": "261a34da2d4af518",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "d7bcd8400d504195",
+      "fromNode": "81294aaa335d4171",
+      "toNode": "72ee8fdab2b84dd6",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "ParsedScore"
+    },
+    {
+      "id": "01e09f08190f49d8",
+      "fromNode": "72ee8fdab2b84dd6",
+      "toNode": "75287da6031844c0",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "70bae4e97f9c47d6",
+      "fromNode": "75287da6031844c0",
+      "toNode": "e534c5dffb0474d8",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "re-engrave"
+    },
+    {
+      "id": "d43b87504bed4b99",
+      "fromNode": "72ee8fdab2b84dd6",
+      "toNode": "9552748eb7c64d1f",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "e03a37d73d5f4c84",
+      "fromNode": "9552748eb7c64d1f",
+      "toNode": "8ee29c56d321b53f",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "velocity"
+    },
+    {
+      "id": "123b66b0e6fd4006",
+      "fromNode": "8ee29c56d321b53f",
+      "toNode": "654db4f8567f4a58",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "notes"
+    },
+    {
+      "id": "611a4035000247da",
+      "fromNode": "2eb74067af2a46d0",
+      "toNode": "e534c5dffb0474d8",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "words"
+    },
+    {
+      "id": "fb2b8d338e7c1f33",
+      "fromNode": "88128485f64f8713",
+      "toNode": "683da415feba935a",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "tuner"
+    },
+    {
+      "id": "553b1fbb83223ed6",
+      "fromNode": "88128485f64f8713",
+      "toNode": "d354e492a77ead32",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "wait for me"
+    },
+    {
+      "id": "115a115c9108a7d9",
+      "fromNode": "e534c5dffb0474d8",
+      "toNode": "add2702a3564d2c8",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "draws"
+    },
+    {
+      "id": "99aa2883fc4e992f",
+      "fromNode": "d354e492a77ead32",
+      "toNode": "ca67e7d04f85d3ec",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "tempo"
+    },
+    {
+      "id": "ae5cd3f5f53b1e26",
+      "fromNode": "88128485f64f8713",
+      "toNode": "ea92f0e54d484d0b",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "frames"
+    },
+    {
+      "id": "a4a03217148bf946",
+      "fromNode": "ea92f0e54d484d0b",
+      "toNode": "9f5c61d026a46735",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "review"
+    }
+  ]
+}

@@ -1,0 +1,1300 @@
+0|CD+Graphics-Karaoke
+3|Komprimiertes MusicXML
+4|Karaoke-MIDI
+5|Maestro-Pro-Partitur
+7|Maestro Pro nutzt Apple Music, damit du zu einem Song aus deinem Abo spielen und seinen Text sehen kannst.
+8|Maestro Pro nutzt die Kamera, um gedruckte Noten zu fotografieren, damit sie gelesen und mitgespielt werden können.
+9|Maestro Pro findet das andere Gerät, mit dem du im Takt spielen möchtest.
+10|Maestro Pro hört über das Mikrofon, ob du die richtige Note sauber spielst, und stimmt dein Instrument.
+11|Zeitgesteuerte Texte
+14|%@-Hintergrund
+15|%1$@ Keyframes, %2$lld
+16|%@-Papier
+18|%1$@%2$@ pro %3$@
+21|%lld BPM
+22|%lld Schläge pro Minute
+23|%1$lld Zeile%2$@ ausgewählt
+24|%1$lld von %2$lld
+25|%1$lld von %2$lld Noten (%3$lld %%)
+26|%1$lld der %2$lld Takte von „%3$@“ werden nach dem gewählten Takt eingefügt, oder am Ende, falls keiner gewählt ist. Sie behalten ihre eigene Taktart und ihr Tempo, danach übernimmt deine Musik wieder ihr eigenes.
+27|%lld Prozent
+28|%lld Spieler sind verbunden. Jeder behält seine eigenen Noten und sein Instrument; ihr bleibt Takt für Takt zusammen.
+29|%lld Sekunden
+32|%1$lld/%2$lld. Jeder Takt dauert genau so lange.
+33|(diese Partitur)
+36|Klammer für 1. Mal
+37|Klammer für 2. Mal
+40|:‖ Ende
+41|:‖ ×%lld
+45|Ein Hintergrund legt zusammen den Hintergrund, ob die App hell oder dunkel ist, und die Akzentfarbe fest.
+46|Ein vollständiger Partitureditor, aus deiner Bibliothek gebaute Medleys und Versionsverwaltung bis zu GitHub. Vom ersten Entwurf bis zur fertigen Stimme, in einer App.
+47|Ein Querformat-Video der Musik mit deinen Hervorhebungen, Zeichnungen und dem Ton, wie der Player es zeigt. Lass die App offen, während es erstellt wird.
+48|Eine Notenzeile, in der jede Note aufleuchtet, wenn die Linie sie passiert
+49|Eine Version ist eine Momentaufnahme, zu der du zurückkehren kannst. Ein Zweig ist eine getrennte Linie von Änderungen, um etwas auszuprobieren, ohne die Hauptpartitur anzufassen.
+50|Zugriffstoken
+51|Bedienungshilfen
+52|Genauigkeit %1$lld %%, durchschnittlich %2$lld ¢ neben der Note
+53|Hinzufügen
+54|Alle hinzufügen
+55|Weiteres Playback hinzufügen…
+56|Weitere Spur hinzufügen
+57|Playback aus Apple Music hinzufügen…
+58|Playback hinzufügen…
+59|Band hinzufügen
+60|Takt danach hinzufügen
+61|Aus Apple Music hinzufügen…
+62|Textdatei hinzufügen…
+63|Musik hinzufügen
+64|Aufnahme hinzufügen…
+65|Playback hinzufügen
+66|Song aus Apple Music hinzufügen…
+67|Keyframe zur ausgewählten Spur an der Abspielposition hinzufügen
+68|Füge oben ein Repository hinzu, um seine Spuren zu sehen.
+69|An der Abspielposition hinzufügen
+70|Füge Partituren auf iPad oder Mac hinzu, dann erscheinen sie hier.
+71|Füge Partituren über „Zur Setliste hinzufügen“ im Menü einer Partitur hinzu.
+72|Zur Setliste hinzufügen
+73|Erweitert
+74|Nochmal
+75|Zustimmen und fortfahren
+76|Ausrichtung
+77|Alle Sänger
+78|Alle Sänger links
+79|Alles
+80|Erlauben
+81|Silben animieren
+82|Animation
+83|Anmerken
+84|Takte mit VoiceOver ansagen
+85|Jährlich
+86|Beliebige Note
+87|Beliebige Oktave
+88|Überall
+89|App-Symbol
+90|Textgröße der App
+91|Erscheinungsbild
+92|Apple Intelligence formuliert es mit eigenen Worten…
+93|Apple Music
+94|Apple Music hat keinen Text für diesen Song, oder die App durfte ihn nicht lesen.
+95|Apple Music spielt den Song selbst ab, daher lässt sich die Tonart nicht ändern und der Sänger nicht entfernen.
+96|Künstler
+97|Sänger zuweisen
+98|Sänger zuweisen…
+99|Autoscroll
+100|BESTER PREIS
+101|BPM
+102|Zurück
+103|Playback und Klang
+104|Playback-EQ
+105|Wellenform des Playbacks
+106|Band %lld
+107|Band %1$lld, %2$@, %3$@
+108|Takt %1$lld, %2$@
+109|Takt %1$lld, Schlag %2$lld
+110|Takt für Takt
+111|Takte
+112|„Takte vor Takt 1“ fügt am Anfang leere Takte zum Einzählen hinzu.
+113|„Takte vor Takt 1“ fügt am Anfang leere Takte hinzu; das Playback beginnt mit dem ersten davon, an der Markierung.
+114|Takte, die nur in einem Zweig geändert wurden, werden zusammengeführt. Takte, die in beiden geändert wurden, kollidieren. Du kannst die Zusammenführung im Verlauf zurücknehmen.
+115|Der Schlag ist eine
+116|Vor dem Teilen
+117|Größerer Text
+118|Nicht gesungene Zeilen unscharf
+119|Andere Zeilen unscharf
+120|Fetter Text
+121|Klammer verlängern
+122|Klammer verkürzen
+123|Zweig
+124|Von hier verzweigen…
+125|Zweige
+126|Abbrechen
+127|Jederzeit in den Einstellungen deines Apple-Kontos kündbar. Abos verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ende des Zeitraums gekündigt werden.
+128|Diese Partitur lässt sich nicht bearbeiten
+129|Bindebogen nicht möglich
+130|Zentriert
+131|Repository ändern…
+132|Tonart des Playbacks ändern
+133|Noten mit dem Apple Pencil ändern
+134|Verknüpfte Ordner jetzt prüfen
+135|Verknüpfte Ordner beim Öffnen der App prüfen
+136|Plan wählen
+137|Wähle oben ein Band oder ziehe einen Griff im Diagramm.
+138|Wähle ein Kürzel und drücke dann die gewünschten Tasten. Entf löscht das Kürzel, Esc bricht ab. Ein bereits belegtes Kürzel wechselt zu der Aktion, für die du es wählst. Kürzel erscheinen in der Mac-Menüleiste und auf dem iPad, wenn du die Befehlstaste gedrückt hältst.
+139|Wähle, wie die Wiedergabe angezeigt wird: Noten, Takt, Linie
+140|Akkordansicht
+141|Akkordsymbole aus der Partitur
+142|Aus den Noten ermittelte Akkorde
+143|Löschen
+144|Die Uhren weichen höchstens %lld ms voneinander ab.
+145|Schließen
+146|Rückblick schließen
+147|Eingeklappt
+148|Sammlung
+149|Hervorhebungen für Farbfehlsichtigkeit
+150|Farben
+151|Klingende Tonhöhe
+152|Mit einem GitHub-Repository verbinden…
+153|Kostenlos fortfahren
+154|Kopieren
+155|Text konnte nicht hinzugefügt werden
+156|Feedback konnte nicht gesendet werden
+157|Partitur konnte nicht hinzugefügt werden
+158|Nicht abgeschlossen
+159|Partitur konnte nicht importiert werden
+160|Text konnte nicht geöffnet werden
+161|Partitur konnte nicht geöffnet werden
+162|Text konnte nicht gesichert werden
+163|Einzählen
+164|Standardmäßig einzählen
+165|%lld einzählen
+166|Erstellen
+167|Crescendo
+168|Viertel
+169|Kurve zum nächsten Keyframe
+170|Eigenes Tempo
+171|Farben anpassen…
+172|Jede Farbe anpassen…
+173|Ausschneiden
+174|Dunkel
+175|Dunkles Papier
+176|Dunkle Noten
+177|Hinzugefügt am
+178|Ablehnen
+179|Standard
+180|Löschen
+181|Takt löschen
+182|Zweig löschen
+183|Setliste löschen
+184|Setliste löschen…
+185|Diese Aufnahme löschen
+186|Aus Bibliothek löschen
+187|„%@“ löschen?
+188|Beschreibung
+189|Meintest du?
+190|Diminuendo
+191|Änderungen verwerfen
+192|Änderungen verwerfen?
+193|Trennen
+194|Fertig
+195|Punktiert
+196|Tippe zweimal auf den Apple Pencil, um zum Radierer und zurück zu wechseln. Widerrufen und Wiederholen findest du oben rechts in diesem Bereich.
+197|Doppeltippen, um diese Einstellungen zu %@.
+198|Doppeltippen, um die Tonart zu ändern.
+199|Doppeltippen, um ein Tempo einzugeben.
+200|Einen Ton tiefer
+201|%lld laden
+202|%lld Stücke laden?
+203|Ziehe die Markierung dorthin, wo %@ beginnt, oder verzögere die Spur, falls die Partitur zuerst starten soll. Wenn die Partitur von der Aufnahme abdriftet, tippe später im Stück auf einem betonten Schlag auf „Tempo fixieren“.
+204|Ziehen, um die Abspielposition zu bewegen.
+205|Mit dem Apple Pencil auf die Noten zeichnen
+206|Dateien einfach irgendwo im Fenster ablegen.
+207|Zum Importieren ablegen
+208|Duplizieren
+209|Dynamik
+210|Jedes Symbol hat eine helle, eine dunkle und eine getönte Variante und folgt so deinem Home-Bildschirm-Stil. iPadOS zeigt dir an, wenn sich das Symbol ändert.
+211|Jede ist eine kleine Datei, abgerufen von effendi.me.
+212|Jede Zeile beginnt mit der Zeit, zu der sie gesungen wird, etwa [01:23.45]. Ändere die Wörter danach; lass die Zeit unverändert.
+213|Jedes Notensystem scrollt in der Zeit vorbei, die das Spielen in diesem Tempo dauert.
+214|%@ bearbeiten
+215|Playback bearbeiten
+216|Playback bearbeiten…
+217|Text bearbeiten
+218|Text bearbeiten…
+219|Partitur bearbeiten
+220|Titel auf dem Notenblatt bearbeiten…
+221|Kopie von %@ bearbeiten
+222|Bearbeite die Noten mit dem Apple Pencil.
+223|Nur mit dem Apple Pencil bearbeiten
+224|Bearbeitungsmodi
+225|Notensatz…
+226|Equalizer (an)…
+227|Equalizer an
+228|Equalizer…
+229|Alle Werkzeuge sichtbar: Editoren, Sync, Gemeinsam spielen, Teilen.
+230|Jede Version und jeder Zweig geht als echter Git-Commit und Branch in einer MusicXML-Datei an das Repository. Dafür ist ein Token mit Schreibzugriff nötig, hinzugefügt unter „Spuren von GitHub“ bei Zugriffstoken.
+231|Alles, was ein
+Musiker braucht.
+232|Alles außer dem Partitureditor
+233|Alles in einem verknüpften Ordner wird deiner Bibliothek hinzugefügt, neue Dateien werden bei der nächsten Prüfung übernommen. Eine Aufnahme oder Textdatei mit demselben Namen wie eine Partitur gehört dazu.
+234|Alles ist verfügbar: der Playback-Editor, der Partitureditor, Sync-Werkzeuge, Tonart- und Taktart-Überschreibungen, Gemeinsam spielen, Teilen und Exportieren, Farben und verknüpfte Ordner.
+235|Alles ist freigeschaltet. Viel Freude beim Spielen.
+236|Alles, inklusive Partitureditor
+237|Wiederholungen ausschreiben
+238|Ausgeschrieben
+239|Video exportieren
+240|Video exportieren…
+241|Als MusicXML exportieren
+242|Als MusicXML exportieren…
+243|Als PDF exportieren…
+244|Einblenden (4 s)
+245|Ausblenden (4 s)
+246|Schneller
+247|Erweiterte Texte (wortgenau getaktet) auf lyricsify.com finden
+248|Text finden
+249|An Breite anpassen
+250|Auf dem Schlag blinken
+251|Ordner importiert
+252|Wiedergabe folgen
+253|Der Vorzeichnung folgen
+254|Freies Bearbeiten (keine automatischen Korrekturen)
+255|Aus Apple Music…
+256|Aus einer Datei…
+257|Voll
+258|Vollbild
+259|Sanft
+260|%@ holen
+261|Mach dich bereit…
+262|Text holen
+263|GitHub
+264|Gib jedem Notensystem sein eigenes Instrument, zum Beispiel Bass für das Bassschlüssel-System. Systeme auf „Wie oben“ nutzen das oben gewählte Instrument.
+265|Zum Anfang
+266|Ziel
+267|Halbe Länge
+268|Hat Playback
+269|Noten beim Bearbeiten hören
+270|Die Musik ab der gewählten Note oder dem gewählten Takt hören
+271|%lld Sekunden gehalten
+272|Hilfe
+273|Hilfe und Anleitung
+274|Informationen ausblenden
+275|Bibliothek ausblenden
+276|Bibliothek ausblenden (⌃⌘S)
+277|Wiedergabesteuerung ausblenden
+278|Bibliothek während der Wiedergabe ausblenden
+279|Hoher Kontrast
+280|Takt hervorheben
+281|Hervorhebungsfarbe
+282|Noten hervorheben
+283|Hervorhebungen
+284|Verlauf
+285|Halte einen gleichmäßigen Ton
+286|Halten für
+287|Wie viele Schläge hat jeder Takt?
+288|Ich habe die Erlaubnis, das zu teilen
+289|Ich besitze diese Musik oder habe die Erlaubnis, sie zu teilen
+290|INTRO
+291|Wenn du kabellose Lautsprecher oder Kopfhörer nutzt und der Ton dem anderen Spieler hinterherhinkt, verschiebe ihn nach vorn.
+292|Tempowechsel der Partitur ignorieren
+293|Ordner aus Dateien importieren…
+294|Partitur importieren…
+295|Importierte Partituren erscheinen hier.
+296|%1$lld von %2$lld wird importiert…
+297|Sauber innerhalb von
+298|In deiner Bibliothek
+299|In Professional enthalten
+300|Einfügen
+301|Takte einfügen
+302|Aus Partitur einfügen…
+303|Instrument
+304|Instrumentenlautstärke
+305|Instrumentenpegel
+306|Instrumentalpassage
+307|Oberfläche
+308|Intro, %1$lld Takt%2$@ vor Takt 1
+309|Intro, noch %1$lld Takte, Schlag %2$lld
+310|Jazz-Stücke werden beim Hinzufügen geladen, du musst also online sein.
+311|Sitzung beitreten
+312|Sprünge
+313|Springt zu dieser Zeile.
+314|Nur das Wesentliche: Partitur öffnen, üben, Tempo und Tonart einstellen. Wechsle zu „Erweitert“ für Editoren, Sync-Werkzeuge, Teilen und mehr.
+315|Nur das Wesentliche: öffnen, mitspielen, Tempo und Tonart ändern.
+316|Karaoke-Musik
+317|Karaoke-Bild
+318|Halte %1$@ %2$lld Sekunden lang sauber.
+319|Weiter tippen
+320|Bildschirm während der Wiedergabe an lassen
+321|Tonart
+322|Tonart: %@
+323|Tastaturkürzel
+324|Groß
+325|Größer
+326|Größere Wiedergabesteuerung
+327|Am größten
+328|Links
+329|%@ beitreten lassen?
+330|Bibliothek
+331|Hell
+332|Helles Papier
+333|Zeile %lld
+334|Ordner aus Dateien verknüpfen…
+335|Verbinde bis zu acht Geräte, damit alle dasselbe Stück exakt im Takt spielen, jeder aus seinen eigenen Noten: eine Flötenstimme, eine Klarinettenstimme, eine andere Tonart oder ein anderes Instrument. Öffne deine Stimmen, dann startet eine Person eine Sitzung und die anderen treten bei.
+336|Anhören
+337|Das Playback anhören und Tempo und Tonart der Partitur daran anpassen
+338|Zuhören
+339|Preis wird geladen…
+340|Länger
+341|Auf der Suche nach Texten? Lyricsify hat zeitgesteuerte .lrc-Dateien für viele Songs. Maestro Pro ist nicht mit Lyricsify verbunden und liefert oder befürwortet dessen Inhalte nicht.
+342|Repositories werden durchsucht…
+343|Songtexte
+344|Erscheinungsbild der Texte…
+345|Text statt Noten
+346|Text aus Apple Music…
+347|Text mit Playback…
+348|Lyricsify
+349|Lyricsify…
+351|Maestro-Pro-Hilfe
+352|Maestro Pro ist für den großen Bildschirm gemacht. Klapp dein iPhone Duo auf, um weiterzumachen.
+353|Mache die Notation größer oder kleiner; die Takte werden auf mehr oder weniger pro Zeile umbrochen. Auch Zoomen mit zwei Fingern funktioniert.
+354|Abo verwalten
+355|Abgleichen
+356|Tonart abgleichen
+357|Tonart und Tempo an Spur angleichen
+358|Meine Tonart abgleichen
+359|Sänger abgleichen
+360|System
+361|Abgleichen und synchronisieren…
+362|In %@ zusammenführen…
+363|„%1$@“ in „%2$@“ zusammenführen
+364|Zusammenführen, bei Konflikten meine behalten
+365|Zusammenführen, bei Konflikten ihre übernehmen
+366|Metronom
+367|Metronom (K)
+368|Metronom standardmäßig an
+369|Mikrofonempfindlichkeit
+370|Mikrofon an
+371|Halbe
+372|Modus
+373|Monospace
+374|Mehr
+375|Das meiste
+376|Eingefügte Takte in die Tonart der Musik bringen, auf die sie folgen
+377|Laufende Linie
+378|Musik
+379|Musik und Texte sind verborgen, solange der Bildschirm aufgezeichnet wird. Beende die Aufnahme, um fortzufahren.
+380|Stumm schalten
+381|Stumm schalten und aufnehmen
+382|Playback stumm schalten?
+383|Name
+384|Nötig für private Repositories, zum Hinzufügen vieler Spuren und zum Übertragen des Verlaufs einer Partitur zu GitHub (dann mit Lese- und Schreibzugriff auf die Inhalte des Repositorys). Er wird in deinem Schlüsselbund gespeichert.
+385|Neue leere Partitur
+386|Neue leere Partitur…
+387|Neuer Zweig…
+388|Neue Setliste
+389|Neue Setliste…
+390|Weiter
+391|Nächster Takt
+392|Nächste Seite
+393|Noch keine Akkorde
+394|Keine Dynamik
+395|Kein Text
+396|Hier kein Text
+397|Noch keine Partituren
+398|Keine Klammer
+399|Keine Ordner verknüpft.
+400|Keine Ergebnisse. Versuche eine andere Suche oder ein anderes Instrument.
+401|Keine Partituren oder Texte gefunden.
+402|Keine synchronisierten Texte gefunden. Versuche Songtitel und Künstlernamen.
+403|Keine
+404|Keiner davon: Künstler eingeben…
+405|Normal
+406|Normal ±10 ¢
+407|Nicht jetzt
+408|Note %1$lld von %2$lld
+409|Zu haltende Note
+410|Nichts passt zu „%@“.
+411|Klang verschieben: %lld ms
+412|OK
+413|Aus
+414|An
+415|Auf dem iPhone zeigt Maestro Pro nur die Partituren an, die du auf iPad oder Mac hinzufügst. Es ist nicht die volle App.
+416|Einstellungen öffnen
+417|Klapp dein iPhone auf
+418|Öffne eine Partitur aus deiner Bibliothek oder bringe eine neue mit.
+419|In neuem Fenster öffnen
+420|Stimmgerät öffnen
+421|Optionen
+422|Unter „Optionen“ (oben rechts) gibt es „Freies Bearbeiten“. Ist es an, hilft der Editor nicht mehr: Noten werden nie an den Takt angepasst, überschreiben nie ihre Nachbarn und hinterlassen keine Pausen, sodass ein Takt zu viele oder zu wenige Schläge enthalten kann. Tippe auf leere Fläche in einem Takt, um nach der letzten eine Note hinzuzufügen.
+423|Oder hol dir Professional für immer
+424|Oder hol dir Professional für immer, einmalig %@
+425|Ausgangspegel
+426|PLAY
+427|Seite
+428|Seite %lld
+429|Seite %lld der Partitur
+430|Die Papierfarbe tönt die Seite hinter den Noten, und gescannte Seiten übernehmen sie ebenfalls.
+431|Stimme zum Verfolgen
+432|Stimme zum Bewerten
+433|Einfügen
+434|Pause
+435|Persönliches Zugriffstoken
+436|Wiedergabe
+437|Musik spielen als
+438|Referenzton spielen
+439|Partitur spielen als
+440|Partituren spielen als
+441|Gemeinsam spielen
+442|Spiele eine Note und halte sie %lld Sekunden lang sauber.
+443|Im Takt mit einem anderen Gerät spielen
+444|Wiedergabe oder Pause (Leertaste)
+445|Melodieführung spielen
+446|Die Aufnahme abspielen
+447|Wiedergabe
+448|Die Wiedergabe wird ab diesem Takt schneller oder langsamer, relativ zum Anfangstempo, bis zur nächsten Markierung. Eine Aufnahme hat ihr eigenes Tempo, daher ändern Markierungen nur das eingebaute Instrument.
+449|Spielt die gewählten Takte immer wieder, um eine schwierige Stelle zu üben.
+450|Position
+451|Übungstempo
+452|Ein Übungstempo von %1$lld %% spielt es mit %2$lld.
+453|Übungstempo in Prozent
+454|Partitur wird vorbereitet…
+455|Voreinstellungen
+456|Vorheriger Takt
+457|Vorherige Seite
+458|Drucken…
+459|Datenschutz
+460|Fortschrittsbalken in Pausen
+461|Feedback geben
+462|Von GitHub holen
+463|Zu GitHub übertragen
+464|Achtel
+465|Lesen, proben, aufführen und schreiben.
+Noten, auf die Note genau getaktet.
+466|Notensysteme und Noten werden gelesen…
+467|Dein Scan wird gelesen…
+468|Realistische Oberflächen
+469|Aufnehmen
+470|Erneut aufnehmen
+471|Trotzdem aufnehmen
+472|Mich aufnehmen
+473|Nimm dein Spiel auf und sieh dann, welche Noten du getroffen hast
+474|Aufnahme
+475|Aufnahme nicht erlaubt
+476|Aufnahme läuft. Spiel die Partitur.
+477|Aufnahmen
+478|Wiederholen
+479|Zeichnung wiederholen
+480|Bewegung reduzieren
+481|Gesang reduzieren
+482|Locker
+483|Locker ±20 ¢
+484|Entfernen
+485|Playback entfernen
+486|Textdatei entfernen
+487|Markierung entfernen
+488|Aufnahme entfernen
+489|Aus „%@“ entfernen
+490|Pause entfernen
+491|Die 1.- oder 2.-Mal-Klammer von diesem Takt und den damit verbundenen Takten entfernen
+492|Umbenennen
+493|Partitur umbenennen
+494|Setliste umbenennen
+495|Umbenennen…
+496|Einen Abschnitt wiederholen
+497|Playback ersetzen…
+498|Textdatei ersetzen…
+499|Aufnahme ersetzen…
+500|Ersetzen…
+501|Repositories
+502|Repository
+503|Zurücksetzen
+504|%@ zurücksetzen
+505|Alle Spuren zurücksetzen
+506|Alle Einstellungen zurücksetzen
+507|Alles auf Standard zurücksetzen
+508|Oberflächen zurücksetzen
+509|Alle Einstellungen auf Standard zurücksetzen?
+510|Auf Standard zurücksetzen
+511|Käufe wiederherstellen
+512|Originalpartitur wiederherstellen
+513|Rückblick
+514|Rückblick-Optionen
+515|Rhythmus aus den Notenwerten in %1$lld von %2$lld Takten gelesen. Der Rest (Triolen, ungewöhnlicher Notensatz) folgt dem gedruckten Abstand.
+516|Rhythmus aus den Notenwerten in allen %lld Takten gelesen.
+517|Zu dieser Version zurückkehren
+518|Gerundet
+519|S-Kurve
+520|Wie oben
+521|Sichern
+522|Token sichern
+523|Version sichern…
+524|Video sichern oder teilen
+525|Gesicherte Versionen, Zweige und Zusammenführungen
+526|Tonleitern und Arpeggien
+527|Tonleitern und Arpeggien…
+528|Noten scannen…
+529|Partitur
+530|Partitur geschrieben für
+531|Partituren
+532|Partituren, die dir auf die Note folgen, freihändiges Umblättern, Ensemble-Sync, Aufnahme und Rückblick. Gebaut für die Probe, bereit für die Bühne.
+533|Partituren, Texte und Aufnahmen mit gleichem Namen werden zusammen hinzugefügt. Wische, um ein Repository zu entfernen.
+534|Die Seite mit der Wiedergabe scrollen
+535|Partituren suchen
+536|Partituren suchen…
+537|Online nach Texten suchen…
+538|Suche den Song, öffne seine erweiterten (wortgenau getakteten) Texte und tippe dann auf „Diese Texte verwenden“, oder lade die .lrc-Datei herunter.
+539|Spuren suchen
+540|Durchsucht das Web und GitHub nach MusicXML-Partituren. Gib oben einen Komponisten oder Stücknamen ein. Prüfe, ob eine Partitur frei nutzbar ist, bevor du sie hinzufügst.
+541|Feedback anderer Nutzer ansehen
+542|Das Stück als Akkordschema sehen
+543|Alles auswählen
+544|Nichts auswählen
+545|Wähle eine Note und tippe dann auf eine Länge (ganze, halbe, Viertel…), um ihre Dauer zu ändern. Der Punkt verlängert um die Hälfte; die 3 macht Triolen, drei Noten in der Zeit von zwei. Eine Note übernimmt, was ihr im Takt folgt; eine kürzere hinterlässt Pausen.
+546|Senden
+547|Serifen
+548|Markierung setzen
+549|Tempo einstellen
+550|Durch Tippen eingestellt
+551|Setlisten-Optionen für %@
+552|Einstellungen
+553|Einstellungen (⌘,)
+554|Einstellungen für %@
+555|Einstellungen…
+556|Teilen
+557|Mit anderem Spieler teilen
+558|Mit anderem Spieler teilen…
+559|Teilen…
+560|Notenblatt
+561|Noten und Aufnahmen sind meist urheberrechtlich geschützt. Teile nur Musik, die du geschrieben hast, deren Rechte du besitzt oder für die du eine Weitergabeerlaubnis hast. Das Teilen urheberrechtlich geschützten Materials ohne Erlaubnis kann illegal sein, und du bist für das verantwortlich, was du sendest.
+562|Playback verschieben
+563|Kürzer
+564|Informationen einblenden
+565|Informationen einblenden (⌥⌘I)
+566|Bibliothek einblenden
+567|Bibliothek einblenden (⌃⌘S)
+568|Zeilen anzeigen für
+569|Text statt Noten anzeigen
+570|Wiedergabesteuerung einblenden
+571|Silbenfortschritt anzeigen
+572|Während der Wiedergabe anzeigen
+573|Noten im Vollbild mit Autoscroll zeigen
+574|Zeit über Musik und Text anzeigen
+575|Den Text im Apple-Music-Stil zeigen oder eine Textdatei (.lrc oder .txt) hinzufügen
+576|Einfach
+577|Zu einer Aufnahme mitsingen; ungetaktete Texte werden darüber verteilt
+578|Sänger %lld
+579|Farbe Sänger 1
+580|Farbe Sänger 2
+581|Farbe Sänger 3
+582|Sänger
+583|Die letzten 8 s verlangsamen
+584|Langsamer
+585|Kleinerer Text
+586|Songtitel oder Künstler
+587|Songs auf Apple Music
+588|Bibliothek sortieren nach
+589|Tempo
+590|Als neue Partitur abspalten…
+591|Standard
+592|Von vorn beginnen
+593|Kostenlos testen
+594|Wiedergabe starten, wenn eine Partitur geöffnet wird
+595|Sitzung starten
+596|Den Text im Takt mit Noten oder Text auf einem anderen Gerät starten
+597|Mikrofon wird gestartet
+598|Notensysteme
+599|Schritt %1$lld von %2$lld
+600|Stopp
+601|Aufnahme beenden
+602|Scrollen beenden
+603|Warte auf mich beenden
+604|Gerade
+605|Seite wird begradigt und die Noten werden vorbereitet.
+606|Betonte Silben schwellen beim Singen sanft an. Schalte die Animation aus für ruhige Zeilen und den Silbenfortschritt aus, um jede Zeile auf einmal aufleuchten zu lassen.
+607|Streng
+608|Streng ±5 ¢
+609|Unterstützte Dateiformate
+610|Unterstützte Dateien
+611|Oberflächen
+612|Zu diesem Zweig wechseln
+613|TAP
+614|Takte übernehmen von
+615|Verbindung zu GitHub…
+616|Tempo antippen…
+617|Tippe auf eine Note, um von dort zu starten.
+618|Tippe im Takt des Schlags.
+619|Tippe im Takt des Schlags. Das Tempo erscheint ab dem zweiten Tippen und wird mit jedem Tippen genauer. Mit einer Tastatur kannst du die Leertaste drücken, solange die Taste fokussiert ist.
+620|Auf dem Schlag tippen (Haptik)
+621|Tippe die Zeilen an, die eine Person singt, und wähle unten, wer sie singt.
+622|Tippen, um einen Keyframe hinzuzufügen. Ziehe einen Keyframe, um ihn zu bewegen.
+623|Tippen, um Keyframes hinzuzufügen
+624|Tippen, um vom Intro zu starten.
+625|Zweimal tippen zum Starten
+626|Tempo
+627|Tempo %lld Schläge pro Minute
+628|Tempo bei Takt %lld
+629|Tempo in Schlägen pro Minute
+630|Bedingungen
+631|Text
+632|Textgröße
+633|Danke für dein Feedback!
+634|Die App folgt auch den Geräteeinstellungen für Größeren Text, Fetten Text, Kontrast erhöhen und Bewegung reduzieren. Seitenfarben findest du unter Notenblatt, Hintergründe unter Erscheinungsbild.
+635|Die App konnte es von der Seite nicht ablesen. Zähle die Schläge in einem Takt (Viertel): 4 für 4/4, 3 für 3/4, 6 für 6/4. Bei 6/8 zähle zwei punktierte Viertelschläge zu je 3, gib also 3 ein.
+636|Der Künstler konnte aus der Spur nicht ermittelt werden. Gib ihn ein, um die Sänger abzugleichen.
+637|Das Playback ist für diese Aufnahme stumm geschaltet.
+638|Die Datei enthält die Noten%@. Die andere Person öffnet sie in Maestro Pro.
+639|Instrument und Klick sind während der Aufnahme stumm.
+640|Das Instrument spielt die Noten auf der Seite, zusätzlich zu jedem Playback.
+641|Die eigene Musik der Karaoke-Datei, auf einem eingebauten Instrument gespielt
+642|Die Karaoke-Musik klingt höher oder tiefer.
+643|Das Mikrofon hört das Playback. Schalte es stumm oder nutze Kopfhörer.
+644|Das Mikrofon hört alles, was der Lautsprecher spielt, daher würde das Playback aufgenommen und bewertet, als hättest du es gespielt. Schalte es für diese Aufnahme stumm (danach ist es wieder da) oder nutze Kopfhörer.
+645|Papier, Schreibtisch, Tasten und Bedienfelder werden wie echte Materialien gezeichnet. Reduziere jedes für einen flacheren Look oder schalte alle aus. Hoher Kontrast schaltet sie ebenfalls aus.
+646|Die Aufnahme wird in der Tonhöhe verschoben, ohne ihre Geschwindigkeit zu ändern.
+647|Der Partitureditor schreibt Noten und fügt dann Akzente, Dynamik und eine Wiederholung hinzu
+648|Die Partitur sagt %lld
+649|Die Partitur wartet darauf, dass du jede Note sauber spielst
+650|Die darin enthaltenen Partituren bleiben in deiner Bibliothek.
+651|Der Song konnte nicht zugeordnet werden. Wähle den nächstliegenden.
+652|Ihre Stimme hat %1$lld Takte und deine %2$lld, daher können beide auseinanderdriften.
+653|Hier gibt es keine Noten zum Verfolgen
+654|Diese gelten für jede Partitur, die du öffnest. Ändere eine für eine einzelne Partitur über ihre eigene Steuerung.
+655|Sie können mit dir die Musik starten, pausieren und durchlaufen.
+656|Sie spielen „%@“. Jeder behält seine eigenen Noten und sein Instrument; ihr bleibt Takt für Takt zusammen.
+657|Das ist die auf den Noten gedruckte Überschrift. Der Name in deiner Bibliothek bleibt unverändert.
+658|Das legt das Anfangstempo fest; die Markierungen der Partitur ändern es von da an.
+659|Titel beim Import bereinigen
+660|Titel bereinigen
+661|Bindebogen
+662|Diese Note an die nächste binden, sodass sie als eine lange Note klingen
+663|An die nächste Note binden
+664|Taktart
+665|Wort für Wort getaktet
+666|Wort für Wort getaktet: Die Wörter füllen sich beim Singen.
+667|Timing
+668|Titel
+669|Der Titel muss 10 bis 100 Zeichen lang sein. Dein Feedback wird öffentlich auf [thecaffeinemediacompany.fider.io](https://thecaffeinemediacompany.fider.io) veröffentlicht.
+670|Titel auf dem Notenblatt
+671|Toleranz
+672|Werkzeuge
+673|Startmarkierung der Spur
+674|Spuren
+675|Spuren von GitHub
+676|Spuren von GitHub…
+677|Triole
+678|Triole: drei Noten in der Zeit von zwei
+679|Stimmen oder einen gleichmäßigen Ton halten üben
+680|Stimmgerät
+681|Stimmgerät: Sauber innerhalb von
+682|Stimmgerät: Ziel für gleichmäßigen Ton
+683|Stimmgerät…
+684|Stimmung: A =
+685|Einzählen ausschalten
+686|Einzählen einschalten
+687|Metronom ausschalten
+688|Metronom einschalten
+689|Seiten wie in einem Buch umblättern
+690|Note in Pause verwandeln
+691|Art
+692|Gib den Namen eines Songs oder Künstlers ein.
+693|Gib Songtitel oder Künstler ein, um synchronisierte Texte zu finden.
+694|Schriftart
+695|Widerrufen
+696|Zeichnung widerrufen
+697|Stumm aufheben
+698|Ohne Titel
+699|Einen Ton höher
+700|Auf Professional upgraden
+701|%@ Schläge verwenden
+702|Bibliotheksnamen verwenden
+703|Diese Texte verwenden
+704|Wird vom Stimmgerät und von „Warte auf mich“ genutzt, die über das Mikrofon hören. Erhöhe die Empfindlichkeit in einem ruhigen Raum oder für ein leises Instrument und senke sie, wenn es Geräusche hört. Ein Cent (¢) ist ein Hundertstel eines Halbtons.
+705|Die %lld der Partitur verwenden
+706|lyricsify.com besuchen
+707|Warte auf mich
+708|Optionen für „Warte auf mich“
+709|Warte auf mich: Beliebige Oktave akzeptieren
+710|Warte auf mich: Halten für
+711|Warte auf mich: Sauber innerhalb von
+712|Wöchentlich
+713|Willkommen bei %@
+714|Was machen die Modi?
+715|Während der Wiedergabe
+716|Weiße Noten auf schwarzem Papier
+717|Weiße Noten auf schwarzem Papier
+718|Wer singt das?
+719|Ist alles aus, folgen nur der Taktzähler und das Umblättern der Musik.
+720|Wörter
+721|Wörter unter den Noten
+722|Erneut schreiben
+723|Jede Wiederholung, Klammer und jeden Sprung als eigene Takte ausschreiben
+724|Schreiben, überarbeiten
+und aufführen.
+725|Deine Bewertung wird verfasst…
+726|Geschrieben %@
+727|Von Apple Intelligence auf diesem Gerät verfasst
+728|Verfasste Bewertung
+729|Du kannst das später im Informationsbereich ändern.
+730|Du hast %@ gespielt
+731|Du hast alle %lld Noten gespielt
+732|Tonart deines Instruments
+733|Dein Plan
+734|Deine Bibliothek und Anmerkungen bleiben von einem Zurücksetzen unberührt.
+735|Dein Video ist fertig.
+736|Zoom
+737|Vergrößern
+738|Verkleinern
+739|Vergrößern
+740|Verkleinern
+741|iCloud-Sync
+743|Eigentümer/Repository oder ein GitHub-Link
+764|%@ pro Woche
+765|%@ pro Jahr
+766|%1$@: enthalten in %2$@
+767|3 Tage kostenlos testen aktiviert
+768|Einmal jährlich abgerechnet. Das sind %@ pro Monat.
+769|Wähle deinen Plan
+770|ALLES
+771|Kostenlos testen, dann %@ pro Woche
+772|Kostenlos testen, dann %@ pro Jahr
+773|Spare %1$@ (%2$lld %%) pro Jahr
+774|pro Woche
+775|Eine Bibliothek in beliebiger Größe, nicht nur drei Partituren
+776|Jede Partitur abspielen, im Tempo deiner Wahl
+777|Noten, Takte und eine laufende Linie, die der Musik folgen
+778|Partituren suchen und Songtexte online finden
+779|Tonart ändern und den Klang mit dem Equalizer formen
+780|Playbacks stapeln oder zu Apple Music mitspielen
+781|Gemeinsam spielen auf bis zu acht Geräten
+782|Das Stimmgerät und eine Partitur, die auf dich wartet
+783|Eine Aufnahme machen und jede Note sehen, an der du arbeiten solltest
+784|Mit dem Apple Pencil anmerken, exportieren und drucken
+785|Alles aus Performer
+786|Der Partitureditor: Musik schreiben und ändern
+787|Medleys aus jeder Partitur deiner Bibliothek bauen
+788|Versionsverlauf, Zweige, Zusammenführungen und GitHub-Sync
+789|Anmerkung
+790|Apple Music
+791|Taktmarkierung
+792|Tonart ändern
+793|Akkordansicht
+794|Export
+795|Songtexte online finden
+796|Tonart und Tempo abgleichen
+797|Notenmarkierung
+798|Gemeinsam spielen
+799|Wiedergabe
+800|Drucken
+801|Mich aufnehmen
+802|Gesang reduzieren
+803|Rückblick auf eine Aufnahme
+804|Partituren suchen
+805|Teilen mit einem anderen Spieler
+806|Playbacks stapeln
+807|Der Equalizer
+808|Die laufende Linie
+809|Der Partitureditor
+810|Der Spureditor
+811|Das Stimmgerät
+812|Video-Export
+813|Warte auf mich
+814|Eine neue Partitur schreiben
+816| + %lld ohne Zeitangabe
+817|Freies Bearbeiten ist an: Nichts wird korrigiert, und ein Tippen auf leere Fläche in einem Takt fügt eine Note nach der letzten hinzu.
+818|Das Playback wird passend umgestimmt.
+819|Das Playback bleibt in seiner aufgenommenen Tonart.
+820|Du kannst das jederzeit im Informationsbereich ändern.
+821| · etwa 
+822|%@ auf Apple Music
+823|%1$lld Std. %2$lld Min.
+824|%lld Zeilen ausgewählt
+825|%lld Zeilen wurde ein Sänger zugewiesen. Prüfe sie unter Sänger zuweisen.
+826|%lld Min.
+827|%lld Partituren
+828|%lld Sek.
+829|%lld Titel bereinigt.
+830|, schon die Tonart der Partitur
+831|, daher wandert die Partitur %lld Halbtöne nach unten
+832|, daher wandert die Partitur einen Halbton nach unten
+833|, daher wandert die Partitur %lld Halbtöne nach oben
+834|, daher wandert die Partitur einen Halbton nach oben
+835|1 Zeile ausgewählt
+836|1 Partitur
+837|1 Titel bereinigt.
+838|Ein geschlossenes Format. Speichere in Band-in-a-Box als MusicXML für die Noten und als Audio für das Playback und importiere dann beides.
+839|Etwas zu tief, %lld ¢
+840|Etwas zu hoch, %lld ¢
+841|Eine Partitur mit ihrem Playback, von einem anderen Maestro-Pro-Nutzer.
+842|Vorzeichen, Haltebögen und Artikulation
+843|Füge zuerst ein GitHub-Token mit Schreibzugriff hinzu: Spuren von GitHub, dann Zugriffstoken.
+844|Playback hinzufügen
+845|Takt danach hinzufügen
+846|Pausen hinzufügen, ändern und entfernen
+847|%lld Stücke hinzugefügt.
+848|1 Stück hinzugefügt.
+849|Alle Titel sind schon bereinigt.
+850|Erlaube es in der Einstellungen-App unter Maestro Pro (auf dem Mac: Systemeinstellungen, Datenschutz & Sicherheit, Medien & Apple Music).
+851|Jede Audiodatei, die das Gerät abspielen kann, lässt sich zu einer Partitur oder zu Texten hinzufügen.
+852|Apple Music konnte nicht durchsucht werden.
+853|Playbacks
+854|Band-in-a-Box-Songs werden in einem geschlossenen Format gespeichert, das nur Band-in-a-Box lesen kann. Wähle in Band-in-a-Box Ablage ▸ Sichern unter ▸ MusicXML (für die Noten) und Audio (für das Playback) und importiere beides.
+855|Takt %lld
+856|Takt %1$lld%2$@: Wähle eine Dynamik oder ein Crescendo oder Diminuendo über den Takt.
+857|Takt %lld: 1.- und 2.-Mal-Klammern (Klammer verlängern dehnt sie über den nächsten Takt), Sprünge oder eine Tempomarkierung.
+858|Takt %lld: Wiederholungszeichen hinzufügen oder den Takt einfügen oder löschen.
+859|Takt 1
+860|Takt 1 beginnt bei
+861|Takte %1$lld bis %2$lld gewählt. Kopiere, schneide aus, dupliziere oder lösche sie, oder füge danach etwas ein.
+862|Bässe anheben
+863|Bassschlüssel
+864|Schläge pro Takt
+865|Bevor du gehst
+866|Am besten
+867|Name des Zweigs
+868|Hol deine Partituren herein
+869|%lld Versionen übernommen. Zweige, die getrennte Wege gingen, heißen …-github, damit du sie zusammenführen kannst.
+870|1 Version übernommen. Zweige, die getrennte Wege gingen, heißen …-github, damit du sie zusammenführen kannst.
+871|Gebürstetes Metall
+872|C-Schlüssel
+873|Prüfe die Verbindung und versuche es erneut. (%@)
+874|Mit %@ verbunden.
+875|Die Takte kopieren
+876|Takte kopieren, ausschneiden, einfügen und einsetzen, auch aus anderen Partituren
+877|Geschützte Musik ohne Erlaubnis zu kopieren oder zu teilen ist Piraterie. Das Urheberrecht schützt sie in fast jedem Land, und Regeln und Strafen hängen davon ab, wo du lebst. Verstöße können zu Schadenersatzforderungen und in schweren Fällen zu Geldstrafen oder Haft führen.
+878|Korrigiere eine falsche Note, schreibe eine neue Stimme oder baue ein Medley für das Set. Der Editor hält jeden Takt beim Schreiben korrekt, und jede Version wird gesichert.
+879|%@ konnte nicht gelesen werden.
+880|%@ konnte nicht geladen werden. Prüfe deine Verbindung und versuche es erneut.
+881|In dieser Spur wurde kein gleichmäßiger Schlag gefunden.
+882|%1$lld konnte nicht gelesen werden: %2$@%3$@.
+883|Viertelschläge pro Takt
+884|Viertelschläge pro Takt
+885|Die Takte ausschneiden
+886|Start verzögern
+887|Start verzögern (in Takten)
+888|Den Takt löschen
+889|Die Takte löschen
+890|Schreibtischleder
+891|%lld Halbtöne tiefer
+892|Einen Halbton tiefer
+893|Ziehe über Takte, um sie zu wählen, dann Kopieren, Ausschneiden oder Duplizieren. Einfügen setzt die kopierten Takte nach den gewählten Takten ein (oder am Ende), in dieser oder einer anderen Partitur, die du als Nächstes öffnest, um ein Medley zu bauen. Aus Partitur einfügen holt Takte aus einer anderen Partitur deiner Bibliothek. Tonart abgleichen bringt sie in die Tonart, der sie folgen; jedes Stück behält seine eigene Taktart und sein eigenes Tempo.
+894|Zeichne in beliebiger Farbe auf die Seite
+895|Zeichne mit dem Apple Pencil und den Werkzeugen Stift, Marker, Bleistift und Farbe auf die Noten. Deine Zeichnung bleibt auf dem Notenblatt und erscheint beim Spielen. Auch Weiß geht. Nutze den Radierer in der Werkzeugpalette, um sie zu entfernen.
+896|Zeichne mit dem Apple Pencil über die Werkzeugpalette; die Tinte bleibt auf der Seite.
+897|Leer
+898|Jede Note ist auf den Schlag getaktet, damit die Partitur mit dir Schritt hält.
+899|Genaues Timing; lässt sich bearbeiten, transponieren, abspielen und exportieren.
+900|1.- und 2.-Mal-Klammern, Sprünge und Tempo
+901|Kostenlos sind bis zu %lld Partituren möglich. Lösche eine oder wähle in den Einstellungen einen Plan, um so viele zu behalten, wie du möchtest.
+902|Kostenlos kannst du die Noten von bis zu drei Partituren ansehen. Das bleibt gesperrt:
+903|Frequenz
+904|Ab Takt
+905|Im Teilen-Menü einer Partitur in der Bibliothek.
+906|Von der Seite
+zur Aufführung.
+907|Gain
+908|GitHub hat bereits alles.
+909|GitHub ließ nicht zu, dass das Token dieses Repository ändert. Es braucht Lese- und Schreibzugriff auf die Inhalte des Repositorys.
+910|Das Limit von GitHub für Anfragen ohne Token ist erreicht. Füge ein Token hinzu oder versuche es in einer Stunde erneut.
+911|Gib dem Zweig einen Namen.
+912|Ziele
+913|Geschafft
+914|Die Note hören
+915|Hilf uns, für jeden
+Musiker zu bauen.
+916|Das würdest
+du verpassen.
+917|Halte sie
+918|Wie viel angezeigt wird
+919|So funktioniert es
+920|Ordner importieren
+921|Ordner importieren liest jede unterstützte Datei in einem Ordner und ordnet Partituren eine Aufnahme und Texte mit demselben Namen zu.
+922|Partitur importieren
+923|Importiere mit Partitur importieren, indem du eine Datei auf das Fenster ziehst oder über das Teilen-Menü einer anderen App.
+924|In ihrer Originaltonart wird die PDF so gezeigt, wie sie gedruckt ist. In jeder anderen Tonart wird die von der Seite gelesene Musik neu gesetzt; vergleiche sie also mit dem Original.
+925|Informationsbereich
+926|Instrumentenpegel
+927|Intro, %lld Takte vor Takt 1
+928|Intro, 1 Takt vor Takt 1
+929|Es liegt in deiner Verantwortung
+930|%@ tritt bei…
+931|Einzähltakte
+932|Lederknöpfe
+933|Weniger Bass
+934|Pegel
+935|Zeilen (und Wörter) mit Zeitangaben.
+936|Verknüpfe einen in den Einstellungen, um ihn mit der Bibliothek abzugleichen.
+937|Tempo hier fixieren
+938|Suche nach einem Spieler, der hostet…
+939|Laut und leise, Crescendo und Diminuendo
+940|Texte und Karaoke
+941|Texte können zu einer Partitur gehören oder allein stehen; eine Karaoke-Datei läuft als eigener Eintrag.
+942|Text mit Playback
+943|Maestro Pro kann nicht erkennen, wem das gehört, was du teilst. Wenn du fortfährst, bestätigst du, dass du das Recht hast, diese Musik zu teilen oder zu exportieren, und dass du, nicht die App, für dein Handeln verantwortlich bist.
+944|Maestro Pro darf Apple Music nicht verwenden.
+945|Maestro Pro braucht das Mikrofon, um dich zu hören. Aktiviere es in der Einstellungen-App unter Maestro Pro, oder auf dem Mac in den Systemeinstellungen unter Datenschutz & Sicherheit, Mikrofon.
+946|Maestro Pro liest deine Noten und folgt ihnen auf die Note genau, blättert freihändig um und lässt dich die Stimmen selbst schreiben und überarbeiten. Eine Minute Einrichtung, dann bist du bereit.
+947|Maestro-Pro-Partitur
+948|Maestro Pro zeigt die Musik in der Tonart deines Instruments, damit sie zur Stimme vor dir passt.
+949|Mach es zu deinem
+950|Das Video wird erstellt…
+951|Takt 1 jetzt markieren
+952|Intro-Beginn jetzt markieren
+953|Markiere zuerst Takt 1, dann tippe mindestens eine Sekunde später auf eine betonte Zählzeit.
+954|Ohne Konflikte zusammengeführt.
+955|„%1$@“ in „%2$@“ zusammengeführt
+956|Zusammengeführt. In beiden Zweigen geänderte Takte: %1$@. Die Version des Zweigs „%2$@“ wurde dafür beibehalten.
+957|Musik gehört jemandem
+958|Die Musik wird im Kammerton gezeigt, wie geschrieben.
+959|Die Musik wird in B für Tenorsaxofon gezeigt, passend zu deiner Stimme.
+960|Die Musik wird in B gezeigt, einen Ton über dem Kammerton, passend zu deiner Stimme.
+961|Die Musik wird in Es gezeigt, passend zu deiner Stimme.
+962|Musik, die du selbst geschrieben oder aufgenommen hast, gemeinfreie Musik und Musik, deren Lizenz das Teilen erlaubt (etwa manche Creative-Commons-Werke). Alles andere braucht die Erlaubnis des Rechteinhabers. Eine Kopie für dich zu kaufen gibt dir nicht das Recht, sie weiterzugeben.
+963|Keine Note
+964|Keine Songs gefunden.
+965|In dieser PDF wurden keine Notensysteme gefunden, sie kann also gelesen, aber nicht verfolgt werden.
+966|Keine synchronisierten Texte verfügbar.
+967|Noten leuchten beim Erklingen auf und Seiten werden freihändig umgeblättert, bei der Probe oder auf der Bühne.
+968|Nichts Neues auf GitHub.
+969|Nichts Neues hinzuzufügen.
+970|Takt 1 verschieben
+971|Noch eine Sache
+972|Für diesen Song wurde nur ein Sänger gefunden.
+973|Beispiel öffnen
+974|Öffne diese PDF zuerst einmal, damit die App ihre Noten lesen kann, und komm dann zurück, um eine Kopie zu bearbeiten.
+975|Öffne diese PDF zuerst einmal, damit die App ihre Noten lesen kann, und komm dann zurück.
+976|Öffne diese PDF zuerst einmal, damit die App ihre Noten lesen kann, und exportiere sie dann.
+977|Öffnet sich in MuseScore, Finale, Sibelius, Dorico und den meisten anderen Notations-Apps.
+978|Optional. Deine eigene Aufnahme, abgestimmt auf Tempo und Tonart der Partitur.
+979|Originaltonart
+980|PDF-, MusicXML-, MIDI- oder Karaoke-Dateien, auf dem Gerät gelesen.
+981|Seitenschatten und Eselsohr
+982|Papierstruktur
+983|Nach diesen Takten einfügen
+984|Klavier (Standard)
+985|Wähle, wie die Musik beim Spielen aussieht. Alles hier findest du später in den Einstellungen.
+986|Piraterie ist illegal
+987|Einfache Texte
+988|Spiele über Takt 1 hinaus und tippe dann später auf eine betonte Zählzeit.
+989|Spiele die Note
+990|Starte die Spur und tippe dann auf den ersten Schlag von %@.
+991|Zum Abspielen von Songs ist ein Apple-Music-Abo nötig.
+992|Spielt im Takt mit der Partitur; Tonhöhe lässt sich verschieben, Lautstärke, Tempo und Tonhöhe lassen sich bearbeiten.
+993|Tasten drücken…
+994|Vorherige Note
+995|Gedruckte oder gescannte Noten. Die Noten werden von der Seite gelesen, damit sie verfolgt und gespielt werden können.
+996|Noten setzen und verschieben und ihre Dauer festlegen
+997|Leisere Stimmen
+998|Partitur wird gelesen…
+999|Erkannt, aber nicht lesbar
+1000|Die Pause entfernen
+1001|Wiederholungsende
+1002|Wiederholungszeichen und Takte hinzufügen oder entfernen
+1003|Wiederholungsanfang
+1004|Zurückgesetzt auf „%@“
+1005|Platz für Bassisten
+1006|Noten und Pausen wegradieren
+1007|Noten scannen
+1008|Name der Partitur
+1009|Ausgewählt: %@.
+1010|Ausgewählt: %@. Tippe auf eine Länge, um sie zu ändern, oder auf den Papierkorb, um sie zu entfernen.
+1011|Halbtöne
+1012|%1$lld Versionen an %2$@ gesendet.
+1013|1 Version an %@ gesendet.
+1014|Stell das Pult auf.
+1015|Notenblatt
+1016|Noten, Aufnahmen, Playbacks und Texte sind fast immer urheberrechtlich geschützt. Komponist, Texter, Arrangeur, Interpret oder Verlag besitzen sie, auch wenn sie online leicht zu finden sind.
+1017|Anfangsstille überspringen
+1018|Diese Note überspringen
+1019|System %lld
+1020|System %lld: 
+1021|Mikrofon wird gestartet…
+1022|Gleichmäßigkeit
+1023|Spur wird noch gelesen…
+1024|Tippe auf einen Takt, dann füge Wiederholungszeichen hinzu oder entferne sie, oder füge den Takt ein oder lösche ihn. Wiederholungen ausschreiben schreibt das Stück so aus, wie es gespielt wird.
+1025|Tippe auf einen Takt, dann setze eine 1.- oder 2.-Mal-Klammer darüber (Klammer verlängern dehnt sie über mehr Takte), füge Segno, Coda, To Coda, D.C., D.S. oder Fine hinzu oder setze eine Tempomarkierung.
+1026|Tippe auf eine Note (die Dynamik gilt für diese Note) oder einen Takt (sie gilt für den Anfang), dann wähle ppp bis fff. Crescendo und Diminuendo setzen eine Gabel über den Takt; Länger und Kürzer dehnen sie über mehr Takte. Das eingebaute Instrument spielt entsprechend lauter und leiser.
+1027|Tippe auf eine Note, um sie zu markieren.
+1028|Tippe auf eine Note, um sie in eine Pause der gewählten Länge zu verwandeln, oder auf eine Pause, um sie auszuwählen und ihre Länge zu ändern.
+1029|Tippe auf eine Note, um sie in eine Pause der gewählten Länge zu verwandeln. Tippe auf eine Pause, um sie auszuwählen, dann wähle eine andere Länge, um sie zu ändern, oder den Papierkorb, um sie von der Seite zu nehmen (der Takt behält seine Länge).
+1030|Tippe auf eine Note, dann füge ein Kreuz, B oder Auflösungszeichen hinzu, binde sie an die nächste Note oder gib ihr Staccato, Akzent, Tenuto, Marcato oder eine Fermate. Tippe erneut, um es zu entfernen.
+1031|Das ist keine GitHub-Adresse.
+1032|Das ist kein GitHub-Repository. Nutze Eigentümer/Repository.
+1033|Der Song wurde auf Genius nicht gefunden, daher konnten seine Sänger nicht zugeordnet werden.
+1034|Diese Aufnahme war zu kurz oder zu leise, um sie zu behalten.
+1035|Das ist %@
+1036|Der %@ zeigt uns, wen Maestro Pro erreicht, damit wir es für jede Art von Musiker passend machen können. Er ist optional und öffnet sich direkt hier in der App.
+1037|Der App Store war nicht erreichbar. Prüfe deine Verbindung und versuche es erneut.
+1038|dem Intro
+1039|Das Mikrofon konnte nicht gestartet werden.
+1040|Die Musik, die mitläuft, mit dem Ton.
+1041|Die Noten dieser PDF wurden noch nicht gelesen. Öffne die Partitur und lass sie fertig lesen.
+1042|Die Seite wird in %1$@%2$@ gezeigt. 
+1043|Die Bildspur einer Karaoke-Disc, so gezeigt, wie sie gemacht wurde.
+1044|Die Partitur und ihr Playback, zum Teilen mit einem anderen Spieler.
+1045|Die Partitur wird in der neuen Tonart neu gesetzt.
+1046|Die Spur beginnt bereits mit Ton.
+1047|Die Spur ist noch nicht zu hören; warte, bis sie spielt, und tippe dann.
+1048|Die gesetzte Seite oder das Original bei einer PDF-Partitur.
+1049|Die gezippte Form, die die meisten Notations-Apps sichern.
+1050|In dieser Datei gibt es keine Texte.
+1051|In dieser Datei gibt es keine Texte.
+1052|Es sind keine Texte mehr übrig. Gib mindestens eine Zeile ein.
+1053|In dieser Partitur gibt es keine Noten zum Verfolgen.
+1054|Auf dieser Seite gibt es keine zeitgesteuerten Texte. Öffne einen Song und wähle seine Enhanced- oder LRC-Texte.
+1055|Es gibt bereits einen Zweig namens „%@“.
+1056|Nach dieser Note gibt es keine Note zum Binden. Füge zuerst eine hinzu oder schalte Freies Bearbeiten in den Optionen ein.
+1057|Sie werden benannt, damit du eine klare Erklärung statt eines Fehlers bekommst.
+1058|Diese Zweige haben keinen gemeinsamen Verlauf und lassen sich daher nicht zusammenführen.
+1059|Diese PDF konnte nicht geöffnet werden. Sie ist möglicherweise beschädigt oder passwortgeschützt.
+1060|Das ist keine Maestro-Pro-Partitur, oder sie ist beschädigt.
+1061|Das ist keine Karaoke-Datei (MIDI).
+1062|Diese Karaoke-Datei ist beschädigt.
+1063|Diese Karaoke-Datei nutzt ein Zeitformat, das die App nicht lesen kann.
+1064|Diese Textdatei konnte nicht als Text gelesen werden.
+1065|Über den Systemdialog zum Drucken.
+1066|Zeitgesteuerte Texte
+1067|Bis Takt
+1068|Tippe auf einen Takt und ziehe über weitere, um sie zu wählen. Ist keiner gewählt, wird am Ende eingefügt.
+1069|Berühre eine Pause und streiche nach oben oder unten, um die Tonhöhe zu wählen; heb den Finger, um dort eine Note zu setzen, so lang wie die unten gewählte Länge. Ziehe eine Note nach oben oder unten, um sie zu bewegen. Kritzle über Noten hin und her, um sie wegzuradieren. Ein Tippen auf eine Note oder einen leeren Takt zeigt ein kleines Menü mit dem, was du am ehesten brauchst.
+1070|Berühre eine Pause und streiche nach oben oder unten, um eine Tonhöhe zu wählen; ziehe eine Note, um sie zu bewegen; kritzle über eine Note, um sie wegzuradieren. Tippe auf eine Note, dann auf eine Länge, um ihre Dauer zu ändern. Die 3 macht Triolen; Haltebogen verbindet eine Note mit der nächsten.
+1071|Berühre oder ziehe über Noten und Pausen. Eine Note wird zur Pause; eine Pause verschwindet von der Seite. Vorher muss nichts ausgewählt werden.
+1072|Berühre oder ziehe über das, was weg soll: Noten werden zu Pausen, Pausen verschwinden von der Seite. Tippe zweimal auf den Apple Pencil, um zum Radierer und zurück zu wechseln.
+1073|Spur: %1$@ BPM in %2$@%3$@.
+1074|Transponieren
+1075|Violinschlüssel
+1076|In eine Pause verwandeln
+1077|%lld Halbtöne höher
+1078|Einen Halbton höher
+1079|Stimmpräsenz
+1080|Warte darauf, dass ein anderer Spieler beitritt…
+1081|Willkommen bei Maestro Pro
+1082|Was du meist teilen darfst
+1083|Was sich geändert hat
+1084|Was spielst du?
+1085|Was die App erzeugt
+1086|Was du gespielt hast, wenn es falsch oder zu spät war
+1087|Wo du sein solltest
+1088|Ganze Ordner
+1089|Breite (Q)
+1090|Text und Musik in einer Datei. Eine einfache MIDI-Datei zählt, wenn sie Text enthält.
+1091|Nur Wörter; über die Aufnahme verteilt.
+1092|Akkorde werden ermittelt…
+1093|Schreib es.
+Überarbeite es. Mach es dir zu eigen.
+1094|Du kannst weiterhin suchen.
+1095|Deine Partituren.
+Geprobt, aufgeführt, geschrieben.
+1097|Erste Schritte
+1098|Maestro Pro ist ein Arbeitswerkzeug für Musiker: Es liest deine Noten und folgt ihnen auf die Note genau, blättert freihändig um, probt mit einem Playback, einem Song aus Apple Music, dem eingebauten Instrument oder einem Metronom und lässt dich die Musik selbst schreiben und überarbeiten.
+1099|Die erste Minute
+1100|Tippe auf dem Home-Bildschirm auf Partitur importieren (oder auf die Taste +, dann Partitur importieren) und wähle eine PDF, eine MusicXML-Datei oder eine andere unterstützte Datei. Sie erscheint links in deiner Bibliothek; tippe darauf, um sie zu öffnen.
+1101|Drücke unten die große Wiedergabetaste. Die Musik spielt und die Noten laufen mit. Tippe irgendwo auf die Musik, um dort zu starten, oder ziehe die Fortschrittsleiste.
+1102|Noch nichts zum Spielen? Wähle auf dem Home-Bildschirm Beispiel öffnen oder Partituren suchen, um klassische Stücke und Jazzstandards zu laden oder im Web zu suchen.
+1103|Einfacher und erweiterter Modus
+1104|In den Einstellungen gibt es einen Schalter Modus. Der einfache Modus beschränkt den Bildschirm auf das, was die meisten brauchen. Der erweiterte Modus fügt die Bibliothekswerkzeuge, Gemeinsam spielen, die Steuerung Notensystem für Notensystem und die Seite Jede Farbe anpassen hinzu.
+1105|Alles in dieser Anleitung ist im erweiterten Modus verfügbar; jedes Thema sagt, wenn ein Bedienelement nur dort erscheint.
+1106|Die Symbolleiste
+1107|Auf einem iPad behält die Symbolleiste die wenigen meistgenutzten Bedienelemente (Öffnen, Zoom, Playbacks und Ton, Anmerkungen, Bearbeiten) und legt alles andere ins Menü Mehr an ihrem Ende: oben die Werkzeuge, dann die Seite, was beim Spielen angezeigt wird, die Texte und zuletzt die Playbacks. Ein Mac zeigt jedes Bedienelement als eigene Taste.
+1108|Die Einstellungen gibt es nur in der Bibliothek, sie sind also nicht in der Symbolleiste der Partitur. Um zur Bibliothek zurückzukehren, blende die Seitenleiste mit der Taste oben links ein.
+1109|Die Symbolleiste anpassen
+1110|Halte auf dem iPad die Symbolleiste gedrückt (oder tippe an ihrem Ende auf ⋯ und wähle Symbolleiste anpassen), um Bedienelemente auf die Leiste oder davon weg zu ziehen; auf einem Mac wähle Darstellung ▸ Symbolleiste anpassen. Die Taste Informationen bleibt immer.
+1111|Auf einem schmalen Bildschirm werden die Bedienelemente stattdessen in einem Menü Mehr zusammengefasst.
+1112|Der Bildschirm
+1113|Auf einem breiten Bildschirm ist die Bibliothek eine Seitenleiste links und die Partitur füllt den Rest. Während ein Stück spielt, blendet sich die Bibliothek aus, um der Musik Platz zu geben (in den Einstellungen abschaltbar).
+1114|Auf einem kleineren Bildschirm oder in einem schmalen Split-View-Fenster fasst sich die Symbolleiste in einem Menü Mehr zusammen, und oben links erscheint eine Taste Bibliothek, die dich zurückbringt.
+1115|Ein Mac führt dieselbe App aus: Dateien lassen sich mit Befehl-O öffnen, und es gibt die Menüs Wiedergabe und Darstellung mit Tastenkurzbefehlen.
+1116|Deine Bibliothek
+1117|Alles, was du importierst, liegt in der Bibliothek und bleibt auf dem Gerät. Es wird auch in iCloud gehalten, wenn iCloud Drive an ist.
+1118|Musik hereinholen
+1119|Partitur importieren nimmt PDF-, MusicXML- (.musicxml, .xml, .mxl), MIDI- und Karaoke-Dateien (.mid, .kar), Texte (.lrc, .txt), CD+Graphics-Karaoke (.cdg) und Maestro-Pro-Dateien (.maestropro). Mehrere lassen sich gleichzeitig wählen.
+1120|Du kannst auch Dateien aus der Dateien-App direkt auf das Fenster ziehen oder im Teilen-Menü einer anderen App (Dateien, Mail, Safari, Nachrichten …) Maestro Pro wählen, um zu importieren, was du gerade ansiehst.
+1121|Ordner importieren liest jede unterstützte Datei in einem Ordner. In den Einstellungen hält Ordner verknüpfen einen Ordner mit der Bibliothek im Gleichschritt, sodass neue Dateien von selbst erscheinen.
+1122|Neue leere Partitur beginnt eine leere Partitur zum Selbstschreiben: Du wählst Namen, Taktart, Tonart, Taktzahl, Notensysteme (Violin-, Bass- oder Klaviersystem) und Tempo.
+1123|Texte mit Playback: Wähle ein Playback, und die App findet dazu zeitgesteuerte Texte online, für einen Bildschirm im Karaoke-Stil. Du kannst auch eine Textdatei zusammen mit dem Playback wählen.
+1124|Partituren suchen hat drei Tabs. Klassik listet eingebaute Stücke. Jazz listet etwa 2.400 Titel in sechs Bänden: Nur die Liste ist in der App, ein Titel wird geladen, wenn du auf Hinzufügen tippst, oder tippe auf Alle hinzufügen, um die ganze Sammlung zu holen (etwa 40 MB, Internet nötig).
+1125|Internet durchsucht das Web und GitHub nach MusicXML-Dateien: Gib einen Komponisten oder ein Stück ein. Die Ergebnisse stammen von Seiten anderer Leute, prüfe also, ob eine Partitur frei nutzbar ist, bevor du sie hinzufügst.
+1126|Ein Häkchen zeigt, was du schon hast.
+1127|Finden und ordnen
+1128|Die Suche oben in der Bibliothek findet Titel. In den Einstellungen wählst du, wie die Bibliothek sortiert wird.
+1129|Setlisten zeigen, wie viele Partituren sie enthalten und etwa wie lange sie dauern (die Länge des Playbacks oder die Noten im Tempo der Partitur; PDFs ohne Spur werden nicht gezeitet). Halte eine Partitur gedrückt für Umbenennen, Titel auf dem Notenblatt ändern (die auf die Musik gedruckte Überschrift, getrennt von ihrem Namen in der Bibliothek), Zur Setliste hinzufügen, Teilen, Duplizieren und Aus Bibliothek löschen. Duplizieren macht eine vollständige Kopie mit Playback, Texten und Zeichnungen, um zu bearbeiten oder ein Medley zu bauen, ohne das Original anzutasten. Setlisten fassen Partituren für eine Probe oder einen Auftritt zusammen.
+1130|Mit anderem Spieler teilen erzeugt eine .maestropro-Datei, die die Partitur und ihr Playback enthält. Ein anderer Maestro-Pro-Nutzer, der sie öffnet, bekommt alles.
+1131|Eine Partitur spielen
+1132|Die Leiste unten steuert die Wiedergabe; die Symbolleiste und der Informationsbereich ändern, wie sie aussieht und klingt.
+1133|Wiedergabesteuerung
+1134|Wiedergabe und Pause, Sprung zurück und vor um einen Takt und eine Fortschrittsleiste, die du ziehen kannst. Der Zähler zeigt Takt, Schlag und Zeit.
+1135|Tippe auf die Musik, um dorthin zu springen. Auf einem Mac spielt und pausiert die Leertaste, die Pfeiltasten springen um Takte, die Eingabetaste geht zum Anfang und K schaltet das Metronom ein oder aus.
+1136|Übungstempo verlangsamt oder beschleunigt ein Stück, ohne die Tonhöhe zu ändern. Gib im Feld einen beliebigen Prozentwert von 10 bis 400 ein oder nutze den Regler (50 bis 150).
+1137|Das Tempo ist das der Partitur (aus ihrer gedruckten Metronomangabe), solange du keines setzt: Ein BPM-Wert, Antippen oder Abgleichen mit einem Playback macht es zu deinem eigenen, und der Schalter Eigenes Tempo unter dem Tempo geht zurück zu dem der Partitur. Tempo antippen: Tippe auf das Tempo (die Note und Zahl neben dem Metronom), und ein Feld mit einer großen Taste Tap öffnet sich. Tippe im Takt; das Tempo erscheint ab dem zweiten Tippen und aktualisiert sich bei jedem Tippen, und ein paar mehr machen es stabiler. Es wird beim Tippen gesetzt. Mit einer Tastatur tippt die Leertaste, solange die Taste im Fokus ist. Dasselbe Feld gibt es unter Tempo im Informationsbereich.
+1138|Schleife: Im Informationsbereich spielt Schleife die gewählten Takte immer wieder, um eine schwierige Stelle zu üben. Auf einem Mac oder mit Tastatur verlangsamt [ das Übungstempo und ] beschleunigt es.
+1139|Einzähler spielt vor der Musik einen Takt Klicks. Einzähltakte legt fest, wie viele Takte Einleitung vor Takt 1 kommen, damit ein Playback mit Intro passt. Das Metronom klickt bei jedem Schlag.
+1140|Was der Musik folgt
+1141|Beim Spielen anzeigen (die Funkeltaste) wählt, wie die Wiedergabe gezeigt wird: Noten hervorheben lässt jede Note aufleuchten, wenn sie klingt, Takt hervorheben färbt den Takt, und Laufende Linie zieht eine Linie über die Seite. Sind alle drei aus, folgen nur der Taktzähler und das Umblättern.
+1142|Wiedergabe folgen scrollt die Seite für dich. Dunkle Noten zeigt weiße Musik auf Schwarz, angenehmer in einem dunklen Raum.
+1143|Zoom ändert die Größe der Notation; die Takte werden neu umbrochen. Zusammenziehen geht auch. Die Hervorhebungsfarbe ist in den Einstellungen.
+1144|Seiten wie in einem Buch umblättern
+1145|Standardmäßig zeigt die Musik eine Seite auf einmal und blättert sie wie die Seite eines Buchs mit einer Rolle um, wenn die Wiedergabe die nächste Seite erreicht. Wiedergabe folgen entscheidet, ob sie von selbst umblättert. Du kannst eine Seite auch ziehen, um sie von Hand umzublättern, oder Bild auf und Bild ab nutzen.
+1146|Seiten wie in einem Buch umblättern lässt sich in Einstellungen ▸ Notenblatt, im Zoom-Menü oder im Darstellungsmenü auf einem Mac ausschalten. Die Musik scrollt dann stattdessen die Seite hinab, mit allen Seiten in einer Spalte. Bewegung reduzieren blättert die Seite ohne Rolle um.
+1147|Während du mit Anmerken zeichnest, blättert Ziehen keine Seiten um, der Stift ist also frei. Bei ganz gezeigter Seite gibt es kein Scrollen darin; nutze Zoom, um die Größe der Notation zu ändern.
+1148|Tonart und Transponieren
+1149|Im Informationsbereich hat Tonart die Tonart deines Instruments (Kammerton, B, Es oder B-Tenor). Die Partitur wird entsprechend transponiert gezeigt, sodass ein Trompeter liest, was eine Trompete spielt.
+1150|Transponieren verschiebt das ganze Stück um Halbtöne nach oben oder unten. Das Menü Tonart listet jede Tonart mit ihrer Paralleltonart, zum Beispiel C-Dur / a-Moll; wähle eine, und die Partitur wandert auf dem kürzesten Weg dorthin.
+1151|Bei einem Playback entscheidet Playback verschieben, ob das Playback mit der Partitur wandert.
+1152|Akkordansicht (erweiterter Modus)
+1153|Die Taste Akkordansicht (ein Raster aus Quadraten) in der Symbolleiste oder Mehr ▸ Akkordansicht zeigt das Stück als Akkordtabelle, ein Feld pro Takt, mit Wiederholungszeichen, Klammern und Sprüngen. Der gespielte Takt leuchtet und die Tabelle scrollt mit; tippe auf einen Takt, um von dort zu spielen.
+1154|Enthält die Datei Akkordsymbole, werden sie wie geschrieben gezeigt. Sonst ermittelt die App die Akkorde aus den Noten, zwei pro Takt im 4/4 und einen pro Takt im 3/4 und 6/8: Dreiklänge, verminderte, übermäßige und Septakkorde, mit Schrägstrich, wenn der Bass nicht der Grundton ist. Das ist eine Schätzung, am besten mit Basslinie oder Begleitung, und eine bloße Melodie bekommt einen plausiblen Dreiklang.
+1155|Die Akkorde folgen der gewählten Tonart, passend mit b oder # geschrieben. Nutze Zoom für größere oder kleinere Akkorde.
+1156|Gezeigte Notation
+1157|Neben Noten, Pausen, Vorzeichen, Haltebögen, Tuplets, Wiederholungen, Klammern, Segno, Coda und dem Rest zeigen Partituren Legatobögen, Vorschlagsnoten (kleine durchgestrichene Noten, die kurz vor der Hauptnote klingen), Triller, Mordente und Doppelschläge, Fingersätze, Arpeggio-Wellen, Atemzeichen und Zäsuren, Oktavlinien (8va, 8vb, 15ma, 15mb) und Pedalzeichen (Ped. und der Aufhebungsstern).
+1158|Bögen und Verzierungen werden gezeichnet, ändern aber nicht, wie das eingebaute Instrument spielt (ein Triller klingt als einfache Note). Sie werden mit der Partitur gesichert und exportiert. Vorschlagsnoten klingen, einen Hauch vor dem Schlag.
+1159|Hat eine Partitur mehrere gleichzeitig offene Bögen auf einem System, wird der jüngste gezeichnet, und eine Oktavlinie wird gezeigt, ohne den Klang zu ändern.
+1160|Texte unter den Noten
+1161|Fügst du einer Partitur eine Textdatei hinzu, bleibt die Musik auf dem Bildschirm und die Wörter werden unter die Noten gedruckt, in einer eigenen Zeile, für die die Notensysteme auseinandergerückt werden. Die gesungene Silbe leuchtet beim Spielen auf. Wörter unter den Noten lässt sich ausschalten, und Texte statt Musik zeigen wechselt zum großen Textbildschirm.
+1162|Dynamik
+1163|Dynamik (ppp bis fff) und Crescendo- und Diminuendo-Gabeln in einer Partitur bestimmen, wie laut das eingebaute Instrument spielt: Eine Note ist so laut wie die letzte Dynamik, und eine Gabel ändert sie stetig zur nächsten Dynamik hin. Eine Partitur ohne Dynamik spielt auf einem gleichmäßigen Pegel.
+1164|Du kannst sie im Dynamikmodus des Partitur-Editors hinzufügen, und sie werden mit der Partitur gesichert.
+1165|Das Tempo
+1166|Das Tempo wird in Schlägen pro Minute angegeben. Gib es ein, schalte es schrittweise oder ziehe den Regler. Bei einem Playback setzt Tempo hier fixieren das Tempo danach, wo du auf einen betonten Schlag tippst.
+1167|Taktart sagt der App, wie viele Schläge ein Takt hat. Sie wird bei MusicXML-Dateien automatisch gefunden; bei PDFs fragt die App, wenn sie es nicht erkennen kann.
+1168|Hat eine Partitur Tempoangaben (♩ = 96), ändern sie das Tempo des eingebauten Instruments ab diesem Takt. Ein Playback behält sein eigenes Tempo.
+1169|Stimmgerät und Warte auf mich
+1170|Maestro Pro kann über das Mikrofon zuhören: um dein Instrument zu stimmen, einen gleichmäßigen Ton zu üben und darauf zu warten, dass du eine Partitur Note für Note spielst. Der Ton wird auf dem Gerät analysiert und nie aufgenommen oder irgendwohin gesendet.
+1171|Öffne das Stimmgerät über den Home-Bildschirm, das Menü +, Einstellungen ▸ Zuhören oder die Stimmgabel in der Symbolleiste einer Partitur. Spiele einen Ton: Die Anzeige zeigt seinen Namen, wie viele Cent er zu hoch oder zu tief ist (ein Cent ist ein Hundertstel Halbton) und die Frequenz. Die Nadel steht im grünen Bereich, wenn du richtig gestimmt bist, und die Spur darunter zeigt die letzten acht Sekunden.
+1172|Ist dein Instrument im Informationsbereich auf B oder Es gestellt, wird auch die geschriebene Note gezeigt. Referenzton spielen lässt den Ton erklingen, den du anpeilst. A = 440 Hz lässt sich ändern (415 bis 466) für barocke oder orchestrale Stimmung.
+1173|Unter dem Stimmgerät füllt sich der Ring, solange du einen Ton sauber hältst. Wähle Beliebiger Ton oder einen bestimmten Ton zum Halten; wähle, wie genau als gestimmt gilt (Streng ±5 ¢, Normal ±10 ¢, Locker ±20 ¢) und das Ziel (5 bis 30 Sekunden). Es zeigt deine Bestzeit und wie gleichmäßig deine Tonhöhe war.
+1174|Ein Wackeln oder ein anderer Ton startet die Zeit neu. Ziele werden für dich gezählt, sodass du versuchen kannst, sie zu schlagen.
+1175|Warte auf mich ist ein Übungsmodus, in dem die Musik auf dich wartet. Öffne eine Partitur und wähle Warte auf mich (das Ohr-Symbol oder Mehr ▸ Warte auf mich). Die Partitur hält bei der ersten Note. Sie geht nur weiter, wenn du diese Note in der richtigen Oktave und sauber spielst und sie im aktuellen Tempo und Übungstempo die richtige Zeit hältst.
+1176|Das Feld über der Wiedergabeleiste zeigt die zu spielende Note, eine Tonhöhenanzeige (der Punkt sollte im grünen Bereich sitzen) und eine Leiste, die sich füllt, während du hältst. Es sagt, ob du zu hoch, zu tief oder eine andere Note spielst. Note anhören spielt sie dir vor; Zurück und Überspringen bewegen um eine Note; die Reglertaste wählt die zu folgende Stimme (eine Klavierpartitur hat zwei), wie streng es sein soll, wie viel jeder Note gehalten werden muss und ob jede Oktave akzeptiert wird (nützlich für Stimmen).
+1177|Eine wiederholte Note braucht einen neuen Anfang, lass also die erste enden, bevor die nächste kommt. Am Ende siehst du deine Genauigkeit und wie weit du im Durchschnitt von den Noten entfernt warst. Akkorde zählen, wenn du eine ihrer Noten spielst; dieser Modus folgt jeweils einer Linie.
+1178|Ein Playback bleibt stumm, solange Warte auf mich an ist (die Partitur wartet, ein Playback könnte also nicht mithalten). Drücken von Wiedergabe beendet es.
+1179|Tipps zum Mikrofon
+1180|Einstellungen ▸ Zuhören hat Mikrofonempfindlichkeit: Erhöhe sie in einem ruhigen Raum oder für ein leises Instrument und senke sie, wenn es Geräusche aufnimmt. Ein ruhiger Raum ist am besten, und immer nur ein Ton. Warte auf mich und das Stimmgerät brauchen die Mikrofonerlaubnis; wenn du sie verweigert hast, aktiviere sie in den Einstellungen des Geräts ▸ Datenschutz ▸ Mikrofon.
+1181|Aufnehmen und anhören
+1182|Nimm dich beim Spielen einer Partitur auf und höre die Aufnahme dann mit leuchtenden Noten an: grün, wo du hättest sein sollen, rot, wo du tatsächlich warst. Es hört über das Mikrofon zu und funktioniert daher mit jedem Instrument oder deiner Stimme.
+1183|Wähle Aufnehmen (die runde Aufnahmetaste in der Symbolleiste oder Mehr ▸ Mich aufnehmen oder ⌘R auf einem Mac). Nach dem Einzähler spielt die Partitur und du spielst mit. Drücke Stopp oder Pause, wenn du fertig bist.
+1184|Während der Aufnahme sind das eingebaute Instrument und das Metronom stummgeschaltet, damit das Mikrofon nur dich hört. Hat die Partitur ein Playback, fragt die App zuerst, weil das Mikrofon es hören würde: Wähle Stummschalten und aufnehmen (es kommt danach zurück) oder Trotzdem aufnehmen, wenn du Kopfhörer nutzt. Die Aufnahmeleiste hat auch eine Taste Stummschalten. Beim ersten Mal fragt die App nach der Mikrofonnutzung.
+1185|Aufnahmen werden mit der Partitur aufbewahrt und beim Duplizieren mitkopiert. Jede wird auf deutlich unter ein Megabyte pro Minute komprimiert.
+1186|Anhören
+1187|Wenn du stoppst, öffnet sich sofort die Auswertung. Frühere Aufnahmen sind im Menü Aufnehmen, die neueste zuerst. Drücke Wiedergabe, um die Aufnahme zu hören, während die Partitur ihr folgt, oder ziehe den Regler zu einem beliebigen Moment.
+1188|Die grüne Note ist die Note, die du in diesem Moment spielen solltest. Die tatsächlich gespielte Note leuchtet auch: grün, wenn es die richtige Note zur richtigen Zeit war, rot, wenn sie zu spät, zu früh oder eine andere als die fällige war. Wenn du zurückfällst oder vorauseilst, wie weit auch immer, ist die Note, auf der du sein solltest, grün und die, die du noch spielst, rot.
+1189|Hast du eine Note gespielt, die in der Musik dort nicht vorkommt, ist die fällige Note grün und der Streifen zeigt die gespielte Tonhöhe. Die Zusammenfassung nennt, wie viele Noten du richtig gespielt hast.
+1190|Die Reglertaste wählt die zu beurteilende Stimme (eine Klavierpartitur hat zwei), wie streng das Timing ist (Streng, Normal oder Locker), wie nah die Tonhöhe sein muss und ob jede Oktave akzeptiert wird. Ändern beurteilt dieselbe Aufnahme neu. Diese Aufnahme löschen entfernt sie.
+1191|Die Funkeltaste in der Auswertung schreibt eine kurze Bewertung: wie viele Noten richtig waren, wo du zurückgefallen bist oder gehetzt hast, ob du zu hoch oder zu tief warst und welche Takte und Noten Probleme machten. Sie ist schlicht und sachlich.
+1192|Stellen in der Bewertung (Takte und Noten, mit einer Note oder einem Taktstrich gezeigt) sind Links. Tippe auf einen, und die Aufnahme springt zu diesem Moment, die Noten leuchten in der Musik hellblau, und die Seite blättert oder scrollt dorthin. Die Reihe nummerierter Blöcke zeigt jeden Takt nach Verlauf gefärbt, und jeder ist ebenfalls ein Link.
+1193|Auf einem Gerät mit Apple Intelligence wird die Bewertung vom Modell auf dem Gerät in Worte gefasst, und nichts verlässt das Gerät. Die Fakten stammen immer aus der eigenen Analyse der App, und jede Umformulierung, die eine Zahl oder Stelle ändert, wird verworfen. Ohne Apple Intelligence schreibt die App sie selbst. Neu schreiben fordert neue Formulierungen an.
+1194|Was zu erwarten ist
+1195|Es hört jeweils einen Ton, Akkorde zählen also, wenn du irgendeine ihrer Noten spielst. Das Timing wird nach der Uhr der Partitur beurteilt, nicht nach dem Klang der Aufnahme, eine sehr langsame oder schnelle Aufnahme wird also am Tempo gemessen, mit dem du aufgenommen hast.
+1196|Nimm es als Richtwert. Ein lauter Raum, ein schwaches Signal oder ein Instrument, dessen Oktave schwer zu hören ist, können Noten falsch aussehen lassen; Mikrofonempfindlichkeit in Einstellungen ▸ Zuhören hilft.
+1197|Playbacks und Ton
+1198|Ein Playback ist eine Aufnahme, die mit der Partitur spielt. Das eingebaute Instrument kann auch die Noten auf der Seite spielen.
+1199|Mehrere Spuren
+1200|Eine Partitur kann mehr als ein Playback haben, zum Beispiel eine Rhythmusgruppe und eine getrennte Führungsstimme. Füge das erste mit Playback hinzufügen hinzu, dann nutze Weiteres Playback hinzufügen im Informationsbereich oder im Tonmenü. Sie spielen alle zusammen, im Takt der Partitur.
+1201|Unter Playbacks und Ton hat jede Spur einen eigenen Schalter, um sie auszuschalten, ohne sie zu entfernen, und einen eigenen Pegel von -24 bis +12 Dezibel. Die erste Spur ist die, nach der sich die Partitur richtet, und Tonart und Tempo abgleichen sowie der Spureditor wirken auf sie. Die anderen Spuren folgen ihrem Tempo und ihrer Tonart, aber nicht ihren Bearbeitungsspuren, und sollten Aufnahmen sein, die gleichzeitig mit ihr beginnen.
+1202|Gesang reduzieren schwächt bei jeder Spur den Sänger in einer Stereoaufnahme ab, indem es aufhebt, was in der Mitte liegt. Es hinterlässt eine Monospur, kann einige Mittelinstrumente mitnehmen und kann bei einer Monoaufnahme keine Stimme entfernen.
+1203|Aus Apple Music hinzufügen (Informationsbereich, Playbacks und Ton) durchsucht beim Tippen ganz Apple Music (und deine eigene Mediathek) und spielt den gewählten Song im Takt zur Partitur. Es braucht ein Apple-Music-Abo und die Erlaubnis, Apple Music zu nutzen, und die eigenen Klänge der App, etwa das Instrument, mischen sich mit dem Song. Texte holen lädt die Wörter, wenn Apple sie für den Song anbietet, was nicht für jeden Song oder jedes Konto gilt, und sie funktionieren dann wie jede Textdatei.
+1204|Texte aus Apple Music (das Menü + oder der Home-Bildschirm) öffnet die Wörter eines Songs auf einem eigenen Bildschirm, während der Song mitspielt.
+1205|Apple Music lässt eine App einen Song nur starten und stoppen, nicht seinen Klang lesen. Der Song lässt sich also nicht in der Tonhöhe verschieben, und der Sänger kann nicht herausgenommen werden. Füge dafür den Song als eine Audiodatei hinzu, die dir gehört, und nutze Gesang reduzieren. Wenn der Song wegdriftet, verschiebe Takt 1 beginnt bei.
+1206|Eine Spur hinzufügen
+1207|Wähle Playback hinzufügen im Informationsbereich oder in der Symbolleiste und nimm eine Audiodatei. Die App hört sie ab und stellt Tempo und Tonart der Partitur passend ein, sodass sie im Takt beginnt.
+1208|Passt die Partitur nicht, ziehe die Markierung auf der Spur dorthin, wo Takt 1 beginnt, oder verzögere die Spur. Start verzögern kann in Sekunden oder Takten sein. Driftet es später im Stück, tippe weiter hinten auf einen betonten Schlag auf Tempo fixieren.
+1209|Tonart und Tempo an Spur angleichen startet das Zuhören jederzeit neu.
+1210|Die Spur bearbeiten
+1211|Playback bearbeiten zeigt das Playback als Wellenform mit drei Spuren: Lautstärke, Tempo und Tonhöhe. Setze Punkte auf einer Spur und ziehe sie, um diese Einstellung über die Zeit zu ändern.
+1212|Jeder Punkt kann eine gerade Linie oder eine weiche S-Kurve sein. Nutze es zum Ein- oder Ausblenden, um einen Tempowechsel abzufedern oder eine leicht verstimmte Spur zu korrigieren.
+1213|Das eingebaute Instrument
+1214|Partitur spielen als wählt die Stimme, die die Noten auf der Seite spielt (oder Aus): Klavier, Orgel, Gitarre, Bass, Flöte, Klarinette, Saxofone oder Trompete. Im Informationsbereich legen Instrumentenpegel und Playback-Pegel je einen Pegel von -24 bis +12 Dezibel für diese Partitur fest, um das Instrument gegen das Playback auszubalancieren; der Pfeil setzt auf 0 zurück. Die Einstellungen haben die Startlautstärke für das Instrument. Es spielt mit jedem Playback mit.
+1215|Eine Partitur mit mehr als einem System hat im Informationsbereich ein Feld Notensysteme: Gib jedem System sein eigenes Instrument, zum Beispiel Bass auf dem Bassschlüsselsystem und Klavier auf dem anderen. Systeme auf Wie oben nutzen das Hauptinstrument.
+1216|Schalte das Metronom im Informationsbereich oder mit K auf einem Mac ein, wenn du Klicks dazu möchtest.
+1217|Musik schreiben und bearbeiten
+1218|Der Partitur-Editor ändert die Noten einer MusicXML-Partitur. Eine PDF wird zuerst von der App gelesen, und der Editor arbeitet an einer Kopie dessen, was sie gelesen hat. Öffne ihn mit Partitur bearbeiten (die Taste mit Notenliste; im einfachen Modus erscheint sie bei von dir erstellten Partituren).
+1219|Die neun Modi
+1220|Der Streifen unten im Editor hat einen Modus für jede Art von Aufgabe, damit die Bedienelemente einer Aufgabe zusammenliegen. Wische über den Streifen für den Rest.
+1221|Noten: Berühre eine Pause und streiche nach oben oder unten, um die Tonhöhe zu wählen; heb den Finger, um dort eine Note zu setzen, so lang wie die unten gewählte Länge. Ziehe eine Note nach oben oder unten, um sie zu bewegen. Kritzle über eine Note hin und her, um sie wegzuradieren. Wähle eine Note und tippe dann auf eine Länge, um ihre Dauer zu ändern.
+1222|Pausen: Tippe auf eine Note, um sie in eine Pause der gewählten Länge zu verwandeln. Tippe auf eine Pause, um sie auszuwählen und ihre Länge zu ändern, oder nutze den Papierkorb, um sie von der Seite zu nehmen (der Takt behält seine Länge).
+1223|Zeichen: Tippe auf eine Note und füge dann ein Kreuz, B oder Auflösungszeichen hinzu, binde sie an die nächste Note oder gib ihr Staccato, Akzent, Tenuto, Marcato oder eine Fermate. Tippe erneut, um es zu entfernen.
+1224|Dynamik: Tippe auf eine Note (die Dynamik gilt für diese Note) oder einen Takt (am Anfang) und wähle dann ppp bis fff. Crescendo und Diminuendo setzen eine Gabel über den Takt; Länger und Kürzer dehnen sie über mehr Takte.
+1225|Takte: Wiederholungszeichen sowie Takt hinzufügen oder löschen. Wiederholungen ausschreiben schreibt das Stück so aus, wie es gespielt wird.
+1226|Form: 1.- und 2.-Mal-Klammern, Sprünge (Segno, Coda, To Coda, D.C., D.S., Fine) und Tempoangaben.
+1227|Medley: Ziehe über Takte, um sie zu wählen, dann Kopieren, Ausschneiden, Einfügen, Duplizieren oder Löschen, oder Aus Partitur einfügen, um Takte aus einer anderen Partitur deiner Bibliothek zu holen.
+1228|Radieren: Berühre oder ziehe über Noten und Pausen. Eine Note wird zur Pause; eine Pause verschwindet von der Seite. Tippe zweimal auf den Apple Pencil, um zum Radierer und zurück zu wechseln.
+1229|Zeichnen: Schreibe mit dem Apple Pencil über die Musik, mit den Werkzeugen Stift, Marker, Bleistift und Farbe. Die Tinte bleibt auf der Seite.
+1230|Ein Medley bauen
+1231|Berühre im Medley-Modus einen Takt und ziehe über weitere, um eine Folge von Takten zu wählen. Kopieren legt sie in die Zwischenablage, die bleibt, wenn du gehst und eine andere Partitur öffnest, sodass du in einem Stück kopieren und in ein anderes einfügen kannst. Einfügen setzt sie nach den gewählten Takten ein oder am Ende, wenn keiner gewählt ist.
+1232|Aus Partitur einfügen listet deine Bibliothek: Wähle eine Partitur, wähle ihre Takte Von und Bis, und sie werden an derselben Stelle eingefügt. Meine Tonart angleichen bringt die neuen Takte in die Tonart der Musik, der sie folgen.
+1233|Die neuen Takte behalten ihre eigene Tonart, Taktart und ihr eigenes Tempo (eine Tempoangabe erscheint, wo sich das Tempo ändert), und deine Musik übernimmt danach wieder ihre eigenen. Ein System, das der kopierten Musik fehlt, pausiert; ein System, das deinem Stück fehlt, wird weggelassen. Alles lässt sich widerrufen.
+1234|Duplizieren wiederholt die gewählten Takte gleich nach sich selbst. Ausschneiden ist Kopieren gefolgt von Löschen; der letzte Takt eines Stücks bleibt immer.
+1235|Das Schnellmenü
+1236|Tippe auf eine Note, und ein kleines Menü hängt darüber mit dem, was du am häufigsten brauchst: Kreuz, B, Auflösung, Haltebogen, Punkt, eine Dynamik und in eine Pause verwandeln. Tippe auf eine Pause für kürzer, länger und entfernen. Tippe auf einen leeren Teil eines Takts für Wiederholungsanfang und -ende, Takt hinzufügen und Takt löschen.
+1237|Tippe irgendwo anders, um es wegzuräumen. Es funktioniert mit einem Finger wie mit dem Pencil.
+1238|Längen, Punkte, Triolen und Haltebögen
+1239|Die Notentasten wählen die Längen ganze, halbe, Viertel-, Achtel- und Sechzehntelnote. Der Punkt verlängert eine Länge um die Hälfte. Die 3 macht Triolen: drei Noten in der Zeit von zweien, mit einer Klammer und einer 3 gezeigt.
+1240|Haltebogen verbindet die gewählte Note mit der nächsten, sodass sie als eine lange Note klingen. Bei eingeschalteter Hilfe übernimmt die nächste Note dieselbe Tonhöhe; gibt es keine nächste Note, wirst du informiert. Tippe erneut auf Haltebogen, um ihn zu entfernen. Haltebögen werden auch über Taktstriche gezogen, und eine gebundene Note erklingt einmal.
+1241|Kreuz, B und Auflösung setzen ein Vorzeichen auf die gewählte Note; Tonart setzt sie auf das zurück, was die Vorzeichnung sagt.
+1242|Was der Editor für dich tut
+1243|Standardmäßig kümmert sich der Editor um den Takt. Eine Note läuft nie über den Taktstrich hinaus. Eine längere Note übernimmt, was ihr im Takt folgt; eine kürzere hinterlässt Pausen, so geschrieben, wie ein Kopist es täte (auf dem Schlag, nicht darüber hinweg). Balken werden für dich gesetzt, und ein kurzer Takt wird beim Sichern mit Pausen gefüllt.
+1244|Alles folgt der Taktart der Partitur, sodass 6/8 in punktierten Schlägen und 3/4 in drei gruppiert wird.
+1245|Freies Bearbeiten (Optionen, oben rechts) schaltet all das aus. Eine Note ist genau so lang, wie du wählst, wird nie am Takt gekappt, überschreibt nie ihre Nachbarn und lässt keine Pausen zurück. Ein Takt kann zu viele oder zu wenige Schläge enthalten. Berühre leeren Raum in einem Takt, um eine Note nach der letzten hinzuzufügen. Beim Sichern wird nichts aufgeräumt.
+1246|Takte, Wiederholungen und Tempo
+1247|Wähle im Takte-Modus einen Takt. Anfang und Ende setzen Wiederholungszeichen darauf (Ende wechselt zwischen zwei, drei und vier Mal). 1.-Mal-Klammer und 2.-Mal-Klammer setzen eine Klammer darüber; Klammer verlängern und Kürzer dehnen sie über Nachbartakte; Keine Klammer entfernt sie.
+1248|Sprünge fügt Segno, Coda, To Coda, Fine und D.C. oder D.S. schlicht, al Coda oder al Fine hinzu. Setze das Segno dorthin, wohin ein D.S. zurückkehrt, To Coda in den Takt, in dem die Musik springt, und Coda auf den Takt, zu dem sie springt. Die Wiedergabe folgt ihnen: Nach einem D.C. oder D.S. wiederholt sie keine Abschnitte, spielt das letzte Ende und springt dann von To Coda zur Coda (oder hält bei Fine).
+1249|Wiederholungen ausschreiben schreibt das Stück so aus, wie es gespielt wird, mit jeder Wiederholung, Klammer und jedem Sprung als eigenen Takten.
+1250|Tempo setzt eine gedruckte ♩ = Angabe auf den Takt; die Wiedergabe folgt ihr ab dort.
+1251|Takt danach hinzufügen und Takt löschen ändern die Länge des Stücks.
+1252|Widerrufen, sichern und teilen
+1253|Widerrufen und Wiederholen sind im Feld, und Befehl-Z / Umschalt-Befehl-Z, ein Dreifingerwisch oder Schütteln des iPad gehen auch. Im Zeichenmodus machen Widerrufen und Wiederholen dort die Zeichnung rückgängig.
+1254|Sichern behält deine Änderungen; Abbrechen fragt, bevor sie verworfen werden. Originalpartitur wiederherstellen in den Optionen holt zurück, was du importiert hast.
+1255|Nur mit Apple Pencil bearbeiten (Optionen) hindert Finger daran, Noten zu ändern, sodass eine aufliegende Hand keinen Schaden anrichtet.
+1256|Texte und Karaoke
+1257|Texte scrollen im Takt der Musik wie in Apple Music, und CD+Graphics-Karaokedateien zeigen ihre eingebauten Bilder.
+1258|Textdateien
+1259|Füge einer Partitur über das Menü Texte eine .lrc-Datei (zeitgesteuerte Zeilen) oder eine .txt-Datei hinzu. Karaoke-MIDI-Dateien (.kar) enthalten ihre eigenen Wörter.
+1260|Texte statt Musik zeigen tauscht die Seite gegen die Wörter. Silben animieren lässt jede Silbe beim Singen anschwellen, und Silbenfortschritt zeigen füllt sie. Schrift, Größe, Ausrichtung und Unschärfe für nicht gesungene Zeilen stehen in den Einstellungen.
+1261|Ein reiner Text-Eintrag (ohne Notation) hat einen eigenen Bildschirm mit Wiedergabeleiste und optionalem Playback. Texte in Sekunden oder Takten lassen sich wählen, wenn die Datei keine Zeitangaben hat.
+1262|Sänger und Pausen
+1263|Für Duette gibt Sänger zuweisen jede Zeile einem Sänger; Sänger abgleichen findet sie auf der Seite des Songs bei Genius. Ein Sänger oder ein Sänger plus alle bleibt links; zwei oder mehr werden links und rechts verteilt, jeder mit eigener Farbe.
+1264|Zeige die Zeilen eines Sängers mit dem Filter Sänger. Während der andere Sänger singt, zeigt eine Lücke Auslassungspunkte. Fortschrittsleiste in Pausen in den Einstellungen tauscht die Punkte gegen eine Leiste, die sich über die Lücke füllt.
+1265|CD+Graphics (.cdg)
+1266|Eine .cdg-Datei ist die Bildspur einer Karaoke-Disc: Sie zeichnet farbige Wörter und Hintergründe auf einen kleinen Bildschirm. Die App spielt sie nach dem eigenen Timing der Datei. Füge den Ton des Songs als Playback hinzu, falls du ihn hast.
+1267|Teilen, exportieren und drucken
+1268|Hol eine Partitur oder ein Video davon aus der App.
+1269|Teilen-Menü
+1270|Halte eine Partitur in der Bibliothek gedrückt und wähle Teilen. Es hat Als MusicXML exportieren, Als PDF exportieren und Drucken.
+1271|MusicXML öffnet sich in MuseScore, Finale, Sibelius, Dorico, Notion und den meisten anderen Notations-Apps. Bei einer PDF-Partitur ist es die Musik, die die App von der Seite gelesen hat.
+1272|PDF ist die gedruckte Seite. Eine PDF-Partitur wird unverändert weitergegeben; jede andere Partitur wird in der aktuell gezeigten Tonart gesetzt. Drucken öffnet den Systemdialog zum Drucken.
+1273|Im Teilen-Menü kannst du die Datei auch In Dateien sichern, per AirDrop, E-Mail oder Nachricht senden.
+1274|Andere Wege hinaus
+1275|Mit anderem Spieler teilen (erweiterter Modus, dasselbe Menü) erzeugt eine .maestropro-Datei mit der Partitur und ihrem Playback für einen anderen Maestro-Pro-Nutzer.
+1276|Video exportieren macht aus einer Partitur einen Film der mitlaufenden Musik, mit Ton.
+1277|Maestro Pro wird auch im Teilen-Menü anderer Apps für Dateien angeboten, die es öffnen kann, und importiert sie.
+1278|Bis zu acht Geräte mit Maestro Pro können im Takt miteinander spielen (erweiterter Modus).
+1279|Verbinden
+1280|Öffne deine Stimmen, dann wählt eine Person Gemeinsam spielen, dann Sitzung starten. Alle anderen wählen Sitzung beitreten und nehmen dieses Gerät. Der Host wird gefragt, jeden Spieler hereinzulassen. Erlaube die Berechtigung Lokales Netzwerk, wenn danach gefragt wird.
+1281|Wiedergabe, Pause, Suchen und Tempowechsel auf einem Gerät werden auf allen gespiegelt, sodass Lehrer und Schüler oder ein ganzes Ensemble im Gleichschritt bleiben. Jeder Spieler behält seine eigene Stimme, Tonart und sein Instrument; die Geräte richten sich Takt für Takt aus.
+1282|Bis zu acht Geräte können einer Sitzung beitreten. Der Regler Versatz verschiebt deinen Ton früher oder später, wenn du kabellose Lautsprecher oder Kopfhörer nutzt.
+1283|Versionsverlauf und GitHub
+1284|Sichere Versionen einer Partitur, probiere Ideen auf Zweigen aus, führe sie wieder zusammen und halte alles auf GitHub.
+1285|Versionen und Zweige
+1286|Tippe im Partitur-Editor auf Verlauf. Version sichern behält einen Schnappschuss, zu dem du zurückkehren kannst. Auch Sichern im Editor legt einen an. Neuer Zweig beginnt eine eigene Linie von Änderungen, ab jetzt oder ab jeder früheren Version, damit du etwas ausprobieren kannst, ohne die Hauptpartitur anzutasten.
+1287|Auf diese Version zurücksetzen stellt einen früheren Schnappschuss als neue Version wieder her, sodass nichts verloren geht und du das Zurücksetzen widerrufen kannst. Beim Wechseln der Zweige werden zuerst deine ungesicherten Änderungen gesichert.
+1288|Zusammenführen bringt einen anderen Zweig Takt für Takt in den aktuellen. Ein Takt, der nur auf einem Zweig geändert wurde, kommt herüber; ein Takt, der auf beiden geändert wurde, kollidiert, und du wählst, deinen zu behalten oder den anderen zu nehmen. Takte werden nach Nummer zugeordnet, sodass ein früh auf einem Zweig hinzugefügter oder entfernter Takt den Rest als Konflikte erscheinen lassen kann.
+1289|Abspalten
+1290|Als neue Partitur abspalten macht aus jeder Version oder der neuesten Version eines Zweigs eine eigene Partitur in deiner Bibliothek mit frischem Verlauf.
+1291|Wähle im Verlauf Mit GitHub-Repository verbinden und gib Eigentümer/Repository ein. Auf GitHub übertragen sendet jede Version und jeden Zweig als echten Git-Commit und Branch, mit der Partitur als einer MusicXML-Datei. Von GitHub holen bringt anderswo erstellte Versionen herein.
+1292|Es braucht ein GitHub-Token mit Lese- und Schreibzugriff auf die Inhalte des Repositorys. Füge es unter Spuren von GitHub bei Zugriffstoken hinzu. Es wird in deinem Schlüsselbund aufbewahrt.
+1293|Ein Zweig, der auf GitHub eigene Wege gegangen ist, kommt als Name-github an, damit du ihn zusammenführen kannst. PDF-Partituren haben keinen Verlauf; das Bearbeiten einer PDF sichert eine eigene Kopie.
+1294|Übungsmaterial auf Abruf.
+1295|Eine Tonleiter erstellen
+1296|Wähle auf dem Home-Bildschirm Tonleitern und Arpeggien, nimm die Art (Dur, Moll, Blues, Arpeggien und mehr) und eine Tonart. Eine Partitur wird dafür erstellt und der Bibliothek hinzugefügt, bereit zum Spielen, Transponieren und Verlangsamen.
+1297|Anmerken
+1298|Markiere die Seite wie eine Papierstimme.
+1299|Auf die Seite zeichnen
+1300|Schalte Anmerken in der Symbolleiste ein und zeichne mit dem Apple Pencil über die Werkzeugpalette: Stifte, Marker, Bleistift, Farben und ein Radierer. Die Tinte wird mit der Partitur gesichert und beim Spielen gezeigt.
+1301|Jede Zoomstufe behält ihre eigene Zeichnung, damit sie an der Musik ausgerichtet bleibt.
+1302|Als PDF exportieren und Drucken enthalten deine Tinte für die Tonart und den Zoom, die du ansiehst.
+1303|Auf einem Mac hat fast alles einen Tastenkurzbefehl, gezeigt in den Menüs Wiedergabe, Partitur und Darstellung. Halte auf einem iPad mit Tastatur die Befehlstaste gedrückt, um sie zu sehen. Jeder Kurzbefehl lässt sich ändern.
+1304|Einen Kurzbefehl ändern
+1305|Öffne Einstellungen ▸ Tastenkurzbefehle. Klicke auf einen Kurzbefehl und drücke dann die Tasten, die du stattdessen nutzen willst. Entfernen nimmt den Kurzbefehl weg, und Esc lässt ihn, wie er war. Ein bereits belegter Kurzbefehl geht auf die Aktion über, der du ihn gibst, und die Seite sagt es. Der Pfeil neben einem Kurzbefehl setzt ihn zurück, und Alle auf Standard setzen setzt alle zurück.
+1306|Einzelne Tasten (wie die Leertaste) funktionieren nur, wenn du nicht in einem Feld tippst.
+1307|Die Kurzbefehle am Anfang
+1308|Einstellungen und Bedienungshilfen
+1309|Die Einstellungen haben die Optionen, die überall gelten.
+1310|Aussehen
+1311|Erscheinungsbild ist hell, dunkel oder dem System folgen. Hervorhebungsfarbe wählt die Farbe, mit der gespielte Noten aufleuchten; die Symbolleiste nutzt deine Akzentfarbe. Der erweiterte Modus hat Jede Farbe anpassen.
+1312|Zoom, dunkle Noten, Wiedergabe folgen und die drei Hervorhebungen haben hier Standardwerte, die jede Partitur überschreiben kann.
+1313|App-Symbol
+1314|Die Einstellungen haben ein Raster App-Symbol: die Looks Original, Papier, Mitternacht, Messing, Sonnenuntergang und Wald, der Union Jack, Pride und Trans Pride und je eines für jedes Instrument (Klavier, Orgel, Akustikgitarre, Bass, Flöte, Klarinette, Alt- und Tenorsaxofon, Trompete). Tippe auf eines, und iPadOS wechselt das Symbol und sagt es dir.
+1315|Jedes Symbol gibt es in hellen, dunklen und getönten Versionen, damit es dem Stil deines Home-Bildschirms folgt. Ein Mac behält ein Dock-Symbol, das Raster gibt es also nur auf dem iPad.
+1316|Papier, Schreibtisch, Tasten und Bedienfelder werden als echte Materialien gezeichnet. Unter Oberflächen kannst du Papierstruktur, Seitenschatten und Eselsohr, Schreibtischleder, Lederknöpfe und Gebürstetes Metall einzeln verstärken oder abschwächen (bis zum Doppelten) oder Realistische Oberflächen für einen flacheren Look ausschalten. Hoher Kontrast schaltet sie ebenfalls aus.
+1317|Spielen
+1318|Bildschirm beim Spielen anlassen, Bibliothek beim Spielen ausblenden, Metronom und Einzähler standardmäßig an, Spielen beim Öffnen einer Partitur starten, ein Standard-Übungstempo und das Standardinstrument.
+1319|App-Textgröße, Fetter Text, Hoher Kontrast, Größere Wiedergabesteuerung und Bewegung reduzieren.
+1320|Blitz im Takt und Tippen im Takt (Haptik) machen den Puls sichtbar und spürbar. Takte mit VoiceOver ansagen liest die Taktnummer vor, während sie vorbeigeht.
+1321|Bedienelemente haben VoiceOver-Beschriftungen und -Hinweise.
+1322|Fehlerbehebung
+1323|Wenn etwas nicht stimmt, schau zuerst hier nach.
+1324|Häufige Fragen
+1325|Eine PDF spielt die falsche Anzahl Schläge: Stelle Viertelschläge pro Takt im Informationsbereich ein oder beantworte die Frage zur Taktart beim ersten Öffnen.
+1326|Warte auf mich oder das Stimmgerät sagt, es höre mich nicht: Erlaube das Mikrofon in den Einstellungen des Geräts ▸ Datenschutz ▸ Mikrofon, dann erhöhe Mikrofonempfindlichkeit in Einstellungen ▸ Zuhören. Spiele einen Ton nach dem anderen und halte andere Geräusche niedrig. Hört es noch die falsche Oktave, probiere Jede Oktave akzeptieren.
+1327|Noten in einer PDF wirken falsch gelesen: Nur gedruckte Notation kann gelesen werden, und Scans müssen gerade und klar sein. Importiere bei einem Scan, den die App schlecht lesen kann, stattdessen eine MusicXML-Datei; viele gibt es kostenlos online.
+1328|Ein Playback beginnt zu spät oder zu früh: Ziehe die Spurmarkierung oder nutze Start verzögern. Nutze Tonart und Tempo an Spur angleichen, um erneut zuzuhören.
+1329|Band-in-a-Box-Dateien können nicht gelesen werden (ein geschlossenes Format). Speichere in Band-in-a-Box als MusicXML für die Notation und als Audio für das Playback.
+1330|Partitur importieren tut nichts oder zeigt eine Datei ausgegraut: Wähle Alle Dateien im Dateien-Browser oder ziehe die Datei auf das Fenster.
+1331|Jazzstandards brauchen beim ersten Hinzufügen das Internet.
+1332|Ein überfüllter Takt im Editor: Schalte Freies Bearbeiten aus oder lösche eine Note, und der Editor räumt den Takt auf.

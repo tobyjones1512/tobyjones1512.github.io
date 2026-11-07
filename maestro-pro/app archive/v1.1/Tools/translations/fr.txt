@@ -1,0 +1,1300 @@
+0|Karaoké CD+Graphics
+3|MusicXML compressé
+4|MIDI karaoké
+5|Partition Maestro Pro
+7|Maestro Pro utilise Apple Music pour que vous puissiez jouer avec un morceau de votre abonnement et voir ses paroles.
+8|Maestro Pro utilise l'appareil photo pour photographier des partitions imprimées afin de pouvoir les lire et jouer avec.
+9|Maestro Pro trouve l'autre appareil avec lequel vous voulez jouer en rythme.
+10|Maestro Pro écoute via le micro pour savoir si vous jouez la bonne note, juste, et pour accorder votre instrument.
+11|Paroles synchronisées
+14|Fond %@
+15|%1$@ images clés, %2$lld
+16|Papier %@
+18|%1$@%2$@ par %3$@
+21|%lld BPM
+22|%lld battements par minute
+23|%1$lld ligne%2$@ sélectionnée(s)
+24|%1$lld sur %2$lld
+25|%1$lld notes sur %2$lld (%3$lld %%)
+26|%1$lld des %2$lld mesures de « %3$@ » sont insérées après la mesure choisie, ou à la fin si aucune n'est choisie. Elles gardent leur propre métrique et leur tempo, puis votre musique reprend le sien.
+27|%lld pour cent
+28|%lld musiciens sont connectés. Chacun garde sa propre partition et son instrument ; vous restez ensemble mesure par mesure.
+29|%lld secondes
+32|%1$lld/%2$lld. Chaque mesure durera exactement cette durée.
+33|(cette partition)
+36|Mesure de 1re fois
+37|Mesure de 2e fois
+40|:‖ Fin
+41|:‖ ×%lld
+45|Un décor règle ensemble l'arrière-plan, le mode clair ou sombre de l'app et la couleur d'accent.
+46|Un éditeur de partitions complet, des pots-pourris créés depuis votre bibliothèque et le contrôle de versions jusqu'à GitHub. Du premier jet à la partie finale, dans une seule app.
+47|Une vidéo paysage de la musique avec vos surlignages, dessins et le son, comme l'affiche le lecteur. Gardez l'app ouverte pendant sa création.
+48|Une ligne de musique où chaque note s'allume au passage de la ligne mobile
+49|Une version est un instantané auquel revenir. Une branche est une ligne de modifications séparée, pour essayer quelque chose sans toucher à la partition principale.
+50|Jeton d'accès
+51|Accessibilité
+52|Précision %1$lld %%, à %2$lld ¢ de la note en moyenne
+53|Ajouter
+54|Tout ajouter
+55|Ajouter un autre accompagnement…
+56|Ajouter une autre piste
+57|Ajouter un accompagnement depuis Apple Music…
+58|Ajouter un accompagnement…
+59|Ajouter une bande
+60|Ajouter une mesure après
+61|Ajouter depuis Apple Music…
+62|Ajouter un fichier de paroles…
+63|Ajouter de la musique
+64|Ajouter un enregistrement…
+65|Ajouter un accompagnement
+66|Ajouter un morceau depuis Apple Music…
+67|Ajouter une image clé à la piste sélectionnée à la tête de lecture
+68|Ajoutez un dépôt ci-dessus pour voir ses pistes.
+69|Ajouter à la tête de lecture
+70|Ajoutez des partitions sur votre iPad ou Mac et elles apparaîtront ici.
+71|Ajoutez des partitions avec Ajouter à la liste de morceaux dans le menu d'une partition.
+72|Ajouter à la liste de morceaux
+73|Avancé
+74|Encore
+75|Accepter et continuer
+76|Alignement
+77|Tous les chanteurs
+78|Tous les chanteurs à gauche
+79|Tout
+80|Autoriser
+81|Animer les syllabes
+82|Animation
+83|Annoter
+84|Annoncer les mesures avec VoiceOver
+85|À l'année
+86|Toute note
+87|Toute octave
+88|N'importe où
+89|Icône de l'app
+90|Taille du texte de l'app
+91|Apparence
+92|Apple Intelligence le reformule avec ses propres mots…
+93|Apple Music
+94|Apple Music n'a pas de paroles pour ce morceau, ou n'a pas laissé l'app les lire.
+95|Apple Music joue le morceau lui-même : sa tonalité ne peut pas changer et le chanteur ne peut pas être retiré.
+96|Artiste
+97|Attribuer les chanteurs
+98|Attribuer les chanteurs…
+99|Défilement auto
+100|MEILLEURE OFFRE
+101|BPM
+102|Retour
+103|Accompagnement et son
+104|Égaliseur de l'accompagnement
+105|Forme d'onde de l'accompagnement
+106|Bande %lld
+107|Bande %1$lld, %2$@, %3$@
+108|Mesure %1$lld, %2$@
+109|Mesure %1$lld, temps %2$lld
+110|Mesure par mesure
+111|Mesures
+112|« Mesures avant la mesure 1 » ajoute des mesures vides au début, pour compter l'entrée.
+113|« Mesures avant la mesure 1 » ajoute des mesures vides au début ; l'accompagnement démarre à la première d'entre elles, depuis le repère.
+114|Les mesures modifiées sur une seule branche sont réunies. Celles modifiées sur les deux entrent en conflit. Vous pouvez annuler la fusion depuis l'historique.
+115|Le temps est une
+116|Avant de partager
+117|Texte plus grand
+118|Flouter les lignes non chantées
+119|Flouter les autres lignes
+120|Texte en gras
+121|Allonger le crochet
+122|Raccourcir le crochet
+123|Branche
+124|Créer une branche ici…
+125|Branches
+126|Annuler
+127|Résiliez à tout moment dans les réglages de votre compte Apple. Les abonnements se renouvellent automatiquement sauf annulation au moins 24 heures avant la fin de la période.
+128|Impossible de modifier cette partition
+129|Impossible de lier
+130|Centré
+131|Changer de dépôt…
+132|Changer la tonalité de l'accompagnement
+133|Modifier les notes avec l'Apple Pencil
+134|Vérifier les dossiers liés maintenant
+135|Vérifier les dossiers liés à l'ouverture de l'app
+136|Choisir une formule
+137|Choisissez une bande ci-dessus, ou faites glisser une poignée sur le graphique.
+138|Choisissez un raccourci, puis appuyez sur les touches voulues. Supprimer retire le raccourci et Échap annule. Un raccourci déjà utilisé passe à l'action pour laquelle vous le choisissez. Les raccourcis s'affichent dans la barre des menus du Mac, et sur iPad en maintenant la touche Commande.
+139|Choisissez comment la lecture s'affiche : notes, mesure, ligne
+140|Grille d'accords
+141|Symboles d'accords de la partition
+142|Accords déduits des notes
+143|Effacer
+144|Les horloges concordent à %lld ms près.
+145|Fermer
+146|Fermer la revue
+147|Réduit
+148|Collection
+149|Surlignages adaptés au daltonisme
+150|Couleurs
+151|Hauteur réelle
+152|Se connecter à un dépôt GitHub…
+153|Continuer gratuitement
+154|Copier
+155|Impossible d'ajouter les paroles
+156|Impossible d'envoyer le commentaire
+157|Impossible d'ajouter la partition
+158|Impossible de terminer
+159|Impossible d'importer la partition
+160|Impossible d'ouvrir les paroles
+161|Impossible d'ouvrir la partition
+162|Impossible d'enregistrer les paroles
+163|Décompte
+164|Décompte par défaut
+165|Décompte de %lld
+166|Créer
+167|Crescendo
+168|Noire
+169|Courbe vers l'image clé suivante
+170|Tempo personnalisé
+171|Personnaliser les couleurs…
+172|Personnaliser chaque couleur…
+173|Couper
+174|Sombre
+175|Papier sombre
+176|Partition sombre
+177|Date d'ajout
+178|Refuser
+179|Par défaut
+180|Supprimer
+181|Supprimer la mesure
+182|Supprimer la branche
+183|Supprimer la liste de morceaux
+184|Supprimer la liste de morceaux…
+185|Supprimer cet enregistrement
+186|Supprimer de la bibliothèque
+187|Supprimer « %@ » ?
+188|Description
+189|Vouliez-vous dire ?
+190|Diminuendo
+191|Abandonner les modifications
+192|Abandonner vos modifications ?
+193|Déconnecter
+194|OK
+195|Pointé
+196|Touchez deux fois l'Apple Pencil pour passer à la gomme et revenir. Annuler et Rétablir se trouvent en haut à droite de ce panneau.
+197|Touchez deux fois pour %@ ces réglages.
+198|Touchez deux fois pour changer la tonalité.
+199|Touchez deux fois pour saisir un tempo.
+200|Un ton plus bas
+201|Télécharger %lld
+202|Télécharger %lld morceaux ?
+203|Faites glisser le repère là où %@ commence, ou retardez la piste si la partition doit commencer en premier. Si la partition dérive par rapport à l'enregistrement, touchez Verrouiller le tempo sur un temps fort plus loin dans le morceau.
+204|Faites glisser pour déplacer la tête de lecture.
+205|Dessiner sur la partition avec l'Apple Pencil
+206|Déposez des fichiers n'importe où dans la fenêtre.
+207|Déposer pour importer
+208|Dupliquer
+209|Dynamique
+210|Chaque icône a un aspect clair, sombre et teinté, pour suivre le style de votre écran d'accueil. iPadOS vous prévient quand l'icône change.
+211|Chacun est un petit fichier, récupéré sur effendi.me.
+212|Chaque ligne commence par l'instant où elle est chantée, comme [01:23.45]. Modifiez les mots qui suivent ; gardez l'instant tel quel.
+213|Chaque portée défile dans le temps qu'il faut pour la jouer à ce tempo.
+214|Modifier %@
+215|Modifier l'accompagnement
+216|Modifier l'accompagnement…
+217|Modifier les paroles
+218|Modifier les paroles…
+219|Modifier la partition
+220|Modifier le titre sur la partition…
+221|Modifier une copie de %@
+222|Modifiez les notes avec l'Apple Pencil.
+223|Modifier uniquement avec l'Apple Pencil
+224|Modes d'édition
+225|Gravure…
+226|Égaliseur (activé)…
+227|Égaliseur activé
+228|Égaliseur…
+229|Tous les outils affichés : éditeurs, synchronisation, Jouer ensemble, partage.
+230|Chaque version et branche est envoyée au dépôt comme un vrai commit et une vraie branche Git, en un seul fichier MusicXML. Il faut un jeton avec accès en écriture, ajouté dans Pistes depuis GitHub sous Jeton d'accès.
+231|Tout ce dont
+un musicien a besoin.
+232|Tout sauf l'éditeur de partitions
+233|Tout ce qui se trouve dans un dossier lié est ajouté à votre bibliothèque, et les nouveaux fichiers sont pris en compte à la prochaine vérification. Un enregistrement ou un fichier de paroles portant le même nom qu'une partition l'accompagne.
+234|Tout est disponible : l'éditeur d'accompagnement, l'éditeur de partitions, les outils de synchronisation, les réglages de tonalité et de métrique, Jouer ensemble, le partage et l'export, les couleurs et les dossiers liés.
+235|Tout est débloqué. Bon jeu !
+236|Tout, éditeur de partitions compris
+237|Développer les reprises
+238|Développé
+239|Exporter la vidéo
+240|Exporter la vidéo…
+241|Exporter en MusicXML
+242|Exporter en MusicXML…
+243|Exporter en PDF…
+244|Fondu en entrée (4 s)
+245|Fondu en sortie (4 s)
+246|Plus rapide
+247|Trouver des paroles enrichies (synchronisées mot à mot) sur lyricsify.com
+248|Trouver les paroles
+249|Ajuster à la largeur
+250|Flash sur le temps
+251|Dossier importé
+252|Suivre la lecture
+253|Suivre l'armure
+254|Édition libre (sans corrections automatiques)
+255|Depuis Apple Music…
+256|Depuis un fichier…
+257|Complet
+258|Plein écran
+259|Doux
+260|Obtenir %@
+261|Préparez-vous…
+262|Obtenir les paroles
+263|GitHub
+264|Donnez à chaque portée son propre instrument, par exemple la basse sur la portée en clé de fa. Les portées laissées sur « Comme ci-dessus » utilisent l'instrument choisi plus haut.
+265|Aller au début
+266|Objectif
+267|Moitié de la durée
+268|A un accompagnement
+269|Entendre les notes pendant l'édition
+270|Écouter la musique à partir de la note ou de la mesure choisie
+271|Tenue pendant %lld secondes
+272|Aide
+273|Aide et guide
+274|Masquer l'inspecteur
+275|Masquer la bibliothèque
+276|Masquer la bibliothèque (⌃⌘S)
+277|Masquer les commandes de lecture
+278|Masquer la bibliothèque pendant la lecture
+279|Contraste élevé
+280|Surligner la mesure
+281|Couleur de surlignage
+282|Surligner les notes
+283|Surlignages
+284|Historique
+285|Tenez une note stable
+286|Tenir pendant
+287|Combien de temps y a-t-il dans chaque mesure ?
+288|J'ai l'autorisation de partager ceci
+289|Je possède cette musique ou j'ai l'autorisation de la partager
+290|INTRO
+291|Si vous utilisez des enceintes ou un casque sans fil et que le son est en retard sur l'autre musicien, avancez-le.
+292|Ignorer les changements de tempo de la partition
+293|Importer un dossier depuis Fichiers…
+294|Importer une partition…
+295|Les partitions importées apparaissent ici.
+296|Importation de %1$lld sur %2$lld…
+297|Justesse à
+298|Dans votre bibliothèque
+299|Inclus avec Professional
+300|Insérer
+301|Insérer des mesures
+302|Insérer depuis une partition…
+303|Instrument
+304|Volume de l'instrument
+305|Niveau de l'instrument
+306|Passage instrumental
+307|Interface
+308|Intro, %1$lld mesure%2$@ avant la mesure 1
+309|Intro, encore %1$lld mesures, temps %2$lld
+310|Les morceaux de jazz sont téléchargés à l'ajout, vous devez donc être connecté.
+311|Rejoindre une session
+312|Sauts
+313|Saute à cette ligne.
+314|L'essentiel : ouvrir une partition, la répéter, régler tempo et tonalité. Passez en Avancé pour les éditeurs, les outils de synchronisation, le partage et le reste.
+315|L'essentiel : ouvrir, jouer avec, changer de tempo et de tonalité.
+316|Musique karaoké
+317|Image karaoké
+318|Gardez %1$@ juste pendant %2$lld secondes.
+319|Continuez à taper
+320|Garder l'écran allumé pendant la lecture
+321|Tonalité
+322|Tonalité : %@
+323|Raccourcis clavier
+324|Grand
+325|Plus grand
+326|Commandes de lecture plus grandes
+327|Très grand
+328|Gauche
+329|Laisser %@ rejoindre ?
+330|Bibliothèque
+331|Clair
+332|Papier clair
+333|Ligne %lld
+334|Lier un dossier depuis Fichiers…
+335|Reliez jusqu'à huit appareils pour que tout le monde joue le même morceau exactement en rythme, chacun avec sa propre partition : une partie de flûte, une partie de clarinette, une autre tonalité ou un autre instrument. Ouvrez vos parties, puis une personne démarre une session et les autres la rejoignent.
+336|Écouter
+337|Écouter l'accompagnement et régler le tempo et la tonalité de la partition pour qu'ils correspondent
+338|Écoute
+339|Chargement du prix…
+340|Plus long
+341|Vous cherchez des paroles ? Lyricsify propose des fichiers .lrc synchronisés pour de nombreux morceaux. Maestro Pro n'est pas affilié à Lyricsify et ne fournit ni ne cautionne son contenu.
+342|Recherche dans les dépôts…
+343|Paroles
+344|Apparence des paroles…
+345|Paroles à la place de la musique
+346|Paroles depuis Apple Music…
+347|Paroles avec accompagnement…
+348|Lyricsify
+349|Lyricsify…
+351|Aide de Maestro Pro
+352|Maestro Pro est fait pour le grand écran. Dépliez votre iPhone Duo pour continuer.
+353|Agrandissez ou réduisez la notation ; les mesures se répartissent en plus ou moins de mesures par ligne. Le pincement fonctionne aussi.
+354|Gérer l'abonnement
+355|Associer
+356|Associer la tonalité
+357|Associer tonalité et tempo à la piste
+358|Associer ma tonalité
+359|Associer les chanteurs
+360|Système
+361|Associer et synchroniser…
+362|Fusionner dans %@…
+363|Fusionner « %1$@ » dans « %2$@ »
+364|Fusionner, garder les miennes en cas de conflit
+365|Fusionner, prendre les leurs en cas de conflit
+366|Métronome
+367|Métronome (K)
+368|Métronome activé par défaut
+369|Sensibilité du micro
+370|Micro activé
+371|Blanche
+372|Mode
+373|Chasse fixe
+374|Plus
+375|La plupart
+376|Mettre les mesures collées dans la tonalité de la musique qui précède
+377|Ligne mobile
+378|Musique
+379|La musique et les paroles sont masquées pendant l'enregistrement de l'écran. Arrêtez l'enregistrement pour continuer.
+380|Couper le son
+381|Couper le son et enregistrer
+382|Couper l'accompagnement ?
+383|Nom
+384|Nécessaire pour les dépôts privés, pour ajouter beaucoup de pistes et pour envoyer l'historique d'une partition vers GitHub (avec accès en lecture et écriture au contenu du dépôt). Il est conservé dans votre trousseau.
+385|Nouvelle partition vierge
+386|Nouvelle partition vierge…
+387|Nouvelle branche…
+388|Nouvelle liste de morceaux
+389|Nouvelle liste de morceaux…
+390|Suivant
+391|Mesure suivante
+392|Page suivante
+393|Pas encore d'accords
+394|Aucune nuance
+395|Pas de paroles
+396|Pas de paroles ici
+397|Pas encore de partitions
+398|Pas de mesure de reprise
+399|Aucun dossier lié.
+400|Aucun résultat. Essayez une autre recherche ou un autre instrument.
+401|Aucune partition ni parole trouvée.
+402|Aucune parole synchronisée trouvée. Essayez le titre du morceau et le nom de l'artiste.
+403|Aucun
+404|Aucune de celles-ci : saisir l'artiste…
+405|Normal
+406|Normal ±10 ¢
+407|Pas maintenant
+408|Note %1$lld sur %2$lld
+409|Note à tenir
+410|Rien ne correspond à « %@ ».
+411|Décalage du son : %lld ms
+412|OK
+413|Désactivé
+414|Activé
+415|Sur iPhone, Maestro Pro affiche seulement les partitions que vous ajoutez sur votre iPad ou Mac. Ce n'est pas l'app complète.
+416|Ouvrir les réglages
+417|Ouvrez votre iPhone
+418|Ouvrez une partition de votre bibliothèque, ou ajoutez-en une nouvelle.
+419|Ouvrir dans une nouvelle fenêtre
+420|Ouvrir l'accordeur
+421|Options
+422|Options (en haut à droite) propose l'Édition libre. Activée, l'éditeur cesse d'aider : les notes ne sont jamais coupées à la mesure, n'écrasent jamais leurs voisines et ne laissent aucun silence, si bien qu'une mesure peut contenir trop ou trop peu de temps. Touchez un espace vide dans une mesure pour ajouter une note après la dernière.
+423|Ou obtenez Professional à vie
+424|Ou obtenez Professional à vie, %@ une fois
+425|Niveau de sortie
+426|LECTURE
+427|Page
+428|Page %lld
+429|Page %lld de la partition
+430|La couleur du papier teinte la page derrière les notes, et les pages numérisées la prennent aussi.
+431|Partie à suivre
+432|Partie à évaluer
+433|Coller
+434|Pause
+435|Jeton d'accès personnel
+436|Lecture
+437|Jouer la musique avec
+438|Jouer la note de référence
+439|Jouer la partition avec
+440|Jouer les partitions avec
+441|Jouer ensemble
+442|Jouez une note et gardez-la juste pendant %lld secondes.
+443|Jouer en rythme avec un autre appareil
+444|Lecture ou pause (Espace)
+445|Jouer le guide mélodique
+446|Écouter l'enregistrement
+447|Lecture
+448|La lecture accélère ou ralentit à partir de cette mesure, par rapport au tempo initial, jusqu'à la marque suivante. Un enregistrement a son propre tempo : les marques ne changent donc que l'instrument intégré.
+449|Joue les mesures choisies en boucle, pour travailler un passage difficile.
+450|Position
+451|Vitesse d'entraînement
+452|Une vitesse d'entraînement de %1$lld %% le joue à %2$lld.
+453|Vitesse d'entraînement en pourcentage
+454|Préparation de la partition…
+455|Préréglages
+456|Mesure précédente
+457|Page précédente
+458|Imprimer…
+459|Confidentialité
+460|Barre de progression dans les pauses
+461|Donner un avis
+462|Récupérer depuis GitHub
+463|Envoyer vers GitHub
+464|Croche
+465|Lisez, répétez, jouez et écrivez.
+Des partitions synchronisées à la note près.
+466|Lecture des portées et des notes…
+467|Lecture de votre numérisation…
+468|Surfaces réalistes
+469|Enregistrer
+470|Réenregistrer
+471|Enregistrer quand même
+472|M'enregistrer
+473|Enregistrez-vous en train de jouer, puis voyez quelles notes vous avez réussies
+474|Enregistrement
+475|Enregistrement non autorisé
+476|Enregistrement en cours. Jouez la partition.
+477|Enregistrements
+478|Rétablir
+479|Rétablir le dessin
+480|Réduire les animations
+481|Réduire les voix
+482|Souple
+483|Souple ±20 ¢
+484|Retirer
+485|Retirer l'accompagnement
+486|Retirer le fichier de paroles
+487|Retirer la marque
+488|Retirer l'enregistrement
+489|Retirer de « %@ »
+490|Retirer le silence
+491|Retirer la mesure de 1re ou 2e fois de cette mesure et des mesures qui lui sont liées
+492|Renommer
+493|Renommer la partition
+494|Renommer la liste de morceaux
+495|Renommer…
+496|Répéter une section
+497|Remplacer l'accompagnement…
+498|Remplacer le fichier de paroles…
+499|Remplacer l'enregistrement…
+500|Remplacer…
+501|Dépôts
+502|Dépôt
+503|Réinitialiser
+504|Réinitialiser %@
+505|Réinitialiser toutes les pistes
+506|Réinitialiser tous les réglages
+507|Tout remettre par défaut
+508|Réinitialiser les surfaces
+509|Remettre tous les réglages par défaut ?
+510|Remettre par défaut
+511|Restaurer les achats
+512|Restaurer la partition d'origine
+513|Revue
+514|Options de la revue
+515|Rythme lu d'après les valeurs de notes dans %1$lld mesures sur %2$lld. Le reste (nolets, gravure inhabituelle) suit l'espacement imprimé.
+516|Rythme lu d'après les valeurs de notes dans les %lld mesures.
+517|Revenir à cette version
+518|Arrondi
+519|Courbe en S
+520|Comme ci-dessus
+521|Enregistrer
+522|Enregistrer le jeton
+523|Enregistrer la version…
+524|Enregistrer ou partager la vidéo
+525|Versions, branches et fusions enregistrées
+526|Gammes et arpèges
+527|Gammes et arpèges…
+528|Numériser une partition…
+529|Partition
+530|La partition est écrite pour
+531|Partitions
+532|Des partitions qui vous suivent à la note près, des pages tournées sans les mains, la synchronisation d'ensemble, l'enregistrement et la revue. Conçu pour la répétition, prêt pour la scène.
+533|Les partitions, paroles et enregistrements portant le même nom sont ajoutés ensemble. Balayez pour retirer un dépôt.
+534|Faire défiler la page avec la lecture
+535|Rechercher des partitions
+536|Rechercher des partitions…
+537|Rechercher des paroles en ligne…
+538|Cherchez le morceau, ouvrez ses paroles enrichies (synchronisées mot à mot), puis touchez Utiliser ces paroles, ou téléchargez le fichier .lrc.
+539|Rechercher des pistes
+540|Recherche sur le web et GitHub des partitions MusicXML. Saisissez un nom de compositeur ou d'œuvre ci-dessus. Vérifiez qu'une partition est libre de droits avant de l'ajouter.
+541|Voir les avis des autres utilisateurs
+542|Voir le morceau sous forme de grille d'accords
+543|Tout sélectionner
+544|Ne rien sélectionner
+545|Sélectionnez une note, puis touchez une durée (ronde, blanche, noire…) pour changer sa longueur. Le point l'allonge de moitié ; le 3 crée des triolets, trois notes dans le temps de deux. Une note prend la place de ce qui la suit dans la mesure ; une plus courte laisse des silences.
+546|Envoyer
+547|Avec empattements
+548|Placer la marque
+549|Régler le tempo
+550|Réglé en tapant
+551|Options de la liste de morceaux pour %@
+552|Réglages
+553|Réglages (⌘,)
+554|Réglages de %@
+555|Réglages…
+556|Partager
+557|Partager avec un autre musicien
+558|Partager avec un autre musicien…
+559|Partager…
+560|Partition
+561|Les partitions et enregistrements sont généralement protégés par le droit d'auteur. Ne partagez que la musique que vous avez écrite, dont vous détenez les droits ou pour laquelle vous avez l'autorisation. Partager du matériel protégé sans autorisation peut être illégal, et vous êtes responsable de ce que vous envoyez.
+562|Décaler l'accompagnement
+563|Plus court
+564|Afficher l'inspecteur
+565|Afficher l'inspecteur (⌥⌘I)
+566|Afficher la bibliothèque
+567|Afficher la bibliothèque (⌃⌘S)
+568|Afficher les lignes de
+569|Afficher les paroles à la place de la musique
+570|Afficher les commandes de lecture
+571|Afficher la progression des syllabes
+572|Afficher pendant la lecture
+573|Afficher la partition en plein écran avec défilement automatique
+574|Afficher l'heure au-dessus de la musique et des paroles
+575|Afficher les paroles, façon Apple Music, ou ajouter un fichier de paroles (.lrc ou .txt)
+576|Simple
+577|Chantez avec un enregistrement ; les paroles non synchronisées sont réparties dessus
+578|Chanteur %lld
+579|Couleur du chanteur 1
+580|Couleur du chanteur 2
+581|Couleur du chanteur 3
+582|Chanteurs
+583|Ralentir les 8 dernières s
+584|Plus lent
+585|Texte plus petit
+586|Titre ou artiste
+587|Morceaux sur Apple Music
+588|Trier la bibliothèque par
+589|Vitesse
+590|Détacher en nouvelle partition…
+591|Standard
+592|Recommencer
+593|Démarrer l'essai gratuit
+594|Lancer la lecture à l'ouverture d'une partition
+595|Démarrer une session
+596|Lancer les paroles en rythme avec une partition ou des paroles sur un autre appareil
+597|Démarrage du micro
+598|Portées
+599|Étape %1$lld sur %2$lld
+600|Arrêter
+601|Arrêter l'enregistrement
+602|Arrêter le défilement
+603|Arrêter Attends-moi
+604|Droit
+605|Redressement de la page et préparation des notes.
+606|Les syllabes accentuées gonflent doucement quand elles sont chantées. Désactivez l'animation pour des lignes fixes, et la progression des syllabes pour allumer chaque ligne d'un coup.
+607|Strict
+608|Strict ±5 ¢
+609|Formats de fichier pris en charge
+610|Fichiers pris en charge
+611|Surfaces
+612|Passer à cette branche
+613|TAP
+614|Prendre les mesures de
+615|Connexion à GitHub…
+616|Tempo au tapotement…
+617|Touchez une note pour commencer à partir de là.
+618|Tapez en rythme avec le temps.
+619|Tapez en rythme avec le temps. Le tempo s'affiche dès le deuxième tapotement et s'affine à chaque tapotement. Avec un clavier, vous pouvez appuyer sur la barre d'espace quand le bouton est sélectionné.
+620|Tapoter sur le temps (haptique)
+621|Touchez les lignes que chante une personne, puis choisissez ci-dessous qui les chante.
+622|Touchez pour ajouter une image clé. Faites glisser une image clé pour la déplacer.
+623|Touchez pour ajouter des images clés
+624|Touchez pour commencer à l'intro.
+625|Touchez deux fois pour démarrer
+626|Tempo
+627|Tempo de %lld battements par minute
+628|Tempo à la mesure %lld
+629|Tempo en battements par minute
+630|Conditions
+631|Texte
+632|Taille du texte
+633|Merci pour votre avis !
+634|L'app suit aussi les réglages de votre appareil : Texte plus grand, Texte en gras, Augmenter le contraste et Réduire les animations. Les couleurs de page se trouvent sous Partition, et les décors sous Apparence.
+635|L'app n'a pas pu le déterminer d'après la page. Comptez les temps dans une mesure (noires) : 4 pour 4/4, 3 pour 3/4, 6 pour 6/4. Pour 6/8, comptez deux temps de noire pointée de 3, donc saisissez 3.
+636|L'artiste n'a pas pu être déterminé d'après la piste. Saisissez-le pour associer les chanteurs.
+637|L'accompagnement est coupé pour cet enregistrement.
+638|Le fichier contient la partition%@. L'autre personne l'ouvre dans Maestro Pro.
+639|L'instrument et le clic sont coupés pendant l'enregistrement.
+640|L'instrument joue les notes de la page, en plus de tout accompagnement.
+641|La musique propre au fichier karaoké, jouée par un instrument intégré
+642|La musique du karaoké est jouée plus haut ou plus bas.
+643|Le micro entend l'accompagnement. Coupez-le ou utilisez un casque.
+644|Le micro entend tout ce que joue le haut-parleur : l'accompagnement serait donc enregistré et jugé comme si vous l'aviez joué. Coupez-le pour cet enregistrement (il revient ensuite) ou utilisez un casque.
+645|Le papier, le bureau, les boutons et les panneaux de commande sont dessinés comme de vrais matériaux. Réduisez chacun pour un rendu plus plat, ou désactivez-les tous. Le contraste élevé les désactive aussi.
+646|L'enregistrement change de hauteur sans changer de vitesse.
+647|L'éditeur de partitions écrit des notes, puis ajoute des accents, des nuances et une reprise
+648|La partition indique %lld
+649|La partition attend que vous jouiez chaque note, juste
+650|Les partitions qu'elle contient restent dans votre bibliothèque.
+651|Le morceau n'a pas pu être associé. Choisissez le plus proche.
+652|Leur partie compte %1$lld mesures et la vôtre %2$lld : les deux peuvent donc se décaler.
+653|Il n'y a aucune note à suivre ici
+654|Ces réglages s'appliquent à chaque partition que vous ouvrez. Modifiez-en un pour une seule partition depuis ses propres commandes.
+655|Ils pourront démarrer, mettre en pause et avancer dans la musique avec vous.
+656|Ils jouent « %@ ». Chacun garde sa propre partition et son instrument ; vous restez ensemble mesure par mesure.
+657|C'est le titre imprimé sur la partition. Le nom dans votre bibliothèque reste inchangé.
+658|Règle le tempo initial ; les marques de la partition le modifient ensuite.
+659|Nettoyer les titres à l'import
+660|Nettoyer les titres
+661|Liaison
+662|Lier cette note à la suivante, pour qu'elles sonnent comme une seule longue note
+663|Lier à la note suivante
+664|Chiffrage
+665|Synchronisé mot à mot
+666|Synchronisé mot à mot : les mots se remplissent au fil du chant.
+667|Rythme
+668|Titre
+669|Le titre doit comporter de 10 à 100 caractères. Votre avis est publié publiquement sur [thecaffeinemediacompany.fider.io](https://thecaffeinemediacompany.fider.io).
+670|Titre sur la partition
+671|Tolérance
+672|Outils
+673|Repère de début de piste
+674|Pistes
+675|Pistes depuis GitHub
+676|Pistes depuis GitHub…
+677|Triolet
+678|Triolet : trois notes dans le temps de deux
+679|Accordez, ou travaillez à tenir une note stable
+680|Accordeur
+681|Accordeur : justesse à
+682|Accordeur : objectif de note stable
+683|Accordeur…
+684|Accord : La =
+685|Désactiver le décompte
+686|Activer le décompte
+687|Désactiver le métronome
+688|Activer le métronome
+689|Tourner les pages comme un livre
+690|Transformer la note en silence
+691|Type
+692|Saisissez le nom d'un morceau ou d'un artiste.
+693|Saisissez le titre ou l'artiste pour trouver des paroles synchronisées.
+694|Police
+695|Annuler
+696|Annuler le dessin
+697|Réactiver le son
+698|Sans titre
+699|Un ton plus haut
+700|Passer à Professional
+701|Utiliser %@ temps
+702|Utiliser le nom de la bibliothèque
+703|Utiliser ces paroles
+704|Utilisé par l'accordeur et par Attends-moi, qui écoutent via le micro. Augmentez la sensibilité dans une pièce calme ou pour un instrument doux, et diminuez-la s'il capte du bruit. Un cent (¢) est un centième de demi-ton.
+705|Utilise le %lld de la partition
+706|Visiter lyricsify.com
+707|Attends-moi
+708|Options d'Attends-moi
+709|Attends-moi : accepter toute octave
+710|Attends-moi : tenir pendant
+711|Attends-moi : justesse à
+712|À la semaine
+713|Bienvenue dans %@
+714|Que font les modes ?
+715|Pendant la lecture
+716|Musique blanche sur papier noir
+717|Musique blanche sur papier noir
+718|Qui chante ceci ?
+719|Tout désactivé, seuls le compteur de mesures et les tournes de page suivent la musique.
+720|Mots
+721|Paroles sous les notes
+722|Réécrire
+723|Écrire chaque reprise, fin et saut sous forme de mesures distinctes
+724|Écrivez, révisez
+et jouez.
+725|Rédaction de votre avis…
+726|Écrit %@
+727|Rédigé par Apple Intelligence sur cet appareil
+728|Avis rédigé
+729|Vous pourrez le changer plus tard dans l'inspecteur.
+730|Vous avez joué %@
+731|Vous avez joué les %lld notes
+732|Tonalité de votre instrument
+733|Votre formule
+734|Votre bibliothèque et vos annotations ne sont jamais touchées par une réinitialisation.
+735|Votre vidéo est prête.
+736|Zoom
+737|Zoom avant
+738|Zoom arrière
+739|Zoom avant
+740|Zoom arrière
+741|Synchronisation iCloud
+743|propriétaire/dépôt ou un lien GitHub
+764|%@ par semaine
+765|%@ par an
+766|%1$@ : inclus avec %2$@
+767|Essai gratuit de 3 jours activé
+768|Facturé une fois par an. Soit %@ par mois.
+769|Choisissez votre formule
+770|TOUT
+771|Essai gratuit, puis %@ par semaine
+772|Essai gratuit, puis %@ par an
+773|Économisez %1$@ (%2$lld %%) par an
+774|par semaine
+775|Une bibliothèque sans limite, pas seulement trois partitions
+776|Lisez n'importe quelle partition, au tempo de votre choix
+777|Des notes, des mesures et une ligne mobile qui suivent la musique
+778|Rechercher des partitions et trouver des paroles en ligne
+779|Changez de tonalité et façonnez le son avec l'égaliseur
+780|Empilez des accompagnements, ou jouez avec Apple Music
+781|Jouer ensemble sur jusqu'à huit appareils
+782|L'accordeur, et une partition qui vous attend
+783|Enregistrez une prise, puis voyez chaque note à retravailler
+784|Annotez à l'Apple Pencil, exportez et imprimez
+785|Tout ce qui est dans Performer
+786|L'éditeur de partitions : écrivez et modifiez la musique
+787|Créez des pots-pourris à partir de n'importe quelle partition de votre bibliothèque
+788|Historique des versions, branches, fusions et synchronisation GitHub
+789|Annotation
+790|Apple Music
+791|Surlignage des mesures
+792|Changement de tonalité
+793|Grille d'accords
+794|Export
+795|Recherche de paroles en ligne
+796|Associer tonalité et tempo
+797|Surlignage des notes
+798|Jouer ensemble
+799|Lecture
+800|Impression
+801|M'enregistrer
+802|Réduire les voix
+803|Revue d'un enregistrement
+804|Rechercher des partitions
+805|Partage avec un autre musicien
+806|Empilement d'accompagnements
+807|L'égaliseur
+808|La ligne mobile
+809|L'éditeur de partitions
+810|L'éditeur de pistes
+811|L'accordeur
+812|Export vidéo
+813|Attends-moi
+814|Écriture d'une nouvelle partition
+816| + %lld sans durée
+817|La modification libre est activée : rien n’est corrigé, et toucher un espace vide dans une mesure ajoute une note après la dernière.
+818|La piste d’accompagnement est transposée pour correspondre.
+819|La piste d’accompagnement reste dans sa tonalité d’enregistrement.
+820|Vous pourrez le modifier à tout moment dans l’inspecteur.
+821| · environ 
+822|%@ sur Apple Music
+823|%1$lld h %2$lld min
+824|%lld lignes sélectionnées
+825|%lld lignes ont reçu un chanteur. Vérifiez-les dans Attribuer les chanteurs.
+826|%lld min
+827|%lld partitions
+828|%lld s
+829|%lld titres harmonisés.
+830|, déjà la tonalité de la partition
+831|, la partition descend donc de %lld demi-tons
+832|, la partition descend donc d’un demi-ton
+833|, la partition monte donc de %lld demi-tons
+834|, la partition monte donc d’un demi-ton
+835|1 ligne sélectionnée
+836|1 partition
+837|1 titre harmonisé.
+838|Format fermé. Dans Band-in-a-Box, enregistrez en MusicXML pour la notation et en audio pour l’accompagnement, puis importez-les.
+839|Un peu bas, %lld ¢
+840|Un peu haut, %lld ¢
+841|Une partition avec sa piste d’accompagnement, d’un autre utilisateur de Maestro Pro.
+842|Altérations, liaisons et articulations
+843|Ajoutez d’abord un jeton GitHub avec accès en écriture : Pistes de GitHub, puis Jeton d’accès.
+844|Ajouter une piste d’accompagnement
+845|Ajouter une mesure après
+846|Ajouter, modifier et supprimer des silences
+847|%lld morceaux ajoutés.
+848|1 morceau ajouté.
+849|Tous les titres sont déjà propres.
+850|Autorisez-le dans l’app Réglages sous Maestro Pro (sur un Mac, Réglages Système, Confidentialité et sécurité, Médias et Apple Music).
+851|Tout fichier audio lisible par l’appareil peut être ajouté à une partition ou à des paroles.
+852|Impossible de rechercher dans Apple Music.
+853|Pistes d’accompagnement
+854|Les morceaux Band-in-a-Box sont enregistrés dans un format fermé que seul Band-in-a-Box peut lire. Dans Band-in-a-Box, choisissez Fichier ▸ Enregistrer sous ▸ MusicXML (pour la notation) et Audio (pour l’accompagnement), puis importez-les.
+855|Mesure %lld
+856|Mesure %1$lld%2$@ : choisissez une nuance, ou un crescendo ou diminuendo sur la mesure.
+857|Mesure %lld : mesures à 1re/2e fois (Rallonger la prolonge sur la mesure suivante), sauts ou indication de tempo.
+858|Mesure %lld : ajoutez des barres de reprise, ou insérez ou supprimez la mesure.
+859|Mesure 1
+860|La mesure 1 commence à
+861|Mesures %1$lld à %2$lld choisies. Copiez, coupez, dupliquez ou supprimez-les, ou collez après elles.
+862|Renforcer les basses
+863|Clé de fa
+864|Temps par mesure
+865|Avant de partir
+866|Meilleur
+867|Nom de la branche
+868|Importez vos partitions
+869|%lld versions importées. Les branches qui ont divergé sont nommées …-github, pour les fusionner.
+870|1 version importée. Les branches qui ont divergé sont nommées …-github, pour les fusionner.
+871|Métal brossé
+872|Clé d’ut
+873|Vérifiez la connexion et réessayez. (%@)
+874|Connecté à %@.
+875|Copier les mesures
+876|Copiez, coupez, collez et insérez des mesures, même d’autres partitions
+877|Copier ou partager de la musique protégée sans autorisation est du piratage. Le droit d’auteur la protège dans presque tous les pays, et les règles et sanctions dépendent de votre lieu de résidence. Une infraction peut entraîner des demandes de dommages et intérêts et, dans les cas graves, des amendes ou de la prison.
+878|Corrigez une fausse note, écrivez une nouvelle partie ou composez un pot-pourri pour le concert. L’éditeur garde chaque mesure correcte au fur et à mesure, et chaque version est enregistrée.
+879|Impossible de lire %@.
+880|Impossible de télécharger %@. Vérifiez votre connexion et réessayez.
+881|Impossible de trouver un tempo régulier dans cette piste.
+882|Impossible de lire %1$lld : %2$@%3$@.
+883|Noires par mesure
+884|Noires par mesure
+885|Couper les mesures
+886|Retarder le début
+887|Retarder le début (en mesures)
+888|Supprimer la mesure
+889|Supprimer les mesures
+890|Cuir de bureau
+891|Descendre de %lld demi-tons
+892|Descendre d’un demi-ton
+893|Faites glisser sur les mesures pour les choisir, puis Copiez, Coupez ou Dupliquez. Coller place les mesures copiées après les mesures choisies (ou à la fin), dans cette partition ou dans une autre que vous ouvrez ensuite, pour composer un pot-pourri. Insérer depuis une partition prend des mesures d’une autre partition de votre bibliothèque. Accorder la tonalité les met dans la tonalité de ce qui précède ; chaque morceau garde sa propre métrique et son tempo.
+894|Dessinez sur la page dans n’importe quelle couleur
+895|Dessinez sur la musique avec l’Apple Pencil et les outils stylo, marqueur, crayon et couleur. Votre dessin reste sur la partition et s’affiche quand vous la jouez. Le blanc fonctionne aussi. Utilisez la gomme de la palette d’outils pour l’effacer.
+896|Dessinez avec l’Apple Pencil grâce à la palette d’outils ; l’encre reste sur la page.
+897|Vide
+898|Chaque note est calée sur le temps, pour que la partition vous suive.
+899|Timing exact ; peut être modifié, transposé, joué et exporté.
+900|Mesures à 1re et 2e fois, sauts et tempo
+901|La version gratuite garde jusqu’à %lld partitions. Supprimez-en une, ou choisissez une formule dans Réglages pour en garder autant que vous voulez.
+902|La version gratuite vous permet de voir jusqu’à trois partitions. Ces fonctions restent verrouillées :
+903|Fréquence
+904|De la mesure
+905|Depuis le menu Partager d’une partition de la bibliothèque.
+906|De la page
+à la performance.
+907|Gain
+908|GitHub a déjà tout.
+909|GitHub n’a pas autorisé le jeton à modifier ce dépôt. Il lui faut un accès en lecture et en écriture au contenu du dépôt.
+910|La limite de GitHub pour les requêtes sans jeton est atteinte. Ajoutez un jeton, ou réessayez dans une heure.
+911|Donnez un nom à la branche.
+912|Objectifs
+913|Compris
+914|Écouter la note
+915|Aidez-nous à créer
+pour tous les musiciens.
+916|Voici ce
+que vous manqueriez.
+917|Tenez-la
+918|Quoi afficher
+919|Comment ça marche
+920|Importer un dossier
+921|Importer un dossier lit tous les fichiers pris en charge d’un dossier, en associant les partitions à un enregistrement et à des paroles du même nom.
+922|Importer une partition
+923|Importez avec Importer une partition, en faisant glisser un fichier sur la fenêtre, ou depuis la feuille de partage d’une autre app.
+924|Dans sa tonalité d’origine, le PDF s’affiche tel qu’imprimé. Dans toute autre tonalité, la musique lue sur la page est regravée, vérifiez-la donc par rapport à l’original.
+925|Inspecteur
+926|Niveau de l’instrument
+927|Intro, %lld mesures avant la mesure 1
+928|Intro, 1 mesure avant la mesure 1
+929|C’est votre responsabilité
+930|Connexion de %@…
+931|Mesures d’intro
+932|Boutons en cuir
+933|Moins de basses
+934|Niveau
+935|Lignes (et mots) avec leur temps.
+936|Liez-en un dans Réglages pour le garder synchronisé avec la bibliothèque.
+937|Verrouiller le tempo ici
+938|Recherche d’un joueur qui héberge…
+939|Fort et doux, crescendo et diminuendo
+940|Paroles et karaoké
+941|Les paroles peuvent accompagner une partition ou exister seules ; un fichier karaoké se lit comme un élément à part.
+942|Paroles avec accompagnement
+943|Maestro Pro ne peut pas savoir à qui appartient ce que vous partagez. En continuant, vous confirmez avoir le droit de partager ou d’exporter cette musique, et que c’est vous, et non l’app, qui êtes responsable de ce que vous en faites.
+944|Maestro Pro n’est pas autorisé à utiliser Apple Music.
+945|Maestro Pro a besoin du micro pour vous entendre. Activez-le dans l’app Réglages sous Maestro Pro, ou sur un Mac dans Réglages Système, Confidentialité et sécurité, Micro.
+946|Maestro Pro lit vos partitions et les suit à la note près, tourne les pages sans les mains, et vous laisse écrire et réviser les parties elles-mêmes. Une minute de réglage et vous êtes prêt.
+947|Partition Maestro Pro
+948|Maestro Pro affiche la musique dans la tonalité de votre instrument, pour qu’elle corresponde à la partie sous vos yeux.
+949|Personnalisez
+950|Création de la vidéo…
+951|Marquer la mesure 1 maintenant
+952|Marquer le début de l’intro maintenant
+953|Marquez d’abord la mesure 1, puis touchez sur un temps fort au moins une seconde plus tard.
+954|Fusionné sans conflit.
+955|« %1$@ » fusionné dans « %2$@ »
+956|Fusionné. Mesures modifiées dans les deux branches : %1$@. La version de la branche %2$@ a été conservée.
+957|La musique appartient à quelqu’un
+958|La musique s’affiche au diapason de concert, telle qu’écrite.
+959|La musique s’affiche en si♭ pour le saxophone ténor, pour correspondre à votre partie.
+960|La musique s’affiche en si♭, un ton au-dessus du diapason de concert, pour correspondre à votre partie.
+961|La musique s’affiche en mi♭, pour correspondre à votre partie.
+962|De la musique que vous avez écrite ou enregistrée vous-même, de la musique du domaine public, et de la musique dont la licence autorise le partage (comme certaines œuvres Creative Commons). Tout le reste demande l’autorisation de son propriétaire. Acheter une copie pour vous-même ne vous donne pas le droit de la transmettre.
+963|Aucune note
+964|Aucun morceau trouvé.
+965|Aucune portée trouvée dans ce PDF : il peut être lu mais pas suivi.
+966|Aucune paroles synchronisées disponibles.
+967|Les notes s’allument quand elles sonnent et les pages se tournent sans les mains, en répétition ou sur scène.
+968|Rien de nouveau sur GitHub.
+969|Rien de nouveau à ajouter.
+970|Décaler la mesure 1
+971|Une dernière chose
+972|Un seul chanteur a été trouvé pour ce morceau.
+973|Ouvrir un exemple
+974|Ouvrez d’abord ce PDF pour que l’app puisse lire ses notes, puis revenez modifier une copie.
+975|Ouvrez d’abord ce PDF pour que l’app puisse lire ses notes, puis revenez.
+976|Ouvrez d’abord ce PDF pour que l’app puisse lire ses notes, puis exportez-les.
+977|S’ouvre dans MuseScore, Finale, Sibelius, Dorico et la plupart des autres apps de notation.
+978|Facultatif. Votre propre enregistrement, synchronisé avec le tempo et la tonalité de la partition.
+979|Tonalité d’origine
+980|Fichiers PDF, MusicXML, MIDI ou karaoké, lus sur l’appareil.
+981|Ombre et courbure de la page
+982|Grain du papier
+983|Coller après ces mesures
+984|Piano (par défaut)
+985|Choisissez l’apparence de la musique pendant la lecture. Tout cela se trouve ensuite dans Réglages.
+986|Le piratage est illégal
+987|Paroles simples
+988|Jouez au-delà de la mesure 1, puis touchez sur un temps fort plus tard.
+989|Jouez la note
+990|Lancez la piste, puis touchez sur le premier temps de %@.
+991|Jouer des morceaux nécessite un abonnement Apple Music.
+992|Joue en rythme avec la partition ; peut être transposé et voir son volume, son tempo et sa hauteur modifiés.
+993|Appuyez sur des touches…
+994|Note précédente
+995|Musique imprimée ou numérisée. Les notes sont lues sur la page pour pouvoir être suivies et jouées.
+996|Placez et déplacez des notes, et réglez leur durée
+997|Voix plus discrètes
+998|Lecture de la partition…
+999|Reconnus, mais illisibles
+1000|Supprimer le silence
+1001|Fin de reprise
+1002|Barres de reprise, ajout ou suppression de mesures
+1003|Début de reprise
+1004|Retour à « %@ »
+1005|Place pour les bassistes
+1006|Effacez des notes et des silences
+1007|Numériser une partition
+1008|Nom de la partition
+1009|Sélection : %@.
+1010|Sélection : %@. Touchez une durée pour la changer, ou la corbeille pour la supprimer.
+1011|Demi-tons
+1012|%1$lld versions envoyées vers %2$@.
+1013|1 version envoyée vers %@.
+1014|Installez le pupitre.
+1015|Partitions
+1016|Les partitions, enregistrements, pistes d’accompagnement et paroles sont presque toujours protégés par le droit d’auteur. Le compositeur, parolier, arrangeur, interprète ou éditeur en est propriétaire, même quand ils sont faciles à trouver en ligne.
+1017|Ignorer le silence initial
+1018|Passer cette note
+1019|Portée %lld
+1020|Portée %lld : 
+1021|Démarrage du micro…
+1022|Régularité
+1023|Lecture de la piste en cours…
+1024|Touchez une mesure, puis ajoutez ou retirez des barres de reprise, ou insérez ou supprimez la mesure. Développer les reprises écrit le morceau tel qu’il est joué.
+1025|Touchez une mesure, puis placez dessus une case 1re ou 2e fois (Rallonger l’étend sur plus de mesures), ajoutez Segno, Coda, Vers la coda, D.C., D.S. ou Fine, ou réglez une indication de tempo.
+1026|Touchez une note (la nuance se place sur cette note) ou une mesure (elle se place au début), puis choisissez de ppp à fff. Crescendo et Diminuendo posent une fourchette sur la mesure ; Plus long et Plus court l’étendent sur davantage de mesures. L’instrument intégré joue plus fort et plus doucement en conséquence.
+1027|Touchez une note pour la marquer.
+1028|Touchez une note pour la changer en silence de la durée choisie, ou touchez un silence pour le sélectionner et changer sa durée.
+1029|Touchez une note pour la changer en silence de la durée choisie. Touchez un silence pour le sélectionner, puis choisissez une autre durée pour le changer, ou la corbeille pour le retirer de la page (la mesure garde sa durée).
+1030|Touchez une note, puis ajoutez un dièse, un bémol ou un bécarre, liez-la à la note suivante, ou donnez-lui un staccato, un accent, un tenuto, un marcato ou une fermate. Touchez à nouveau pour l’enlever.
+1031|Ce n’est pas une adresse GitHub.
+1032|Ce n’est pas un dépôt GitHub. Utilisez propriétaire/dépôt.
+1033|Ce morceau est introuvable sur Genius, ses chanteurs n’ont donc pas pu être associés.
+1034|Cette prise était trop courte ou silencieuse pour être conservée.
+1035|C’est %@
+1036|Le %@ nous dit qui Maestro Pro touche, pour que nous puissions l’adapter à tous les musiciens. Il est facultatif et s’ouvre ici même, dans l’app.
+1037|L’App Store est inaccessible. Vérifiez votre connexion et réessayez.
+1038|l’intro
+1039|Impossible de démarrer le micro.
+1040|La musique qui suit, avec le son.
+1041|Les notes de ce PDF n’ont pas encore été lues. Ouvrez la partition et laissez-la finir sa lecture.
+1042|La page s’affiche en %1$@%2$@. 
+1043|La piste image d’un disque de karaoké, telle qu’elle a été réalisée.
+1044|La partition et sa piste d’accompagnement, à partager avec un autre musicien.
+1045|La partition est regravée dans la nouvelle tonalité.
+1046|La piste commence déjà par du son.
+1047|La piste ne sonne pas encore ; attendez qu’elle joue, puis touchez.
+1048|La page composée, ou l’original pour une partition PDF.
+1049|La forme compressée qu’enregistrent la plupart des apps de notation.
+1050|Il n’y a pas de paroles dans ce fichier.
+1051|Il n’y a pas de paroles dans ce fichier.
+1052|Il ne reste plus de paroles. Saisissez au moins une ligne.
+1053|Il n’y a pas de notes à suivre dans cette partition.
+1054|Il n’y a pas de paroles synchronisées sur cette page. Ouvrez un morceau et choisissez ses paroles Enhanced ou LRC.
+1055|Il existe déjà une branche nommée « %@ ».
+1056|Il n’y a pas de note après celle-ci à laquelle la lier. Ajoutez-en une d’abord, ou activez la modification libre dans Options.
+1057|Ils sont nommés pour que vous ayez une explication claire plutôt qu’un échec.
+1058|Ces branches n’ont pas d’historique commun, elles ne peuvent donc pas être fusionnées.
+1059|Ce PDF n’a pas pu être ouvert. Il est peut-être endommagé ou protégé par mot de passe.
+1060|Ce n’est pas une partition Maestro Pro, ou elle est endommagée.
+1061|Ce n’est pas un fichier karaoké (MIDI).
+1062|Ce fichier karaoké est endommagé.
+1063|Ce fichier karaoké utilise un format de temps que l’app ne peut pas lire.
+1064|Ce fichier de paroles n’a pas pu être lu comme du texte.
+1065|Via la fenêtre d’impression du système.
+1066|Paroles synchronisées
+1067|À la mesure
+1068|Touchez une mesure et faites glisser sur d’autres pour les choisir. Sans sélection, Coller va à la fin.
+1069|Touchez un silence et glissez vers le haut ou le bas pour choisir la hauteur ; relevez pour y poser une note, de la durée choisie ci-dessous. Faites glisser une note vers le haut ou le bas pour la déplacer. Griffonnez sur des notes pour les effacer. Toucher une note ou une mesure vide ouvre un petit menu des actions les plus probables.
+1070|Touchez un silence et glissez vers le haut ou le bas pour choisir une hauteur ; faites glisser une note pour la déplacer ; griffonnez sur une note pour l’effacer. Touchez une note, puis une durée, pour changer sa valeur. Le 3 fait des triolets ; Lier joint une note à la suivante.
+1071|Touchez ou faites glisser sur les notes et silences. Une note devient un silence ; un silence disparaît de la page. Rien à sélectionner d’abord.
+1072|Touchez ou faites glisser sur ce que vous voulez supprimer : les notes deviennent des silences, les silences disparaissent de la page. Touchez deux fois l’Apple Pencil pour passer à la gomme et revenir.
+1073|Piste : %1$@ BPM en %2$@%3$@.
+1074|Transposer
+1075|Clé de sol
+1076|Changer en silence
+1077|Monter de %lld demi-tons
+1078|Monter d’un demi-ton
+1079|Présence vocale
+1080|En attente d’un autre joueur…
+1081|Bienvenue dans Maestro Pro
+1082|Ce que vous pouvez généralement partager
+1083|Ce qui a changé
+1084|Que jouez-vous ?
+1085|Ce que l’app produit
+1086|Ce que vous avez joué, quand c’était faux ou en retard
+1087|Où vous devriez être
+1088|Dossiers entiers
+1089|Largeur (Q)
+1090|Paroles et musique dans un seul fichier. Un fichier MIDI simple compte quand il contient des paroles.
+1091|Paroles seules ; réparties sur l’enregistrement.
+1092|Calcul des accords…
+1093|Écrivez-la.
+Révisez-la. Maîtrisez-la.
+1094|Vous pouvez toujours rechercher.
+1095|Vos partitions.
+Répétées, jouées, écrites.
+1097|Premiers pas
+1098|Maestro Pro est un véritable outil de travail pour les musiciens : il lit vos partitions et les suit note à note, tourne les pages sans les mains, répète avec un accompagnement, un morceau d'Apple Music, l'instrument intégré ou un métronome, et vous laisse écrire et réviser la musique elle-même.
+1099|La première minute
+1100|Touchez Importer une partition sur l'écran d'accueil (ou le bouton +, puis Importer une partition) et choisissez un PDF, un fichier MusicXML ou tout autre fichier pris en charge. Il apparaît dans votre bibliothèque à gauche ; touchez-le pour l'ouvrir.
+1101|Appuyez sur le grand bouton Lecture en bas. La musique se joue et la partition suit. Touchez n'importe où sur la musique pour démarrer à cet endroit, ou faites glisser la barre de progression.
+1102|Rien à jouer pour l'instant ? Choisissez Ouvrir un exemple sur l'écran d'accueil, ou Rechercher des partitions pour télécharger des pièces classiques et des standards de jazz, ou pour chercher sur le web.
+1103|Mode Simple et mode Avancé
+1104|Les Réglages ont un interrupteur Mode. Le mode Simple limite l'écran à l'essentiel pour la plupart des gens. Le mode Avancé ajoute les outils de bibliothèque, Jouer ensemble, les commandes portée par portée et la page Personnaliser chaque couleur.
+1105|Tout ce que décrit ce guide est disponible en mode Avancé ; chaque rubrique indique quand une commande n'y apparaît qu'à cet endroit.
+1106|La barre d'outils
+1107|Sur iPad, la barre d'outils garde les quelques commandes les plus utilisées (ouvrir, zoom, accompagnements et son, annoter, modifier) et met tout le reste dans le menu Plus à son extrémité : les outils en haut, puis la page, ce qui s'affiche pendant la lecture, les paroles et, en dernier, les accompagnements. Un Mac affiche chaque commande comme un bouton à part.
+1108|Les Réglages se trouvent uniquement dans la bibliothèque, ils ne sont donc pas dans la barre d'outils de la partition. Pour revenir à la bibliothèque, affichez la barre latérale avec le bouton en haut à gauche.
+1109|Personnaliser la barre d'outils
+1110|Sur iPad, maintenez le doigt sur la barre d'outils (ou touchez le ⋯ à son extrémité et choisissez Personnaliser la barre d'outils) pour faire glisser des commandes sur la barre ou hors d'elle ; sur Mac, choisissez Présentation ▸ Personnaliser la barre d'outils. Le bouton Inspecteur reste toujours.
+1111|Sur un écran étroit, les commandes sont regroupées dans un seul menu Plus.
+1112|L'écran
+1113|Sur un grand écran, la bibliothèque est une barre latérale à gauche et la partition occupe le reste. Pendant la lecture d'un morceau, la bibliothèque se masque d'elle-même pour laisser de la place à la musique (désactivez-le dans les Réglages).
+1114|Sur un écran plus petit, ou dans une fenêtre Split View étroite, la barre d'outils se regroupe dans un seul menu Plus et un bouton Bibliothèque apparaît en haut à gauche pour vous y ramener.
+1115|Un Mac exécute la même app : les fichiers s'ouvrent avec Commande-O, et il y a des menus Lecture et Présentation avec des raccourcis clavier.
+1116|Votre bibliothèque
+1117|Tout ce que vous importez vit dans la bibliothèque et reste sur l'appareil. Cela est aussi conservé dans iCloud quand iCloud Drive est activé.
+1118|Importer de la musique
+1119|Importer une partition accepte les fichiers PDF, MusicXML (.musicxml, .xml, .mxl), MIDI et karaoké (.mid, .kar), paroles (.lrc, .txt), karaoké CD+Graphics (.cdg) et Maestro Pro (.maestropro). Vous pouvez en choisir plusieurs à la fois.
+1120|Vous pouvez aussi faire glisser des fichiers de l'app Fichiers directement sur la fenêtre, ou choisir Maestro Pro dans la feuille de partage d'une autre app (Fichiers, Mail, Safari, Messages…) pour importer ce que vous regardez.
+1121|Importer un dossier lit tous les fichiers pris en charge d'un dossier. Dans les Réglages, Lier un dossier garde un dossier synchronisé avec la bibliothèque pour que les nouveaux fichiers apparaissent d'eux-mêmes.
+1122|Nouvelle partition vierge crée une partition vide à écrire vous-même : vous choisissez le nom, la signature rythmique, la tonalité, le nombre de mesures, les portées (clé de sol, clé de fa ou piano) et le tempo.
+1123|Paroles avec accompagnement : choisissez un accompagnement et l'app trouve ses paroles minutées en ligne, pour un écran de style karaoké. Vous pouvez aussi choisir un fichier de paroles avec l'accompagnement.
+1124|Rechercher des partitions a trois onglets. Classique liste les pièces intégrées. Jazz liste environ 2 400 standards en six volumes : seule la liste est dans l'app, un morceau se télécharge quand vous touchez Ajouter, ou touchez Tout ajouter pour prendre toute la collection (environ 40 Mo, connexion requise).
+1125|Internet cherche sur le web, et sur GitHub, des fichiers MusicXML : saisissez un compositeur ou une pièce. Les résultats viennent des pages d'autres personnes, vérifiez donc qu'une partition est libre d'usage avant de l'ajouter.
+1126|Une coche indique ce que vous avez déjà.
+1127|Trouver et organiser
+1128|La recherche en haut de la bibliothèque trouve les titres. Les Réglages choisissent le tri de la bibliothèque.
+1129|Les Listes de morceaux indiquent combien de partitions elles contiennent et leur durée approximative (la durée de l'accompagnement, ou celle des notes au tempo de la partition ; les PDF sans piste ne sont pas minutés). Maintenez le doigt sur une partition pour Renommer, Modifier le titre sur la partition (le titre imprimé sur la musique, distinct de son nom dans la bibliothèque), Ajouter à une liste, Partager, Dupliquer et Supprimer de la bibliothèque. Dupliquer fait une copie complète, avec son accompagnement, ses paroles et ses dessins, pour modifier ou construire un pot-pourri sans toucher à l'original. Les listes regroupent des partitions pour une répétition ou un concert.
+1130|Partager avec un autre musicien crée un fichier .maestropro qui contient la partition et son accompagnement. Un autre utilisateur de Maestro Pro qui l'ouvre obtient tout.
+1131|Jouer une partition
+1132|La barre du bas commande la lecture ; la barre d'outils et l'Inspecteur changent son aspect et son son.
+1133|Commandes de lecture
+1134|Lecture et Pause, saut en arrière et en avant par mesure, et une barre de progression que vous pouvez faire glisser. Le compteur indique la mesure, le temps et la durée.
+1135|Touchez la musique pour y aller. Sur Mac, Espace lit et met en pause, les flèches sautent des mesures, Retour va au début et K active ou désactive le métronome.
+1136|Vitesse d'entraînement ralentit ou accélère un morceau sans changer la hauteur. Saisissez n'importe quel pourcentage de 10 à 400 dans la case, ou utilisez le curseur (50 à 150).
+1137|Le tempo est celui de la partition (d'après son indication de métronome imprimée) sauf si vous en réglez un : saisir un BPM, le taper ou l'accorder à un accompagnement le rend personnel, et l'interrupteur Tempo personnalisé sous le tempo revient à celui de la partition. Tap Tempo : touchez le tempo (la note et le nombre à côté du métronome) et un pavé s'ouvre avec une grande touche Tap. Tapez en rythme avec le temps ; le tempo apparaît dès le deuxième tap et se met à jour à chaque tap, et quelques-uns de plus le stabilisent. Il est réglé pendant que vous tapez. Avec un clavier, la barre d'espace tape quand la touche a le focus. Le même pavé se trouve sous Tempo dans l'Inspecteur.
+1138|Boucle : dans l'Inspecteur, Boucle joue en continu les mesures choisies, pour travailler un passage difficile. Sur Mac ou avec un clavier, [ ralentit la vitesse d'entraînement et ] l'accélère.
+1139|Décompte joue une mesure de clics avant la musique. Mesures d'introduction règle combien de mesures d'intro précèdent la mesure 1, pour qu'un accompagnement avec intro soit aligné. Le Métronome clique à chaque temps.
+1140|Ce qui suit la musique
+1141|Afficher pendant la lecture (le bouton étincelle) choisit comment la lecture s'affiche : Surligner les notes éclaire chaque note quand elle sonne, Surligner la mesure teinte la mesure, et Ligne mobile trace une ligne sur la page. Avec les trois désactivés, seuls le compteur de mesures et les tourne-pages suivent.
+1142|Suivre la lecture fait défiler la page pour vous. Partition sombre affiche la musique en blanc sur noir, plus agréable dans une pièce sombre.
+1143|Zoom change la taille de la notation ; les mesures se réorganisent. Le pincement fonctionne aussi. La couleur de surlignage est dans les Réglages.
+1144|Tourner les pages comme un livre
+1145|Par défaut, la musique affiche une page à la fois et la tourne comme la page d'un livre, avec une courbure, quand la lecture atteint la page suivante. Suivre la lecture décide si elle tourne toute seule. Vous pouvez aussi faire glisser une page pour la tourner à la main, ou utiliser Page précédente et Page suivante.
+1146|Tourner les pages comme un livre peut être désactivé dans Réglages ▸ Partitions, dans le menu Zoom, ou dans le menu Présentation sur Mac. La musique défile alors vers le bas de la page, avec toutes les pages dans une seule colonne. Réduire les animations tourne la page sans la courbure.
+1147|Pendant que vous dessinez avec Annoter, le glissement ne tourne pas les pages, le crayon est donc libre. Avec une page affichée en entier, il n'y a pas de défilement à l'intérieur ; utilisez Zoom pour changer la taille de la notation.
+1148|Tonalité et transposition
+1149|Dans l'Inspecteur, Tonalité propose la tonalité de votre instrument (son réel, si♭, mi♭ ou si♭ ténor). La partition est affichée transposée en conséquence, pour qu'un trompettiste lise ce que joue une trompette.
+1150|Transposer déplace tout le morceau vers le haut ou le bas par demi-tons. Le menu Tonalité liste chaque tonalité avec son relatif mineur, par exemple Do / La mineur ; choisissez-en une et la partition y va par le chemin le plus court.
+1151|Avec un accompagnement, Transposer l'accompagnement décide si celui-ci suit la partition.
+1152|Vue Accords (mode Avancé)
+1153|Le bouton Vue Accords (une grille de carrés) dans la barre d'outils, ou Plus ▸ Vue Accords, montre le morceau comme une grille d'accords, une case par mesure, avec reprises, fins et sauts. La mesure jouée est éclairée et la grille défile pour suivre ; touchez une mesure pour jouer à partir d'elle.
+1154|Si le fichier contient des chiffrages d'accords, ils sont affichés tels qu'écrits. Sinon l'app déduit les accords des notes, deux par mesure à 4/4 et un par mesure à 3/4 et 6/8 : accords parfaits, diminués, augmentés et de septième, avec une barre oblique quand la basse n'est pas la fondamentale. C'est une estimation, meilleure avec une ligne de basse ou un accompagnement, et une mélodie seule reçoit un accord parfait plausible.
+1155|Les accords suivent la tonalité que vous avez choisie, écrits avec des bémols ou des dièses en conséquence. Utilisez Zoom pour des accords plus grands ou plus petits.
+1156|Notation affichée
+1157|Outre les notes, silences, altérations, liaisons, nolets, reprises, fins, segno, coda et le reste, les partitions montrent les liaisons d'expression, les notes d'agrément (petites notes barrées qui sonnent juste avant la note principale), trilles, mordants et grupettos, doigtés, arpèges ondulés, signes de respiration et césures, lignes d'octave (8va, 8vb, 15ma, 15mb) et indications de pédale (Ped. et l'étoile de relâchement).
+1158|Les liaisons d'expression et les ornements sont dessinés mais ne changent pas la façon dont joue l'instrument intégré (un trille sonne comme une note simple). Ils sont enregistrés et exportés avec la partition. Les notes d'agrément sonnent, un souffle avant le temps.
+1159|Une partition avec plusieurs liaisons d'expression ouvertes à la fois sur une portée dessine la plus récente, et une ligne d'octave est affichée sans changer le son.
+1160|Paroles sous les notes
+1161|Ajouter un fichier de paroles à une partition laisse la musique à l'écran et imprime les mots sous les notes, sur une rangée à part pour laquelle les portées sont espacées. La syllabe chantée s'illumine pendant la lecture. Paroles sous les notes peut être désactivé, et Afficher les paroles au lieu de la musique passe au grand écran de paroles.
+1162|Nuances
+1163|Les nuances (ppp à fff) et les soufflets de crescendo et diminuendo d'une partition règlent le volume de l'instrument intégré : une note est aussi forte que la dernière nuance, et un soufflet la change progressivement vers la nuance suivante. Une partition sans nuances se joue à un niveau constant.
+1164|Vous pouvez les ajouter dans le mode Nuances de l'éditeur de partition, et elles sont enregistrées avec la partition.
+1165|Le tempo
+1166|Le tempo est en battements par minute. Saisissez-le, ajustez-le par pas, ou faites glisser le curseur. Avec un accompagnement, Verrouiller le tempo ici règle le tempo d'après l'endroit où vous tapez sur un temps fort.
+1167|Mesure indique à l'app combien de temps il y a dans une mesure. Elle est trouvée automatiquement pour les fichiers MusicXML ; pour les PDF, l'app demande quand elle ne peut pas la déterminer.
+1168|Si une partition a des indications de tempo (♩ = 96), elles changent l'allure de l'instrument intégré à partir de cette mesure. Un accompagnement garde son propre tempo.
+1169|Accordeur et Attends-moi
+1170|Maestro Pro peut écouter par le micro : pour accorder votre instrument, pour travailler une note tenue, et pour vous attendre en jouant une partition note à note. Le son est analysé sur l'appareil et n'est jamais enregistré ni envoyé nulle part.
+1171|Ouvrez l'Accordeur depuis l'écran d'accueil, le menu +, Réglages ▸ Écoute, ou le diapason dans la barre d'outils d'une partition. Jouez une note : l'affichage montre son nom, de combien de cents elle est haute ou basse (un cent est un centième de demi-ton) et la fréquence. L'aiguille se place dans la zone verte quand vous êtes juste, et la trace en dessous montre les huit dernières secondes.
+1172|Si votre instrument est réglé sur si♭ ou mi♭ dans l'Inspecteur, la note écrite est aussi affichée. Jouer la note de référence fait sonner la note visée. Le la = 440 Hz peut être changé (415 à 466) pour un accord baroque ou d'orchestre.
+1173|Sous l'accordeur, l'anneau se remplit tant que vous tenez une note juste. Choisissez N'importe quelle note, ou une note précise à tenir ; choisissez la précision requise (Strict ±5 ¢, Normal ±10 ¢, Souple ±20 ¢) et l'objectif (5 à 30 secondes). Il montre votre meilleur temps et la stabilité de votre hauteur.
+1174|Un tremblement ou une autre note fait repartir le temps. Les objectifs sont comptés pour vous, vous pouvez donc essayer de les battre.
+1175|Attends-moi est un mode d'entraînement où la musique vous attend. Ouvrez une partition et choisissez Attends-moi (l'icône d'oreille, ou Plus ▸ Attends-moi). La partition s'arrête sur la première note. Elle n'avance que lorsque vous jouez cette note, dans la bonne octave et juste, et la tenez le temps voulu au tempo et à la vitesse d'entraînement actuels.
+1176|Le panneau au-dessus de la barre de lecture montre la note à jouer, un indicateur de hauteur (le point doit se placer dans la zone verte) et une barre qui se remplit pendant que vous tenez la note. Il indique si vous êtes trop haut, trop bas ou si vous jouez une autre note. Écouter la note la joue pour vous ; Retour et Passer avancent d'une note ; le bouton à curseurs choisit la partie à suivre (une partition de piano en a deux), le niveau d'exigence, la part de chaque note à tenir, et si n'importe quelle octave est acceptée (utile pour les voix).
+1177|Une note répétée demande un nouveau départ : laissez donc la première s'arrêter avant la suivante. À la fin, vous voyez votre précision et l'écart moyen avec les notes. Les accords comptent quand vous jouez n'importe laquelle de leurs notes ; ce mode suit une ligne à la fois.
+1178|Une piste d'accompagnement reste muette pendant que Attends-moi est activé (la partition attend, un accompagnement ne pourrait donc pas suivre). Appuyer sur Lecture y met fin.
+1179|Conseils pour le micro
+1180|Réglages ▸ Écoute a Sensibilité du micro : augmentez-la dans une pièce calme ou pour un instrument doux, et baissez-la s'il capte du bruit. Une pièce calme est idéale, avec une seule note à la fois. Attends-moi et l'accordeur ont besoin de l'autorisation du micro ; si vous avez refusé, activez-la dans Réglages de l'appareil ▸ Confidentialité ▸ Micro.
+1181|Enregistrer et réécouter
+1182|Enregistrez-vous en train de jouer une partition, puis réécoutez la prise avec les notes éclairées : en vert là où vous deviez être, en rouge là où vous étiez vraiment. Elle écoute par le micro, elle fonctionne donc avec n'importe quel instrument ou votre voix.
+1183|Choisissez Enregistrer (le bouton d'enregistrement rond dans la barre d'outils, ou Plus ▸ M'enregistrer, ou ⌘R sur Mac). Après le décompte, la partition se joue et vous jouez avec. Appuyez sur Stop, ou faites une pause, quand vous avez fini.
+1184|Pendant l'enregistrement, l'instrument intégré et le métronome sont coupés pour que le micro ne vous entende que vous. Si la partition a un accompagnement, l'app demande d'abord, car le micro l'entendrait : choisissez Couper et enregistrer (il revient ensuite), ou Enregistrer quand même si vous portez un casque. La barre d'enregistrement a aussi un bouton Couper. La première fois, l'app demande à utiliser le micro.
+1185|Les enregistrements sont conservés avec la partition, ils sont donc copiés quand vous la dupliquez. Chacun est compressé à bien moins d'un mégaoctet par minute.
+1186|Réécouter
+1187|Quand vous arrêtez, la relecture s'ouvre aussitôt. Les enregistrements précédents sont dans le menu Enregistrer, du plus récent au plus ancien. Appuyez sur Lecture pour entendre l'enregistrement pendant que la partition le suit, ou faites glisser le curseur à n'importe quel moment.
+1188|La note verte est celle que vous deviez jouer à ce moment. La note que vous avez réellement jouée est éclairée aussi : verte quand c'était la bonne note au bon moment, rouge quand elle était en retard, en avance ou différente de celle attendue. Si vous prenez du retard ou de l'avance, même de beaucoup, la note où vous devriez être est verte et celle que vous jouez encore est rouge.
+1189|Si vous avez joué une note qui n'est pas dans la musique à cet endroit, la note attendue est verte et la bande montre la hauteur jouée. Le résumé indique combien de notes étaient justes.
+1190|Le bouton à curseurs choisit la partie à juger (une partition de piano en a deux), la rigueur du tempo (Strict, Normal ou Souple), l'écart de hauteur toléré, et si n'importe quelle octave est acceptée. Les modifier rejuge le même enregistrement. Supprimer cet enregistrement le retire.
+1191|Le bouton étincelles dans la relecture rédige un bref bilan : combien de notes étaient justes, où vous avez pris du retard ou précipité, si vous étiez trop haut ou trop bas, et quelles mesures et notes ont posé problème. Il est simple et direct.
+1192|Les endroits du bilan (mesures et notes, indiqués avec une note ou une barre de mesure) sont des liens. Touchez-en un et l'enregistrement saute à ce moment, les notes s'éclairent en bleu dans la musique, et la page tourne ou défile jusque-là. La rangée de blocs numérotés montre chaque mesure colorée selon sa réussite, et chacun est aussi un lien.
+1193|Sur un appareil avec Apple Intelligence, le bilan est mis en mots par le modèle sur l'appareil, et rien ne le quitte. Les faits viennent toujours de l'analyse de l'app, et toute reformulation qui change un nombre ou un endroit est rejetée. Sans Apple Intelligence, l'app le rédige elle-même. Réécrire demande une nouvelle formulation.
+1194|À quoi s'attendre
+1195|Elle écoute une note à la fois, donc les accords comptent quand vous jouez n'importe laquelle de leurs notes. Le tempo est jugé d'après l'horloge de la partition, et non d'après le son de l'enregistrement, une prise très lente ou rapide est donc jugée par rapport au tempo auquel vous avez enregistré.
+1196|Prenez-le comme un guide. Une pièce bruyante, un signal faible ou un instrument dont l'octave est difficile à entendre peuvent faire paraître des notes fausses ; Sensibilité du micro dans Réglages ▸ Écoute aide.
+1197|Accompagnements et son
+1198|Un accompagnement est un enregistrement qui se joue avec la partition. L'instrument intégré peut aussi jouer les notes de la page.
+1199|Plusieurs pistes
+1200|Une partition peut avoir plus d'un accompagnement, par exemple une section rythmique et une voix guide séparée. Ajoutez le premier avec Ajouter un accompagnement, puis utilisez Ajouter un autre accompagnement dans l'Inspecteur ou le menu du son. Ils jouent tous ensemble, en rythme avec la partition.
+1201|Sous Accompagnements et son, chaque piste a son propre interrupteur, pour la désactiver sans la retirer, et son propre niveau de -24 à +12 décibels. La première piste est celle sur laquelle la partition se cale, et Accorder tonalité et tempo et l'éditeur de piste agissent sur elle. Les autres pistes suivent sa vitesse et sa tonalité, mais pas ses pistes d'édition, et doivent être des enregistrements qui démarrent en même temps qu'elle.
+1202|Réduire les voix, sur n'importe quelle piste, atténue le chanteur dans un enregistrement stéréo en annulant ce qui est au centre. Il laisse une piste mono, peut emporter des instruments centraux, et ne peut pas retirer une voix d'un enregistrement mono.
+1203|Ajouter depuis Apple Music (Inspecteur, Accompagnements et son) cherche dans tout Apple Music (et votre propre bibliothèque) pendant que vous tapez, et joue le morceau choisi avec la partition, en rythme. Il faut un abonnement Apple Music et l'autorisation d'utiliser Apple Music, et les sons propres à l'app, comme l'instrument, se mêlent au morceau. Obtenir les paroles récupère les mots quand Apple les propose pour le morceau, ce qui n'est pas le cas pour tous les morceaux ni tous les comptes, et ils fonctionnent alors comme n'importe quel fichier de paroles.
+1204|Paroles depuis Apple Music (le menu +, ou l'écran d'accueil) ouvre les paroles d'un morceau sur leur propre écran, avec le morceau qui joue.
+1205|Apple Music ne permet à une app que de lancer et d'arrêter un morceau, pas de lire son son. Le morceau ne peut donc pas être transposé et le chanteur ne peut pas en être retiré. Pour cela, ajoutez le morceau comme fichier audio qui vous appartient et utilisez Réduire les voix. Si le morceau dérive, déplacez La mesure 1 commence à.
+1206|Ajouter une piste
+1207|Choisissez Ajouter un accompagnement dans l'Inspecteur ou la barre d'outils et sélectionnez un fichier audio. L'app l'écoute et règle le tempo et la tonalité de la partition pour qu'ils correspondent, afin qu'elle démarre en rythme.
+1208|Si la partition n'est pas alignée, faites glisser le repère de la piste là où commence la mesure 1, ou retardez la piste. Retarder le début peut être en secondes ou en mesures. Si cela dérive plus loin dans le morceau, touchez Verrouiller le tempo sur un temps fort plus loin.
+1209|Accorder tonalité et tempo à la piste relance l'écoute à tout moment.
+1210|Modifier la piste
+1211|Modifier l'accompagnement montre l'accompagnement comme une forme d'onde avec trois pistes : Volume, Tempo et Hauteur. Ajoutez des points sur une piste et faites-les glisser pour changer ce réglage au fil du temps.
+1212|Chaque point peut être une ligne droite ou une courbe en S douce. Servez-vous-en pour un fondu, pour adoucir un changement de tempo, ou pour corriger une piste légèrement désaccordée.
+1213|L'instrument intégré
+1214|Jouer la partition avec choisit la voix qui joue les notes de la page (ou Aucun) : piano, orgue, guitare, basse, flûte, clarinette, saxophones ou trompette. Dans l'Inspecteur, Gain de l'instrument et Gain de l'accompagnement règlent chacun un niveau de -24 à +12 décibels pour cette partition, pour équilibrer l'instrument et l'accompagnement ; la flèche remet à 0. Les Réglages ont le volume de départ de l'instrument. Il joue avec n'importe quel accompagnement.
+1215|Une partition à plus d'une portée a un panneau Portées dans l'Inspecteur : donnez à chaque portée son propre instrument, par exemple Basse sur la portée en clé de fa et Piano sur l'autre. Les portées laissées sur Comme ci-dessus utilisent l'instrument principal.
+1216|Activez le Métronome dans l'Inspecteur ou avec K sur Mac si vous voulez des clics avec.
+1217|Écrire et modifier la musique
+1218|L'éditeur de partition modifie les notes d'une partition MusicXML. Un PDF est d'abord lu par l'app, et l'éditeur travaille sur une copie de ce qu'elle a lu. Ouvrez-le avec Modifier la partition (le bouton liste de notes ; en mode Simple, il apparaît pour les partitions que vous avez créées).
+1219|Les neuf modes
+1220|La bande du bas de l'éditeur a un mode pour chaque type de tâche, pour que les commandes d'une tâche soient réunies. Faites glisser la bande pour voir le reste.
+1221|Notes : touchez un silence et glissez vers le haut ou le bas pour choisir la hauteur ; levez le doigt pour y poser une note, aussi longue que la durée choisie en dessous. Faites glisser une note vers le haut ou le bas pour la déplacer. Gribouillez d'un côté à l'autre sur une note pour l'effacer. Sélectionnez une note, puis touchez une durée pour changer sa longueur.
+1222|Silences : touchez une note pour la transformer en silence de la durée choisie. Touchez un silence pour le sélectionner et changer sa durée, ou utilisez la corbeille pour l'ôter de la page (la mesure garde sa durée).
+1223|Signes : touchez une note, puis ajoutez un dièse, un bémol ou un bécarre, liez-la à la note suivante, ou donnez-lui un staccato, un accent, un tenuto, un marcato ou une fermate. Touchez-le à nouveau pour l'ôter.
+1224|Nuances : touchez une note (la nuance va à cette note) ou une mesure (à son début), puis choisissez de ppp à fff. Crescendo et Diminuendo posent un soufflet sur la mesure ; Plus long et Plus court l'étirent sur plus de mesures.
+1225|Mesures : signes de reprise, et ajout ou suppression d'une mesure. Développer les reprises écrit le morceau tel qu'il est joué.
+1226|Forme : barres de 1re et 2e fois, sauts (Segno, Coda, To Coda, D.C., D.S., Fine) et indications de tempo.
+1227|Pot-pourri : faites glisser sur des mesures pour les choisir, puis Copier, Couper, Coller, Dupliquer ou Supprimer, ou Insérer depuis une partition pour prendre des mesures d'une autre partition de votre bibliothèque.
+1228|Gomme : touchez ou faites glisser sur des notes et des silences. Une note devient un silence ; un silence quitte la page. Touchez deux fois l'Apple Pencil pour passer à la gomme et revenir.
+1229|Dessin : écrivez sur la musique avec l'Apple Pencil, avec les outils stylo, marqueur, crayon et couleur. L'encre reste sur la page.
+1230|Construire un pot-pourri
+1231|En mode Pot-pourri, touchez une mesure et faites glisser sur d'autres pour choisir une suite de mesures. Copier les garde dans le presse-papiers, qui reste quand vous quittez et ouvrez une autre partition, vous pouvez donc copier dans un morceau et coller dans un autre. Coller les place après les mesures choisies, ou à la fin si aucune n'est choisie.
+1232|Insérer depuis une partition liste votre bibliothèque : choisissez une partition, choisissez ses mesures De et À, et elles sont insérées au même endroit. Adopter ma tonalité place les nouvelles mesures dans la tonalité de la musique qu'elles suivent.
+1233|Les nouvelles mesures gardent leur propre tonalité, signature rythmique et tempo (une indication de tempo apparaît là où l'allure change), et votre musique reprend la sienne après elles. Une portée qui manque à la musique copiée reçoit des silences ; une portée qui manque à votre morceau est omise. Tout peut être annulé.
+1234|Dupliquer répète les mesures choisies juste après elles-mêmes. Couper est Copier suivi de Supprimer ; la dernière mesure d'un morceau reste toujours.
+1235|Le menu rapide
+1236|Touchez une note et un petit menu apparaît au-dessus avec ce que vous voulez le plus souvent : dièse, bémol, bécarre, liaison, point, une nuance, et la transformer en silence. Touchez un silence pour plus court, plus long et supprimer. Touchez une partie vide d'une mesure pour début et fin de reprise, ajouter une mesure et supprimer la mesure.
+1237|Touchez ailleurs pour le ranger. Il fonctionne avec un doigt comme avec le Pencil.
+1238|Durées, points, triolets et liaisons
+1239|Les boutons de notes choisissent les durées de ronde, blanche, noire, croche et double croche. Le point rallonge une durée de moitié. Le 3 fait des triolets : trois notes dans le temps de deux, affichés avec un crochet et un 3.
+1240|Liaison joint la note sélectionnée à la suivante, pour qu'elles sonnent comme une seule longue note. Avec l'aide activée, la note suivante prend la même hauteur ; s'il n'y a pas de note suivante, vous en êtes informé. Touchez Liaison à nouveau pour l'ôter. Les liaisons sont tracées aussi à travers les barres de mesure, et une note liée ne sonne qu'une fois.
+1241|Dièse, Bémol et Bécarre posent une altération sur la note sélectionnée ; Tonalité la remet à ce que dit l'armure.
+1242|Ce que fait l'éditeur pour vous
+1243|Par défaut, l'éditeur s'occupe de la mesure. Une note ne dépasse jamais la barre de mesure. Une note plus longue prend la place de ce qui la suit dans la mesure ; une plus courte laisse des silences, écrits comme le ferait un copiste (sur le temps, pas à cheval dessus). Les ligatures sont ajoutées pour vous, et une mesure courte est complétée par des silences à l'enregistrement.
+1244|Tout suit la signature rythmique de la partition, donc le 6/8 se groupe en temps pointés et le 3/4 en trois.
+1245|Modification libre (Options, en haut à droite) désactive tout cela. Une note a exactement la durée que vous choisissez, ne se coupe jamais à la mesure, n'écrase jamais ses voisines et ne laisse aucun silence. Une mesure peut contenir trop ou trop peu de temps. Touchez un espace vide dans une mesure pour ajouter une note après la dernière. Rien n'est rangé à l'enregistrement.
+1246|Mesures, reprises et tempo
+1247|Sélectionnez une mesure en mode Mesures. Début et Fin y posent des signes de reprise (Fin boucle deux, trois et quatre fois). Barre de 1re fois et Barre de 2e fois posent un crochet dessus ; Crochet plus long et plus court l'étirent sur les mesures voisines ; Aucune barre le retire.
+1248|Sauts ajoute Segno, Coda, To Coda, Fine, et D.C. ou D.S. simple, al Coda ou al Fine. Placez le Segno là où revient un D.S., To Coda dans la mesure où la musique saute, et Coda sur la mesure où elle atterrit. La lecture les suit : après un D.C. ou un D.S., elle ne répète pas les sections, joue la dernière fin, puis saute de To Coda à la Coda (ou s'arrête à Fine).
+1249|Développer les reprises écrit le morceau tel qu'il est joué, avec chaque reprise, fin et saut comme ses propres mesures.
+1250|Tempo pose une indication ♩ = imprimée sur la mesure ; la lecture la suit à partir de là.
+1251|Ajouter une mesure après et Supprimer la mesure changent la longueur du morceau.
+1252|Annuler, enregistrer et partager
+1253|Annuler et Rétablir sont dans le panneau, et Commande-Z / Maj-Commande-Z, un balayage à trois doigts ou secouer l'iPad fonctionnent aussi. En mode Dessin, Annuler et Rétablir y annulent le dessin.
+1254|Enregistrer garde vos modifications ; Annuler demande avant de les jeter. Restaurer la partition d'origine dans Options rétablit ce que vous aviez importé.
+1255|Modifier avec l'Apple Pencil seulement (Options) empêche les doigts de changer les notes, pour qu'une main posée sur la page ne fasse aucun mal.
+1256|Paroles et karaoké
+1257|Les paroles défilent en rythme avec la musique comme dans Apple Music, et les fichiers karaoké CD+Graphics montrent leurs images intégrées.
+1258|Fichiers de paroles
+1259|Ajoutez un fichier .lrc (lignes minutées) ou .txt à une partition depuis le menu Paroles. Les fichiers MIDI karaoké (.kar) contiennent leurs propres paroles.
+1260|Afficher les paroles au lieu de la musique remplace la page par les mots. Animer les syllabes gonfle chaque syllabe quand elle est chantée, et Afficher la progression des syllabes la remplit. La police, la taille, l'alignement et le flou des lignes non chantées sont dans les Réglages.
+1261|Un élément de paroles seules (sans notation) a son propre écran avec une barre de lecture et un accompagnement facultatif. Les paroles en secondes ou en mesures peuvent être choisies quand le fichier n'a pas de minutage.
+1262|Chanteurs et pauses
+1263|Pour les duos, Attribuer les chanteurs donne chaque ligne à un chanteur ; Associer les chanteurs les trouve d'après la page du morceau sur Genius. Un chanteur, ou un chanteur plus tout le monde, reste à gauche ; deux ou plus sont répartis à gauche et à droite, chacun avec sa couleur.
+1264|Montrez les lignes d'un chanteur avec le filtre Chanteur. Pendant que l'autre chante, un blanc montre des points de suspension. Barre de progression dans Pauses dans les Réglages remplace les points par une barre qui se remplit pendant la pause.
+1265|CD+Graphics (.cdg)
+1266|Un fichier .cdg est la piste d'images d'un disque karaoké : il dessine des mots colorés et des fonds sur un petit écran. L'app le joue d'après le minutage du fichier. Ajoutez le son du morceau comme accompagnement si vous l'avez.
+1267|Partager, exporter et imprimer
+1268|Sortez une partition, ou une vidéo de celle-ci, de l'app.
+1269|Menu Partager
+1270|Maintenez le doigt sur une partition dans la bibliothèque et choisissez Partager. Il propose Exporter en MusicXML, Exporter en PDF et Imprimer.
+1271|Le MusicXML s'ouvre dans MuseScore, Finale, Sibelius, Dorico, Notion et la plupart des autres apps de notation. Pour une partition PDF, c'est la musique que l'app a lue sur la page.
+1272|Le PDF est la page imprimée. Une partition PDF est transmise telle quelle ; toute autre partition est mise en page dans la tonalité actuellement affichée. Imprimer ouvre la fenêtre d'impression du système.
+1273|Dans la feuille de partage, vous pouvez aussi Enregistrer dans Fichiers, AirDrop, envoyer le fichier par e-mail ou par message.
+1274|Autres moyens de sortir
+1275|Partager avec un autre musicien (mode Avancé, même menu) crée un fichier .maestropro avec la partition et son accompagnement pour un autre utilisateur de Maestro Pro.
+1276|Exporter la vidéo transforme une partition en film de la musique qui défile, avec le son.
+1277|Maestro Pro est aussi proposé dans la feuille de partage des autres apps pour les fichiers qu'il peut ouvrir, et les importe.
+1278|Jusqu'à huit appareils exécutant Maestro Pro peuvent jouer en rythme les uns avec les autres (mode Avancé).
+1279|Se connecter
+1280|Ouvrez vos parties, puis une personne choisit Jouer ensemble, puis Démarrer une session. Tous les autres choisissent Rejoindre une session et sélectionnent cet appareil. L'hôte doit autoriser chaque musicien à entrer. Autorisez la permission Réseau local si elle est demandée.
+1281|Lecture, pause, déplacement et changements de tempo sur n'importe quel appareil sont reproduits sur tous, de sorte qu'un professeur et ses élèves, ou tout un ensemble, restent synchronisés. Chaque musicien garde sa partie, sa tonalité et son instrument ; les appareils s'alignent mesure par mesure.
+1282|Jusqu'à huit appareils peuvent rejoindre une session. Le curseur Décalage avance ou retarde votre son si vous utilisez des haut-parleurs ou un casque sans fil.
+1283|Historique des versions et GitHub
+1284|Enregistrez des versions d'une partition, essayez des idées sur des branches, fusionnez-les, et gardez tout sur GitHub.
+1285|Versions et branches
+1286|Dans l'éditeur de partition, touchez Historique. Enregistrer une version garde un instantané auquel revenir. Enregistrer dans l'éditeur en crée aussi un. Nouvelle branche démarre une ligne de modifications séparée, depuis maintenant ou depuis n'importe quelle version antérieure, pour essayer quelque chose sans toucher à la partition principale.
+1287|Revenir à cette version restaure un instantané antérieur comme nouvelle version, rien n'est donc perdu et vous pouvez annuler le retour. Changer de branche enregistre d'abord vos modifications non enregistrées.
+1288|Fusionner amène une autre branche dans la branche actuelle, mesure par mesure. Une mesure modifiée sur une seule branche passe ; une mesure modifiée sur les deux entre en conflit, et vous choisissez de garder la vôtre ou de prendre la leur. Les mesures sont associées par numéro, donc une mesure ajoutée ou supprimée tôt sur une branche peut faire apparaître les suivantes comme des conflits.
+1289|Détacher
+1290|Détacher comme nouvelle partition transforme n'importe quelle version, ou la dernière version d'une branche, en une partition à part dans votre bibliothèque avec un historique neuf.
+1291|Dans Historique, choisissez Se connecter à un dépôt GitHub et saisissez propriétaire/dépôt. Envoyer vers GitHub envoie chaque version et branche comme un vrai commit et une vraie branche Git, avec la partition en un seul fichier MusicXML. Récupérer depuis GitHub apporte les versions faites ailleurs.
+1292|Il faut un jeton GitHub avec accès en lecture et en écriture au contenu du dépôt. Ajoutez-le dans Pistes depuis GitHub, sous Jeton d'accès. Il est conservé dans votre Trousseau.
+1293|Une branche qui a pris un chemin séparé sur GitHub arrive sous le nom nom-github, pour que vous puissiez la fusionner. Les partitions PDF n'ont pas d'historique ; modifier un PDF enregistre une copie à part.
+1294|Du matériel d'entraînement créé à la demande.
+1295|Créer une gamme
+1296|Choisissez Gammes et arpèges sur l'écran d'accueil, sélectionnez le type (majeure, mineure, blues, arpèges et plus) et une tonalité. Une partition est créée et ajoutée à la bibliothèque, prête à jouer, transposer et ralentir.
+1297|Annoter
+1298|Annotez la page comme une partie papier.
+1299|Dessiner sur la page
+1300|Activez Annoter dans la barre d'outils et dessinez avec l'Apple Pencil grâce à la palette d'outils : stylos, marqueurs, crayon, couleurs et une gomme. L'encre est enregistrée avec la partition et s'affiche pendant que vous jouez.
+1301|Chaque taille de zoom garde son propre dessin pour qu'il reste aligné avec la musique.
+1302|Exporter en PDF et Imprimer incluent votre encre pour la tonalité et le zoom que vous regardez.
+1303|Sur Mac, presque tout a un raccourci clavier, indiqué dans les menus Lecture, Partition et Présentation. Sur un iPad avec clavier, maintenez la touche Commande pour les voir. Chaque raccourci peut être changé.
+1304|Changer un raccourci
+1305|Ouvrez Réglages ▸ Raccourcis clavier. Cliquez sur un raccourci, puis appuyez sur les touches à utiliser à la place. Supprimer retire le raccourci, et Échap le laisse tel qu'il était. Un raccourci déjà utilisé passe à l'action à laquelle vous le donnez, et la page l'indique. La flèche à côté d'un raccourci le remet, et Tout réinitialiser les remet tous.
+1306|Les touches seules (comme la barre d'espace) ne fonctionnent que lorsque vous ne saisissez pas de texte dans un champ.
+1307|Les raccourcis du début
+1308|Réglages et accessibilité
+1309|Les Réglages contiennent les choix qui s'appliquent partout.
+1310|Aspect
+1311|Apparence est clair, sombre ou suivre le système. Couleur de surlignage choisit la couleur qui éclaire les notes jouées ; la barre d'outils utilise votre couleur d'accentuation. Le mode Avancé a Personnaliser chaque couleur.
+1312|Le zoom, la partition sombre, le suivi de lecture et les trois surlignages ont ici des valeurs par défaut, que toute partition peut remplacer.
+1313|Icône de l'app
+1314|Les Réglages ont une grille Icône de l'app : les styles original, papier, minuit, laiton, coucher de soleil et forêt, l'Union Flag, Pride et Trans Pride, et une pour chaque instrument (piano, orgue, guitare acoustique, basse, flûte, clarinette, saxophones alto et ténor, trompette). Touchez-en une et iPadOS change l'icône et vous le dit.
+1315|Chaque icône existe en versions claire, sombre et teintée, pour suivre le style de votre écran d'accueil. Un Mac garde une seule icône dans le Dock, la grille n'est donc que sur iPad.
+1316|Le papier, le bureau, les boutons et les panneaux de commande sont dessinés comme de vrais matériaux. Sous Surfaces, vous pouvez augmenter ou réduire séparément Grain du papier, Ombre et courbure de la page, Cuir du bureau, Boutons en cuir et Métal brossé (jusqu'au double), ou désactiver Surfaces réalistes pour un rendu plus plat. Contraste élevé les désactive aussi.
+1317|Lecture
+1318|Garder l'écran allumé pendant la lecture, masquer la bibliothèque pendant la lecture, métronome et décompte activés par défaut, lancer la lecture à l'ouverture d'une partition, une vitesse d'entraînement par défaut, et l'instrument par défaut.
+1319|Taille du texte de l'app, Texte en gras, Contraste élevé, Commandes de lecture agrandies et Réduire les animations.
+1320|Flash au temps et Tapotement au temps (haptique) rendent la pulsation visible et tangible. Annoncer les mesures avec VoiceOver lit le numéro de mesure au passage.
+1321|Les commandes ont des libellés et des indications VoiceOver.
+1322|Dépannage
+1323|Si quelque chose ne va pas, regardez d'abord ici.
+1324|Questions courantes
+1325|Un PDF joue un mauvais nombre de temps : réglez Temps de noire par mesure dans l'Inspecteur, ou répondez à la question sur la mesure à sa première ouverture.
+1326|Attends-moi ou l'Accordeur dit qu'il ne m'entend pas : autorisez le micro dans Réglages de l'appareil ▸ Confidentialité ▸ Micro, puis augmentez Sensibilité du micro dans Réglages ▸ Écoute. Jouez une note à la fois et gardez les autres sons bas. S'il entend toujours la mauvaise octave, essayez N'importe quelle octave.
+1327|Les notes d'un PDF semblent mal lues : seule la notation imprimée peut être lue, et les scans doivent être droits et nets. Pour un scan que l'app lit mal, importez plutôt un fichier MusicXML ; beaucoup sont gratuits en ligne.
+1328|Un accompagnement démarre en retard ou en avance : faites glisser le repère de la piste, ou utilisez Retarder le début. Utilisez Accorder tonalité et tempo à la piste pour écouter à nouveau.
+1329|Les fichiers Band-in-a-Box ne peuvent pas être lus (format fermé). Dans Band-in-a-Box, enregistrez en MusicXML pour la notation et en audio pour l'accompagnement.
+1330|Importer une partition ne fait rien ou affiche un fichier grisé : choisissez Tous les fichiers dans le navigateur Fichiers, ou faites glisser le fichier sur la fenêtre.
+1331|Les standards de jazz ont besoin d'internet la première fois que vous les ajoutez.
+1332|Une mesure surchargée dans l'éditeur : désactivez Modification libre, ou supprimez une note et l'éditeur rangera la mesure.

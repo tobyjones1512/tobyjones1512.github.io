@@ -1,0 +1,1300 @@
+0|Karaoke CD+Graphics
+3|MusicXML comprimido
+4|MIDI de karaoke
+5|Partitura do Maestro Pro
+7|O Maestro Pro usa o Apple Music para poderes tocar ao som de uma canção da tua subscrição e ver a letra.
+8|O Maestro Pro usa a câmara para fotografar partituras impressas, para que possam ser lidas e acompanhadas.
+9|O Maestro Pro encontra o outro dispositivo com o qual queres tocar em sincronia.
+10|O Maestro Pro ouve através do microfone para perceber se estás a tocar a nota certa e afinada, e para afinar o teu instrumento.
+11|Letras sincronizadas
+14|Fundo %@
+15|%1$@ keyframes, %2$lld
+16|Papel %@
+18|%1$@%2$@ por %3$@
+21|%lld BPM
+22|%lld batimentos por minuto
+23|%1$lld linha%2$@ selecionada
+24|%1$lld de %2$lld
+25|%1$lld de %2$lld notas (%3$lld %%)
+26|%1$lld dos %2$lld compassos de «%3$@» entram depois do compasso escolhido, ou no fim se nenhum estiver escolhido. Mantêm o seu próprio compasso e andamento, e a tua música retoma os dela depois.
+27|%lld por cento
+28|%lld músicos estão ligados. Cada um mantém a sua partitura e o seu instrumento; ficam juntos compasso a compasso.
+29|%lld segundos
+32|%1$lld/%2$lld. Cada compasso vai durar exatamente isto.
+33|(esta partitura)
+36|Casa 1
+37|Casa 2
+40|:‖ Fim
+41|:‖ ×%lld
+45|Um fundo define em conjunto a cor de fundo, se a app é clara ou escura e a cor de destaque.
+46|Um editor de partituras completo, medleys criados a partir da tua biblioteca e controlo de versões até ao GitHub. Do primeiro rascunho à parte final, numa só app.
+47|Um vídeo horizontal da música com os teus destaques, desenhos e som, tal como o leitor o mostra. Mantém a app aberta enquanto é criado.
+48|Uma linha de música em que cada nota se ilumina quando a linha em movimento passa por ela
+49|Uma versão é um instantâneo ao qual podes voltar. Um ramo é uma linha de alterações separada, para experimentares algo sem tocar na partitura principal.
+50|Token de acesso
+51|Acessibilidade
+52|Precisão %1$lld %%, em média a %2$lld ¢ da nota
+53|Adicionar
+54|Adicionar tudo
+55|Adicionar outro acompanhamento…
+56|Adicionar outra faixa
+57|Adicionar acompanhamento do Apple Music…
+58|Adicionar acompanhamento…
+59|Adicionar banda
+60|Adicionar compasso depois
+61|Adicionar do Apple Music…
+62|Adicionar ficheiro de letra…
+63|Adicionar música
+64|Adicionar gravação…
+65|Adicionar um acompanhamento
+66|Adicionar uma canção do Apple Music…
+67|Adicionar um keyframe à pista selecionada na posição de reprodução
+68|Adiciona um repositório acima para ver as suas faixas.
+69|Adicionar na posição de reprodução
+70|Adiciona partituras no iPad ou Mac e elas aparecem aqui.
+71|Adiciona partituras com Adicionar ao alinhamento no menu de uma partitura.
+72|Adicionar ao alinhamento
+73|Avançado
+74|Outra vez
+75|Aceitar e continuar
+76|Alinhamento
+77|Todos os cantores
+78|Todos os cantores à esquerda
+79|Tudo
+80|Permitir
+81|Animar sílabas
+82|Animação
+83|Anotar
+84|Anunciar compassos com o VoiceOver
+85|Anual
+86|Qualquer nota
+87|Qualquer oitava
+88|Em qualquer lugar
+89|Ícone da app
+90|Tamanho do texto da app
+91|Aspeto
+92|O Apple Intelligence está a reformular com as suas palavras…
+93|Apple Music
+94|O Apple Music não tem letra para essa canção, ou não permitiu que a app a lesse.
+95|O Apple Music reproduz a canção por si, por isso a tonalidade não pode mudar e o cantor não pode ser retirado.
+96|Artista
+97|Atribuir cantores
+98|Atribuir cantores…
+99|Deslocação automática
+100|MELHOR PREÇO
+101|BPM
+102|Retroceder
+103|Acompanhamento e som
+104|EQ do acompanhamento
+105|Forma de onda do acompanhamento
+106|Banda %lld
+107|Banda %1$lld, %2$@, %3$@
+108|Compasso %1$lld, %2$@
+109|Compasso %1$lld, tempo %2$lld
+110|Compasso a compasso
+111|Compassos
+112|«Compassos antes do compasso 1» acrescenta compassos vazios no início, para contares antes de entrar.
+113|«Compassos antes do compasso 1» acrescenta compassos vazios no início; o acompanhamento começa no primeiro deles, a partir do marcador.
+114|Os compassos alterados apenas num ramo são reunidos. Os alterados em ambos entram em conflito. Podes anular a fusão a partir do histórico.
+115|O tempo é uma
+116|Antes de partilhares
+117|Texto maior
+118|Desfocar linhas que não estão a ser cantadas
+119|Desfocar outras linhas
+120|Texto a negrito
+121|Alongar chaveta
+122|Encurtar chaveta
+123|Ramo
+124|Criar ramo a partir daqui…
+125|Ramos
+126|Cancelar
+127|Cancela quando quiseres nas definições da tua conta Apple. As subscrições renovam automaticamente, a menos que sejam canceladas pelo menos 24 horas antes do fim do período.
+128|Não é possível editar esta partitura
+129|Não é possível ligar
+130|Centrado
+131|Mudar repositório…
+132|Alterar a tonalidade do acompanhamento
+133|Alterar as notas com o Apple Pencil
+134|Verificar pastas ligadas agora
+135|Verificar pastas ligadas ao abrir a app
+136|Escolhe um plano
+137|Escolhe uma banda acima ou arrasta um manípulo no gráfico.
+138|Escolhe um atalho e prime as teclas que queres. Apagar remove o atalho e Escape cancela. Um atalho que já esteja em uso passa para a ação para a qual o escolheres. Os atalhos aparecem na barra de menus do Mac e, num iPad, ao manter premida a tecla Comando.
+139|Escolhe como a reprodução é mostrada: notas, compasso, linha
+140|Vista de acordes
+141|Cifras de acordes da partitura
+142|Acordes deduzidos das notas
+143|Limpar
+144|Os relógios diferem no máximo %lld ms.
+145|Fechar
+146|Fechar a revisão
+147|Recolhido
+148|Coleção
+149|Destaques para daltónicos
+150|Cores
+151|Altura real
+152|Ligar a um repositório do GitHub…
+153|Continuar grátis
+154|Copiar
+155|Não foi possível adicionar a letra
+156|Não foi possível enviar o feedback
+157|Não foi possível adicionar a partitura
+158|Não foi possível concluir
+159|Não foi possível importar a partitura
+160|Não foi possível abrir a letra
+161|Não foi possível abrir a partitura
+162|Não foi possível guardar a letra
+163|Contagem inicial
+164|Contagem inicial por predefinição
+165|Contar %lld
+166|Criar
+167|Crescendo
+168|Semínima
+169|Curva até ao keyframe seguinte
+170|Andamento personalizado
+171|Personalizar cores…
+172|Personalizar todas as cores…
+173|Cortar
+174|Escuro
+175|Papel escuro
+176|Partitura escura
+177|Data de adição
+178|Recusar
+179|Predefinição
+180|Eliminar
+181|Eliminar compasso
+182|Eliminar ramo
+183|Eliminar alinhamento
+184|Eliminar alinhamento…
+185|Eliminar esta gravação
+186|Eliminar da biblioteca
+187|Eliminar «%@»?
+188|Descrição
+189|Querias dizer?
+190|Diminuendo
+191|Descartar alterações
+192|Descartar as alterações?
+193|Desligar
+194|Concluído
+195|Pontuada
+196|Toca duas vezes no Apple Pencil para mudar para a borracha e voltar. Anular e Refazer estão no canto superior direito deste painel.
+197|Toca duas vezes para %@ estas definições.
+198|Toca duas vezes para alterar a tonalidade.
+199|Toca duas vezes para escrever um andamento.
+200|Um tom abaixo
+201|Transferir %lld
+202|Transferir %lld temas?
+203|Arrasta o marcador para onde %@ começa, ou atrasa a faixa se a partitura deve começar primeiro. Se a partitura se afastar da gravação, toca em Fixar andamento num tempo forte mais adiante na peça.
+204|Arrasta para mover a posição de reprodução.
+205|Desenhar na partitura com o Apple Pencil
+206|Larga ficheiros em qualquer ponto da janela.
+207|Larga para importar
+208|Duplicar
+209|Dinâmica
+210|Cada ícone tem um aspeto claro, escuro e com tonalidade, por isso acompanha o estilo do teu ecrã principal. O iPadOS avisa-te quando o ícone muda.
+211|Cada um é um pequeno ficheiro, obtido de effendi.me.
+212|Cada linha começa com o momento em que é cantada, como [01:23.45]. Altera as palavras a seguir; deixa o tempo como está.
+213|Cada pauta desloca-se no tempo que demora a tocá-la a este andamento.
+214|Editar %@
+215|Editar acompanhamento
+216|Editar acompanhamento…
+217|Editar letra
+218|Editar letra…
+219|Editar partitura
+220|Editar título na partitura…
+221|Editar uma cópia de %@
+222|Edita as notas com o Apple Pencil.
+223|Editar apenas com o Apple Pencil
+224|Modos de edição
+225|Gravação…
+226|Equalizador (ativo)…
+227|Equalizador ativo
+228|Equalizador…
+229|Todas as ferramentas à vista: editores, sincronização, Tocar em conjunto, partilha.
+230|Cada versão e ramo segue para o repositório como um verdadeiro commit e ramo do Git, num único ficheiro MusicXML. É necessário um token com acesso de escrita, adicionado em Faixas do GitHub, em Token de acesso.
+231|Tudo o que um
+músico profissional precisa.
+232|Tudo exceto o editor de partituras
+233|Tudo o que estiver numa pasta ligada é adicionado à tua biblioteca, e os ficheiros novos são incluídos na verificação seguinte. Uma gravação ou ficheiro de letra com o mesmo nome de uma partitura acompanha-a.
+234|Está tudo disponível: o editor de acompanhamentos, o editor de partituras, ferramentas de sincronização, substituição de tonalidade e compasso, Tocar em conjunto, partilha e exportação, cores e pastas ligadas.
+235|Está tudo desbloqueado. Bom divertimento.
+236|Tudo, incluindo o editor de partituras
+237|Expandir repetições
+238|Expandido
+239|Exportar vídeo
+240|Exportar vídeo…
+241|Exportar como MusicXML
+242|Exportar como MusicXML…
+243|Exportar como PDF…
+244|Aparecer (4 s)
+245|Desaparecer (4 s)
+246|Mais depressa
+247|Encontra letras melhoradas (sincronizadas palavra a palavra) em lyricsify.com
+248|Encontrar letra
+249|Ajustar à largura
+250|Piscar ao tempo
+251|Pasta importada
+252|Seguir a reprodução
+253|Seguir a armadura de clave
+254|Edição livre (sem correções automáticas)
+255|Do Apple Music…
+256|De um ficheiro…
+257|Completo
+258|Ecrã inteiro
+259|Suave
+260|Obter %@
+261|Prepara-te…
+262|Obter a letra
+263|GitHub
+264|Dá a cada pauta o seu instrumento, por exemplo Baixo na pauta em clave de fá. As pautas em Igual ao anterior usam o instrumento escolhido acima.
+265|Ir para o início
+266|Objetivo
+267|Metade da duração
+268|Tem acompanhamento
+269|Ouvir as notas enquanto edito
+270|Ouvir a música a partir da nota ou do compasso escolhido
+271|Mantida durante %lld segundos
+272|Ajuda
+273|Ajuda e guia
+274|Ocultar inspetor
+275|Ocultar biblioteca
+276|Ocultar biblioteca (⌃⌘S)
+277|Ocultar controlos de reprodução
+278|Ocultar a biblioteca durante a reprodução
+279|Contraste elevado
+280|Destacar compasso
+281|Cor de destaque
+282|Destacar notas
+283|Destaques
+284|Histórico
+285|Mantém uma nota estável
+286|Manter durante
+287|Quantos tempos tem cada compasso?
+288|Tenho permissão para partilhar isto
+289|Esta música é minha ou tenho permissão para a partilhar
+290|INTRO
+291|Se usas colunas ou auscultadores sem fios e o som fica atrasado em relação ao outro músico, adianta-o.
+292|Ignorar as mudanças de andamento da partitura
+293|Importar pasta de Ficheiros…
+294|Importar partitura…
+295|As partituras importadas aparecem aqui.
+296|A importar %1$lld de %2$lld…
+297|Afinado dentro de
+298|Na tua biblioteca
+299|Incluído no Professional
+300|Inserir
+301|Inserir compassos
+302|Inserir de uma partitura…
+303|Instrumento
+304|Volume do instrumento
+305|Nível do instrumento
+306|Passagem instrumental
+307|Interface
+308|Intro, %1$lld compasso%2$@ antes do compasso 1
+309|Intro, faltam %1$lld compassos, tempo %2$lld
+310|Os temas de jazz são transferidos quando os adicionas, por isso tens de estar online.
+311|Entrar numa sessão
+312|Saltos
+313|Salta para esta linha.
+314|Só o essencial: abre uma partitura, ensaia, define andamento e tonalidade. Muda para Avançado para os editores, ferramentas de sincronização, partilha e mais.
+315|Só o essencial: abrir, tocar em conjunto, alterar andamento e tonalidade.
+316|Música de karaoke
+317|Imagem de karaoke
+318|Mantém %1$@ afinado durante %2$lld segundos.
+319|Continua a tocar
+320|Manter o ecrã ligado durante a reprodução
+321|Tonalidade
+322|Tonalidade: %@
+323|Atalhos de teclado
+324|Grande
+325|Maior
+326|Controlos de reprodução maiores
+327|O maior
+328|Esquerda
+329|Deixar %@ entrar?
+330|Biblioteca
+331|Claro
+332|Papel claro
+333|Linha %lld
+334|Ligar uma pasta de Ficheiros…
+335|Liga até oito dispositivos para que todos toquem a mesma peça exatamente em sincronia, cada um a partir da sua partitura: uma parte de flauta, uma de clarinete, outra tonalidade ou outro instrumento. Abre as tuas partes; uma pessoa inicia uma sessão e as outras entram.
+336|Ouvir
+337|Ouvir o acompanhamento e ajustar o andamento e a tonalidade da partitura a ele
+338|A ouvir
+339|A carregar preço…
+340|Mais longo
+341|À procura de letras? O Lyricsify tem ficheiros .lrc sincronizados de muitas canções. O Maestro Pro não é afiliado ao Lyricsify e não fornece nem recomenda o seu conteúdo.
+342|A procurar nos repositórios…
+343|Letra
+344|Aspeto da letra…
+345|Letra em vez de música
+346|Letra do Apple Music…
+347|Letra com acompanhamento…
+348|Lyricsify
+349|Lyricsify…
+351|Ajuda do Maestro Pro
+352|O Maestro Pro foi feito para o ecrã grande. Abre o teu iPhone Duo para continuar.
+353|Aumenta ou diminui a notação; os compassos reorganizam-se em mais ou menos por linha. Também podes usar o gesto de pinça.
+354|Gerir subscrição
+355|Igualar
+356|Igualar tonalidade
+357|Igualar tonalidade e andamento à faixa
+358|Igualar a minha tonalidade
+359|Igualar cantores
+360|Igualar sistema
+361|Igualar e sincronizar…
+362|Fundir em %@…
+363|Fundir «%1$@» em «%2$@»
+364|Fundir, manter as minhas nos conflitos
+365|Fundir, usar as deles nos conflitos
+366|Metrónomo
+367|Metrónomo (K)
+368|Metrónomo ligado por predefinição
+369|Sensibilidade do microfone
+370|Microfone ligado
+371|Mínima
+372|Modo
+373|Monoespaçada
+374|Mais
+375|A maior parte
+376|Passar os compassos colados para a tonalidade da música que os antecede
+377|Linha em movimento
+378|Música
+379|A música e as letras ficam ocultas enquanto o ecrã está a ser gravado. Para a gravação para continuar.
+380|Silenciar
+381|Silenciar e gravar
+382|Silenciar o acompanhamento?
+383|Nome
+384|Necessário para repositórios privados, para adicionar muitas faixas e para enviar o histórico de uma partitura para o GitHub (então com acesso de leitura e escrita ao conteúdo do repositório). É guardado na tua Keychain.
+385|Nova partitura em branco
+386|Nova partitura em branco…
+387|Novo ramo…
+388|Novo alinhamento
+389|Novo alinhamento…
+390|Seguinte
+391|Compasso seguinte
+392|Página seguinte
+393|Ainda sem acordes
+394|Sem dinâmica
+395|Sem letra
+396|Sem letra aqui
+397|Ainda sem partituras
+398|Sem casa
+399|Nenhuma pasta ligada.
+400|Sem resultados. Experimenta outra pesquisa ou outro instrumento.
+401|Não foram encontradas partituras nem letras.
+402|Não foram encontradas letras sincronizadas. Experimenta o título da canção e o nome do artista.
+403|Nenhum
+404|Nenhum destes: indicar o artista…
+405|Normal
+406|Normal ±10 ¢
+407|Agora não
+408|Nota %1$lld de %2$lld
+409|Nota a manter
+410|Nada corresponde a «%@».
+411|Ajustar som: %lld ms
+412|OK
+413|Desligado
+414|Ligado
+415|No iPhone, o Maestro Pro só mostra as partituras que adicionas no iPad ou Mac. Não é a app completa.
+416|Abrir Definições
+417|Abre o teu iPhone
+418|Abre uma partitura da tua biblioteca ou traz uma nova.
+419|Abrir numa nova janela
+420|Abrir o afinador
+421|Opções
+422|Opções (canto superior direito) tem a Edição livre. Com ela ativa, o editor deixa de ajudar: as notas nunca são cortadas ao compasso, nunca substituem as vizinhas e não deixam pausas, por isso um compasso pode ter tempos a mais ou a menos. Toca num espaço vazio de um compasso para adicionar uma nota depois da última.
+423|Ou obtém o Professional para sempre
+424|Ou obtém o Professional para sempre, %@ uma só vez
+425|Nível de saída
+426|PLAY
+427|Página
+428|Página %lld
+429|Página %lld da partitura
+430|A cor do papel tinge a página por trás das notas, e as páginas digitalizadas também a assumem.
+431|Parte a seguir
+432|Parte a avaliar
+433|Colar
+434|Pausa
+435|Token de acesso pessoal
+436|Reproduzir
+437|Tocar a música como
+438|Tocar nota de referência
+439|Tocar a partitura como
+440|Tocar as partituras como
+441|Tocar em conjunto
+442|Toca uma nota qualquer e mantém-na afinada durante %lld segundos.
+443|Toca em sincronia com outro dispositivo
+444|Reproduzir ou pausar (Espaço)
+445|Tocar a guia da melodia
+446|Reproduzir a gravação
+447|Reprodução
+448|A reprodução acelera ou abranda a partir deste compasso, em relação ao andamento inicial, até à marca seguinte. Uma gravação tem o seu próprio andamento, por isso as marcas só alteram o instrumento integrado.
+449|Repete os compassos escolhidos uma e outra vez, para praticar uma passagem difícil.
+450|Posição
+451|Velocidade de prática
+452|Uma velocidade de prática de %1$lld %% toca a %2$lld.
+453|Velocidade de prática em percentagem
+454|A preparar a partitura…
+455|Predefinições
+456|Compasso anterior
+457|Página anterior
+458|Imprimir…
+459|Privacidade
+460|Barra de progresso nas pausas
+461|Dar feedback
+462|Obter do GitHub
+463|Enviar para o GitHub
+464|Colcheia
+465|Lê, ensaia, atua e escreve.
+Partituras sincronizadas com cada nota.
+466|A ler pautas e notas…
+467|A ler a tua digitalização…
+468|Superfícies realistas
+469|Gravar
+470|Gravar de novo
+471|Gravar mesmo assim
+472|Gravar-me
+473|Grava-te a tocar e vê que notas acertaste
+474|Gravação
+475|A gravação não é permitida
+476|A gravar. Toca a partitura.
+477|Gravações
+478|Refazer
+479|Refazer desenho
+480|Reduzir movimento
+481|Reduzir vozes
+482|Descontraído
+483|Descontraído ±20 ¢
+484|Remover
+485|Remover acompanhamento
+486|Remover ficheiro de letra
+487|Remover marca
+488|Remover gravação
+489|Remover de «%@»
+490|Remover pausa
+491|Remover a casa 1 ou 2 deste compasso e dos compassos a ele ligados
+492|Mudar o nome
+493|Mudar o nome da partitura
+494|Mudar o nome do alinhamento
+495|Mudar o nome…
+496|Repetir uma secção
+497|Substituir acompanhamento…
+498|Substituir ficheiro de letra…
+499|Substituir gravação…
+500|Substituir…
+501|Repositórios
+502|Repositório
+503|Repor
+504|Repor %@
+505|Repor todas as pistas
+506|Repor todas as definições
+507|Repor tudo para as predefinições
+508|Repor superfícies
+509|Repor todas as definições para as predefinições?
+510|Repor predefinições
+511|Restaurar compras
+512|Restaurar a partitura original
+513|Revisão
+514|Opções de revisão
+515|Ritmo lido a partir dos valores das notas em %1$lld de %2$lld compassos. O resto (quiálteras, gravação invulgar) segue o espaçamento impresso.
+516|Ritmo lido a partir dos valores das notas em todos os %lld compassos.
+517|Reverter para esta versão
+518|Arredondado
+519|Curva em S
+520|Igual ao anterior
+521|Guardar
+522|Guardar token
+523|Guardar versão…
+524|Guardar ou partilhar vídeo
+525|Versões, ramos e fusões guardados
+526|Escalas e arpejos
+527|Escalas e arpejos…
+528|Digitalizar partitura…
+529|Partitura
+530|Partitura escrita para
+531|Partituras
+532|Partituras que te seguem nota a nota, viragem de página sem mãos, sincronização de conjunto, gravação e revisão. Feita para o ensaio, pronta para o palco.
+533|Partituras, letras e gravações com o mesmo nome são adicionadas em conjunto. Desliza para remover um repositório.
+534|Deslocar a página com a reprodução
+535|Pesquisar partituras
+536|Pesquisar partituras…
+537|Pesquisar letras online…
+538|Pesquisa a canção, abre a letra melhorada (sincronizada palavra a palavra) e toca em Usar esta letra, ou transfere o ficheiro .lrc.
+539|Pesquisar faixas
+540|Pesquisa partituras MusicXML na web e no GitHub. Escreve acima um compositor ou o nome de uma peça. Verifica se uma partitura é de uso livre antes de a adicionares.
+541|Ver o feedback de outros utilizadores
+542|Ver a peça como um quadro de acordes
+543|Selecionar tudo
+544|Não selecionar nada
+545|Seleciona uma nota e toca numa duração (semibreve, mínima, semínima…) para alterar quanto dura. O ponto torna-a metade mais longa; o 3 faz quiálteras, três notas no tempo de duas. Uma nota ocupa o que se segue no compasso; uma mais curta deixa pausas.
+546|Enviar
+547|Com serifas
+548|Definir marca
+549|Definir andamento
+550|Definido ao tocares
+551|Opções do alinhamento %@
+552|Definições
+553|Definições (⌘,)
+554|Definições de %@
+555|Definições…
+556|Partilhar
+557|Partilhar com outro músico
+558|Partilhar com outro músico…
+559|Partilhar…
+560|Partitura
+561|As partituras e gravações estão normalmente protegidas por direitos de autor. Partilha apenas música que tenhas escrito, de que detenhas os direitos ou que tenhas permissão para passar a outros. Partilhar material protegido sem permissão pode ser ilegal, e és responsável pelo que envias.
+562|Deslocar acompanhamento
+563|Mais curto
+564|Mostrar inspetor
+565|Mostrar inspetor (⌥⌘I)
+566|Mostrar biblioteca
+567|Mostrar biblioteca (⌃⌘S)
+568|Mostrar linhas de
+569|Mostrar letra em vez de música
+570|Mostrar controlos de reprodução
+571|Mostrar progresso das sílabas
+572|Mostrar durante a reprodução
+573|Mostrar a partitura em ecrã inteiro com deslocação automática
+574|Mostrar o tempo acima da música e da letra
+575|Mostra a letra ao estilo do Apple Music ou adiciona um ficheiro de letra (.lrc ou .txt)
+576|Simples
+577|Canta com uma gravação; letras sem tempos distribuem-se ao longo dela
+578|Cantor %lld
+579|Cor do cantor 1
+580|Cor do cantor 2
+581|Cor do cantor 3
+582|Cantores
+583|Abrandar os últimos 8 s
+584|Mais devagar
+585|Texto mais pequeno
+586|Título da canção ou artista
+587|Canções no Apple Music
+588|Ordenar biblioteca por
+589|Velocidade
+590|Separar como nova partitura…
+591|Padrão
+592|Recomeçar
+593|Iniciar teste gratuito
+594|Começar a tocar ao abrir uma partitura
+595|Iniciar uma sessão
+596|Inicia a letra em sincronia com a partitura ou a letra de outro dispositivo
+597|A iniciar o microfone
+598|Pautas
+599|Passo %1$lld de %2$lld
+600|Parar
+601|Parar gravação
+602|Parar deslocação
+603|Parar Espera por mim
+604|Reto
+605|A endireitar a página e a preparar as notas.
+606|As sílabas acentuadas incham suavemente ao serem cantadas. Desativa a animação para linhas paradas e o progresso das sílabas para acender cada linha de uma vez.
+607|Rigoroso
+608|Rigoroso ±5 ¢
+609|Formatos de ficheiro suportados
+610|Ficheiros suportados
+611|Superfícies
+612|Mudar para este ramo
+613|TAP
+614|Tirar compassos de
+615|A comunicar com o GitHub…
+616|Tocar andamento…
+617|Toca numa nota para começar a partir daí.
+618|Toca ao ritmo do tempo.
+619|Toca ao ritmo do tempo. O andamento aparece a partir do segundo toque e melhora a cada toque. Com um teclado, podes premir a barra de espaço enquanto o botão está em foco.
+620|Tocar ao tempo (háptico)
+621|Toca nas linhas que uma pessoa canta e escolhe abaixo quem as canta.
+622|Toca para adicionar um keyframe. Arrasta um keyframe para o mover.
+623|Toca para adicionar keyframes
+624|Toca para começar a partir da intro.
+625|Toca duas vezes para começar
+626|Andamento
+627|Andamento de %lld batimentos por minuto
+628|Andamento no compasso %lld
+629|Andamento em batimentos por minuto
+630|Termos
+631|Texto
+632|Tamanho do texto
+633|Obrigado pelo teu feedback!
+634|A app também segue as definições do dispositivo de Texto maior, Texto a negrito, Aumentar contraste e Reduzir movimento. As cores da página estão em Partitura e os fundos em Aspeto.
+635|A app não conseguiu perceber pela página. Conta os tempos de um compasso (semínimas): 4 para 4/4, 3 para 3/4, 6 para 6/4. Para 6/8 conta dois tempos de semínima pontuada de 3, por isso escreve 3.
+636|Não foi possível deduzir o artista a partir da faixa. Indica-o para igualar os cantores.
+637|O acompanhamento está silenciado nesta gravação.
+638|O ficheiro contém a partitura%@. A outra pessoa abre-o no Maestro Pro.
+639|O instrumento e o clique ficam silenciados enquanto gravas.
+640|O instrumento toca as notas da página, juntamente com qualquer acompanhamento.
+641|A música própria do ficheiro de karaoke, tocada por um instrumento integrado
+642|A música de karaoke soa mais aguda ou mais grave.
+643|O microfone consegue ouvir o acompanhamento. Silencia-o ou usa auscultadores.
+644|O microfone ouve tudo o que a coluna toca, por isso o acompanhamento seria gravado e avaliado como se o tivesses tocado. Silencia-o nesta gravação (volta depois) ou usa auscultadores.
+645|O papel, a secretária, os botões e os painéis de controlo são desenhados como materiais reais. Reduz cada um para um aspeto mais plano, ou desliga todos. O Contraste elevado também os desliga.
+646|A gravação muda de altura sem alterar a velocidade.
+647|O editor de partituras a escrever notas e depois a acrescentar acentos, dinâmicas e uma repetição
+648|A partitura diz %lld
+649|A partitura espera que toques cada nota, afinada
+650|As partituras que contém ficam na tua biblioteca.
+651|Não foi possível identificar a canção. Escolhe a mais próxima.
+652|A parte deles tem %1$lld compassos e a tua %2$lld, por isso podem dessincronizar-se.
+653|Não há aqui notas para seguir
+654|Aplicam-se a cada partitura que abrires. Altera uma para uma única partitura nos controlos da própria partitura.
+655|Poderão iniciar, pausar e percorrer a música contigo.
+656|Estão a tocar «%@». Cada um mantém a sua partitura e o seu instrumento; ficam juntos compasso a compasso.
+657|É o cabeçalho impresso na música. O nome na tua biblioteca mantém-se.
+658|Isto define o andamento inicial; as marcas da partitura alteram-no a partir daí.
+659|Arrumar títulos ao importar
+660|Arrumar títulos
+661|Ligadura
+662|Liga esta nota à seguinte, para soarem como uma só nota longa
+663|Ligar à nota seguinte
+664|Compasso
+665|Sincronizada palavra a palavra
+666|Sincronizada palavra a palavra: as palavras preenchem-se à medida que são cantadas.
+667|Sincronização
+668|Título
+669|O título deve ter entre 10 e 100 carateres. O teu feedback é publicado em [thecaffeinemediacompany.fider.io](https://thecaffeinemediacompany.fider.io).
+670|Título na partitura
+671|Tolerância
+672|Ferramentas
+673|Marcador de início da faixa
+674|Faixas
+675|Faixas do GitHub
+676|Faixas do GitHub…
+677|Quiáltera
+678|Quiáltera: três notas no tempo de duas
+679|Afina, ou pratica manter uma nota estável
+680|Afinador
+681|Afinador: afinado dentro de
+682|Afinador: objetivo da nota estável
+683|Afinador…
+684|Afinação: Lá =
+685|Desativar contagem inicial
+686|Ativar contagem inicial
+687|Desligar metrónomo
+688|Ligar metrónomo
+689|Virar as páginas como num livro
+690|Transformar a nota em pausa
+691|Tipo
+692|Escreve o nome de uma canção ou de um artista.
+693|Escreve o título da canção ou o artista para encontrar letras sincronizadas.
+694|Tipo de letra
+695|Anular
+696|Anular desenho
+697|Deixar de silenciar
+698|Sem título
+699|Um tom acima
+700|Mudar para o Professional
+701|Usar %@ tempos
+702|Usar o nome da biblioteca
+703|Usar esta letra
+704|Usado pelo afinador e pelo Espera por mim, que ouvem através do microfone. Aumenta a sensibilidade numa sala silenciosa ou para um instrumento suave, e diminui-a se ele ouvir ruído. Um cêntimo (¢) é um centésimo de um meio-tom.
+705|Usar o %lld da partitura
+706|Visitar lyricsify.com
+707|Espera por mim
+708|Opções do Espera por mim
+709|Espera por mim: aceitar qualquer oitava
+710|Espera por mim: manter durante
+711|Espera por mim: afinado dentro de
+712|Semanal
+713|Bem-vindo ao %@
+714|O que fazem os modos?
+715|Durante a reprodução
+716|Música branca em papel preto
+717|Música branca em papel preto
+718|Quem canta isto?
+719|Com tudo desligado, só o contador de compassos e as viragens de página acompanham a música.
+720|Palavras
+721|Palavras por baixo das notas
+722|Escrever de novo
+723|Escreve cada repetição, casa e salto como compassos próprios
+724|Escreve, revê
+e atua.
+725|A escrever a tua crítica…
+726|Escrita %@
+727|Escrita pelo Apple Intelligence neste dispositivo
+728|Crítica escrita
+729|Podes alterar isto mais tarde no inspetor.
+730|Tocaste %@
+731|Tocaste todas as %lld notas
+732|Tonalidade do teu instrumento
+733|O teu plano
+734|A tua biblioteca e anotações nunca são afetadas por uma reposição.
+735|O teu vídeo está pronto.
+736|Zoom
+737|Ampliar
+738|Reduzir
+739|Ampliar
+740|Reduzir
+741|Sincronização com o iCloud
+743|proprietário/repositório ou uma ligação do GitHub
+764|%@ por semana
+765|%@ por ano
+766|%1$@: incluído em %2$@
+767|Teste gratuito de 3 dias ativado
+768|Faturado uma vez por ano. Equivale a %@ por mês.
+769|Escolhe o teu plano
+770|TUDO
+771|Teste gratuito e depois %@ por semana
+772|Teste gratuito e depois %@ por ano
+773|Poupa %1$@ (%2$lld %%) por ano
+774|por semana
+775|Uma biblioteca de qualquer tamanho, não apenas três partituras
+776|Reproduz qualquer partitura, ao andamento que escolheres
+777|Notas, compassos e uma linha em movimento que acompanham a música
+778|Pesquisa partituras e encontra letras online
+779|Altera a tonalidade e molda o som com o equalizador
+780|Sobrepõe acompanhamentos ou toca com o Apple Music
+781|Tocar em conjunto em até oito dispositivos
+782|O afinador e uma partitura que espera por ti
+783|Grava uma tomada e vê cada nota em que trabalhar
+784|Anota com o Apple Pencil, exporta e imprime
+785|Tudo do Performer
+786|O editor de partituras: escreve e altera música
+787|Cria medleys com qualquer partitura da tua biblioteca
+788|Histórico de versões, ramos, fusões e sincronização com o GitHub
+789|A anotação
+790|Apple Music
+791|O destaque de compassos
+792|A alteração de tonalidade
+793|A vista de acordes
+794|A exportação
+795|A pesquisa de letras online
+796|Igualar tonalidade e andamento
+797|O destaque de notas
+798|Tocar em conjunto
+799|A reprodução
+800|A impressão
+801|Gravar-me
+802|Reduzir vozes
+803|A revisão de uma gravação
+804|A pesquisa de partituras
+805|A partilha com outro músico
+806|A sobreposição de acompanhamentos
+807|O equalizador
+808|A linha em movimento
+809|O editor de partituras
+810|O editor de faixas
+811|O afinador
+812|A exportação de vídeo
+813|Espera por mim
+814|Escrever uma nova partitura
+816| + %lld sem tempo marcado
+817|A edição livre está ativada: nada é corrigido, e tocar num espaço vazio de um compasso acrescenta uma nota depois da última.
+818|O acompanhamento será afinado para combinar.
+819|O acompanhamento mantém a tonalidade em que foi gravado.
+820|Pode alterá-lo a qualquer momento no painel de informação.
+821| · cerca de 
+822|%@ no Apple Music
+823|%1$lld h %2$lld min
+824|%lld linhas selecionadas
+825|Foi atribuído um cantor a %lld linhas. Reveja-as em Atribuir cantores.
+826|%lld min
+827|%lld partituras
+828|%lld s
+829|%lld títulos limpos.
+830|, que já é a tonalidade da partitura
+831|, pelo que a partitura desce %lld meios-tons
+832|, pelo que a partitura desce um meio-tom
+833|, pelo que a partitura sobe %lld meios-tons
+834|, pelo que a partitura sobe um meio-tom
+835|1 linha selecionada
+836|1 partitura
+837|1 título limpo.
+838|Um formato fechado. No Band-in-a-Box, guarde como MusicXML para a partitura e como áudio para o acompanhamento, e depois importe ambos.
+839|Um pouco baixo, %lld cêntimos
+840|Um pouco alto, %lld cêntimos
+841|Uma partitura com o seu acompanhamento, de outro utilizador do Maestro Pro.
+842|Acidentes, ligaduras e articulação
+843|Adicione primeiro um token do GitHub com acesso de escrita: faixas do GitHub, depois Token de acesso.
+844|Adicionar acompanhamento
+845|Adicionar um compasso depois
+846|Adicionar, alterar e remover pausas
+847|%lld peças adicionadas.
+848|1 peça adicionada.
+849|Todos os títulos já estão limpos.
+850|Permita-o na app Definições, em Maestro Pro (no Mac: Definições do Sistema, Privacidade e Segurança, Multimédia e Apple Music).
+851|Qualquer ficheiro de áudio que o dispositivo consiga reproduzir pode ser adicionado a uma partitura ou a letras.
+852|Não foi possível pesquisar no Apple Music.
+853|Acompanhamentos
+854|As canções do Band-in-a-Box são guardadas num formato fechado que só o Band-in-a-Box consegue ler. No Band-in-a-Box, escolha Ficheiro ▸ Guardar como ▸ MusicXML (para a partitura) e Áudio (para o acompanhamento), e depois importe ambos.
+855|Compasso %lld
+856|Compasso %1$lld%2$@: escolha uma dinâmica, ou um crescendo ou diminuendo ao longo do compasso.
+857|Compasso %lld: casas de 1.ª e 2.ª vez (Prolongar casa estende-a ao compasso seguinte), saltos ou uma indicação de andamento.
+858|Compasso %lld: adicione sinais de repetição, ou insira ou elimine o compasso.
+859|Compasso 1
+860|O compasso 1 começa em
+861|Compassos %1$lld a %2$lld selecionados. Copie, corte, duplique ou elimine-os, ou cole algo depois.
+862|Reforço de graves
+863|Clave de fá
+864|Tempos por compasso
+865|Antes de sair
+866|Melhor
+867|Nome do ramo
+868|Traga as suas partituras
+869|%lld versões trazidas. Os ramos que divergiram chamam-se …-github para os poder fundir.
+870|1 versão trazida. Os ramos que divergiram chamam-se …-github para os poder fundir.
+871|Metal escovado
+872|Clave de dó
+873|Verifique a ligação e tente novamente. (%@)
+874|Ligado a %@.
+875|Copiar os compassos
+876|Copie, corte, cole e insira compassos, também de outras partituras
+877|Copiar ou partilhar música protegida sem autorização é pirataria. Os direitos de autor protegem-na em quase todos os países, e as regras e sanções dependem de onde vive. As infrações podem dar origem a pedidos de indemnização e, em casos graves, a multas ou prisão.
+878|Corrija uma nota errada, escreva uma voz nova ou monte um medley para o alinhamento. O editor mantém cada compasso correto enquanto escreve e guarda todas as versões.
+879|Não foi possível ler %@.
+880|Não foi possível carregar %@. Verifique a ligação e tente novamente.
+881|Não foi encontrado um pulso regular nesta faixa.
+882|Não foi possível ler %1$lld: %2$@%3$@.
+883|Semínimas por compasso
+884|Semínimas por compasso
+885|Cortar os compassos
+886|Atrasar o início
+887|Atrasar o início (em compassos)
+888|Eliminar o compasso
+889|Eliminar os compassos
+890|Pele de secretária
+891|%lld meios-tons abaixo
+892|Um meio-tom abaixo
+893|Arraste sobre os compassos para os selecionar e depois Copiar, Cortar ou Duplicar. Colar insere os compassos copiados depois dos selecionados (ou no fim), nesta partitura ou noutra que abra a seguir, para montar um medley. Colar de partitura traz compassos de outra partitura da sua biblioteca. Igualar tonalidade passa-os para a tonalidade que seguem; cada peça mantém o seu próprio compasso e andamento.
+894|Desenhe na página com qualquer cor
+895|Desenhe sobre a partitura com o Apple Pencil, com caneta, marcador, lápis e cor. O seu desenho fica na folha e aparece quando toca. O branco também serve. Use a borracha da paleta de ferramentas para o remover.
+896|Desenhe com o Apple Pencil a partir da paleta de ferramentas; a tinta fica na página.
+897|Vazio
+898|Cada nota está sincronizada com o pulso para que a partitura acompanhe o seu ritmo.
+899|Tempos exatos; pode ser editada, transposta, reproduzida e exportada.
+900|Casas de 1.ª e 2.ª vez, saltos e andamento
+901|Grátis pode ter até %lld partituras. Elimine uma ou escolha um plano em Definições para manter as que quiser.
+902|Grátis pode ver as notas de até três partituras. Isto continua bloqueado:
+903|Frequência
+904|A partir do compasso
+905|No menu Partilhar de uma partitura da biblioteca.
+906|Da página
+ao palco.
+907|Ganho
+908|O GitHub já tem tudo.
+909|O GitHub não permitiu que o token altere este repositório. Precisa de acesso de leitura e escrita ao conteúdo do repositório.
+910|Foi atingido o limite do GitHub para pedidos sem token. Adicione um token ou tente novamente dentro de uma hora.
+911|Dê um nome ao ramo.
+912|Objetivos
+913|Concluído
+914|Ouvir a nota
+915|Ajude-nos a criar algo para
+todos os músicos.
+916|Isto é o que
+perderia.
+917|Mantenha-as
+918|Quanto é mostrado
+919|Como funciona
+920|Importar pasta
+921|Importar pasta lê todos os ficheiros suportados numa pasta e associa as partituras a uma gravação e a letras com o mesmo nome.
+922|Importar partitura
+923|Importe com Importar partitura, arrastando um ficheiro para a janela ou a partir do menu Partilhar de outra app.
+924|Na tonalidade original, o PDF é mostrado tal como está impresso. Em qualquer outra tonalidade, a música lida da página é recomposta; compare-a com o original.
+925|Painel de informação
+926|Níveis dos instrumentos
+927|Introdução, %lld compassos antes do compasso 1
+928|Introdução, 1 compasso antes do compasso 1
+929|É da sua responsabilidade
+930|%@ está a entrar…
+931|Compassos de entrada
+932|Botões de pele
+933|Menos graves
+934|Níveis
+935|Linhas (e palavras) com tempos.
+936|Associe uma nas Definições para sincronizar com a biblioteca.
+937|Fixar o andamento aqui
+938|A procurar um músico que seja anfitrião…
+939|Forte e piano, crescendo e diminuendo
+940|Letras e karaoke
+941|As letras podem pertencer a uma partitura ou estar sozinhas; um ficheiro de karaoke abre como entrada própria.
+942|Letra com acompanhamento
+943|O Maestro Pro não consegue saber a quem pertence o que partilha. Ao continuar, confirma que tem o direito de partilhar ou exportar esta música e que é você, e não a app, o responsável pelo que faz.
+944|O Maestro Pro não tem autorização para usar o Apple Music.
+945|O Maestro Pro precisa do microfone para o ouvir. Ative-o na app Definições, em Maestro Pro, ou no Mac em Definições do Sistema, Privacidade e Segurança, Microfone.
+946|O Maestro Pro lê a sua partitura e acompanha-a nota a nota, vira as páginas sem mãos e deixa-o escrever e rever as vozes. Um minuto de configuração e está pronto.
+947|Partitura do Maestro Pro
+948|O Maestro Pro mostra a música na tonalidade do seu instrumento, para combinar com a voz à sua frente.
+949|Faça-a
+950|A criar o vídeo…
+951|Marcar o compasso 1 agora
+952|Marcar o início da introdução agora
+953|Marque primeiro o compasso 1 e depois toque num tempo forte pelo menos um segundo depois.
+954|Fundido sem conflitos.
+955|«%1$@» fundido em «%2$@»
+956|Fundido. Compassos alterados nos dois ramos: %1$@. Para esses, manteve-se a versão do ramo «%2$@».
+957|A música pertence a alguém
+958|A música é mostrada em tom de concerto, como está escrita.
+959|A música é mostrada em Si bemol para saxofone tenor, para combinar com a sua voz.
+960|A música é mostrada em Si bemol, um tom acima do tom de concerto, para combinar com a sua voz.
+961|A música é mostrada em Mi bemol, para combinar com a sua voz.
+962|Música que fez ou gravou, música de domínio público e música com uma licença que permite a partilha (como algumas obras Creative Commons). Tudo o resto precisa da autorização do titular dos direitos. Comprar uma cópia para si não lhe dá o direito de a distribuir.
+963|Nenhuma nota
+964|Nenhuma canção encontrada.
+965|Não foram encontradas pautas neste PDF, por isso pode ser lido mas não acompanhado.
+966|Não há letras sincronizadas disponíveis.
+967|As notas acendem-se ao soar e as páginas viram sem mãos, no ensaio ou em palco.
+968|Nada de novo no GitHub.
+969|Nada de novo para adicionar.
+970|Mover o compasso 1
+971|Mais uma coisa
+972|Só foi encontrado um cantor para esta canção.
+973|Abrir exemplo
+974|Abra primeiro este PDF uma vez para a app ler as notas e volte depois para editar uma cópia.
+975|Abra primeiro este PDF uma vez para a app ler as notas e volte depois.
+976|Abra primeiro este PDF uma vez para a app ler as notas e exporte-o depois.
+977|Abre no MuseScore, Finale, Sibelius, Dorico e na maioria das outras apps de notação.
+978|Opcional. A sua própria gravação, ajustada ao andamento e à tonalidade da partitura.
+979|Tonalidade original
+980|Ficheiros PDF, MusicXML, MIDI ou de karaoke, lidos no dispositivo.
+981|Sombra da página e canto dobrado
+982|Textura de papel
+983|Colar depois destes compassos
+984|Piano (predefinição)
+985|Escolha o aspeto da música ao tocar. Tudo o que está aqui fica depois nas Definições.
+986|A pirataria é ilegal
+987|Letras simples
+988|Toque para além do compasso 1 e depois toque num tempo forte mais tarde.
+989|Toque a nota
+990|Reproduza a faixa e toque no primeiro tempo de %@.
+991|É preciso uma subscrição do Apple Music para reproduzir canções.
+992|Toca ao ritmo da partitura; pode ser transposta, e o volume, o andamento e a altura podem ser editados.
+993|A premir teclas…
+994|Nota anterior
+995|Partituras impressas ou digitalizadas. As notas são lidas da página para poderem ser acompanhadas e tocadas.
+996|Coloque e mova notas e defina a sua duração
+997|Vozes mais baixas
+998|A ler a partitura…
+999|Reconhecido mas ilegível
+1000|Remover a pausa
+1001|Fim de repetição
+1002|Adicione ou remova sinais de repetição e compassos
+1003|Início de repetição
+1004|Reposto em «%@»
+1005|Espaço para baixistas
+1006|Apague notas e pausas
+1007|Digitalizar partitura
+1008|Nome da partitura
+1009|Selecionado: %@.
+1010|Selecionado: %@. Toque numa duração para a alterar, ou no lixo para o remover.
+1011|Meios-tons
+1012|%1$lld versões enviadas para %2$@.
+1013|1 versão enviada para %@.
+1014|Monte a estante.
+1015|Partitura
+1016|Partituras, gravações, acompanhamentos e letras têm quase sempre direitos de autor. Pertencem ao compositor, letrista, arranjador, intérprete ou editora, mesmo que sejam fáceis de encontrar online.
+1017|Saltar o silêncio inicial
+1018|Saltar esta nota
+1019|Sistema %lld
+1020|Sistema %lld: 
+1021|A iniciar o microfone…
+1022|Regularidade
+1023|A faixa ainda está a ser lida…
+1024|Toque num compasso e depois adicione ou remova sinais de repetição, ou insira ou elimine o compasso. Expandir repetições escreve a peça tal como é tocada.
+1025|Toque num compasso e coloque por cima uma casa de 1.ª ou 2.ª vez (Prolongar casa estende-a a mais compassos), adicione segno, coda, To Coda, D.C., D.S. ou Fine, ou coloque uma indicação de andamento.
+1026|Toque numa nota (a dinâmica aplica-se a essa nota) ou num compasso (aplica-se ao início) e escolha de ppp a fff. Crescendo e Diminuendo põem uma forquilha sobre o compasso; Mais longo e Mais curto estendem-na a mais compassos. O instrumento integrado toca mais forte e mais suave em conformidade.
+1027|Toque numa nota para a marcar.
+1028|Toque numa nota para a transformar numa pausa da duração escolhida, ou numa pausa para a selecionar e alterar a duração.
+1029|Toque numa nota para a transformar numa pausa da duração escolhida. Toque numa pausa para a selecionar, depois escolha outra duração para a alterar, ou o lixo para a retirar da página (o compasso mantém a sua duração).
+1030|Toque numa nota e depois adicione um sustenido, bemol ou bequadro, ligue-a à nota seguinte ou dê-lhe staccato, acento, tenuto, marcato ou fermata. Toque de novo para remover.
+1031|Isso não é um endereço do GitHub.
+1032|Isso não é um repositório do GitHub. Use proprietário/repositório.
+1033|A canção não foi encontrada no Genius, por isso não foi possível associar os seus cantores.
+1034|Essa gravação foi demasiado curta ou demasiado baixa para ser guardada.
+1035|Isto é %@
+1036|O %@ diz-nos quem o Maestro Pro alcança, para o podermos adaptar a todo o tipo de músico. É opcional e abre aqui mesmo, na app.
+1037|Não foi possível contactar a App Store. Verifique a ligação e tente novamente.
+1038|a introdução
+1039|Não foi possível iniciar o microfone.
+1040|A música que toca em conjunto, com o som.
+1041|As notas deste PDF ainda não foram lidas. Abra a partitura e deixe-a terminar de ler.
+1042|A página é mostrada em %1$@%2$@. 
+1043|A faixa de imagem de um disco de karaoke, mostrada como foi feita.
+1044|A partitura e o seu acompanhamento, para partilhar com outro músico.
+1045|A partitura é recomposta na nova tonalidade.
+1046|A faixa já começa com som.
+1047|A faixa ainda não se ouve; espere que toque e depois toque no ecrã.
+1048|A página composta, ou o original numa partitura em PDF.
+1049|A forma comprimida que a maioria das apps de notação guarda.
+1050|Não há letras neste ficheiro.
+1051|Não há letras neste ficheiro.
+1052|Não restam letras. Escreva pelo menos uma linha.
+1053|Não há notas para acompanhar nesta partitura.
+1054|Não há letras com tempos nesta página. Abra uma canção e escolha a sua letra Enhanced ou LRC.
+1055|Já existe um ramo chamado «%@».
+1056|Não há nenhuma nota depois desta para ligar. Adicione uma primeiro, ou ative a Edição livre nas Opções.
+1057|Têm nome para que veja uma explicação clara em vez de um erro.
+1058|Estes ramos não partilham histórico, por isso não podem ser fundidos.
+1059|Não foi possível abrir este PDF. Pode estar danificado ou protegido por palavra-passe.
+1060|Isso não é uma partitura do Maestro Pro, ou está danificada.
+1061|Isso não é um ficheiro de karaoke (MIDI).
+1062|Esse ficheiro de karaoke está danificado.
+1063|Esse ficheiro de karaoke usa um formato de tempo que a app não consegue ler.
+1064|Não foi possível ler esse ficheiro de letras como texto.
+1065|Através da janela de impressão do sistema.
+1066|Letras com tempos
+1067|Até ao compasso
+1068|Toque num compasso e arraste sobre outros para os selecionar. Se não houver nenhum selecionado, cola no fim.
+1069|Toque numa pausa e deslize para cima ou para baixo para escolher a altura; levante o dedo para pôr uma nota aí, com a duração escolhida em baixo. Arraste uma nota para cima ou para baixo para a mover. Rabisque sobre notas para as apagar. Tocar numa nota ou num compasso vazio mostra um pequeno menu com o que mais provavelmente precisa.
+1070|Toque numa pausa e deslize para cima ou para baixo para escolher uma altura; arraste uma nota para a mover; rabisque sobre uma nota para a apagar. Toque numa nota e depois numa duração para mudar quanto tempo soa. O 3 faz quiálteras; Ligadura une uma nota à seguinte.
+1071|Toque ou arraste sobre notas e pausas. Uma nota passa a pausa; uma pausa desaparece da página. Não é preciso selecionar nada antes.
+1072|Toque ou arraste sobre o que quer remover: as notas passam a pausas e as pausas desaparecem da página. Toque duas vezes no Apple Pencil para alternar para a borracha e voltar.
+1073|Faixa: %1$@ BPM em %2$@%3$@.
+1074|Transpor
+1075|Clave de sol
+1076|Transformar em pausa
+1077|%lld meios-tons acima
+1078|Um meio-tom acima
+1079|Presença vocal
+1080|A aguardar que outro músico se junte…
+1081|Bem-vindo ao Maestro Pro
+1082|O que normalmente pode partilhar
+1083|O que mudou
+1084|O que toca?
+1085|O que a app produz
+1086|O que tocou quando estava errado ou atrasado
+1087|Onde deveria estar
+1088|Pastas inteiras
+1089|Largura (Q)
+1090|Letra e música num só ficheiro. Um MIDI simples conta se tiver letra.
+1091|Só palavras; distribuídas pela gravação.
+1092|A descobrir os acordes…
+1093|Escreva-a.
+Reveja-a. Faça-a sua.
+1094|Ainda pode pesquisar.
+1095|As suas partituras.
+Ensaiadas, tocadas, escritas.
+1097|Primeiros passos
+1098|O Maestro Pro é uma ferramenta de trabalho para músicos: lê as suas partituras e acompanha-as nota a nota, vira as páginas sem mãos, ensaia com um acompanhamento, uma canção do Apple Music, o instrumento integrado ou um metrónomo, e deixa-o escrever e rever a própria música.
+1099|O primeiro minuto
+1100|Toque em Importar partitura no ecrã inicial (ou no botão +, depois Importar partitura) e escolha um PDF, um ficheiro MusicXML ou qualquer outro ficheiro suportado. Aparece na sua biblioteca à esquerda; toque nele para o abrir.
+1101|Prima o grande botão de Reproduzir em baixo. A música toca e a partitura acompanha. Toque em qualquer ponto da música para começar daí, ou arraste a barra de progresso.
+1102|Ainda nada para tocar? Escolha Abrir exemplo no ecrã inicial, ou Procurar partituras para descarregar peças clássicas e temas de jazz, ou para pesquisar na web.
+1103|Modo Simples e modo Avançado
+1104|As Definições têm um interruptor de Modo. O modo Simples limita o ecrã ao que a maioria precisa. O modo Avançado acrescenta as ferramentas da biblioteca, Tocar em conjunto, os controlos pauta a pauta e a página Personalizar todas as cores.
+1105|Tudo o que este guia descreve está disponível no modo Avançado; cada tópico diz quando um controlo só aparece aí.
+1106|A barra de ferramentas
+1107|Num iPad, a barra de ferramentas mantém os poucos controlos mais usados (abrir, zoom, acompanhamentos e som, anotar, editar) e põe tudo o resto no menu Mais no seu fim: ferramentas no topo, depois a página, o que é mostrado ao tocar, as letras e, por último, os acompanhamentos. Um Mac mostra cada controlo como um botão próprio.
+1108|As Definições estão só na biblioteca, por isso não estão na barra de ferramentas da partitura. Para voltar à biblioteca, mostre a barra lateral com o botão no canto superior esquerdo.
+1109|Personalizar a barra de ferramentas
+1110|No iPad, toque sem soltar na barra de ferramentas (ou toque no ⋯ do seu fim e escolha Personalizar barra de ferramentas) para arrastar controlos para a barra ou para fora dela; no Mac, escolha Visualização ▸ Personalizar barra de ferramentas. O botão Inspetor fica sempre.
+1111|Num ecrã estreito, os controlos agrupam-se antes num único menu Mais.
+1112|O ecrã
+1113|Num ecrã largo, a biblioteca é uma barra lateral à esquerda e a partitura ocupa o resto. Enquanto uma peça toca, a biblioteca esconde-se para dar espaço à música (desative-o nas Definições).
+1114|Num ecrã mais pequeno, ou numa janela estreita de Split View, a barra de ferramentas agrupa-se num único menu Mais e surge um botão Biblioteca no canto superior esquerdo para o levar de volta.
+1115|Um Mac executa a mesma app: os ficheiros abrem-se com Comando-O, e há menus Reprodução e Visualização com atalhos de teclado.
+1116|A sua biblioteca
+1117|Tudo o que importa vive na biblioteca e fica no dispositivo. Também é guardado no iCloud quando o iCloud Drive está ativado.
+1118|Trazer música
+1119|Importar partitura aceita ficheiros PDF, MusicXML (.musicxml, .xml, .mxl), MIDI e karaoke (.mid, .kar), letras (.lrc, .txt), karaoke CD+Graphics (.cdg) e Maestro Pro (.maestropro). Pode escolher vários de uma vez.
+1120|Também pode arrastar ficheiros da app Ficheiros diretamente para a janela, ou escolher Maestro Pro na folha de partilha de outra app (Ficheiros, Mail, Safari, Mensagens…) para importar o que está a ver.
+1121|Importar pasta lê todos os ficheiros suportados numa pasta. Nas Definições, Associar uma pasta mantém uma pasta em sintonia com a biblioteca para que os novos ficheiros apareçam sozinhos.
+1122|Nova partitura em branco inicia uma partitura vazia para escrever você mesmo: escolhe o nome, o compasso, a tonalidade, o número de compassos, as pautas (clave de sol, clave de fá ou piano) e o andamento.
+1123|Letras com acompanhamento: escolha um acompanhamento e a app encontra as suas letras com tempos online, para um ecrã ao estilo de karaoke. Também pode escolher um ficheiro de letras juntamente com o acompanhamento.
+1124|Procurar partituras tem três separadores. Clássica lista peças integradas. Jazz lista cerca de 2400 temas em seis volumes: só a lista está na app, um tema é descarregado quando toca em Adicionar, ou toque em Adicionar tudo para levar toda a coleção (cerca de 40 MB, precisa de internet).
+1125|Internet pesquisa na web, e no GitHub, ficheiros MusicXML: escreva um compositor ou uma peça. Os resultados vêm de páginas de outras pessoas, por isso confirme que uma partitura é de uso livre antes de a adicionar.
+1126|Um visto mostra o que já tem.
+1127|Encontrar e organizar
+1128|A pesquisa no topo da biblioteca encontra títulos. As Definições escolhem como a biblioteca é ordenada.
+1129|Os Alinhamentos mostram quantas partituras contêm e cerca de quanto duram (a duração do acompanhamento, ou das notas ao andamento da partitura; os PDF sem faixa não têm duração). Toque sem soltar numa partitura para Mudar o nome, Editar título na partitura (o cabeçalho impresso na música, distinto do seu nome na biblioteca), Adicionar ao alinhamento, Partilhar, Duplicar e Eliminar da biblioteca. Duplicar faz uma cópia completa, com o acompanhamento, as letras e os desenhos, para editar ou montar um medley sem tocar no original. Os alinhamentos agrupam partituras para um ensaio ou um concerto.
+1130|Partilhar com outro músico cria um ficheiro .maestropro que leva a partitura e o seu acompanhamento. Outro utilizador do Maestro Pro que o abra fica com tudo.
+1131|Tocar uma partitura
+1132|A barra de baixo controla a reprodução; a barra de ferramentas e o Inspetor mudam o seu aspeto e som.
+1133|Controlos de reprodução
+1134|Reproduzir e Pausa, saltar para trás e para a frente por compasso, e uma barra de progresso que pode arrastar. O contador mostra o compasso, o tempo e a hora.
+1135|Toque na música para saltar para lá. No Mac, Espaço reproduz e pausa, as setas saltam compassos, Return vai ao início e K liga ou desliga o metrónomo.
+1136|Velocidade de prática abranda ou acelera uma peça sem mudar a altura. Escreva qualquer percentagem de 10 a 400 na caixa, ou use o cursor (50 a 150).
+1137|O andamento é o da partitura (da sua indicação de metrónomo impressa), a menos que defina um: escrever um BPM, marcá-lo a tocar ou igualá-lo a um acompanhamento torna-o seu, e o interruptor Andamento personalizado sob o andamento volta ao da partitura. Marcar andamento: toque no andamento (a nota e o número junto ao metrónomo) e abre-se um painel com uma tecla grande Tap. Toque ao ritmo do tempo; o andamento aparece a partir do segundo toque e atualiza-se a cada toque, e mais alguns tornam-no mais estável. É definido enquanto toca. Com um teclado, a barra de espaço toca enquanto a tecla tem o foco. O mesmo painel está em Andamento no Inspetor.
+1138|Ciclo: no Inspetor, Ciclo toca os compassos que escolher repetidamente, para praticar uma passagem difícil. No Mac ou com teclado, [ abranda a velocidade de prática e ] acelera-a.
+1139|Contagem toca um compasso de cliques antes da música. Compassos de introdução define quantos compassos de introdução vêm antes do compasso 1, para que um acompanhamento com intro encaixe. O Metrónomo clica em cada tempo.
+1140|O que acompanha a música
+1141|Mostrar ao tocar (o botão de brilho) escolhe como a reprodução é mostrada: Realçar notas ilumina cada nota quando soa, Realçar compasso tinge o compasso, e Linha móvel traça uma linha pela página. Com os três desligados, só o contador de compassos e as viragens de página acompanham.
+1142|Seguir reprodução desloca a página por si. Partitura escura mostra música branca sobre preto, mais agradável numa sala com pouca luz.
+1143|Zoom muda o tamanho da notação; os compassos reorganizam-se para caber. Beliscar também funciona. A cor de realce está nas Definições.
+1144|Virar as páginas como num livro
+1145|Por predefinição, a música mostra uma página de cada vez e vira-a como a página de um livro, com uma curva, quando a reprodução chega à página seguinte. Seguir reprodução decide se vira sozinha. Também pode arrastar uma página para a virar à mão, ou usar Page Up e Page Down.
+1146|Virar páginas como um livro pode ser desligado em Definições ▸ Partitura, no menu Zoom ou no menu Visualização de um Mac. A música desloca-se então para baixo na página, com todas as páginas numa coluna. Reduzir movimento vira a página sem a curva.
+1147|Enquanto desenha com Anotar, arrastar não vira páginas, por isso a caneta fica livre. Com uma página mostrada inteira não há deslocamento dentro dela; use Zoom para mudar o tamanho da notação.
+1148|Tonalidade e transposição
+1149|No Inspetor, Tonalidade tem a tonalidade do seu instrumento (tom real, Si♭, Mi♭ ou Si♭ tenor). A partitura é mostrada transposta em conformidade, para que um trompetista leia o que um trompete toca.
+1150|Transpor move toda a peça para cima ou para baixo por meios-tons. O menu Tonalidade lista cada tonalidade com a sua relativa menor, por exemplo Dó / Lá menor; escolha uma e a partitura move-se pelo caminho mais curto.
+1151|Com um acompanhamento, Transpor acompanhamento decide se o acompanhamento se move com a partitura.
+1152|Vista de acordes (modo Avançado)
+1153|O botão Vista de acordes (uma grelha de quadrados) na barra de ferramentas, ou Mais ▸ Vista de acordes, mostra a peça como um quadro de acordes, uma célula por compasso, com sinais de repetição, finais e saltos. O compasso que toca ilumina-se e o quadro desloca-se para acompanhar; toque num compasso para tocar a partir dele.
+1154|Se o ficheiro tiver cifras de acordes, são mostradas como escritas. Caso contrário, a app deduz os acordes das notas, dois por compasso em 4/4 e um por compasso em 3/4 e 6/8: tríades, diminutos, aumentados e acordes de sétima, com uma barra quando o baixo não é a fundamental. É uma estimativa, melhor com uma linha de baixo ou acompanhamento, e uma melodia sozinha recebe uma tríade plausível.
+1155|Os acordes acompanham a tonalidade escolhida, escritos com bemóis ou sustenidos em conformidade. Use Zoom para acordes maiores ou mais pequenos.
+1156|Notação mostrada
+1157|Além de notas, pausas, acidentes, ligaduras, quiálteras, repetições, finais, segno, coda e o resto, as partituras mostram ligaduras de expressão, apojaturas (pequenas notas riscadas que soam mesmo antes da nota principal), trinados, mordentes e grupetos, dedilhações, ondas de arpejo, sinais de respiração e cesuras, linhas de oitava (8va, 8vb, 15ma, 15mb) e marcas de pedal (Ped. e a estrela de libertação).
+1158|As ligaduras de expressão e os ornamentos são desenhados mas não mudam a forma como o instrumento integrado toca (um trinado soa como uma nota simples). São guardados e exportados com a partitura. As apojaturas soam, um instante antes do tempo.
+1159|Uma partitura com várias ligaduras de expressão abertas ao mesmo tempo numa pauta desenha a mais recente, e uma linha de oitava é mostrada sem alterar o som.
+1160|Letras sob as notas
+1161|Adicionar um ficheiro de letras a uma partitura deixa a música no ecrã e imprime as palavras sob as notas, numa linha própria para a qual as pautas são afastadas. A sílaba cantada ilumina-se ao tocar. Palavras sob as notas pode ser desligado, e Mostrar letras em vez da música passa para o ecrã grande de letras.
+1162|Dinâmica
+1163|A dinâmica (ppp a fff) e as forquilhas de crescendo e diminuendo numa partitura definem a intensidade do instrumento integrado: uma nota é tão forte como a última dinâmica, e uma forquilha muda-a de forma contínua para a dinâmica seguinte. Uma partitura sem dinâmica toca a um nível uniforme.
+1164|Pode adicioná-las no modo Dinâmica do editor de partituras, e são guardadas com a partitura.
+1165|O andamento
+1166|O andamento é em batimentos por minuto. Escreva-o, ajuste-o por passos ou arraste o cursor. Com um acompanhamento, Fixar andamento aqui define o andamento a partir de onde toca num tempo forte.
+1167|Compasso diz à app quantos tempos há num compasso. É encontrado automaticamente nos ficheiros MusicXML; nos PDF a app pergunta quando não consegue saber.
+1168|Se uma partitura tiver indicações de andamento (♩ = 96), estas mudam o ritmo do instrumento integrado a partir desse compasso. Um acompanhamento mantém o seu próprio andamento.
+1169|Afinador e Espera por mim
+1170|O Maestro Pro pode ouvir através do microfone: para afinar o seu instrumento, para treinar uma nota estável e para esperar que toque uma partitura nota a nota. O som é analisado no dispositivo e nunca é gravado nem enviado para lado nenhum.
+1171|Abra o Afinador no ecrã inicial, no menu +, em Definições ▸ Escuta, ou no diapasão da barra de ferramentas de uma partitura. Toque uma nota: o ecrã mostra o seu nome, quantos cêntimos está alta ou baixa (um cêntimo é um centésimo de meio-tom) e a frequência. A agulha fica na zona verde quando está afinado, e o traçado abaixo mostra os últimos oito segundos.
+1172|Se o seu instrumento estiver em Si♭ ou Mi♭ no Inspetor, a nota escrita também é mostrada. Tocar nota de referência faz soar a nota que pretende. O Lá = 440 Hz pode ser alterado (415 a 466) para afinação barroca ou orquestral.
+1173|Sob o afinador, o anel enche enquanto mantém uma nota afinada. Escolha Qualquer nota, ou uma nota concreta a manter; escolha o grau de proximidade que conta como afinado (Estrito ±5 ¢, Normal ±10 ¢, Relaxado ±20 ¢) e o objetivo (5 a 30 segundos). Mostra o seu melhor tempo e quão estável esteve a sua altura.
+1174|Uma oscilação ou uma nota diferente reinicia o tempo. Os objetivos são contados por si, para que possa tentar superá-los.
+1175|Espera por mim é um modo de prática em que a música espera por si. Abra uma partitura e escolha Espera por mim (o ícone de ouvido, ou Mais ▸ Espera por mim). A partitura pára na primeira nota. Só avança quando toca essa nota, na oitava certa e afinada, e a mantém o tempo certo ao andamento e velocidade de prática atuais.
+1176|O painel acima da barra de reprodução mostra a nota a tocar, um medidor de altura (o ponto deve ficar na zona verde) e uma barra que enche enquanto a mantém. Diz se está alto, baixo ou a tocar outra nota. Ouvir a nota toca-a por si; Voltar e Saltar movem uma nota; o botão de cursores escolhe a parte a seguir (uma partitura de piano tem duas), quão estrito ser, quanto de cada nota tem de ser mantido e se qualquer oitava é aceite (útil para vozes).
+1177|Uma nota repetida precisa de um novo começo, por isso deixe a primeira terminar antes da seguinte. No fim vê a sua precisão e quão longe das notas esteve em média. Os acordes contam quando toca qualquer uma das suas notas; este modo segue uma linha de cada vez.
+1178|Um acompanhamento fica em silêncio enquanto Espera por mim estiver ligado (a partitura espera, por isso um acompanhamento não conseguiria acompanhar). Premir Reproduzir termina-o.
+1179|Dicas para o microfone
+1180|Definições ▸ Escuta tem Sensibilidade do microfone: aumente-a numa sala silenciosa ou para um instrumento suave, e diminua-a se captar ruído. Uma sala silenciosa funciona melhor, e uma única nota de cada vez. Espera por mim e o afinador precisam de autorização do microfone; se disse que não, ative-a nas Definições do dispositivo ▸ Privacidade ▸ Microfone.
+1181|Gravar e rever
+1182|Grave-se a tocar uma partitura e depois reveja a gravação com as notas iluminadas: a verde onde devia estar, a vermelho onde realmente estava. Escuta através do microfone, por isso funciona com qualquer instrumento ou a sua voz.
+1183|Escolha Gravar (o botão redondo de gravação na barra de ferramentas, ou Mais ▸ Gravar-me, ou ⌘R no Mac). Depois da contagem, a partitura toca e você toca com ela. Prima Parar, ou pause, quando terminar.
+1184|Enquanto grava, o instrumento integrado e o metrónomo são silenciados, para que o microfone ouça só você. Se a partitura tiver um acompanhamento, a app pergunta primeiro, porque o microfone o ouviria: escolha Silenciar e gravar (volta depois) ou Gravar mesmo assim se usar auscultadores. A barra de gravação também tem um botão Silenciar. Na primeira vez, a app pede para usar o microfone.
+1185|As gravações são guardadas com a partitura, por isso são copiadas quando a duplica. Cada uma é comprimida para bem menos de um megabyte por minuto.
+1186|Rever
+1187|Quando pára, a revisão abre-se logo. As gravações anteriores estão no menu Gravar, as mais recentes primeiro. Prima Reproduzir para ouvir a gravação enquanto a partitura a acompanha, ou arraste o cursor para qualquer momento.
+1188|A nota verde é a nota que devia estar a tocar nesse momento. A nota que realmente tocou também se ilumina: verde quando foi a nota certa no momento certo, vermelha quando foi tardia, antecipada ou diferente da devida. Se ficar para trás ou se adiantar, por muito que seja, a nota em que devia estar é verde e a que ainda toca é vermelha.
+1189|Se tocou uma nota que não está na música junto dali, a nota devida é verde e a faixa mostra a altura que tocou. O resumo indica quantas notas tocou certas.
+1190|O botão de cursores escolhe a parte a avaliar (uma partitura de piano tem duas), quão estrito é o tempo (Estrito, Normal ou Relaxado), a que distância em altura conta e se qualquer oitava é aceite. Alterá-los volta a avaliar a mesma gravação. Eliminar esta gravação remove-a.
+1191|O botão de brilhos na revisão escreve uma breve apreciação: quantas notas estavam certas, onde ficou para trás ou se apressou, se esteve alto ou baixo, e que compassos e notas deram problemas. É simples e direta.
+1192|Os locais na apreciação (compassos e notas, mostrados com uma nota ou uma barra de compasso) são ligações. Toque numa e a gravação salta para esse momento, as notas acendem-se em azul na música, e a página vira ou desloca-se até lá. A fila de blocos numerados mostra cada compasso colorido consoante como correu, e cada um também é uma ligação.
+1193|Num dispositivo com Apple Intelligence, a apreciação é posta em palavras pelo modelo no dispositivo, e nada o deixa. Os factos vêm sempre da análise própria da app, e qualquer reformulação que altere um número ou um local é descartada. Sem Apple Intelligence, a app escreve-a ela própria. Escrever de novo pede nova redação.
+1194|O que esperar
+1195|Escuta uma nota de cada vez, por isso os acordes contam quando toca qualquer uma das suas notas. O tempo é avaliado pelo relógio da partitura, não pelo som da gravação, por isso uma gravação muito lenta ou rápida é avaliada face ao andamento a que gravou.
+1196|Tome-o como um guia. Uma sala ruidosa, um sinal fraco ou um instrumento cuja oitava é difícil de ouvir podem fazer as notas parecerem erradas; Sensibilidade do microfone em Definições ▸ Escuta ajuda.
+1197|Acompanhamentos e som
+1198|Um acompanhamento é uma gravação que toca com a partitura. O instrumento integrado também pode tocar as notas da página.
+1199|Várias faixas
+1200|Uma partitura pode ter mais de um acompanhamento, por exemplo uma secção rítmica e uma voz guia separada. Adicione o primeiro com Adicionar acompanhamento, depois use Adicionar outro acompanhamento no Inspetor ou no menu de som. Tocam todos juntos, ao ritmo da partitura.
+1201|Em Acompanhamentos e som, cada faixa tem o seu próprio interruptor, para a desligar sem a remover, e o seu próprio nível de -24 a +12 decibéis. A primeira faixa é aquela com que a partitura marca o tempo, e Igualar tonalidade e andamento e o editor de faixas atuam sobre ela. As outras faixas seguem a sua velocidade e tonalidade, mas não as suas pistas de edição, e devem ser gravações que começam juntamente com ela.
+1202|Reduzir vozes, em qualquer faixa, atenua o cantor numa gravação estéreo ao anular o que está ao centro. Deixa uma faixa mono, pode levar consigo alguns instrumentos centrais e não consegue remover uma voz de uma gravação mono.
+1203|Adicionar do Apple Music (Inspetor, Acompanhamentos e som) pesquisa em todo o Apple Music (e na sua própria biblioteca) à medida que escreve, e toca a canção escolhida juntamente com a partitura, a tempo. Precisa de uma subscrição do Apple Music e de autorização para usar o Apple Music, e os sons próprios da app, como o instrumento, misturam-se com a canção. Obter letras recolhe as palavras quando a Apple as oferece para a canção, o que não acontece com todas as canções ou contas, e passam a funcionar como qualquer ficheiro de letras.
+1204|Letras do Apple Music (o menu +, ou o ecrã inicial) abre as palavras de uma canção no seu próprio ecrã, com a canção a tocar.
+1205|O Apple Music só deixa uma app iniciar e parar uma canção, não ler o seu som. Por isso a canção não pode ser alterada em altura e o cantor não pode ser retirado. Para isso, adicione a canção como um ficheiro de áudio seu e use Reduzir vozes. Se a canção se desviar, mova O compasso 1 começa em.
+1206|Adicionar uma faixa
+1207|Escolha Adicionar acompanhamento no Inspetor ou na barra de ferramentas e escolha um ficheiro de áudio. A app escuta-o e acerta o andamento e a tonalidade da partitura para coincidirem, de modo a começar a tempo.
+1208|Se a partitura não alinhar, arraste o marcador na faixa para onde começa o compasso 1, ou atrase a faixa. Atrasar o início pode ser em segundos ou em compassos. Se se desviar mais adiante na peça, toque em Fixar andamento num tempo forte mais à frente.
+1209|Igualar tonalidade e andamento à faixa repete a escuta a qualquer momento.
+1210|Editar a faixa
+1211|Editar acompanhamento mostra o acompanhamento como uma forma de onda com três pistas: Volume, Andamento e Altura. Adicione pontos numa pista e arraste-os para mudar essa definição ao longo do tempo.
+1212|Cada ponto pode ser uma linha reta ou uma curva em S suave. Use-o para entrar ou sair em fade, suavizar uma mudança de andamento ou corrigir uma faixa ligeiramente desafinada.
+1213|O instrumento integrado
+1214|Tocar partitura como escolhe a voz que toca as notas da página (ou Desligado): piano, órgão, guitarra, baixo, flauta, clarinete, saxofones ou trompete. No Inspetor, Ganho do instrumento e Ganho do acompanhamento definem cada um um nível de -24 a +12 decibéis para essa partitura, para equilibrar o instrumento com o acompanhamento; a seta repõe a 0. As Definições têm o volume inicial do instrumento. Toca com qualquer acompanhamento.
+1215|Uma partitura com mais de uma pauta tem um painel Pautas no Inspetor: dê a cada pauta o seu próprio instrumento, por exemplo Baixo na pauta de clave de fá e Piano na outra. As pautas em Igual ao anterior usam a principal.
+1216|Ligue o Metrónomo no Inspetor ou com K no Mac se quiser cliques com ele.
+1217|Escrever e editar música
+1218|O editor de partituras altera as notas de uma partitura MusicXML. Um PDF é lido primeiro pela app, e o editor trabalha sobre uma cópia do que ela leu. Abra-o com Editar partitura (o botão de lista de notas; no modo Simples aparece nas partituras que criou).
+1219|Os nove modos
+1220|A tira na parte de baixo do editor tem um modo para cada tipo de tarefa, para que os controlos de uma tarefa fiquem juntos. Deslize a tira para ver o resto.
+1221|Notas: toque numa pausa e deslize para cima ou para baixo para escolher a altura; levante o dedo para pôr uma nota aí, tão longa como a duração escolhida em baixo. Arraste uma nota para cima ou para baixo para a mover. Rabisque de um lado para o outro sobre uma nota para a apagar. Selecione uma nota e toque numa duração para mudar quanto tempo dura.
+1222|Pausas: toque numa nota para a transformar numa pausa da duração escolhida. Toque numa pausa para a selecionar e mudar a sua duração, ou use o lixo para a retirar da página (o compasso mantém a sua duração).
+1223|Sinais: toque numa nota e adicione um sustenido, bemol ou bequadro, ligue-a à nota seguinte, ou dê-lhe staccato, acento, tenuto, marcato ou fermata. Toque de novo para o retirar.
+1224|Dinâmica: toque numa nota (a dinâmica vai nessa nota) ou num compasso (no seu início) e escolha de ppp a fff. Crescendo e Diminuendo põem uma forquilha sobre o compasso; Mais longo e Mais curto estendem-na a mais compassos.
+1225|Compassos: sinais de repetição, e adicionar ou eliminar um compasso. Expandir repetições escreve a peça tal como é tocada.
+1226|Forma: casas de 1.ª e 2.ª vez, saltos (Segno, Coda, To Coda, D.C., D.S., Fine) e indicações de andamento.
+1227|Medley: arraste sobre compassos para os escolher, depois Copiar, Cortar, Colar, Duplicar ou Eliminar, ou Inserir de partitura para trazer compassos de outra partitura da sua biblioteca.
+1228|Apagar: toque ou arraste sobre notas e pausas. Uma nota passa a pausa; uma pausa sai da página. Toque duas vezes no Apple Pencil para mudar para a borracha e voltar.
+1229|Desenhar: escreva sobre a música com o Apple Pencil, com as ferramentas de caneta, marcador, lápis e cor. A tinta fica na página.
+1230|Montar um medley
+1231|No modo Medley, toque num compasso e arraste sobre mais para escolher uma série de compassos. Copiar guarda-os na área de transferência, que permanece quando sai e abre outra partitura, para que possa copiar numa peça e colar noutra. Colar põe-nos depois dos compassos escolhidos, ou no fim se nenhum estiver escolhido.
+1232|Inserir de partitura lista a sua biblioteca: escolha uma partitura, escolha os seus compassos De e Até, e entram no mesmo sítio. Igualar a minha tonalidade leva os novos compassos para a tonalidade da música que seguem.
+1233|Os novos compassos mantêm a sua própria tonalidade, compasso e andamento (aparece uma indicação de andamento onde o ritmo muda), e a sua música retoma os seus depois deles. Uma pauta que falta à música copiada recebe pausas; uma pauta que falta à sua peça é omitida. Tudo pode ser desfeito.
+1234|Duplicar repete os compassos escolhidos logo a seguir a si próprios. Cortar é Copiar seguido de Eliminar; o último compasso de uma peça fica sempre.
+1235|O menu rápido
+1236|Toque numa nota e um pequeno menu pende sobre ela com o que mais costuma querer: sustenido, bemol, bequadro, ligadura, ponto, uma dinâmica e transformá-la numa pausa. Toque numa pausa para mais curta, mais longa e remover. Toque numa parte vazia de um compasso para início e fim de repetição, adicionar um compasso e eliminar o compasso.
+1237|Toque noutro sítio qualquer para o guardar. Funciona com um dedo e com o Pencil.
+1238|Durações, pontos, tercinas e ligaduras
+1239|Os botões de notas escolhem as durações de semibreve, mínima, semínima, colcheia e semicolcheia. O ponto aumenta uma duração em metade. O 3 faz tercinas: três notas no tempo de duas, mostradas com um colchete e um 3.
+1240|Ligadura une a nota selecionada à seguinte, para que soem como uma só nota longa. Com a ajuda ativada, a nota seguinte toma a mesma altura; se não houver nota seguinte, é avisado. Toque em Ligadura de novo para a remover. As ligaduras são desenhadas também através das barras de compasso, e uma nota ligada soa uma vez.
+1241|Sustenido, Bemol e Bequadro põem um acidente na nota selecionada; Tonalidade repõe-na no que diz a armadura de clave.
+1242|O que o editor faz por si
+1243|Por predefinição, o editor cuida do compasso. Uma nota nunca passa da barra de compasso. Uma nota mais longa ocupa o que lhe segue no compasso; uma mais curta deixa pausas, escritas como um copista faria (sobre o tempo, não a cavalo). As ligaduras de colcheias são adicionadas por si, e um compasso curto é preenchido com pausas ao guardar.
+1244|Tudo segue o compasso da partitura, por isso o 6/8 agrupa-se em tempos pontuados e o 3/4 em três.
+1245|Edição livre (Opções, canto superior direito) desliga tudo isso. Uma nota tem exatamente a duração que escolhe, nunca é cortada pelo compasso, nunca sobrescreve as vizinhas e não deixa pausas. Um compasso pode ter demasiados ou poucos tempos. Toque num espaço vazio de um compasso para adicionar uma nota depois da última. Nada é arrumado ao guardar.
+1246|Compassos, repetições e andamento
+1247|Selecione um compasso no modo Compassos. Início e Fim põem sinais de repetição nele (Fim alterna entre duas, três e quatro vezes). Casa de 1.ª vez e Casa de 2.ª vez põem um colchete sobre ele; Prolongar casa e Encurtar estendem-no sobre compassos vizinhos; Sem casa remove-o.
+1248|Saltos adiciona Segno, Coda, To Coda, Fine, e D.C. ou D.S. simples, al Coda ou al Fine. Ponha o Segno onde um D.S. regressa, To Coda no compasso onde a música salta, e Coda no compasso para onde salta. A reprodução segue-os: depois de um D.C. ou D.S. não repete secções, toca o último final e depois salta de To Coda para a Coda (ou pára em Fine).
+1249|Expandir repetições escreve a peça tal como é tocada, com cada repetição, final e salto como compassos próprios.
+1250|Andamento põe uma marca ♩ = impressa no compasso; a reprodução segue-a a partir daí.
+1251|Adicionar um compasso depois e Eliminar o compasso mudam a duração da peça.
+1252|Anular, guardar e partilhar
+1253|Anular e Refazer estão no painel, e Comando-Z / Shift-Comando-Z, um deslize com três dedos ou abanar o iPad também funcionam. No modo Desenhar, Anular e Refazer aí anulam o desenho.
+1254|Guardar mantém as suas alterações; Cancelar pergunta antes de as deitar fora. Repor partitura original nas Opções recupera o que importou.
+1255|Editar só com o Apple Pencil (Opções) impede os dedos de alterar notas, por isso uma mão pousada na página não faz mal.
+1256|Letras e karaoke
+1257|As letras deslocam-se ao ritmo da música como no Apple Music, e os ficheiros de karaoke CD+Graphics mostram as suas imagens integradas.
+1258|Ficheiros de letras
+1259|Adicione um ficheiro .lrc (linhas com tempos) ou .txt a uma partitura a partir do menu Letras. Os ficheiros MIDI de karaoke (.kar) contêm as suas próprias palavras.
+1260|Mostrar letras em vez da música troca a página pelas palavras. Animar sílabas faz inchar cada sílaba quando é cantada, e Mostrar progresso das sílabas preenche-a. O tipo de letra, tamanho, alinhamento e desfoque das linhas que não se cantam estão nas Definições.
+1261|Um item só de letras (sem notação) tem o seu próprio ecrã com uma barra de reprodução e um acompanhamento opcional. Letras em segundos ou em compassos podem ser escolhidas quando o ficheiro não tem tempos.
+1262|Cantores e pausas
+1263|Para duetos, Atribuir cantores dá cada linha a um cantor; Associar cantores encontra-os na página da canção no Genius. Um cantor, ou um cantor mais todos, fica à esquerda; dois ou mais dividem-se entre esquerda e direita, cada um com a sua cor.
+1264|Mostre as linhas de um cantor com o filtro Cantor. Enquanto o outro cantor canta, um intervalo mostra reticências. Barra de progresso em Pausas nas Definições troca os pontos por uma barra que enche ao longo do intervalo.
+1265|CD+Graphics (.cdg)
+1266|Um ficheiro .cdg é a faixa de imagem de um disco de karaoke: desenha palavras coloridas e fundos num ecrã pequeno. A app toca-o pelo tempo próprio do ficheiro. Adicione o áudio da canção como acompanhamento se o tiver.
+1267|Partilhar, exportar e imprimir
+1268|Tire uma partitura, ou um vídeo dela, da app.
+1269|Menu Partilhar
+1270|Toque sem soltar numa partitura na biblioteca e escolha Partilhar. Tem Exportar como MusicXML, Exportar como PDF e Imprimir.
+1271|O MusicXML abre-se no MuseScore, Finale, Sibelius, Dorico, Notion e na maioria das outras apps de notação. Para uma partitura PDF, é a música que a app leu da página.
+1272|O PDF é a página impressa. Uma partitura PDF é passada tal como está; qualquer outra partitura é composta na tonalidade mostrada de momento. Imprimir abre a janela de impressão do sistema.
+1273|Na folha de partilha também pode Guardar em Ficheiros, AirDrop, enviar o ficheiro por e-mail ou mensagem.
+1274|Outras formas de sair
+1275|Partilhar com outro músico (modo Avançado, mesmo menu) cria um ficheiro .maestropro com a partitura e o seu acompanhamento para outro utilizador do Maestro Pro.
+1276|Exportar vídeo transforma uma partitura num filme da música a acompanhar, com o som.
+1277|O Maestro Pro também é oferecido na folha de partilha de outras apps para os ficheiros que consegue abrir, e importa-os.
+1278|Até oito dispositivos com o Maestro Pro podem tocar a tempo uns com os outros (modo Avançado).
+1279|Ligar
+1280|Abram as vossas partes, depois uma pessoa escolhe Tocar em conjunto e a seguir Iniciar uma sessão. Todos os outros escolhem Entrar numa sessão e escolhem esse dispositivo. O anfitrião é questionado para deixar entrar cada músico. Permita a autorização de Rede local se for pedido.
+1281|Reproduzir, pausar, procurar e mudanças de andamento em qualquer dispositivo são espelhados em todos, para que um professor e os alunos, ou um conjunto inteiro, se mantenham em sintonia. Cada músico mantém a sua parte, tonalidade e instrumento; os dispositivos alinham-se compasso a compasso.
+1282|Até oito dispositivos podem entrar numa sessão. O cursor Ajuste adianta ou atrasa o seu som se usar altifalantes ou auscultadores sem fios.
+1283|Histórico de versões e GitHub
+1284|Guarde versões de uma partitura, experimente ideias em ramos, funda-os de volta e mantenha tudo no GitHub.
+1285|Versões e ramos
+1286|No editor de partituras, toque em Histórico. Guardar versão mantém um instantâneo a que pode voltar. Guardar no editor também regista um. Novo ramo inicia uma linha de edições separada, a partir de agora ou de qualquer versão anterior, para experimentar algo sem tocar na partitura principal.
+1287|Reverter para esta versão repõe um instantâneo anterior como nova versão, por isso nada se perde e pode anular a reversão. Mudar de ramo guarda primeiro as suas edições por guardar.
+1288|Fundir traz outro ramo para o atual, compasso a compasso. Um compasso alterado só num ramo passa; um compasso alterado nos dois choca, e escolhe manter o seu ou tomar o deles. Os compassos são emparelhados por número, por isso um compasso adicionado ou removido cedo num ramo pode fazer o resto aparecer como choques.
+1289|Separar
+1290|Separar como nova partitura transforma qualquer versão, ou a versão mais recente de um ramo, numa partitura própria na sua biblioteca com um histórico novo.
+1291|No Histórico, escolha Ligar a um repositório do GitHub e introduza proprietário/repositório. Enviar para o GitHub envia cada versão e ramo como um verdadeiro commit e ramo de Git, com a partitura como um único ficheiro MusicXML. Obter do GitHub traz versões feitas noutro lado.
+1292|Precisa de um token do GitHub com acesso de leitura e escrita ao conteúdo do repositório. Adicione-o em Faixas do GitHub, em Token de acesso. É guardado na sua Chave de Acesso.
+1293|Um ramo que seguiu caminhos separados no GitHub chega como nome-github, para o poder fundir. As partituras PDF não têm histórico; editar um PDF guarda uma cópia à parte.
+1294|Material de prática criado a pedido.
+1295|Fazer uma escala
+1296|Escolha Escalas e arpejos no ecrã inicial, escolha o tipo (maior, menor, blues, arpejos e mais) e uma tonalidade. É criada uma partitura e adicionada à biblioteca, pronta para tocar, transpor e abrandar.
+1297|Anotar
+1298|Marque a página como uma parte em papel.
+1299|Desenhar na página
+1300|Ative Anotar na barra de ferramentas e desenhe com o Apple Pencil usando a paleta de ferramentas: canetas, marcadores, lápis, cores e uma borracha. A tinta é guardada com a partitura e mostrada enquanto toca.
+1301|Cada tamanho de zoom mantém o seu próprio desenho para que fique alinhado com a música.
+1302|Exportar como PDF e Imprimir incluem a sua tinta para a tonalidade e o zoom que está a ver.
+1303|No Mac, quase tudo tem um atalho de teclado, mostrado nos menus Reprodução, Partitura e Visualização. Num iPad com teclado, mantenha premida a tecla Comando para os ver. Todos os atalhos podem ser alterados.
+1304|Alterar um atalho
+1305|Abra Definições ▸ Atalhos de teclado. Clique num atalho e prima as teclas que quer usar em vez dele. Apagar remove o atalho, e Escape deixa-o como estava. Um atalho que já está em uso passa para a ação a que o dá, e a página di-lo. A seta junto a um atalho repõe-no, e Repor tudo para predefinições repõe todos.
+1306|As teclas simples (como a barra de espaço) só funcionam quando não está a escrever numa caixa.
+1307|Os atalhos do início
+1308|Definições e acessibilidade
+1309|As Definições têm as opções que se aplicam em todo o lado.
+1310|Aspeto
+1311|Aparência é claro, escuro ou seguir o sistema. Cor de realce escolhe a cor que ilumina as notas que tocam; a barra de ferramentas usa a sua cor de destaque. O modo Avançado tem Personalizar todas as cores.
+1312|O zoom, a partitura escura, seguir reprodução e os três realces têm aqui valores predefinidos, que qualquer partitura pode substituir.
+1313|Ícone da app
+1314|As Definições têm uma grelha Ícone da app: os aspetos original, papel, meia-noite, latão, pôr do sol e floresta, a Union Jack, Pride e Trans Pride, e um para cada instrumento (piano, órgão, guitarra acústica, baixo, flauta, clarinete, saxofones alto e tenor, trompete). Toque num e o iPadOS muda o ícone e di-lo.
+1315|Cada ícone vem em versões clara, escura e com tonalidade, para seguir o estilo do seu ecrã inicial. Um Mac mantém um só ícone na Dock, por isso a grelha só existe no iPad.
+1316|O papel, a secretária, os botões e os painéis de controlo são desenhados como materiais reais. Em Superfícies pode aumentar ou diminuir separadamente Textura de papel, Sombra de página e canto dobrado, Pele de secretária, Botões de pele e Metal escovado (até ao dobro), ou desligar Superfícies realistas para um aspeto mais plano. Alto contraste também os desliga.
+1317|Tocar
+1318|Manter o ecrã ligado ao tocar, ocultar a biblioteca ao tocar, metrónomo e contagem ligados por predefinição, começar a tocar quando abre uma partitura, uma velocidade de prática predefinida e o instrumento predefinido.
+1319|Tamanho do texto da app, Texto a negrito, Alto contraste, Controlos de reprodução maiores e Reduzir movimento.
+1320|Flash no tempo e Toque no tempo (háptico) tornam a pulsação visível e tangível. Anunciar compassos com VoiceOver lê o número do compasso à medida que passa.
+1321|Os controlos têm etiquetas e dicas de VoiceOver.
+1322|Resolução de problemas
+1323|Se algo não estiver bem, veja aqui primeiro.
+1324|Perguntas frequentes
+1325|Um PDF toca um número de tempos errado: defina Semínimas por compasso no Inspetor, ou responda à pergunta sobre o compasso na primeira vez que abre.
+1326|Espera por mim ou o Afinador diz que não me ouve: permita o microfone nas Definições do dispositivo ▸ Privacidade ▸ Microfone, depois aumente Sensibilidade do microfone em Definições ▸ Escuta. Toque uma nota de cada vez e mantenha outros sons baixos. Se ainda ouvir a oitava errada, experimente Aceitar qualquer oitava.
+1327|As notas de um PDF parecem mal lidas: só a notação impressa pode ser lida, e as digitalizações precisam de estar direitas e nítidas. Para uma digitalização que a app não lê bem, importe antes um ficheiro MusicXML; há muitos grátis online.
+1328|Um acompanhamento começa tarde ou cedo: arraste o marcador da faixa, ou use Atrasar o início. Use Igualar tonalidade e andamento à faixa para voltar a ouvir.
+1329|Os ficheiros do Band-in-a-Box não podem ser lidos (formato fechado). No Band-in-a-Box, guarde como MusicXML para a notação e como áudio para o acompanhamento.
+1330|Importar partitura não faz nada ou mostra um ficheiro a cinzento: escolha Todos os ficheiros no navegador de Ficheiros, ou arraste o ficheiro para a janela.
+1331|Os temas de jazz precisam de internet na primeira vez que os adiciona.
+1332|Um compasso sobrecarregado no editor: desligue Edição livre, ou elimine uma nota e o editor arruma o compasso.

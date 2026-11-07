@@ -1,0 +1,5334 @@
+[
+[
+"CD+Graphics Karaoke",
+"CD+Graphics Karaoke"
+],
+[
+"CFBundleDisplayName",
+"Maestro Pro"
+],
+[
+"CFBundleName",
+"Maestro Pro"
+],
+[
+"Compressed MusicXML",
+"Compressed MusicXML"
+],
+[
+"Karaoke MIDI",
+"Karaoke MIDI"
+],
+[
+"Maestro Pro Score",
+"Maestro Pro Score"
+],
+[
+"MusicXML",
+"MusicXML"
+],
+[
+"NSAppleMusicUsageDescription",
+"Maestro Pro uses Apple Music so you can play along with a song from your subscription and see its lyrics."
+],
+[
+"NSCameraUsageDescription",
+"Maestro Pro uses the camera to photograph printed sheet music so it can be read and played along with."
+],
+[
+"NSLocalNetworkUsageDescription",
+"Maestro Pro finds the other device you want to play in time with."
+],
+[
+"NSMicrophoneUsageDescription",
+"Maestro Pro listens through the microphone to hear whether you are playing the right note, in tune, and to tune your instrument."
+],
+[
+"Timed Lyrics",
+"Timed Lyrics"
+],
+[
+"\" xml:space=\"preserve\">\n        <source/>\n        <note/>\n      </trans-unit>\n      <trans-unit id=\" ",
+" "
+],
+[
+"%",
+"%"
+],
+[
+"%@ background",
+"%@ background"
+],
+[
+"%@ keyframes, %lld",
+"%1$@ keyframes, %2$lld"
+],
+[
+"%@ paper",
+"%@ paper"
+],
+[
+"%@ s · %@",
+"%1$@ s · %2$@"
+],
+[
+"%@%@ a %@",
+"%1$@%2$@ a %3$@"
+],
+[
+"%@: %@. ",
+"%1$@: %2$@. "
+],
+[
+"%lld",
+"%lld"
+],
+[
+"%lld BPM",
+"%lld BPM"
+],
+[
+"%lld beats per minute",
+"%lld beats per minute"
+],
+[
+"%lld line%@ selected",
+"%1$lld line%2$@ selected"
+],
+[
+"%lld of %lld",
+"%1$lld of %2$lld"
+],
+[
+"%lld of %lld notes (%lld%%)",
+"%1$lld of %2$lld notes (%3$lld%%)"
+],
+[
+"%lld of the %lld bars of “%@” go in after the bar you have chosen, or at the end if none is chosen. They keep their own metre and tempo, and your music takes its own back after them.",
+"%1$lld of the %2$lld bars of “%3$@” go in after the bar you have chosen, or at the end if none is chosen. They keep their own metre and tempo, and your music takes its own back after them."
+],
+[
+"%lld percent",
+"%lld percent"
+],
+[
+"%lld players are connected. Each of you keeps your own sheet music and instrument; you stay together bar by bar.",
+"%lld players are connected. Each of you keeps your own sheet music and instrument; you stay together bar by bar."
+],
+[
+"%lld seconds",
+"%lld seconds"
+],
+[
+"%lld · %@",
+"%1$lld · %2$@"
+],
+[
+"%lld%%",
+"%lld%%"
+],
+[
+"%lld/%lld. Every bar will last exactly this long.",
+"%1$lld/%2$lld. Every bar will last exactly this long."
+],
+[
+"(this score)",
+"(this score)"
+],
+[
+"+%lld",
+"+%lld"
+],
+[
+"1",
+"1"
+],
+[
+"1st Time Bar",
+"1st Time Bar"
+],
+[
+"2nd Time Bar",
+"2nd Time Bar"
+],
+[
+"3",
+"3"
+],
+[
+":‖",
+":‖"
+],
+[
+":‖ End",
+":‖ End"
+],
+[
+":‖ ×%lld",
+":‖ ×%lld"
+],
+[
+"= %lld",
+"= %lld"
+],
+[
+"A",
+"A"
+],
+[
+"A =",
+"A ="
+],
+[
+"A backdrop sets the background, whether the app is light or dark, and the accent colour together.",
+"A backdrop sets the background, whether the app is light or dark, and the accent colour together."
+],
+[
+"A full score editor, medleys built from your library, and version control through to GitHub. From first draft to final part, in one app.",
+"A full score editor, medleys built from your library, and version control through to GitHub. From first draft to final part, in one app."
+],
+[
+"A landscape video of the music with your highlights, drawings and sound, as the player shows it. Keep the app open while it’s made.",
+"A landscape video of the music with your highlights, drawings and sound, as the player shows it. Keep the app open while it’s made."
+],
+[
+"A line of music with each note lighting as the moving line passes it",
+"A line of music with each note lighting as the moving line passes it"
+],
+[
+"A version is a snapshot you can go back to. A branch is a separate line of edits, to try something without touching the main score.",
+"A version is a snapshot you can go back to. A branch is a separate line of edits, to try something without touching the main score."
+],
+[
+"Access Token",
+"Access Token"
+],
+[
+"Accessibility",
+"Accessibility"
+],
+[
+"Accuracy %lld%%, %lld¢ from the note on average",
+"Accuracy %1$lld%%, %2$lld¢ from the note on average"
+],
+[
+"Add",
+"Add"
+],
+[
+"Add All",
+"Add All"
+],
+[
+"Add Another Backing Track…",
+"Add Another Backing Track…"
+],
+[
+"Add Another Track",
+"Add Another Track"
+],
+[
+"Add Backing Track From Apple Music…",
+"Add Backing Track From Apple Music…"
+],
+[
+"Add Backing Track…",
+"Add Backing Track…"
+],
+[
+"Add Band",
+"Add Band"
+],
+[
+"Add Bar After",
+"Add Bar After"
+],
+[
+"Add From Apple Music…",
+"Add From Apple Music…"
+],
+[
+"Add Lyrics File…",
+"Add Lyrics File…"
+],
+[
+"Add Music",
+"Add Music"
+],
+[
+"Add Recording…",
+"Add Recording…"
+],
+[
+"Add a Backing Track",
+"Add a Backing Track"
+],
+[
+"Add a Song From Apple Music…",
+"Add a Song From Apple Music…"
+],
+[
+"Add a keyframe to the selected lane at the playhead",
+"Add a keyframe to the selected lane at the playhead"
+],
+[
+"Add a repository above to see its tracks.",
+"Add a repository above to see its tracks."
+],
+[
+"Add at Playhead",
+"Add at Playhead"
+],
+[
+"Add scores on your iPad or Mac and they appear here.",
+"Add scores on your iPad or Mac and they appear here."
+],
+[
+"Add scores with Add to Set-List in a score’s menu.",
+"Add scores with Add to Set-List in a score’s menu."
+],
+[
+"Add to Set-List",
+"Add to Set-List"
+],
+[
+"Advanced",
+"Advanced"
+],
+[
+"Again",
+"Again"
+],
+[
+"Agree and Continue",
+"Agree and Continue"
+],
+[
+"Alignment",
+"Alignment"
+],
+[
+"All Singers",
+"All Singers"
+],
+[
+"All Singers on the Left",
+"All Singers on the Left"
+],
+[
+"All of it",
+"All of it"
+],
+[
+"Allow",
+"Allow"
+],
+[
+"Animate Syllables",
+"Animate Syllables"
+],
+[
+"Animation",
+"Animation"
+],
+[
+"Annotate",
+"Annotate"
+],
+[
+"Announce Bars with VoiceOver",
+"Announce Bars with VoiceOver"
+],
+[
+"Annually",
+"Annually"
+],
+[
+"Any Note",
+"Any Note"
+],
+[
+"Any Octave",
+"Any Octave"
+],
+[
+"Anywhere",
+"Anywhere"
+],
+[
+"App Icon",
+"App Icon"
+],
+[
+"App Text Size",
+"App Text Size"
+],
+[
+"Appearance",
+"Appearance"
+],
+[
+"Apple Intelligence is putting it in its own words…",
+"Apple Intelligence is putting it in its own words…"
+],
+[
+"Apple Music",
+"Apple Music"
+],
+[
+"Apple Music has no lyrics for that song, or it didn’t let the app read them.",
+"Apple Music has no lyrics for that song, or it didn’t let the app read them."
+],
+[
+"Apple Music plays the song itself, so its key can't change and the singer can't be taken out.",
+"Apple Music plays the song itself, so its key can't change and the singer can't be taken out."
+],
+[
+"Artist",
+"Artist"
+],
+[
+"Assign Singers",
+"Assign Singers"
+],
+[
+"Assign Singers…",
+"Assign Singers…"
+],
+[
+"Autoscroll",
+"Autoscroll"
+],
+[
+"BEST VALUE",
+"BEST VALUE"
+],
+[
+"BPM",
+"BPM"
+],
+[
+"Back",
+"Back"
+],
+[
+"Backing Track & Sound",
+"Backing Track & Sound"
+],
+[
+"Backing Track EQ",
+"Backing Track EQ"
+],
+[
+"Backing track waveform",
+"Backing track waveform"
+],
+[
+"Band %lld",
+"Band %lld"
+],
+[
+"Band %lld, %@, %@",
+"Band %1$lld, %2$@, %3$@"
+],
+[
+"Bar %lld, %@",
+"Bar %1$lld, %2$@"
+],
+[
+"Bar %lld, beat %lld",
+"Bar %1$lld, beat %2$lld"
+],
+[
+"Bar by bar",
+"Bar by bar"
+],
+[
+"Bars",
+"Bars"
+],
+[
+"Bars Before Bar 1 adds empty bars to the start, to count yourself in.",
+"Bars Before Bar 1 adds empty bars to the start, to count yourself in."
+],
+[
+"Bars Before Bar 1 adds empty bars to the start; the backing track starts with the first of them, from the marker.",
+"Bars Before Bar 1 adds empty bars to the start; the backing track starts with the first of them, from the marker."
+],
+[
+"Bars changed on only one branch are brought together. Bars changed on both clash. You can roll the merge back from the history.",
+"Bars changed on only one branch are brought together. Bars changed on both clash. You can roll the merge back from the history."
+],
+[
+"Beat is a",
+"Beat is a"
+],
+[
+"Before You Share",
+"Before You Share"
+],
+[
+"Bigger Text",
+"Bigger Text"
+],
+[
+"Blur Lines Not Being Sung",
+"Blur Lines Not Being Sung"
+],
+[
+"Blur Other Lines",
+"Blur Other Lines"
+],
+[
+"Bold Text",
+"Bold Text"
+],
+[
+"Bracket Longer",
+"Bracket Longer"
+],
+[
+"Bracket Shorter",
+"Bracket Shorter"
+],
+[
+"Branch",
+"Branch"
+],
+[
+"Branch from Here…",
+"Branch from Here…"
+],
+[
+"Branches",
+"Branches"
+],
+[
+"Cancel",
+"Cancel"
+],
+[
+"Cancel any time in your Apple Account settings. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends.",
+"Cancel any time in your Apple Account settings. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends."
+],
+[
+"Can’t Edit This Score",
+"Can’t Edit This Score"
+],
+[
+"Can’t Tie",
+"Can’t Tie"
+],
+[
+"Centred",
+"Centred"
+],
+[
+"Change Repository…",
+"Change Repository…"
+],
+[
+"Change the key of the backing",
+"Change the key of the backing"
+],
+[
+"Change the notes with Apple Pencil",
+"Change the notes with Apple Pencil"
+],
+[
+"Check Linked Folders Now",
+"Check Linked Folders Now"
+],
+[
+"Check Linked Folders When the App Opens",
+"Check Linked Folders When the App Opens"
+],
+[
+"Choose a Plan",
+"Choose a Plan"
+],
+[
+"Choose a band above, or drag a handle on the graph.",
+"Choose a band above, or drag a handle on the graph."
+],
+[
+"Choose a shortcut, then press the keys you want. Delete takes the shortcut away and Escape cancels. A shortcut that is already in use moves to the action you choose it for. Shortcuts show in the Mac menu bar, and on an iPad by holding the Command key.",
+"Choose a shortcut, then press the keys you want. Delete takes the shortcut away and Escape cancels. A shortcut that is already in use moves to the action you choose it for. Shortcuts show in the Mac menu bar, and on an iPad by holding the Command key."
+],
+[
+"Choose how playback is shown: notes, bar, line",
+"Choose how playback is shown: notes, bar, line"
+],
+[
+"Chord View",
+"Chord View"
+],
+[
+"Chord symbols from the score",
+"Chord symbols from the score"
+],
+[
+"Chords worked out from the notes",
+"Chords worked out from the notes"
+],
+[
+"Clear",
+"Clear"
+],
+[
+"Clocks agree to within %lld ms.",
+"Clocks agree to within %lld ms."
+],
+[
+"Close",
+"Close"
+],
+[
+"Close the review",
+"Close the review"
+],
+[
+"Collapsed",
+"Collapsed"
+],
+[
+"Collection",
+"Collection"
+],
+[
+"Colour-Blind-Friendly Highlights",
+"Colour-Blind-Friendly Highlights"
+],
+[
+"Colours",
+"Colours"
+],
+[
+"Concert pitch",
+"Concert pitch"
+],
+[
+"Connect to a GitHub Repository…",
+"Connect to a GitHub Repository…"
+],
+[
+"Continue for Free",
+"Continue for Free"
+],
+[
+"Copy",
+"Copy"
+],
+[
+"Couldn't Add Lyrics",
+"Couldn't Add Lyrics"
+],
+[
+"Couldn't send feedback",
+"Couldn't send feedback"
+],
+[
+"Couldn’t Add Score",
+"Couldn’t Add Score"
+],
+[
+"Couldn’t Finish",
+"Couldn’t Finish"
+],
+[
+"Couldn’t Import Score",
+"Couldn’t Import Score"
+],
+[
+"Couldn’t Open Lyrics",
+"Couldn’t Open Lyrics"
+],
+[
+"Couldn’t Open Score",
+"Couldn’t Open Score"
+],
+[
+"Couldn’t Save Lyrics",
+"Couldn’t Save Lyrics"
+],
+[
+"Count In",
+"Count In"
+],
+[
+"Count In by Default",
+"Count In by Default"
+],
+[
+"Count in %lld",
+"Count in %lld"
+],
+[
+"Create",
+"Create"
+],
+[
+"Crescendo",
+"Crescendo"
+],
+[
+"Crotchet",
+"Crotchet"
+],
+[
+"Curve to the next keyframe",
+"Curve to the next keyframe"
+],
+[
+"Custom Tempo",
+"Custom Tempo"
+],
+[
+"Customise Colours…",
+"Customise Colours…"
+],
+[
+"Customise Every Colour…",
+"Customise Every Colour…"
+],
+[
+"Cut",
+"Cut"
+],
+[
+"Dark",
+"Dark"
+],
+[
+"Dark Paper",
+"Dark Paper"
+],
+[
+"Dark Sheet Music",
+"Dark Sheet Music"
+],
+[
+"Date Added",
+"Date Added"
+],
+[
+"Decline",
+"Decline"
+],
+[
+"Default",
+"Default"
+],
+[
+"Delete",
+"Delete"
+],
+[
+"Delete Bar",
+"Delete Bar"
+],
+[
+"Delete Branch",
+"Delete Branch"
+],
+[
+"Delete Set-List",
+"Delete Set-List"
+],
+[
+"Delete Set-List…",
+"Delete Set-List…"
+],
+[
+"Delete This Recording",
+"Delete This Recording"
+],
+[
+"Delete from Library",
+"Delete from Library"
+],
+[
+"Delete “%@”?",
+"Delete “%@”?"
+],
+[
+"Description",
+"Description"
+],
+[
+"Did You Mean?",
+"Did You Mean?"
+],
+[
+"Diminuendo",
+"Diminuendo"
+],
+[
+"Discard Changes",
+"Discard Changes"
+],
+[
+"Discard your changes?",
+"Discard your changes?"
+],
+[
+"Disconnect",
+"Disconnect"
+],
+[
+"Done",
+"Done"
+],
+[
+"Dotted",
+"Dotted"
+],
+[
+"Double-tap Apple Pencil to switch to the eraser and back. Undo and Redo are at the top right of this panel.",
+"Double-tap Apple Pencil to switch to the eraser and back. Undo and Redo are at the top right of this panel."
+],
+[
+"Double-tap to %@ these settings.",
+"Double-tap to %@ these settings."
+],
+[
+"Double-tap to change the key.",
+"Double-tap to change the key."
+],
+[
+"Double-tap to type a tempo.",
+"Double-tap to type a tempo."
+],
+[
+"Down a Tone",
+"Down a Tone"
+],
+[
+"Download %lld",
+"Download %lld"
+],
+[
+"Download %lld tunes?",
+"Download %lld tunes?"
+],
+[
+"Drag the marker to where %@ begins, or delay the track if the score should start first. If the score drifts from the recording, tap Lock Tempo on a downbeat later in the piece.",
+"Drag the marker to where %@ begins, or delay the track if the score should start first. If the score drifts from the recording, tap Lock Tempo on a downbeat later in the piece."
+],
+[
+"Drag to move the playhead.",
+"Drag to move the playhead."
+],
+[
+"Draw on the sheet music with Apple Pencil",
+"Draw on the sheet music with Apple Pencil"
+],
+[
+"Drop files anywhere in the window.",
+"Drop files anywhere in the window."
+],
+[
+"Drop to Import",
+"Drop to Import"
+],
+[
+"Duplicate",
+"Duplicate"
+],
+[
+"Dynamic",
+"Dynamic"
+],
+[
+"Each icon has a light, a dark and a tinted look, so it follows your Home Screen style. iPadOS tells you when the icon changes.",
+"Each icon has a light, a dark and a tinted look, so it follows your Home Screen style. iPadOS tells you when the icon changes."
+],
+[
+"Each is a small file, fetched from effendi.me.",
+"Each is a small file, fetched from effendi.me."
+],
+[
+"Each line starts with the time it is sung, like [01:23.45]. Change the words after it; keep the time as it is.",
+"Each line starts with the time it is sung, like [01:23.45]. Change the words after it; keep the time as it is."
+],
+[
+"Each stave scrolls past in the time it takes to play at this tempo.",
+"Each stave scrolls past in the time it takes to play at this tempo."
+],
+[
+"Edit %@",
+"Edit %@"
+],
+[
+"Edit Backing Track",
+"Edit Backing Track"
+],
+[
+"Edit Backing Track…",
+"Edit Backing Track…"
+],
+[
+"Edit Lyrics",
+"Edit Lyrics"
+],
+[
+"Edit Lyrics…",
+"Edit Lyrics…"
+],
+[
+"Edit Score",
+"Edit Score"
+],
+[
+"Edit Title on Sheet…",
+"Edit Title on Sheet…"
+],
+[
+"Edit a Copy of %@",
+"Edit a Copy of %@"
+],
+[
+"Edit the notes with Apple Pencil.",
+"Edit the notes with Apple Pencil."
+],
+[
+"Edit with Apple Pencil Only",
+"Edit with Apple Pencil Only"
+],
+[
+"Editing Modes",
+"Editing Modes"
+],
+[
+"Engraving…",
+"Engraving…"
+],
+[
+"Equaliser (On)…",
+"Equaliser (On)…"
+],
+[
+"Equaliser On",
+"Equaliser On"
+],
+[
+"Equaliser…",
+"Equaliser…"
+],
+[
+"Every tool on show: editors, sync, Play Together, sharing.",
+"Every tool on show: editors, sync, Play Together, sharing."
+],
+[
+"Every version and branch goes to the repository as a real Git commit and branch, as one MusicXML file. It needs a token with write access, added in Tracks from GitHub under Access Token.",
+"Every version and branch goes to the repository as a real Git commit and branch, as one MusicXML file. It needs a token with write access, added in Tracks from GitHub under Access Token."
+],
+[
+"Everything a\nworking musician needs.",
+"Everything a\nworking musician needs."
+],
+[
+"Everything except the score editor",
+"Everything except the score editor"
+],
+[
+"Everything in a linked folder is added to your library, and new files are picked up on the next check. A recording or lyrics file with the same name as a score goes with it.",
+"Everything in a linked folder is added to your library, and new files are picked up on the next check. A recording or lyrics file with the same name as a score goes with it."
+],
+[
+"Everything is available: the backing track editor, the score editor, sync tools, key and metre overrides, Play Together, sharing and exporting, colours and linked folders.",
+"Everything is available: the backing track editor, the score editor, sync tools, key and metre overrides, Play Together, sharing and exporting, colours and linked folders."
+],
+[
+"Everything is unlocked. Enjoy playing.",
+"Everything is unlocked. Enjoy playing."
+],
+[
+"Everything, including the score editor",
+"Everything, including the score editor"
+],
+[
+"Expand Repeats",
+"Expand Repeats"
+],
+[
+"Expanded",
+"Expanded"
+],
+[
+"Export Video",
+"Export Video"
+],
+[
+"Export Video…",
+"Export Video…"
+],
+[
+"Export as MusicXML",
+"Export as MusicXML"
+],
+[
+"Export as MusicXML…",
+"Export as MusicXML…"
+],
+[
+"Export as PDF…",
+"Export as PDF…"
+],
+[
+"Fade In (4 s)",
+"Fade In (4 s)"
+],
+[
+"Fade Out (4 s)",
+"Fade Out (4 s)"
+],
+[
+"Faster",
+"Faster"
+],
+[
+"Find Enhanced lyrics (timed word by word) on lyricsify.com",
+"Find Enhanced lyrics (timed word by word) on lyricsify.com"
+],
+[
+"Find Lyrics",
+"Find Lyrics"
+],
+[
+"Fit to Width",
+"Fit to Width"
+],
+[
+"Flash on the Beat",
+"Flash on the Beat"
+],
+[
+"Folder Imported",
+"Folder Imported"
+],
+[
+"Follow Playback",
+"Follow Playback"
+],
+[
+"Follow the key signature",
+"Follow the key signature"
+],
+[
+"Free Editing (No Auto-Corrections)",
+"Free Editing (No Auto-Corrections)"
+],
+[
+"From Apple Music…",
+"From Apple Music…"
+],
+[
+"From a File…",
+"From a File…"
+],
+[
+"Full",
+"Full"
+],
+[
+"Full Screen",
+"Full Screen"
+],
+[
+"Gentle",
+"Gentle"
+],
+[
+"Get %@",
+"Get %@"
+],
+[
+"Get ready…",
+"Get ready…"
+],
+[
+"Get the Lyrics",
+"Get the Lyrics"
+],
+[
+"GitHub",
+"GitHub"
+],
+[
+"Give each staff its own instrument, for example Bass on the bass-clef staff. Staves left on Same as Above use the instrument chosen above.",
+"Give each staff its own instrument, for example Bass on the bass-clef staff. Staves left on Same as Above use the instrument chosen above."
+],
+[
+"Go to Beginning",
+"Go to Beginning"
+],
+[
+"Goal",
+"Goal"
+],
+[
+"Half the length",
+"Half the length"
+],
+[
+"Has backing track",
+"Has backing track"
+],
+[
+"Hear Notes as I Edit",
+"Hear Notes as I Edit"
+],
+[
+"Hear the music from the chosen note or bar",
+"Hear the music from the chosen note or bar"
+],
+[
+"Held for %lld seconds",
+"Held for %lld seconds"
+],
+[
+"Help",
+"Help"
+],
+[
+"Help and Guide",
+"Help and Guide"
+],
+[
+"Hide Inspector",
+"Hide Inspector"
+],
+[
+"Hide Library",
+"Hide Library"
+],
+[
+"Hide Library (⌃⌘S)",
+"Hide Library (⌃⌘S)"
+],
+[
+"Hide Playback Controls",
+"Hide Playback Controls"
+],
+[
+"Hide the Library While Playing",
+"Hide the Library While Playing"
+],
+[
+"High Contrast",
+"High Contrast"
+],
+[
+"Highlight Bar",
+"Highlight Bar"
+],
+[
+"Highlight Colour",
+"Highlight Colour"
+],
+[
+"Highlight Notes",
+"Highlight Notes"
+],
+[
+"Highlights",
+"Highlights"
+],
+[
+"History",
+"History"
+],
+[
+"Hold a steady note",
+"Hold a steady note"
+],
+[
+"Hold for",
+"Hold for"
+],
+[
+"How many beats are in each bar?",
+"How many beats are in each bar?"
+],
+[
+"I Have Permission to Share This",
+"I Have Permission to Share This"
+],
+[
+"I own this music or have permission to share it",
+"I own this music or have permission to share it"
+],
+[
+"INTRO",
+"INTRO"
+],
+[
+"If you use wireless speakers or headphones and the sound runs behind the other player, move it earlier.",
+"If you use wireless speakers or headphones and the sound runs behind the other player, move it earlier."
+],
+[
+"Ignore the Score’s Tempo Changes",
+"Ignore the Score’s Tempo Changes"
+],
+[
+"Import Folder from Files…",
+"Import Folder from Files…"
+],
+[
+"Import Score…",
+"Import Score…"
+],
+[
+"Imported scores appear here.",
+"Imported scores appear here."
+],
+[
+"Importing %lld of %lld…",
+"Importing %1$lld of %2$lld…"
+],
+[
+"In Tune Within",
+"In Tune Within"
+],
+[
+"In Your Library",
+"In Your Library"
+],
+[
+"Included with Professional",
+"Included with Professional"
+],
+[
+"Insert",
+"Insert"
+],
+[
+"Insert Bars",
+"Insert Bars"
+],
+[
+"Insert from Score…",
+"Insert from Score…"
+],
+[
+"Instrument",
+"Instrument"
+],
+[
+"Instrument Volume",
+"Instrument Volume"
+],
+[
+"Instrument level",
+"Instrument level"
+],
+[
+"Instrumental break",
+"Instrumental break"
+],
+[
+"Interface",
+"Interface"
+],
+[
+"Intro, %lld bar%@ before bar 1",
+"Intro, %1$lld bar%2$@ before bar 1"
+],
+[
+"Intro, %lld bars to go, beat %lld",
+"Intro, %1$lld bars to go, beat %2$lld"
+],
+[
+"Jazz tunes are downloaded when you add them, so you need to be online.",
+"Jazz tunes are downloaded when you add them, so you need to be online."
+],
+[
+"Join a Session",
+"Join a Session"
+],
+[
+"Jumps",
+"Jumps"
+],
+[
+"Jumps to this line.",
+"Jumps to this line."
+],
+[
+"Just the essentials: open a score, rehearse it, set tempo and key. Switch to Advanced for the editors, sync tools, sharing and the rest.",
+"Just the essentials: open a score, rehearse it, set tempo and key. Switch to Advanced for the editors, sync tools, sharing and the rest."
+],
+[
+"Just the essentials: open, play along, change tempo and key.",
+"Just the essentials: open, play along, change tempo and key."
+],
+[
+"Karaoke Music",
+"Karaoke Music"
+],
+[
+"Karaoke picture",
+"Karaoke picture"
+],
+[
+"Keep %@ in tune for %lld seconds.",
+"Keep %1$@ in tune for %2$lld seconds."
+],
+[
+"Keep tapping",
+"Keep tapping"
+],
+[
+"Keep the Screen On While Playing",
+"Keep the Screen On While Playing"
+],
+[
+"Key",
+"Key"
+],
+[
+"Key: %@",
+"Key: %@"
+],
+[
+"Keyboard Shortcuts",
+"Keyboard Shortcuts"
+],
+[
+"Large",
+"Large"
+],
+[
+"Larger",
+"Larger"
+],
+[
+"Larger Playback Controls",
+"Larger Playback Controls"
+],
+[
+"Largest",
+"Largest"
+],
+[
+"Left",
+"Left"
+],
+[
+"Let %@ join?",
+"Let %@ join?"
+],
+[
+"Library",
+"Library"
+],
+[
+"Light",
+"Light"
+],
+[
+"Light Paper",
+"Light Paper"
+],
+[
+"Line %lld",
+"Line %lld"
+],
+[
+"Link a Folder from Files…",
+"Link a Folder from Files…"
+],
+[
+"Link up to eight devices so everyone plays the same piece exactly in time, each from their own sheet music: a flute part, a clarinet part, a different key or instrument. Open your parts, then one person starts a session and the others join.",
+"Link up to eight devices so everyone plays the same piece exactly in time, each from their own sheet music: a flute part, a clarinet part, a different key or instrument. Open your parts, then one person starts a session and the others join."
+],
+[
+"Listen",
+"Listen"
+],
+[
+"Listen to the backing track and set the score’s tempo and key to match it",
+"Listen to the backing track and set the score’s tempo and key to match it"
+],
+[
+"Listening",
+"Listening"
+],
+[
+"Loading price…",
+"Loading price…"
+],
+[
+"Longer",
+"Longer"
+],
+[
+"Looking for lyrics? Lyricsify has timed .lrc files for many songs. Maestro Pro is not affiliated with Lyricsify and does not supply or endorse its content.",
+"Looking for lyrics? Lyricsify has timed .lrc files for many songs. Maestro Pro is not affiliated with Lyricsify and does not supply or endorse its content."
+],
+[
+"Looking through the repositories…",
+"Looking through the repositories…"
+],
+[
+"Lyrics",
+"Lyrics"
+],
+[
+"Lyrics Appearance…",
+"Lyrics Appearance…"
+],
+[
+"Lyrics Instead of Music",
+"Lyrics Instead of Music"
+],
+[
+"Lyrics from Apple Music…",
+"Lyrics from Apple Music…"
+],
+[
+"Lyrics with Backing…",
+"Lyrics with Backing…"
+],
+[
+"Lyricsify",
+"Lyricsify"
+],
+[
+"Lyricsify…",
+"Lyricsify…"
+],
+[
+"Maestro Pro",
+"Maestro Pro"
+],
+[
+"Maestro Pro Help",
+"Maestro Pro Help"
+],
+[
+"Maestro Pro is made for the big screen. Unfold your iPhone Duo to carry on.",
+"Maestro Pro is made for the big screen. Unfold your iPhone Duo to carry on."
+],
+[
+"Make the notation bigger or smaller; the bars reflow into more or fewer to a row. Pinch also works.",
+"Make the notation bigger or smaller; the bars reflow into more or fewer to a row. Pinch also works."
+],
+[
+"Manage Subscription",
+"Manage Subscription"
+],
+[
+"Match",
+"Match"
+],
+[
+"Match Key",
+"Match Key"
+],
+[
+"Match Key & Tempo to Track",
+"Match Key & Tempo to Track"
+],
+[
+"Match My Key",
+"Match My Key"
+],
+[
+"Match Singers",
+"Match Singers"
+],
+[
+"Match System",
+"Match System"
+],
+[
+"Match and Sync…",
+"Match and Sync…"
+],
+[
+"Merge into %@…",
+"Merge into %@…"
+],
+[
+"Merge “%@” into “%@”",
+"Merge “%1$@” into “%2$@”"
+],
+[
+"Merge, Keep Mine Where They Clash",
+"Merge, Keep Mine Where They Clash"
+],
+[
+"Merge, Take Theirs Where They Clash",
+"Merge, Take Theirs Where They Clash"
+],
+[
+"Metronome",
+"Metronome"
+],
+[
+"Metronome (K)",
+"Metronome (K)"
+],
+[
+"Metronome On by Default",
+"Metronome On by Default"
+],
+[
+"Microphone Sensitivity",
+"Microphone Sensitivity"
+],
+[
+"Microphone on",
+"Microphone on"
+],
+[
+"Minim",
+"Minim"
+],
+[
+"Mode",
+"Mode"
+],
+[
+"Monospaced",
+"Monospaced"
+],
+[
+"More",
+"More"
+],
+[
+"Most of it",
+"Most of it"
+],
+[
+"Move pasted bars into the key of the music they go after",
+"Move pasted bars into the key of the music they go after"
+],
+[
+"Moving Line",
+"Moving Line"
+],
+[
+"Music",
+"Music"
+],
+[
+"Music and lyrics are hidden while the screen is being recorded. Stop recording to carry on.",
+"Music and lyrics are hidden while the screen is being recorded. Stop recording to carry on."
+],
+[
+"Mute It",
+"Mute It"
+],
+[
+"Mute It and Record",
+"Mute It and Record"
+],
+[
+"Mute the Backing Track?",
+"Mute the Backing Track?"
+],
+[
+"Name",
+"Name"
+],
+[
+"Needed for private repositories, for adding a lot of tracks, and for pushing a score's history to GitHub (then with read and write access to the repository's contents). It's kept in your Keychain.",
+"Needed for private repositories, for adding a lot of tracks, and for pushing a score's history to GitHub (then with read and write access to the repository's contents). It's kept in your Keychain."
+],
+[
+"New Blank Score",
+"New Blank Score"
+],
+[
+"New Blank Score…",
+"New Blank Score…"
+],
+[
+"New Branch…",
+"New Branch…"
+],
+[
+"New Set-List",
+"New Set-List"
+],
+[
+"New Set-List…",
+"New Set-List…"
+],
+[
+"Next",
+"Next"
+],
+[
+"Next Bar",
+"Next Bar"
+],
+[
+"Next Page",
+"Next Page"
+],
+[
+"No Chords Yet",
+"No Chords Yet"
+],
+[
+"No Dynamic",
+"No Dynamic"
+],
+[
+"No Lyrics",
+"No Lyrics"
+],
+[
+"No Lyrics Here",
+"No Lyrics Here"
+],
+[
+"No Scores Yet",
+"No Scores Yet"
+],
+[
+"No Time Bar",
+"No Time Bar"
+],
+[
+"No folders linked.",
+"No folders linked."
+],
+[
+"No results. Try a different search or instrument.",
+"No results. Try a different search or instrument."
+],
+[
+"No scores or lyrics found.",
+"No scores or lyrics found."
+],
+[
+"No synced lyrics found. Try the song title and artist name.",
+"No synced lyrics found. Try the song title and artist name."
+],
+[
+"None",
+"None"
+],
+[
+"None of These: Enter the Artist…",
+"None of These: Enter the Artist…"
+],
+[
+"Normal",
+"Normal"
+],
+[
+"Normal ±10¢",
+"Normal ±10¢"
+],
+[
+"Not Now",
+"Not Now"
+],
+[
+"Note %lld of %lld",
+"Note %1$lld of %2$lld"
+],
+[
+"Note to Hold",
+"Note to Hold"
+],
+[
+"Nothing matches “%@”.",
+"Nothing matches “%@”."
+],
+[
+"Nudge sound: %lld ms",
+"Nudge sound: %lld ms"
+],
+[
+"OK",
+"OK"
+],
+[
+"Off",
+"Off"
+],
+[
+"On",
+"On"
+],
+[
+"On iPhone, Maestro Pro only views the scores you add on your iPad or Mac. It isn't the full app.",
+"On iPhone, Maestro Pro only views the scores you add on your iPad or Mac. It isn't the full app."
+],
+[
+"Open Settings",
+"Open Settings"
+],
+[
+"Open Your iPhone",
+"Open Your iPhone"
+],
+[
+"Open a score from your library, or bring in a new one.",
+"Open a score from your library, or bring in a new one."
+],
+[
+"Open in New Window",
+"Open in New Window"
+],
+[
+"Open the Tuner",
+"Open the Tuner"
+],
+[
+"Options",
+"Options"
+],
+[
+"Options (top right) has Free Editing. With it on, the editor stops helping: notes are never clipped to the bar, never overwrite their neighbours and leave no rests behind, so a bar can hold too many or too few beats. Touch empty space in a bar to add a note after the last one.",
+"Options (top right) has Free Editing. With it on, the editor stops helping: notes are never clipped to the bar, never overwrite their neighbours and leave no rests behind, so a bar can hold too many or too few beats. Touch empty space in a bar to add a note after the last one."
+],
+[
+"Or get Professional for life",
+"Or get Professional for life"
+],
+[
+"Or get Professional for life, %@ once",
+"Or get Professional for life, %@ once"
+],
+[
+"Output Level",
+"Output Level"
+],
+[
+"PLAY",
+"PLAY"
+],
+[
+"Page",
+"Page"
+],
+[
+"Page %lld",
+"Page %lld"
+],
+[
+"Page %lld of the score",
+"Page %lld of the score"
+],
+[
+"Paper colour tints the page behind the notes, and scanned pages take it too.",
+"Paper colour tints the page behind the notes, and scanned pages take it too."
+],
+[
+"Part to Follow",
+"Part to Follow"
+],
+[
+"Part to Judge",
+"Part to Judge"
+],
+[
+"Paste",
+"Paste"
+],
+[
+"Pause",
+"Pause"
+],
+[
+"Personal access token",
+"Personal access token"
+],
+[
+"Play",
+"Play"
+],
+[
+"Play Music As",
+"Play Music As"
+],
+[
+"Play Reference Note",
+"Play Reference Note"
+],
+[
+"Play Score As",
+"Play Score As"
+],
+[
+"Play Scores As",
+"Play Scores As"
+],
+[
+"Play Together",
+"Play Together"
+],
+[
+"Play any note and keep it in tune for %lld seconds.",
+"Play any note and keep it in tune for %lld seconds."
+],
+[
+"Play in time with another device",
+"Play in time with another device"
+],
+[
+"Play or Pause (Space)",
+"Play or Pause (Space)"
+],
+[
+"Play the Melody Guide",
+"Play the Melody Guide"
+],
+[
+"Play the recording",
+"Play the recording"
+],
+[
+"Playback",
+"Playback"
+],
+[
+"Playback speeds up or slows down from this bar on, relative to the opening tempo, until the next mark. A recording has its own tempo, so marks only change the built-in instrument.",
+"Playback speeds up or slows down from this bar on, relative to the opening tempo, until the next mark. A recording has its own tempo, so marks only change the built-in instrument."
+],
+[
+"Plays the chosen bars over and over, to practise a hard passage.",
+"Plays the chosen bars over and over, to practise a hard passage."
+],
+[
+"Position",
+"Position"
+],
+[
+"Practice Speed",
+"Practice Speed"
+],
+[
+"Practice speed %lld%% plays it at %lld.",
+"Practice speed %1$lld%% plays it at %2$lld."
+],
+[
+"Practice speed in percent",
+"Practice speed in percent"
+],
+[
+"Preparing the score…",
+"Preparing the score…"
+],
+[
+"Presets",
+"Presets"
+],
+[
+"Previous Bar",
+"Previous Bar"
+],
+[
+"Previous Page",
+"Previous Page"
+],
+[
+"Print…",
+"Print…"
+],
+[
+"Privacy",
+"Privacy"
+],
+[
+"Progress Bar in Breaks",
+"Progress Bar in Breaks"
+],
+[
+"Provide Feedback",
+"Provide Feedback"
+],
+[
+"Pull from GitHub",
+"Pull from GitHub"
+],
+[
+"Push to GitHub",
+"Push to GitHub"
+],
+[
+"Quaver",
+"Quaver"
+],
+[
+"Read, rehearse, perform and write.\nSheet music timed to the note.",
+"Read, rehearse, perform and write.\nSheet music timed to the note."
+],
+[
+"Reading staves and notes…",
+"Reading staves and notes…"
+],
+[
+"Reading your scan…",
+"Reading your scan…"
+],
+[
+"Realistic Surfaces",
+"Realistic Surfaces"
+],
+[
+"Record",
+"Record"
+],
+[
+"Record Again",
+"Record Again"
+],
+[
+"Record Anyway",
+"Record Anyway"
+],
+[
+"Record Myself",
+"Record Myself"
+],
+[
+"Record yourself playing, then see which notes you hit",
+"Record yourself playing, then see which notes you hit"
+],
+[
+"Recording",
+"Recording"
+],
+[
+"Recording Isn’t Allowed",
+"Recording Isn’t Allowed"
+],
+[
+"Recording. Play the score.",
+"Recording. Play the score."
+],
+[
+"Recordings",
+"Recordings"
+],
+[
+"Redo",
+"Redo"
+],
+[
+"Redo drawing",
+"Redo drawing"
+],
+[
+"Reduce Motion",
+"Reduce Motion"
+],
+[
+"Reduce Vocals",
+"Reduce Vocals"
+],
+[
+"Relaxed",
+"Relaxed"
+],
+[
+"Relaxed ±20¢",
+"Relaxed ±20¢"
+],
+[
+"Remove",
+"Remove"
+],
+[
+"Remove Backing Track",
+"Remove Backing Track"
+],
+[
+"Remove Lyrics File",
+"Remove Lyrics File"
+],
+[
+"Remove Mark",
+"Remove Mark"
+],
+[
+"Remove Recording",
+"Remove Recording"
+],
+[
+"Remove from “%@”",
+"Remove from “%@”"
+],
+[
+"Remove rest",
+"Remove rest"
+],
+[
+"Remove the 1st or 2nd time bar from this bar and the bars joined to it",
+"Remove the 1st or 2nd time bar from this bar and the bars joined to it"
+],
+[
+"Rename",
+"Rename"
+],
+[
+"Rename Score",
+"Rename Score"
+],
+[
+"Rename Set-List",
+"Rename Set-List"
+],
+[
+"Rename…",
+"Rename…"
+],
+[
+"Repeat a Section",
+"Repeat a Section"
+],
+[
+"Replace Backing Track…",
+"Replace Backing Track…"
+],
+[
+"Replace Lyrics File…",
+"Replace Lyrics File…"
+],
+[
+"Replace Recording…",
+"Replace Recording…"
+],
+[
+"Replace…",
+"Replace…"
+],
+[
+"Repositories",
+"Repositories"
+],
+[
+"Repository",
+"Repository"
+],
+[
+"Reset",
+"Reset"
+],
+[
+"Reset %@",
+"Reset %@"
+],
+[
+"Reset All Lanes",
+"Reset All Lanes"
+],
+[
+"Reset All Settings",
+"Reset All Settings"
+],
+[
+"Reset All to Defaults",
+"Reset All to Defaults"
+],
+[
+"Reset Surfaces",
+"Reset Surfaces"
+],
+[
+"Reset all settings to their defaults?",
+"Reset all settings to their defaults?"
+],
+[
+"Reset to Defaults",
+"Reset to Defaults"
+],
+[
+"Restore Purchases",
+"Restore Purchases"
+],
+[
+"Restore the Original Score",
+"Restore the Original Score"
+],
+[
+"Review",
+"Review"
+],
+[
+"Review options",
+"Review options"
+],
+[
+"Rhythm read from the note values in %lld of %lld bars. The rest (tuplets, unusual engraving) follow the printed spacing.",
+"Rhythm read from the note values in %1$lld of %2$lld bars. The rest (tuplets, unusual engraving) follow the printed spacing."
+],
+[
+"Rhythm read from the note values in all %lld bars.",
+"Rhythm read from the note values in all %lld bars."
+],
+[
+"Roll Back to This Version",
+"Roll Back to This Version"
+],
+[
+"Rounded",
+"Rounded"
+],
+[
+"S-Curve",
+"S-Curve"
+],
+[
+"Same as Above",
+"Same as Above"
+],
+[
+"Save",
+"Save"
+],
+[
+"Save Token",
+"Save Token"
+],
+[
+"Save Version…",
+"Save Version…"
+],
+[
+"Save or Share Video",
+"Save or Share Video"
+],
+[
+"Saved versions, branches and merges",
+"Saved versions, branches and merges"
+],
+[
+"Scales & Arpeggios",
+"Scales & Arpeggios"
+],
+[
+"Scales & Arpeggios…",
+"Scales & Arpeggios…"
+],
+[
+"Scan Sheet Music…",
+"Scan Sheet Music…"
+],
+[
+"Score",
+"Score"
+],
+[
+"Score Is Written For",
+"Score Is Written For"
+],
+[
+"Scores",
+"Scores"
+],
+[
+"Scores that follow you to the note, hands-free page turns, ensemble sync, recording and review. Built for rehearsal, ready for the stage.",
+"Scores that follow you to the note, hands-free page turns, ensemble sync, recording and review. Built for rehearsal, ready for the stage."
+],
+[
+"Scores, lyrics and recordings with the same name are added together. Swipe to remove a repository.",
+"Scores, lyrics and recordings with the same name are added together. Swipe to remove a repository."
+],
+[
+"Scroll the page with playback",
+"Scroll the page with playback"
+],
+[
+"Search Scores",
+"Search Scores"
+],
+[
+"Search Scores…",
+"Search Scores…"
+],
+[
+"Search for Lyrics Online…",
+"Search for Lyrics Online…"
+],
+[
+"Search for the song, open its Enhanced (word-timed) lyrics, then tap Use These Lyrics, or download the .lrc file.",
+"Search for the song, open its Enhanced (word-timed) lyrics, then tap Use These Lyrics, or download the .lrc file."
+],
+[
+"Search tracks",
+"Search tracks"
+],
+[
+"Searches the web, and GitHub, for MusicXML scores. Type a composer or piece name above. Check that a score is free to use before you add it.",
+"Searches the web, and GitHub, for MusicXML scores. Type a composer or piece name above. Check that a score is free to use before you add it."
+],
+[
+"See Other Users' Feedback",
+"See Other Users' Feedback"
+],
+[
+"See the piece as a chart of chords",
+"See the piece as a chart of chords"
+],
+[
+"Select All",
+"Select All"
+],
+[
+"Select None",
+"Select None"
+],
+[
+"Select a note, then tap a length (semibreve, minim, crotchet…) to change how long it lasts. The dot makes it longer by half; the 3 makes triplets, three notes in the time of two. A note takes over whatever follows it in the bar; a shorter one leaves rests behind.",
+"Select a note, then tap a length (semibreve, minim, crotchet…) to change how long it lasts. The dot makes it longer by half; the 3 makes triplets, three notes in the time of two. A note takes over whatever follows it in the bar; a shorter one leaves rests behind."
+],
+[
+"Send",
+"Send"
+],
+[
+"Serif",
+"Serif"
+],
+[
+"Set Mark",
+"Set Mark"
+],
+[
+"Set Tempo",
+"Set Tempo"
+],
+[
+"Set as you tap",
+"Set as you tap"
+],
+[
+"Set-List options for %@",
+"Set-List options for %@"
+],
+[
+"Settings",
+"Settings"
+],
+[
+"Settings (⌘,)",
+"Settings (⌘,)"
+],
+[
+"Settings for %@",
+"Settings for %@"
+],
+[
+"Settings…",
+"Settings…"
+],
+[
+"Share",
+"Share"
+],
+[
+"Share with Another Player",
+"Share with Another Player"
+],
+[
+"Share with Another Player…",
+"Share with Another Player…"
+],
+[
+"Share…",
+"Share…"
+],
+[
+"Sheet Music",
+"Sheet Music"
+],
+[
+"Sheet music and recordings are usually protected by copyright. Only share music you wrote, own the rights to, or have permission to pass on. Sharing copyrighted material without permission may be illegal, and you are responsible for what you send.",
+"Sheet music and recordings are usually protected by copyright. Only share music you wrote, own the rights to, or have permission to pass on. Sharing copyrighted material without permission may be illegal, and you are responsible for what you send."
+],
+[
+"Shift Backing Track",
+"Shift Backing Track"
+],
+[
+"Shorter",
+"Shorter"
+],
+[
+"Show Inspector",
+"Show Inspector"
+],
+[
+"Show Inspector (⌥⌘I)",
+"Show Inspector (⌥⌘I)"
+],
+[
+"Show Library",
+"Show Library"
+],
+[
+"Show Library (⌃⌘S)",
+"Show Library (⌃⌘S)"
+],
+[
+"Show Lines For",
+"Show Lines For"
+],
+[
+"Show Lyrics Instead of Music",
+"Show Lyrics Instead of Music"
+],
+[
+"Show Playback Controls",
+"Show Playback Controls"
+],
+[
+"Show Syllable Progress",
+"Show Syllable Progress"
+],
+[
+"Show While Playing",
+"Show While Playing"
+],
+[
+"Show score full screen with auto-scroll",
+"Show score full screen with auto-scroll"
+],
+[
+"Show the Time Above Music and Lyrics",
+"Show the Time Above Music and Lyrics"
+],
+[
+"Show the words, Apple Music style, or add a lyrics file (.lrc or .txt)",
+"Show the words, Apple Music style, or add a lyrics file (.lrc or .txt)"
+],
+[
+"Simple",
+"Simple"
+],
+[
+"Sing along to a recording; untimed lyrics are spread across it",
+"Sing along to a recording; untimed lyrics are spread across it"
+],
+[
+"Singer %lld",
+"Singer %lld"
+],
+[
+"Singer 1 Colour",
+"Singer 1 Colour"
+],
+[
+"Singer 2 Colour",
+"Singer 2 Colour"
+],
+[
+"Singer 3 Colour",
+"Singer 3 Colour"
+],
+[
+"Singers",
+"Singers"
+],
+[
+"Slow the Last 8 s",
+"Slow the Last 8 s"
+],
+[
+"Slower",
+"Slower"
+],
+[
+"Smaller Text",
+"Smaller Text"
+],
+[
+"Song title or artist",
+"Song title or artist"
+],
+[
+"Songs on Apple Music",
+"Songs on Apple Music"
+],
+[
+"Sort Library By",
+"Sort Library By"
+],
+[
+"Speed",
+"Speed"
+],
+[
+"Spin Off as New Score…",
+"Spin Off as New Score…"
+],
+[
+"Standard",
+"Standard"
+],
+[
+"Start Again",
+"Start Again"
+],
+[
+"Start Free Trial",
+"Start Free Trial"
+],
+[
+"Start Playing When a Score Opens",
+"Start Playing When a Score Opens"
+],
+[
+"Start a Session",
+"Start a Session"
+],
+[
+"Start the words in time with sheet music or lyrics on another device",
+"Start the words in time with sheet music or lyrics on another device"
+],
+[
+"Starting the microphone",
+"Starting the microphone"
+],
+[
+"Staves",
+"Staves"
+],
+[
+"Step %lld of %lld",
+"Step %1$lld of %2$lld"
+],
+[
+"Stop",
+"Stop"
+],
+[
+"Stop Recording",
+"Stop Recording"
+],
+[
+"Stop Scrolling",
+"Stop Scrolling"
+],
+[
+"Stop Wait for Me",
+"Stop Wait for Me"
+],
+[
+"Straight",
+"Straight"
+],
+[
+"Straightening the page and getting the notes ready.",
+"Straightening the page and getting the notes ready."
+],
+[
+"Stressed syllables swell softly as they’re sung. Turn animation off for still lines, and syllable progress off to light each line all at once.",
+"Stressed syllables swell softly as they’re sung. Turn animation off for still lines, and syllable progress off to light each line all at once."
+],
+[
+"Strict",
+"Strict"
+],
+[
+"Strict ±5¢",
+"Strict ±5¢"
+],
+[
+"Supported File Formats",
+"Supported File Formats"
+],
+[
+"Supported Files",
+"Supported Files"
+],
+[
+"Surfaces",
+"Surfaces"
+],
+[
+"Switch to This Branch",
+"Switch to This Branch"
+],
+[
+"TAP",
+"TAP"
+],
+[
+"Take bars from",
+"Take bars from"
+],
+[
+"Talking to GitHub…",
+"Talking to GitHub…"
+],
+[
+"Tap Tempo…",
+"Tap Tempo…"
+],
+[
+"Tap a note to start from there.",
+"Tap a note to start from there."
+],
+[
+"Tap in time with the beat.",
+"Tap in time with the beat."
+],
+[
+"Tap in time with the beat. The tempo shows from the second tap and improves with every tap. With a keyboard you can press the space bar while the button is focused.",
+"Tap in time with the beat. The tempo shows from the second tap and improves with every tap. With a keyboard you can press the space bar while the button is focused."
+],
+[
+"Tap on the Beat (Haptics)",
+"Tap on the Beat (Haptics)"
+],
+[
+"Tap the lines one person sings, then choose who sings them below.",
+"Tap the lines one person sings, then choose who sings them below."
+],
+[
+"Tap to add a keyframe. Drag a keyframe to move it.",
+"Tap to add a keyframe. Drag a keyframe to move it."
+],
+[
+"Tap to add keyframes",
+"Tap to add keyframes"
+],
+[
+"Tap to start from the intro.",
+"Tap to start from the intro."
+],
+[
+"Tap twice to start",
+"Tap twice to start"
+],
+[
+"Tempo",
+"Tempo"
+],
+[
+"Tempo %lld beats per minute",
+"Tempo %lld beats per minute"
+],
+[
+"Tempo at Bar %lld",
+"Tempo at Bar %lld"
+],
+[
+"Tempo in beats per minute",
+"Tempo in beats per minute"
+],
+[
+"Terms",
+"Terms"
+],
+[
+"Text",
+"Text"
+],
+[
+"Text Size",
+"Text Size"
+],
+[
+"Thanks for your feedback!",
+"Thanks for your feedback!"
+],
+[
+"The app also follows your device’s Larger Text, Bold Text, Increase Contrast and Reduce Motion settings. Page colours are under Sheet Music, and backdrops under Appearance.",
+"The app also follows your device’s Larger Text, Bold Text, Increase Contrast and Reduce Motion settings. Page colours are under Sheet Music, and backdrops under Appearance."
+],
+[
+"The app couldn't tell from the page. Count the beats in one bar (crotchets): 4 for 4/4, 3 for 3/4, 6 for 6/4. For 6/8 count two dotted-crotchet beats of 3, so enter 3.",
+"The app couldn't tell from the page. Count the beats in one bar (crotchets): 4 for 4/4, 3 for 3/4, 6 for 6/4. For 6/8 count two dotted-crotchet beats of 3, so enter 3."
+],
+[
+"The artist couldn’t be worked out from the track. Enter it to match the singers.",
+"The artist couldn’t be worked out from the track. Enter it to match the singers."
+],
+[
+"The backing track is muted for this recording.",
+"The backing track is muted for this recording."
+],
+[
+"The file holds the sheet music%@. The other person opens it in Maestro Pro.",
+"The file holds the sheet music%@. The other person opens it in Maestro Pro."
+],
+[
+"The instrument and the click are muted while you record.",
+"The instrument and the click are muted while you record."
+],
+[
+"The instrument plays the notes on the page, alongside any backing track.",
+"The instrument plays the notes on the page, alongside any backing track."
+],
+[
+"The karaoke file's own music, played on a built-in instrument",
+"The karaoke file's own music, played on a built-in instrument"
+],
+[
+"The karaoke music plays higher or lower.",
+"The karaoke music plays higher or lower."
+],
+[
+"The microphone can hear the backing track. Mute it or use headphones.",
+"The microphone can hear the backing track. Mute it or use headphones."
+],
+[
+"The microphone hears everything the speaker plays, so the backing track would be recorded and judged as if you had played it. Mute it for this recording (it comes back afterwards), or use headphones.",
+"The microphone hears everything the speaker plays, so the backing track would be recorded and judged as if you had played it. Mute it for this recording (it comes back afterwards), or use headphones."
+],
+[
+"The paper, desk, buttons and control panels are drawn as real materials. Turn each one down for a flatter look, or switch them all off. High Contrast turns them off too.",
+"The paper, desk, buttons and control panels are drawn as real materials. Turn each one down for a flatter look, or switch them all off. High Contrast turns them off too."
+],
+[
+"The recording is pitch-shifted without changing its speed.",
+"The recording is pitch-shifted without changing its speed."
+],
+[
+"The score editor writing notes, then adding accents, dynamics and a repeat",
+"The score editor writing notes, then adding accents, dynamics and a repeat"
+],
+[
+"The score says %lld",
+"The score says %lld"
+],
+[
+"The score waits for you to play each note, in tune",
+"The score waits for you to play each note, in tune"
+],
+[
+"The scores in it stay in your library.",
+"The scores in it stay in your library."
+],
+[
+"The song couldn’t be matched. Pick the closest one.",
+"The song couldn’t be matched. Pick the closest one."
+],
+[
+"Their part has %lld bars and yours has %lld, so the two may drift apart.",
+"Their part has %1$lld bars and yours has %2$lld, so the two may drift apart."
+],
+[
+"There are no notes here to follow",
+"There are no notes here to follow"
+],
+[
+"These apply to each score you open. Change one for a single score from its own controls.",
+"These apply to each score you open. Change one for a single score from its own controls."
+],
+[
+"They’ll be able to start, pause and move through the music with you.",
+"They’ll be able to start, pause and move through the music with you."
+],
+[
+"They’re playing “%@”. Each of you keeps your own sheet music and instrument; you stay together bar by bar.",
+"They’re playing “%@”. Each of you keeps your own sheet music and instrument; you stay together bar by bar."
+],
+[
+"This is the heading printed on the music. The name in your library stays as it is.",
+"This is the heading printed on the music. The name in your library stays as it is."
+],
+[
+"This sets the opening tempo; the score’s marks change it from there.",
+"This sets the opening tempo; the score’s marks change it from there."
+],
+[
+"Tidy Titles on Import",
+"Tidy Titles on Import"
+],
+[
+"Tidy Up Titles",
+"Tidy Up Titles"
+],
+[
+"Tie",
+"Tie"
+],
+[
+"Tie this note to the next one, so they sound as one long note",
+"Tie this note to the next one, so they sound as one long note"
+],
+[
+"Tie to the next note",
+"Tie to the next note"
+],
+[
+"Time Signature",
+"Time Signature"
+],
+[
+"Timed word by word",
+"Timed word by word"
+],
+[
+"Timed word by word: the words fill as they're sung.",
+"Timed word by word: the words fill as they're sung."
+],
+[
+"Timing",
+"Timing"
+],
+[
+"Title",
+"Title"
+],
+[
+"Title must be 10–100 characters. Your feedback is posted publicly at [thecaffeinemediacompany.fider.io](https://thecaffeinemediacompany.fider.io).",
+"Title must be 10–100 characters. Your feedback is posted publicly at [thecaffeinemediacompany.fider.io](https://thecaffeinemediacompany.fider.io)."
+],
+[
+"Title on the Sheet",
+"Title on the Sheet"
+],
+[
+"Tolerance",
+"Tolerance"
+],
+[
+"Tools",
+"Tools"
+],
+[
+"Track start marker",
+"Track start marker"
+],
+[
+"Tracks",
+"Tracks"
+],
+[
+"Tracks from GitHub",
+"Tracks from GitHub"
+],
+[
+"Tracks from GitHub…",
+"Tracks from GitHub…"
+],
+[
+"Triplet",
+"Triplet"
+],
+[
+"Triplet: three notes in the time of two",
+"Triplet: three notes in the time of two"
+],
+[
+"Tune up, or practise holding a steady note",
+"Tune up, or practise holding a steady note"
+],
+[
+"Tuner",
+"Tuner"
+],
+[
+"Tuner: In Tune Within",
+"Tuner: In Tune Within"
+],
+[
+"Tuner: Steady Note Goal",
+"Tuner: Steady Note Goal"
+],
+[
+"Tuner…",
+"Tuner…"
+],
+[
+"Tuning: A =",
+"Tuning: A ="
+],
+[
+"Turn Count In Off",
+"Turn Count In Off"
+],
+[
+"Turn Count In On",
+"Turn Count In On"
+],
+[
+"Turn Metronome Off",
+"Turn Metronome Off"
+],
+[
+"Turn Metronome On",
+"Turn Metronome On"
+],
+[
+"Turn Pages Like a Book",
+"Turn Pages Like a Book"
+],
+[
+"Turn note into a rest",
+"Turn note into a rest"
+],
+[
+"Type",
+"Type"
+],
+[
+"Type the name of a song or an artist.",
+"Type the name of a song or an artist."
+],
+[
+"Type the song title or artist to find synced lyrics.",
+"Type the song title or artist to find synced lyrics."
+],
+[
+"Typeface",
+"Typeface"
+],
+[
+"Undo",
+"Undo"
+],
+[
+"Undo drawing",
+"Undo drawing"
+],
+[
+"Unmute",
+"Unmute"
+],
+[
+"Untitled",
+"Untitled"
+],
+[
+"Up a Tone",
+"Up a Tone"
+],
+[
+"Upgrade to Professional",
+"Upgrade to Professional"
+],
+[
+"Use %@ Beats",
+"Use %@ Beats"
+],
+[
+"Use Library Name",
+"Use Library Name"
+],
+[
+"Use These Lyrics",
+"Use These Lyrics"
+],
+[
+"Used by the tuner and by Wait for Me, which listen through the microphone. Turn sensitivity up in a quiet room or for a soft instrument, and down if it hears noise. A cent (¢) is a hundredth of a semitone.",
+"Used by the tuner and by Wait for Me, which listen through the microphone. Turn sensitivity up in a quiet room or for a soft instrument, and down if it hears noise. A cent (¢) is a hundredth of a semitone."
+],
+[
+"Using the score's %lld",
+"Using the score's %lld"
+],
+[
+"Visit lyricsify.com",
+"Visit lyricsify.com"
+],
+[
+"Wait for Me",
+"Wait for Me"
+],
+[
+"Wait for Me options",
+"Wait for Me options"
+],
+[
+"Wait for Me: Accept Any Octave",
+"Wait for Me: Accept Any Octave"
+],
+[
+"Wait for Me: Hold for",
+"Wait for Me: Hold for"
+],
+[
+"Wait for Me: In Tune Within",
+"Wait for Me: In Tune Within"
+],
+[
+"Weekly",
+"Weekly"
+],
+[
+"Welcome to %@",
+"Welcome to %@"
+],
+[
+"What do the modes do?",
+"What do the modes do?"
+],
+[
+"While Playing",
+"While Playing"
+],
+[
+"White Music on Black Paper",
+"White Music on Black Paper"
+],
+[
+"White music on black paper",
+"White music on black paper"
+],
+[
+"Who Sings This?",
+"Who Sings This?"
+],
+[
+"With everything off, only the bar counter and the page turns follow the music.",
+"With everything off, only the bar counter and the page turns follow the music."
+],
+[
+"Words",
+"Words"
+],
+[
+"Words Under the Notes",
+"Words Under the Notes"
+],
+[
+"Write Again",
+"Write Again"
+],
+[
+"Write every repeat, ending and jump out as its own bars",
+"Write every repeat, ending and jump out as its own bars"
+],
+[
+"Write, revise\nand perform.",
+"Write, revise\nand perform."
+],
+[
+"Writing your review…",
+"Writing your review…"
+],
+[
+"Written %@",
+"Written %@"
+],
+[
+"Written by Apple Intelligence on this device",
+"Written by Apple Intelligence on this device"
+],
+[
+"Written review",
+"Written review"
+],
+[
+"You can change this later in the inspector.",
+"You can change this later in the inspector."
+],
+[
+"You played %@",
+"You played %@"
+],
+[
+"You played all %lld notes",
+"You played all %lld notes"
+],
+[
+"Your Instrument’s Key",
+"Your Instrument’s Key"
+],
+[
+"Your Plan",
+"Your Plan"
+],
+[
+"Your library and annotations are never touched by a reset.",
+"Your library and annotations are never touched by a reset."
+],
+[
+"Your video is ready.",
+"Your video is ready."
+],
+[
+"Zoom",
+"Zoom"
+],
+[
+"Zoom In",
+"Zoom In"
+],
+[
+"Zoom Out",
+"Zoom Out"
+],
+[
+"Zoom in",
+"Zoom in"
+],
+[
+"Zoom out",
+"Zoom out"
+],
+[
+"iCloud Sync",
+"iCloud Sync"
+],
+[
+"mf",
+"mf"
+],
+[
+"owner/repository or a GitHub link",
+"owner/repository or a GitHub link"
+],
+[
+"±5¢ (strict)",
+"±5¢ (strict)"
+],
+[
+"±10¢",
+"±10¢"
+],
+[
+"±15¢ (strict)",
+"±15¢ (strict)"
+],
+[
+"±20¢ (relaxed)",
+"±20¢ (relaxed)"
+],
+[
+"±30¢",
+"±30¢"
+],
+[
+"±50¢ (relaxed)",
+"±50¢ (relaxed)"
+],
+[
+"‖:",
+"‖:"
+],
+[
+"‖: Start",
+"‖: Start"
+],
+[
+"•",
+"•"
+],
+[
+"−%lld",
+"−%lld"
+],
+[
+"♩",
+"♩"
+],
+[
+"♩ %lld",
+"♩ %lld"
+],
+[
+"♪",
+"♪"
+],
+[
+"♫",
+"♫"
+],
+[
+"♬",
+"♬"
+],
+[
+"♭",
+"♭"
+],
+[
+"♯",
+"♯"
+],
+[
+"",
+""
+],
+[
+"",
+""
+],
+[
+"",
+""
+],
+[
+"%@ a week",
+"%@ a week"
+],
+[
+"%@ a year",
+"%@ a year"
+],
+[
+"%@ comes with %@",
+"%1$@ comes with %2$@"
+],
+[
+"3-Day Free Trial Enabled",
+"3-Day Free Trial Enabled"
+],
+[
+"Billed once a year. Works out at %@ a month.",
+"Billed once a year. Works out at %@ a month."
+],
+[
+"Choose your plan",
+"Choose your plan"
+],
+[
+"EVERYTHING",
+"EVERYTHING"
+],
+[
+"Free trial, then %@ a week",
+"Free trial, then %@ a week"
+],
+[
+"Free trial, then %@ a year",
+"Free trial, then %@ a year"
+],
+[
+"Save %@ (%lld%%) a year",
+"Save %1$@ (%2$lld%%) a year"
+],
+[
+"a week",
+"a week"
+],
+[
+"A library of any size, not just three scores",
+"A library of any size, not just three scores"
+],
+[
+"Play any score back, at the tempo you choose",
+"Play any score back, at the tempo you choose"
+],
+[
+"Notes, bars and a moving line that follow the music",
+"Notes, bars and a moving line that follow the music"
+],
+[
+"Search Scores, and find lyrics online",
+"Search Scores, and find lyrics online"
+],
+[
+"Change key, and shape the sound with the equaliser",
+"Change key, and shape the sound with the equaliser"
+],
+[
+"Stack backing tracks, or play along with Apple Music",
+"Stack backing tracks, or play along with Apple Music"
+],
+[
+"Play Together on up to eight devices",
+"Play Together on up to eight devices"
+],
+[
+"The tuner, and a score that waits for you",
+"The tuner, and a score that waits for you"
+],
+[
+"Record a take, then see every note to work on",
+"Record a take, then see every note to work on"
+],
+[
+"Annotate with Apple Pencil, export and print",
+"Annotate with Apple Pencil, export and print"
+],
+[
+"Everything in Performer",
+"Everything in Performer"
+],
+[
+"The score editor: write and change music",
+"The score editor: write and change music"
+],
+[
+"Build medleys from any score in your library",
+"Build medleys from any score in your library"
+],
+[
+"Version history, branches, merges and GitHub sync",
+"Version history, branches, merges and GitHub sync"
+],
+[
+"Annotation",
+"Annotation"
+],
+[
+"Apple Music",
+"Apple Music"
+],
+[
+"Bar highlighting",
+"Bar highlighting"
+],
+[
+"Changing key",
+"Changing key"
+],
+[
+"Chord View",
+"Chord View"
+],
+[
+"Export",
+"Export"
+],
+[
+"Finding lyrics online",
+"Finding lyrics online"
+],
+[
+"Match Key & Tempo",
+"Match Key & Tempo"
+],
+[
+"Note highlighting",
+"Note highlighting"
+],
+[
+"Play Together",
+"Play Together"
+],
+[
+"Playback",
+"Playback"
+],
+[
+"Printing",
+"Printing"
+],
+[
+"Record Myself",
+"Record Myself"
+],
+[
+"Reduce Vocals",
+"Reduce Vocals"
+],
+[
+"Reviewing a recording",
+"Reviewing a recording"
+],
+[
+"Search Scores",
+"Search Scores"
+],
+[
+"Sharing with another player",
+"Sharing with another player"
+],
+[
+"Stacking backing tracks",
+"Stacking backing tracks"
+],
+[
+"The equaliser",
+"The equaliser"
+],
+[
+"The moving line",
+"The moving line"
+],
+[
+"The score editor",
+"The score editor"
+],
+[
+"The track editor",
+"The track editor"
+],
+[
+"The tuner",
+"The tuner"
+],
+[
+"Video export",
+"Video export"
+],
+[
+"Wait for Me",
+"Wait for Me"
+],
+[
+"Writing a new score",
+"Writing a new score"
+],
+[
+" ",
+" "
+],
+[
+" + %lld not timed",
+" + %lld not timed"
+],
+[
+" Free Editing is on: nothing is corrected, and touching empty space in a bar adds a note after the last one.",
+" Free Editing is on: nothing is corrected, and touching empty space in a bar adds a note after the last one."
+],
+[
+" The backing track is pitch-shifted to match.",
+" The backing track is pitch-shifted to match."
+],
+[
+" The backing track stays in its recorded key.",
+" The backing track stays in its recorded key."
+],
+[
+" You can change this any time in the Inspector.",
+" You can change this any time in the Inspector."
+],
+[
+" · about ",
+" · about "
+],
+[
+"%@ on Apple Music",
+"%@ on Apple Music"
+],
+[
+"%lld h %lld min",
+"%1$lld h %2$lld min"
+],
+[
+"%lld lines selected",
+"%lld lines selected"
+],
+[
+"%lld lines were given a singer. Check them in Assign Singers.",
+"%lld lines were given a singer. Check them in Assign Singers."
+],
+[
+"%lld min",
+"%lld min"
+],
+[
+"%lld scores",
+"%lld scores"
+],
+[
+"%lld sec",
+"%lld sec"
+],
+[
+"%lld titles tidied.",
+"%lld titles tidied."
+],
+[
+", already the score’s key",
+", already the score’s key"
+],
+[
+", so the score moves down %lld semitones",
+", so the score moves down %lld semitones"
+],
+[
+", so the score moves down 1 semitone",
+", so the score moves down 1 semitone"
+],
+[
+", so the score moves up %lld semitones",
+", so the score moves up %lld semitones"
+],
+[
+", so the score moves up 1 semitone",
+", so the score moves up 1 semitone"
+],
+[
+"1 line selected",
+"1 line selected"
+],
+[
+"1 score",
+"1 score"
+],
+[
+"1 title tidied.",
+"1 title tidied."
+],
+[
+"A closed format. In Band-in-a-Box, save as MusicXML for the notation and as audio for the backing, then import those.",
+"A closed format. In Band-in-a-Box, save as MusicXML for the notation and as audio for the backing, then import those."
+],
+[
+"A little flat, %lld¢",
+"A little flat, %lld¢"
+],
+[
+"A little sharp, %lld¢",
+"A little sharp, %lld¢"
+],
+[
+"A score with its backing track, from another Maestro Pro user.",
+"A score with its backing track, from another Maestro Pro user."
+],
+[
+"Accidentals, ties and articulations",
+"Accidentals, ties and articulations"
+],
+[
+"Add a GitHub token with write access first: Tracks from GitHub, then Access Token.",
+"Add a GitHub token with write access first: Tracks from GitHub, then Access Token."
+],
+[
+"Add a backing track",
+"Add a backing track"
+],
+[
+"Add a bar after",
+"Add a bar after"
+],
+[
+"Add, change and remove rests",
+"Add, change and remove rests"
+],
+[
+"Added %lld pieces.",
+"Added %lld pieces."
+],
+[
+"Added 1 piece.",
+"Added 1 piece."
+],
+[
+"All titles are already tidy.",
+"All titles are already tidy."
+],
+[
+"Allow it in the Settings app under Maestro Pro (on a Mac, System Settings, Privacy and Security, Media and Apple Music).",
+"Allow it in the Settings app under Maestro Pro (on a Mac, System Settings, Privacy and Security, Media and Apple Music)."
+],
+[
+"Any audio the device can play can be added to a score or to lyrics.",
+"Any audio the device can play can be added to a score or to lyrics."
+],
+[
+"Apple Music couldn’t be searched.",
+"Apple Music couldn’t be searched."
+],
+[
+"Backing tracks",
+"Backing tracks"
+],
+[
+"Band-in-a-Box songs are saved in a closed format that only Band-in-a-Box can read. In Band-in-a-Box choose File ▸ Save As ▸ MusicXML (for the notation) and Audio (for the backing track), then import those.",
+"Band-in-a-Box songs are saved in a closed format that only Band-in-a-Box can read. In Band-in-a-Box choose File ▸ Save As ▸ MusicXML (for the notation) and Audio (for the backing track), then import those."
+],
+[
+"Bar %lld",
+"Bar %lld"
+],
+[
+"Bar %lld%@: choose a dynamic, or a crescendo or diminuendo over the bar.",
+"Bar %1$lld%2$@: choose a dynamic, or a crescendo or diminuendo over the bar."
+],
+[
+"Bar %lld: 1st/2nd time bars (Bracket Longer stretches one over the next bar), jumps, or a tempo mark.",
+"Bar %lld: 1st/2nd time bars (Bracket Longer stretches one over the next bar), jumps, or a tempo mark."
+],
+[
+"Bar %lld: add repeat signs, or insert or delete the bar.",
+"Bar %lld: add repeat signs, or insert or delete the bar."
+],
+[
+"Bar 1",
+"Bar 1"
+],
+[
+"Bar 1 Starts At",
+"Bar 1 Starts At"
+],
+[
+"Bars %lld to %lld chosen. Copy, Cut, Duplicate or Delete them, or Paste after them.",
+"Bars %1$lld to %2$lld chosen. Copy, Cut, Duplicate or Delete them, or Paste after them."
+],
+[
+"Bass Boost",
+"Bass Boost"
+],
+[
+"Bass clef",
+"Bass clef"
+],
+[
+"Beats in each bar",
+"Beats in each bar"
+],
+[
+"Before you go",
+"Before you go"
+],
+[
+"Best",
+"Best"
+],
+[
+"Branch name",
+"Branch name"
+],
+[
+"Bring in your scores",
+"Bring in your scores"
+],
+[
+"Brought in %lld versions. Branches that went separate ways are named …-github, to merge.",
+"Brought in %lld versions. Branches that went separate ways are named …-github, to merge."
+],
+[
+"Brought in 1 version. Branches that went separate ways are named …-github, to merge.",
+"Brought in 1 version. Branches that went separate ways are named …-github, to merge."
+],
+[
+"Brushed Metal",
+"Brushed Metal"
+],
+[
+"C clef",
+"C clef"
+],
+[
+"Check the connection and try again. (%@)",
+"Check the connection and try again. (%@)"
+],
+[
+"Connected to %@.",
+"Connected to %@."
+],
+[
+"Copy the bars",
+"Copy the bars"
+],
+[
+"Copy, cut, paste and insert bars, even from other scores",
+"Copy, cut, paste and insert bars, even from other scores"
+],
+[
+"Copying or sharing protected music without permission is piracy. Copyright law protects it in almost every country, and the rules and penalties depend on where you live. Infringement can lead to claims for damages and, in serious cases, fines or prison.",
+"Copying or sharing protected music without permission is piracy. Copyright law protects it in almost every country, and the rules and penalties depend on where you live. Infringement can lead to claims for damages and, in serious cases, fines or prison."
+],
+[
+"Correct a wrong note, write a new part or build a medley for the set. The editor keeps every bar correct as you go, and every version is saved.",
+"Correct a wrong note, write a new part or build a medley for the set. The editor keeps every bar correct as you go, and every version is saved."
+],
+[
+"Couldn't read %@.",
+"Couldn't read %@."
+],
+[
+"Couldn’t download %@. Check your connection and try again.",
+"Couldn’t download %@. Check your connection and try again."
+],
+[
+"Couldn’t find a steady beat in this track.",
+"Couldn’t find a steady beat in this track."
+],
+[
+"Couldn’t read %lld: %@%@.",
+"Couldn’t read %1$lld: %2$@%3$@."
+],
+[
+"Crotchet Beats per Bar",
+"Crotchet Beats per Bar"
+],
+[
+"Crotchet beats per bar",
+"Crotchet beats per bar"
+],
+[
+"Cut the bars",
+"Cut the bars"
+],
+[
+"Delay Start",
+"Delay Start"
+],
+[
+"Delay Start in Bars",
+"Delay Start in Bars"
+],
+[
+"Delete the bar",
+"Delete the bar"
+],
+[
+"Delete the bars",
+"Delete the bars"
+],
+[
+"Desk Leather",
+"Desk Leather"
+],
+[
+"Down %lld semitones",
+"Down %lld semitones"
+],
+[
+"Down 1 semitone",
+"Down 1 semitone"
+],
+[
+"Drag across bars to choose them, then Copy, Cut or Duplicate. Paste puts the copied bars in after the chosen bars (or at the end), in this score or any other you open next, so you can build a medley. Insert from Score takes bars from another score in your library. Match Key moves them into the key they follow; each piece keeps its own metre and tempo.",
+"Drag across bars to choose them, then Copy, Cut or Duplicate. Paste puts the copied bars in after the chosen bars (or at the end), in this score or any other you open next, so you can build a medley. Insert from Score takes bars from another score in your library. Match Key moves them into the key they follow; each piece keeps its own metre and tempo."
+],
+[
+"Draw on the page in any colour",
+"Draw on the page in any colour"
+],
+[
+"Draw over the music with Apple Pencil and the pen, marker, pencil and colour tools. Your drawing stays on the sheet music, and shows when you play it. White works too. Use the eraser in the tool palette to rub it out.",
+"Draw over the music with Apple Pencil and the pen, marker, pencil and colour tools. Your drawing stays on the sheet music, and shows when you play it. White works too. Use the eraser in the tool palette to rub it out."
+],
+[
+"Draw with Apple Pencil using the tool palette; the ink stays on the page.",
+"Draw with Apple Pencil using the tool palette; the ink stays on the page."
+],
+[
+"Empty",
+"Empty"
+],
+[
+"Every note timed to the beat, so the score keeps up with you.",
+"Every note timed to the beat, so the score keeps up with you."
+],
+[
+"Exact timing; can be edited, transposed, played and exported.",
+"Exact timing; can be edited, transposed, played and exported."
+],
+[
+"First and second time bars, jumps and tempo",
+"First and second time bars, jumps and tempo"
+],
+[
+"Free keeps up to %lld scores. Delete one, or choose a plan in Settings to keep as many as you like.",
+"Free keeps up to %lld scores. Delete one, or choose a plan in Settings to keep as many as you like."
+],
+[
+"Free lets you view the sheet music for up to three scores. These stay locked:",
+"Free lets you view the sheet music for up to three scores. These stay locked:"
+],
+[
+"Frequency",
+"Frequency"
+],
+[
+"From Bar",
+"From Bar"
+],
+[
+"From the Share menu of a score in the library.",
+"From the Share menu of a score in the library."
+],
+[
+"From the page\nto the performance.",
+"From the page\nto the performance."
+],
+[
+"Gain",
+"Gain"
+],
+[
+"GitHub already has everything.",
+"GitHub already has everything."
+],
+[
+"GitHub wouldn't let the token change this repository. It needs read and write access to the repository's contents.",
+"GitHub wouldn't let the token change this repository. It needs read and write access to the repository's contents."
+],
+[
+"GitHub's limit for requests without a token has been reached. Add a token, or try again in an hour.",
+"GitHub's limit for requests without a token has been reached. Add a token, or try again in an hour."
+],
+[
+"Give the branch a name.",
+"Give the branch a name."
+],
+[
+"Goals",
+"Goals"
+],
+[
+"Got it",
+"Got it"
+],
+[
+"Hear the note",
+"Hear the note"
+],
+[
+"Help us build\nfor every musician.",
+"Help us build\nfor every musician."
+],
+[
+"Here's what\nyou'd miss.",
+"Here's what\nyou'd miss."
+],
+[
+"Hold it",
+"Hold it"
+],
+[
+"How Much to Show",
+"How Much to Show"
+],
+[
+"How it works",
+"How it works"
+],
+[
+"Import Folder",
+"Import Folder"
+],
+[
+"Import Folder reads every supported file in a folder, pairing scores with a recording and lyrics of the same name.",
+"Import Folder reads every supported file in a folder, pairing scores with a recording and lyrics of the same name."
+],
+[
+"Import Score",
+"Import Score"
+],
+[
+"Import with Import Score, by dragging a file onto the window, or from the share sheet of another app.",
+"Import with Import Score, by dragging a file onto the window, or from the share sheet of another app."
+],
+[
+"In its original key the PDF shows as printed. In any other key, the music read from the page is engraved afresh, so check it against the original.",
+"In its original key the PDF shows as printed. In any other key, the music read from the page is engraved afresh, so check it against the original."
+],
+[
+"Inspector",
+"Inspector"
+],
+[
+"Instrument Level",
+"Instrument Level"
+],
+[
+"Intro, %lld bars before bar 1",
+"Intro, %lld bars before bar 1"
+],
+[
+"Intro, 1 bar before bar 1",
+"Intro, 1 bar before bar 1"
+],
+[
+"It’s Your Responsibility",
+"It’s Your Responsibility"
+],
+[
+"Joining %@…",
+"Joining %@…"
+],
+[
+"Lead-in Bars",
+"Lead-in Bars"
+],
+[
+"Leather Buttons",
+"Leather Buttons"
+],
+[
+"Less Bass",
+"Less Bass"
+],
+[
+"Level",
+"Level"
+],
+[
+"Lines (and words) with times.",
+"Lines (and words) with times."
+],
+[
+"Link one in Settings to keep it in step with the library.",
+"Link one in Settings to keep it in step with the library."
+],
+[
+"Lock Tempo Here",
+"Lock Tempo Here"
+],
+[
+"Looking for a player who is hosting…",
+"Looking for a player who is hosting…"
+],
+[
+"Loud and soft, crescendo and diminuendo",
+"Loud and soft, crescendo and diminuendo"
+],
+[
+"Lyrics and karaoke",
+"Lyrics and karaoke"
+],
+[
+"Lyrics can go with a score or stand alone; a karaoke file plays as its own item.",
+"Lyrics can go with a score or stand alone; a karaoke file plays as its own item."
+],
+[
+"Lyrics with Backing",
+"Lyrics with Backing"
+],
+[
+"Maestro Pro can’t tell who owns what you share. By carrying on, you confirm that you have the right to share or export this music, and that you, not the app, are responsible for what you do with it.",
+"Maestro Pro can’t tell who owns what you share. By carrying on, you confirm that you have the right to share or export this music, and that you, not the app, are responsible for what you do with it."
+],
+[
+"Maestro Pro isn’t allowed to use Apple Music.",
+"Maestro Pro isn’t allowed to use Apple Music."
+],
+[
+"Maestro Pro needs the microphone to hear you. Turn it on in the Settings app under Maestro Pro, or on a Mac in System Settings, Privacy and Security, Microphone.",
+"Maestro Pro needs the microphone to hear you. Turn it on in the Settings app under Maestro Pro, or on a Mac in System Settings, Privacy and Security, Microphone."
+],
+[
+"Maestro Pro reads your sheet music and follows it to the note, turns pages hands-free, and lets you write and revise the parts themselves. A minute of setup and you're ready.",
+"Maestro Pro reads your sheet music and follows it to the note, turns pages hands-free, and lets you write and revise the parts themselves. A minute of setup and you're ready."
+],
+[
+"Maestro Pro score",
+"Maestro Pro score"
+],
+[
+"Maestro Pro shows the music in your instrument's key, so it matches the part in front of you.",
+"Maestro Pro shows the music in your instrument's key, so it matches the part in front of you."
+],
+[
+"Make it yours",
+"Make it yours"
+],
+[
+"Making the video…",
+"Making the video…"
+],
+[
+"Mark Bar 1 Now",
+"Mark Bar 1 Now"
+],
+[
+"Mark Intro Start Now",
+"Mark Intro Start Now"
+],
+[
+"Mark bar 1 first, then tap on a downbeat at least a second later.",
+"Mark bar 1 first, then tap on a downbeat at least a second later."
+],
+[
+"Merged with no clashes.",
+"Merged with no clashes."
+],
+[
+"Merged “%@” into “%@”",
+"Merged “%1$@” into “%2$@”"
+],
+[
+"Merged. Bars changed on both branches: %@. The %@ branch’s version of those was kept.",
+"Merged. Bars changed on both branches: %1$@. The %2$@ branch’s version of those was kept."
+],
+[
+"Music Belongs to Someone",
+"Music Belongs to Someone"
+],
+[
+"Music shows at concert pitch, as written.",
+"Music shows at concert pitch, as written."
+],
+[
+"Music shows in B♭ for tenor sax, to match your part.",
+"Music shows in B♭ for tenor sax, to match your part."
+],
+[
+"Music shows in B♭, a tone above concert pitch, to match your part.",
+"Music shows in B♭, a tone above concert pitch, to match your part."
+],
+[
+"Music shows in E♭, to match your part.",
+"Music shows in E♭, to match your part."
+],
+[
+"Music you wrote or recorded yourself, music in the public domain, and music whose licence allows sharing (such as some Creative Commons works). Anything else needs the permission of whoever owns it. Buying a copy for yourself does not give you the right to pass it on.",
+"Music you wrote or recorded yourself, music in the public domain, and music whose licence allows sharing (such as some Creative Commons works). Anything else needs the permission of whoever owns it. Buying a copy for yourself does not give you the right to pass it on."
+],
+[
+"No note",
+"No note"
+],
+[
+"No songs found.",
+"No songs found."
+],
+[
+"No staves were found in this PDF, so it can be read but not followed.",
+"No staves were found in this PDF, so it can be read but not followed."
+],
+[
+"No synced lyrics available.",
+"No synced lyrics available."
+],
+[
+"Notes light as they sound and pages turn hands-free, in rehearsal or on stage.",
+"Notes light as they sound and pages turn hands-free, in rehearsal or on stage."
+],
+[
+"Nothing new on GitHub.",
+"Nothing new on GitHub."
+],
+[
+"Nothing new to add.",
+"Nothing new to add."
+],
+[
+"Nudge Bar 1",
+"Nudge Bar 1"
+],
+[
+"One last thing",
+"One last thing"
+],
+[
+"Only one singer was found for this song.",
+"Only one singer was found for this song."
+],
+[
+"Open Sample",
+"Open Sample"
+],
+[
+"Open this PDF once first, so the app can read its notes, then come back to edit a copy.",
+"Open this PDF once first, so the app can read its notes, then come back to edit a copy."
+],
+[
+"Open this PDF once first, so the app can read its notes, then come back.",
+"Open this PDF once first, so the app can read its notes, then come back."
+],
+[
+"Open this PDF once first, so the app can read its notes, then export them.",
+"Open this PDF once first, so the app can read its notes, then export them."
+],
+[
+"Opens in MuseScore, Finale, Sibelius, Dorico and most other notation apps.",
+"Opens in MuseScore, Finale, Sibelius, Dorico and most other notation apps."
+],
+[
+"Optional. Your own recording, synced to the score's tempo and key.",
+"Optional. Your own recording, synced to the score's tempo and key."
+],
+[
+"Original key",
+"Original key"
+],
+[
+"PDF, MusicXML, MIDI or karaoke files, read on the device.",
+"PDF, MusicXML, MIDI or karaoke files, read on the device."
+],
+[
+"Page Shadow and Curl",
+"Page Shadow and Curl"
+],
+[
+"Paper Grain",
+"Paper Grain"
+],
+[
+"Paste after these bars",
+"Paste after these bars"
+],
+[
+"Piano (default)",
+"Piano (default)"
+],
+[
+"Pick how the music looks while it plays. Everything here is in Settings later.",
+"Pick how the music looks while it plays. Everything here is in Settings later."
+],
+[
+"Piracy Is Against the Law",
+"Piracy Is Against the Law"
+],
+[
+"Plain lyrics",
+"Plain lyrics"
+],
+[
+"Play past bar 1, then tap this on a later downbeat.",
+"Play past bar 1, then tap this on a later downbeat."
+],
+[
+"Play the note",
+"Play the note"
+],
+[
+"Play the track, then tap this on the first beat of %@.",
+"Play the track, then tap this on the first beat of %@."
+],
+[
+"Playing songs needs an Apple Music subscription.",
+"Playing songs needs an Apple Music subscription."
+],
+[
+"Plays in time with the score; can be pitch-shifted and have its volume, tempo and pitch edited.",
+"Plays in time with the score; can be pitch-shifted and have its volume, tempo and pitch edited."
+],
+[
+"Press keys…",
+"Press keys…"
+],
+[
+"Previous note",
+"Previous note"
+],
+[
+"Printed or scanned music. The notes are read from the page so it can be followed and played.",
+"Printed or scanned music. The notes are read from the page so it can be followed and played."
+],
+[
+"Put in and move notes, and set how long they last",
+"Put in and move notes, and set how long they last"
+],
+[
+"Quieter Vocals",
+"Quieter Vocals"
+],
+[
+"Reading the score…",
+"Reading the score…"
+],
+[
+"Recognised, not readable",
+"Recognised, not readable"
+],
+[
+"Remove the rest",
+"Remove the rest"
+],
+[
+"Repeat end",
+"Repeat end"
+],
+[
+"Repeat signs and adding or removing bars",
+"Repeat signs and adding or removing bars"
+],
+[
+"Repeat start",
+"Repeat start"
+],
+[
+"Rolled back to “%@”",
+"Rolled back to “%@”"
+],
+[
+"Room for Bass Players",
+"Room for Bass Players"
+],
+[
+"Rub out notes and rests",
+"Rub out notes and rests"
+],
+[
+"Scan Music",
+"Scan Music"
+],
+[
+"Score name",
+"Score name"
+],
+[
+"Selected: %@.",
+"Selected: %@."
+],
+[
+"Selected: %@. Tap a length to change it, or the bin to remove it.",
+"Selected: %@. Tap a length to change it, or the bin to remove it."
+],
+[
+"Semitones",
+"Semitones"
+],
+[
+"Sent %lld versions to %@.",
+"Sent %1$lld versions to %2$@."
+],
+[
+"Sent 1 version to %@.",
+"Sent 1 version to %@."
+],
+[
+"Set the stand.",
+"Set the stand."
+],
+[
+"Sheet music",
+"Sheet music"
+],
+[
+"Sheet music, recordings, backing tracks and lyrics are almost always protected by copyright. The composer, lyricist, arranger, performer or publisher owns them, even when they are easy to find online.",
+"Sheet music, recordings, backing tracks and lyrics are almost always protected by copyright. The composer, lyricist, arranger, performer or publisher owns them, even when they are easy to find online."
+],
+[
+"Skip Leading Silence",
+"Skip Leading Silence"
+],
+[
+"Skip this note",
+"Skip this note"
+],
+[
+"Staff %lld",
+"Staff %lld"
+],
+[
+"Staff %lld: ",
+"Staff %lld: "
+],
+[
+"Starting the microphone…",
+"Starting the microphone…"
+],
+[
+"Steadiness",
+"Steadiness"
+],
+[
+"Still reading the track…",
+"Still reading the track…"
+],
+[
+"Tap a bar, then add or remove repeat signs, or insert or delete the bar. Expand Repeats writes the piece out as it is played.",
+"Tap a bar, then add or remove repeat signs, or insert or delete the bar. Expand Repeats writes the piece out as it is played."
+],
+[
+"Tap a bar, then put a first or second time bar over it (Bracket Longer stretches it over more bars), add Segno, Coda, To Coda, D.C., D.S. or Fine, or set a tempo mark.",
+"Tap a bar, then put a first or second time bar over it (Bracket Longer stretches it over more bars), add Segno, Coda, To Coda, D.C., D.S. or Fine, or set a tempo mark."
+],
+[
+"Tap a note (the dynamic goes at that note) or a bar (it goes at the start), then choose ppp to fff. Crescendo and Diminuendo put a hairpin over the bar; Longer and Shorter stretch it across more bars. The built-in instrument plays louder and softer to match.",
+"Tap a note (the dynamic goes at that note) or a bar (it goes at the start), then choose ppp to fff. Crescendo and Diminuendo put a hairpin over the bar; Longer and Shorter stretch it across more bars. The built-in instrument plays louder and softer to match."
+],
+[
+"Tap a note to mark it.",
+"Tap a note to mark it."
+],
+[
+"Tap a note to turn it into a rest of the chosen length, or tap a rest to select it and change its length.",
+"Tap a note to turn it into a rest of the chosen length, or tap a rest to select it and change its length."
+],
+[
+"Tap a note to turn it into a rest of the chosen length. Tap a rest to select it, then choose another length to change it, or the bin to take it off the page (the bar keeps its length).",
+"Tap a note to turn it into a rest of the chosen length. Tap a rest to select it, then choose another length to change it, or the bin to take it off the page (the bar keeps its length)."
+],
+[
+"Tap a note, then add a sharp, flat or natural, tie it to the next note, or give it staccato, accent, tenuto, marcato or a fermata. Tap one again to take it off.",
+"Tap a note, then add a sharp, flat or natural, tie it to the next note, or give it staccato, accent, tenuto, marcato or a fermata. Tap one again to take it off."
+],
+[
+"That isn't a GitHub address.",
+"That isn't a GitHub address."
+],
+[
+"That isn't a GitHub repository. Use owner/repository.",
+"That isn't a GitHub repository. Use owner/repository."
+],
+[
+"That song couldn’t be found on Genius, so its singers couldn’t be matched.",
+"That song couldn’t be found on Genius, so its singers couldn’t be matched."
+],
+[
+"That take was too short or silent to keep.",
+"That take was too short or silent to keep."
+],
+[
+"That’s %@",
+"That’s %@"
+],
+[
+"The %@ tells us who Maestro Pro is reaching, so we can make it work for every kind of musician. It's optional, and it opens right here in the app.",
+"The %@ tells us who Maestro Pro is reaching, so we can make it work for every kind of musician. It's optional, and it opens right here in the app."
+],
+[
+"The App Store couldn’t be reached. Check your connection and try again.",
+"The App Store couldn’t be reached. Check your connection and try again."
+],
+[
+"The intro",
+"The intro"
+],
+[
+"The microphone couldn’t be started.",
+"The microphone couldn’t be started."
+],
+[
+"The music following along, with the sound.",
+"The music following along, with the sound."
+],
+[
+"The notes of this PDF have not been read yet. Open the score and let it finish reading.",
+"The notes of this PDF have not been read yet. Open the score and let it finish reading."
+],
+[
+"The page is shown in %@%@. ",
+"The page is shown in %1$@%2$@. "
+],
+[
+"The picture track of a karaoke disc, shown as it was made.",
+"The picture track of a karaoke disc, shown as it was made."
+],
+[
+"The score and its backing track, to share with another player.",
+"The score and its backing track, to share with another player."
+],
+[
+"The score is re-engraved in the new key.",
+"The score is re-engraved in the new key."
+],
+[
+"The track already starts with sound.",
+"The track already starts with sound."
+],
+[
+"The track isn’t sounding yet; wait until it plays, then tap.",
+"The track isn’t sounding yet; wait until it plays, then tap."
+],
+[
+"The typeset page, or the original for a PDF score.",
+"The typeset page, or the original for a PDF score."
+],
+[
+"The zipped form most notation apps save.",
+"The zipped form most notation apps save."
+],
+[
+"There are no lyrics in that file.",
+"There are no lyrics in that file."
+],
+[
+"There are no lyrics in this file.",
+"There are no lyrics in this file."
+],
+[
+"There are no lyrics left. Type at least one line.",
+"There are no lyrics left. Type at least one line."
+],
+[
+"There are no notes to follow in this score.",
+"There are no notes to follow in this score."
+],
+[
+"There are no timed lyrics on this page. Open a song, and choose its Enhanced or LRC lyrics.",
+"There are no timed lyrics on this page. Open a song, and choose its Enhanced or LRC lyrics."
+],
+[
+"There is already a branch called “%@”.",
+"There is already a branch called “%@”."
+],
+[
+"There is no note after this one to tie to. Add one first, or turn on Free Editing in Options.",
+"There is no note after this one to tie to. Add one first, or turn on Free Editing in Options."
+],
+[
+"These are named so you get a clear explanation instead of a failure.",
+"These are named so you get a clear explanation instead of a failure."
+],
+[
+"These branches share no history, so they can’t be merged.",
+"These branches share no history, so they can’t be merged."
+],
+[
+"This PDF couldn’t be opened. It may be damaged or password-protected.",
+"This PDF couldn’t be opened. It may be damaged or password-protected."
+],
+[
+"This isn’t a Maestro Pro score, or it’s damaged.",
+"This isn’t a Maestro Pro score, or it’s damaged."
+],
+[
+"This isn’t a karaoke (MIDI) file.",
+"This isn’t a karaoke (MIDI) file."
+],
+[
+"This karaoke file is damaged.",
+"This karaoke file is damaged."
+],
+[
+"This karaoke file uses a time format the app can’t read.",
+"This karaoke file uses a time format the app can’t read."
+],
+[
+"This lyrics file couldn’t be read as text.",
+"This lyrics file couldn’t be read as text."
+],
+[
+"Through the system print dialog.",
+"Through the system print dialog."
+],
+[
+"Timed lyrics",
+"Timed lyrics"
+],
+[
+"To Bar",
+"To Bar"
+],
+[
+"Touch a bar and drag across more to choose them. With none chosen, Paste goes at the end.",
+"Touch a bar and drag across more to choose them. With none chosen, Paste goes at the end."
+],
+[
+"Touch a rest and slide up or down to choose the pitch; lift to put a note there, as long as the length chosen below. Drag a note up or down to move it. Scribble back and forth over notes to rub them out. Tapping a note or an empty bar brings up a small menu of the things you are most likely to want.",
+"Touch a rest and slide up or down to choose the pitch; lift to put a note there, as long as the length chosen below. Drag a note up or down to move it. Scribble back and forth over notes to rub them out. Tapping a note or an empty bar brings up a small menu of the things you are most likely to want."
+],
+[
+"Touch a rest and slide up or down to pick a pitch; drag a note to move it; scribble over a note to rub it out. Tap a note, then a length, to change its duration. The 3 makes triplets; Tie joins a note to the next one.",
+"Touch a rest and slide up or down to pick a pitch; drag a note to move it; scribble over a note to rub it out. Tap a note, then a length, to change its duration. The 3 makes triplets; Tie joins a note to the next one."
+],
+[
+"Touch or drag over notes and rests. A note becomes a rest; a rest comes off the page. Nothing needs selecting first.",
+"Touch or drag over notes and rests. A note becomes a rest; a rest comes off the page. Nothing needs selecting first."
+],
+[
+"Touch or drag over what you want gone: notes become rests, rests come off the page. Double-tap Apple Pencil to switch to the eraser and back.",
+"Touch or drag over what you want gone: notes become rests, rests come off the page. Double-tap Apple Pencil to switch to the eraser and back."
+],
+[
+"Track: %@ BPM in %@%@.",
+"Track: %1$@ BPM in %2$@%3$@."
+],
+[
+"Transpose",
+"Transpose"
+],
+[
+"Treble clef",
+"Treble clef"
+],
+[
+"Turn into a rest",
+"Turn into a rest"
+],
+[
+"Up %lld semitones",
+"Up %lld semitones"
+],
+[
+"Up 1 semitone",
+"Up 1 semitone"
+],
+[
+"Vocal Presence",
+"Vocal Presence"
+],
+[
+"Waiting for another player to join…",
+"Waiting for another player to join…"
+],
+[
+"Welcome to Maestro Pro",
+"Welcome to Maestro Pro"
+],
+[
+"What You Can Usually Share",
+"What You Can Usually Share"
+],
+[
+"What changed",
+"What changed"
+],
+[
+"What do you play?",
+"What do you play?"
+],
+[
+"What the app makes",
+"What the app makes"
+],
+[
+"What you played, when it was wrong or late",
+"What you played, when it was wrong or late"
+],
+[
+"Where you should be",
+"Where you should be"
+],
+[
+"Whole folders",
+"Whole folders"
+],
+[
+"Width (Q)",
+"Width (Q)"
+],
+[
+"Words and music in one file. A plain MIDI file counts when it carries words.",
+"Words and music in one file. A plain MIDI file counts when it carries words."
+],
+[
+"Words only; spread across the recording.",
+"Words only; spread across the recording."
+],
+[
+"Working out the chords…",
+"Working out the chords…"
+],
+[
+"Write it.\nRevise it. Own it.",
+"Write it.\nRevise it. Own it."
+],
+[
+"You can still search.",
+"You can still search."
+],
+[
+"Your scores.\nRehearsed, performed, written.",
+"Your scores.\nRehearsed, performed, written."
+],
+[
+"♩ =",
+"♩ ="
+],
+[
+"Getting Started",
+"Getting Started"
+],
+[
+"Maestro Pro is a working tool for musicians: it reads your scores and follows them to the note, turns pages hands-free, rehearses with a backing track, a song from Apple Music, the built-in instrument or a metronome, and lets you write and revise the music itself.",
+"Maestro Pro is a working tool for musicians: it reads your scores and follows them to the note, turns pages hands-free, rehearses with a backing track, a song from Apple Music, the built-in instrument or a metronome, and lets you write and revise the music itself."
+],
+[
+"The first minute",
+"The first minute"
+],
+[
+"Tap Import Score on the home screen (or the + button, then Import Score) and choose a PDF, MusicXML file or any other supported file. It appears in your library on the left; tap it to open it.",
+"Tap Import Score on the home screen (or the + button, then Import Score) and choose a PDF, MusicXML file or any other supported file. It appears in your library on the left; tap it to open it."
+],
+[
+"Press the big Play button at the bottom. The music plays and follows along. Tap anywhere on the music to start from there, or drag the progress bar.",
+"Press the big Play button at the bottom. The music plays and follows along. Tap anywhere on the music to start from there, or drag the progress bar."
+],
+[
+"Nothing yet to play? Choose Open Sample on the home screen, or Search Scores to download classical pieces and jazz tunes, or to search the web.",
+"Nothing yet to play? Choose Open Sample on the home screen, or Search Scores to download classical pieces and jazz tunes, or to search the web."
+],
+[
+"Simple and Advanced mode",
+"Simple and Advanced mode"
+],
+[
+"Settings has a Mode switch. Simple mode keeps the screen to what most people need. Advanced mode adds the library tools, Play Together, the staff-by-staff controls and the Customise Every Colour page.",
+"Settings has a Mode switch. Simple mode keeps the screen to what most people need. Advanced mode adds the library tools, Play Together, the staff-by-staff controls and the Customise Every Colour page."
+],
+[
+"Everything described in this guide is available in Advanced mode; each topic says when a control only appears there.",
+"Everything described in this guide is available in Advanced mode; each topic says when a control only appears there."
+],
+[
+"The toolbar",
+"The toolbar"
+],
+[
+"On an iPad the toolbar keeps the few controls used most (open, zoom, backing tracks and sound, annotate, edit) and puts everything else in the More menu at its end: tools at the top, then the page, what shows while playing, the words, and the backing tracks last. A Mac shows every control as its own button.",
+"On an iPad the toolbar keeps the few controls used most (open, zoom, backing tracks and sound, annotate, edit) and puts everything else in the More menu at its end: tools at the top, then the page, what shows while playing, the words, and the backing tracks last. A Mac shows every control as its own button."
+],
+[
+"Settings is in the library only, so it is not on the score's toolbar. To get back to the library, show the sidebar with the button at the top left.",
+"Settings is in the library only, so it is not on the score's toolbar. To get back to the library, show the sidebar with the button at the top left."
+],
+[
+"Customising the toolbar",
+"Customising the toolbar"
+],
+[
+"On iPad, touch and hold the toolbar (or tap the ⋯ at its end and choose Customise Toolbar) to drag controls on or off the bar; on a Mac, choose View ▸ Customize Toolbar. The Inspector button always stays.",
+"On iPad, touch and hold the toolbar (or tap the ⋯ at its end and choose Customise Toolbar) to drag controls on or off the bar; on a Mac, choose View ▸ Customize Toolbar. The Inspector button always stays."
+],
+[
+"On a narrow screen the controls fold into one More menu instead.",
+"On a narrow screen the controls fold into one More menu instead."
+],
+[
+"The screen",
+"The screen"
+],
+[
+"On a wide screen the library is a sidebar on the left and the score fills the rest. While a piece plays the library hides itself, to give the music room (turn this off in Settings).",
+"On a wide screen the library is a sidebar on the left and the score fills the rest. While a piece plays the library hides itself, to give the music room (turn this off in Settings)."
+],
+[
+"On a smaller screen, or in a narrow Split View window, the toolbar folds into one More menu and a Library button appears at the top left to take you back to the library.",
+"On a smaller screen, or in a narrow Split View window, the toolbar folds into one More menu and a Library button appears at the top left to take you back to the library."
+],
+[
+"A Mac runs the same app: files can be opened with Command-O, and there are Playback and View menus with keyboard shortcuts.",
+"A Mac runs the same app: files can be opened with Command-O, and there are Playback and View menus with keyboard shortcuts."
+],
+[
+"Your Library",
+"Your Library"
+],
+[
+"Everything you import lives in the library and stays on the device. It is also kept in iCloud when iCloud Drive is on.",
+"Everything you import lives in the library and stays on the device. It is also kept in iCloud when iCloud Drive is on."
+],
+[
+"Bringing music in",
+"Bringing music in"
+],
+[
+"Import Score takes PDF, MusicXML (.musicxml, .xml, .mxl), MIDI and karaoke (.mid, .kar), lyrics (.lrc, .txt), CD+Graphics karaoke (.cdg) and Maestro Pro (.maestropro) files. Several can be chosen at once.",
+"Import Score takes PDF, MusicXML (.musicxml, .xml, .mxl), MIDI and karaoke (.mid, .kar), lyrics (.lrc, .txt), CD+Graphics karaoke (.cdg) and Maestro Pro (.maestropro) files. Several can be chosen at once."
+],
+[
+"You can also drag files from the Files app straight onto the window, or choose Maestro Pro from the share sheet of another app (Files, Mail, Safari, Messages…) to import what you are looking at.",
+"You can also drag files from the Files app straight onto the window, or choose Maestro Pro from the share sheet of another app (Files, Mail, Safari, Messages…) to import what you are looking at."
+],
+[
+"Import Folder reads every supported file in a folder. In Settings, Link a Folder keeps a folder in step with the library so new files appear by themselves.",
+"Import Folder reads every supported file in a folder. In Settings, Link a Folder keeps a folder in step with the library so new files appear by themselves."
+],
+[
+"New Blank Score starts an empty score to write yourself: you choose the name, time signature, key, number of bars, staves (treble, bass or piano) and tempo.",
+"New Blank Score starts an empty score to write yourself: you choose the name, time signature, key, number of bars, staves (treble, bass or piano) and tempo."
+],
+[
+"Lyrics with Backing: choose a backing track and the app finds its timed lyrics online, for a karaoke-style screen. You can also choose a lyrics file along with the backing track.",
+"Lyrics with Backing: choose a backing track and the app finds its timed lyrics online, for a karaoke-style screen. You can also choose a lyrics file along with the backing track."
+],
+[
+"Search Scores has three tabs. Classical lists pieces that are built in. Jazz lists about 2,400 tunes in six volumes: only the list is in the app, a tune downloads when you tap Add, or tap Add All to take the whole collection (about 40 MB, needs the internet).",
+"Search Scores has three tabs. Classical lists pieces that are built in. Jazz lists about 2,400 tunes in six volumes: only the list is in the app, a tune downloads when you tap Add, or tap Add All to take the whole collection (about 40 MB, needs the internet)."
+],
+[
+"Internet searches the web, and GitHub, for MusicXML files: type a composer or piece. Results come from other people's pages, so check that a score is free to use before you add it.",
+"Internet searches the web, and GitHub, for MusicXML files: type a composer or piece. Results come from other people's pages, so check that a score is free to use before you add it."
+],
+[
+"A tick shows what you already have.",
+"A tick shows what you already have."
+],
+[
+"Finding and organising",
+"Finding and organising"
+],
+[
+"Search at the top of the library finds titles. Settings chooses how the library is sorted.",
+"Search at the top of the library finds titles. Settings chooses how the library is sorted."
+],
+[
+"Set-Lists show how many scores they hold and about how long they run (the backing track's length, or the notes at the score's tempo; PDFs without a track are not timed). Press and hold a score for Rename, Edit Title on Sheet (the heading printed on the music, separate from its name in the library), Add to Set-List, Share, Duplicate and Delete from Library. Duplicate makes a full copy, with its backing track, lyrics and drawings, to edit or build a medley in without touching the original. Set-Lists group scores for a rehearsal or a gig.",
+"Set-Lists show how many scores they hold and about how long they run (the backing track's length, or the notes at the score's tempo; PDFs without a track are not timed). Press and hold a score for Rename, Edit Title on Sheet (the heading printed on the music, separate from its name in the library), Add to Set-List, Share, Duplicate and Delete from Library. Duplicate makes a full copy, with its backing track, lyrics and drawings, to edit or build a medley in without touching the original. Set-Lists group scores for a rehearsal or a gig."
+],
+[
+"Share with Another Player makes a .maestropro file that carries the score and its backing track. Another Maestro Pro user who opens it gets all of it.",
+"Share with Another Player makes a .maestropro file that carries the score and its backing track. Another Maestro Pro user who opens it gets all of it."
+],
+[
+"Playing a Score",
+"Playing a Score"
+],
+[
+"The bar at the bottom controls playback; the toolbar and the Inspector change how it looks and sounds.",
+"The bar at the bottom controls playback; the toolbar and the Inspector change how it looks and sounds."
+],
+[
+"Playback controls",
+"Playback controls"
+],
+[
+"Play and Pause, skip back and forward by bar, and a progress bar you can drag. The counter shows the bar, beat and time.",
+"Play and Pause, skip back and forward by bar, and a progress bar you can drag. The counter shows the bar, beat and time."
+],
+[
+"Tap the music to jump there. On a Mac, Space plays and pauses, the arrow keys skip bars, Return goes to the start and K turns the metronome on or off.",
+"Tap the music to jump there. On a Mac, Space plays and pauses, the arrow keys skip bars, Return goes to the start and K turns the metronome on or off."
+],
+[
+"Practice Speed slows a piece down or speeds it up without changing the pitch. Type any percentage from 10 to 400 in the box, or use the slider (50 to 150).",
+"Practice Speed slows a piece down or speeds it up without changing the pitch. Type any percentage from 10 to 400 in the box, or use the slider (50 to 150)."
+],
+[
+"The tempo is the score's own (from its printed metronome mark) unless you set one: typing a BPM, tapping it or matching a backing track makes it your own, and the Custom Tempo switch under the tempo goes back to the score's. Tap Tempo: tap the tempo (the note and number beside the metronome) and a pad opens with a big Tap key. Tap it in time with the beat; the tempo appears from the second tap and updates with every tap, and a few more make it steadier. It is set as you tap. With a keyboard, the space bar taps while the key is focused. The same pad is under Tempo in the Inspector.",
+"The tempo is the score's own (from its printed metronome mark) unless you set one: typing a BPM, tapping it or matching a backing track makes it your own, and the Custom Tempo switch under the tempo goes back to the score's. Tap Tempo: tap the tempo (the note and number beside the metronome) and a pad opens with a big Tap key. Tap it in time with the beat; the tempo appears from the second tap and updates with every tap, and a few more make it steadier. It is set as you tap. With a keyboard, the space bar taps while the key is focused. The same pad is under Tempo in the Inspector."
+],
+[
+"Loop: in the Inspector, Loop plays the bars you choose over and over, to practise a hard passage. On a Mac or with a keyboard, [ slows the practice speed and ] speeds it up.",
+"Loop: in the Inspector, Loop plays the bars you choose over and over, to practise a hard passage. On a Mac or with a keyboard, [ slows the practice speed and ] speeds it up."
+],
+[
+"Count In plays a bar of clicks before the music. Lead-in Bars sets how many bars of introduction come before bar 1, so a backing track with an intro lines up. The Metronome clicks on every beat.",
+"Count In plays a bar of clicks before the music. Lead-in Bars sets how many bars of introduction come before bar 1, so a backing track with an intro lines up. The Metronome clicks on every beat."
+],
+[
+"What follows the music",
+"What follows the music"
+],
+[
+"Show While Playing (the sparkle button) chooses how playback is shown: Highlight Notes lights each note as it sounds, Highlight Bar tints the bar, and Moving Line draws a line across the page. With all three off, only the bar counter and page turns follow.",
+"Show While Playing (the sparkle button) chooses how playback is shown: Highlight Notes lights each note as it sounds, Highlight Bar tints the bar, and Moving Line draws a line across the page. With all three off, only the bar counter and page turns follow."
+],
+[
+"Follow Playback scrolls the page for you. Dark Sheet Music shows white music on black, kinder in a dim room.",
+"Follow Playback scrolls the page for you. Dark Sheet Music shows white music on black, kinder in a dim room."
+],
+[
+"Zoom changes the size of the notation; the bars reflow to fit. Pinching also works. Highlight colour is in Settings.",
+"Zoom changes the size of the notation; the bars reflow to fit. Pinching also works. Highlight colour is in Settings."
+],
+[
+"Turning pages like a book",
+"Turning pages like a book"
+],
+[
+"By default the music shows one page at a time and turns it like the page of a book, with a curl, when playback reaches the next page. Follow Playback decides whether it turns by itself. You can also drag a page to turn it by hand, or use Page Up and Page Down.",
+"By default the music shows one page at a time and turns it like the page of a book, with a curl, when playback reaches the next page. Follow Playback decides whether it turns by itself. You can also drag a page to turn it by hand, or use Page Up and Page Down."
+],
+[
+"Turn Pages Like a Book can be switched off in Settings ▸ Sheet Music, in the Zoom menu, or in the View menu on a Mac. The music then scrolls down the page instead, with all the pages in one column. Reduce Motion turns the page without the curl.",
+"Turn Pages Like a Book can be switched off in Settings ▸ Sheet Music, in the Zoom menu, or in the View menu on a Mac. The music then scrolls down the page instead, with all the pages in one column. Reduce Motion turns the page without the curl."
+],
+[
+"While you draw with Annotate, dragging does not turn pages, so the pencil is free. With a page shown whole there is no scrolling inside it; use Zoom to change the size of the notation.",
+"While you draw with Annotate, dragging does not turn pages, so the pencil is free. With a page shown whole there is no scrolling inside it; use Zoom to change the size of the notation."
+],
+[
+"Key and transposing",
+"Key and transposing"
+],
+[
+"In the Inspector, Key has the key of your instrument (concert pitch, B♭, E♭, or B♭ tenor). The score is shown transposed to match, so a trumpet player reads what a trumpet plays.",
+"In the Inspector, Key has the key of your instrument (concert pitch, B♭, E♭, or B♭ tenor). The score is shown transposed to match, so a trumpet player reads what a trumpet plays."
+],
+[
+"Transpose moves the whole piece up or down by semitones. The Key menu lists each key with its relative minor, for example C / A minor; choose one and the score moves the shortest way to it.",
+"Transpose moves the whole piece up or down by semitones. The Key menu lists each key with its relative minor, for example C / A minor; choose one and the score moves the shortest way to it."
+],
+[
+"With a backing track, Shift Backing Track decides whether the backing track moves with the score.",
+"With a backing track, Shift Backing Track decides whether the backing track moves with the score."
+],
+[
+"Chord view (Advanced mode)",
+"Chord view (Advanced mode)"
+],
+[
+"The Chord View button (a grid of squares) in the toolbar, or More ▸ Chord View, shows the piece as a chart of chords, a cell for each bar, with repeat signs, endings and jumps. The bar playing is lit and the chart scrolls to follow; tap a bar to play from it.",
+"The Chord View button (a grid of squares) in the toolbar, or More ▸ Chord View, shows the piece as a chart of chords, a cell for each bar, with repeat signs, endings and jumps. The bar playing is lit and the chart scrolls to follow; tap a bar to play from it."
+],
+[
+"If the file carries chord symbols they are shown as written. Otherwise the app works the chords out from the notes, two to a bar in 4/4 and one to a bar in 3/4 and 6/8: triads, diminished, augmented and seventh chords, with a slash when the bass is not the root. It is a guess, best with a bass line or accompaniment, and a bare melody gets a plausible triad.",
+"If the file carries chord symbols they are shown as written. Otherwise the app works the chords out from the notes, two to a bar in 4/4 and one to a bar in 3/4 and 6/8: triads, diminished, augmented and seventh chords, with a slash when the bass is not the root. It is a guess, best with a bass line or accompaniment, and a bare melody gets a plausible triad."
+],
+[
+"The chords move with the key you have chosen, spelled with flats or sharps to match. Use Zoom for bigger or smaller chords.",
+"The chords move with the key you have chosen, spelled with flats or sharps to match. Use Zoom for bigger or smaller chords."
+],
+[
+"Notation that is shown",
+"Notation that is shown"
+],
+[
+"Besides notes, rests, accidentals, ties, tuplets, repeats, endings, segno, coda and the rest, scores show slurs, grace notes (small slashed notes that sound just before the main note), trills, mordents and turns, fingering numbers, arpeggio waves, breath marks and caesuras, octave lines (8va, 8vb, 15ma, 15mb) and pedal marks (Ped. and the release star).",
+"Besides notes, rests, accidentals, ties, tuplets, repeats, endings, segno, coda and the rest, scores show slurs, grace notes (small slashed notes that sound just before the main note), trills, mordents and turns, fingering numbers, arpeggio waves, breath marks and caesuras, octave lines (8va, 8vb, 15ma, 15mb) and pedal marks (Ped. and the release star)."
+],
+[
+"Slurs and ornaments are drawn but do not change how the built-in instrument plays (a trill sounds as a plain note). They are saved and exported with the score. Grace notes do sound, a hair before the beat.",
+"Slurs and ornaments are drawn but do not change how the built-in instrument plays (a trill sounds as a plain note). They are saved and exported with the score. Grace notes do sound, a hair before the beat."
+],
+[
+"A score with several slurs open at once on one staff draws the most recent, and an octave line is shown without changing the sound.",
+"A score with several slurs open at once on one staff draws the most recent, and an octave line is shown without changing the sound."
+],
+[
+"Lyrics under the notes",
+"Lyrics under the notes"
+],
+[
+"Adding a lyrics file to a score leaves the music on screen and prints the words under the notes, in a row of their own that the staves are spaced out to make room for. The syllable being sung lights up as it plays. Words Under the Notes can be turned off, and Show Lyrics Instead of Music switches to the big lyrics screen.",
+"Adding a lyrics file to a score leaves the music on screen and prints the words under the notes, in a row of their own that the staves are spaced out to make room for. The syllable being sung lights up as it plays. Words Under the Notes can be turned off, and Show Lyrics Instead of Music switches to the big lyrics screen."
+],
+[
+"Dynamics",
+"Dynamics"
+],
+[
+"Dynamics (ppp to fff) and crescendo and diminuendo hairpins in a score set how loud the built-in instrument plays: a note is as loud as the last dynamic, and a hairpin changes it steadily towards the next dynamic. A score with no dynamics plays at one even level.",
+"Dynamics (ppp to fff) and crescendo and diminuendo hairpins in a score set how loud the built-in instrument plays: a note is as loud as the last dynamic, and a hairpin changes it steadily towards the next dynamic. A score with no dynamics plays at one even level."
+],
+[
+"You can add them in the score editor's Dynamics mode, and they are saved with the score.",
+"You can add them in the score editor's Dynamics mode, and they are saved with the score."
+],
+[
+"The tempo",
+"The tempo"
+],
+[
+"Tempo is in beats per minute. Type it, step it, or drag the slider. With a backing track, Lock Tempo Here sets the tempo from where you tap on a downbeat.",
+"Tempo is in beats per minute. Type it, step it, or drag the slider. With a backing track, Lock Tempo Here sets the tempo from where you tap on a downbeat."
+],
+[
+"Metre tells the app how many beats are in a bar. It is found automatically from MusicXML files; for PDFs the app asks when it cannot tell.",
+"Metre tells the app how many beats are in a bar. It is found automatically from MusicXML files; for PDFs the app asks when it cannot tell."
+],
+[
+"If a score has tempo marks (♩ = 96) they change the pace of the built-in instrument from that bar on. A backing track keeps its own tempo.",
+"If a score has tempo marks (♩ = 96) they change the pace of the built-in instrument from that bar on. A backing track keeps its own tempo."
+],
+[
+"Tuner & Wait for Me",
+"Tuner & Wait for Me"
+],
+[
+"Maestro Pro can listen through the microphone: to tune your instrument, to train a steady note, and to wait for you to play a score note by note. Sound is analysed on the device and is never recorded or sent anywhere.",
+"Maestro Pro can listen through the microphone: to tune your instrument, to train a steady note, and to wait for you to play a score note by note. Sound is analysed on the device and is never recorded or sent anywhere."
+],
+[
+"Open the Tuner from the home screen, the + menu, Settings ▸ Listening, or the tuning fork in a score's toolbar. Play a note: the display shows its name, how many cents sharp or flat it is (a cent is a hundredth of a semitone), and the frequency. The needle sits in the green zone when you are in tune, and the trace below shows the last eight seconds.",
+"Open the Tuner from the home screen, the + menu, Settings ▸ Listening, or the tuning fork in a score's toolbar. Play a note: the display shows its name, how many cents sharp or flat it is (a cent is a hundredth of a semitone), and the frequency. The needle sits in the green zone when you are in tune, and the trace below shows the last eight seconds."
+],
+[
+"If your instrument is set to B♭ or E♭ in the Inspector, the written note is shown too. Play Reference Note sounds the note you are aiming for. A = 440 Hz can be changed (415 to 466) for baroque or orchestral tuning.",
+"If your instrument is set to B♭ or E♭ in the Inspector, the written note is shown too. Play Reference Note sounds the note you are aiming for. A = 440 Hz can be changed (415 to 466) for baroque or orchestral tuning."
+],
+[
+"Under the tuner, the ring fills while you keep a note in tune. Choose Any Note, or one particular note to hold; choose how close counts as in tune (Strict ±5¢, Normal ±10¢, Relaxed ±20¢) and the goal (5 to 30 seconds). It shows your best time and how steady your pitch was.",
+"Under the tuner, the ring fills while you keep a note in tune. Choose Any Note, or one particular note to hold; choose how close counts as in tune (Strict ±5¢, Normal ±10¢, Relaxed ±20¢) and the goal (5 to 30 seconds). It shows your best time and how steady your pitch was."
+],
+[
+"A wobble or a different note starts the time again. Goals are counted for you, so you can try to beat them.",
+"A wobble or a different note starts the time again. Goals are counted for you, so you can try to beat them."
+],
+[
+"Wait for Me is a practice mode where the music waits for you. Open a score and choose Wait for Me (the ear icon, or More ▸ Wait for Me). The score stops on the first note. It moves on only when you play that note, in the right octave and in tune, and hold it for the right length of time at the current tempo and practice speed.",
+"Wait for Me is a practice mode where the music waits for you. Open a score and choose Wait for Me (the ear icon, or More ▸ Wait for Me). The score stops on the first note. It moves on only when you play that note, in the right octave and in tune, and hold it for the right length of time at the current tempo and practice speed."
+],
+[
+"The panel above the playback bar shows the note to play, a pitch meter (the dot should sit in the green zone) and a bar that fills as you hold it. It says if you are sharp, flat, or playing a different note. Hear the note plays it for you; Back and Skip move one note; the sliders button chooses the part to follow (a piano score has two), how strict to be, how much of each note must be held, and whether any octave is accepted (useful for voices).",
+"The panel above the playback bar shows the note to play, a pitch meter (the dot should sit in the green zone) and a bar that fills as you hold it. It says if you are sharp, flat, or playing a different note. Hear the note plays it for you; Back and Skip move one note; the sliders button chooses the part to follow (a piano score has two), how strict to be, how much of each note must be held, and whether any octave is accepted (useful for voices)."
+],
+[
+"A repeated note needs a fresh start, so let the first one stop before the next. At the end you see your accuracy and how far from the notes you were on average. Chords count when you play any one of their notes; this mode follows one line at a time.",
+"A repeated note needs a fresh start, so let the first one stop before the next. At the end you see your accuracy and how far from the notes you were on average. Chords count when you play any one of their notes; this mode follows one line at a time."
+],
+[
+"A backing track stays silent while Wait for Me is on (the score waits, so a backing track could not keep up). Pressing Play ends it.",
+"A backing track stays silent while Wait for Me is on (the score waits, so a backing track could not keep up). Pressing Play ends it."
+],
+[
+"Microphone tips",
+"Microphone tips"
+],
+[
+"Settings ▸ Listening has Microphone Sensitivity: turn it up in a quiet room or for a soft instrument, and down if it picks up noise. A quiet room works best, and a single note at a time. Wait for Me and the tuner need microphone permission; if you said no, turn it on in the device's Settings ▸ Privacy ▸ Microphone.",
+"Settings ▸ Listening has Microphone Sensitivity: turn it up in a quiet room or for a soft instrument, and down if it picks up noise. A quiet room works best, and a single note at a time. Wait for Me and the tuner need microphone permission; if you said no, turn it on in the device's Settings ▸ Privacy ▸ Microphone."
+],
+[
+"Record & Review",
+"Record & Review"
+],
+[
+"Record yourself playing a score, then review the take with the notes lit: green where you should have been, red where you actually were. It listens through the microphone, so it works with any instrument or your voice.",
+"Record yourself playing a score, then review the take with the notes lit: green where you should have been, red where you actually were. It listens through the microphone, so it works with any instrument or your voice."
+],
+[
+"Choose Record (the round record button in the toolbar, or More ▸ Record Myself, or ⌘R on a Mac). After the count-in the score plays and you play along. Press Stop, or pause, when you have finished.",
+"Choose Record (the round record button in the toolbar, or More ▸ Record Myself, or ⌘R on a Mac). After the count-in the score plays and you play along. Press Stop, or pause, when you have finished."
+],
+[
+"While you record the built-in instrument and the metronome are muted, so the microphone hears only you. If the score has a backing track the app asks first, because the microphone would hear it: choose Mute It and Record (it comes back afterwards), or Record Anyway if you use headphones. The recording bar has a Mute It button too. The first time, the app asks to use the microphone.",
+"While you record the built-in instrument and the metronome are muted, so the microphone hears only you. If the score has a backing track the app asks first, because the microphone would hear it: choose Mute It and Record (it comes back afterwards), or Record Anyway if you use headphones. The recording bar has a Mute It button too. The first time, the app asks to use the microphone."
+],
+[
+"Recordings are kept with the score, so they are copied when you duplicate it. Each one is compressed to well under a megabyte a minute.",
+"Recordings are kept with the score, so they are copied when you duplicate it. Each one is compressed to well under a megabyte a minute."
+],
+[
+"Reviewing",
+"Reviewing"
+],
+[
+"When you stop, the review opens at once. Earlier recordings are in the Record menu, newest first. Press Play to hear the recording while the score follows it, or drag the slider to any moment.",
+"When you stop, the review opens at once. Earlier recordings are in the Record menu, newest first. Press Play to hear the recording while the score follows it, or drag the slider to any moment."
+],
+[
+"The green note is the note you should be playing at that moment. The note you actually played is lit too: green when it was the right note at the right time, red when it was late, early or a different note from the one due. If you fall behind or run ahead, however far, the note you should be on is green and the one you are still playing is red.",
+"The green note is the note you should be playing at that moment. The note you actually played is lit too: green when it was the right note at the right time, red when it was late, early or a different note from the one due. If you fall behind or run ahead, however far, the note you should be on is green and the one you are still playing is red."
+],
+[
+"If you played a note that is not in the music near there, the note due is green and the strip shows the pitch you played. The summary gives how many notes you played right.",
+"If you played a note that is not in the music near there, the note due is green and the strip shows the pitch you played. The summary gives how many notes you played right."
+],
+[
+"The sliders button chooses the part to judge (a piano score has two), how strict the timing is (Strict, Normal or Relaxed), how close in pitch counts, and whether any octave is accepted. Changing them re-judges the same recording. Delete This Recording removes it.",
+"The sliders button chooses the part to judge (a piano score has two), how strict the timing is (Strict, Normal or Relaxed), how close in pitch counts, and whether any octave is accepted. Changing them re-judges the same recording. Delete This Recording removes it."
+],
+[
+"The sparkles button in the review writes a short review: how many notes were right, where you fell behind or rushed, whether you were sharp or flat, and which bars and notes gave trouble. It is plain and to the point.",
+"The sparkles button in the review writes a short review: how many notes were right, where you fell behind or rushed, whether you were sharp or flat, and which bars and notes gave trouble. It is plain and to the point."
+],
+[
+"Places in the review (bars and notes, shown with a note or barline) are links. Tap one and the recording jumps to that moment, the notes light blue in the music, and the page turns or scrolls to it. The row of numbered blocks shows every bar coloured by how it went, and each is a link too.",
+"Places in the review (bars and notes, shown with a note or barline) are links. Tap one and the recording jumps to that moment, the notes light blue in the music, and the page turns or scrolls to it. The row of numbered blocks shows every bar coloured by how it went, and each is a link too."
+],
+[
+"On a device with Apple Intelligence the review is put into wording by the on-device model, and nothing leaves the device. The facts always come from the app's own analysis, and any rewording that changes a number or a place is thrown away. Without Apple Intelligence the app writes it itself. Write Again asks for new wording.",
+"On a device with Apple Intelligence the review is put into wording by the on-device model, and nothing leaves the device. The facts always come from the app's own analysis, and any rewording that changes a number or a place is thrown away. Without Apple Intelligence the app writes it itself. Write Again asks for new wording."
+],
+[
+"What to expect",
+"What to expect"
+],
+[
+"It listens for one note at a time, so chords count when you play any one of their notes. Timing is judged from the clock of the score, not from the sound of the recording, so a very slow or fast take is judged against the tempo you recorded at.",
+"It listens for one note at a time, so chords count when you play any one of their notes. Timing is judged from the clock of the score, not from the sound of the recording, so a very slow or fast take is judged against the tempo you recorded at."
+],
+[
+"Take it as a guide. A noisy room, a weak signal, or an instrument whose octave is hard to hear can make notes look wrong; Microphone Sensitivity in Settings ▸ Listening helps.",
+"Take it as a guide. A noisy room, a weak signal, or an instrument whose octave is hard to hear can make notes look wrong; Microphone Sensitivity in Settings ▸ Listening helps."
+],
+[
+"Backing Tracks & Sound",
+"Backing Tracks & Sound"
+],
+[
+"A backing track is a recording that plays with the score. The built-in instrument can play the notes on the page too.",
+"A backing track is a recording that plays with the score. The built-in instrument can play the notes on the page too."
+],
+[
+"Several tracks",
+"Several tracks"
+],
+[
+"A score can have more than one backing track, for example a rhythm section and a separate guide vocal. Add the first with Add Backing Track, then use Add Another Backing Track in the Inspector or the sound menu. They all play together, in time with the score.",
+"A score can have more than one backing track, for example a rhythm section and a separate guide vocal. Add the first with Add Backing Track, then use Add Another Backing Track in the Inspector or the sound menu. They all play together, in time with the score."
+],
+[
+"Under Backing Tracks & Sound each track has its own switch, to turn it off without removing it, and its own level from -24 to +12 decibels. The first track is the one the score keeps time with, and Match Key & Tempo and the track editor work on it. The other tracks follow its speed and key, but not its edit lanes, and should be recordings that start together with it.",
+"Under Backing Tracks & Sound each track has its own switch, to turn it off without removing it, and its own level from -24 to +12 decibels. The first track is the one the score keeps time with, and Match Key & Tempo and the track editor work on it. The other tracks follow its speed and key, but not its edit lanes, and should be recordings that start together with it."
+],
+[
+"Reduce Vocals, on any track, cuts the singer down in a stereo recording by cancelling what is in the middle. It leaves a mono track, can take some middle instruments with it, and can't remove a voice from a mono recording.",
+"Reduce Vocals, on any track, cuts the singer down in a stereo recording by cancelling what is in the middle. It leaves a mono track, can take some middle instruments with it, and can't remove a voice from a mono recording."
+],
+[
+"Add From Apple Music (Inspector, Backing Tracks & Sound) searches the whole of Apple Music (and your own library) as you type, and plays the song you choose along with the score, in time. It needs an Apple Music subscription and permission to use Apple Music, and the app's own sounds, such as the instrument, mix with the song. Get the Lyrics fetches the words when Apple offers them for the song, which it does not for every song or account, and they then work like any lyrics file.",
+"Add From Apple Music (Inspector, Backing Tracks & Sound) searches the whole of Apple Music (and your own library) as you type, and plays the song you choose along with the score, in time. It needs an Apple Music subscription and permission to use Apple Music, and the app's own sounds, such as the instrument, mix with the song. Get the Lyrics fetches the words when Apple offers them for the song, which it does not for every song or account, and they then work like any lyrics file."
+],
+[
+"Lyrics from Apple Music (the + menu, or the home screen) opens a song's words on their own screen, with the song playing along.",
+"Lyrics from Apple Music (the + menu, or the home screen) opens a song's words on their own screen, with the song playing along."
+],
+[
+"Apple Music only lets an app start and stop a song, not read its sound. So the song can't be pitch-shifted and the singer can't be taken out of it. For that, add the song as an audio file you own and use Reduce Vocals. If the song drifts, move Bar 1 Starts At.",
+"Apple Music only lets an app start and stop a song, not read its sound. So the song can't be pitch-shifted and the singer can't be taken out of it. For that, add the song as an audio file you own and use Reduce Vocals. If the song drifts, move Bar 1 Starts At."
+],
+[
+"Adding a track",
+"Adding a track"
+],
+[
+"Choose Add Backing Track in the Inspector or toolbar and pick an audio file. The app listens to it and sets the score's tempo and key to match, so it starts in time.",
+"Choose Add Backing Track in the Inspector or toolbar and pick an audio file. The app listens to it and sets the score's tempo and key to match, so it starts in time."
+],
+[
+"If the score does not line up, drag the marker on the track to where bar 1 begins, or delay the track. Delay Start can be in seconds or in bars. If it drifts later in the piece, tap Lock Tempo on a downbeat further along.",
+"If the score does not line up, drag the marker on the track to where bar 1 begins, or delay the track. Delay Start can be in seconds or in bars. If it drifts later in the piece, tap Lock Tempo on a downbeat further along."
+],
+[
+"Match Key & Tempo to Track runs the listening again at any time.",
+"Match Key & Tempo to Track runs the listening again at any time."
+],
+[
+"Editing the track",
+"Editing the track"
+],
+[
+"Edit Backing Track shows the backing track as a waveform with three lanes: Volume, Tempo and Pitch. Add points on a lane and drag them to change that setting over time.",
+"Edit Backing Track shows the backing track as a waveform with three lanes: Volume, Tempo and Pitch. Add points on a lane and drag them to change that setting over time."
+],
+[
+"Each point can be a straight line or a smooth S-curve. Use it to fade in or out, to ease a tempo change, or to correct a track that is slightly out of tune.",
+"Each point can be a straight line or a smooth S-curve. Use it to fade in or out, to ease a tempo change, or to correct a track that is slightly out of tune."
+],
+[
+"The built-in instrument",
+"The built-in instrument"
+],
+[
+"Play Score As picks the voice that plays the notes on the page (or Off): piano, organ, guitar, bass, flute, clarinet, saxophones or trumpet. In the Inspector, Instrument Gain and Backing Track Gain each set a level from -24 to +12 decibels for that score, so you can balance the instrument against the backing track; the arrow resets to 0. Settings has the starting volume for the instrument. It plays along with any backing track.",
+"Play Score As picks the voice that plays the notes on the page (or Off): piano, organ, guitar, bass, flute, clarinet, saxophones or trumpet. In the Inspector, Instrument Gain and Backing Track Gain each set a level from -24 to +12 decibels for that score, so you can balance the instrument against the backing track; the arrow resets to 0. Settings has the starting volume for the instrument. It plays along with any backing track."
+],
+[
+"A score with more than one staff has a Staves panel in the Inspector: give each staff its own instrument, for example Bass on the bass-clef staff and Piano on the other. Staves left on Same as Above use the main one.",
+"A score with more than one staff has a Staves panel in the Inspector: give each staff its own instrument, for example Bass on the bass-clef staff and Piano on the other. Staves left on Same as Above use the main one."
+],
+[
+"Turn Metronome on in the Inspector or with K on a Mac if you want clicks with it.",
+"Turn Metronome on in the Inspector or with K on a Mac if you want clicks with it."
+],
+[
+"Writing & Editing Music",
+"Writing & Editing Music"
+],
+[
+"The score editor changes the notes in a MusicXML score. A PDF is first read by the app, and the editor works on a copy of what it read. Open it with Edit Score (the music-note-list button; in Simple mode it appears for scores you created).",
+"The score editor changes the notes in a MusicXML score. A PDF is first read by the app, and the editor works on a copy of what it read. Open it with Edit Score (the music-note-list button; in Simple mode it appears for scores you created)."
+],
+[
+"The nine modes",
+"The nine modes"
+],
+[
+"The strip at the bottom of the editor has one mode for each kind of job, so the controls for a job are together. Swipe the strip for the rest.",
+"The strip at the bottom of the editor has one mode for each kind of job, so the controls for a job are together. Swipe the strip for the rest."
+],
+[
+"Notes: touch a rest and slide up or down to choose the pitch; lift to put a note there, as long as the length chosen below. Drag a note up or down to move it. Scribble back and forth over a note to rub it out. Select a note, then tap a length to change how long it lasts.",
+"Notes: touch a rest and slide up or down to choose the pitch; lift to put a note there, as long as the length chosen below. Drag a note up or down to move it. Scribble back and forth over a note to rub it out. Select a note, then tap a length to change how long it lasts."
+],
+[
+"Rests: tap a note to turn it into a rest of the chosen length. Tap a rest to select it and change its length, or use the bin to take it off the page (the bar keeps its length).",
+"Rests: tap a note to turn it into a rest of the chosen length. Tap a rest to select it and change its length, or use the bin to take it off the page (the bar keeps its length)."
+],
+[
+"Marks: tap a note, then add a sharp, flat or natural, tie it to the next note, or give it staccato, accent, tenuto, marcato or a fermata. Tap one again to take it off.",
+"Marks: tap a note, then add a sharp, flat or natural, tie it to the next note, or give it staccato, accent, tenuto, marcato or a fermata. Tap one again to take it off."
+],
+[
+"Dynamics: tap a note (the dynamic goes at that note) or a bar (at its start), then choose ppp to fff. Crescendo and Diminuendo put a hairpin over the bar; Longer and Shorter stretch it over more bars.",
+"Dynamics: tap a note (the dynamic goes at that note) or a bar (at its start), then choose ppp to fff. Crescendo and Diminuendo put a hairpin over the bar; Longer and Shorter stretch it over more bars."
+],
+[
+"Bars: repeat signs, and adding or deleting a bar. Expand Repeats writes the piece out as it is played.",
+"Bars: repeat signs, and adding or deleting a bar. Expand Repeats writes the piece out as it is played."
+],
+[
+"Form: first and second time bars, jumps (Segno, Coda, To Coda, D.C., D.S., Fine) and tempo marks.",
+"Form: first and second time bars, jumps (Segno, Coda, To Coda, D.C., D.S., Fine) and tempo marks."
+],
+[
+"Medley: drag across bars to choose them, then Copy, Cut, Paste, Duplicate or Delete, or Insert from Score to take bars from another score in your library.",
+"Medley: drag across bars to choose them, then Copy, Cut, Paste, Duplicate or Delete, or Insert from Score to take bars from another score in your library."
+],
+[
+"Erase: touch or drag over notes and rests. A note becomes a rest; a rest comes off the page. Double-tap Apple Pencil to switch to the eraser and back.",
+"Erase: touch or drag over notes and rests. A note becomes a rest; a rest comes off the page. Double-tap Apple Pencil to switch to the eraser and back."
+],
+[
+"Draw: write over the music with Apple Pencil, with pen, marker, pencil and colour tools. The ink stays on the page.",
+"Draw: write over the music with Apple Pencil, with pen, marker, pencil and colour tools. The ink stays on the page."
+],
+[
+"Building a medley",
+"Building a medley"
+],
+[
+"In Medley mode, touch a bar and drag across more to choose a run of bars. Copy keeps them on the clipboard, which stays when you leave and open another score, so you can copy in one piece and paste into another. Paste puts them in after the chosen bars, or at the end if none are chosen.",
+"In Medley mode, touch a bar and drag across more to choose a run of bars. Copy keeps them on the clipboard, which stays when you leave and open another score, so you can copy in one piece and paste into another. Paste puts them in after the chosen bars, or at the end if none are chosen."
+],
+[
+"Insert from Score lists your library: pick a score, choose its From and To bars, and they go in at the same place. Match My Key moves the new bars into the key of the music they follow.",
+"Insert from Score lists your library: pick a score, choose its From and To bars, and they go in at the same place. Match My Key moves the new bars into the key of the music they follow."
+],
+[
+"The new bars keep their own key, time signature and tempo (a tempo mark appears where the pace changes), and your music takes its own back after them. A staff the copied music lacks rests; a staff your piece lacks is left out. Everything can be undone.",
+"The new bars keep their own key, time signature and tempo (a tempo mark appears where the pace changes), and your music takes its own back after them. A staff the copied music lacks rests; a staff your piece lacks is left out. Everything can be undone."
+],
+[
+"Duplicate repeats the chosen bars straight after themselves. Cut is Copy followed by Delete; the last bar of a piece always stays.",
+"Duplicate repeats the chosen bars straight after themselves. Cut is Copy followed by Delete; the last bar of a piece always stays."
+],
+[
+"The quick menu",
+"The quick menu"
+],
+[
+"Tap a note and a small menu hangs over it with what you most often want: sharp, flat, natural, tie, dot, a dynamic, and turn it into a rest. Tap a rest for shorter, longer and remove. Tap an empty part of a bar for repeat start and end, add a bar and delete the bar.",
+"Tap a note and a small menu hangs over it with what you most often want: sharp, flat, natural, tie, dot, a dynamic, and turn it into a rest. Tap a rest for shorter, longer and remove. Tap an empty part of a bar for repeat start and end, add a bar and delete the bar."
+],
+[
+"Tap anywhere else to put it away. It works with a finger as well as the Pencil.",
+"Tap anywhere else to put it away. It works with a finger as well as the Pencil."
+],
+[
+"Lengths, dots, triplets and ties",
+"Lengths, dots, triplets and ties"
+],
+[
+"The note buttons choose semibreve, minim, crotchet, quaver and semiquaver lengths. The dot makes a length half as long again. The 3 makes triplets: three notes in the time of two, shown with a bracket and a 3.",
+"The note buttons choose semibreve, minim, crotchet, quaver and semiquaver lengths. The dot makes a length half as long again. The 3 makes triplets: three notes in the time of two, shown with a bracket and a 3."
+],
+[
+"Tie joins the selected note to the next one, so they sound as one long note. With help on, the next note takes the same pitch; if there is no next note you are told. Tap Tie again to remove it. Ties are drawn across barlines too, and a tied note plays once.",
+"Tie joins the selected note to the next one, so they sound as one long note. With help on, the next note takes the same pitch; if there is no next note you are told. Tap Tie again to remove it. Ties are drawn across barlines too, and a tied note plays once."
+],
+[
+"Sharp, Flat and Natural set an accidental on the selected note; Key returns it to what the key signature says.",
+"Sharp, Flat and Natural set an accidental on the selected note; Key returns it to what the key signature says."
+],
+[
+"What the editor does for you",
+"What the editor does for you"
+],
+[
+"By default the editor looks after the bar. A note never runs past the barline. A longer note takes over what follows it in the bar; a shorter one leaves rests, written the way a copyist would (on the beat, not across it). Beams are added for you, and a short bar is filled with rests when you save.",
+"By default the editor looks after the bar. A note never runs past the barline. A longer note takes over what follows it in the bar; a shorter one leaves rests, written the way a copyist would (on the beat, not across it). Beams are added for you, and a short bar is filled with rests when you save."
+],
+[
+"Everything follows the time signature of the score, so 6/8 groups in dotted beats and 3/4 in three.",
+"Everything follows the time signature of the score, so 6/8 groups in dotted beats and 3/4 in three."
+],
+[
+"Free Editing (Options, top right) turns all of that off. A note is exactly as long as you choose, never clips to the bar, never overwrites its neighbours, and leaves no rests behind. A bar can hold too many or too few beats. Touch empty space in a bar to add a note after the last one. Nothing is tidied when you save.",
+"Free Editing (Options, top right) turns all of that off. A note is exactly as long as you choose, never clips to the bar, never overwrites its neighbours, and leaves no rests behind. A bar can hold too many or too few beats. Touch empty space in a bar to add a note after the last one. Nothing is tidied when you save."
+],
+[
+"Bars, repeats and tempo",
+"Bars, repeats and tempo"
+],
+[
+"Select a bar in Bars mode. Start and End put repeat signs on it (End cycles twice, three and four times). 1st Time Bar and 2nd Time Bar put a bracket over it; Bracket Longer and Shorter stretch it over neighbouring bars; No Time Bar removes it.",
+"Select a bar in Bars mode. Start and End put repeat signs on it (End cycles twice, three and four times). 1st Time Bar and 2nd Time Bar put a bracket over it; Bracket Longer and Shorter stretch it over neighbouring bars; No Time Bar removes it."
+],
+[
+"Jumps adds Segno, Coda, To Coda, Fine, and D.C. or D.S. plain, al Coda or al Fine. Put the Segno where a D.S. returns to, To Coda in the bar where the music leaps, and Coda on the bar it leaps to. Playback follows them: after a D.C. or D.S. it does not repeat sections, plays the last ending, then jumps from To Coda to the Coda (or stops at Fine).",
+"Jumps adds Segno, Coda, To Coda, Fine, and D.C. or D.S. plain, al Coda or al Fine. Put the Segno where a D.S. returns to, To Coda in the bar where the music leaps, and Coda on the bar it leaps to. Playback follows them: after a D.C. or D.S. it does not repeat sections, plays the last ending, then jumps from To Coda to the Coda (or stops at Fine)."
+],
+[
+"Expand Repeats writes the piece out as it is played, with every repeat, ending and jump as its own bars.",
+"Expand Repeats writes the piece out as it is played, with every repeat, ending and jump as its own bars."
+],
+[
+"Tempo sets a printed ♩ = mark on the bar; playback follows it from there.",
+"Tempo sets a printed ♩ = mark on the bar; playback follows it from there."
+],
+[
+"Add Bar After and Delete Bar change the length of the piece.",
+"Add Bar After and Delete Bar change the length of the piece."
+],
+[
+"Undo, saving and sharing",
+"Undo, saving and sharing"
+],
+[
+"Undo and Redo are in the panel, and Command-Z / Shift-Command-Z, a three-finger swipe or shaking the iPad work too. In Draw mode the Undo and Redo there undo the drawing.",
+"Undo and Redo are in the panel, and Command-Z / Shift-Command-Z, a three-finger swipe or shaking the iPad work too. In Draw mode the Undo and Redo there undo the drawing."
+],
+[
+"Save keeps your changes; Cancel asks before throwing them away. Restore the Original Score in Options brings back what you imported.",
+"Save keeps your changes; Cancel asks before throwing them away. Restore the Original Score in Options brings back what you imported."
+],
+[
+"Edit with Apple Pencil Only (Options) stops fingers from changing notes, so a hand resting on the page does no harm.",
+"Edit with Apple Pencil Only (Options) stops fingers from changing notes, so a hand resting on the page does no harm."
+],
+[
+"Lyrics & Karaoke",
+"Lyrics & Karaoke"
+],
+[
+"Lyrics scroll in time with the music like in Apple Music, and CD+Graphics karaoke files show their built-in pictures.",
+"Lyrics scroll in time with the music like in Apple Music, and CD+Graphics karaoke files show their built-in pictures."
+],
+[
+"Lyrics files",
+"Lyrics files"
+],
+[
+"Add a .lrc file (timed lines) or a .txt file to a score from the Lyrics menu. Karaoke MIDI (.kar) files contain their own words.",
+"Add a .lrc file (timed lines) or a .txt file to a score from the Lyrics menu. Karaoke MIDI (.kar) files contain their own words."
+],
+[
+"Show Lyrics Instead of Music swaps the page for the words. Animate Syllables swells each syllable as it is sung, and Show Syllable Progress fills it. Typeface, size, alignment and blur for lines not being sung are in Settings.",
+"Show Lyrics Instead of Music swaps the page for the words. Animate Syllables swells each syllable as it is sung, and Show Syllable Progress fills it. Typeface, size, alignment and blur for lines not being sung are in Settings."
+],
+[
+"A lyrics-only item (no notation) has its own screen with a transport bar and an optional backing track. Lyrics in seconds or in bars can be chosen when the file has no timing.",
+"A lyrics-only item (no notation) has its own screen with a transport bar and an optional backing track. Lyrics in seconds or in bars can be chosen when the file has no timing."
+],
+[
+"Singers and breaks",
+"Singers and breaks"
+],
+[
+"For duets, Assign Singers gives each line to a singer; Match Singers finds them from the song's page on Genius. One singer, or one singer plus everyone, stays on the left; two or more are split left and right, each with their own colour.",
+"For duets, Assign Singers gives each line to a singer; Match Singers finds them from the song's page on Genius. One singer, or one singer plus everyone, stays on the left; two or more are split left and right, each with their own colour."
+],
+[
+"Show one singer's lines with the Singer filter. While the other singer sings, a gap shows an ellipsis. Progress Bar in Breaks in Settings swaps the dots for a bar that fills across the gap.",
+"Show one singer's lines with the Singer filter. While the other singer sings, a gap shows an ellipsis. Progress Bar in Breaks in Settings swaps the dots for a bar that fills across the gap."
+],
+[
+"CD+Graphics (.cdg)",
+"CD+Graphics (.cdg)"
+],
+[
+"A .cdg file is the picture track of a karaoke disc: it draws coloured words and backgrounds on a small screen. The app plays it from the file's own timing. Add the song's audio as a backing track if you have it.",
+"A .cdg file is the picture track of a karaoke disc: it draws coloured words and backgrounds on a small screen. The app plays it from the file's own timing. Add the song's audio as a backing track if you have it."
+],
+[
+"Share, Export & Print",
+"Share, Export & Print"
+],
+[
+"Get a score, or a video of it, out of the app.",
+"Get a score, or a video of it, out of the app."
+],
+[
+"Share menu",
+"Share menu"
+],
+[
+"Press and hold a score in the library and choose Share. It has Export as MusicXML, Export as PDF and Print.",
+"Press and hold a score in the library and choose Share. It has Export as MusicXML, Export as PDF and Print."
+],
+[
+"MusicXML opens in MuseScore, Finale, Sibelius, Dorico, Notion and most other notation apps. For a PDF score it is the music the app read from the page.",
+"MusicXML opens in MuseScore, Finale, Sibelius, Dorico, Notion and most other notation apps. For a PDF score it is the music the app read from the page."
+],
+[
+"PDF is the printed page. A PDF score is passed on as it is; any other score is typeset in the key currently shown. Print opens the system print dialog.",
+"PDF is the printed page. A PDF score is passed on as it is; any other score is typeset in the key currently shown. Print opens the system print dialog."
+],
+[
+"In the share sheet you can also Save to Files, AirDrop, email or message the file.",
+"In the share sheet you can also Save to Files, AirDrop, email or message the file."
+],
+[
+"Other ways out",
+"Other ways out"
+],
+[
+"Share with Another Player (Advanced mode, same menu) makes a .maestropro file with the score and its backing track for another Maestro Pro user.",
+"Share with Another Player (Advanced mode, same menu) makes a .maestropro file with the score and its backing track for another Maestro Pro user."
+],
+[
+"Export Video turns a score into a movie of the music following along, with the sound.",
+"Export Video turns a score into a movie of the music following along, with the sound."
+],
+[
+"Maestro Pro is also offered in the share sheet of other apps for files it can open, and imports them.",
+"Maestro Pro is also offered in the share sheet of other apps for files it can open, and imports them."
+],
+[
+"Up to eight devices running Maestro Pro can play in time with each other (Advanced mode).",
+"Up to eight devices running Maestro Pro can play in time with each other (Advanced mode)."
+],
+[
+"Connecting",
+"Connecting"
+],
+[
+"Open your parts, then one person chooses Play Together, then Start a Session. Everyone else chooses Join a Session and picks that device. The host is asked to allow each player in. Allow the Local Network permission if asked.",
+"Open your parts, then one person chooses Play Together, then Start a Session. Everyone else chooses Join a Session and picks that device. The host is asked to allow each player in. Allow the Local Network permission if asked."
+],
+[
+"Play, pause, seek and tempo changes on any device are mirrored on all of them, so a teacher and students, or a whole ensemble, stay in step. Each player keeps their own part, key and instrument; devices line up bar by bar.",
+"Play, pause, seek and tempo changes on any device are mirrored on all of them, so a teacher and students, or a whole ensemble, stay in step. Each player keeps their own part, key and instrument; devices line up bar by bar."
+],
+[
+"Up to eight devices can join one session. The Nudge slider moves your sound earlier or later if you use wireless speakers or headphones.",
+"Up to eight devices can join one session. The Nudge slider moves your sound earlier or later if you use wireless speakers or headphones."
+],
+[
+"Version History & GitHub",
+"Version History & GitHub"
+],
+[
+"Save versions of a score, try ideas on branches, merge them back, and keep it all on GitHub.",
+"Save versions of a score, try ideas on branches, merge them back, and keep it all on GitHub."
+],
+[
+"Versions and branches",
+"Versions and branches"
+],
+[
+"In the score editor, tap History. Save Version keeps a snapshot you can go back to. Saving in the editor also records one. New Branch starts a separate line of edits, from now or from any earlier version, so you can try something without touching the main score.",
+"In the score editor, tap History. Save Version keeps a snapshot you can go back to. Saving in the editor also records one. New Branch starts a separate line of edits, from now or from any earlier version, so you can try something without touching the main score."
+],
+[
+"Roll Back to This Version restores an earlier snapshot as a new version, so nothing is lost and you can undo the roll back. Switching branches first saves your unsaved edits.",
+"Roll Back to This Version restores an earlier snapshot as a new version, so nothing is lost and you can undo the roll back. Switching branches first saves your unsaved edits."
+],
+[
+"Merge brings another branch into the current one, bar by bar. A bar changed on only one branch comes across; a bar changed on both clashes, and you choose to keep yours or take theirs. Bars are matched by number, so a bar added or removed early on one branch can make the rest show as clashes.",
+"Merge brings another branch into the current one, bar by bar. A bar changed on only one branch comes across; a bar changed on both clashes, and you choose to keep yours or take theirs. Bars are matched by number, so a bar added or removed early on one branch can make the rest show as clashes."
+],
+[
+"Spin Off",
+"Spin Off"
+],
+[
+"Spin Off as New Score turns any version, or a branch's latest version, into a score of its own in your library with a fresh history.",
+"Spin Off as New Score turns any version, or a branch's latest version, into a score of its own in your library with a fresh history."
+],
+[
+"In History, choose Connect to a GitHub Repository and enter owner/repository. Push to GitHub sends every version and branch as a real Git commit and branch, with the score as one MusicXML file. Pull from GitHub brings in versions made elsewhere.",
+"In History, choose Connect to a GitHub Repository and enter owner/repository. Push to GitHub sends every version and branch as a real Git commit and branch, with the score as one MusicXML file. Pull from GitHub brings in versions made elsewhere."
+],
+[
+"It needs a GitHub token with read and write access to the repository's contents. Add it in Tracks from GitHub, under Access Token. It is kept in your Keychain.",
+"It needs a GitHub token with read and write access to the repository's contents. Add it in Tracks from GitHub, under Access Token. It is kept in your Keychain."
+],
+[
+"A branch that has gone separate ways on GitHub arrives as name-github, so you can merge it. PDF scores have no history; editing a PDF saves a separate copy.",
+"A branch that has gone separate ways on GitHub arrives as name-github, so you can merge it. PDF scores have no history; editing a PDF saves a separate copy."
+],
+[
+"Practice material made on demand.",
+"Practice material made on demand."
+],
+[
+"Making a scale",
+"Making a scale"
+],
+[
+"Choose Scales & Arpeggios on the home screen, pick the kind (major, minor, blues, arpeggios and more) and a key. A score is created for it and added to the library, ready to play, transpose and slow down.",
+"Choose Scales & Arpeggios on the home screen, pick the kind (major, minor, blues, arpeggios and more) and a key. A score is created for it and added to the library, ready to play, transpose and slow down."
+],
+[
+"Annotating",
+"Annotating"
+],
+[
+"Mark up the page like a paper part.",
+"Mark up the page like a paper part."
+],
+[
+"Drawing on the page",
+"Drawing on the page"
+],
+[
+"Turn on Annotate in the toolbar and draw with Apple Pencil using the tool palette: pens, markers, pencil, colours and an eraser. Ink is saved with the score and shows while you play.",
+"Turn on Annotate in the toolbar and draw with Apple Pencil using the tool palette: pens, markers, pencil, colours and an eraser. Ink is saved with the score and shows while you play."
+],
+[
+"Each zoom size keeps its own drawing so it stays lined up with the music.",
+"Each zoom size keeps its own drawing so it stays lined up with the music."
+],
+[
+"Export as PDF and Print include your ink for the key and zoom you are viewing.",
+"Export as PDF and Print include your ink for the key and zoom you are viewing."
+],
+[
+"On a Mac nearly everything has a keyboard shortcut, shown in the Playback, Score and View menus. On an iPad with a keyboard, hold the Command key to see them. Every shortcut can be changed.",
+"On a Mac nearly everything has a keyboard shortcut, shown in the Playback, Score and View menus. On an iPad with a keyboard, hold the Command key to see them. Every shortcut can be changed."
+],
+[
+"Changing a shortcut",
+"Changing a shortcut"
+],
+[
+"Open Settings ▸ Keyboard Shortcuts. Click a shortcut, then press the keys you want to use instead. Delete takes the shortcut away, and Escape leaves it as it was. A shortcut that is already in use moves to the action you give it to, and the page says so. The arrow next to a shortcut puts it back, and Reset All to Defaults puts them all back.",
+"Open Settings ▸ Keyboard Shortcuts. Click a shortcut, then press the keys you want to use instead. Delete takes the shortcut away, and Escape leaves it as it was. A shortcut that is already in use moves to the action you give it to, and the page says so. The arrow next to a shortcut puts it back, and Reset All to Defaults puts them all back."
+],
+[
+"Single keys (like the space bar) only work when you are not typing in a box.",
+"Single keys (like the space bar) only work when you are not typing in a box."
+],
+[
+"The shortcuts at the start",
+"The shortcuts at the start"
+],
+[
+"Settings & Accessibility",
+"Settings & Accessibility"
+],
+[
+"Settings has the choices that apply everywhere.",
+"Settings has the choices that apply everywhere."
+],
+[
+"Look and feel",
+"Look and feel"
+],
+[
+"Appearance is light, dark or follow the system. Highlight Colour chooses the colour that lights up playing notes; the toolbar uses your accent colour. Advanced mode has Customise Every Colour.",
+"Appearance is light, dark or follow the system. Highlight Colour chooses the colour that lights up playing notes; the toolbar uses your accent colour. Advanced mode has Customise Every Colour."
+],
+[
+"Zoom, dark sheet music, follow playback and the three highlights have defaults here, which any score can override.",
+"Zoom, dark sheet music, follow playback and the three highlights have defaults here, which any score can override."
+],
+[
+"App icon",
+"App icon"
+],
+[
+"Settings has an App Icon grid: the original, paper, midnight, brass, sunset and forest looks, the Union Flag, Pride and Trans Pride, and one for each instrument (piano, organ, acoustic guitar, bass, flute, clarinet, alto and tenor saxophone, trumpet). Tap one and iPadOS switches the icon and tells you so.",
+"Settings has an App Icon grid: the original, paper, midnight, brass, sunset and forest looks, the Union Flag, Pride and Trans Pride, and one for each instrument (piano, organ, acoustic guitar, bass, flute, clarinet, alto and tenor saxophone, trumpet). Tap one and iPadOS switches the icon and tells you so."
+],
+[
+"Every icon comes in light, dark and tinted versions, so it follows your Home Screen style. A Mac keeps one Dock icon, so the grid is only on iPad.",
+"Every icon comes in light, dark and tinted versions, so it follows your Home Screen style. A Mac keeps one Dock icon, so the grid is only on iPad."
+],
+[
+"The paper, desk, buttons and control panels are drawn as real materials. Under Surfaces you can turn Paper Grain, Page Shadow and Curl, Desk Leather, Leather Buttons and Brushed Metal up or down on their own (up to double), or switch Realistic Surfaces off for a flatter look. High Contrast turns them off as well.",
+"The paper, desk, buttons and control panels are drawn as real materials. Under Surfaces you can turn Paper Grain, Page Shadow and Curl, Desk Leather, Leather Buttons and Brushed Metal up or down on their own (up to double), or switch Realistic Surfaces off for a flatter look. High Contrast turns them off as well."
+],
+[
+"Playing",
+"Playing"
+],
+[
+"Keep the Screen On While Playing, hide the library while playing, metronome and count-in on by default, start playing when a score opens, a default practice speed, and the default instrument.",
+"Keep the Screen On While Playing, hide the library while playing, metronome and count-in on by default, start playing when a score opens, a default practice speed, and the default instrument."
+],
+[
+"App Text Size, Bold Text, High Contrast, Larger Playback Controls and Reduce Motion.",
+"App Text Size, Bold Text, High Contrast, Larger Playback Controls and Reduce Motion."
+],
+[
+"Flash on the Beat and Tap on the Beat (haptics) make the pulse visible and tangible. Announce Bars with VoiceOver reads the bar number as it goes by.",
+"Flash on the Beat and Tap on the Beat (haptics) make the pulse visible and tangible. Announce Bars with VoiceOver reads the bar number as it goes by."
+],
+[
+"Controls have VoiceOver labels and hints.",
+"Controls have VoiceOver labels and hints."
+],
+[
+"Troubleshooting",
+"Troubleshooting"
+],
+[
+"If something is not right, check here first.",
+"If something is not right, check here first."
+],
+[
+"Common questions",
+"Common questions"
+],
+[
+"A PDF plays the wrong number of beats: set Crotchet Beats per Bar in the Inspector, or answer the metre question the first time it opens.",
+"A PDF plays the wrong number of beats: set Crotchet Beats per Bar in the Inspector, or answer the metre question the first time it opens."
+],
+[
+"Wait for Me or the Tuner says it can't hear me: allow the microphone in the device's Settings ▸ Privacy ▸ Microphone, then raise Microphone Sensitivity in Settings ▸ Listening. Play one note at a time and keep other sound down. If it still hears the wrong octave, try Accept Any Octave.",
+"Wait for Me or the Tuner says it can't hear me: allow the microphone in the device's Settings ▸ Privacy ▸ Microphone, then raise Microphone Sensitivity in Settings ▸ Listening. Play one note at a time and keep other sound down. If it still hears the wrong octave, try Accept Any Octave."
+],
+[
+"Notes in a PDF look wrongly read: only printed notation can be read, and scans need to be straight and clear. For a scan the app cannot read well, import a MusicXML file instead; many are free online.",
+"Notes in a PDF look wrongly read: only printed notation can be read, and scans need to be straight and clear. For a scan the app cannot read well, import a MusicXML file instead; many are free online."
+],
+[
+"A backing track starts late or early: drag the track marker, or use Delay Start. Use Match Key & Tempo to Track to listen again.",
+"A backing track starts late or early: drag the track marker, or use Delay Start. Use Match Key & Tempo to Track to listen again."
+],
+[
+"Band-in-a-Box files cannot be read (a closed format). In Band-in-a-Box, save as MusicXML for the notation and as audio for the backing.",
+"Band-in-a-Box files cannot be read (a closed format). In Band-in-a-Box, save as MusicXML for the notation and as audio for the backing."
+],
+[
+"Import Score does nothing or shows a file greyed out: choose All Files in the Files browser, or drag the file onto the window.",
+"Import Score does nothing or shows a file greyed out: choose All Files in the Files browser, or drag the file onto the window."
+],
+[
+"Jazz tunes need the internet the first time you add them.",
+"Jazz tunes need the internet the first time you add them."
+],
+[
+"An overfull bar in the editor: turn Free Editing off, or delete a note and the editor will tidy the bar.",
+"An overfull bar in the editor: turn Free Editing off, or delete a note and the editor will tidy the bar."
+]
+]

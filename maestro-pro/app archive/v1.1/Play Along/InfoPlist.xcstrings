@@ -1,0 +1,378 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CD+Graphics Karaoke" : {
+
+    },
+    "CFBundleDisplayName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro"
+          }
+        }
+      }
+    },
+    "Compressed MusicXML" : {
+
+    },
+    "Karaoke MIDI" : {
+
+    },
+    "Maestro Pro Score" : {
+
+    },
+    "MusicXML" : {
+
+    },
+    "NSAppleMusicUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro nutzt Apple Music, damit du zu einem Song aus deinem Abo spielen und seinen Text sehen kannst."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro uses Apple Music so you can play along with a song from your subscription and see its lyrics."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro usa Apple Music para que puedas tocar junto a una canción de tu suscripción y ver su letra."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro utilise Apple Music pour que vous puissiez jouer avec un morceau de votre abonnement et voir ses paroles."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro usa Apple Music per farti suonare insieme a un brano del tuo abbonamento e vedere il testo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro ProはApple Musicを使い、サブスクリプションの曲に合わせて演奏したり歌詞を表示したりできます。"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Maestro Pro usa o Apple Music para poderes tocar ao som de uma canção da tua subscrição e ver a letra."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro använder Apple Music så att du kan spela till en låt från din prenumeration och se texten."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro 使用 Apple Music，让你能跟着订阅中的歌曲演奏并查看歌词。"
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro nutzt die Kamera, um gedruckte Noten zu fotografieren, damit sie gelesen und mitgespielt werden können."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro uses the camera to photograph printed sheet music so it can be read and played along with."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro usa la cámara para fotografiar partituras impresas y poder leerlas y tocar con ellas."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro utilise l'appareil photo pour photographier des partitions imprimées afin de pouvoir les lire et jouer avec."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro usa la fotocamera per fotografare gli spartiti stampati, così che possano essere letti e seguiti."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Proはカメラで印刷された楽譜を撮影し、読み取って合わせ演奏できるようにします。"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Maestro Pro usa a câmara para fotografar partituras impressas, para que possam ser lidas e acompanhadas."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro använder kameran för att fotografera tryckta noter så att de kan läsas och spelas till."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro 使用相机拍摄印刷乐谱，以便识别并跟谱演奏。"
+          }
+        }
+      }
+    },
+    "NSLocalNetworkUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro findet das andere Gerät, mit dem du im Takt spielen möchtest."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro finds the other device you want to play in time with."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro encuentra el otro dispositivo con el que quieres tocar a tiempo."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro trouve l'autre appareil avec lequel vous voulez jouer en rythme."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro trova l'altro dispositivo con cui vuoi suonare a tempo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Proは、タイミングを合わせて演奏したい相手のデバイスを見つけます。"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Maestro Pro encontra o outro dispositivo com o qual queres tocar em sincronia."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro hittar den andra enheten som du vill spela i takt med."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro 会找到你想与之同步演奏的另一台设备。"
+          }
+        }
+      }
+    },
+    "NSMicrophoneUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro hört über das Mikrofon, ob du die richtige Note sauber spielst, und stimmt dein Instrument."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro listens through the microphone to hear whether you are playing the right note, in tune, and to tune your instrument."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro escucha con el micrófono para saber si tocas la nota correcta y afinada, y para afinar tu instrumento."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro écoute via le micro pour savoir si vous jouez la bonne note, juste, et pour accorder votre instrument."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro ascolta tramite il microfono per capire se suoni la nota giusta, intonata, e per accordare il tuo strumento."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Proはマイクで演奏を聴き、正しい音を正しい音程で弾けているかを判定し、楽器のチューニングも行います。"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Maestro Pro ouve através do microfone para perceber se estás a tocar a nota certa e afinada, e para afinar o teu instrumento."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro lyssnar via mikrofonen för att höra om du spelar rätt ton, rent, och för att stämma ditt instrument."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maestro Pro 通过麦克风聆听，判断你是否弹对了音、音准是否准确，并为你的乐器调音。"
+          }
+        }
+      }
+    },
+    "Timed Lyrics" : {
+
+    }
+  },
+  "version" : "1.0"
+}
