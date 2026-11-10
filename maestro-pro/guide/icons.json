@@ -1,0 +1,807 @@
+[
+ {
+  "name": "Go to Beginning",
+  "description": "jumps back to the start of the score.",
+  "where": "Buttons & Icons: The playback bar",
+  "image": "https://maestro-pro.app/assets/icons/backwardu2eendu2efill.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-playback-bar"
+ },
+ {
+  "name": "Previous Bar",
+  "description": "moves back one bar.",
+  "where": "Buttons & Icons: The playback bar",
+  "image": "https://maestro-pro.app/assets/icons/backwardu2efill.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-playback-bar"
+ },
+ {
+  "name": "Play",
+  "description": "starts the music and the page follows along. It becomes a Pause button while playing.",
+  "where": "Buttons & Icons: The playback bar",
+  "image": "https://maestro-pro.app/assets/icons/playu2efill.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-playback-bar"
+ },
+ {
+  "name": "Next Bar",
+  "description": "moves forward one bar.",
+  "where": "Buttons & Icons: The playback bar",
+  "image": "https://maestro-pro.app/assets/icons/forwardu2efill.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-playback-bar"
+ },
+ {
+  "name": "Metronome",
+  "description": "switches the click on or off.",
+  "where": "Buttons & Icons: The playback bar",
+  "image": "https://maestro-pro.app/assets/icons/metronome.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-playback-bar"
+ },
+ {
+  "name": "Key",
+  "description": "opens the key menu for a backing track or karaoke file, to move the music up or down in semitones.",
+  "where": "Buttons & Icons: The playback bar",
+  "image": "https://maestro-pro.app/assets/icons/tuningfork.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-playback-bar"
+ },
+ {
+  "name": "Down a Tone",
+  "description": "in the key menu, lowers the music by two semitones.",
+  "where": "Buttons & Icons: The playback bar",
+  "image": "https://maestro-pro.app/assets/icons/chevronu2edownu2e2.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-playback-bar"
+ },
+ {
+  "name": "Up a Tone",
+  "description": "in the key menu, raises the music by two semitones.",
+  "where": "Buttons & Icons: The playback bar",
+  "image": "https://maestro-pro.app/assets/icons/chevronu2eupu2e2.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-playback-bar"
+ },
+ {
+  "name": "Edit Score",
+  "description": "opens the score editor.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/musicu2equarternoteu2e3.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Annotate",
+  "description": "draw on the page with Apple Pencil.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/pencilu2etipu2ecropu2ecircle.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Wait for Me",
+  "description": "the music waits until it hears you play the next note.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/earu2eandu2ewaveform.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Record Myself",
+  "description": "records you with the microphone so you can review the take.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/recordu2ecircle.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Tuner",
+  "description": "tells you how far in tune the note you play is.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/tuningfork.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Inspector",
+  "description": "opens the panel with this score's settings: key, tempo, backing tracks, staves and appearance.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/slideru2ehorizontalu2e3.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Chord View",
+  "description": "shows the chords of the score as a grid.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/squareu2egridu2e2x2.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Show Lyrics Instead of Music",
+  "description": "swaps the page for the words.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/quoteu2ebubble.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Play Together",
+  "description": "plays in time with other devices.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/personu2e2u2ewaveu2e2.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Zoom In",
+  "description": "makes the music bigger.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/plusu2emagnifyingglass.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Zoom Out",
+  "description": "makes the music smaller.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/minusu2emagnifyingglass.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Fit to Width",
+  "description": "sizes the page to fill the screen width.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2eupu2eleftu2eandu2earrowu2edownu2eright.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Follow Playback",
+  "description": "scrolls the page to keep the playing bar in view.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2edownu2edoc.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Dark Sheet Music",
+  "description": "shows light notes on a dark page.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/moon.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Turn Pages Like a Book",
+  "description": "pages turn with a curl instead of scrolling.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/booku2epages.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Highlight Notes",
+  "description": "lights up each note as it sounds.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/musicu2enote.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Highlight Bar",
+  "description": "washes the playing bar with colour.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/rectangleu2einsetu2efilled.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Moving Line",
+  "description": "draws a line that travels along the music.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2erightu2etou2eline.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "More",
+  "description": "the rest of the commands for this score.",
+  "where": "Buttons & Icons: The score toolbar",
+  "image": "https://maestro-pro.app/assets/icons/ellipsisu2ecircle.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-score-toolbar"
+ },
+ {
+  "name": "Settings",
+  "description": "appearance, playing, listening, accessibility and shortcuts.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/gearshape.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Help",
+  "description": "opens this guide.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/questionmarku2ecircle.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Add",
+  "description": "add a score, a set-list or a file.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/plus.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Import Score",
+  "description": "brings a PDF, MusicXML or other score into the library.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/squareu2eandu2earrowu2edown.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Scan Sheet Music",
+  "description": "photographs a printed page and reads it.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/camerau2eviewfinder.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "New Blank Score",
+  "description": "starts an empty score to write in.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/docu2ebadgeu2eplus.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Search Scores",
+  "description": "finds classical pieces and jazz tunes to download.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/magnifyingglass.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Scales & Arpeggios",
+  "description": "makes a practice score for a scale or arpeggio in any key.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/pianokeys.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "New Set-List",
+  "description": "makes a list of scores to play in order.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/musicu2enoteu2elist.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Tracks from GitHub",
+  "description": "downloads scores and tracks from a GitHub repository.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/shippingbox.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Print",
+  "description": "prints the score.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/printer.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Export as PDF",
+  "description": "saves the page as a PDF.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/docu2erichtext.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Export as MusicXML",
+  "description": "saves the notes as a MusicXML file.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/docu2etext.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Export Video",
+  "description": "makes a movie of the music following along.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/film.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Rename",
+  "description": "changes the score's name.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/pencil.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Duplicate",
+  "description": "makes a copy of the score.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/plusu2esquareu2eonu2esquare.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Delete from Library",
+  "description": "removes the score.",
+  "where": "Buttons & Icons: The library",
+  "image": "https://maestro-pro.app/assets/icons/trash.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-library"
+ },
+ {
+  "name": "Listen",
+  "description": "plays the music from the chosen note or bar. It becomes a Stop button while playing.",
+  "where": "Buttons & Icons: The editor toolbar",
+  "image": "https://maestro-pro.app/assets/icons/playu2efill.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editor-toolbar"
+ },
+ {
+  "name": "Help",
+  "description": "opens this guide at the editor pages.",
+  "where": "Buttons & Icons: The editor toolbar",
+  "image": "https://maestro-pro.app/assets/icons/questionmarku2ecircle.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editor-toolbar"
+ },
+ {
+  "name": "Undo",
+  "description": "takes back the last change.",
+  "where": "Buttons & Icons: The editor toolbar",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2euturnu2ebackward.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editor-toolbar"
+ },
+ {
+  "name": "Redo",
+  "description": "puts back a change you undid.",
+  "where": "Buttons & Icons: The editor toolbar",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2euturnu2eforward.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editor-toolbar"
+ },
+ {
+  "name": "Options",
+  "description": "the sound used for listening, beats per bar, editing with the Pencil only, history and more.",
+  "where": "Buttons & Icons: The editor toolbar",
+  "image": "https://maestro-pro.app/assets/icons/ellipsisu2ecircle.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editor-toolbar"
+ },
+ {
+  "name": "History",
+  "description": "saved versions and branches of the score.",
+  "where": "Buttons & Icons: The editor toolbar",
+  "image": "https://maestro-pro.app/assets/icons/clocku2earrowu2ecirclepath.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editor-toolbar"
+ },
+ {
+  "name": "Deselect",
+  "description": "clears whatever is chosen. It shows in the middle of the toolbar while something is chosen.",
+  "where": "Buttons & Icons: The editor toolbar",
+  "image": "https://maestro-pro.app/assets/icons/xmarku2ecircle.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editor-toolbar"
+ },
+ {
+  "name": "Notes",
+  "description": "put in and move notes, and set how long they last.",
+  "where": "Buttons & Icons: The editing modes",
+  "image": "https://maestro-pro.app/assets/icons/pencilu2etip.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-modes"
+ },
+ {
+  "name": "Rests",
+  "description": "add, change and remove rests.",
+  "where": "Buttons & Icons: The editing modes",
+  "image": "https://maestro-pro.app/assets/icons/pause.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-modes"
+ },
+ {
+  "name": "Marks",
+  "description": "accidentals, ties and articulations.",
+  "where": "Buttons & Icons: The editing modes",
+  "image": "https://maestro-pro.app/assets/icons/textformatu2eabc.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-modes"
+ },
+ {
+  "name": "Dynamics",
+  "description": "loud and soft, crescendo and diminuendo.",
+  "where": "Buttons & Icons: The editing modes",
+  "image": "https://maestro-pro.app/assets/icons/speakeru2ewaveu2e2.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-modes"
+ },
+ {
+  "name": "Bars",
+  "description": "repeat signs, and adding or removing bars.",
+  "where": "Buttons & Icons: The editing modes",
+  "image": "https://maestro-pro.app/assets/icons/repeat.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-modes"
+ },
+ {
+  "name": "Form",
+  "description": "first and second time bars, jumps and tempo.",
+  "where": "Buttons & Icons: The editing modes",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2euturnu2eright.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-modes"
+ },
+ {
+  "name": "Medley",
+  "description": "copy, cut, paste and insert bars, even from other scores.",
+  "where": "Buttons & Icons: The editing modes",
+  "image": "https://maestro-pro.app/assets/icons/docu2eonu2edoc.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-modes"
+ },
+ {
+  "name": "Erase",
+  "description": "rub out notes and rests.",
+  "where": "Buttons & Icons: The editing modes",
+  "image": "https://maestro-pro.app/assets/icons/eraser.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-modes"
+ },
+ {
+  "name": "Draw",
+  "description": "write over the music with Apple Pencil.",
+  "where": "Buttons & Icons: The editing modes",
+  "image": "https://maestro-pro.app/assets/icons/scribbleu2evariable.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-modes"
+ },
+ {
+  "name": "Close",
+  "description": "the red button closes the editing window.",
+  "where": "Buttons & Icons: The editing window: window buttons",
+  "image": "https://maestro-pro.app/assets/icons/xmark.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-window-buttons"
+ },
+ {
+  "name": "Minimise",
+  "description": "the yellow button shrinks the window to its title bar. Double-tap the title bar to bring it back.",
+  "where": "Buttons & Icons: The editing window: window buttons",
+  "image": "https://maestro-pro.app/assets/icons/minus.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-window-buttons"
+ },
+ {
+  "name": "Fit to Contents",
+  "description": "the green button sizes the window to show everything in it.",
+  "where": "Buttons & Icons: The editing window: window buttons",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2eupu2eleftu2eandu2earrowu2edownu2eright.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-window-buttons"
+ },
+ {
+  "name": "Back",
+  "description": "goes back from a submenu to the list.",
+  "where": "Buttons & Icons: The editing window: window buttons",
+  "image": "https://maestro-pro.app/assets/icons/chevronu2eleft.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-window-buttons"
+ },
+ {
+  "name": "Sharp",
+  "description": "puts a sharp on the chosen notes.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/mu3aE262.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Flat",
+  "description": "puts a flat on the chosen notes.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/mu3aE260.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Natural",
+  "description": "puts a natural on the chosen notes.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/mu3aE261.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Tie to the Next Note",
+  "description": "joins a note to the next one of the same pitch.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/tu3aTie.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Dotted",
+  "description": "makes the note half as long again.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/tu3au2022.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Copy Notes",
+  "description": "copies the chosen notes.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/docu2eonu2edoc.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Cut Notes",
+  "description": "copies the chosen notes and removes them.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/scissors.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Paste Notes",
+  "description": "opens a choice. Overwrite writes the copied notes over the ones already there and removes them. Insert puts them into new bars after this one.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/docu2eonu2eclipboard.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Duplicate Notes",
+  "description": "opens a choice: Inline puts the copy straight after, On Stave Below or To Stave Above puts it on the next staff, and To New Stave makes a new staff for it.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/plusu2esquareu2eonu2esquare.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Turn into a Rest",
+  "description": "replaces the chosen notes with a rest. For a rest, it takes the rest off the page.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/trash.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Half as Long",
+  "description": "halves the length of the chosen notes.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/minus.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Twice as Long",
+  "description": "doubles the length of the chosen notes.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/plus.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Pitch",
+  "description": "three rows of buttons to move the chosen notes up or down by a Half Step, a Full Step or an Octave.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2eupu2earrowu2edown.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Up",
+  "description": "raises the notes by the step named in its row.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2eup.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Down",
+  "description": "lowers the notes by the step named in its row.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2edown.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Up an Octave",
+  "description": "raises the notes by an octave.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2eupu2etou2eline.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Down an Octave",
+  "description": "lowers the notes by an octave.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2edownu2etou2eline.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Generate Harmony",
+  "description": "writes a harmony a third, fourth, fifth, sixth or octave above or below on an empty staff, or a new one.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/musicu2enoteu2elist.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Select All Notes",
+  "description": "chooses every note in the piece.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/checklistu2echecked.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Select All Notes on Staff",
+  "description": "chooses every note on one staff.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/checklist.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Select All Bars",
+  "description": "chooses every bar, so bar actions apply to all of them.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/rectangleu2esplitu2e3x1.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Articulation",
+  "description": "staccato, accent, tenuto, marcato, fermata and more.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/chevronu2erightu2e2.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Dynamic",
+  "description": "sets a dynamic at the note, from ppp to fff.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/speakeru2ewaveu2e2.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Follow the Key Signature",
+  "description": "takes off a note's own accidental so the key signature decides.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2ecounterclockwise.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Bar",
+  "description": "opens the settings for the note's bar in a second window.",
+  "where": "Buttons & Icons: The editing window: notes",
+  "image": "https://maestro-pro.app/assets/icons/rectangleu2esplitu2e3x1.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-notes"
+ },
+ {
+  "name": "Copy Bar",
+  "description": "copies the chosen bars.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/docu2eonu2edoc.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Cut Bar",
+  "description": "copies the chosen bars and removes them.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/scissors.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Paste Bars",
+  "description": "opens a choice. Overwrite replaces the chosen bars with the copied ones. Insert puts the copied bars in after the chosen ones.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/docu2eonu2eclipboard.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Duplicate",
+  "description": "opens a choice of Inline, On Stave Below, To Stave Above or To New Stave.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/plusu2esquareu2eonu2esquare.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Delete Bar",
+  "description": "removes the chosen bars. The last bar of a piece always stays.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/trash.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Repeat start",
+  "description": "puts a repeat sign at the start of the bar.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/tu3au2016u3a.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Repeat end",
+  "description": "puts a repeat sign at the end of the bar, and cycles through the number of times.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/tu3au3au2016.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Add a bar after",
+  "description": "adds an empty bar after this one.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/plus.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Add Bar After",
+  "description": "adds an empty bar after the chosen bar.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/plusu2erectangle.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Add Bar Before",
+  "description": "adds an empty bar before the chosen bar.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/plusu2erectangleu2eonu2erectangle.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Select Content",
+  "description": "chooses all the notes in the chosen bars.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/checklist.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Crescendo and Diminuendo",
+  "description": "puts a hairpin over the bar.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/chevronu2eleftu2eforwardslashu2echevronu2eright.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Longer",
+  "description": "stretches a hairpin or bracket over more bars.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2erightu2etou2eline.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Shorter",
+  "description": "shortens a hairpin or bracket.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2eleftu2etou2eline.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "First and Second Time Bars",
+  "description": "first time, second time and bracket length.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/squareu2esplitu2e2x1.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Jumps and Signs",
+  "description": "Segno, Coda, To Coda, D.C., D.S. and Fine.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/arrowu2euturnu2eright.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Insert from Score",
+  "description": "takes bars from another score in your library.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/squareu2eandu2earrowu2edownu2eonu2esquare.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Expand Repeats",
+  "description": "writes the piece out as it is played.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/rectangleu2eexpandu2evertical.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "All Staves",
+  "description": "actions that take the bar from every staff at once.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/rectangleu2esplitu2e1x2.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Add Treble Staff",
+  "description": "adds a staff with a treble clef.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/plus.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Add Bass Staff",
+  "description": "adds a staff with a bass clef.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/plus.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Delete Staff",
+  "description": "removes one staff and its notes, leaving the others.",
+  "where": "Buttons & Icons: The editing window: bars",
+  "image": "https://maestro-pro.app/assets/icons/trash.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#the-editing-window-bars"
+ },
+ {
+  "name": "Mute",
+  "description": "silences a staff while the music plays.",
+  "where": "Buttons & Icons: Staves in the inspector",
+  "image": "https://maestro-pro.app/assets/icons/tu3aM.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#staves-in-the-inspector"
+ },
+ {
+  "name": "Solo",
+  "description": "plays only the staves marked Solo.",
+  "where": "Buttons & Icons: Staves in the inspector",
+  "image": "https://maestro-pro.app/assets/icons/tu3aS.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#staves-in-the-inspector"
+ },
+ {
+  "name": "Hide Staff",
+  "description": "takes a staff off the page. It stays off in exported and printed PDFs, so you can print one part.",
+  "where": "Buttons & Icons: Staves in the inspector",
+  "image": "https://maestro-pro.app/assets/icons/eye.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#staves-in-the-inspector"
+ },
+ {
+  "name": "Show Staff",
+  "description": "puts a hidden staff back.",
+  "where": "Buttons & Icons: Staves in the inspector",
+  "image": "https://maestro-pro.app/assets/icons/eyeu2eslash.png",
+  "page": "https://maestro-pro.app/guide/buttons-icons.html#staves-in-the-inspector"
+ }
+]

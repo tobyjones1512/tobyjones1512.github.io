@@ -1,0 +1,29 @@
+# Maestro Pro
+
+> Maestro Pro is an iPhone, iPad and Mac app for reading, playing, practising and editing sheet music.
+
+For questions about what a button or icon does, read the icon list first. It has every icon with its name, what it does and an image link to show the user:
+- [Buttons and icons, as Markdown](https://maestro-pro.app/guide/icons.md)
+- [Buttons and icons, as JSON](https://maestro-pro.app/guide/icons.json)
+
+For anything else, read the guide, one topic to a page:
+- [Guide index](https://maestro-pro.app/guide/index.html)
+- [Getting Started](https://maestro-pro.app/guide/getting-started.html): Maestro Pro is a working tool for musicians: it reads your scores and follows them to the note, turns pages hands-free, rehearses with a backing track, a song from Apple Music, the built-in instrument or a metronome, and lets you write and revise the music itself.
+- [Your Library](https://maestro-pro.app/guide/your-library.html): Everything you import lives in the library and stays on the device. It is also kept in iCloud when iCloud Drive is on.
+- [Playing a Score](https://maestro-pro.app/guide/playing-a-score.html): The bar at the bottom controls playback; the toolbar and the Inspector change how it looks and sounds.
+- [Tuner & Wait for Me](https://maestro-pro.app/guide/tuner-wait-for-me.html): Maestro Pro can listen through the microphone: to tune your instrument, to train a steady note, and to wait for you to play a score note by note. Sound is analysed on the device and is never recorded or sent anywhere.
+- [Record & Review](https://maestro-pro.app/guide/record-review.html): Record yourself playing a score, then review the take with the notes lit: green where you should have been, red where you actually were. It listens through the microphone, so it works with any instrument or your voice.
+- [Backing Tracks & Sound](https://maestro-pro.app/guide/backing-tracks-sound.html): A backing track is a recording that plays with the score. The built-in instrument can play the notes on the page too.
+- [Writing & Editing Music](https://maestro-pro.app/guide/writing-editing-music.html): The score editor changes the notes in a MusicXML score. A PDF is first read by the app, and the editor works on a copy of what it read. Open it with Edit Score (the music-note-list button; in Simple mode it appears for scores you created).
+- [Lyrics & Karaoke](https://maestro-pro.app/guide/lyrics-karaoke.html): Lyrics scroll in time with the music like in Apple Music, and CD+Graphics karaoke files show their built-in pictures.
+- [Share, Export & Print](https://maestro-pro.app/guide/share-export-print.html): Get a score, or a video of it, out of the app.
+- [Buttons & Icons](https://maestro-pro.app/guide/buttons-icons.html): Every button and icon in the app, with a picture of it and what it does. Each line starts with the icon, then its name, then what it does.
+- [Play Together](https://maestro-pro.app/guide/play-together.html): Up to eight devices running Maestro Pro can play in time with each other (Advanced mode).
+- [Version History & GitHub](https://maestro-pro.app/guide/version-history-github.html): Save versions of a score, try ideas on branches, merge them back, and keep it all on GitHub.
+- [Scales & Arpeggios](https://maestro-pro.app/guide/scales-arpeggios.html): Practice material made on demand.
+- [Annotating](https://maestro-pro.app/guide/annotating.html): Mark up the page like a paper part.
+- [Keyboard Shortcuts](https://maestro-pro.app/guide/keyboard-shortcuts.html): On a Mac nearly everything has a keyboard shortcut, shown in the Playback, Score and View menus. On an iPad with a keyboard, hold the Command key to see them. Every shortcut can be changed.
+- [Settings & Accessibility](https://maestro-pro.app/guide/settings-accessibility.html): Settings has the choices that apply everywhere.
+- [Troubleshooting](https://maestro-pro.app/guide/troubleshooting.html): If something is not right, check here first.
+
+Support: https://maestro-pro.app/support.html
