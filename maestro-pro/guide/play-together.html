@@ -23,7 +23,8 @@
 <link rel="preload" href="../assets/fonts/BodoniModa-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/maestro.css">
 <script>document.documentElement.classList.add('js')</script>
-<style>.ico{display:flex;gap:14px;align-items:flex-start}.ico__img{flex:none;width:44px;height:44px;padding:8px;box-sizing:border-box;background:#2a241d;border-radius:10px}</style>
+<style>.gs{margin:0 0 1.5rem}.gs__l{position:absolute;left:-9999px}.gs input{width:100%;box-sizing:border-box;padding:.7rem 1rem;font:inherit;border-radius:10px;border:1px solid #8886;background:transparent;color:inherit}.gs__r{list-style:none;margin:.5rem 0 0;padding:0}.gs__r a{display:flex;gap:12px;align-items:flex-start;padding:.55rem .4rem;text-decoration:none;color:inherit;border-bottom:1px solid #8883}.gs__r img{flex:none;background:#2a241d;border-radius:6px;padding:4px;box-sizing:border-box}.gs__r small{display:block;opacity:.65}
+.ico{display:flex;gap:14px;align-items:flex-start}.ico__img{flex:none;width:44px;height:44px;padding:8px;box-sizing:border-box;background:#2a241d;border-radius:10px}</style>
 </head>
 <body class="read">
 <a class="skip" href="#main">Skip to content</a>
@@ -59,6 +60,17 @@
 <a href="troubleshooting.html">Troubleshooting</a>
 </nav></details>
 <article class="guide__body">
+<form class="gs" role="search" onsubmit="return false"><label class="gs__l" for="gs-q">Search the guide</label><input id="gs-q" type="search" placeholder="Search the guide, e.g. undo or sharp" autocomplete="off"><ul id="gs-r" class="gs__r" aria-live="polite"></ul></form>
+<script>(function(){var q=document.getElementById('gs-q'),r=document.getElementById('gs-r'),d=null;
+function load(f){if(d)return f();fetch('search.json').then(function(x){return x.json()}).then(function(j){d=j;f()}).catch(function(){r.textContent='Search is not available right now.'})}
+function go(){var w=q.value.toLowerCase().split(/\s+/).filter(Boolean);r.textContent='';if(!w.length)return;
+var hits=[];d.forEach(function(e){var h=(e.t+' '+e.s+' '+e.x).toLowerCase(),sc=0;for(var i=0;i<w.length;i++){if(h.indexOf(w[i])<0)return;sc+=e.x.toLowerCase().split(':')[0].indexOf(w[i])>=0?3:1}hits.push([sc,e])});
+hits.sort(function(a,b){return b[0]-a[0]});if(!hits.length){r.textContent='Nothing found.';return}
+hits.slice(0,20).forEach(function(h){var e=h[1],li=document.createElement('li'),a=document.createElement('a');a.href=e.u;
+if(e.i){var im=document.createElement('img');im.src='../assets/icons/'+e.i+'.png';im.alt='';im.width=28;im.height=28;a.appendChild(im)}
+var b=document.createElement('span'),n=e.x.indexOf(': '),t=document.createElement('b');t.textContent=n>0&&n<60?e.x.slice(0,n):e.t;b.appendChild(t);
+b.appendChild(document.createTextNode(' '+(n>0&&n<60?e.x.slice(n+2):e.x)));var c=document.createElement('small');c.textContent=e.t+' > '+e.s;b.appendChild(c);a.appendChild(b);li.appendChild(a);r.appendChild(li)})}
+q.addEventListener('input',function(){load(go)})})()</script>
 <a class="back" href="index.html">← Guide</a>
 <h1>Play Together</h1>
 <p class="guide__lede">Up to eight devices running Maestro Pro can play in time with each other (Advanced mode).</p>
