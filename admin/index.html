@@ -130,10 +130,6 @@ textarea.field{min-height:260px;resize:vertical;font-family:ui-monospace,Menlo,m
 
       <div class="card">
         <h2>Preview</h2>
-        <div class="toggle">
-          <button id="tabRendered" class="active" type="button">Rendered</button>
-          <button id="tabSource" type="button">Markdown</button>
-        </div>
         <div id="preview" class="preview"></div>
       </div>
     </div>
@@ -181,6 +177,8 @@ function renderInline(t){
   return String(t)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
     .replace(/\*\*([^*\n]+)\*\*/g,"<strong>$1</strong>")
+    .replace(/(^|[^*])\*([^*\n]+)\*(?![*])/g,"$1<em>$2</em>")
+    .replace(/_([^_\n]+)_/g,"<em>$1</em>")
     .replace(/\[([^\]]+)\]\s*\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
 }
 function renderPreview(){
@@ -221,18 +219,6 @@ $("preview").addEventListener("click", function(e){
   if (el) { el.addEventListener("input", renderPreview); el.addEventListener("change", renderPreview); }
 });
 renderPreview();
-
-$("tabRendered").addEventListener("click", function(){
-  $("tabRendered").classList.add("active");
-  $("tabSource").classList.remove("active");
-  renderPreview();
-});
-$("tabSource").addEventListener("click", function(){
-  $("tabSource").classList.add("active");
-  $("tabRendered").classList.remove("active");
-  const body = $("body").value;
-  $("preview").innerHTML = '<pre style="white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;font-size:.85rem;margin:0">'+body.replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</pre>';
-});
 
 $("compose").addEventListener("submit", async function(e){
   e.preventDefault();
