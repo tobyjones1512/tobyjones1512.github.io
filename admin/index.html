@@ -144,12 +144,12 @@ textarea.field{min-height:260px;resize:vertical;font-family:ui-monospace,Menlo,m
 const API = "https://maestro-marketplace-api.vercel.app/api/marketplace-admin-email";
 const KEY_STORAGE = "cm_admin_key";
 let adminKey = null;
+
 function doSignOut(){
   try { sessionStorage.removeItem(KEY_STORAGE); } catch (e) {}
   adminKey = null;
   location.reload();
 }
-window.addEventListener('pageshow', function(e){ if (e.persisted) location.reload(); });
 
 function $(id){return document.getElementById(id);}
 
@@ -158,14 +158,12 @@ function showApp(){
   if (login) login.remove();
   $("app").hidden = false;
 }
-function showLogin(){
-  $("app").hidden = true;
-  if (!$("login")) location.reload();
-}
 
 let stored = null;
 try { stored = sessionStorage.getItem(KEY_STORAGE); } catch (e) { stored = null; }
 if (stored) { adminKey = stored; showApp(); }
+
+window.addEventListener("pageshow", function(e){ if (e.persisted) location.reload(); });
 
 $("loginForm").addEventListener("submit", function(e){
   e.preventDefault();
@@ -177,17 +175,13 @@ $("loginForm").addEventListener("submit", function(e){
   showApp();
 });
 
-$("signOut").addEventListener("click", function(){
-  try { sessionStorage.removeItem(KEY_STORAGE); } catch (e) {}
-  adminKey = null;
-  location.reload();
-});
+$("signOut").addEventListener("click", doSignOut);
 
 function renderInline(t){
   return String(t)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
     .replace(/\*\*([^*\n]+)\*\*/g,"<strong>$1</strong>")
-    .replace(/\[([^\]]+)\]\s*\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+    .replace(/\[([^\]]+)\]\s*\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
 }
 function renderPreview(){
   const body = $("body").value;
@@ -208,13 +202,19 @@ function renderPreview(){
     else { if (inList){ html += '</ul>'; inList=false; } html += '<p>'+renderInline(line)+'</p>'; }
   }
   if (inList) html += '</ul>';
-  if (btnLabel && btnUrl) html += '<p><a class="btnp" href="'+btnUrl+'">'+btnLabel+'</a></p>';
+  if (btnLabel && btnUrl) html += '<p><a class="btnp" href="'+btnUrl+'" target="_blank" rel="noopener noreferrer">'+btnLabel+'</a></p>';
   const signoff = from === "toby@thecaffeinemediacompany.com" ? "Toby Jones" : "The Caffeine Media Company";
   html += '<p style="margin-top:16px">Best regards,<br><strong>'+signoff+'</strong></p>';
   if (from === "noreply@thecaffeinemediacompany.com") html += '<div class="foot">This mailbox is not monitored.</div>';
   else html += '<div class="foot">The Caffeine Media Company &middot; thecaffeinemediacompany.com &middot; '+label+'</div>';
   $("preview").innerHTML = html;
 }
+
+// Open preview links in a new tab without navigating away
+$("preview").addEventListener("click", function(e){
+  const a = e.target && e.target.closest ? e.target.closest("a") : null;
+  if (a && a.href){ e.preventDefault(); window.open(a.href, "_blank", "noopener,noreferrer"); }
+});
 
 ["body","buttonLabel","buttonUrl","label","from","name"].forEach(function(id){
   const el = $(id);
