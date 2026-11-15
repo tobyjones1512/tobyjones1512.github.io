@@ -30,18 +30,19 @@ a{color:inherit}
 .status{min-height:1.4em;margin:6px 0 0;font-weight:600;font-size:.9rem}
 .status.ok{color:#1f6b3a}
 .status.err{color:var(--red)}
-.app{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
-.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:12px}
+.app{max-width:1280px;margin:0 auto;padding:28px 22px 60px}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:12px}
 .topbar h1{font:800 1.7rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:0}
 .topbar .meta{color:var(--dim);font-size:.9rem;margin-top:4px}
-.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
-@media (max-width:900px){.grid{grid-template-columns:1fr}}
+.tabs{display:flex;gap:8px;margin-bottom:20px}
+.tab{background:transparent;border:1px solid var(--rule);border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;color:var(--dim)}
+.tab.active{background:var(--ink);color:var(--field);border-color:var(--ink)}
 .card{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:22px 24px;box-shadow:0 4px 20px rgba(22,17,14,.04)}
 .card h2{font:800 1.05rem/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.04em;margin:0 0 16px;color:var(--dim)}
 label{display:block;font:650 .75rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;color:var(--dim)}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media (max-width:620px){.row{grid-template-columns:1fr}}
-textarea.field{min-height:260px;resize:vertical;font-family:ui-monospace,Menlo,monospace;font-size:.95rem;line-height:1.5}
+textarea.field{min-height:200px;resize:vertical;font-family:ui-monospace,Menlo,monospace;font-size:.95rem;line-height:1.5}
 .hint{font-size:.8rem;color:var(--dim);margin:-4px 0 12px}
 .preview{background:var(--soft);border:1px solid var(--rule);border-radius:12px;padding:18px 20px;min-height:200px;font-size:.95rem;line-height:1.6}
 .preview h3{font:800 1.1rem/1.2 Georgia,serif;margin:0 0 10px}
@@ -49,12 +50,26 @@ textarea.field{min-height:260px;resize:vertical;font-family:ui-monospace,Menlo,m
 .preview ul{margin:0 0 12px;padding-left:20px}
 .preview li{margin:3px 0}
 .preview strong{font-weight:700}
+.preview em{font-style:italic}
 .preview a{color:var(--red);font-weight:700;text-decoration:underline}
 .preview .btnp{display:inline-block;background:var(--field);color:var(--ink);padding:10px 20px;border-radius:999px;font-weight:700;text-decoration:none;margin:8px 0}
 .preview .foot{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule);font-size:.8rem;color:var(--dim)}
-.toggle{display:flex;gap:8px;margin-bottom:12px}
-.toggle button{background:transparent;border:1px solid var(--rule);border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--dim)}
-.toggle button.active{background:var(--ink);color:var(--field);border-color:var(--ink)}
+.inbox-grid{display:grid;grid-template-columns:320px 1fr;gap:18px}
+@media (max-width:900px){.inbox-grid{grid-template-columns:1fr}}
+.thread-list{max-height:70vh;overflow:auto;border:1px solid var(--rule);border-radius:12px;background:var(--card)}
+.thread-row{padding:12px 14px;border-bottom:1px solid var(--rule);cursor:pointer}
+.thread-row:hover{background:var(--soft)}
+.thread-row.active{background:var(--soft);box-shadow:inset 3px 0 var(--field)}
+.thread-row .who{font-weight:700;font-size:.9rem}
+.thread-row .sub{font-size:.85rem;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.thread-row .meta{font-size:.75rem;color:var(--dim);margin-top:2px}
+.thread-row .unread{display:inline-block;background:var(--red);color:#fff;border-radius:999px;padding:0 7px;font-size:.7rem;font-weight:700;margin-left:6px}
+.msg{border:1px solid var(--rule);border-radius:12px;padding:14px 16px;margin-bottom:12px;background:var(--soft)}
+.msg.in{background:var(--card)}
+.msg .msghead{font-size:.75rem;color:var(--dim);margin-bottom:6px;display:flex;justify-content:space-between}
+.msg .msgbody{white-space:pre-wrap;word-break:break-word;font-size:.95rem}
+.search{width:100%;padding:10px 12px;border:1px solid var(--rule);border-radius:10px;margin-bottom:12px}
+.empty{padding:24px;text-align:center;color:var(--dim)}
 </style>
 </head>
 <body>
@@ -74,14 +89,19 @@ textarea.field{min-height:260px;resize:vertical;font-family:ui-monospace,Menlo,m
   <div class="app">
     <div class="topbar">
       <div>
-        <h1>Send email</h1>
-        <div class="meta">HTML emails via the Caffeine Media mail system</div>
+        <h1>Email admin</h1>
+        <div class="meta">Caffeine Media mail system</div>
       </div>
       <button class="btn btn--ghost btn--sm" id="signOut" type="button" onclick="doSignOut()">Sign out</button>
     </div>
 
-    <div class="grid">
-      <div class="card">
+    <div class="tabs">
+      <button class="tab active" data-view="compose" type="button">Compose</button>
+      <button class="tab" data-view="inbox" type="button">Inbox</button>
+    </div>
+
+    <div id="viewCompose">
+      <div class="card" style="max-width:760px">
         <h2>Compose</h2>
         <form id="compose" novalidate>
           <label for="from">From</label>
@@ -90,7 +110,6 @@ textarea.field{min-height:260px;resize:vertical;font-family:ui-monospace,Menlo,m
             <option value="toby@thecaffeinemediacompany.com">toby@thecaffeinemediacompany.com</option>
             <option value="noreply@thecaffeinemediacompany.com">noreply@thecaffeinemediacompany.com</option>
           </select>
-
           <div class="row">
             <div>
               <label for="to">To</label>
@@ -101,14 +120,11 @@ textarea.field{min-height:260px;resize:vertical;font-family:ui-monospace,Menlo,m
               <input class="field" type="text" id="name" placeholder="there">
             </div>
           </div>
-
           <label for="subject">Subject</label>
           <input class="field" type="text" id="subject" required maxlength="200">
-
           <label for="body">Message</label>
-          <p class="hint">Supports **bold**, lines starting with "- " for bullets, and [text](https://url) for links.</p>
+          <p class="hint">Supports **bold**, *italic*, lines starting with "- " for bullets, and [text](https://url) for links.</p>
           <textarea class="field" id="body" required placeholder="Hi there,&#10;&#10;Your message here."></textarea>
-
           <div class="row">
             <div>
               <label for="buttonLabel">Button label (optional)</label>
@@ -119,35 +135,49 @@ textarea.field{min-height:260px;resize:vertical;font-family:ui-monospace,Menlo,m
               <input class="field" type="url" id="buttonUrl" placeholder="https://...">
             </div>
           </div>
-
           <label for="label">Email label (optional)</label>
           <input class="field" type="text" id="label" placeholder="Caffeine Media" maxlength="60">
-
+          <label for="attachments">Attachments (optional, not scanned)</label>
+          <input class="field" type="file" id="attachments" multiple>
+          <p class="hint" id="attachList">No files selected.</p>
           <button class="btn" id="send" type="submit">Send email</button>
           <p id="status" class="status"></p>
         </form>
       </div>
-
-      <div class="card">
+      <div class="card" style="max-width:760px;margin-top:18px">
         <h2>Preview</h2>
         <div id="preview" class="preview"></div>
+      </div>
+    </div>
+
+    <div id="viewInbox" hidden>
+      <div class="inbox-grid">
+        <div>
+          <input class="search" id="search" placeholder="Search threads..." type="search">
+          <div class="thread-list" id="threadList"><div class="empty">Loading...</div></div>
+        </div>
+        <div>
+          <div id="threadView" class="card"><div class="empty">Select a thread</div></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-const API = "https://maestro-marketplace-api.vercel.app/api/marketplace-admin-email";
+const API_BASE = "https://maestro-marketplace-api.vercel.app/api/marketplace-";
 const KEY_STORAGE = "cm_admin_key";
 let adminKey = null;
+let currentThreadId = null;
+
+function $(id){return document.getElementById(id);}
+function apiUrl(name){ return API_BASE + name; }
 
 function doSignOut(){
   try { sessionStorage.removeItem(KEY_STORAGE); } catch (e) {}
   adminKey = null;
   location.reload();
 }
-
-function $(id){return document.getElementById(id);}
 
 function showApp(){
   const login = $("login");
@@ -173,6 +203,27 @@ $("loginForm").addEventListener("submit", function(e){
 
 $("signOut").addEventListener("click", doSignOut);
 
+function authHeaders(){
+  const key = adminKey || (function(){try{return sessionStorage.getItem(KEY_STORAGE);}catch(e){return null;}})();
+  return { "Content-Type": "application/json", "X-Admin-Key": key || "" };
+}
+function getKey(){
+  return adminKey || (function(){try{return sessionStorage.getItem(KEY_STORAGE);}catch(e){return null;}})();
+}
+
+// Tabs
+document.querySelectorAll(".tab").forEach(function(t){
+  t.addEventListener("click", function(){
+    document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("active");});
+    t.classList.add("active");
+    const v = t.getAttribute("data-view");
+    $("viewCompose").hidden = (v !== "compose");
+    $("viewInbox").hidden = (v !== "inbox");
+    if (v === "inbox") loadThreads();
+  });
+});
+
+// Compose preview
 function renderInline(t){
   return String(t)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
@@ -205,10 +256,10 @@ function renderPreview(){
   html += '<p style="margin-top:16px">Best regards,<br><strong>'+signoff+'</strong></p>';
   if (from === "noreply@thecaffeinemediacompany.com") html += '<div class="foot">This mailbox is not monitored.</div>';
   else html += '<div class="foot">The Caffeine Media Company &middot; thecaffeinemediacompany.com &middot; '+label+'</div>';
+  const atts = Array.from($("attachments").files || []);
+  if (atts.length) html += '<div class="foot">Attachments: ' + atts.map(function(f){return f.name;}).join(", ") + '</div>';
   $("preview").innerHTML = html;
 }
-
-// Open preview links in a new tab without navigating away
 $("preview").addEventListener("click", function(e){
   const a = e.target && e.target.closest ? e.target.closest("a") : null;
   if (a && a.href){ e.preventDefault(); window.open(a.href, "_blank", "noopener,noreferrer"); }
@@ -220,14 +271,31 @@ $("preview").addEventListener("click", function(e){
 });
 renderPreview();
 
+$("attachments").addEventListener("change", function(){
+  const fs = Array.from($("attachments").files || []);
+  $("attachList").textContent = fs.length ? fs.map(function(f){return f.name + " (" + Math.round(f.size/1024) + " KB)";}).join(", ") : "No files selected.";
+  renderPreview();
+});
+
 $("compose").addEventListener("submit", async function(e){
   e.preventDefault();
-  const key = adminKey || (function(){try{return sessionStorage.getItem(KEY_STORAGE);}catch(e){return null;}})();
+  const key = getKey();
   const btn = $("send");
   const status = $("status");
   btn.disabled = true;
   status.className = "status";
   status.textContent = "Sending...";
+  const attFiles = Array.from($("attachments").files || []);
+  const attPayload = [];
+  for (const f of attFiles) {
+    const b64 = await new Promise(function(resolve, reject){
+      const r = new FileReader();
+      r.onload = function(){ resolve(String(r.result).split(",")[1] || ""); };
+      r.onerror = reject;
+      r.readAsDataURL(f);
+    });
+    attPayload.push({ filename: f.name, content: b64, content_type: f.type });
+  }
   const payload = {
     key: key,
     from: $("from").value,
@@ -237,12 +305,13 @@ $("compose").addEventListener("submit", async function(e){
     body: $("body").value,
     label: $("label").value.trim(),
     buttonLabel: $("buttonLabel").value.trim(),
-    buttonUrl: $("buttonUrl").value.trim()
+    buttonUrl: $("buttonUrl").value.trim(),
+    attachments: attPayload
   };
   try {
-    const r = await fetch(API, {
+    const r = await fetch(apiUrl("admin-email"), {
       method: "POST",
-      headers: { "Content-Type": "application/json", "X-Admin-Key": key || "" },
+      headers: authHeaders(),
       body: JSON.stringify(payload)
     });
     const j = await r.json().catch(function(){return {};});
@@ -250,6 +319,7 @@ $("compose").addEventListener("submit", async function(e){
     status.className = "status ok";
     status.textContent = "Sent.";
     $("compose").reset();
+    $("attachList").textContent = "No files selected.";
     renderPreview();
   } catch (err) {
     status.className = "status err";
@@ -263,6 +333,102 @@ $("compose").addEventListener("submit", async function(e){
     btn.disabled = false;
   }
 });
+
+// Inbox
+async function loadThreads(){
+  const list = $("threadList");
+  list.innerHTML = '<div class="empty">Loading...</div>';
+  try {
+    const r = await fetch(apiUrl("admin-threads") + "?q=" + encodeURIComponent($("search").value.trim()) + "&key=" + encodeURIComponent(getKey()||""));
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || "Failed");
+    const threads = j.threads || [];
+    if (!threads.length) { list.innerHTML = '<div class="empty">No threads</div>'; return; }
+    list.innerHTML = threads.map(function(t){
+      return '<div class="thread-row' + (t.id === currentThreadId ? ' active' : '') + '" data-id="' + t.id + '">' +
+        '<div class="who">' + (t.customer||"") + (t.unread ? '<span class="unread">' + t.unread + '</span>' : '') + '</div>' +
+        '<div class="sub">' + (t.subject||"") + '</div>' +
+        '<div class="meta">' + new Date(t.lastAt).toLocaleString() + ' &middot; ' + (t.count||0) + ' msgs</div>' +
+      '</div>';
+    }).join("");
+    list.querySelectorAll(".thread-row").forEach(function(row){
+      row.addEventListener("click", function(){ openThread(row.getAttribute("data-id")); });
+    });
+  } catch (e) {
+    list.innerHTML = '<div class="empty">' + (e.message||"Error") + '</div>';
+  }
+}
+$("search").addEventListener("input", function(){ clearTimeout(window._st); window._st = setTimeout(loadThreads, 300); });
+
+async function openThread(id){
+  currentThreadId = id;
+  const view = $("threadView");
+  view.innerHTML = '<div class="empty">Loading...</div>';
+  try {
+    const r = await fetch(apiUrl("admin-thread") + "?id=" + encodeURIComponent(id) + "&key=" + encodeURIComponent(getKey()||""));
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || "Failed");
+    const t = j.thread;
+    let html = '<h2 style="font:800 1rem/1.2 -apple-system,BlinkMacSystemFont,\'Segoe UI\',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--dim);margin:0 0 12px">' + (t.customer||"") + '</h2>';
+    html += '<div style="font-size:.85rem;color:var(--dim);margin-bottom:14px">Subject: ' + (t.subject||"") + ' &middot; From: ' + (t.fromKey||"") + '</div>';
+    (t.messages||[]).forEach(function(m){
+      html += '<div class="msg ' + m.dir + '"><div class="msghead"><span>' + (m.dir === "in" ? "Received" : "Sent") + ' &middot; ' + (m.by||"") + '</span><span>' + new Date(m.at).toLocaleString() + '</span></div><div class="msgbody">' + (m.text||"").replace(/&/g,"&amp;").replace(/</g,"&lt;") + '</div>';
+      if (m.attachments && m.attachments.length) html += '<div style="font-size:.75rem;color:var(--dim);margin-top:6px">Attachments: ' + m.attachments.join(", ") + '</div>';
+      html += '</div>';
+    });
+    html += '<div style="margin-top:12px"><textarea class="field" id="replyBody" placeholder="Type your reply..."></textarea>';
+    html += '<div class="row" style="margin-top:8px"><div><input class="field" id="replyBtnLabel" placeholder="Button label (optional)"></div><div><input class="field" id="replyBtnUrl" placeholder="Button URL (optional)"></div></div>';
+    html += '<button class="btn" id="replySend" type="button" style="margin-top:8px">Send reply</button><p id="replyStatus" class="status"></p></div>';
+    view.innerHTML = html;
+    loadThreads();
+    $("replySend").addEventListener("click", async function(){
+      const btn = $("replySend");
+      const st = $("replyStatus");
+      btn.disabled = true;
+      st.className = "status";
+      st.textContent = "Sending...";
+      try {
+        const r = await fetch(apiUrl("admin-reply"), {
+          method: "POST",
+          headers: authHeaders(),
+          body: JSON.stringify({
+            key: getKey(),
+            threadId: id,
+            body: $("replyBody").value,
+            buttonLabel: $("replyBtnLabel").value.trim(),
+            buttonUrl: $("replyBtnUrl").value.trim()
+          })
+        });
+        const j = await r.json().catch(function(){return {};});
+        if (!r.ok) throw new Error(j.error || ("Couldn't send (" + r.status + ")."));
+        st.className = "status ok";
+        st.textContent = "Sent.";
+        $("replyBody").value = "";
+        $("replyBtnLabel").value = "";
+        $("replyBtnUrl").value = "";
+        openThread(id);
+      } catch (err) {
+        st.className = "status err";
+        st.textContent = err.message || "Couldn't send.";
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  } catch (e) {
+    view.innerHTML = '<div class="empty">' + (e.message||"Error") + '</div>';
+  }
+}
+
+// Handle ?thread= in URL
+const params = new URLSearchParams(location.search);
+const t = params.get("thread");
+if (t) {
+  document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("active");});
+  document.querySelector('.tab[data-view="inbox"]').classList.add("active");
+  $("viewCompose").hidden = true;
+  $("viewInbox").hidden = false;
+  setTimeout(function(){ openThread(t); }, 100);
+}
 </script>
 </body>
 </html>
