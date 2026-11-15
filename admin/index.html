@@ -77,7 +77,7 @@ textarea.field{min-height:260px;resize:vertical;font-family:ui-monospace,Menlo,m
         <h1>Send email</h1>
         <div class="meta">HTML emails via the Caffeine Media mail system</div>
       </div>
-      <button class="btn btn--ghost btn--sm" id="signOut" type="button">Sign out</button>
+      <button class="btn btn--ghost btn--sm" id="signOut" type="button" onclick="doSignOut()">Sign out</button>
     </div>
 
     <div class="grid">
@@ -144,6 +144,12 @@ textarea.field{min-height:260px;resize:vertical;font-family:ui-monospace,Menlo,m
 const API = "https://maestro-marketplace-api.vercel.app/api/marketplace-admin-email";
 const KEY_STORAGE = "cm_admin_key";
 let adminKey = null;
+function doSignOut(){
+  try { sessionStorage.removeItem(KEY_STORAGE); } catch (e) {}
+  adminKey = null;
+  location.reload();
+}
+window.addEventListener('pageshow', function(e){ if (e.persisted) location.reload(); });
 
 function $(id){return document.getElementById(id);}
 
