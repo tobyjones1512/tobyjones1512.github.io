@@ -97,6 +97,7 @@ textarea.field{min-height:220px;resize:vertical;font-family:ui-monospace,Menlo,m
 <script>
 const API = "https://maestro-marketplace-api.vercel.app/api/marketplace-admin-email";
 const KEY_STORAGE = "cm_admin_key";
+let adminKey = null;
 
 function $(id){return document.getElementById(id);}
 
@@ -109,26 +110,31 @@ function showLogin(){
   $("app").hidden = true;
 }
 
-const stored = sessionStorage.getItem(KEY_STORAGE);
-if (stored) showApp();
+let stored = null;
+try { stored = sessionStorage.getItem(KEY_STORAGE); } catch (e) { stored = null; }
+if (stored) { adminKey = stored; showApp(); }
 
 $("loginForm").addEventListener("submit", function(e){
   e.preventDefault();
   const pw = $("pw").value;
   if (!pw) return;
-  sessionStorage.setItem(KEY_STORAGE, pw);
+  try { sessionStorage.setItem(KEY_STORAGE, pw); } catch (e) {}
+  adminKey = pw;
   $("loginStatus").textContent = "";
   showApp();
 });
 
 $("signOut").addEventListener("click", function(){
-  sessionStorage.removeItem(KEY_STORAGE);
+  try { sessionStorage.removeItem(KEY_STORAGE); } catch (e) {}
+  adminKey = null;
   showLogin();
 });
 
 $("compose").addEventListener("submit", async function(e){
   e.preventDefault();
-  const key = sessionStorage.getItem(KEY_STORAGE);
+  let key = adminKey;
+  if (!key) { try { key = sessionStorage.getItem(KEY_STORAGE); } catch (e) { key = null; } }
+  if (!key) key = adminKey;
   const btn = $("send");
   const status = $("status");
   btn.disabled = true;
@@ -158,7 +164,7 @@ $("compose").addEventListener("submit", async function(e){
     status.className = "status err";
     status.textContent = err.message || "Couldn't send.";
     if (/unauthor/i.test(err.message || "")) {
-      sessionStorage.removeItem(KEY_STORAGE);
+      try { sessionStorage.removeItem(KEY_STORAGE); } catch (e) {}
       showLogin();
     }
   } finally {
