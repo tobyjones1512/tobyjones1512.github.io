@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="referrer" content="no-referrer">
-<title>Email admin - Caffeine Media</title>
+<title>Mail - Caffeine Media</title>
 <meta name="theme-color" content="#16110E">
 <link rel="icon" href="https://thecaffeinemediacompany.com/assets/favicon.png" type="image/png">
 <style>
-:root{--ink:#16110E;--paper:#FAFAF7;--field:#F2B705;--red:#C8211A;--dim:#55504B;--rule:#D9D6CE;--card:#FFFFFF;--soft:#F0EDE6}
+:root{--ink:#16110E;--paper:#FAFAF7;--field:#F2B705;--red:#C8211A;--dim:#55504B;--rule:#D9D6CE;--card:#FFFFFF;--soft:#F0EDE6;--sidebar:#1E1710}
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
 button,input,select,textarea{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 a{color:inherit}
@@ -22,62 +22,61 @@ a{color:inherit}
 .login .sub{color:var(--dim);margin:0 0 4px;font-size:.95rem}
 .field{width:100%;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:11px 13px;margin-bottom:2px;transition:border-color .15s}
 .field:focus{border-color:var(--ink);outline:none}
-.btn{background:var(--ink);color:var(--field);border:0;border-radius:999px;padding:12px 24px;font-weight:700;cursor:pointer;transition:transform .1s,opacity .15s}
+.btn{background:var(--ink);color:var(--field);border:0;border-radius:999px;padding:10px 20px;font-weight:700;cursor:pointer;transition:transform .1s,opacity .15s}
 .btn:hover{transform:translateY(-1px)}
 .btn:disabled{opacity:.5;cursor:default;transform:none}
 .btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}
-.btn--sm{padding:8px 16px;font-size:.9rem}
+.btn--sm{padding:6px 14px;font-size:.85rem}
 .status{min-height:1.4em;margin:6px 0 0;font-weight:600;font-size:.9rem}
 .status.ok{color:#1f6b3a}
 .status.err{color:var(--red)}
-.app{max-width:1280px;margin:0 auto;padding:28px 22px 60px}
-.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:12px}
-.topbar h1{font:800 1.7rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:0}
-.topbar .meta{color:var(--dim);font-size:.9rem;margin-top:4px}
-.tabs{display:flex;gap:8px;margin-bottom:20px}
-.tab{background:transparent;border:1px solid var(--rule);border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;color:var(--dim)}
-.tab.active{background:var(--ink);color:var(--field);border-color:var(--ink)}
-.card{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:22px 24px;box-shadow:0 4px 20px rgba(22,17,14,.04)}
-.card h2{font:800 1.05rem/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.04em;margin:0 0 16px;color:var(--dim)}
-label{display:block;font:650 .75rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;color:var(--dim)}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media (max-width:620px){.row{grid-template-columns:1fr}}
-textarea.field{min-height:200px;resize:vertical;font-family:ui-monospace,Menlo,monospace;font-size:.95rem;line-height:1.5}
-.hint{font-size:.8rem;color:var(--dim);margin:-4px 0 12px}
-.preview{background:var(--soft);border:1px solid var(--rule);border-radius:12px;padding:18px 20px;min-height:200px;font-size:.95rem;line-height:1.6}
-.preview h3{font:800 1.1rem/1.2 Georgia,serif;margin:0 0 10px}
-.preview p{margin:0 0 12px}
-.preview ul{margin:0 0 12px;padding-left:20px}
-.preview li{margin:3px 0}
-.preview strong{font-weight:700}
-.preview em{font-style:italic}
-.preview a{color:var(--red);font-weight:700;text-decoration:underline}
-.preview .btnp{display:inline-block;background:var(--field);color:var(--ink);padding:10px 20px;border-radius:999px;font-weight:700;text-decoration:none;margin:8px 0}
-.preview .foot{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule);font-size:.8rem;color:var(--dim)}
-.inbox-grid{display:grid;grid-template-columns:320px 1fr;gap:18px}
-@media (max-width:900px){.inbox-grid{grid-template-columns:1fr}}
-.thread-list{max-height:70vh;overflow:auto;border:1px solid var(--rule);border-radius:12px;background:var(--card)}
-.thread-row{padding:12px 14px;border-bottom:1px solid var(--rule);cursor:pointer}
-.thread-row:hover{background:var(--soft)}
-.thread-row.active{background:var(--soft);box-shadow:inset 3px 0 var(--field)}
-.thread-row .who{font-weight:700;font-size:.9rem}
-.thread-row .sub{font-size:.85rem;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.thread-row .meta{font-size:.75rem;color:var(--dim);margin-top:2px}
-.thread-row .unread{display:inline-block;background:var(--red);color:#fff;border-radius:999px;padding:0 7px;font-size:.7rem;font-weight:700;margin-left:6px}
-.msg{border:1px solid var(--rule);border-radius:12px;padding:14px 16px;margin-bottom:12px;background:var(--soft)}
-.msg.in{background:var(--card)}
-.msg .msghead{font-size:.75rem;color:var(--dim);margin-bottom:6px;display:flex;justify-content:space-between}
-.msg .msgbody{white-space:pre-wrap;word-break:break-word;font-size:.95rem}
-.search{width:100%;padding:10px 12px;border:1px solid var(--rule);border-radius:10px;margin-bottom:12px}
+
+.app{display:grid;grid-template-columns:220px 360px 1fr;height:100vh}
+.sidebar{background:var(--sidebar);color:#F3EBDA;padding:20px 14px;display:flex;flex-direction:column;gap:8px}
+.sidebar h1{font:800 1.2rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:0 0 12px;color:var(--field)}
+.mailbox{background:transparent;border:0;color:#F3EBDA;text-align:left;padding:9px 12px;border-radius:8px;cursor:pointer;font-weight:600;width:100%}
+.mailbox:hover{background:rgba(255,255,255,.08)}
+.mailbox.active{background:var(--field);color:var(--ink)}
+.compose-btn{background:var(--field);color:var(--ink);border:0;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;margin-bottom:12px;width:100%}
+.list-pane{border-right:1px solid var(--rule);display:flex;flex-direction:column;min-height:0}
+.list-toolbar{padding:12px;border-bottom:1px solid var(--rule);display:flex;gap:8px}
+.search{flex:1;padding:8px 10px;border:1px solid var(--rule);border-radius:8px}
+.msg-list{flex:1;overflow:auto}
+.msg-row{padding:12px 14px;border-bottom:1px solid var(--rule);cursor:pointer}
+.msg-row:hover{background:var(--soft)}
+.msg-row.active{background:var(--soft);box-shadow:inset 3px 0 var(--field)}
+.msg-row.unread .msg-subject{font-weight:800}
+.msg-from{font-weight:700;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.msg-subject{font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.msg-preview{font-size:.8rem;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.msg-date{font-size:.75rem;color:var(--dim);margin-top:2px}
+.read-pane{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.read-toolbar{padding:12px 16px;border-bottom:1px solid var(--rule);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.read-content{flex:1;overflow:auto;padding:20px 24px}
+.read-content .subject{font:800 1.3rem/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.01em;margin:0 0 8px}
+.read-content .meta{font-size:.85rem;color:var(--dim);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.read-content .body{font-size:1rem;line-height:1.6}
+.read-content .body img{max-width:100%}
+.read-content .attachments{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule)}
+.read-content .attachments a{display:inline-block;margin:4px 8px 4px 0;padding:6px 12px;border:1px solid var(--rule);border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none}
+.reply-box{padding:16px;border-top:1px solid var(--rule);background:var(--soft)}
+.reply-box textarea{width:100%;min-height:100px;border:1px solid var(--rule);border-radius:10px;padding:10px;font-family:ui-monospace,Menlo,monospace;font-size:.95rem;resize:vertical}
+.modal{position:fixed;inset:0;background:rgba(22,17,14,.5);display:grid;place-items:center;padding:24px;z-index:100}
+.modal-card{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:24px;width:min(720px,100%);max-height:90vh;overflow:auto;display:grid;gap:12px}
+.modal-card h2{font:800 1.2rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:0}
 .empty{padding:24px;text-align:center;color:var(--dim)}
+.login{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(135deg,var(--paper),var(--soft))}
+.login form{width:min(400px,100%);background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:32px 28px;display:grid;gap:14px;box-shadow:0 10px 40px rgba(22,17,14,.08)}
+.login h1{font:800 1.9rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:0}
+.login .sub{color:var(--dim);margin:0 0 4px;font-size:.95rem}
 </style>
 </head>
 <body>
 
 <div id="login" class="login">
   <form id="loginForm">
-    <h1>Email admin</h1>
-    <p class="sub">The Caffeine Media Company</p>
+    <h1>Mail</h1>
+    <p class="sub">Caffeine Media</p>
     <label for="pw">Admin password</label>
     <input class="field" type="password" id="pw" autocomplete="current-password" required placeholder="Enter password">
     <button class="btn" type="submit">Sign in</button>
@@ -87,99 +86,70 @@ textarea.field{min-height:200px;resize:vertical;font-family:ui-monospace,Menlo,m
 
 <div id="app" hidden>
   <div class="app">
-    <div class="topbar">
-      <div>
-        <h1>Email admin</h1>
-        <div class="meta">Caffeine Media mail system</div>
+    <div class="sidebar">
+      <h1>Mail</h1>
+      <button class="compose-btn" id="composeBtn" type="button">Compose</button>
+      <button class="mailbox active" data-folder="inbox" type="button">Inbox</button>
+      <button class="mailbox" data-folder="sent" type="button">Sent</button>
+      <div style="flex:1"></div>
+      <button class="btn btn--ghost btn--sm" id="signOut" type="button" onclick="doSignOut()" style="width:100%">Sign out</button>
+    </div>
+    <div class="list-pane">
+      <div class="list-toolbar">
+        <input class="search" id="search" placeholder="Search..." type="search">
       </div>
-      <button class="btn btn--ghost btn--sm" id="signOut" type="button" onclick="doSignOut()">Sign out</button>
+      <div class="msg-list" id="msgList"><div class="empty">Loading...</div></div>
     </div>
-
-    <div class="tabs">
-      <button class="tab active" data-view="compose" type="button">Compose</button>
-      <button class="tab" data-view="inbox" type="button">Inbox</button>
-    </div>
-
-    <div id="viewCompose">
-      <div class="card" style="max-width:760px">
-        <h2>Compose</h2>
-        <form id="compose" novalidate>
-          <label for="from">From</label>
-          <select class="field" id="from">
-            <option value="hello@thecaffeinemediacompany.com">hello@thecaffeinemediacompany.com</option>
-            <option value="toby@thecaffeinemediacompany.com">toby@thecaffeinemediacompany.com</option>
-            <option value="noreply@thecaffeinemediacompany.com">noreply@thecaffeinemediacompany.com</option>
+    <div class="read-pane">
+      <div class="read-toolbar">
+        <button class="btn btn--ghost btn--sm" id="deleteBtn" type="button">Delete</button>
+        <button class="btn btn--ghost btn--sm" id="markUnreadBtn" type="button">Mark unread</button>
+      </div>
+      <div class="read-content" id="readContent"><div class="empty">Select a message</div></div>
+      <div class="reply-box" id="replyBox" hidden>
+        <textarea id="replyBody" placeholder="Reply..."></textarea>
+        <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+          <button class="btn btn--sm" id="replySend" type="button">Send reply</button>
+          <select id="replyFrom" class="field" style="width:auto">
+            <option value="hello@thecaffeinemediacompany.com">hello@</option>
+            <option value="toby@thecaffeinemediacompany.com">toby@</option>
+            <option value="noreply@thecaffeinemediacompany.com">noreply@</option>
           </select>
-          <div class="row">
-            <div>
-              <label for="to">To</label>
-              <input class="field" type="email" id="to" required placeholder="recipient@example.com">
-            </div>
-            <div>
-              <label for="name">Recipient name</label>
-              <input class="field" type="text" id="name" placeholder="there">
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label for="cc">CC (comma-separated)</label>
-              <input class="field" type="text" id="cc" placeholder="a@x.com, b@y.com">
-            </div>
-            <div>
-              <label for="bcc">BCC (comma-separated)</label>
-              <input class="field" type="text" id="bcc" placeholder="a@x.com, b@y.com">
-            </div>
-          </div>
-
-          <label for="subject">Subject</label>
-          <input class="field" type="text" id="subject" required maxlength="200">
-          <label for="body">Message</label>
-          <p class="hint">Supports **bold**, *italic*, lines starting with "- " for bullets, and [text](https://url) for links.</p>
-          <textarea class="field" id="body" required placeholder="Hi there,&#10;&#10;Your message here."></textarea>
-          <div class="row">
-            <div>
-              <label for="buttonLabel">Button label (optional)</label>
-              <input class="field" type="text" id="buttonLabel" placeholder="Read more" maxlength="60">
-            </div>
-            <div>
-              <label for="buttonUrl">Button URL (optional)</label>
-              <input class="field" type="url" id="buttonUrl" placeholder="https://...">
-            </div>
-          </div>
-          <label for="label">Email label (optional)</label>
-          <input class="field" type="text" id="label" placeholder="Caffeine Media" maxlength="60">
-          <label for="attachments">Attachments (optional, not scanned)</label>
-          <input class="field" type="file" id="attachments" multiple>
-          <p class="hint" id="attachList">No files selected.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button class="btn" id="send" type="submit">Send email</button>
-            <button class="btn btn--ghost" id="openClient" type="button">Open in email client</button>
-          </div>
-          <p id="status" class="status"></p>
-        </form>
-      </div>
-      <div class="card" style="max-width:760px;margin-top:18px">
-        <h2>Preview</h2>
-        <div id="preview" class="preview"></div>
-      </div>
-    </div>
-
-    <div id="viewInbox" hidden>
-      <div class="inbox-grid">
-        <div>
-          <input class="search" id="search" placeholder="Search threads..." type="search">
-          <div style="display:flex;gap:8px;margin-bottom:10px">
-            <button class="btn btn--ghost btn--sm" id="filterOpen" type="button">Open</button>
-            <button class="btn btn--ghost btn--sm" id="filterDone" type="button">Completed</button>
-            <button class="btn btn--ghost btn--sm" id="filterAll" type="button">All</button>
-          </div>
-          <div class="thread-list" id="threadList"><div class="empty">Loading...</div></div>
-        </div>
-        <div>
-          <div id="threadView" class="card"><div class="empty">Select a thread</div></div>
+          <span id="replyStatus" class="status"></span>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Compose modal -->
+<div id="composeModal" class="modal" hidden>
+  <div class="modal-card">
+    <h2>Compose</h2>
+    <label for="cFrom">From</label>
+    <select class="field" id="cFrom">
+      <option value="hello@thecaffeinemediacompany.com">hello@thecaffeinemediacompany.com</option>
+      <option value="toby@thecaffeinemediacompany.com">toby@thecaffeinemediacompany.com</option>
+      <option value="noreply@thecaffeinemediacompany.com">noreply@thecaffeinemediacompany.com</option>
+    </select>
+    <label for="cTo">To</label>
+    <input class="field" type="text" id="cTo" placeholder="recipient@example.com">
+    <div class="row">
+      <div><label for="cCc">CC</label><input class="field" type="text" id="cCc"></div>
+      <div><label for="cBcc">BCC</label><input class="field" type="text" id="cBcc"></div>
+    </div>
+    <label for="cSubject">Subject</label>
+    <input class="field" type="text" id="cSubject">
+    <label for="cBody">Message</label>
+    <p style="font-size:.8rem;color:var(--dim);margin:-4px 0 8px">Supports **bold**, *italic*, - bullets, [text](url).</p>
+    <textarea class="field" id="cBody" style="min-height:180px"></textarea>
+    <label for="cAttachments">Attachments</label>
+    <input class="field" type="file" id="cAttachments" multiple>
+    <div style="display:flex;gap:10px;justify-content:flex-end">
+      <button class="btn btn--ghost" id="composeCancel" type="button">Cancel</button>
+      <button class="btn" id="composeSend" type="button">Send</button>
+    </div>
+    <p id="composeStatus" class="status"></p>
   </div>
 </div>
 
@@ -187,30 +157,17 @@ textarea.field{min-height:200px;resize:vertical;font-family:ui-monospace,Menlo,m
 const API_BASE = "https://maestro-marketplace-api.vercel.app/api/marketplace-";
 const KEY_STORAGE = "cm_admin_key";
 let adminKey = null;
-let currentThreadId = null;
-let currentStatus = 'open';
+let currentFolder = "inbox";
+let currentMessageId = null;
 
 function $(id){return document.getElementById(id);}
 function apiUrl(name){ return API_BASE + name; }
-
-function doSignOut(){
-  try { sessionStorage.removeItem(KEY_STORAGE); } catch (e) {}
-  adminKey = null;
-  location.reload();
-}
-
-function showApp(){
-  const login = $("login");
-  if (login) login.remove();
-  $("app").hidden = false;
-}
-
+function doSignOut(){ try { sessionStorage.removeItem(KEY_STORAGE); } catch (e) {} adminKey = null; location.reload(); }
+function showApp(){ const login = $("login"); if (login) login.remove(); $("app").hidden = false; }
 let stored = null;
 try { stored = sessionStorage.getItem(KEY_STORAGE); } catch (e) { stored = null; }
 if (stored) { adminKey = stored; showApp(); }
-
 window.addEventListener("pageshow", function(e){ if (e.persisted) location.reload(); });
-
 $("loginForm").addEventListener("submit", function(e){
   e.preventDefault();
   const pw = $("pw").value;
@@ -219,108 +176,148 @@ $("loginForm").addEventListener("submit", function(e){
   adminKey = pw;
   $("loginStatus").textContent = "";
   showApp();
+  loadMessages();
 });
-
 $("signOut").addEventListener("click", doSignOut);
 
-function authHeaders(){
-  const key = adminKey || (function(){try{return sessionStorage.getItem(KEY_STORAGE);}catch(e){return null;}})();
-  return { "Content-Type": "application/json", "X-Admin-Key": key || "" };
-}
-function getKey(){
-  return adminKey || (function(){try{return sessionStorage.getItem(KEY_STORAGE);}catch(e){return null;}})();
-}
+function getKey(){ return adminKey || (function(){try{return sessionStorage.getItem(KEY_STORAGE);}catch(e){return null;}})(); }
+function authHeaders(){ return { "Content-Type": "application/json", "X-Admin-Key": getKey() || "" }; }
 
-// Tabs
-document.querySelectorAll(".tab").forEach(function(t){
-  t.addEventListener("click", function(){
-    document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("active");});
-    t.classList.add("active");
-    const v = t.getAttribute("data-view");
-    $("viewCompose").hidden = (v !== "compose");
-    $("viewInbox").hidden = (v !== "inbox");
-    if (v === "inbox") loadThreads();
+// Mailboxes
+document.querySelectorAll(".mailbox").forEach(function(b){
+  b.addEventListener("click", function(){
+    document.querySelectorAll(".mailbox").forEach(function(x){x.classList.remove("active");});
+    b.classList.add("active");
+    currentFolder = b.getAttribute("data-folder");
+    currentMessageId = null;
+    $("readContent").innerHTML = '<div class="empty">Select a message</div>';
+    $("replyBox").hidden = true;
+    loadMessages();
   });
 });
 
-// Compose preview
-function renderInline(t){
-  return String(t)
-    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
-    .replace(/\*\*([^*\n]+)\*\*/g,"<strong>$1</strong>")
-    .replace(/(^|[^*])\*([^*\n]+)\*(?![*])/g,"$1<em>$2</em>")
-    .replace(/_([^_\n]+)_/g,"<em>$1</em>")
-    .replace(/\[([^\]]+)\]\s*\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-}
-function renderPreview(){
-  const body = $("body").value;
-  const btnLabel = $("buttonLabel").value.trim();
-  const btnUrl = $("buttonUrl").value.trim();
-  const label = $("label").value.trim() || "Caffeine Media";
-  const from = $("from").value;
-  const name = $("name").value.trim() || "there";
-  let html = '<h3>Caffeine Media</h3>';
-  html += '<p style="font-weight:700;font-size:1.1rem;margin:0 0 12px">Hi ' + name + ',</p>';
-  const lines = body.split("\n");
-  let inList = false;
-  for (const raw of lines){
-    const line = raw.trim();
-    if (!line){ if (inList){ html += '</ul>'; inList=false; } continue; }
-    const m = /^[-*]\s+(.*)$/.exec(line);
-    if (m){ if (!inList){ html += '<ul>'; inList=true; } html += '<li>'+renderInline(m[1])+'</li>'; }
-    else { if (inList){ html += '</ul>'; inList=false; } html += '<p>'+renderInline(line)+'</p>'; }
+async function loadMessages(){
+  const list = $("msgList");
+  list.innerHTML = '<div class="empty">Loading...</div>';
+  try {
+    const r = await fetch(apiUrl("mail-list") + "?folder=" + encodeURIComponent(currentFolder) + "&q=" + encodeURIComponent($("search").value.trim()) + "&key=" + encodeURIComponent(getKey()||""));
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || "Failed");
+    const msgs = j.messages || [];
+    if (!msgs.length) { list.innerHTML = '<div class="empty">No messages</div>'; return; }
+    list.innerHTML = msgs.map(function(m){
+      return '<div class="msg-row' + (m.id === currentMessageId ? ' active' : '') + (m.read ? '' : ' unread') + '" data-id="' + m.id + '">' +
+        '<div class="msg-from">' + (m.from||"") + '</div>' +
+        '<div class="msg-subject">' + (m.subject||"") + '</div>' +
+        '<div class="msg-preview">' + (m.preview||"") + '</div>' +
+        '<div class="msg-date">' + new Date(m.date).toLocaleString() + (m.hasAttachments ? ' · 📎' : '') + '</div>' +
+      '</div>';
+    }).join("");
+    list.querySelectorAll(".msg-row").forEach(function(row){
+      row.addEventListener("click", function(){ openMessage(row.getAttribute("data-id")); });
+    });
+  } catch (e) {
+    list.innerHTML = '<div class="empty">' + (e.message||"Error") + '</div>';
   }
-  if (inList) html += '</ul>';
-  if (btnLabel && btnUrl) html += '<p><a class="btnp" href="'+btnUrl+'" target="_blank" rel="noopener noreferrer">'+btnLabel+'</a></p>';
-  const signoff = from === "toby@thecaffeinemediacompany.com" ? "Toby Jones" : "The Caffeine Media Company";
-  html += '<p style="margin-top:16px">Best regards,<br><strong>'+signoff+'</strong></p>';
-  if (from === "noreply@thecaffeinemediacompany.com") html += '<div class="foot">This mailbox is not monitored.</div>';
-  else html += '<div class="foot">The Caffeine Media Company &middot; thecaffeinemediacompany.com &middot; '+label+'</div>';
-  const atts = Array.from($("attachments").files || []);
-  if (atts.length) html += '<div class="foot">Attachments: ' + atts.map(function(f){return f.name;}).join(", ") + '</div>';
-  $("preview").innerHTML = html;
 }
-$("preview").addEventListener("click", function(e){
-  const a = e.target && e.target.closest ? e.target.closest("a") : null;
-  if (a && a.href){ e.preventDefault(); window.open(a.href, "_blank", "noopener,noreferrer"); }
+$("search").addEventListener("input", function(){ clearTimeout(window._st); window._st = setTimeout(loadMessages, 300); });
+
+function attPreview(a){
+  const name = a.filename || "file";
+  const ct = (a.content_type || "").toLowerCase();
+  if (!a.content) return '<a href="#" download="' + name + '">' + name + '</a>';
+  const src = "data:" + (a.content_type || "application/octet-stream") + ";base64," + a.content;
+  if (ct.startsWith("image/")) return '<div style="margin:8px 0"><img src="' + src + '" alt="' + name + '" style="max-width:100%;border-radius:8px;border:1px solid var(--rule)"><div style="font-size:.75rem;color:var(--dim);margin-top:4px">' + name + '</div></div>';
+  if (ct === "application/pdf") return '<div style="margin:8px 0"><embed src="' + src + '" type="application/pdf" width="100%" height="300px" style="border:1px solid var(--rule);border-radius:8px"><div style="font-size:.75rem;color:var(--dim);margin-top:4px">' + name + '</div></div>';
+  return '<a href="' + src + '" download="' + name + '">' + name + '</a>';
+}
+
+async function openMessage(id){
+  currentMessageId = id;
+  const view = $("readContent");
+  view.innerHTML = '<div class="empty">Loading...</div>';
+  try {
+    const r = await fetch(apiUrl("mail-message") + "?id=" + encodeURIComponent(id) + "&key=" + encodeURIComponent(getKey()||""));
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || "Failed");
+    const m = j.message;
+    let html = '<h2 class="subject">' + (m.subject||"") + '</h2>';
+    html += '<div class="meta">From: ' + (m.from||"") + '<br>To: ' + (m.to||"") + (m.cc ? '<br>CC: ' + m.cc : '') + (m.bcc ? '<br>BCC: ' + m.bcc : '') + '<br>Date: ' + new Date(m.date).toLocaleString() + '</div>';
+    if (m.html) {
+      html += '<div class="body">' + m.html + '</div>';
+    } else {
+      html += '<div class="body" style="white-space:pre-wrap">' + (m.text||"").replace(/&/g,"&amp;").replace(/</g,"&lt;") + '</div>';
+    }
+    if (m.attachments && m.attachments.length) {
+      html += '<div class="attachments"><strong>Attachments:</strong><br>' + m.attachments.map(attPreview).join("") + '</div>';
+    }
+    view.innerHTML = html;
+    view.querySelectorAll("a").forEach(function(a){ if (!a.getAttribute("target")) a.setAttribute("target","_blank"); a.setAttribute("rel","noopener noreferrer"); });
+    $("replyBox").hidden = false;
+    loadMessages();
+  } catch (e) {
+    view.innerHTML = '<div class="empty">' + (e.message||"Error") + '</div>';
+    $("replyBox").hidden = true;
+  }
+}
+
+$("deleteBtn").addEventListener("click", async function(){
+  if (!currentMessageId) return;
+  if (!confirm("Delete this message?")) return;
+  await fetch(apiUrl("mail-delete"), { method: "POST", headers: authHeaders(), body: JSON.stringify({ key: getKey(), id: currentMessageId }) });
+  currentMessageId = null;
+  $("readContent").innerHTML = '<div class="empty">Select a message</div>';
+  $("replyBox").hidden = true;
+  loadMessages();
+});
+$("markUnreadBtn").addEventListener("click", async function(){
+  if (!currentMessageId) return;
+  await fetch(apiUrl("mail-markread"), { method: "POST", headers: authHeaders(), body: JSON.stringify({ key: getKey(), id: currentMessageId, read: false }) });
+  loadMessages();
 });
 
-["body","buttonLabel","buttonUrl","label","from","name"].forEach(function(id){
-  const el = $(id);
-  if (el) { el.addEventListener("input", renderPreview); el.addEventListener("change", renderPreview); }
-});
-renderPreview();
-
-$("attachments").addEventListener("change", function(){
-  const fs = Array.from($("attachments").files || []);
-  $("attachList").textContent = fs.length ? fs.map(function(f){return f.name + " (" + Math.round(f.size/1024) + " KB)";}).join(", ") : "No files selected.";
-  renderPreview();
-});
-
-$("openClient").addEventListener("click", function(){
-  const to = $("to").value.trim();
-  const subject = $("subject").value.trim();
-  const body = $("body").value;
-  const cc = $("cc").value.trim();
-  const bcc = $("bcc").value.trim();
-  const parts = [];
-  if (cc) parts.push("cc=" + encodeURIComponent(cc));
-  if (bcc) parts.push("bcc=" + encodeURIComponent(bcc));
-  if (subject) parts.push("subject=" + encodeURIComponent(subject));
-  if (body) parts.push("body=" + encodeURIComponent(body));
-  const url = "mailto:" + encodeURIComponent(to) + (parts.length ? "?" + parts.join("&") : "");
-  window.location.href = url;
-});
-
-$("compose").addEventListener("submit", async function(e){
-  e.preventDefault();
-  const key = getKey();
-  const btn = $("send");
-  const status = $("status");
+$("replySend").addEventListener("click", async function(){
+  const btn = $("replySend");
+  const st = $("replyStatus");
+  if (!currentMessageId) return;
   btn.disabled = true;
-  status.className = "status";
-  status.textContent = "Sending...";
-  const attFiles = Array.from($("attachments").files || []);
+  st.className = "status";
+  st.textContent = "Sending...";
+  try {
+    const r = await fetch(apiUrl("mail-reply"), {
+      method: "POST",
+      headers: authHeaders(),
+      body: JSON.stringify({
+        key: getKey(),
+        messageId: currentMessageId,
+        from: $("replyFrom").value,
+        body: $("replyBody").value
+      })
+    });
+    const j = await r.json().catch(function(){return {};});
+    if (!r.ok) throw new Error(j.error || ("Couldn't send (" + r.status + ")."));
+    st.className = "status ok";
+    st.textContent = "Sent.";
+    $("replyBody").value = "";
+    loadMessages();
+  } catch (err) {
+    st.className = "status err";
+    st.textContent = err.message || "Couldn't send.";
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+// Compose modal
+$("composeBtn").addEventListener("click", function(){ $("composeModal").hidden = false; });
+$("composeCancel").addEventListener("click", function(){ $("composeModal").hidden = true; });
+$("composeSend").addEventListener("click", async function(){
+  const btn = $("composeSend");
+  const st = $("composeStatus");
+  btn.disabled = true;
+  st.className = "status";
+  st.textContent = "Sending...";
+  const attFiles = Array.from($("cAttachments").files || []);
   const attPayload = [];
   for (const f of attFiles) {
     const b64 = await new Promise(function(resolve, reject){
@@ -331,186 +328,42 @@ $("compose").addEventListener("submit", async function(e){
     });
     attPayload.push({ filename: f.name, content: b64, content_type: f.type });
   }
-  const payload = {
-    key: key,
-    from: $("from").value,
-    to: $("to").value.trim(),
-    name: $("name").value.trim(),
-    subject: $("subject").value.trim(),
-    body: $("body").value,
-    label: $("label").value.trim(),
-    buttonLabel: $("buttonLabel").value.trim(),
-    buttonUrl: $("buttonUrl").value.trim(),
-    cc: $("cc").value.trim(),
-    bcc: $("bcc").value.trim(),
-    attachments: attPayload
-  };
   try {
     const r = await fetch(apiUrl("admin-email"), {
       method: "POST",
       headers: authHeaders(),
-      body: JSON.stringify(payload)
+      body: JSON.stringify({
+        key: getKey(),
+        from: $("cFrom").value,
+        to: $("cTo").value.trim(),
+        name: "",
+        subject: $("cSubject").value.trim(),
+        body: $("cBody").value,
+        label: "Caffeine Media",
+        buttonLabel: "",
+        buttonUrl: "",
+        cc: $("cCc").value.trim(),
+        bcc: $("cBcc").value.trim(),
+        attachments: attPayload
+      })
     });
     const j = await r.json().catch(function(){return {};});
     if (!r.ok) throw new Error(j.error || ("Couldn't send (" + r.status + ")."));
-    if (j.copied) {
-      try { await navigator.clipboard.writeText(j.html); status.className = "status ok"; status.textContent = "Copied email HTML to clipboard. Paste into your mail client."; }
-      catch (e) {
-        // fallback
-        const ta = document.createElement("textarea"); ta.value = j.html; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta);
-        status.className = "status ok"; status.textContent = "Copied email HTML to clipboard. Paste into your mail client.";
-      }
-    } else {
-      status.className = "status ok";
-      status.textContent = "Sent.";
-    }
-    $("compose").reset();
-    $("attachList").textContent = "No files selected.";
-    renderPreview();
+    st.className = "status ok";
+    st.textContent = "Sent.";
+    $("cTo").value = ""; $("cCc").value = ""; $("cBcc").value = ""; $("cSubject").value = ""; $("cBody").value = ""; $("cAttachments").value = "";
+    $("composeModal").hidden = true;
+    if (currentFolder === "sent") loadMessages();
   } catch (err) {
-    status.className = "status err";
-    status.textContent = err.message || "Couldn't send.";
-    if (/unauthor/i.test(err.message || "")) {
-      try { sessionStorage.removeItem(KEY_STORAGE); } catch (e) {}
-      adminKey = null;
-      location.reload();
-    }
+    st.className = "status err";
+    st.textContent = err.message || "Couldn't send.";
   } finally {
     btn.disabled = false;
   }
 });
 
-// Inbox
-async function loadThreads(){
-  const list = $("threadList");
-  list.innerHTML = '<div class="empty">Loading...</div>';
-  try {
-    const r = await fetch(apiUrl("admin-threads") + "?q=" + encodeURIComponent($("search").value.trim()) + "&status=" + encodeURIComponent(currentStatus) + "&key=" + encodeURIComponent(getKey()||""));
-    const j = await r.json();
-    if (!r.ok) throw new Error(j.error || "Failed");
-    const threads = j.threads || [];
-    if (!threads.length) { list.innerHTML = '<div class="empty">No threads</div>'; return; }
-    list.innerHTML = threads.map(function(t){
-      return '<div class="thread-row' + (t.id === currentThreadId ? ' active' : '') + '" data-id="' + t.id + '">' +
-        '<div class="who">' + (t.customer||"") + (t.unread ? '<span class="unread">' + t.unread + '</span>' : '') + '</div>' +
-        '<div class="sub">' + (t.subject||"") + '</div>' +
-        '<div class="meta">' + new Date(t.lastAt).toLocaleString() + ' &middot; ' + (t.count||0) + ' msgs</div>' +
-      '</div>';
-    }).join("");
-    list.querySelectorAll(".thread-row").forEach(function(row){
-      row.addEventListener("click", function(){ openThread(row.getAttribute("data-id")); });
-    });
-  } catch (e) {
-    list.innerHTML = '<div class="empty">' + (e.message||"Error") + '</div>';
-  }
-}
-$("search").addEventListener("input", function(){ clearTimeout(window._st); window._st = setTimeout(loadThreads, 300); });
-["filterOpen","filterDone","filterAll"].forEach(function(id){
-  $(id).addEventListener("click", function(){
-    currentStatus = id === "filterOpen" ? "open" : id === "filterDone" ? "done" : "all";
-    loadThreads();
-  });
-});
-
-function attachmentPreview(a){
-  const name = (typeof a === "string") ? a : (a.filename || "file");
-  const ct = (typeof a === "string") ? "" : ((a.content_type || "").toLowerCase());
-  if (typeof a === "string" || !a.content) return '<div style="font-size:.75rem;color:var(--dim);margin-top:4px">' + name + '</div>';
-  const src = "data:" + (a.content_type || "application/octet-stream") + ";base64," + a.content;
-  if (ct.startsWith("image/")) return '<div style="margin-top:6px"><img src="' + src + '" alt="' + name + '" style="max-width:100%;border-radius:8px;border:1px solid var(--rule)"><div style="font-size:.75rem;color:var(--dim);margin-top:4px">' + name + '</div></div>';
-  if (ct === "application/pdf") return '<div style="margin-top:6px"><embed src="' + src + '" type="application/pdf" width="100%" height="300px" style="border:1px solid var(--rule);border-radius:8px"><div style="font-size:.75rem;color:var(--dim);margin-top:4px">' + name + '</div></div>';
-  return '<div style="margin-top:6px"><a href="' + src + '" download="' + name + '" style="font-size:.85rem;color:var(--red);font-weight:700;text-decoration:underline">' + name + '</a></div>';
-}
-
-async function openThread(id){
-  currentThreadId = id;
-  const view = $("threadView");
-  view.innerHTML = '<div class="empty">Loading...</div>';
-  try {
-    const r = await fetch(apiUrl("admin-thread") + "?id=" + encodeURIComponent(id) + "&key=" + encodeURIComponent(getKey()||""));
-    const j = await r.json();
-    if (!r.ok) throw new Error(j.error || "Failed");
-    const t = j.thread;
-    let html = '<h2 style="font:800 1rem/1.2 -apple-system,BlinkMacSystemFont,\'Segoe UI\',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--dim);margin:0 0 12px">' + (t.customer||"") + '</h2>';
-    html += '<div style="font-size:.85rem;color:var(--dim);margin-bottom:14px">Subject: ' + (t.subject||"") + ' &middot; From: ' + (t.fromKey||"") + '</div>';
-    (t.messages||[]).forEach(function(m){
-      html += '<div class="msg ' + m.dir + '"><div class="msghead"><span>' + (m.dir === "in" ? "Received" : "Sent") + ' &middot; ' + (m.by||"") + '</span><span>' + new Date(m.at).toLocaleString() + '</span></div><div class="msgbody">' + (m.text||"").replace(/&/g,"&amp;").replace(/</g,"&lt;") + '</div>';
-      if (m.attachments && m.attachments.length) m.attachments.forEach(function(a){ html += attachmentPreview(a); });
-      html += '</div>';
-    });
-    html += '<div style="display:flex;gap:8px;margin:12px 0 8px;flex-wrap:wrap">';
-    html += '<button class="btn btn--ghost btn--sm" id="markDoneBtn" type="button">' + (t.status === "done" ? "Reopen" : "Mark done") + '</button>';
-    html += '<button class="btn btn--ghost btn--sm" id="deleteThreadBtn" type="button" style="color:var(--red)">Delete</button>';
-    html += '</div>';
-    html += '<div style="margin-top:4px"><textarea class="field" id="replyBody" placeholder="Type your reply..."></textarea>';
-    html += '<div class="row" style="margin-top:8px"><div><input class="field" id="replyBtnLabel" placeholder="Button label (optional)"></div><div><input class="field" id="replyBtnUrl" placeholder="Button URL (optional)"></div></div>';
-    html += '<button class="btn" id="replySend" type="button" style="margin-top:8px">Send reply</button><p id="replyStatus" class="status"></p></div>';
-    view.innerHTML = html;
-    loadThreads();
-    $("replySend").addEventListener("click", async function(){
-      const btn = $("replySend");
-      const st = $("replyStatus");
-      btn.disabled = true;
-      st.className = "status";
-      st.textContent = "Sending...";
-      try {
-        const r = await fetch(apiUrl("admin-reply"), {
-          method: "POST",
-          headers: authHeaders(),
-          body: JSON.stringify({
-            key: getKey(),
-            threadId: id,
-            body: $("replyBody").value,
-            buttonLabel: $("replyBtnLabel").value.trim(),
-            buttonUrl: $("replyBtnUrl").value.trim()
-          })
-        });
-        const j = await r.json().catch(function(){return {};});
-        if (!r.ok) throw new Error(j.error || ("Couldn't send (" + r.status + ")."));
-        st.className = "status ok";
-        st.textContent = "Sent.";
-        $("replyBody").value = "";
-        $("replyBtnLabel").value = "";
-        $("replyBtnUrl").value = "";
-        openThread(id);
-      } catch (err) {
-        st.className = "status err";
-        st.textContent = err.message || "Couldn't send.";
-      } finally {
-        btn.disabled = false;
-      }
-    });
-    if ($("markDoneBtn")) $("markDoneBtn").addEventListener("click", async function(){
-      try {
-        await fetch(apiUrl("admin-thread-done"), { method: "POST", headers: authHeaders(), body: JSON.stringify({ key: getKey(), id: id, done: t.status !== "done" }) });
-        openThread(id);
-        loadThreads();
-      } catch (e) {}
-    });
-    if ($("deleteThreadBtn")) $("deleteThreadBtn").addEventListener("click", async function(){
-      if (!confirm("Delete this thread permanently?")) return;
-      try {
-        await fetch(apiUrl("admin-thread-delete"), { method: "POST", headers: authHeaders(), body: JSON.stringify({ key: getKey(), id: id }) });
-        currentThreadId = null;
-        $("threadView").innerHTML = '<div class="empty">Select a thread</div>';
-        loadThreads();
-      } catch (e) {}
-    });
-  } catch (e) {
-    view.innerHTML = '<div class="empty">' + (e.message||"Error") + '</div>';
-  }
-}
-
-// Handle ?thread= in URL
-const params = new URLSearchParams(location.search);
-const t = params.get("thread");
-if (t) {
-  document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("active");});
-  document.querySelector('.tab[data-view="inbox"]').classList.add("active");
-  $("viewCompose").hidden = true;
-  $("viewInbox").hidden = false;
-  setTimeout(function(){ openThread(t); }, 100);
-}
+// initial
+if (stored) { loadMessages(); }
 </script>
 </body>
 </html>
