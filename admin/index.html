@@ -154,6 +154,11 @@ textarea.field{min-height:200px;resize:vertical;font-family:ui-monospace,Menlo,m
       <div class="inbox-grid">
         <div>
           <input class="search" id="search" placeholder="Search threads..." type="search">
+          <div style="display:flex;gap:8px;margin-bottom:10px">
+            <button class="btn btn--ghost btn--sm" id="filterOpen" type="button">Open</button>
+            <button class="btn btn--ghost btn--sm" id="filterDone" type="button">Completed</button>
+            <button class="btn btn--ghost btn--sm" id="filterAll" type="button">All</button>
+          </div>
           <div class="thread-list" id="threadList"><div class="empty">Loading...</div></div>
         </div>
         <div>
@@ -169,6 +174,7 @@ const API_BASE = "https://maestro-marketplace-api.vercel.app/api/marketplace-";
 const KEY_STORAGE = "cm_admin_key";
 let adminKey = null;
 let currentThreadId = null;
+let currentStatus = 'open';
 
 function $(id){return document.getElementById(id);}
 function apiUrl(name){ return API_BASE + name; }
@@ -339,7 +345,7 @@ async function loadThreads(){
   const list = $("threadList");
   list.innerHTML = '<div class="empty">Loading...</div>';
   try {
-    const r = await fetch(apiUrl("admin-threads") + "?q=" + encodeURIComponent($("search").value.trim()) + "&key=" + encodeURIComponent(getKey()||""));
+    const r = await fetch(apiUrl("admin-threads") + "?q=" + encodeURIComponent($("search").value.trim()) + "&status=" + encodeURIComponent(currentStatus) + "&key=" + encodeURIComponent(getKey()||""));
     const j = await r.json();
     if (!r.ok) throw new Error(j.error || "Failed");
     const threads = j.threads || [];
@@ -359,6 +365,22 @@ async function loadThreads(){
   }
 }
 $("search").addEventListener("input", function(){ clearTimeout(window._st); window._st = setTimeout(loadThreads, 300); });
+["filterOpen","filterDone","filterAll"].forEach(function(id){
+  $(id).addEventListener("click", function(){
+    currentStatus = id === "filterOpen" ? "open" : id === "filterDone" ? "done" : "all";
+    loadThreads();
+  });
+});
+
+function attachmentPreview(a){
+  const name = (typeof a === "string") ? a : (a.filename || "file");
+  const ct = (typeof a === "string") ? "" : ((a.content_type || "").toLowerCase());
+  if (typeof a === "string" || !a.content) return '<div style="font-size:.75rem;color:var(--dim);margin-top:4px">' + name + '</div>';
+  const src = "data:" + (a.content_type || "application/octet-stream") + ";base64," + a.content;
+  if (ct.startsWith("image/")) return '<div style="margin-top:6px"><img src="' + src + '" alt="' + name + '" style="max-width:100%;border-radius:8px;border:1px solid var(--rule)"><div style="font-size:.75rem;color:var(--dim);margin-top:4px">' + name + '</div></div>';
+  if (ct === "application/pdf") return '<div style="margin-top:6px"><embed src="' + src + '" type="application/pdf" width="100%" height="300px" style="border:1px solid var(--rule);border-radius:8px"><div style="font-size:.75rem;color:var(--dim);margin-top:4px">' + name + '</div></div>';
+  return '<div style="margin-top:6px"><a href="' + src + '" download="' + name + '" style="font-size:.85rem;color:var(--red);font-weight:700;text-decoration:underline">' + name + '</a></div>';
+}
 
 async function openThread(id){
   currentThreadId = id;
@@ -373,10 +395,14 @@ async function openThread(id){
     html += '<div style="font-size:.85rem;color:var(--dim);margin-bottom:14px">Subject: ' + (t.subject||"") + ' &middot; From: ' + (t.fromKey||"") + '</div>';
     (t.messages||[]).forEach(function(m){
       html += '<div class="msg ' + m.dir + '"><div class="msghead"><span>' + (m.dir === "in" ? "Received" : "Sent") + ' &middot; ' + (m.by||"") + '</span><span>' + new Date(m.at).toLocaleString() + '</span></div><div class="msgbody">' + (m.text||"").replace(/&/g,"&amp;").replace(/</g,"&lt;") + '</div>';
-      if (m.attachments && m.attachments.length) html += '<div style="font-size:.75rem;color:var(--dim);margin-top:6px">Attachments: ' + m.attachments.join(", ") + '</div>';
+      if (m.attachments && m.attachments.length) m.attachments.forEach(function(a){ html += attachmentPreview(a); });
       html += '</div>';
     });
-    html += '<div style="margin-top:12px"><textarea class="field" id="replyBody" placeholder="Type your reply..."></textarea>';
+    html += '<div style="display:flex;gap:8px;margin:12px 0 8px;flex-wrap:wrap">';
+    html += '<button class="btn btn--ghost btn--sm" id="markDoneBtn" type="button">' + (t.status === "done" ? "Reopen" : "Mark done") + '</button>';
+    html += '<button class="btn btn--ghost btn--sm" id="deleteThreadBtn" type="button" style="color:var(--red)">Delete</button>';
+    html += '</div>';
+    html += '<div style="margin-top:4px"><textarea class="field" id="replyBody" placeholder="Type your reply..."></textarea>';
     html += '<div class="row" style="margin-top:8px"><div><input class="field" id="replyBtnLabel" placeholder="Button label (optional)"></div><div><input class="field" id="replyBtnUrl" placeholder="Button URL (optional)"></div></div>';
     html += '<button class="btn" id="replySend" type="button" style="margin-top:8px">Send reply</button><p id="replyStatus" class="status"></p></div>';
     view.innerHTML = html;
@@ -413,6 +439,22 @@ async function openThread(id){
       } finally {
         btn.disabled = false;
       }
+    });
+    if ($("markDoneBtn")) $("markDoneBtn").addEventListener("click", async function(){
+      try {
+        await fetch(apiUrl("admin-thread-done"), { method: "POST", headers: authHeaders(), body: JSON.stringify({ key: getKey(), id: id, done: t.status !== "done" }) });
+        openThread(id);
+        loadThreads();
+      } catch (e) {}
+    });
+    if ($("deleteThreadBtn")) $("deleteThreadBtn").addEventListener("click", async function(){
+      if (!confirm("Delete this thread permanently?")) return;
+      try {
+        await fetch(apiUrl("admin-thread-delete"), { method: "POST", headers: authHeaders(), body: JSON.stringify({ key: getKey(), id: id }) });
+        currentThreadId = null;
+        $("threadView").innerHTML = '<div class="empty">Select a thread</div>';
+        loadThreads();
+      } catch (e) {}
     });
   } catch (e) {
     view.innerHTML = '<div class="empty">' + (e.message||"Error") + '</div>';
