@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#16110E">
 <link rel="icon" href="https://thecaffeinemediacompany.com/assets/favicon.png" type="image/png">
 <style>
-:root{--ink:#16110E;--paper:#FAFAF7;--field:#F2B705;--red:#C8211A;--dim:#55504B;--rule:#D9D6CE;--card:#FFFFFF;--soft:#F0EDE6;--sidebar:#1E1710}
+:root{--ink:#16110E;--paper:#FAFAF7;--field:#F2B705;--red:#C8211A;--dim:#55504B;--rule:#D9D6CE;--card:#FFFFFF;--soft:#F0EDE6;--sidebar:#1E1710;--sidebar-ink:#F3EBDA}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html,body{height:100%}
@@ -17,59 +17,126 @@ body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.55 -apple
 button,input,select,textarea{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 a{color:inherit}
+
+/* Login */
 .login{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(135deg,var(--paper),var(--soft))}
 .login form{width:min(400px,100%);background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:32px 28px;display:grid;gap:14px;box-shadow:0 10px 40px rgba(22,17,14,.08)}
 .login h1{font:800 1.9rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:0}
 .login .sub{color:var(--dim);margin:0 0 4px;font-size:.95rem}
-.field{width:100%;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:11px 13px;margin-bottom:2px;transition:border-color .15s}
+
+/* Controls */
+.field{width:100%;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:10px 12px;transition:border-color .15s}
 .field:focus{border-color:var(--ink);outline:none}
-.btn{background:var(--ink);color:var(--field);border:0;border-radius:999px;padding:10px 20px;font-weight:700;cursor:pointer;transition:transform .1s,opacity .15s}
+.btn{background:var(--ink);color:var(--field);border:0;border-radius:999px;padding:9px 18px;font-weight:700;cursor:pointer;transition:transform .1s,opacity .15s}
 .btn:hover{transform:translateY(-1px)}
-.btn:disabled{opacity:.5;cursor:default;transform:none}
+.btn:disabled{opacity:.45;cursor:default;transform:none}
 .btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}
-.btn--sm{padding:6px 14px;font-size:.85rem}
-.status{min-height:1.4em;margin:6px 0 0;font-weight:600;font-size:.9rem}
+.btn--sm{padding:6px 13px;font-size:.85rem}
+.status{min-height:1.3em;margin:4px 0 0;font-weight:600;font-size:.88rem}
 .status.ok{color:#1f6b3a}
 .status.err{color:var(--red)}
+label{display:block;font:650 .72rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.07em;margin:0 0 5px;color:var(--dim)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:620px){.row{grid-template-columns:1fr}}
 
-.app{display:grid;grid-template-columns:220px 360px 1fr;height:100vh}
-.sidebar{background:var(--sidebar);color:#F3EBDA;padding:20px 14px;display:flex;flex-direction:column;gap:8px}
-.sidebar h1{font:800 1.2rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:0 0 12px;color:var(--field)}
-.mailbox{background:transparent;border:0;color:#F3EBDA;text-align:left;padding:9px 12px;border-radius:8px;cursor:pointer;font-weight:600;width:100%}
-.mailbox:hover{background:rgba(255,255,255,.08)}
+/* Shell */
+.app{display:grid;grid-template-columns:216px 350px minmax(0,1fr);height:100vh;height:100dvh}
+.sidebar{background:var(--sidebar);color:var(--sidebar-ink);padding:18px 12px;display:flex;flex-direction:column;gap:6px;min-height:0}
+.sidebar h1{font:800 1.15rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.01em;margin:2px 6px 14px;color:var(--field)}
+.compose-btn{background:var(--field);color:var(--ink);border:0;border-radius:999px;padding:10px 14px;font-weight:800;cursor:pointer;margin-bottom:10px;width:100%}
+.compose-btn:hover{filter:brightness(1.05)}
+.mailbox{background:transparent;border:0;color:var(--sidebar-ink);text-align:left;padding:9px 12px;border-radius:9px;cursor:pointer;font-weight:600;width:100%;display:flex;justify-content:space-between;gap:8px}
+.mailbox:hover{background:rgba(255,255,255,.09)}
 .mailbox.active{background:var(--field);color:var(--ink)}
-.compose-btn{background:var(--field);color:var(--ink);border:0;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;margin-bottom:12px;width:100%}
-.list-pane{border-right:1px solid var(--rule);display:flex;flex-direction:column;min-height:0}
-.list-toolbar{padding:12px;border-bottom:1px solid var(--rule);display:flex;gap:8px}
-.search{flex:1;padding:8px 10px;border:1px solid var(--rule);border-radius:8px}
-.msg-list{flex:1;overflow:auto}
-.msg-row{padding:12px 14px;border-bottom:1px solid var(--rule);cursor:pointer}
+.mailbox .count{font-size:.8rem;opacity:.75}
+.sidebar .spacer{flex:1}
+.sidebar .btn--ghost{color:var(--sidebar-ink);border-color:rgba(243,235,218,.35)}
+.sidebar .btn--ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(243,235,218,.6)}
+
+/* List */
+.list-pane{border-right:1px solid var(--rule);display:flex;flex-direction:column;min-height:0;background:var(--paper)}
+.list-toolbar{padding:10px 12px;border-bottom:1px solid var(--rule);display:flex;gap:8px;align-items:center}
+.search{flex:1;min-width:0;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--card)}
+.icon-btn{background:transparent;border:1px solid var(--rule);border-radius:8px;padding:7px 10px;cursor:pointer;font-weight:700;line-height:1}
+.icon-btn:hover{background:var(--soft)}
+.msg-list{flex:1;overflow:auto;overscroll-behavior:contain}
+.msg-row{padding:11px 14px;border-bottom:1px solid var(--rule);cursor:pointer;background:var(--card)}
 .msg-row:hover{background:var(--soft)}
 .msg-row.active{background:var(--soft);box-shadow:inset 3px 0 var(--field)}
-.msg-row.unread .msg-subject{font-weight:800}
+.msg-row .line1{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
 .msg-from{font-weight:700;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.msg-subject{font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.msg-preview{font-size:.8rem;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
-.msg-date{font-size:.75rem;color:var(--dim);margin-top:2px}
-.read-pane{display:flex;flex-direction:column;min-height:0;overflow:hidden}
-.read-toolbar{padding:12px 16px;border-bottom:1px solid var(--rule);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.read-content{flex:1;overflow:auto;padding:20px 24px}
-.read-content .subject{font:800 1.3rem/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.01em;margin:0 0 8px}
-.read-content .meta{font-size:.85rem;color:var(--dim);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
-.read-content .body{font-size:1rem;line-height:1.6}
-.read-content .body img{max-width:100%}
-.read-content .attachments{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule)}
-.read-content .attachments a{display:inline-block;margin:4px 8px 4px 0;padding:6px 12px;border:1px solid var(--rule);border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none}
-.reply-box{padding:16px;border-top:1px solid var(--rule);background:var(--soft)}
-.reply-box textarea{width:100%;min-height:100px;border:1px solid var(--rule);border-radius:10px;padding:10px;font-family:ui-monospace,Menlo,monospace;font-size:.95rem;resize:vertical}
-.modal{position:fixed;inset:0;background:rgba(22,17,14,.5);display:grid;place-items:center;padding:24px;z-index:100}
-.modal-card{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:24px;width:min(720px,100%);max-height:90vh;overflow:auto;display:grid;gap:12px}
-.modal-card h2{font:800 1.2rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:0}
-.empty{padding:24px;text-align:center;color:var(--dim)}
-.login{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(135deg,var(--paper),var(--soft))}
-.login form{width:min(400px,100%);background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:32px 28px;display:grid;gap:14px;box-shadow:0 10px 40px rgba(22,17,14,.08)}
-.login h1{font:800 1.9rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.02em;margin:0}
-.login .sub{color:var(--dim);margin:0 0 4px;font-size:.95rem}
+.msg-date{font-size:.73rem;color:var(--dim);white-space:nowrap;flex:none}
+.msg-subject{font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.msg-preview{font-size:.79rem;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.msg-row.unread .msg-from,.msg-row.unread .msg-subject{font-weight:800}
+.msg-row.unread .msg-from::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--field);margin-right:6px;vertical-align:middle}
+.empty{padding:28px 20px;text-align:center;color:var(--dim);font-size:.92rem}
+
+/* Reader */
+.read-pane{display:flex;flex-direction:column;min-height:0;overflow:hidden;background:var(--card)}
+.read-toolbar{padding:10px 16px;border-bottom:1px solid var(--rule);display:flex;gap:8px;align-items:center;flex-wrap:wrap;min-height:50px}
+.read-toolbar .grow{flex:1}
+.read-content{flex:1;overflow:auto;padding:22px 26px;overscroll-behavior:contain}
+.read-content .subject{font:800 1.28rem/1.25 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:-.01em;margin:0 0 12px;word-break:break-word}
+.read-content .meta{font-size:.84rem;color:var(--dim);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--rule);line-height:1.7;word-break:break-word}
+.read-content .meta b{color:var(--ink);font-weight:650}
+.mail-frame{width:100%;height:68vh;min-height:380px;border:1px solid var(--rule);border-radius:10px;background:#fff}
+.plain-body{white-space:pre-wrap;font-size:1rem;line-height:1.65;word-break:break-word}
+.attachments{margin-top:20px;padding-top:14px;border-top:1px solid var(--rule)}
+.attachments h3{font:700 .78rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);margin:0 0 10px}
+.att{margin:0 0 12px;padding:10px 12px;border:1px solid var(--rule);border-radius:10px;background:var(--paper)}
+.att img{display:block;max-width:100%;max-height:320px;border-radius:8px;margin-bottom:8px}
+.att .pdf-frame{width:100%;height:360px;border:1px solid var(--rule);border-radius:8px;margin-bottom:8px;background:#fff}
+.att-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.86rem}
+.att-row .name{font-weight:650;word-break:break-all;flex:1}
+.att-row a{color:var(--red);font-weight:700}
+
+/* Reply */
+.reply-box{border-top:1px solid var(--rule);background:var(--soft);padding:14px 16px;display:grid;gap:8px}
+.reply-box textarea{width:100%;min-height:96px;max-height:40vh;border:1px solid var(--rule);border-radius:10px;padding:10px 12px;background:var(--card);resize:vertical;line-height:1.5}
+.reply-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.reply-actions select{width:auto;padding:7px 10px}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(22,17,14,.55);display:grid;place-items:center;padding:20px;z-index:100}
+.modal-card{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:22px;width:min(980px,100%);max-height:92vh;overflow:auto}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.modal-head h2{font:800 1.15rem/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.01em;margin:0}
+.compose-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media (max-width:860px){.compose-grid{grid-template-columns:1fr}}
+.compose-form{display:grid;gap:10px;align-content:start}
+.compose-form textarea{min-height:190px;resize:vertical;font-family:ui-monospace,Menlo,monospace;font-size:.93rem;line-height:1.5}
+.hint{font-size:.78rem;color:var(--dim);margin:-6px 0 2px}
+.compose-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.preview-wrap{background:var(--soft);border:1px solid var(--rule);border-radius:12px;padding:16px 18px;min-height:240px;align-self:start}
+.preview-wrap .pv-h{font:800 1.3rem/1.2 Georgia,'Times New Roman',serif;margin:0 0 10px}
+.preview-wrap p{margin:0 0 11px}
+.preview-wrap ul{margin:0 0 11px;padding-left:20px}
+.preview-wrap li{margin:3px 0}
+.preview-wrap a{color:var(--red);font-weight:700}
+.preview-wrap .pv-btn{display:inline-block;background:var(--field);color:var(--ink);padding:10px 20px;border-radius:999px;font-weight:700;text-decoration:none;margin:4px 0 10px}
+.preview-wrap .pv-foot{margin-top:14px;padding-top:11px;border-top:1px solid var(--rule);font-size:.78rem;color:var(--dim)}
+.preview-wrap .pv-sign{margin-top:14px}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;font-size:.9rem;box-shadow:0 8px 30px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:200}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.err{background:var(--red)}
+
+/* Narrow screens: sidebar becomes a top bar */
+@media (max-width:860px){
+  body{overflow:auto}
+  .app{grid-template-columns:1fr;grid-template-rows:auto auto minmax(0,1fr);height:auto;min-height:100vh}
+  .sidebar{flex-direction:row;align-items:center;gap:6px;padding:10px;flex-wrap:wrap}
+  .sidebar h1{display:none}
+  .sidebar .spacer{flex:0}
+  .compose-btn{width:auto;margin:0}
+  .sidebar .btn--ghost{width:auto!important}
+  .list-pane{border-right:0;border-bottom:1px solid var(--rule);max-height:44vh}
+  .read-pane{min-height:60vh}
+  .read-content{padding:18px 16px}
+  .mail-frame{height:60vh}
+}
 </style>
 </head>
 <body>
@@ -87,72 +154,124 @@ a{color:inherit}
 
 <div id="app" hidden>
   <div class="app">
-    <div class="sidebar">
+    <aside class="sidebar">
       <h1>Mail</h1>
       <button class="compose-btn" id="composeBtn" type="button">Compose</button>
-      <button class="mailbox active" data-folder="inbox" type="button">Inbox</button>
+      <button class="mailbox active" data-folder="inbox" type="button">Inbox <span class="count" id="inboxCount"></span></button>
       <button class="mailbox" data-folder="sent" type="button">Sent</button>
-      <div style="flex:1"></div>
-      <button class="btn btn--ghost btn--sm" id="signOut" type="button" onclick="doSignOut()" style="width:100%">Sign out</button>
-    </div>
-    <div class="list-pane">
+      <div class="spacer"></div>
+      <button class="btn btn--ghost btn--sm" id="signOut" type="button" style="width:100%">Sign out</button>
+    </aside>
+
+    <section class="list-pane">
       <div class="list-toolbar">
-        <input class="search" id="search" placeholder="Search..." type="search">
+        <input class="search" id="search" placeholder="Search mail" type="search" autocomplete="off">
+        <button class="icon-btn" id="refreshBtn" type="button" title="Refresh" aria-label="Refresh">↻</button>
       </div>
-      <div class="msg-list" id="msgList"><div class="empty">Loading...</div></div>
-    </div>
-    <div class="read-pane">
+      <div class="msg-list" id="msgList"><div class="empty">Loading…</div></div>
+    </section>
+
+    <section class="read-pane">
       <div class="read-toolbar">
-        <button class="btn btn--ghost btn--sm" id="deleteBtn" type="button">Delete</button>
-        <button class="btn btn--ghost btn--sm" id="markUnreadBtn" type="button">Mark unread</button>
+        <button class="btn btn--ghost btn--sm" id="deleteBtn" type="button" disabled>Delete</button>
+        <button class="btn btn--ghost btn--sm" id="markUnreadBtn" type="button" disabled>Mark unread</button>
+        <span class="grow"></span>
+        <span id="readerHint" class="status" style="margin:0"></span>
       </div>
       <div class="read-content" id="readContent"><div class="empty">Select a message</div></div>
       <div class="reply-box" id="replyBox" hidden>
-        <textarea id="replyBody" placeholder="Reply..."></textarea>
-        <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+        <textarea id="replyBody" placeholder="Reply…"></textarea>
+        <div class="reply-actions">
           <button class="btn btn--sm" id="replySend" type="button">Send reply</button>
-          <select id="replyFrom" class="field" style="width:auto">
+          <select class="field" id="replyFrom" aria-label="Reply from">
             <option value="hello@thecaffeinemediacompany.com">hello@</option>
             <option value="toby@thecaffeinemediacompany.com">toby@</option>
             <option value="noreply@thecaffeinemediacompany.com">noreply@</option>
           </select>
-          <span id="replyStatus" class="status"></span>
+          <span id="replyStatus" class="status" style="margin:0"></span>
         </div>
       </div>
+    </section>
+  </div>
+</div>
+
+<div id="composeModal" class="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-label="Compose email">
+    <div class="modal-head">
+      <h2>New message</h2>
+      <button class="icon-btn" id="composeClose" type="button" aria-label="Close">✕</button>
+    </div>
+    <div class="compose-grid">
+      <div class="compose-form">
+        <div>
+          <label for="cFrom">From</label>
+          <select class="field" id="cFrom">
+            <option value="hello@thecaffeinemediacompany.com">hello@thecaffeinemediacompany.com</option>
+            <option value="toby@thecaffeinemediacompany.com">toby@thecaffeinemediacompany.com</option>
+            <option value="noreply@thecaffeinemediacompany.com">noreply@thecaffeinemediacompany.com</option>
+          </select>
+        </div>
+        <div class="row">
+          <div>
+            <label for="cTo">To</label>
+            <input class="field" type="email" id="cTo" placeholder="recipient@example.com" autocomplete="off">
+          </div>
+          <div>
+            <label for="cName">Recipient name</label>
+            <input class="field" type="text" id="cName" placeholder="there" autocomplete="off">
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="cCc">CC</label>
+            <input class="field" type="text" id="cCc" placeholder="a@x.com, b@y.com" autocomplete="off">
+          </div>
+          <div>
+            <label for="cBcc">BCC</label>
+            <input class="field" type="text" id="cBcc" placeholder="a@x.com, b@y.com" autocomplete="off">
+          </div>
+        </div>
+        <div>
+          <label for="cSubject">Subject</label>
+          <input class="field" type="text" id="cSubject" maxlength="200" autocomplete="off">
+        </div>
+        <div>
+          <label for="cBody">Message</label>
+          <p class="hint">**bold**, *italic*, lines starting “- ” for bullets, [text](https://url) for links.</p>
+          <textarea class="field" id="cBody" style="min-height:190px" placeholder="Hi there,&#10;&#10;Your message here."></textarea>
+        </div>
+        <div class="row">
+          <div>
+            <label for="cButtonLabel">Button label (optional)</label>
+            <input class="field" type="text" id="cButtonLabel" maxlength="60" placeholder="Read more" autocomplete="off">
+          </div>
+          <div>
+            <label for="cButtonUrl">Button URL (optional)</label>
+            <input class="field" type="url" id="cButtonUrl" placeholder="https://…" autocomplete="off">
+          </div>
+        </div>
+        <div>
+          <label for="cLabel">Email label (optional)</label>
+          <input class="field" type="text" id="cLabel" maxlength="60" placeholder="Caffeine Media" autocomplete="off">
+        </div>
+        <div>
+          <label for="cAttachments">Attachments</label>
+          <input class="field" type="file" id="cAttachments" multiple>
+          <p class="hint" id="cAttachList">No files selected.</p>
+        </div>
+        <div class="compose-actions">
+          <button class="btn" id="composeSend" type="button">Send email</button>
+          <button class="btn btn--ghost" id="openClient" type="button">Open in email client</button>
+          <button class="btn btn--ghost" id="composeCancel" type="button">Cancel</button>
+        </div>
+        <p id="composeStatus" class="status"></p>
+      </div>
+      <div class="preview-wrap" id="composePreview"></div>
     </div>
   </div>
 </div>
 
-<!-- Compose modal -->
-<div id="composeModal" class="modal" hidden>
-  <div class="modal-card">
-    <h2>Compose</h2>
-    <label for="cFrom">From</label>
-    <select class="field" id="cFrom">
-      <option value="hello@thecaffeinemediacompany.com">hello@thecaffeinemediacompany.com</option>
-      <option value="toby@thecaffeinemediacompany.com">toby@thecaffeinemediacompany.com</option>
-      <option value="noreply@thecaffeinemediacompany.com">noreply@thecaffeinemediacompany.com</option>
-    </select>
-    <label for="cTo">To</label>
-    <input class="field" type="text" id="cTo" placeholder="recipient@example.com">
-    <div class="row">
-      <div><label for="cCc">CC</label><input class="field" type="text" id="cCc"></div>
-      <div><label for="cBcc">BCC</label><input class="field" type="text" id="cBcc"></div>
-    </div>
-    <label for="cSubject">Subject</label>
-    <input class="field" type="text" id="cSubject">
-    <label for="cBody">Message</label>
-    <p style="font-size:.8rem;color:var(--dim);margin:-4px 0 8px">Supports **bold**, *italic*, - bullets, [text](url).</p>
-    <textarea class="field" id="cBody" style="min-height:180px"></textarea>
-    <label for="cAttachments">Attachments</label>
-    <input class="field" type="file" id="cAttachments" multiple>
-    <div style="display:flex;gap:10px;justify-content:flex-end">
-      <button class="btn btn--ghost" id="composeCancel" type="button">Cancel</button>
-      <button class="btn" id="composeSend" type="button">Send</button>
-    </div>
-    <p id="composeStatus" class="status"></p>
-  </div>
-</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <script>
 const API_BASE = "https://maestro-marketplace-api.vercel.app/api/marketplace-";
@@ -160,211 +279,474 @@ const KEY_STORAGE = "cm_admin_key";
 let adminKey = null;
 let currentFolder = "inbox";
 let currentMessageId = null;
+let currentMessage = null;
 
-function $(id){return document.getElementById(id);}
-function apiUrl(name){ return API_BASE + name; }
-function doSignOut(){ try { sessionStorage.removeItem(KEY_STORAGE); } catch (e) {} adminKey = null; location.reload(); }
-function showApp(){ const login = $("login"); if (login) login.remove(); $("app").hidden = false; }
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function fmtDate(d){ const t = new Date(d); return isNaN(t) ? "" : t.toLocaleString([], { day:"2-digit", month:"short", hour:"2-digit", minute:"2-digit" }); }
+function fmtFullDate(d){ const t = new Date(d); return isNaN(t) ? "" : t.toLocaleString(); }
+
+function getKey(){ return adminKey || (function(){ try { return sessionStorage.getItem(KEY_STORAGE); } catch(e){ return null; } })(); }
+function authHeaders(){ return { "Content-Type": "application/json", "X-Admin-Key": getKey() || "" }; }
+
+function doSignOut(){
+  try { sessionStorage.removeItem(KEY_STORAGE); } catch(e){}
+  adminKey = null;
+  location.reload();
+}
+
+function toast(msg, isErr){
+  const el = $("toast");
+  el.textContent = msg;
+  el.className = "toast show" + (isErr ? " err" : "");
+  clearTimeout(window._toastT);
+  window._toastT = setTimeout(function(){ el.className = "toast"; }, 3200);
+}
+
+function showApp(){
+  const login = $("login");
+  if (login) login.remove();
+  $("app").hidden = false;
+}
+
+async function handleResponse(r){
+  let j = {};
+  try { j = await r.json(); } catch(e){}
+  if (r.status === 401) { doSignOut(); throw new Error("Session expired. Sign in again."); }
+  if (!r.ok) throw new Error(j.error || ("Request failed (" + r.status + ")."));
+  return j;
+}
+async function apiGet(name, params){
+  const qs = params ? "?" + new URLSearchParams(params).toString() : "";
+  return handleResponse(await fetch(API_BASE + name + qs, { headers: { "X-Admin-Key": getKey() || "" } }));
+}
+async function apiPost(name, payload){
+  return handleResponse(await fetch(API_BASE + name, { method: "POST", headers: authHeaders(), body: JSON.stringify(payload) }));
+}
+
+/* ---------- Auth ---------- */
 let stored = null;
-try { stored = sessionStorage.getItem(KEY_STORAGE); } catch (e) { stored = null; }
+try { stored = sessionStorage.getItem(KEY_STORAGE); } catch(e){ stored = null; }
 if (stored) { adminKey = stored; showApp(); }
+
 window.addEventListener("pageshow", function(e){ if (e.persisted) location.reload(); });
-$("loginForm").addEventListener("submit", function(e){
+
+$("loginForm").addEventListener("submit", async function(e){
   e.preventDefault();
   const pw = $("pw").value;
   if (!pw) return;
-  try { sessionStorage.setItem(KEY_STORAGE, pw); } catch (e) {}
-  adminKey = pw;
+  const btn = $("loginForm").querySelector("button[type=submit]");
+  btn.disabled = true;
   $("loginStatus").textContent = "";
-  showApp();
-  loadMessages();
+  try {
+    const r = await fetch(API_BASE + "mail-list?folder=inbox", { headers: { "X-Admin-Key": pw } });
+    if (!r.ok) throw new Error(r.status === 401 ? "Wrong password." : "Could not sign in (" + r.status + ").");
+    adminKey = pw;
+    try { sessionStorage.setItem(KEY_STORAGE, pw); } catch(e){}
+    showApp();
+    loadMessages();
+  } catch (err) {
+    adminKey = null;
+    $("loginStatus").textContent = err.message || "Could not sign in.";
+  } finally {
+    btn.disabled = false;
+  }
 });
 $("signOut").addEventListener("click", doSignOut);
 
-function getKey(){ return adminKey || (function(){try{return sessionStorage.getItem(KEY_STORAGE);}catch(e){return null;}})(); }
-function authHeaders(){ return { "Content-Type": "application/json", "X-Admin-Key": getKey() || "" }; }
-
-// Mailboxes
+/* ---------- Folder switching ---------- */
 document.querySelectorAll(".mailbox").forEach(function(b){
   b.addEventListener("click", function(){
-    document.querySelectorAll(".mailbox").forEach(function(x){x.classList.remove("active");});
+    document.querySelectorAll(".mailbox").forEach(function(x){ x.classList.remove("active"); });
     b.classList.add("active");
     currentFolder = b.getAttribute("data-folder");
-    currentMessageId = null;
-    $("readContent").innerHTML = '<div class="empty">Select a message</div>';
-    $("replyBox").hidden = true;
+    clearReader();
     loadMessages();
   });
 });
 
+/* ---------- Message list ---------- */
 async function loadMessages(){
   const list = $("msgList");
-  list.innerHTML = '<div class="empty">Loading...</div>';
+  list.innerHTML = '<div class="empty">Loading…</div>';
   try {
-    const r = await fetch(apiUrl("mail-list") + "?folder=" + encodeURIComponent(currentFolder) + "&q=" + encodeURIComponent($("search").value.trim()) + "&key=" + encodeURIComponent(getKey()||""));
-    const j = await r.json();
-    if (!r.ok) throw new Error(j.error || "Failed");
+    const j = await apiGet("mail-list", { folder: currentFolder, q: $("search").value.trim() });
     const msgs = j.messages || [];
-    if (!msgs.length) { list.innerHTML = '<div class="empty">No messages</div>'; return; }
+    if (currentFolder === "inbox") {
+      const unread = msgs.filter(function(m){ return !m.read; }).length;
+      $("inboxCount").textContent = unread ? String(unread) : "";
+    } else {
+      $("inboxCount").textContent = "";
+    }
+    if (!msgs.length) {
+      list.innerHTML = '<div class="empty">' + (currentFolder === "inbox" ? "Inbox is empty" : "Nothing in Sent") + "</div>";
+      return;
+    }
     list.innerHTML = msgs.map(function(m){
-      return '<div class="msg-row' + (m.id === currentMessageId ? ' active' : '') + (m.read ? '' : ' unread') + '" data-id="' + m.id + '">' +
-        '<div class="msg-from">' + (m.from||"") + '</div>' +
-        '<div class="msg-subject">' + (m.subject||"") + '</div>' +
-        '<div class="msg-preview">' + (m.preview||"") + '</div>' +
-        '<div class="msg-date">' + new Date(m.date).toLocaleString() + (m.hasAttachments ? ' · 📎' : '') + '</div>' +
-      '</div>';
+      return '<div class="msg-row' + (m.id === currentMessageId ? " active" : "") + (m.read ? "" : " unread") + '" data-id="' + esc(m.id) + '">' +
+        '<div class="line1"><span class="msg-from">' + esc(m.from || "(unknown)") + '</span><span class="msg-date">' + esc(fmtDate(m.date)) + "</span></div>" +
+        '<div class="msg-subject">' + esc(m.subject || "(no subject)") + (m.hasAttachments ? " · 📎" : "") + "</div>" +
+        '<div class="msg-preview">' + esc(m.preview || "") + "</div>" +
+      "</div>";
     }).join("");
     list.querySelectorAll(".msg-row").forEach(function(row){
       row.addEventListener("click", function(){ openMessage(row.getAttribute("data-id")); });
     });
   } catch (e) {
-    list.innerHTML = '<div class="empty">' + (e.message||"Error") + '</div>';
+    list.innerHTML = '<div class="empty">' + esc(e.message || "Could not load mail") + "</div>";
   }
 }
-$("search").addEventListener("input", function(){ clearTimeout(window._st); window._st = setTimeout(loadMessages, 300); });
 
-function attPreview(a){
-  const name = a.filename || "file";
-  const ct = (a.content_type || "").toLowerCase();
-  if (!a.content) return '<a href="#" download="' + name + '">' + name + '</a>';
-  const src = "data:" + (a.content_type || "application/octet-stream") + ";base64," + a.content;
-  if (ct.startsWith("image/")) return '<div style="margin:8px 0"><img src="' + src + '" alt="' + name + '" style="max-width:100%;border-radius:8px;border:1px solid var(--rule)"><div style="font-size:.75rem;color:var(--dim);margin-top:4px">' + name + '</div></div>';
-  if (ct === "application/pdf") return '<div style="margin:8px 0"><embed src="' + src + '" type="application/pdf" width="100%" height="300px" style="border:1px solid var(--rule);border-radius:8px"><div style="font-size:.75rem;color:var(--dim);margin-top:4px">' + name + '</div></div>';
-  return '<a href="' + src + '" download="' + name + '">' + name + '</a>';
+let searchTimer = null;
+$("search").addEventListener("input", function(){
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(loadMessages, 250);
+});
+$("refreshBtn").addEventListener("click", function(){
+  loadMessages();
+  if (currentMessageId) openMessage(currentMessageId, true);
+});
+
+/* ---------- Reader ---------- */
+function setToolbar(enabled){
+  $("deleteBtn").disabled = !enabled;
+  $("markUnreadBtn").disabled = !enabled;
+}
+function clearReader(){
+  currentMessageId = null;
+  currentMessage = null;
+  $("readContent").innerHTML = '<div class="empty">Select a message</div>';
+  $("replyBox").hidden = true;
+  $("readerHint").textContent = "";
+  setToolbar(false);
 }
 
-async function openMessage(id){
+function renderAttachment(a){
+  const wrap = document.createElement("div");
+  wrap.className = "att";
+  const name = a.filename || "attachment";
+  const ct = String(a.content_type || "").toLowerCase();
+  const hasContent = !!a.content;
+  const src = hasContent ? "data:" + (a.content_type || "application/octet-stream") + ";base64," + a.content : "";
+
+  if (hasContent && ct.indexOf("image/") === 0) {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = name;
+    wrap.appendChild(img);
+  }
+  if (hasContent && ct === "application/pdf") {
+    const fr = document.createElement("iframe");
+    fr.className = "pdf-frame";
+    fr.src = src;
+    fr.title = name;
+    wrap.appendChild(fr);
+  }
+  const row = document.createElement("div");
+  row.className = "att-row";
+  const label = document.createElement("span");
+  label.className = "name";
+  label.textContent = name;
+  row.appendChild(label);
+  if (hasContent) {
+    const open = document.createElement("a");
+    open.href = src;
+    open.target = "_blank";
+    open.rel = "noopener noreferrer";
+    open.textContent = ct === "application/pdf" ? "Open PDF" : "Open";
+    row.appendChild(open);
+    const dl = document.createElement("a");
+    dl.href = src;
+    dl.download = name;
+    dl.textContent = "Download";
+    row.appendChild(dl);
+  } else {
+    const missing = document.createElement("span");
+    missing.textContent = "Not downloaded";
+    missing.style.color = "var(--dim)";
+    row.appendChild(missing);
+  }
+  wrap.appendChild(row);
+  return wrap;
+}
+
+async function openMessage(id, quiet){
   currentMessageId = id;
   const view = $("readContent");
-  view.innerHTML = '<div class="empty">Loading...</div>';
+  if (!quiet) view.innerHTML = '<div class="empty">Loading…</div>';
   try {
-    const r = await fetch(apiUrl("mail-message") + "?id=" + encodeURIComponent(id) + "&key=" + encodeURIComponent(getKey()||""));
-    const j = await r.json();
-    if (!r.ok) throw new Error(j.error || "Failed");
+    const j = await apiGet("mail-message", { id: id });
     const m = j.message;
-    let html = '<h2 class="subject">' + (m.subject||"") + '</h2>';
-    html += '<div class="meta">From: ' + (m.from||"") + '<br>To: ' + (m.to||"") + (m.cc ? '<br>CC: ' + m.cc : '') + (m.bcc ? '<br>BCC: ' + m.bcc : '') + '<br>Date: ' + new Date(m.date).toLocaleString() + '</div>';
+    currentMessage = m;
+    view.textContent = "";
+
+    const h = document.createElement("h2");
+    h.className = "subject";
+    h.textContent = m.subject || "(no subject)";
+    view.appendChild(h);
+
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    const rows = [["From", m.from], ["To", m.to], ["CC", m.cc], ["BCC", m.bcc], ["Date", fmtFullDate(m.date)]];
+    rows.forEach(function(pair){
+      if (!pair[1]) return;
+      const line = document.createElement("div");
+      const b = document.createElement("b");
+      b.textContent = pair[0] + ": ";
+      line.appendChild(b);
+      line.appendChild(document.createTextNode(String(pair[1])));
+      meta.appendChild(line);
+    });
+    view.appendChild(meta);
+
     if (m.html) {
-      html += '<div class="body">' + m.html + '</div>';
+      const frame = document.createElement("iframe");
+      frame.className = "mail-frame";
+      frame.setAttribute("sandbox", "allow-popups allow-popups-to-escape-sandbox");
+      frame.setAttribute("referrerpolicy", "no-referrer");
+      frame.srcdoc = m.html;
+      view.appendChild(frame);
     } else {
-      html += '<div class="body" style="white-space:pre-wrap">' + (m.text||"").replace(/&/g,"&amp;").replace(/</g,"&lt;") + '</div>';
+      const pre = document.createElement("div");
+      pre.className = "plain-body";
+      pre.textContent = m.text || "(no message body)";
+      view.appendChild(pre);
     }
-    if (m.attachments && m.attachments.length) {
-      html += '<div class="attachments"><strong>Attachments:</strong><br>' + m.attachments.map(attPreview).join("") + '</div>';
+
+    if (Array.isArray(m.attachments) && m.attachments.length) {
+      const box = document.createElement("div");
+      box.className = "attachments";
+      const t = document.createElement("h3");
+      t.textContent = "Attachments (" + m.attachments.length + ")";
+      box.appendChild(t);
+      m.attachments.forEach(function(a){ box.appendChild(renderAttachment(a)); });
+      view.appendChild(box);
     }
-    view.innerHTML = html;
-    view.querySelectorAll("a").forEach(function(a){ if (!a.getAttribute("target")) a.setAttribute("target","_blank"); a.setAttribute("rel","noopener noreferrer"); });
-    $("replyBox").hidden = false;
-    loadMessages();
+
+    setToolbar(true);
+    $("readerHint").textContent = "";
+    // Only incoming mail can be replied to; sent mail has nobody to reply to.
+    const canReply = m.folder === "inbox";
+    $("replyBox").hidden = !canReply;
+    $("replyBody").value = "";
+    $("replyStatus").textContent = "";
+    const toAddr = String(m.to || "").toLowerCase();
+    $("replyFrom").value = toAddr.indexOf("toby@") !== -1
+      ? "toby@thecaffeinemediacompany.com"
+      : toAddr.indexOf("noreply@") !== -1
+        ? "noreply@thecaffeinemediacompany.com"
+        : "hello@thecaffeinemediacompany.com";
+
+    if (!quiet) loadMessages();
   } catch (e) {
-    view.innerHTML = '<div class="empty">' + (e.message||"Error") + '</div>';
+    view.innerHTML = '<div class="empty">' + esc(e.message || "Could not open message") + "</div>";
     $("replyBox").hidden = true;
+    setToolbar(false);
+    if (!/session expired/i.test(e.message || "")) $("readerHint").textContent = "";
   }
 }
 
 $("deleteBtn").addEventListener("click", async function(){
   if (!currentMessageId) return;
   if (!confirm("Delete this message?")) return;
-  await fetch(apiUrl("mail-delete"), { method: "POST", headers: authHeaders(), body: JSON.stringify({ key: getKey(), id: currentMessageId }) });
-  currentMessageId = null;
-  $("readContent").innerHTML = '<div class="empty">Select a message</div>';
-  $("replyBox").hidden = true;
-  loadMessages();
-});
-$("markUnreadBtn").addEventListener("click", async function(){
-  if (!currentMessageId) return;
-  await fetch(apiUrl("mail-markread"), { method: "POST", headers: authHeaders(), body: JSON.stringify({ key: getKey(), id: currentMessageId, read: false }) });
-  loadMessages();
+  try {
+    await apiPost("mail-delete", { id: currentMessageId });
+    toast("Message deleted");
+    clearReader();
+    loadMessages();
+  } catch (e) { toast(e.message || "Could not delete", true); }
 });
 
+$("markUnreadBtn").addEventListener("click", async function(){
+  if (!currentMessageId) return;
+  try {
+    await apiPost("mail-markread", { id: currentMessageId, read: false });
+    loadMessages();
+    toast("Marked as unread");
+  } catch (e) { toast(e.message || "Could not update", true); }
+});
+
+/* ---------- Reply ---------- */
 $("replySend").addEventListener("click", async function(){
   const btn = $("replySend");
   const st = $("replyStatus");
   if (!currentMessageId) return;
+  const body = $("replyBody").value.trim();
+  if (!body) { st.className = "status err"; st.textContent = "Write a reply first."; return; }
   btn.disabled = true;
   st.className = "status";
-  st.textContent = "Sending...";
+  st.textContent = "Sending…";
   try {
-    const r = await fetch(apiUrl("mail-reply"), {
-      method: "POST",
-      headers: authHeaders(),
-      body: JSON.stringify({
-        key: getKey(),
-        messageId: currentMessageId,
-        from: $("replyFrom").value,
-        body: $("replyBody").value
-      })
-    });
-    const j = await r.json().catch(function(){return {};});
-    if (!r.ok) throw new Error(j.error || ("Couldn't send (" + r.status + ")."));
+    await apiPost("mail-reply", { messageId: currentMessageId, from: $("replyFrom").value, body: body });
     st.className = "status ok";
     st.textContent = "Sent.";
     $("replyBody").value = "";
-    loadMessages();
-  } catch (err) {
+    toast("Reply sent");
+  } catch (e) {
     st.className = "status err";
-    st.textContent = err.message || "Couldn't send.";
+    st.textContent = e.message || "Couldn't send.";
   } finally {
     btn.disabled = false;
   }
 });
 
-// Compose modal
-$("composeBtn").addEventListener("click", function(){ $("composeModal").hidden = false; });
-$("composeCancel").addEventListener("click", function(){ $("composeModal").hidden = true; });
+/* ---------- Compose ---------- */
+function openCompose(){
+  $("composeStatus").textContent = "";
+  $("composeModal").hidden = false;
+  renderComposePreview();
+  setTimeout(function(){ $("cTo").focus(); }, 30);
+}
+function closeCompose(){ $("composeModal").hidden = true; }
+
+function inlineMd(text){
+  return esc(text)
+    .replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>")
+    .replace(/_([^_\n]+)_/g, "<em>$1</em>")
+    .replace(/\[([^\]]+)\]\s*\(([^)]+)\)/g, function(m, txt, url){
+      const clean = url.trim();
+      if (!/^https?:\/\//i.test(clean)) return txt;
+      return '<a href="' + esc(clean) + '" target="_blank" rel="noopener noreferrer">' + txt + "</a>";
+    });
+}
+
+function renderComposePreview(){
+  const body = $("cBody").value;
+  const name = $("cName").value.trim() || "there";
+  const from = $("cFrom").value;
+  const btnLabel = $("cButtonLabel").value.trim();
+  const btnUrl = $("cButtonUrl").value.trim();
+  const label = $("cLabel").value.trim();
+  let html = '<div class="pv-h">Caffeine Media</div>';
+  html += '<p><strong>Hi ' + esc(name) + ",</strong></p>";
+
+  const lines = body.split("\n");
+  let inList = false;
+  lines.forEach(function(raw){
+    const line = raw.trim();
+    if (!line) { if (inList) { html += "</ul>"; inList = false; } return; }
+    const m = /^[-*]\s+(.*)$/.exec(line);
+    if (m) {
+      if (!inList) { html += "<ul>"; inList = true; }
+      html += "<li>" + inlineMd(m[1]) + "</li>";
+    } else {
+      if (inList) { html += "</ul>"; inList = false; }
+      html += "<p>" + inlineMd(line) + "</p>";
+    }
+  });
+  if (inList) html += "</ul>";
+
+  if (btnLabel && btnUrl && /^https?:\/\//i.test(btnUrl)) {
+    html += '<a class="pv-btn" href="' + esc(btnUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(btnLabel) + "</a>";
+  }
+
+  const signoff = from === "toby@thecaffeinemediacompany.com" ? "Toby Jones" : "The Caffeine Media Company";
+  html += '<p class="pv-sign">Best regards,<br><strong>' + esc(signoff) + "</strong></p>";
+  if (from === "noreply@thecaffeinemediacompany.com") {
+    html += '<div class="pv-foot">This mailbox is not monitored.</div>';
+  } else {
+    html += '<div class="pv-foot">The Caffeine Media Company · thecaffeinemediacompany.com' + (label ? " · " + esc(label) : "") + "</div>";
+  }
+  const atts = Array.from($("cAttachments").files || []);
+  if (atts.length) html += '<div class="pv-foot">Attachments: ' + esc(atts.map(function(f){ return f.name; }).join(", ")) + "</div>";
+
+  $("composePreview").innerHTML = html;
+}
+
+["cBody","cFrom","cName","cButtonLabel","cButtonUrl","cLabel"].forEach(function(id){
+  const el = $(id);
+  if (el) { el.addEventListener("input", renderComposePreview); el.addEventListener("change", renderComposePreview); }
+});
+$("cAttachments").addEventListener("change", function(){
+  const fs = Array.from($("cAttachments").files || []);
+  $("cAttachList").textContent = fs.length
+    ? fs.map(function(f){ return f.name + " (" + Math.max(1, Math.round(f.size / 1024)) + " KB)"; }).join(", ")
+    : "No files selected.";
+  renderComposePreview();
+});
+
+$("composeBtn").addEventListener("click", openCompose);
+$("composeClose").addEventListener("click", closeCompose);
+$("composeCancel").addEventListener("click", closeCompose);
+$("composeModal").addEventListener("click", function(e){ if (e.target === $("composeModal")) closeCompose(); });
+document.addEventListener("keydown", function(e){
+  if (e.key === "Escape" && !$("composeModal").hidden) closeCompose();
+});
+
+$("openClient").addEventListener("click", function(){
+  const to = $("cTo").value.trim();
+  const cc = $("cCc").value.trim();
+  const bcc = $("cBcc").value.trim();
+  const subject = $("cSubject").value.trim();
+  const body = $("cBody").value;
+  if (!to) { toast("Add a recipient first", true); return; }
+  const parts = [];
+  if (cc) parts.push("cc=" + encodeURIComponent(cc));
+  if (bcc) parts.push("bcc=" + encodeURIComponent(bcc));
+  if (subject) parts.push("subject=" + encodeURIComponent(subject));
+  if (body) parts.push("body=" + encodeURIComponent(body));
+  window.location.href = "mailto:" + encodeURIComponent(to) + (parts.length ? "?" + parts.join("&") : "");
+});
+
+function readFileBase64(file){
+  return new Promise(function(resolve, reject){
+    const r = new FileReader();
+    r.onload = function(){ resolve(String(r.result).split(",")[1] || ""); };
+    r.onerror = reject;
+    r.readAsDataURL(file);
+  });
+}
+
 $("composeSend").addEventListener("click", async function(){
   const btn = $("composeSend");
   const st = $("composeStatus");
+  const to = $("cTo").value.trim();
+  const subject = $("cSubject").value.trim();
+  const body = $("cBody").value;
+  if (!/^[^\s@<>,;]+@[^\s@<>,;]+\.[^\s@<>,;]+$/.test(to)) { st.className = "status err"; st.textContent = "Enter a valid recipient address."; return; }
+  if (!subject) { st.className = "status err"; st.textContent = "Enter a subject."; return; }
+  if (!body.trim()) { st.className = "status err"; st.textContent = "Write a message."; return; }
+
   btn.disabled = true;
   st.className = "status";
-  st.textContent = "Sending...";
-  const attFiles = Array.from($("cAttachments").files || []);
-  const attPayload = [];
-  for (const f of attFiles) {
-    const b64 = await new Promise(function(resolve, reject){
-      const r = new FileReader();
-      r.onload = function(){ resolve(String(r.result).split(",")[1] || ""); };
-      r.onerror = reject;
-      r.readAsDataURL(f);
-    });
-    attPayload.push({ filename: f.name, content: b64, content_type: f.type });
-  }
+  st.textContent = "Sending…";
   try {
-    const r = await fetch(apiUrl("admin-email"), {
-      method: "POST",
-      headers: authHeaders(),
-      body: JSON.stringify({
-        key: getKey(),
-        from: $("cFrom").value,
-        to: $("cTo").value.trim(),
-        name: "",
-        subject: $("cSubject").value.trim(),
-        body: $("cBody").value,
-        label: "Caffeine Media",
-        buttonLabel: "",
-        buttonUrl: "",
-        cc: $("cCc").value.trim(),
-        bcc: $("cBcc").value.trim(),
-        attachments: attPayload
-      })
+    const attFiles = Array.from($("cAttachments").files || []);
+    const attPayload = [];
+    for (const f of attFiles) {
+      const b64 = await readFileBase64(f);
+      attPayload.push({ filename: f.name, content: b64, content_type: f.type });
+    }
+    await apiPost("admin-email", {
+      from: $("cFrom").value,
+      to: to,
+      name: $("cName").value.trim(),
+      subject: subject,
+      body: body,
+      label: $("cLabel").value.trim(),
+      buttonLabel: $("cButtonLabel").value.trim(),
+      buttonUrl: $("cButtonUrl").value.trim(),
+      cc: $("cCc").value.trim(),
+      bcc: $("cBcc").value.trim(),
+      attachments: attPayload
     });
-    const j = await r.json().catch(function(){return {};});
-    if (!r.ok) throw new Error(j.error || ("Couldn't send (" + r.status + ")."));
-    st.className = "status ok";
-    st.textContent = "Sent.";
-    $("cTo").value = ""; $("cCc").value = ""; $("cBcc").value = ""; $("cSubject").value = ""; $("cBody").value = ""; $("cAttachments").value = "";
-    $("composeModal").hidden = true;
+    $("cTo").value = ""; $("cCc").value = ""; $("cBcc").value = ""; $("cName").value = "";
+    $("cSubject").value = ""; $("cBody").value = ""; $("cButtonLabel").value = ""; $("cButtonUrl").value = "";
+    $("cLabel").value = ""; $("cAttachments").value = ""; $("cAttachList").textContent = "No files selected.";
+    closeCompose();
+    toast("Email sent");
     if (currentFolder === "sent") loadMessages();
-  } catch (err) {
+  } catch (e) {
     st.className = "status err";
-    st.textContent = err.message || "Couldn't send.";
+    st.textContent = e.message || "Couldn't send.";
   } finally {
     btn.disabled = false;
   }
 });
 
-// initial
-if (stored) { loadMessages(); }
+/* ---------- Boot ---------- */
+if (stored) loadMessages();
 </script>
 </body>
 </html>
