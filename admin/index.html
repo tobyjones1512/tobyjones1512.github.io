@@ -92,10 +92,6 @@ label{display:block;font:650 .72rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe 
 .att-row a{color:var(--red);font-weight:700}
 
 /* Reply */
-.reply-box{border-top:1px solid var(--rule);background:var(--soft);padding:14px 16px;display:grid;gap:8px}
-.reply-box textarea{width:100%;min-height:96px;max-height:40vh;border:1px solid var(--rule);border-radius:10px;padding:10px 12px;background:var(--card);resize:vertical;line-height:1.5}
-.reply-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.reply-actions select{width:auto;padding:7px 10px}
 
 /* Modal */
 .modal{position:fixed;inset:0;background:rgba(22,17,14,.55);display:grid;place-items:center;padding:20px;z-index:100}
@@ -173,24 +169,13 @@ label{display:block;font:650 .72rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe 
 
     <section class="read-pane">
       <div class="read-toolbar">
+        <button class="btn btn--sm" id="replyBtn" type="button" disabled>Reply</button>
         <button class="btn btn--ghost btn--sm" id="deleteBtn" type="button" disabled>Delete</button>
         <button class="btn btn--ghost btn--sm" id="markUnreadBtn" type="button" disabled>Mark unread</button>
         <span class="grow"></span>
         <span id="readerHint" class="status" style="margin:0"></span>
       </div>
       <div class="read-content" id="readContent"><div class="empty">Select a message</div></div>
-      <div class="reply-box" id="replyBox" hidden>
-        <textarea id="replyBody" placeholder="Reply…"></textarea>
-        <div class="reply-actions">
-          <button class="btn btn--sm" id="replySend" type="button">Send reply</button>
-          <select class="field" id="replyFrom" aria-label="Reply from">
-            <option value="hello@thecaffeinemediacompany.com">hello@</option>
-            <option value="toby@thecaffeinemediacompany.com">toby@</option>
-            <option value="noreply@thecaffeinemediacompany.com">noreply@</option>
-          </select>
-          <span id="replyStatus" class="status" style="margin:0"></span>
-        </div>
-      </div>
     </section>
   </div>
 </div>
@@ -198,7 +183,7 @@ label{display:block;font:650 .72rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe 
 <div id="composeModal" class="modal" hidden>
   <div class="modal-card" role="dialog" aria-modal="true" aria-label="Compose email">
     <div class="modal-head">
-      <h2>New message</h2>
+      <h2 id="composeTitle">New message</h2>
       <button class="icon-btn" id="composeClose" type="button" aria-label="Close">✕</button>
     </div>
     <div class="compose-grid">
@@ -280,6 +265,7 @@ let adminKey = null;
 let currentFolder = "inbox";
 let currentMessageId = null;
 let currentMessage = null;
+let composeInReplyTo = null;
 
 function $(id){ return document.getElementById(id); }
 function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
@@ -344,7 +330,7 @@ $("loginForm").addEventListener("submit", async function(e){
     adminKey = pw;
     try { sessionStorage.setItem(KEY_STORAGE, pw); } catch(e){}
     showApp();
-    loadMessages();
+    bootMail();
   } catch (err) {
     adminKey = null;
     $("loginStatus").textContent = err.message || "Could not sign in.";
@@ -411,12 +397,12 @@ $("refreshBtn").addEventListener("click", function(){
 function setToolbar(enabled){
   $("deleteBtn").disabled = !enabled;
   $("markUnreadBtn").disabled = !enabled;
+  $("replyBtn").disabled = !enabled || !currentMessage || currentMessage.folder !== "inbox";
 }
 function clearReader(){
   currentMessageId = null;
   currentMessage = null;
   $("readContent").innerHTML = '<div class="empty">Select a message</div>';
-  $("replyBox").hidden = true;
   $("readerHint").textContent = "";
   setToolbar(false);
 }
@@ -525,22 +511,9 @@ async function openMessage(id, quiet){
 
     setToolbar(true);
     $("readerHint").textContent = "";
-    // Only incoming mail can be replied to; sent mail has nobody to reply to.
-    const canReply = m.folder === "inbox";
-    $("replyBox").hidden = !canReply;
-    $("replyBody").value = "";
-    $("replyStatus").textContent = "";
-    const toAddr = String(m.to || "").toLowerCase();
-    $("replyFrom").value = toAddr.indexOf("toby@") !== -1
-      ? "toby@thecaffeinemediacompany.com"
-      : toAddr.indexOf("noreply@") !== -1
-        ? "noreply@thecaffeinemediacompany.com"
-        : "hello@thecaffeinemediacompany.com";
-
     if (!quiet) loadMessages();
   } catch (e) {
     view.innerHTML = '<div class="empty">' + esc(e.message || "Could not open message") + "</div>";
-    $("replyBox").hidden = true;
     setToolbar(false);
     if (!/session expired/i.test(e.message || "")) $("readerHint").textContent = "";
   }
@@ -567,35 +540,63 @@ $("markUnreadBtn").addEventListener("click", async function(){
 });
 
 /* ---------- Reply ---------- */
-$("replySend").addEventListener("click", async function(){
-  const btn = $("replySend");
-  const st = $("replyStatus");
-  if (!currentMessageId) return;
-  const body = $("replyBody").value.trim();
-  if (!body) { st.className = "status err"; st.textContent = "Write a reply first."; return; }
-  btn.disabled = true;
-  st.className = "status";
-  st.textContent = "Sending…";
-  try {
-    await apiPost("mail-reply", { messageId: currentMessageId, from: $("replyFrom").value, body: body });
-    st.className = "status ok";
-    st.textContent = "Sent.";
-    $("replyBody").value = "";
-    toast("Reply sent");
-  } catch (e) {
-    st.className = "status err";
-    st.textContent = e.message || "Couldn't send.";
-  } finally {
-    btn.disabled = false;
-  }
-});
+function addrOnly(value){
+  const m = /<([^<>\s]+@[^<>\s]+)>/.exec(String(value || ""));
+  if (m) return m[1];
+  const e = String(value || "").match(/[^\s@<>,;]+@[^\s@<>,;]+\.[^\s@<>,;]+/);
+  return e ? e[0] : "";
+}
+function displayName(value){
+  const s = String(value || "");
+  const m = /^\s*"?([^"<]+?)"?\s*</.exec(s);
+  if (m && m[1].trim()) return m[1].trim().replace(/^["']|["']$/g, "");
+  const local = addrOnly(s).split("@")[0];
+  return local && /^[a-z0-9._%+-]+$/i.test(local) ? local.charAt(0).toUpperCase() + local.slice(1) : "";
+}
+function ourMailbox(value){
+  const lc = String(value || "").toLowerCase();
+  if (lc.indexOf("toby@thecaffeinemediacompany.com") !== -1) return "toby@thecaffeinemediacompany.com";
+  if (lc.indexOf("noreply@thecaffeinemediacompany.com") !== -1) return "noreply@thecaffeinemediacompany.com";
+  return "hello@thecaffeinemediacompany.com";
+}
+
+function startReply(){
+  if (!currentMessage || currentMessage.folder !== "inbox") return;
+  const m = currentMessage;
+  composeInReplyTo = m.id;
+  $("cTo").value = addrOnly(m.from);
+  $("cName").value = displayName(m.from);
+  $("cSubject").value = /^\s*re\s*:/i.test(m.subject || "") ? (m.subject || "") : "Re: " + (m.subject || "");
+  $("cBody").value = "";
+  $("cFrom").value = ourMailbox(m.to);
+  // Carry over any other original CC recipients, minus our own addresses.
+  const ccList = (String(m.cc || "").match(/[^\s@<>,;]+@[^\s@<>,;]+\.[^\s@<>,;]+/g) || [])
+    .filter(function(a){ return !/^[^@]+@thecaffeinemediacompany\.com$/i.test(a); });
+  $("cCc").value = ccList.join(", ");
+  $("cBcc").value = "";
+  $("cButtonLabel").value = "";
+  $("cButtonUrl").value = "";
+  $("cLabel").value = "";
+  $("cAttachments").value = "";
+  $("cAttachList").textContent = "No files selected.";
+  openCompose();
+}
+$("replyBtn").addEventListener("click", startReply);
 
 /* ---------- Compose ---------- */
 function openCompose(){
   $("composeStatus").textContent = "";
+  $("composeTitle").textContent = composeInReplyTo ? "Reply" : "New message";
   $("composeModal").hidden = false;
   renderComposePreview();
-  setTimeout(function(){ $("cTo").focus(); }, 30);
+  setTimeout(function(){ (composeInReplyTo ? $("cBody") : $("cTo")).focus(); }, 30);
+}
+function newCompose(){
+  composeInReplyTo = null;
+  $("cTo").value = ""; $("cCc").value = ""; $("cBcc").value = ""; $("cName").value = "";
+  $("cSubject").value = ""; $("cBody").value = ""; $("cButtonLabel").value = ""; $("cButtonUrl").value = "";
+  $("cLabel").value = ""; $("cAttachments").value = ""; $("cAttachList").textContent = "No files selected.";
+  openCompose();
 }
 function closeCompose(){ $("composeModal").hidden = true; }
 
@@ -666,7 +667,7 @@ $("cAttachments").addEventListener("change", function(){
   renderComposePreview();
 });
 
-$("composeBtn").addEventListener("click", openCompose);
+$("composeBtn").addEventListener("click", newCompose);
 $("composeClose").addEventListener("click", closeCompose);
 $("composeCancel").addEventListener("click", closeCompose);
 $("composeModal").addEventListener("click", function(e){ if (e.target === $("composeModal")) closeCompose(); });
@@ -729,13 +730,16 @@ $("composeSend").addEventListener("click", async function(){
       buttonUrl: $("cButtonUrl").value.trim(),
       cc: $("cCc").value.trim(),
       bcc: $("cBcc").value.trim(),
-      attachments: attPayload
+      attachments: attPayload,
+      inReplyTo: composeInReplyTo || ""
     });
     $("cTo").value = ""; $("cCc").value = ""; $("cBcc").value = ""; $("cName").value = "";
     $("cSubject").value = ""; $("cBody").value = ""; $("cButtonLabel").value = ""; $("cButtonUrl").value = "";
     $("cLabel").value = ""; $("cAttachments").value = ""; $("cAttachList").textContent = "No files selected.";
+    const wasReply = !!composeInReplyTo;
+    composeInReplyTo = null;
     closeCompose();
-    toast("Email sent");
+    toast(wasReply ? "Reply sent" : "Email sent");
     if (currentFolder === "sent") loadMessages();
   } catch (e) {
     st.className = "status err";
@@ -746,7 +750,12 @@ $("composeSend").addEventListener("click", async function(){
 });
 
 /* ---------- Boot ---------- */
-if (stored) loadMessages();
+async function bootMail(){
+  await loadMessages();
+  const id = new URLSearchParams(location.search).get("message");
+  if (id) openMessage(id);
+}
+if (stored) bootMail();
 </script>
 </body>
 </html>
