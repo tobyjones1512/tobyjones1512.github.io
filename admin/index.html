@@ -80,6 +80,7 @@ label{display:block;font:650 .72rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe 
 .read-content .subject{font:800 1.28rem/1.25 -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:-.01em;margin:0 0 12px;word-break:break-word}
 .read-content .meta{font-size:.84rem;color:var(--dim);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--rule);line-height:1.7;word-break:break-word}
 .read-content .meta b{color:var(--ink);font-weight:650}
+.sync-note{margin:8px 10px 0;padding:9px 11px;border:1px solid var(--rule);border-left:3px solid var(--red);border-radius:8px;font-size:.85rem;line-height:1.4}
 .mail-frame{width:100%;height:68vh;min-height:380px;border:1px solid var(--rule);border-radius:10px;background:#fff}
 .plain-body{white-space:pre-wrap;font-size:1rem;line-height:1.65;word-break:break-word}
 .attachments{margin-top:20px;padding-top:14px;border-top:1px solid var(--rule)}
@@ -164,6 +165,7 @@ label{display:block;font:650 .72rem/1.3 -apple-system,BlinkMacSystemFont,'Segoe 
         <input class="search" id="search" placeholder="Search mail" type="search" autocomplete="off">
         <button class="icon-btn" id="refreshBtn" type="button" title="Refresh" aria-label="Refresh">↻</button>
       </div>
+      <div class="sync-note" id="syncNote" role="status" hidden></div>
       <div class="msg-list" id="msgList"><div class="empty">Loading…</div></div>
     </section>
 
@@ -352,11 +354,28 @@ document.querySelectorAll(".mailbox").forEach(function(b){
 });
 
 /* ---------- Message list ---------- */
-async function loadMessages(){
+function showSync(sync){
+  const note = $("syncNote");
+  if (!sync || sync.ok) { note.hidden = true; return; }
+  const key = /restricted|api key|not set|unauthor/i.test(sync.error || "");
+  note.textContent = "New mail can't be collected: " + (sync.error || "unknown error") +
+    (key ? " The RESEND_API_KEY on the maestro-marketplace-api Vercel project needs to be a Full access key." : "");
+  note.hidden = false;
+}
+let loadSeq = 0;
+async function loadMessages(quiet, round){
   const list = $("msgList");
-  list.innerHTML = '<div class="empty">Loading…</div>';
+  const seq = ++loadSeq;
+  if (!quiet) list.innerHTML = '<div class="empty">Loading…</div>';
   try {
-    const j = await apiGet("mail-list", { folder: currentFolder, q: $("search").value.trim() });
+    const folder = currentFolder;
+    const j = await apiGet("mail-list", { folder: folder, q: $("search").value.trim() });
+    if (seq !== loadSeq) return;
+    if (folder === "inbox") {
+      showSync(j.sync);
+      // A backlog comes in a few emails at a time: keep collecting until it is all here.
+      if (j.sync && j.sync.more && (round || 0) < 12) setTimeout(function(){ if (currentFolder === "inbox") loadMessages(true, (round || 0) + 1); }, 400);
+    }
     const msgs = j.messages || [];
     if (currentFolder === "inbox") {
       const unread = msgs.filter(function(m){ return !m.read; }).length;
@@ -379,14 +398,18 @@ async function loadMessages(){
       row.addEventListener("click", function(){ openMessage(row.getAttribute("data-id")); });
     });
   } catch (e) {
-    list.innerHTML = '<div class="empty">' + esc(e.message || "Could not load mail") + "</div>";
+    if (!quiet) list.innerHTML = '<div class="empty">' + esc(e.message || "Could not load mail") + "</div>";
   }
 }
+// Check for new mail every minute while the page is in view.
+setInterval(function(){
+  if (getKey() && !document.hidden && currentFolder === "inbox" && !$("search").value.trim()) loadMessages(true);
+}, 60000);
 
 let searchTimer = null;
 $("search").addEventListener("input", function(){
   clearTimeout(searchTimer);
-  searchTimer = setTimeout(loadMessages, 250);
+  searchTimer = setTimeout(function(){ loadMessages(); }, 250);
 });
 $("refreshBtn").addEventListener("click", function(){
   loadMessages();
@@ -485,6 +508,13 @@ async function openMessage(id, quiet){
     });
     view.appendChild(meta);
 
+    if (m.pending) {
+      const warn = document.createElement("div");
+      warn.className = "sync-note";
+      warn.style.margin = "0 0 12px";
+      warn.textContent = "The body of this email could not be read from Resend yet" + (m.pendingError ? " (" + m.pendingError + ")" : "") + ". You can still reply to it.";
+      view.appendChild(warn);
+    }
     if (m.html) {
       const frame = document.createElement("iframe");
       frame.className = "mail-frame";
@@ -511,7 +541,7 @@ async function openMessage(id, quiet){
 
     setToolbar(true);
     $("readerHint").textContent = "";
-    if (!quiet) loadMessages();
+    if (!quiet) loadMessages(true);
   } catch (e) {
     view.innerHTML = '<div class="empty">' + esc(e.message || "Could not open message") + "</div>";
     setToolbar(false);
