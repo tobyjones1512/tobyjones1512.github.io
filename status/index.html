@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>System Status - Caffeine Media</title>
+<meta name="description" content="Live status of the services behind Caffeine Media's apps.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#16110E">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/mark.png">
+<link rel="canonical" href="https://thecaffeinemediacompany.com/status/">
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.st-wrap { max-width: 860px; margin-inline: auto; padding: clamp(40px, 7vw, 88px) var(--gut) var(--sec); }
+.st-title {
+  font-stretch: var(--cond); font-weight: 850; text-transform: uppercase; line-height: .9;
+  font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
+  font-size: clamp(3rem, 9vw, 5.5rem); margin: 0 0 28px;
+}
+.st-banner {
+  display: flex; align-items: center; gap: 14px; padding: 18px 20px;
+  border: var(--rule); font-weight: 700; font-size: 1.125rem;
+}
+.st-banner .st-dot { width: 18px; height: 18px; }
+.st-meta { color: var(--dim); font-size: .875rem; margin: 12px 0 0; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.st-meta button {
+  font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer;
+  text-decoration: underline;
+}
+.st-group { margin-top: clamp(36px, 6vw, 60px); }
+.st-group h2 {
+  font-stretch: var(--cond); font-weight: 800; text-transform: uppercase; line-height: .9;
+  font-family: "Archivo", "Archivo Cond Fallback", sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem); margin: 0 0 14px;
+}
+.st-list { list-style: none; margin: 0; padding: 0; border-top: var(--rule); }
+.st-row {
+  display: grid; grid-template-columns: 22px 1fr auto; gap: 14px; align-items: center;
+  padding: 14px 4px; border-bottom: var(--hair);
+}
+.st-name { font-weight: 700; }
+.st-url { display: block; color: var(--dim); font-size: .8125rem; font-weight: 400; overflow-wrap: anywhere; }
+.st-state { font-size: .875rem; font-weight: 700; white-space: nowrap; }
+.st-dot { width: 14px; height: 14px; border-radius: 50%; background: #9a948e; display: inline-block; flex: none; }
+.st-dot[data-s="up"] { background: #1f9d4c; }
+.st-dot[data-s="down"] { background: var(--red); }
+.st-dot[data-s="wait"] { animation: st-pulse 1s ease-in-out infinite alternate; }
+@keyframes st-pulse { to { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { .st-dot[data-s="wait"] { animation: none; } }
+.st-state[data-s="up"] { color: #17713a; }
+.st-state[data-s="down"] { color: var(--red); }
+.st-note { color: var(--dim); font-size: .875rem; margin-top: 40px; }
+@media (max-width: 480px) {
+  .st-row { grid-template-columns: 22px 1fr; }
+  .st-state { grid-column: 2; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="../index.html" aria-label="Caffeine Media, home">
+      <img src="../assets/mark-96.webp" alt="" width="34" height="34">
+      <span>Caffeine Media</span>
+    </a>
+  </div>
+</header>
+
+<main id="main" class="st-wrap">
+  <h1 class="st-title">System status</h1>
+  <div class="st-banner" id="banner" role="status" aria-live="polite">
+    <span class="st-dot" data-s="wait" id="bannerDot"></span>
+    <span id="bannerText">Checking services...</span>
+  </div>
+  <p class="st-meta"><span id="checked"></span><button type="button" id="recheck">Check again</button></p>
+  <div id="groups"></div>
+  <p class="st-note">Each service is pinged from your browser. A service shows <b>Outage</b> if it cannot be reached, does not answer within 10 seconds, or returns a server error.</p>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__base">
+    <p>© <span id="yr">2026</span> Toby Jones T/A The Caffeine Media Company. All rights reserved.</p>
+    <p><a href="../index.html">Back to home</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Add or remove services here. Every URL is requested with GET.
+  var GROUPS = [
+    { title: "Vercel", items: [
+      { name: "Feedback API (Maestro Pro)", url: "https://fider-feedback-api.vercel.app/api/feedback" },
+      { name: "Marketplace API (Maestro Pro)", url: "https://maestro-marketplace-api.vercel.app/api/marketplace" },
+      { name: "Order Ahead", url: "https://placemyorder.online/" },
+      { name: "Order Ahead - customer app", url: "https://app.placemyorder.online/" },
+      { name: "Order Ahead - merchant", url: "https://merchant.placemyorder.online/" },
+      { name: "Order Ahead - admin", url: "https://admin.placemyorder.online/" },
+      { name: "Order Ahead - demo", url: "https://demo.placemyorder.online/" },
+      { name: "Order Ahead - sandbox", url: "https://sandbox.placemyorder.online/" },
+      { name: "Order Ahead - sandbox app", url: "https://sandbox-app.placemyorder.online/" },
+      { name: "Order Ahead - sandbox merchant", url: "https://sandbox-merchant.placemyorder.online/" },
+      { name: "Order Ahead - sandbox admin", url: "https://sandbox-admin.placemyorder.online/" },
+      { name: "Keep Signal", url: "https://keep-signal.vercel.app/" },
+      { name: "Last Thread Standing", url: "https://last-thread-standing.vercel.app/" }
+    ]},
+    { title: "FSA Food Hygiene Ratings", items: [
+      { name: "FSA ratings API (UK)", url: "https://api.ratings.food.gov.uk/Authorities/basic" },
+      { name: "Regional data files (this website)", url: "https://thecaffeinemediacompany.com/food-hygiene/data/manifest.json" },
+      { name: "City of Toronto DineSafe", url: "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/status_show" },
+      { name: "New York City", url: "https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=1" },
+      { name: "New York State", url: "https://data.ny.gov/resource/d6dy-3h7r.json?$limit=1" },
+      { name: "Chicago", url: "https://data.cityofchicago.org/resource/4ijn-s7e5.json?$limit=1" },
+      { name: "Austin", url: "https://data.austintexas.gov/resource/ecmv-9xxi.json?$limit=1" },
+      { name: "Montgomery County, MD", url: "https://data.montgomerycountymd.gov/resource/dkrp-gr48.json?$limit=1" },
+      { name: "Colorado", url: "https://data.colorado.gov/resource/6ytb-f2cq.json?$limit=1" },
+      { name: "Santa Clara County", url: "https://data.sccgov.org/" },
+      { name: "Wake County, NC", url: "https://maps.wake.gov/arcgis/rest/services/Inspections/RestaurantInspectionsOpenData/MapServer?f=json" }
+    ]},
+    // Docket endpoints: add { name, url } entries here and the group will appear.
+    { title: "Docket", items: [] }
+  ];
+
+  var TIMEOUT = 10000;
+  var groupsEl = document.getElementById("groups");
+  var rows = [];
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function build() {
+    GROUPS.forEach(function (g) {
+      if (!g.items.length) return;
+      var sec = el("section", "st-group");
+      sec.appendChild(el("h2", null, g.title));
+      var ul = el("ul", "st-list");
+      g.items.forEach(function (it) {
+        var li = el("li", "st-row");
+        var dot = el("span", "st-dot"); dot.dataset.s = "wait"; dot.setAttribute("aria-hidden", "true");
+        var label = el("div", "st-name", it.name);
+        label.appendChild(el("span", "st-url", it.url.replace(/^https:\/\//, "").replace(/\?.*$/, "")));
+        var state = el("span", "st-state", "Checking"); state.dataset.s = "wait";
+        li.appendChild(dot); li.appendChild(label); li.appendChild(state);
+        ul.appendChild(li);
+        rows.push({ item: it, dot: dot, state: state });
+      });
+      sec.appendChild(ul);
+      groupsEl.appendChild(sec);
+    });
+  }
+
+  // Resolves true if the service answered with anything other than a 5xx.
+  // Bare API roots often return 404/405, which still means the service is up.
+  function ping(url) {
+    var sep = url.indexOf("?") === -1 ? "?" : "&";
+    var u = url + sep + "_=" + Date.now();
+    var ctl = new AbortController();
+    var timer = setTimeout(function () { ctl.abort(); }, TIMEOUT);
+    function done(v) { clearTimeout(timer); return v; }
+    return fetch(u, { cache: "no-store", signal: ctl.signal, credentials: "omit" })
+      .then(function (r) { return done(r.status < 500); })
+      .catch(function () {
+        if (ctl.signal.aborted) return done(false);
+        // Blocked by CORS: an opaque response still proves the server answered.
+        return fetch(u, { mode: "no-cors", cache: "no-store", signal: ctl.signal, credentials: "omit" })
+          .then(function () { return done(true); })
+          .catch(function () { return done(false); });
+      });
+  }
+
+  function set(row, up) {
+    var s = up ? "up" : "down";
+    row.dot.dataset.s = s; row.state.dataset.s = s;
+    row.state.textContent = up ? "Operational" : "Outage";
+  }
+
+  function run() {
+    var btn = document.getElementById("recheck");
+    btn.disabled = true;
+    rows.forEach(function (r) { r.dot.dataset.s = "wait"; r.state.dataset.s = "wait"; r.state.textContent = "Checking"; });
+    setBanner("wait", "Checking services...");
+    var down = 0, finished = 0;
+    rows.forEach(function (r) {
+      ping(r.item.url).then(function (up) {
+        set(r, up);
+        if (!up) down++;
+        if (++finished === rows.length) {
+          setBanner(down ? "down" : "up",
+            down ? down + (down === 1 ? " service is" : " services are") + " experiencing an outage" : "All systems operational");
+          document.getElementById("checked").textContent = "Last checked " + new Date().toLocaleTimeString("en-GB");
+          btn.disabled = false;
+        }
+      });
+    });
+  }
+
+  function setBanner(s, text) {
+    document.getElementById("bannerDot").dataset.s = s;
+    document.getElementById("bannerText").textContent = text;
+  }
+
+  build();
+  document.getElementById("recheck").addEventListener("click", run);
+  run();
+  setInterval(run, 60000);
+})();
+</script>
+</body>
+</html>
