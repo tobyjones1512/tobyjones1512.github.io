@@ -94,19 +94,12 @@
   // Add or remove services here. Every URL is requested with GET.
   var GROUPS = [
     { title: "Vercel", items: [
-      { name: "Feedback API (Maestro Pro)", url: "https://fider-feedback-api.vercel.app/api/feedback" },
-      { name: "Marketplace API (Maestro Pro)", url: "https://maestro-marketplace-api.vercel.app/api/marketplace" },
-      { name: "Order Ahead", url: "https://placemyorder.online/" },
-      { name: "Order Ahead - customer app", url: "https://app.placemyorder.online/" },
-      { name: "Order Ahead - merchant", url: "https://merchant.placemyorder.online/" },
-      { name: "Order Ahead - admin", url: "https://admin.placemyorder.online/" },
-      { name: "Order Ahead - demo", url: "https://demo.placemyorder.online/" },
-      { name: "Order Ahead - sandbox", url: "https://sandbox.placemyorder.online/" },
-      { name: "Order Ahead - sandbox app", url: "https://sandbox-app.placemyorder.online/" },
-      { name: "Order Ahead - sandbox merchant", url: "https://sandbox-merchant.placemyorder.online/" },
-      { name: "Order Ahead - sandbox admin", url: "https://sandbox-admin.placemyorder.online/" },
-      { name: "Keep Signal", url: "https://keep-signal.vercel.app/" },
-      { name: "Last Thread Standing", url: "https://last-thread-standing.vercel.app/" }
+      { name: "Feedback API", url: "https://fider-feedback-api.vercel.app/api/feedback" },
+      { name: "Maestro Pro - Marketplace", url: "https://maestro-marketplace-api.vercel.app/api/marketplace" },
+      { name: "Docket", url: "https://placemyorder.online/" },
+      { name: "Docket - customer app", url: "https://app.placemyorder.online/" },
+      { name: "Docket - merchant", url: "https://merchant.placemyorder.online/" },
+      { name: "Docket - demo", url: "https://demo.placemyorder.online/" }
     ]},
     { title: "FSA Food Hygiene Ratings", items: [
       { name: "FSA ratings API (UK)", url: "https://api.ratings.food.gov.uk/Authorities/basic" },
@@ -120,9 +113,7 @@
       { name: "Colorado", url: "https://data.colorado.gov/resource/6ytb-f2cq.json?$limit=1" },
       { name: "Santa Clara County", url: "https://data.sccgov.org/" },
       { name: "Wake County, NC", url: "https://maps.wake.gov/arcgis/rest/services/Inspections/RestaurantInspectionsOpenData/MapServer?f=json" }
-    ]},
-    // Docket endpoints: add { name, url } entries here and the group will appear.
-    { title: "Docket", items: [] }
+    ]}
   ];
 
   var TIMEOUT = 10000;
