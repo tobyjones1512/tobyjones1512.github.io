@@ -118,3 +118,12 @@
 /* contrast: ink on orange (white on #FF8A00 is only 2.4:1) */
 .cnt .rule__no, .cnt .section:not(.section--tint) .rule__no { color: var(--ink); }
 .cnt .row .btn, .cnt .btn--orange { color: var(--ink); }
+
+/* full-bleed hero: paint the sky on a viewport-wide layer instead of the base stylesheet's flat box-shadow bleed (which showed as side bars) */
+.cnt.app .hero { background: none; box-shadow: none; clip-path: none; isolation: isolate; }
+.cnt.app .hero::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); z-index: -1;
+  background:
+    repeating-conic-gradient(from 0deg at 70% 85%, rgba(255,255,255,.17) 0 7deg, transparent 7deg 20deg),
+    linear-gradient(#3C9DFF, #9ED7FF 70%, #CDEBFF);
+}
