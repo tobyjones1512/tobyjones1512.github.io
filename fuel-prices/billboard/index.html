@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Opening Refuel...</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F2A800">
+<link rel="canonical" href="https://apps.apple.com/gb/app/fuel-prices/id6822109587">
+<noscript><meta http-equiv="refresh" content="0; url=https://apps.apple.com/gb/app/fuel-prices/id6822109587"></noscript>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F2A800;font-family:-apple-system,BlinkMacSystemFont,sans-serif;color:#1a1a1a;text-align:center;padding:24px;box-sizing:border-box}
+  a{color:inherit;font-weight:600}
+</style>
+<!-- Billboard QR tracking: records the scan, then redirects to the App Store -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QCV7XEQ8QT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QCV7XEQ8QT', { page_title: 'Refuel Billboard QR', page_path: '/fuel-prices/billboard/' });
+
+  var DEST = 'https://apps.apple.com/gb/app/fuel-prices/id6822109587';
+  var done = false;
+  function go(){ if (done) return; done = true; window.location.replace(DEST); }
+  gtag('event', 'billboard_qr_scan', {
+    event_category: 'qr',
+    event_label: 'refuel_billboard',
+    transport_type: 'beacon',
+    event_callback: go
+  });
+  // Fallback if analytics is blocked or slow
+  setTimeout(go, 1200);
+</script>
+</head>
+<body>
+  <p>Opening the App Store...<br><a href="https://apps.apple.com/gb/app/fuel-prices/id6822109587">Tap here if nothing happens</a></p>
+</body>
+</html>
