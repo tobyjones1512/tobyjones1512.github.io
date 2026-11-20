@@ -803,3 +803,18 @@ a.tile:hover .tile__body { color: var(--ink); }
 .shots figure:first-child { grid-column: 1 / -1; }
 .shot img[src$="game.png"] { max-width: 640px; }
 .dep { font-size: .45em; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; opacity: .7; white-space: nowrap; }
+
+/* app how-it-works + FAQ */
+.hiw { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; counter-reset: none; }
+.hiw li { display: grid; gap: 8px; align-content: start; padding-top: 16px; border-top: var(--hair, 2px solid currentColor); }
+.hiw__num { font-size: 2.5rem; font-weight: 800; line-height: 1; color: var(--field); font-variant-numeric: tabular-nums; }
+.hiw h3 { font-size: 1.35rem; }
+.hiw p { color: color-mix(in srgb, currentColor 78%, transparent); max-width: 38ch; }
+.faqlist { display: grid; max-width: 820px; border-top: var(--hair, 2px solid currentColor); }
+.faqlist__item { border-bottom: var(--hair, 2px solid currentColor); padding: 18px 0; }
+.faqlist__item summary { cursor: pointer; font-weight: 750; font-size: 1.15rem; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faqlist__item summary::-webkit-details-marker { display: none; }
+.faqlist__item summary::after { content: "+"; font-weight: 700; }
+.faqlist__item[open] summary::after { content: "\2212"; }
+.faqlist__item p { margin-top: 10px; color: color-mix(in srgb, currentColor 78%, transparent); max-width: 62ch; }
+.faqlist__item summary:focus-visible { outline: 3px solid var(--field); outline-offset: 4px; }
