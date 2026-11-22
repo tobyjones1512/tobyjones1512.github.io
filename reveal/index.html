@@ -3,17 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Reveal - Attraction first, by consent</title>
-<meta name="description" content="Reveal is an appearance-first dating app for iPhone. Three people at a time, revealed from the feet up.">
+<title>Reveal - Adults-only dating. 18+</title>
+<meta name="description" content="Reveal is an adults-only (18+) dating app for iPhone for people who want real attraction and chemistry. Three people at a time, revealed from the feet up.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#FF6B4A">
+<meta name="rating" content="adult">
+<meta name="theme-color" content="#0b0709">
+<meta name="color-scheme" content="dark">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
 <link rel="canonical" href="https://thecaffeinemediacompany.com/reveal/">
-<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="assets/reveal.css">
 </head>
-<body class="app" style="--field: #FF6B4A">
+<body>
 <a class="skip" href="#main">Skip to content</a>
+
+<dialog class="gate" id="gate" aria-labelledby="gate-title">
+  <div class="gate__inner">
+    <div class="gate__box">
+      <div class="gate__num" aria-hidden="true">18<sup>+</sup></div>
+      <h2 id="gate-title">Adults only.</h2>
+      <p>Reveal is a dating app for adults who want a physical, sexual connection. It contains mature themes and photos of people in underwear and swimwear. You must be 18 or over to enter.</p>
+      <div class="gate__actions">
+        <button class="gate__yes" id="gate-yes" type="button">I am 18 or over - enter</button>
+        <a class="gate__no" href="https://www.google.com/">I am under 18 - leave</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<div class="strip">18+ only &middot; Adult dating &middot; Mature themes</div>
 
 <header class="nav">
   <a class="nav__brand" href="index.html">
@@ -25,85 +43,88 @@
     <a href="index.html#privacy">Privacy</a>
     <a href="index.html#faq">FAQ</a>
     <a href="support.html">Support</a>
+    <span class="badge18" aria-label="Adults only, 18 plus">18+</span>
   </nav>
 </header>
 
 <main id="main">
 
-<section class="hero wrap">
-  <div class="hero__grid">
-    <div>
-      <img width="160" height="160" src="assets/app-icon-160.webp" alt="" class="hero__icon">
-      <h1>Attraction first. Conversation by consent.</h1>
-      <p class="hero__sub">
-        Reveal is a dating app for iPhone that shows you three people at a time, revealed from the feet up.
-        Let one go at the waist, another at the neck, and meet the last one head-to-toe.
-      </p>
-      <div class="hero__actions">
-        <span class="hero__free">Coming soon to iPhone. Adults 18+ only. Beta access by invitation: <a class="inline" href="mailto:hello@thecaffeinemediacompany.com?subject=Reveal%20beta">email us</a>.</span>
-      </div>
+<section class="wrap hero">
+  <div>
+    <p class="eyebrow"><span class="badge18">18+</span> For adults who know what they want</p>
+    <h1>Desire first. <em>Then</em> conversation.</h1>
+    <p class="hero__sub">
+      Reveal is the dating app for people who are serious about <strong>attraction and sex</strong>, and tired of pretending otherwise.
+      Three people at a time, revealed from the feet up. Keep the one who does it for you. Nobody talks until both of you say yes.
+    </p>
+    <div class="hero__cta">
+      <a class="btn" href="mailto:hello@thecaffeinemediacompany.com?subject=Reveal%20beta">Request beta access</a>
+      <span class="hero__note">Coming soon to iPhone. Adults 18+ only. Beta access by invitation.</span>
     </div>
+  </div>
+  <div class="lineup" role="img" aria-label="Illustration of the reveal order: waist-down first, then neck-down, then the face">
+    <span class="badge18 lineup__tag">18+</span>
+    <div class="lineup__band lineup__band--3"><span>Head-to-toe</span></div>
+    <div class="lineup__band lineup__band--2"><span>02 &nbsp; Neck-down</span></div>
+    <div class="lineup__band lineup__band--1"><span>01 &nbsp; Waist-down</span></div>
   </div>
 </section>
 
-<section class="section hiw-section" id="how-it-works">
+<section class="section" id="how-it-works">
   <div class="wrap">
-    <header class="head">
-      <h2>How it works.</h2>
-    </header>
-    <ol class="hiw">
-      <li><span class="hiw__num">1</span><h3>Take your photo</h3><p>The app talks you into position with the back camera and checks the photo on your iPhone before anything is uploaded.</p></li>
-      <li><span class="hiw__num">2</span><h3>Waist-down</h3><p>Three people who match what you're looking for. Let one go.</p></li>
-      <li><span class="hiw__num">3</span><h3>Neck-down</h3><p>Two left. Let one more go. They're gone for good.</p></li>
-      <li><span class="hiw__num">4</span><h3>Head-to-toe</h3><p>Meet the one you kept, with their name, age and interests. Send one message: they see you head-to-toe and say yes before they read it.</p></li>
+    <p class="kicker">How it works</p>
+    <h2>Four steps. <em>No small talk.</em></h2>
+    <ol class="steps">
+      <li><span class="steps__num">1</span><h3>Take your photo</h3><p>The app talks you into position with the back camera and checks the photo on your iPhone before anything is uploaded.</p></li>
+      <li><span class="steps__num">2</span><h3>Waist-down</h3><p>Three people who match what you're looking for. Let one go.</p></li>
+      <li><span class="steps__num">3</span><h3>Neck-down</h3><p>Two left. Let one more go. They're gone for good.</p></li>
+      <li><span class="steps__num">4</span><h3>Head-to-toe</h3><p>Meet the one you kept, with their name, age and interests. Send one message: they see you head-to-toe and say yes before they read it.</p></li>
     </ol>
   </div>
 </section>
 
-<section class="section section--tint" id="privacy">
+<section class="section section--wine" id="privacy">
   <div class="wrap">
-    <header class="head">
-      <h2>Built for the privacy of bodies.</h2>
-      <p>Your photo is the most personal thing in the app, so it's handled that way.</p>
-    </header>
-    <div class="bento">
-      <article class="tile tile--wide tile--dark">
+    <p class="kicker">Discretion</p>
+    <h2>Built for the privacy of <em>bodies.</em></h2>
+    <p class="section__lede">Your photo is the most personal thing in the app, so it's handled that way.</p>
+    <div class="grid">
+      <article class="card card--big">
         <h3>Shown only as far as people earn</h3>
-        <p class="tile__body">Your photo is stored as three crops behind separate unguessable links. A person only ever receives the crop they have reached in their lineup.</p>
+        <p>Your photo is stored as three crops behind separate unguessable links. A person only ever receives the crop they have reached in their lineup.</p>
       </article>
-      <article class="tile tile--p1">
-        <h3>No screenshots</h3>
-        <p class="tile__body">Photos are blanked in screenshots, screen recordings and mirroring.</p>
-      </article>
-      <article class="tile tile--p2">
-        <h3>Checked on your iPhone</h3>
-        <p class="tile__body">Face, pose and clothing checks run on your device. Nudity is never uploaded.</p>
-      </article>
-      <article class="tile tile--p3">
-        <h3>Messages by consent</h3>
-        <p class="tile__body">First messages wait for a yes. Notifications never show what a message says.</p>
-      </article>
-      <article class="tile tile--p4">
-        <h3>Delete everything</h3>
-        <p class="tile__body">One tap erases your photos, matches and messages, and disconnects your Apple ID.</p>
-      </article>
+      <article class="card"><h3>No screenshots</h3><p>Photos are blanked in screenshots, screen recordings and mirroring.</p></article>
+      <article class="card"><h3>Checked on your iPhone</h3><p>Face, pose and clothing checks run on your device. Nudity is never uploaded.</p></article>
+      <article class="card"><h3>Messages by consent</h3><p>First messages wait for a yes. Notifications never show what a message says.</p></article>
+      <article class="card"><h3>Delete everything</h3><p>One tap erases your photos, matches and messages, and disconnects your Apple ID.</p></article>
     </div>
   </div>
 </section>
 
-<section class="section faq-section" id="faq">
+<section class="section" id="rules">
   <div class="wrap">
-    <header class="head">
-      <h2>Questions, answered.</h2>
-    </header>
-    <div class="faqlist">
-      <details class="faqlist__item"><summary>Who can use Reveal?</summary><p>Adults only. Your Apple Account has to confirm you're 18 or over before you can sign in, and everyone you see is 18 or over too.</p></details>
-      <details class="faqlist__item"><summary>Why a photo in underwear or swimwear?</summary><p>Reveal is honest about attraction: people see your body before your face, then decide. Two-piece swimwear or underwear, with your belly and thighs visible, gives everyone the same fair look. Nudity is never allowed, and the app checks every photo on your iPhone before it is uploaded.</p></details>
-      <details class="faqlist__item"><summary>Can people screenshot my photo?</summary><p>No. Reveal blanks photos in screenshots, screen recordings and screen mirroring.</p></details>
-      <details class="faqlist__item"><summary>Who sees my photo?</summary><p>Only people Reveal matches you with, and only as far as they've got: waist-down first, then neck-down, then head-to-toe for the one person who keeps you to the end.</p></details>
-      <details class="faqlist__item"><summary>How many people do I see?</summary><p>Three at a time. Start a new lineup whenever there are three new people who match what you're looking for, and Reveal lets you know when there are.</p></details>
-      <details class="faqlist__item"><summary>Will people I know see me?</summary><p>Not if you let Reveal check your contacts. Numbers and emails are scrambled on your iPhone before anything is sent, and people who know each other never appear in each other's lineups.</p></details>
-      <details class="faqlist__item"><summary>How do I delete my account?</summary><p>Open the You tab and tap Delete account. Your photos, matches and messages are erased straight away, and Reveal stops using your Apple ID.</p></details>
+    <p class="kicker">House rules</p>
+    <h2>Adults. Honest. <em>Consenting.</em></h2>
+    <div class="rules">
+      <div><h3>18+ verified</h3><p>Your Apple Account must confirm you're 18 or over before you can sign in. Everyone you see is an adult too.</p></div>
+      <div><h3>Consent is the product</h3><p>Nobody can message you until you've said yes. You can block and report in one tap, at any point.</p></div>
+      <div><h3>No nudity, no exceptions</h3><p>Underwear or swimwear only, checked on-device before upload. Explicit images are never uploaded or shown.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <p class="kicker">FAQ</p>
+    <h2>Straight answers.</h2>
+    <div class="faq">
+      <details><summary>Who can use Reveal?</summary><p>Adults only. Your Apple Account has to confirm you're 18 or over before you can sign in, and everyone you see is 18 or over too.</p></details>
+      <details><summary>Why a photo in underwear or swimwear?</summary><p>Reveal is honest about attraction: people see your body before your face, then decide. Two-piece swimwear or underwear, with your belly and thighs visible, gives everyone the same fair look. Nudity is never allowed, and the app checks every photo on your iPhone before it is uploaded.</p></details>
+      <details><summary>Can people screenshot my photo?</summary><p>No. Reveal blanks photos in screenshots, screen recordings and screen mirroring.</p></details>
+      <details><summary>Who sees my photo?</summary><p>Only people Reveal matches you with, and only as far as they've got: waist-down first, then neck-down, then head-to-toe for the one person who keeps you to the end.</p></details>
+      <details><summary>How many people do I see?</summary><p>Three at a time. Start a new lineup whenever there are three new people who match what you're looking for, and Reveal lets you know when there are.</p></details>
+      <details><summary>Will people I know see me?</summary><p>Not if you let Reveal check your contacts. Numbers and emails are scrambled on your iPhone before anything is sent, and people who know each other never appear in each other's lineups.</p></details>
+      <details><summary>How do I delete my account?</summary><p>Open the You tab and tap Delete account. Your photos, matches and messages are erased straight away, and Reveal stops using your Apple ID.</p></details>
     </div>
   </div>
 </section>
@@ -111,16 +132,33 @@
 </main>
 
 <footer class="foot">
+  <span class="badge18">18+</span>
+  <p class="foot__legal">Reveal is for adults aged 18 and over only. It contains mature themes and is intended for consenting adults seeking sexual and romantic connections.</p>
   <div class="foot__links">
     <a href="index.html">Reveal</a>
     <a href="support.html">Support</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms of Use</a>
   </div>
-  <p>© <span id="yr">2026</span> Toby Jones T/A The Caffeine Media Company.</p>
+  <p>&copy; <span id="yr">2026</span> Toby Jones T/A The Caffeine Media Company.</p>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
-  <script src="/assets/cookie-consent.js" defer></script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+(function () {
+  var gate = document.getElementById('gate'), KEY = 'revealAge18';
+  try { if (sessionStorage.getItem(KEY) === '1') return; } catch (e) {}
+  if (typeof gate.showModal !== 'function') return;
+  document.body.classList.add('gated');
+  gate.showModal();
+  gate.addEventListener('cancel', function (e) { e.preventDefault(); });
+  document.getElementById('gate-yes').addEventListener('click', function () {
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+    gate.close();
+    document.body.classList.remove('gated');
+  });
+})();
+</script>
+<script src="/assets/cookie-consent.js" defer></script>
 </body>
 </html>
