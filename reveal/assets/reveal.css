@@ -102,8 +102,13 @@ p { margin: 0; }
 .card p { color: var(--mist); }
 .card--big p { max-width: 60ch; }
 
+/* Pride */
+.section--pride { position: relative; }
+.section--pride::before { content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 4px; background: linear-gradient(90deg, #e40303, #ff8c00, #ffed00, #008026, #24408e, #732982); }
+.section--pride .card { border-top: 2px solid var(--crimson); }
+
 /* Rules panel */
-.rules { margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; border: 2px solid var(--crimson); border-radius: 4px; box-shadow: 0 0 40px rgba(224,25,63,.2); }
+.rules { margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border: 2px solid var(--crimson); border-radius: 4px; box-shadow: 0 0 40px rgba(224,25,63,.2); }
 .rules > div { padding: 28px; border-right: 1px solid var(--line); }
 .rules > div:last-child { border-right: 0; }
 .rules h3 { font: 800 .8125rem/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--rose); margin-bottom: 12px; }
